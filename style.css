@@ -1,0 +1,19 @@
+h1.title {
+  background-image: IN2039_logo.png;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 200px;
+}
+
+.reveal .slide-logo {
+  display: block;
+  position: fixed;
+  bottom: 5px; 
+  right: 12px;
+  top: unset !important;
+  left:  unset !important;
+  height: 100px !important;
+  width: 100x !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
