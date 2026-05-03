@@ -1,16 +1,21 @@
 ---
-title: |
-   | Distribuciones Continuas de Probabilidad
+title: "Distribuciones Continuas de Probabilidad"
+subtitle: "IN2032: Análisis Estadístico de Datos"
 author: 
-  - name: Alan R. Vázquez
-    email: alanrvazquez@tec.mx
+  - name: Alan R. Vazquez
     affiliations:
-      - name: Tecnológico de Monterrey
-format: revealjs
+      - name: Department of Industrial Engineering
+format: 
+  revealjs:
+    chalkboard: false
+    multiplex: false
+    footer: "Tecnológico de Monterrey"
+    logo: IN2032_logo.png
+    css: style.css
+    slide-number: True
+    html-math-method: mathjax
 editor: visual
-slide-number: True
-logo: IN2032_logo.png
-css: style.css
+jupyter: python3
 ---
 
 ## Agenda

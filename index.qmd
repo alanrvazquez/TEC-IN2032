@@ -4,14 +4,21 @@ author:
   - name: Alan R. Vazquez
     orcid: 0000-0002-3658-0911
     affiliations:
-      - name: Tecnologico de Monterrey
+      - name: Tecnológico de Monterrey
 ---
 
 ## Tópicos del curso
 
-### A. Introduction to Data Science and Python
+### Módulo 1
 
-1.  Introduction to Data Science 
+1.  Introducción a la Estadística ([slides](/Modulo_1/Introduccion.slides.html))
+2.  Distribuciones Discretas de Probabilidad ([slides](/Modulo_1/Discretas.slides.html))
+3.  Distribuciones Continuas de Probabilidad ([slides](/Modulo_1/Continuas.slides.html))
+
+### Módulo 2
+
+1. Introducción a los Intervalos de Confianza ([slides](/Modulo_2/Intervalos.slides.html))
+
 
 ## About the author
 
