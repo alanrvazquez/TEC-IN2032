@@ -53,7 +53,7 @@ Durante la última hora, la máquina ha fabricado 1000 varillas.
 :::
 
 ::: {.column width="40%"}
-![](images/clipboard-3830659353.png)
+![](images/clipboard-3830659353.png){fig-align="center"}
 :::
 :::::
 
@@ -70,7 +70,7 @@ El ingeniero de calidad quiere saber aproximadamente cuántas de estas varillas 
 :::
 
 ::: {.column width="40%"}
-![](images/clipboard-3947900040.png)
+![](images/clipboard-3947900040.png){fig-align="center"}
 :::
 :::::
 
@@ -88,7 +88,7 @@ Al hacer esto, el ingeniero descubre que 46 de ellas (92%) cumplen con la especi
 
 ::: {.column width="40%"}
 
-![](images/clipboard-3717050976.png)
+![](images/clipboard-3717050976.png){fig-align="center"}
 :::
 :::::
 
@@ -321,3 +321,5 @@ Los dos resúmenes numéricos más utilizados para datos categóricos son las fr
 - Define el concepto de independencia.
 
 - ¿Qué es la desviación estándar? ¿Cómo se calcula?
+
+# [Return to main page](https://alanrvazquez.github.io/TEC-IN2032/)
