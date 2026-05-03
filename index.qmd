@@ -1,0 +1,21 @@
+---
+title: "IN2032: Análisis Estadístico de Datos"
+author: 
+  - name: Alan R. Vazquez
+    orcid: 0000-0002-3658-0911
+    affiliations:
+      - name: Tecnologico de Monterrey
+---
+
+## Tópicos del curso
+
+### A. Introduction to Data Science and Python
+
+1.  Introduction to Data Science 
+
+## About the author
+
+Alan R. Vazquez ([website](https://alanrvazquez.netlify.app/)) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.
+
+### License
+
