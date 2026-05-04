@@ -18,6 +18,7 @@ author:
 ### Módulo 2
 
 1. Introducción a los Intervalos de Confianza ([slides](/Modulo_2/Intervalos.slides.html))
+2. Pruebas de Hipótesis ([slides](/Modulo_2/Hipotesis.slides.html))
 
 
 ## About the author

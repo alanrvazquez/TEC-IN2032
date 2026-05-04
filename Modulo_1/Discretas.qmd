@@ -141,7 +141,7 @@ $$E(Y) = \sum_{y} y p(y),$$
 
 donde la suma es sobre todos los posibles valores de $Y$.
 
-::: center
+::: {style="text-align: center;"}
 [*El valor esperado* $E(Y)$ es una constante.]{style="color: #4682B4;"}
 :::
 
@@ -167,7 +167,9 @@ $$V(Y) = E\left[ (Y - E(Y))^2 \right] = \sum_{y} (y - E(Y))^2 p(y).$$
 
 La [**desviación estándar**]{style="color: darkgreen;"} de $Y$ es la raíz cuadrada de $V(Y)$.
 
+::: {style="text-align: center;"}
 [*La varianza y desviación estándar teóricas son constantes.*]{style="color: green;"}
+:::
 
 ## Ejemplo 1 (cont.)
 
@@ -315,7 +317,6 @@ Si $Y\sim\text{Bin}(n,p)$, tenemos que
 :::
 
 ::: {.column width="60%"}
-
 </br>
 
 ![](images/clipboard-2277526709.png){fig-align="center"}
@@ -324,7 +325,7 @@ Si $Y\sim\text{Bin}(n,p)$, tenemos que
 
 ## Calculo de probabilidades en Python
 
-##
+## 
 
 Una variable aleatoria binomial se puede expresar como [una suma de variables aleatorias de Bernoulli]{style="color: red"}:
 
@@ -342,7 +343,7 @@ Una variable aleatoria binomial se puede expresar como [una suma de variables al
 
 </br></br>
 
-Se disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%. 
+Se disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.
 
 ¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?
 

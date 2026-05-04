@@ -139,7 +139,7 @@ Sus características principales:
 ::: {.column width="50%"}
 ![](images/clipboard-309922779.png){fig-align="center"}
 
-<https://en.wikipedia.org/wiki/Student%27s_t-distribution> 
+<https://en.wikipedia.org/wiki/Student%27s_t-distribution>
 :::
 :::::
 
@@ -152,7 +152,6 @@ Sus características principales:
 </br>
 
 $$\left[\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},~ \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right]$$
-
 
 El valor de $1-\alpha$ define el [**nivel de confianza**]{style="color: purple"} (o [*cobertura*]{style="color: purple"}) del intervalo de confianza.
 
@@ -168,7 +167,7 @@ $$P\left(\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq  \bar{y} +
 
 Donde la probailidad $(1-\alpha)$ es el [*nivel de confianza*]{style="color: darkgreen"}.
 
-[_**Interpretación**_]{style="color: pink"}: Si, en el muestreo aleatorio repetido, construimos muchos intervalos de confianza $[L, U]$, $100(1-\alpha)$% de ellos incluirán el verdadero valor de $\mu$. 
+[***Interpretación***]{style="color: pink"}: Si, en el muestreo aleatorio repetido, construimos muchos intervalos de confianza $[L, U]$, $100(1-\alpha)$% de ellos incluirán el verdadero valor de $\mu$.
 
 ## Más sobre niveles de confianza
 
@@ -176,7 +175,7 @@ Donde la probailidad $(1-\alpha)$ es el [*nivel de confianza*]{style="color: dar
 
 - Un nivel confianza $100(1-\alpha)\%$ es aquel calculado mediante un método que a largo plazo logrará [*cubrir*]{style="color: purple"} la media poblacional una proporción $1-\alpha$ de todas las veces que se utiliza.
 
-- En la práctica, debemos de fijar el valor de $\alpha$. Entre más pequeño el valor de $\alpha$, más grande la confianza y el tamaño del intervalo. 
+- En la práctica, debemos de fijar el valor de $\alpha$. Entre más pequeño el valor de $\alpha$, más grande la confianza y el tamaño del intervalo.
 
 - Los intervalos con mayor confianza son menos precisos.
 
@@ -200,13 +199,13 @@ Encuentra un intervalo de confianza del 95% para el coeficiente de transferencia
 
 - Ella midió las temperaturas observadas para los 30 tubos en grados Farenheit.
 
-##
+## 
 
 ![](images/ingeniera.png){fig-align="center"}
 
-- La ingeniera quiere investigar la diferencia entre la temperatura promedio de los dos tubos. 
+- La ingeniera quiere investigar la diferencia entre la temperatura promedio de los dos tubos.
 
-- Es decir, le interesa saber $\mu_2 - \mu_1$ donde $\mu_1$ y $\mu_2$ es la temperatura promedio del tubo tipo 1 y 2, respectivamente. 
+- Es decir, le interesa saber $\mu_2 - \mu_1$ donde $\mu_1$ y $\mu_2$ es la temperatura promedio del tubo tipo 1 y 2, respectivamente.
 
 ## 
 
@@ -218,7 +217,7 @@ Encuentra un intervalo de confianza del 95% para el coeficiente de transferencia
 
 - Si $\mu_2 - \mu_1 = 0$, entonces los tubos de tipo 1 y 2 tienen la misma temperatura promedio de deflexión.
 
-## ¿Cómo podemos estimar el valor de $\mu_2 - \mu_1$? 
+## ¿Cómo podemos estimar el valor de $\mu_2 - \mu_1$?
 
 - Utilizando un intervalo de confianza sobre $\mu_2 - \mu_1$.
 
@@ -248,7 +247,7 @@ Para la primera muestra de observaciones $y_1, y_2, \ldots, y_{n_y}$:
 - $\bar{y} = \frac{1}{n_y}\sum_{i=1}^{n_y} y_i$ es la media muestral.
 - $s^2_y =\frac{1}{n_y-1} \sum_{i=1}^{n_y} (y_i - \bar{y})^2$ es la varianza muestral.
 
-##
+## 
 
 </br></br>
 
@@ -258,9 +257,9 @@ Para la segunda muestra de observaciones $x_1, x_2, \ldots, x_{n_x}$:
 - $\bar{x} = \frac{1}{n_x}\sum_{i=1}^{n_x} x_i$ es la media muestral.
 - $s^2_{x} =\frac{1}{n_x -1} \sum_{i=1}^{n_x} (x_i - \bar{x})^2$ es la varianza muestral.
 
-##
+## 
 
-Si las dos muestras son independientes, entonces un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es 
+Si las dos muestras son independientes, entonces un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es
 
 $$\left[ (\bar{y} - \bar{x}) - \text{ME}, (\bar{y} - \bar{x}) + \text{ME} \right] $$
 
@@ -287,12 +286,11 @@ Si las distribuciones tienen differentes varianzas, entonces un [intervalo de co
 
 $$\left[(\bar{y} - \bar{x}) - t_{\nu, \alpha/2} \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}}, \; (\bar{y} - \bar{x}) - t_{\nu, \alpha/2} \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}} \right].$$
 
-donde el número de grados de libertad viene dado por el valor
-$\nu = \frac{\left( \frac{s_y^2}{n_y} + \frac{s_x^2}{n_x} \right)^2 }{ \frac{ \left(s_{y}^2/n_y\right)^2}{n_y - 1} + \frac{ \left (s_{x}^2/n_x \right)^2}{n_x - 1} }$ (redondeado al número entero más cercano).
+donde el número de grados de libertad viene dado por el valor $\nu = \frac{\left( \frac{s_y^2}{n_y} + \frac{s_x^2}{n_x} \right)^2 }{ \frac{ \left(s_{y}^2/n_y\right)^2}{n_y - 1} + \frac{ \left (s_{x}^2/n_x \right)^2}{n_x - 1} }$ (redondeado al número entero más cercano).
 
 ## En Python
 
-##  No asumas que las varianzas son iguales...
+## No asumas que las varianzas son iguales...
 
 </br></br>
 
@@ -302,7 +300,7 @@ $\nu = \frac{\left( \frac{s_y^2}{n_y} + \frac{s_x^2}{n_x} \right)^2 }{ \frac{ \l
 
 - Como normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales.
 
-##
+## 
 
 </br></br>
 

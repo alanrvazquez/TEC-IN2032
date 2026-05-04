@@ -255,10 +255,10 @@ La distribución de $Z$ es normal con media 0 y desviación estándar 1. Esta di
 
 ## Probablidades de la distribución normal estándar
 
-Si $X \sim N(\mu, \sigma^2)$ y $x_0$ es una constante, tenemos que 
+Si $X \sim N(\mu, \sigma^2)$ y $x_0$ es una constante, tenemos que
 
 $$P(X > x_0) = P \left( \frac{X-\mu}{\sigma} > \frac{x_0-\mu}{\sigma}\right) = P \left( Z > z_0\right),$$
- 
+
 donde $Z \sim N(0, 1)$ y la constante $z_0 = \frac{x_0-\mu}{\sigma}$ es el [*valor estandarizado*]{style="color: purple"} de $x_0$.
 
 Lo mismo para:
@@ -268,7 +268,7 @@ Lo mismo para:
 
 ## Propiedades de la distribución normal
 
-- Si $X\sim{N(\mu,\sigma^2)}$ y tenemos las constantes $a \neq 0$ y $b$. Entonces 
+- Si $X\sim{N(\mu,\sigma^2)}$ y tenemos las constantes $a \neq 0$ y $b$. Entonces
 
 $$aX + b \sim N(a \mu + b, a^2 \sigma^2)$$
 
@@ -290,13 +290,13 @@ $$\bar{X} =\sum_{i=1}^{n} \frac{X_i}{n} \sim N\left(\mu,\; \frac{\sigma^2}{n}\ri
 
 - Consideremos una muestra de $n$ observaciones seleccionadas aleatoriamente de una población.
 
-- En estadística, los valores de esas observaciones se consideran variables aleatorias. 
+- En estadística, los valores de esas observaciones se consideran variables aleatorias.
 
-- Usamos $Y_i$ para la *i*-ésima observación y tenemos $n$ de ellas, $Y_1, \ldots, Y_n$. 
+- Usamos $Y_i$ para la *i*-ésima observación y tenemos $n$ de ellas, $Y_1, \ldots, Y_n$.
 
 - Se dice que todas las $Y_i$’s sigue una misma distribución específica. Además, asumimos que todas ellas son independientes.
 
-##
+## 
 
 ![](images/muestra.png){fig-align="center"}
 
@@ -322,13 +322,13 @@ Si $Y_1, \ldots, Y_n$ es una muestra aleatoria que sigue [*una distribución*]{s
 
 </br></br>
 
-Considera una muestra $Y_1, Y_2, \ldots, Y_n$ de variables aleatorias Bernoulli con probabilidad $p$. 
+Considera una muestra $Y_1, Y_2, \ldots, Y_n$ de variables aleatorias Bernoulli con probabilidad $p$.
 
 Sabemos que el promedio teórico es $p$ y la varianza teórica es $p(1-p)$ para una distribución Bernoulli.
 
 Recuerda que si $X = Y_1 + \cdots + Y_n$, entonces $X \sim \text{Bin}(n,p)$.
 
-##
+## 
 
 Gracias al teorema del límite central, podemos decir que
 
@@ -336,12 +336,11 @@ Gracias al teorema del límite central, podemos decir que
 
 Esta aproximación a la distribución binomial funciona bien cuando $n$ es grande y $p$ no está muy cerca de 0 ni de 1.
 
-De hecho, cuando $n$ es grande, esta aproximación es la que se utiliza para calcular las probabilidades en una distribución binomial. 
+De hecho, cuando $n$ es grande, esta aproximación es la que se utiliza para calcular las probabilidades en una distribución binomial.
 
 $$P(Y = y) = {n \choose y}p^y (1 -p)^{n -y}$$
 
 Esto es debido a que es dificil calcular ${n \choose y}$ en este caso porque sus valores pueden ser muy grandes.
-
 
 ## Pregunta de práctica para examen
 
