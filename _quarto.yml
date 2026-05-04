@@ -1,0 +1,34 @@
+project:
+  title: "TEC-IN2039 Data Visualization for Decision Making"
+  type: website
+  output-dir: docs
+editor: visual
+
+website:
+  title: "IN2004B Generation of Value with Data Analytics"
+  page-navigation: true
+  sidebar:
+    contents:
+      - href: index.qmd
+        text: Home
+
+author: 
+  - name: Alan R. Vazquez
+    affiliations:
+      - name: Department of Industrial Engineering
+        
+format:
+  html:
+    toc: true
+    shift-heading-level-by: 1
+
+  revealjs:
+    output-ext: "slides.html"
+    chalkboard: false
+    multiplex: false
+    footer: "Tecnologico de Monterrey"
+    logo: IN2004B_logo.png
+    css: style.css
+    slide-number: True
+
+
