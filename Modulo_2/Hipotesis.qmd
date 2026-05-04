@@ -292,13 +292,13 @@ Y si $\alpha = 0.01$ y el p valor es menor que $\alpha$, el resultado es estadí
 
 Los elementos de una prueba estadística son:
 
-1. Hipótesis nula, $H_0$.
+1.  Hipótesis nula, $H_0$.
 
-2. Hipótesis alternativa, $H_1$.
+2.  Hipótesis alternativa, $H_1$.
 
-3. Estadístico de prueba.
+3.  Estadístico de prueba.
 
-4. Región de rechazo.
+4.  Región de rechazo.
 
 # Pruebas de Muestras Pequeñas
 
@@ -321,7 +321,7 @@ Una bióloga estudia el peso corporal (en gramos) de cobayas al nacer. Ella reco
 La bióloga quiere probar la hipótesis de que el peso corporal medio es menor a 300 gramos. Técnicamente, quiere probar la hipótesis:
 
 ::: {style="text-align: center;"}
-$H_0: \mu = 300$  contra  $H_1: \mu < 300$
+$H_0: \mu = 300$ contra $H_1: \mu < 300$
 :::
 
 Donde $\mu$ es la media o promedio teórico de los pesos de todas las cobayas recien nacidas. Utiliza $\alpha = 0.05$.
@@ -401,8 +401,7 @@ $$\text{ME} = \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}}.$$
 
 La resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):
 
-R: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.
-B: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.
+R: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2. B: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.
 
 ¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?
 
