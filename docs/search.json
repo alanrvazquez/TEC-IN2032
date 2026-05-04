@@ -1,0 +1,1510 @@
+[
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#agenda",
+    "href": "Modulo_1/Discretas.slides.html#agenda",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nIntroducción\nDistribución de Bernoulli\nDistribución Binomial"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#variables-aleatorias-discretas",
+    "href": "Modulo_1/Discretas.slides.html#variables-aleatorias-discretas",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Variables Aleatorias Discretas",
+    "text": "Variables Aleatorias Discretas\n\nUna variable aleatoria es discreta si sólo puede asumir un número finito de valores distintos.\nPor ejemplo,\n\nEl número de bacterias por unidad de área.\nNúmero de piezas defectuosas en un envío de 100 piezas.\nEl número de personas que están de acuerdo en una encuesta."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#notación",
+    "href": "Modulo_1/Discretas.slides.html#notación",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Notación",
+    "text": "Notación\n\nEn lo que sigue, usaremos una letra mayúscula, como \\(Y\\), para indicar una variable aleatoria.\nUsaremos letras minúsculas, como \\(y\\), para indicar un valor particular de la variable aleatoria.\nLas expresiones \\(P(Y=y)\\) y \\(p(y)\\) denotan la probabilidad de que \\(Y\\) tome el valor \\(y\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#función-de-probabilidad",
+    "href": "Modulo_1/Discretas.slides.html#función-de-probabilidad",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Función de probabilidad",
+    "text": "Función de probabilidad\n\nLa descripción de los posibles valores de \\(Y\\) y las probabilidades de cada uno tiene un nombre: función de probabilidad.\nLa función de probabilidad de una variable aleatoria discreta \\(Y\\) es la función\n\\[p(y) = P(Y=y).\\]"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section",
+    "href": "Modulo_1/Discretas.slides.html#section",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "Para cualquier función de probabilidad, debe cumplirse lo siguiente:\n\n\\(0 \\leq p(y) \\leq 1\\) para todos los valores de \\(y\\).\n\\(\\sum_{y} p(y) = 1\\), donde la suma es sobre todos los valores posibles de \\(y\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1",
+    "href": "Modulo_1/Discretas.slides.html#ejemplo-1",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Ejemplo 1",
+    "text": "Ejemplo 1\n\nUn hospital es conocido por el injerto de derivación de arteria coronaria. Sea \\(Y\\) el número de estas cirugías realizadas en un día.\nLa siguiente tabla muestra la distribución de probabilidad de la variable aleatoria \\(Y\\).\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-1",
+    "href": "Modulo_1/Discretas.slides.html#section-1",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\nLa probabilidad de que se realicen 2 cirugías es \\(p(2) = 0.10\\) o 10%.\nLa probabilidad de que se realicen 5 cirugías es \\(p(5) = 0.50\\) o 50%.\nComo es una distribución de probabilidad, tenemos que \\(p(0) + p(1) + p(2) + p(3) + p(4) + p(5) = 1\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-2",
+    "href": "Modulo_1/Discretas.slides.html#section-2",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n¿Cuál es la probailidad de que se realicen 6 cirugías?\n\\(p(6) = 0\\) ya que no forma parte de la distribución de probabilidad."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#gráfica-de-probabilidad",
+    "href": "Modulo_1/Discretas.slides.html#gráfica-de-probabilidad",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Gráfica de probabilidad",
+    "text": "Gráfica de probabilidad\nMuestra las probabilidades para cada uno de los valores de una variable aleatoria."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#función-de-distribución-acumulativa",
+    "href": "Modulo_1/Discretas.slides.html#función-de-distribución-acumulativa",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Función de distribución acumulativa",
+    "text": "Función de distribución acumulativa\nLa función de probabilidad especifica la probabilidad de que una variable aleatoria sea igual a un valor dado.\nLa función de distribución acumulativa especifica la probabilidad de que una variable aleatoria sea menor o igual a un valor dado.\nLa función de distribución acumulativa de la variable \\(Y\\) es la función\n\\[F(y) = P(Y \\leq y).\\] ## Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\nLa probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:\n\\[P(Y \\leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.\\]"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#valor-esperado",
+    "href": "Modulo_1/Discretas.slides.html#valor-esperado",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Valor esperado",
+    "text": "Valor esperado\nEl promedio teórico o valor esperado de una variable discreta \\(Y\\) es igual a la suma de todos sus valores multiplicado por su probabilidad correspondiente. Técnicamente, el valor esperado de \\(Y\\) es\n\\[E(Y) = \\sum_{y} y p(y),\\]\ndonde la suma es sobre todos los posibles valores de \\(Y\\).\n\nEl valor esperado \\(E(Y)\\) es una constante."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.",
+    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Ejemplo 1 (cont.)",
+    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\nEl promedio teórico o numero esperado de cirugías en un día es:\n\n\\[E(Y) = 0\\times p(0) + 1\\times p(1) + 2\\times p(2) + 3\\times p(3) + 4\\times p(4) + 5\\times p(5) = 3.92\\]"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#varianza-y-desviación-estándar-teóricas",
+    "href": "Modulo_1/Discretas.slides.html#varianza-y-desviación-estándar-teóricas",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Varianza y desviación estándar teóricas",
+    "text": "Varianza y desviación estándar teóricas\nLa varianza teórica de una variable aleatoria \\((Y - E(Y))^2\\) es el valor esperado de \\((Y\\), donde \\(E(Y)\\) es el valor esperado de la variable aleatoria. Tecnicamente, la varianza de \\(Y\\) es\n\\[V(Y) = E\\left[ (Y - E(Y))^2 \\right] = \\sum_{y} (y - E(Y))^2 p(y).\\]\nLa desviación estándar de \\(Y\\) es la raíz cuadrada de \\(V(Y)\\).\n\nLa varianza y desviación estándar teóricas son constantes."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-1",
+    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-1",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Ejemplo 1 (cont.)",
+    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\nLa varianza del numero de cirugías en un día es:\n\n\\[V(Y) = \\sum_{y} (y - 3.92)^2 p(y) = (0 - 3.92)^2 \\times p(0) + (1 - 3.92)^2 \\times p(1) + \\cdots + (5 - 3.92)^2 \\times p(5) = 1.81\\]"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-3",
+    "href": "Modulo_1/Discretas.slides.html#section-3",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "La varianza es una medida de dispersión de los valores de \\(Y\\) alrededor de \\(E(Y)\\) donde se pondera la probabilidad de este valor."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#la-distribución-de-bernoulli",
+    "href": "Modulo_1/Discretas.slides.html#la-distribución-de-bernoulli",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "La distribución de Bernoulli",
+    "text": "La distribución de Bernoulli\nUsamos la distribución de Bernoulli cuando tenemos un experimento que tiene dos posibles resultados. Un resultado se denomina “éxito” y el otro resultado se denomina “fracaso”.\nLa probabilidad de éxito se denota por \\(p\\). La probabilidad de fracaso es entonces \\(1-p\\).\nUn experimento de este tipo se llama experimento de Bernoulli con probabilidad de éxito \\(p\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-2",
+    "href": "Modulo_1/Discretas.slides.html#ejemplo-2",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Ejemplo 2",
+    "text": "Ejemplo 2\n\nEl experimento Bernoulli más sencillo es lanzar una moneda al aire. Los dos resultados son cara y cruz. Si definimos cara como el resultado del éxito, entonces \\(p\\) es la probabilidad de que la moneda salga cara. Para una moneda justa, \\(p = 0.5\\).\nOtro experimento Bernoulli es la selección de un componente de una población de componentes, algunos de los cuales son defectuosos. Si definimos “éxito” como un componente defectuoso, entonces \\(p\\) es la proporción de componentes defectuosos en la población."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-4",
+    "href": "Modulo_1/Discretas.slides.html#section-4",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "Para un experimento Bernoulli, definimos la variable \\(Y\\) como sigue:\nSi el experimento resulta en “éxito”, entonces \\(Y=1\\). De lo contrario, \\(Y=0\\).\nEsto implica que \\(Y\\) es una variable aleatoria discreta con función de probabilidad \\(p(y)\\):\n\n\\(p(0) = P(Y = 0) = 1 - p.\\)\n\\(p(1) = P(Y = 1) = p.\\)\n\\(p(y) = 0\\) para cualquier otro valor de \\(y\\) diferente de 0 o 1."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#notación-1",
+    "href": "Modulo_1/Discretas.slides.html#notación-1",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Notación",
+    "text": "Notación\nSi la distribución de \\(Y\\) es la distribución de Bernoulli, decimos que “\\(Y\\) sigue una distribución de Bernoulli”.\nMatemáticamente, decimos \\(Y \\sim \\text{Bernoulli}(p)\\) donde el símbolo ‘\\(\\sim\\)’ se lee como ‘sigue’.\nEn esta notación, enfatizamos que la distribución de Bernoulli tiene un parámetro (constante) denotado por \\(p\\), que representa la probabilidad de éxito."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#media-y-varianza",
+    "href": "Modulo_1/Discretas.slides.html#media-y-varianza",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Media y varianza",
+    "text": "Media y varianza\n\nSi \\(Y \\sim \\text{Bernoulli}(p)\\), entonces\n\nEl promedio teórico de \\(Y\\) es \\(p\\).\nLa varianza teórica de \\(Y\\) es \\(p(1-p)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#motivación",
+    "href": "Modulo_1/Discretas.slides.html#motivación",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Motivación",
+    "text": "Motivación\nUn ejemplo de un experimento Bernoulli es tomar muestras de un solo componente de un lote y determinar si está defectuoso.\n\nEn la práctica, podríamos tomar muestras de varios componentes de un lote muy grande y contar el número de defectuosos entre ellos.\nEsto equivale a realizar varios experimentos Bernoulli independientes y contar el número de éxitos.\nEl número de éxitos es entonces una variable aleatoria, que se dice que tiene una distribución binomial."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-5",
+    "href": "Modulo_1/Discretas.slides.html#section-5",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "\\(Y\\) tiene la distribución binomial con parámetros \\(n\\) y \\(p\\), si:\n\nSe realizan un total de \\(n\\) experimentos de Bernoulli.\nLos experimentos son independientes.\nCada experimento tiene la misma probabilidad de éxito \\(p\\).\n\\(Y\\) es el número de éxitos en los \\(n\\) experimentos.\n\nEn este caso, \\(Y\\sim\\text{Bin}(n,p)\\) donde \\(n\\) y \\(p\\) son los parámetros (constantes) de la distribución."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#la-distribución-binomial",
+    "href": "Modulo_1/Discretas.slides.html#la-distribución-binomial",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "La distribución binomial",
+    "text": "La distribución binomial\n\nSi \\(Y\\sim\\text{Bin}(n,p)\\), la función de probabilidad \\(Y\\) es\n\\(P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y},\\)\ndonde \\(y = 0, 1, \\ldots, n\\) y \\(0 \\leq p \\leq 1\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#elementos",
+    "href": "Modulo_1/Discretas.slides.html#elementos",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Elementos",
+    "text": "Elementos\n\n\\(P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y},\\)\n\n\\(p^y\\): Probabilidad de \\(y\\) éxitos.\n\\({n \\choose y}\\): Numero de posibles combinaciones de \\(y\\) exitos en \\(n\\) experimentos Bernoulli.\n\\((1 -p)^{n -y}\\): Probabilidad de que los otros \\(n-y\\) experimentos sean fracasos."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-6",
+    "href": "Modulo_1/Discretas.slides.html#section-6",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "Si \\(Y\\sim\\text{Bin}(n,p)\\), tenemos que\n\nEl promedio teórico de \\(Y\\) es \\(np\\).\nLa varianza teórica de \\(Y\\) es \\(np(1-p)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-7",
+    "href": "Modulo_1/Discretas.slides.html#section-7",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "Debemos de pensar en \\(\\text{Bin}(n,p)\\) como una familia de distribuciones.\nCada miembro de esa familia tiene una combinación de valores para los parámetros \\(n\\) y \\(p\\).\nCada miembro tiene una función de probabilidad diferente."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#calculo-de-probabilidades-en-python",
+    "href": "Modulo_1/Discretas.slides.html#calculo-de-probabilidades-en-python",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Calculo de probabilidades en Python",
+    "text": "Calculo de probabilidades en Python"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-8",
+    "href": "Modulo_1/Discretas.slides.html#section-8",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "Una variable aleatoria binomial se puede expresar como una suma de variables aleatorias de Bernoulli:\n\nSupongamos que se realizan \\(n\\) experimentos independientes de Bernoulli.\nCada experimento tiene probabilidad de éxito \\(p\\).\nConsidera las variables \\(Y_1, \\ldots, Y_n\\) donde \\(Y_i = 1\\) si el resultado del i-ésimo experimento es éxito, y \\(Y_i = 0\\) de otro modo. Es decir \\(Y_i \\sim \\text{Bernoulli}(p)\\).\nAhora, considera la suma del número de éxitos entre los \\(n\\) experimentos \\(X = Y_1 + \\cdots + Y_n\\).\nEntonces, \\(X \\sim \\text{Bin}(n,p)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#pregunta-de-práctica-para-examen",
+    "href": "Modulo_1/Discretas.slides.html#pregunta-de-práctica-para-examen",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Pregunta de práctica para examen",
+    "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#agenda",
+    "href": "Modulo_1/Introduccion.slides.html#agenda",
+    "title": "Introducción a la Estadística",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nIntroducción\nMuestreo\nExperimentos y estudios observacionales\nResumenes estadísticos"
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#por-qué-la-estadística",
+    "href": "Modulo_1/Introduccion.slides.html#por-qué-la-estadística",
+    "title": "Introducción a la Estadística",
+    "section": "¿Por qué la estadística?",
+    "text": "¿Por qué la estadística?\n\n\nHacer frente a la incertidumbre en mediciones científicas repetidas.\nSacar conclusiones confiables de los datos.\nDiseñar experimentos válidos y sacar conclusiones fiables.\nConstruir modelos o algoritmos para predecir eventos futuros.\nSer un miembro bien informado de la sociedad."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#ejemplo-1",
+    "href": "Modulo_1/Introduccion.slides.html#ejemplo-1",
+    "title": "Introducción a la Estadística",
+    "section": "Ejemplo 1",
+    "text": "Ejemplo 1\n\n\nUna máquina fabrica varillas de acero para usar en dispositivos de almacenamiento óptico.\nLa especificación para el diámetro de las varillas es 0.45 ± 0.02 cm.\nDurante la última hora, la máquina ha fabricado 1000 varillas."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#section",
+    "href": "Modulo_1/Introduccion.slides.html#section",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "El ingeniero de calidad quiere saber aproximadamente cuántas de estas varillas cumplen con la especificación.\n¡Pero no tiene tiempo para medir las 1000 varillas!"
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#section-1",
+    "href": "Modulo_1/Introduccion.slides.html#section-1",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "Solución: tomar una muestra aleatoria de 50 varillas y medirlas.\nAl hacer esto, el ingeniero descubre que 46 de ellas (92%) cumplen con la especificación de diámetro."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#sin-embargo",
+    "href": "Modulo_1/Introduccion.slides.html#sin-embargo",
+    "title": "Introducción a la Estadística",
+    "section": "Sin embargo",
+    "text": "Sin embargo\n\n\nEs poco probable que la muestra de 50 barras represente perfectamente a la población de 1000.\nEs probable que la proporción de varillas buenas en la población difiera algo de la proporción de la muestra."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#section-2",
+    "href": "Modulo_1/Introduccion.slides.html#section-2",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemplo:\n\n¿Qué intervalo da una buena estimación del porcentaje de varillas aceptables en la población con certeza razonable?\n¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?\n\n¡La estadística nos ayuda contestar preguntas como éstas!"
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#muestreo-1",
+    "href": "Modulo_1/Introduccion.slides.html#muestreo-1",
+    "title": "Introducción a la Estadística",
+    "section": "Muestreo",
+    "text": "Muestreo\nConceptos importantes preliminares:\n\nUna población es la colección completa de objetos o resultados sobre los cuales se busca información.\nUna muestra es un subconjunto de una población que contiene los objetos o resultados que realmente se observan.\nUna muestra aleatoria simple (MAS) de tamaño \\(n\\) es una muestra elegida mediante un método en el que cada colección de \\(n\\) elementos de la población tiene la misma probabilidad de constituir la muestra, tal como en la lotería."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#ejemplo-2",
+    "href": "Modulo_1/Introduccion.slides.html#ejemplo-2",
+    "title": "Introducción a la Estadística",
+    "section": "Ejemplo 2",
+    "text": "Ejemplo 2\nEn una universidad grande, una profesora está interesado en la altura promedio de los estudiantes de la universidad.\nObtiene una lista de los 50,000 estudiantes matriculados en la universidad y asigna un número a cada estudiante.\nElla utiliza un generador de números aleatorios por computadora para generar 100 números enteros aleatorios entre 1 y 50,000, y los estudiantes correspondientes a esos números son seleccionados para medir su altura.\nEsta es una muestra aleatoria simple."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#variación-muestral",
+    "href": "Modulo_1/Introduccion.slides.html#variación-muestral",
+    "title": "Introducción a la Estadística",
+    "section": "Variación muestral",
+    "text": "Variación muestral\n\nNo se garantiza que una muestra aleatoria simple (MAS) refleje perfectamente la población.\nLas MAS siempre difieren en algunos aspectos entre sí; ocasionalmente una muestra es sustancialmente diferente de la población.\nDos muestras diferentes de la misma población también variarán entre sí.\nEste fenómeno se conoce como variación muestral."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#de-regreso-al-ejemplo-1",
+    "href": "Modulo_1/Introduccion.slides.html#de-regreso-al-ejemplo-1",
+    "title": "Introducción a la Estadística",
+    "section": "De regreso al Ejemplo 1",
+    "text": "De regreso al Ejemplo 1\n\nEn la muestra que recopiló el ingeniero, el 92% cumplía con las especificaciones.\nDe la población de 1000 barras, es poco probable que exactamente el 92% cumpla con las especificaciones.\nDebido a la variación del muestreo, es más realista pensar que la verdadera proporción de varillas que cumplen con las especificaciones será cercana a la proporción de la muestra, o 92%."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#población-conceptual",
+    "href": "Modulo_1/Introduccion.slides.html#población-conceptual",
+    "title": "Introducción a la Estadística",
+    "section": "Población conceptual",
+    "text": "Población conceptual\n\nUna población conceptual consta de todos los valores que posiblemente podrían haberse observado en una población.\nPor ejemplo, un geólogo pesa una roca varias veces en una balanza sensible. Cada vez, la báscula da una lectura ligeramente diferente.\nAquí la población es conceptual. Consta de todas las lecturas que, en principio, la báscula podría producir."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#independencia",
+    "href": "Modulo_1/Introduccion.slides.html#independencia",
+    "title": "Introducción a la Estadística",
+    "section": "Independencia",
+    "text": "Independencia\nSe dice que los elementos de una muestra son independientes si conocer los valores de algunos de ellos no ayuda a predecir los valores de los demás.\nLos elementos de una muestra aleatoria simple pueden tratarse como independientes en la mayoría de los casos encontrados en la práctica.\nUna excepción ocurre cuando la población es finita y la muestra comprende una fracción sustancial (más del 5%) de la población."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#estudios-observacionales",
+    "href": "Modulo_1/Introduccion.slides.html#estudios-observacionales",
+    "title": "Introducción a la Estadística",
+    "section": "Estudios observacionales",
+    "text": "Estudios observacionales\nUn estudio observacional es aquel en el que el científico simplemente observa un fenómeno y registra datos, sin tener ningún control sobre el fenómeno.\nLos estudios observacionales son valiosos para descubrir tendencias y posibles asociaciones.\nSin embargo, ¡no son tan buenos como los experimentos controlados para obtener conclusiones confiables sobre causa-y-efecto!"
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#experimentos-controlados",
+    "href": "Modulo_1/Introduccion.slides.html#experimentos-controlados",
+    "title": "Introducción a la Estadística",
+    "section": "Experimentos controlados",
+    "text": "Experimentos controlados\nUn experimento controlado es aquel en el que el científico tiene un grado de control sobre el fenómeno tal que le permite recolectar datos sobre el mismo de una manera estructurada.\nSe pueden utilizar muchos tipos de experimentos para generar datos:\n\nLos experimentos de una muestra involucran solo una población de interés y de ella se extrae una única muestra.\nLos experimentos de muestras múltiples involucran dos o más poblaciones de interés y se extrae una sola muestra de cada población.\n\nLos experimentos controlados permiten establecer relaciones de causa-y-efecto."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#tipos-de-datos-i",
+    "href": "Modulo_1/Introduccion.slides.html#tipos-de-datos-i",
+    "title": "Introducción a la Estadística",
+    "section": "Tipos de datos I",
+    "text": "Tipos de datos I\n\nCuando se asigna una cantidad numérica que designa cuánto o cuántos a cada elemento de la muestra, el conjunto de valores resultante es numérico o cuantitativo.\n\nAltura (en centímetros).\nPeso (en kilogramos).\nEdad (en años)."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#tipos-de-datos-ii",
+    "href": "Modulo_1/Introduccion.slides.html#tipos-de-datos-ii",
+    "title": "Introducción a la Estadística",
+    "section": "Tipos de datos II",
+    "text": "Tipos de datos II\nCuando los elementos de muestra se colocan en categorías y se asignan nombres de categorías a los elementos de muestra, los datos son categóricos o cualitativos.\n\nColor de cabello.\nPaís de origen.\nCódigo postal."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#resúmenes-estadísticos",
+    "href": "Modulo_1/Introduccion.slides.html#resúmenes-estadísticos",
+    "title": "Introducción a la Estadística",
+    "section": "Resúmenes estadísticos",
+    "text": "Resúmenes estadísticos\n\nUna muestra suele ser una larga lista de números. Para ayudar a resaltar las características importantes de una muestra, calculamos estadísticas resumidas.\nPara datos numéricos, las estadísticas resumidas más populares son:\n\nMuestra promedio.\nVariación de la muestra.\nDesviación estándar muestral."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#media-muestral",
+    "href": "Modulo_1/Introduccion.slides.html#media-muestral",
+    "title": "Introducción a la Estadística",
+    "section": "Media muestral",
+    "text": "Media muestral\n\nDenotemos \\(y_1, y_2, \\ldots, y_n\\) observaciones como \\(n\\). La media muestral (promedio) es:\n\\[\\bar{y} = \\frac{1}{n}\\sum_{i=1}^{n} y_i = \\frac{y_1+y_2+\\cdots+y_n}{n}.\\]\nLa media muestral indica el centro de los datos."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#varianza-muestral",
+    "href": "Modulo_1/Introduccion.slides.html#varianza-muestral",
+    "title": "Introducción a la Estadística",
+    "section": "Varianza muestral",
+    "text": "Varianza muestral\n\nDenotemos \\(y_1, y_2, \\ldots, y_n\\) observaciones como \\(n\\). La varianza muestral es:\n\\[s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2 = \\frac{1}{n-1} \\left( (y_1 - \\bar{y})^2 + (y_2 - \\bar{y})^2 +\\cdots + (y_n - \\bar{y})^2\\right).\\]\nLa varianza muestral es como un promedio de las diferencias al cuadrado entre cada observación y la media muestral. Da una indicación de cuán dispersos están los datos."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#desviación-estándar-muestral",
+    "href": "Modulo_1/Introduccion.slides.html#desviación-estándar-muestral",
+    "title": "Introducción a la Estadística",
+    "section": "Desviación estándar muestral",
+    "text": "Desviación estándar muestral\n[Un inconveniente de la varianza muestral es que no está en la misma escala que las observaciones reales.]{style = “color: darkred”} Esto se debe a que las diferencias entre cada observación y la media muestral se elevan al cuadrado.\nPara obtener una medida de dispersión cuyas unidades sean las mismas que las de la muestra, simplemente tomamos la raíz cuadrada de la varianza muestral.\n\\[s =\\sqrt{\\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2}.\\]\nEsta cantidad se conoce como desviación estándar muestral."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#estadísticas-muestrales-y-parámetros-de-población",
+    "href": "Modulo_1/Introduccion.slides.html#estadísticas-muestrales-y-parámetros-de-población",
+    "title": "Introducción a la Estadística",
+    "section": "Estadísticas muestrales y parámetros de población",
+    "text": "Estadísticas muestrales y parámetros de población\n\nCada estadística de muestra aquí tiene una contraparte de parámetro poblacional.\nLos resúmenes numéricos de una muestra se llaman [estadísticas]{style = “color: darkblue”}.\nLos resúmenes numéricos o características de una población se denominan [parámetros]{style = “color: darkgreen”}."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#section-3",
+    "href": "Modulo_1/Introduccion.slides.html#section-3",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "Para la población:\n\nLa media es \\(\\mu\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nPara la muestra:\n\nLa media (promedio) es \\(\\bar{y}\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nUno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#resumen-estadistico-de-variables-categoricas",
+    "href": "Modulo_1/Introduccion.slides.html#resumen-estadistico-de-variables-categoricas",
+    "title": "Introducción a la Estadística",
+    "section": "Resumen estadistico de variables categoricas",
+    "text": "Resumen estadistico de variables categoricas\nLos dos resúmenes numéricos más utilizados para datos categóricos son las frecuencias y las proporciones muestrales (a veces llamadas frecuencias relativas).\n\nLa frecuencia de una categoría determinada es simplemente la cantidad de elementos de muestra que caen en esa categoría.\nLa proporción muestral es la frecuencia dividida por el tamaño de la muestra."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#preguntas-de-práctica-para-examen",
+    "href": "Modulo_1/Introduccion.slides.html#preguntas-de-práctica-para-examen",
+    "title": "Introducción a la Estadística",
+    "section": "Preguntas de práctica para examen",
+    "text": "Preguntas de práctica para examen\n\n\nExplica la variación muestral.\nDefine el concepto de independencia.\n¿Qué es la desviación estándar? ¿Cómo se calcula?"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#agenda",
+    "href": "Modulo_2/Intervalos.slides.html#agenda",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nIntroducción\nEstimadores de intervalos\nIntervalos de confianza para la diferencia de medias"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#introducción-1",
+    "href": "Modulo_2/Intervalos.slides.html#introducción-1",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Introducción",
+    "text": "Introducción\n\nEl objetivo de la estadística es utilizar la información contenida en una muestra para hacer inferencias sobre la población o distribución de la que se toma la muestra.\n\nDebido a que las distribuciones se caracterizan por sus parámetros, el objetivo de muchas investigaciones estadísticas es estimar el valor de uno o más parámetros relevantes."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#por-ejemplo",
+    "href": "Modulo_2/Intervalos.slides.html#por-ejemplo",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Por ejemplo …",
+    "text": "Por ejemplo …\nProblema 1: Estimar el peso promedio de un componente electrónico para ver si cumple con especificaciones de calidad.\nSolución:\n\nSuponemos que el peso de los componentes sigue una distribución \\(N(\\mu, \\sigma^2)\\). Entonces, \\(\\mu\\) es el verdadero peso promedio de todos los componentes que pueden existir.\nRecolectamos una muestra de pesos de \\(n\\) componentes seleccionados al azar. Los pesos son observaciones (de variables aleatorias): \\(y_1, y_2, \\ldots, y_n\\).\nLuego, usamos la muestra para estimar el peso promedio \\(\\mu\\) (o incluso \\(\\sigma^2\\))."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section",
+    "href": "Modulo_2/Intervalos.slides.html#section",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Problema 2: Calcular la proporción de componentes electrónicos que fallan.\nSolución:\n\nSuponemos que la proporción de componentes electrónicos que fallan sigue una distribución \\(\\text{Bin}(n, p)\\). Entonces, \\(p\\) es la verdadera proporción de que componentes que fallan de entre todos los componentes que se pueden producir.\nProbamos \\(n\\) componentes seleccionados al azar y vemos si fallan o no. Las fallas de los componentes son observaciones de variables aleatorias Bernoulli: \\(y_1, y_2, \\ldots, y_n\\), donde \\(y_i = 1\\) si el i-ésimo componente falló y \\(y_i = 0\\) si no falló.\nLuego, usamos la muestra para estimar \\(p\\)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#tipos-de-estimadores",
+    "href": "Modulo_2/Intervalos.slides.html#tipos-de-estimadores",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Tipos de estimadores",
+    "text": "Tipos de estimadores\n\nUn estimador es una función de la muestra que provee información sobre un parametro de una distribución.\nHay dos tipos de estimadores:\n\nEstimador Puntual: Un resúmen estadístico de la muestra.\nEstimador de Intervalo: Un par de cantidades \\(L\\) and \\(U\\) calculadas sobre una muestra donde \\(L \\leq U\\)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#aplicación",
+    "href": "Modulo_2/Intervalos.slides.html#aplicación",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Aplicación",
+    "text": "Aplicación\nSupongamos que deseamos estimar el tiempo promedio de ensamblaje por unidad \\(\\mu\\) de una nueva máquina de ensamble automatizada en una línea de producción. Esta métrica es fundamental para evaluar la eficiencia del proceso y planificar la capacidad de producción.\nSupongamos que hemos observado una muestra aleatoria de 10 unidades producidas por esta máquina, \\(y_1, y_2, \\ldots, y_{10}\\).\nPodemos utilizar la muestra aleatoria para construir dos estimaciones:\n\nEstimación puntual: un solo número que es 42.8 segundos por unidad.\nEstimación de intervalo: El intervalo (40.2, 45.4) segundos que tiene una alta “confianza” de incluir el valor verdadero de \\(\\mu\\)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#estimador-de-intervalo",
+    "href": "Modulo_2/Intervalos.slides.html#estimador-de-intervalo",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Estimador de intervalo",
+    "text": "Estimador de intervalo\n\nUn estimador de intervalo es un método para utilizar las observaciones de la muestra para calcular dos números que forman los puntos finales de un intervalo.\nIdealmente, el intervalo tiene dos propiedades:\n\nContiene el parámetro bajo estudio \\(\\mu\\).\nEs relativamente pequeño.\n\nLos estimadores de intervalos se denominan comúnmente intervalos de confianza."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#estructura-de-los-estimadores-de-intervalo",
+    "href": "Modulo_2/Intervalos.slides.html#estructura-de-los-estimadores-de-intervalo",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Estructura de los estimadores de intervalo",
+    "text": "Estructura de los estimadores de intervalo\nLos estimadores de intervalo tienen la forma \\([L,U]\\) o \\(L \\leq \\mu \\leq U\\); donde:\n\n\\(L\\) es el límite de confianza inferior.\n\\(U\\) es el límite de confianza superior.\n\nTécnicamente, \\(L\\) y \\(U\\) son variables aleatorias porque son funciones de la muestra aleatoria."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-para-la-media",
+    "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-para-la-media",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Intervalo de confianza para la media",
+    "text": "Intervalo de confianza para la media\nConsidera una muestra pequeña de observaciones \\(y_1, \\ldots, y_n\\), donde se asume que se obtuvieron de una distribución \\(N(\\mu, \\sigma^2)\\). Un intervalo de confianza para \\(\\mu\\) es\n\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right],\\]\n\n\\(\\bar{y} = \\frac{1}{n}\\sum_{i=1}^n y_i\\) es la media muestral donde \\(n\\) es el numero de observaciones.\n\\(s =\\sqrt{\\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2}\\) es la desviación estándar muestral.\n\\(t_{n-1, \\alpha/2}\\) es un percentil de la distribución \\(t\\)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#la-distribución-t",
+    "href": "Modulo_2/Intervalos.slides.html#la-distribución-t",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "La distribución \\(t\\)",
+    "text": "La distribución \\(t\\)\n\n\nLa distribución \\(t\\) es una distribución de probabilidad que surge en el contexto de la inferencia estadística.\nSus características principales:\n\nTiene forma de campana.\nSu forma depende un parametro \\(\\nu\\) llamado “grados de libertad”.\nCuando el valor de este parámetro es muy grande, la distribución \\(t\\) converge a la \\(N(0,1)\\).\n\n\n\n\n\n\n\nhttps://en.wikipedia.org/wiki/Student%27s_t-distribution"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#percentiles-de-una-distribución-t",
+    "href": "Modulo_2/Intervalos.slides.html#percentiles-de-una-distribución-t",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Percentiles de una distribución \\(t\\)",
+    "text": "Percentiles de una distribución \\(t\\)"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#como-seleccionamos-el-valor-de-alpha",
+    "href": "Modulo_2/Intervalos.slides.html#como-seleccionamos-el-valor-de-alpha",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "¿Como seleccionamos el valor de \\(\\alpha\\)?",
+    "text": "¿Como seleccionamos el valor de \\(\\alpha\\)?\n\n\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right]\\]\nEl valor de \\(1-\\alpha\\) define el nivel de confianza (o cobertura) del intervalo de confianza.\nUsualmente, el valor de \\(\\alpha\\) es 0.1, 0.05, o 0.01, lo cual resulta en intervalos con un nivel de confianza de 90%, 95%, y 99%, respectivamente."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#interpretación-de-un-ic",
+    "href": "Modulo_2/Intervalos.slides.html#interpretación-de-un-ic",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Interpretación de un IC",
+    "text": "Interpretación de un IC\nDebido a que \\(L\\) y \\(U\\) son aleatorios, un intervalo de confianza debe de tener una alta probabilidad de covertura de contener el valor verdadero de \\(\\mu\\).\nMatemáticamente, expresamos esto como\n\\[P\\left(\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\leq \\mu \\leq  \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right) = 1 - \\alpha,\\]\nDonde la probailidad \\((1-\\alpha)\\) es el nivel de confianza.\nInterpretación: Si, en el muestreo aleatorio repetido, construimos muchos intervalos de confianza \\([L, U]\\), \\(100(1-\\alpha)\\)% de ellos incluirán el verdadero valor de \\(\\mu\\)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#más-sobre-niveles-de-confianza",
+    "href": "Modulo_2/Intervalos.slides.html#más-sobre-niveles-de-confianza",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Más sobre niveles de confianza",
+    "text": "Más sobre niveles de confianza\n\nEl nivel de confianza de un intervalo mide la confiabilidad del método utilizado para calcular el intervalo.\nUn nivel confianza \\(100(1-\\alpha)\\%\\) es aquel calculado mediante un método que a largo plazo logrará cubrir la media poblacional una proporción \\(1-\\alpha\\) de todas las veces que se utiliza.\nEn la práctica, debemos de fijar el valor de \\(\\alpha\\). Entre más pequeño el valor de \\(\\alpha\\), más grande la confianza y el tamaño del intervalo.\nLos intervalos con mayor confianza son menos precisos."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#ejemplo-1",
+    "href": "Modulo_2/Intervalos.slides.html#ejemplo-1",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Ejemplo 1",
+    "text": "Ejemplo 1\nUn modelo de transferencia de calor desde un cilindro sumergido en un líquido predice que el coeficiente de transferencia de calor del cilindro se volverá constante a caudales de fluido muy bajos. Se toma una muestra de 10 medidas. Los resultados, en ￼, son\n13.7, 12.0, 13.1, 14.1, 13.1, 14.1, 14.4, 12.2, 11.9, 11.8\nEncuentra un intervalo de confianza del 95% para el coeficiente de transferencia de calor."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#ejemplo-2",
+    "href": "Modulo_2/Intervalos.slides.html#ejemplo-2",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Ejemplo 2",
+    "text": "Ejemplo 2\n\n\nUna ingeniera investiga la temperatura de deflexión bajo carga de dos tipos diferentes de tubos de plástico.\nLa ingeniera tomó una muestra de 15 ejemplares de cada uno de los dos tipos de tubos.\nElla midió las temperaturas observadas para los 30 tubos en grados Farenheit."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-1",
+    "href": "Modulo_2/Intervalos.slides.html#section-1",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "La ingeniera quiere investigar la diferencia entre la temperatura promedio de los dos tubos.\nEs decir, le interesa saber \\(\\mu_2 - \\mu_1\\) donde \\(\\mu_1\\) y \\(\\mu_2\\) es la temperatura promedio del tubo tipo 1 y 2, respectivamente."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-2",
+    "href": "Modulo_2/Intervalos.slides.html#section-2",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Si \\(\\mu_2 - \\mu_1 &gt; 0\\), entonces el tubo de tipo 2 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 1.\nSi \\(\\mu_2 - \\mu_1 &lt; 0\\), entonces el tubo de tipo 1 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 2.\nSi \\(\\mu_2 - \\mu_1 = 0\\), entonces los tubos de tipo 1 y 2 tienen la misma temperatura promedio de deflexión."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#cómo-podemos-estimar-el-valor-de-mu_2---mu_1",
+    "href": "Modulo_2/Intervalos.slides.html#cómo-podemos-estimar-el-valor-de-mu_2---mu_1",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "¿Cómo podemos estimar el valor de \\(\\mu_2 - \\mu_1\\)?",
+    "text": "¿Cómo podemos estimar el valor de \\(\\mu_2 - \\mu_1\\)?\n\nUtilizando un intervalo de confianza sobre \\(\\mu_2 - \\mu_1\\).\nSi el intervalo de confianza contiene puros valores positivos, entonces tenemos una gran confianza que \\(\\mu_2 - \\mu_1 &gt; 0\\).\nSi el intervalo de confianza contiene puros valores negativos, entonces tenemos una gran confianza que \\(\\mu_2 - \\mu_1 &lt; 0\\).\nSi el intervalo de confianza contiene valores positivos y negativos, entonces no podemos asegurar que \\(\\mu_2 - \\mu_1 &gt; 0\\) o \\(\\mu_2 - \\mu_1 &lt; 0\\). En este caso, podriamos considerar que \\(\\mu_2 - \\mu_1 = 0\\)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#ic-para-la-diferencia-de-dos-medias",
+    "href": "Modulo_2/Intervalos.slides.html#ic-para-la-diferencia-de-dos-medias",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "IC para la diferencia de dos medias",
+    "text": "IC para la diferencia de dos medias\n\nRecuerda que si la muestra aleatoria \\(Y_1, \\ldots, Y_{n_y}\\) sigue una distribución \\(N(\\mu_y, \\sigma_{y}^2)\\), entonces \\(\\bar{Y} \\sim N\\left(\\mu_y, \\frac{\\sigma_{y}^2}{n_y}\\right)\\).\nAdemás, si la muestra aleatoria \\(X_1, \\ldots, X_{n_x}\\) sigue una distribución \\(N(\\mu_x, \\sigma_{x}^2)\\), entonces \\(\\bar{X} \\sim N\\left(\\mu_x, \\frac{\\sigma_{x}^2}{n_x}\\right)\\)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#el-esquema",
+    "href": "Modulo_2/Intervalos.slides.html#el-esquema",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "El esquema",
+    "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-3",
+    "href": "Modulo_2/Intervalos.slides.html#section-3",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-4",
+    "href": "Modulo_2/Intervalos.slides.html#section-4",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Si las dos muestras son independientes, entonces un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\\[\\left[ (\\bar{y} - \\bar{x}) - \\text{ME}, (\\bar{y} - \\bar{x}) + \\text{ME} \\right] \\]\ndonde ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#si-las-distribuciones-tienen-la-misma-varianza",
+    "href": "Modulo_2/Intervalos.slides.html#si-las-distribuciones-tienen-la-misma-varianza",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Si las distribuciones tienen la misma varianza",
+    "text": "Si las distribuciones tienen la misma varianza\nSi las distribuciones tienen la misma varianza, entonces un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\\[\\left[ (\\bar{y} - \\bar{x}) - t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p\\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}}, \\; (\\bar{y} - \\bar{x}) + t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p \\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}} \\right].\\]\nLa cantidad \\(s_p\\) se llama desviación estándar agrupada\n\\[s_p = \\sqrt{ \\frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} }.\\]"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#si-las-distribuciones-tienen-diferentes-varianzas",
+    "href": "Modulo_2/Intervalos.slides.html#si-las-distribuciones-tienen-diferentes-varianzas",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Si las distribuciones tienen diferentes varianzas",
+    "text": "Si las distribuciones tienen diferentes varianzas\nSi las distribuciones tienen differentes varianzas, entonces un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\\[\\left[(\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}}, \\; (\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}} \\right].\\]\ndonde el número de grados de libertad viene dado por el valor \\(\\nu = \\frac{\\left( \\frac{s_y^2}{n_y} + \\frac{s_x^2}{n_x} \\right)^2 }{ \\frac{ \\left(s_{y}^2/n_y\\right)^2}{n_y - 1} + \\frac{ \\left (s_{x}^2/n_x \\right)^2}{n_x - 1} }\\) (redondeado al número entero más cercano)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#en-python",
+    "href": "Modulo_2/Intervalos.slides.html#en-python",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "En Python",
+    "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#no-asumas-que-las-varianzas-son-iguales",
+    "href": "Modulo_2/Intervalos.slides.html#no-asumas-que-las-varianzas-son-iguales",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "No asumas que las varianzas son iguales…",
+    "text": "No asumas que las varianzas son iguales…\n\n\nEl supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.\nEl método puede resultar poco fiable si se utiliza cuando las varianzas teóricas no son iguales.\nComo normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-5",
+    "href": "Modulo_2/Intervalos.slides.html#section-5",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Cuando las varianzas de la muestra son casi iguales, es tentador suponer que las varianzas de la población también lo son.\nSin embargo, con tamaños de muestra pequeños, las varianzas de la muestra pueden no aproximarse bien a las varianzas teóricas de la distribución.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#preguntas-de-práctica-para-examen",
+    "href": "Modulo_2/Intervalos.slides.html#preguntas-de-práctica-para-examen",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Preguntas de práctica para examen",
+    "text": "Preguntas de práctica para examen\n\nLa resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):\n\nR: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.\nB: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.\n\nEncuentra un intervalo de confianza del 98% para la diferencia entre las resistencias medias a la rotura de los ejes de palos de hockey fabricados con los dos materiales."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#agenda",
+    "href": "Modulo_3/Monitoreo.slides.html#agenda",
+    "title": "Monitoreo de Procesos",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nControl de Calidad: Conceptos Básicos y Herramientas\nIntroducción a las Gráficas de Control\nTipos de Gráficas de Control\n\nGráficas para variables numéricas\nGráficas para variables categóricas"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#control-de-calidad-conceptos-básicos-y-herramientas",
+    "href": "Modulo_3/Monitoreo.slides.html#control-de-calidad-conceptos-básicos-y-herramientas",
+    "title": "Monitoreo de Procesos",
+    "section": "Control de Calidad: Conceptos básicos y herramientas",
+    "text": "Control de Calidad: Conceptos básicos y herramientas\n\nEl control de calidad es un conjunto de herramientas estadísticas para el mejoramiento de calidad.\nEl mejoramiento de calidad significa eliminar el desperdicio sitemáticamente.\nPara lograr esto, podemos\n\nReducir la variabilidad del proceso de producción.\nEliminar los defectos de la unidad producida."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#monitoreo-estadístico-de-procesos",
+    "href": "Modulo_3/Monitoreo.slides.html#monitoreo-estadístico-de-procesos",
+    "title": "Monitoreo de Procesos",
+    "section": "Monitoreo Estadístico de Procesos",
+    "text": "Monitoreo Estadístico de Procesos\nUno de los métodos más importantes en el control de calidad es el monitoreo estadístico de procesos (MEP).\n\n\nLa motivación del MEP es que no es práctico inspeccionar la calidad dentro de un producto: el producto debe de hacerse correctamente la primera vez.\nEntonces el proceso de fabricación debe de ser estable y tener la capacidad de operar con poca variabilidad.\nEl monitoreo se realiza tomando muestras de la unidad de producción y midiendo alguna característica de calidad.\n\n\n\nEl MEP es una herramienta para reducir la variabilidad de un proceso sistemáticamente."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#tipos-de-variabilidad",
+    "href": "Modulo_3/Monitoreo.slides.html#tipos-de-variabilidad",
+    "title": "Monitoreo de Procesos",
+    "section": "Tipos de variabilidad",
+    "text": "Tipos de variabilidad\n\nEn cualquier proceso de producción, sin importar lo bien diseñado que esté o la atención que se preste a su mantenimiento, siempre existirá cierta variabilidad natural o inherente.\nA esta variabilidad natural es debido a causas aleatorias del proceso, las cuales son una parte inherente del proceso."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section",
+    "href": "Modulo_3/Monitoreo.slides.html#section",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Por ejemplo\n\nFluctuaciones pequeñas en un proceso de manufactura, variaciones pequeñas en tiempos de entrega, o variaciones pequeñas en el peso de dos productos idénticos. Todo esto debido a factores naturales o esperados.\n\nUn proceso está bajo control estadístico cuando opera únicamente en presencia de causas aleatorias de variación."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-1",
+    "href": "Modulo_3/Monitoreo.slides.html#section-1",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Existen otro tipo de variabilidad que pueden estar presente en la producción de un proceso. Esta variabilidad es ocasionada por causas asignables.\nEjemplos de causas asignables son:\n\nMáquinas mal calibradas\nErrores del operador en el proceso\nMaterias primas defectuosas\n\nCuando la variabilidad debido a causas asignables es mayor que la variabilidad natural, se dice que el proceso no está bajo control. Es decir, el proceso tiene un nivel inaceptable de desempeño."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#herramientas-del-mep",
+    "href": "Modulo_3/Monitoreo.slides.html#herramientas-del-mep",
+    "title": "Monitoreo de Procesos",
+    "section": "Herramientas del MEP",
+    "text": "Herramientas del MEP\n\nEl objetivo del MEP es detectar con rapidez la presencia de causas asignables del proceso, para que pueda hacerse la investigación del proceso y aplicarse las acciones correctivas antes de que se fabriquen muchas unidades no conformes.\n\nLa gráfica de control es una técnica de monitoreo en linea para este fin. Es una de las 7 herramientas básicas de calidad."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-2",
+    "href": "Modulo_3/Monitoreo.slides.html#section-2",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "https://asq.org/quality-resources/seven-basic-quality-tools"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráficas-de-control",
+    "href": "Modulo_3/Monitoreo.slides.html#gráficas-de-control",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráficas de control",
+    "text": "Gráficas de control\nLa gráficas de control nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la variable bajo estudio.\nUna gráfica de control:\n\n\npuede estimar los parámetros de un proceso de producción y determinar la capacidad de un proceso para cumplir con las especifícaciones.\nProporciona información útil sobre si la variabilidad del proceso es debido a causas asignables en el proceso.\nEn esencia, es una prueba de hipótesis de que el proceso está en un estado de control estadístico."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#cómo-se-ve-una-gráfica-de-control",
+    "href": "Modulo_3/Monitoreo.slides.html#cómo-se-ve-una-gráfica-de-control",
+    "title": "Monitoreo de Procesos",
+    "section": "¿Cómo se ve una gráfica de control?",
+    "text": "¿Cómo se ve una gráfica de control?\nMonitoreando las calificaciones durante los semestres de mi carrera"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-3",
+    "href": "Modulo_3/Monitoreo.slides.html#section-3",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Los pasos para trabajar con una gráfica de control son:\n\nDefinir el tipo de gráfica dependiendo de la variable bajo estudio.\nRecolectar varias muestras (conjuntos) de observaciones durante un periodo de tiempo.\n\n\nDefinir el número de observaciones en la muestra\nSeleccionar la frecuencia en que se recopilaran las muestras\n\n\nConstruir e interpretar la gráfica."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#el-tipo-de-gráfica-de-control-depende-del-tipo-de-variable",
+    "href": "Modulo_3/Monitoreo.slides.html#el-tipo-de-gráfica-de-control-depende-del-tipo-de-variable",
+    "title": "Monitoreo de Procesos",
+    "section": "1. El tipo de gráfica de control depende del tipo de variable",
+    "text": "1. El tipo de gráfica de control depende del tipo de variable\n\nRecuerda que hay dos tipos de variables:\nVariables numéricas (continuas):\n\nPueden tomar muchos valores diferentes dentro de un rango.\nPor ejemplo, diámetro, peso, temperatura, nivel de ruido."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-4",
+    "href": "Modulo_3/Monitoreo.slides.html#section-4",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Variables discretas (categóricas):\n\nPueden tomar un numero pequeño y entero de valores\nPor ejemplo, los defectos por unidad y las unidades defectuosas por lote."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#mediciones-sobre-variables-numéricas",
+    "href": "Modulo_3/Monitoreo.slides.html#mediciones-sobre-variables-numéricas",
+    "title": "Monitoreo de Procesos",
+    "section": "Mediciones sobre variables numéricas",
+    "text": "Mediciones sobre variables numéricas"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#mediciones-sobre-variables-discretas",
+    "href": "Modulo_3/Monitoreo.slides.html#mediciones-sobre-variables-discretas",
+    "title": "Monitoreo de Procesos",
+    "section": "Mediciones sobre variables discretas",
+    "text": "Mediciones sobre variables discretas"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#tipos-de-gráficas-de-control",
+    "href": "Modulo_3/Monitoreo.slides.html#tipos-de-gráficas-de-control",
+    "title": "Monitoreo de Procesos",
+    "section": "Tipos de gráficas de control",
+    "text": "Tipos de gráficas de control\n\nLas gráficas de control más comúnes para variables numéricas son:\n\nGráfico de promedios-rangos (\\(\\bar{X}\\) y \\(R\\)).\nGráfico para valores individuales.\n\nA estas gráficas también se les llama gráficas control para variables."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-5",
+    "href": "Modulo_3/Monitoreo.slides.html#section-5",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Las gráficas de control más comúnes para variables categóricas son:\n\nGráfica p para la proporción de defectos.\nGráfica np para el número de unidades defectuosas.\n\nA estas gráficas también se les llama gráficas control para atributos."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#recolección-de-datos",
+    "href": "Modulo_3/Monitoreo.slides.html#recolección-de-datos",
+    "title": "Monitoreo de Procesos",
+    "section": "Recolección de datos",
+    "text": "Recolección de datos\nLos datos para construir un gráfico de control se recopilan en varias muestras tomadas durante un período de tiempo. Estas muestras se denominan subgrupos racionales.\nEl plan de muestreo de estos subgrupos tiene los siguientes elementos:\n\n\nNúmero de subgrupos racionales (\\(k\\)): debe seleccionar un número \\(k\\) grande, normalmente 20 o más.\nTamaño del subgrupo (\\(n\\)): la naturaleza de la variable de estudio te ayudará a definir el tamaño del subgrupo.\nFrecuencia: los subgrupos se toman secuencialmente en el tiempo.\nEsquema de muestreo: usualmente muestreo aleatorio."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#creación-de-subgrupos-racionales",
+    "href": "Modulo_3/Monitoreo.slides.html#creación-de-subgrupos-racionales",
+    "title": "Monitoreo de Procesos",
+    "section": "Creación de subgrupos racionales",
+    "text": "Creación de subgrupos racionales\nPara crear subgrupos racionales, el principio básico a seguir es que toda la variabilidad dentro de las unidades de un subgrupo racional debe deberse a causas aleatorias y ninguna a causas asignables."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-6",
+    "href": "Modulo_3/Monitoreo.slides.html#section-6",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Es decir, los subgrupos deberán seleccionarse tal que, en la medida de lo posible, la variabilidad de las observaciones dentro de un subgrupo deberá incluir toda la variabilidad natural y excluir la variabilidad por causes asignables.\nEsto permitirá a la gráfica de control señalar puntos que se encuentran fuera de control."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#métodos-para-generar-subgrupos-racionales",
+    "href": "Modulo_3/Monitoreo.slides.html#métodos-para-generar-subgrupos-racionales",
+    "title": "Monitoreo de Procesos",
+    "section": "Métodos para generar subgrupos racionales",
+    "text": "Métodos para generar subgrupos racionales\nExisten dos métodos para generar subgrupos racionales:\n\nLos elementos de cada muestra son fabricados cerca del momento en que se realiza el muestreo.\n\n\n\nDetecta cambios en el proceso\nMinimiza la variabilidad debida a causas asignables dentro de una muestra, y maximiza la variabilidad entre las muestras en caso de que haya causas asignables presentes.\nProporciona mejores estimaciones de la desivación estándar del proceso."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-7",
+    "href": "Modulo_3/Monitoreo.slides.html#section-7",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Los elementos de cada muestra son seleccionados de todas las unidades producidas desde que se tomó la última muestra.\n\n\n\nEn este caso, cada subgrupo es una muestra aleatoria de la producción total del proceso en el intervalo de muestreo.\nPermite tomar decisiones relativas a la aceptación de todas las unidades del producto que se han producido desde la última muestra.\nEs útil en situaciones donde el proceso se sale de control pero vuelve a el inmediatamente."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#comentarios",
+    "href": "Modulo_3/Monitoreo.slides.html#comentarios",
+    "title": "Monitoreo de Procesos",
+    "section": "Comentarios",
+    "text": "Comentarios\nIdealmente, el plan de muestreo tiene:\n\nMediciones de grupos que se toman frequentemente.\nLos subgrupos son grandes, lo cual facilita la detección de los cambios pequeños en el proceso.\n\nSin embargo, este tipo de muestreo tiende a ser muy costoso cuando la recopilación de datos se hace manualmente.\nEn estos casos, la práctica actual de la industria tiende a favorecer los registros frecuentes de subgrupos pequeños."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#registrar-los-datos",
+    "href": "Modulo_3/Monitoreo.slides.html#registrar-los-datos",
+    "title": "Monitoreo de Procesos",
+    "section": "Registrar los datos",
+    "text": "Registrar los datos\nUna vez teniendo los subgrupos racionales, debemos de registrar mediciones sobre sus elementos. Estas mediciones formaran el conjunto de datos.\nPara realizar las mediciones, necesitamos un instrumento de medición y una persona que utiliza este instrumento.\nDurante la medición, registra lo siguiente:\n\nLos valores individuales y la identificación de eventos (si aplica) para cada subgrupo.\nCualquier observación relevante que pueda ayudarnos a explicar inconsistencias en el análisis."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#características-de-un-buen-sistema-de-medición",
+    "href": "Modulo_3/Monitoreo.slides.html#características-de-un-buen-sistema-de-medición",
+    "title": "Monitoreo de Procesos",
+    "section": "Características de un buen sistema de medición",
+    "text": "Características de un buen sistema de medición\n\n\nProporcionar resultados que se acerquen lo más posible al valor verdadero.\nProducir resultados consistentes cuando se mide el mismo objeto en las mismas condiciones.\nSer reproducible en el sentido que se deben de obtener mediciones similares por otra persona usando el mismo u otro instrumento.\nSer sensible para detectar cambios pequeños en el objeto medido.\nTener un tiempo de respuesta rápido.\nSer robusto en el sentido de ser capaz de mantener su precisión y fiabilidad incluso en condiciones adversas."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#procesamiento-de-datos",
+    "href": "Modulo_3/Monitoreo.slides.html#procesamiento-de-datos",
+    "title": "Monitoreo de Procesos",
+    "section": "Procesamiento de datos",
+    "text": "Procesamiento de datos\n\nPara generar la gráfica de control, se calculan resúmenes estadísticos de los datos de cada subgrupo. Estos resumenes pueden ser:\n\nPromedio o media\nDesviación estándar\nRango: la diferencia entre el máximo y el mínimo de los datos."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#recapitulación",
+    "href": "Modulo_3/Monitoreo.slides.html#recapitulación",
+    "title": "Monitoreo de Procesos",
+    "section": "Recapitulación",
+    "text": "Recapitulación"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#idea-básica-usa-la-regla-empirica",
+    "href": "Modulo_3/Monitoreo.slides.html#idea-básica-usa-la-regla-empirica",
+    "title": "Monitoreo de Procesos",
+    "section": "Idea básica: Usa la Regla Empirica",
+    "text": "Idea básica: Usa la Regla Empirica\n\n\nPara una distribución normal:\nAlrededor del 68% de la población se encuentra en el intervalo \\([\\mu - \\sigma, \\; \\mu + \\sigma]\\).\nAproximadamente el 95% de la población se encuentra en el intervalo \\([\\mu - 2\\sigma, \\; \\mu + 2\\sigma]\\).\nAproximadamente el 99.7% de la población se encuentra en el intervalo \\([\\mu - 3\\sigma, \\; \\mu + 3\\sigma]\\)."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-8",
+    "href": "Modulo_3/Monitoreo.slides.html#section-8",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Si un proceso esta bajo control, entonces el 99.7% de los valores de la catacterística de calidad del producto deben de estar entre \\(\\mu \\pm 3 \\sigma\\).\nObservaciones que están fuera de esos límites indica que el proceso esta fuera de control. Es decir, que su media no es \\(\\mu\\).\nUn reto en esto es que los valores de \\(\\mu\\) y \\(\\sigma\\) no se conocen. Además, que la variabilidad del proceso podría no estar bajo control.\nLas gráficas de control proveen de métodos para estimar \\(\\mu\\) y \\(\\sigma\\) usando grupos de 1 o más observaciones que son recolectadas a través del tiempo."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#clasificación-de-procesos",
+    "href": "Modulo_3/Monitoreo.slides.html#clasificación-de-procesos",
+    "title": "Monitoreo de Procesos",
+    "section": "Clasificación de procesos",
+    "text": "Clasificación de procesos"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#normalidad-es-relevante",
+    "href": "Modulo_3/Monitoreo.slides.html#normalidad-es-relevante",
+    "title": "Monitoreo de Procesos",
+    "section": "Normalidad es relevante",
+    "text": "Normalidad es relevante\nLa regla empírica implica que los datos utilizados en la gráfica de control deben de seguir una distribución normal. Para probar normalidad, utilizamos la prueba de Shapiro-Wilk:\n\n\\(H_0\\): Los datos siguen una distribución normal\nContra\n\\(H_1\\): Los datos no siguen una distribución normal\n\nSi el valor p de la prueba es pequeño (digamos, menor que 0.05), rechazamos \\(H_0\\) y concluimos que los datos no siguen una distribución normal. De lo contrario, concluimos que los datos siguen una distribución normal. Mas adelante veremos como hacer esto en Python."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráficas-de-control-para-variables-numéricas",
+    "href": "Modulo_3/Monitoreo.slides.html#gráficas-de-control-para-variables-numéricas",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráficas de control para variables numéricas",
+    "text": "Gráficas de control para variables numéricas\n\nNos enfocaremos en las siguientes gráficas de control.\n\nGráfico de promedios-rangos (\\(\\bar{X}\\) y \\(R\\)) para subgrupos de 8 o menos observaciones.\nGráfico I-MR para valores individuales (o subgrupos de tamaño 1)."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-de-promedios-y-rangos",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-de-promedios-y-rangos",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica de promedios y rangos",
+    "text": "Gráfica de promedios y rangos\nLa gráfica de promedios y rangos (y también la gráfica I-MR) consisten de dos elementos:\n\nEl valor medio (promedio) de una característica de calidad (gráfica \\(\\bar{X}\\)). Esta gráfica monitorea si la media está bajo control.\nLa variabilidad de la característica de calidad (gráfica \\(R\\)). Esta gráfica monitorea si la variabilidad está bajo control.\n\nSe asume que los promedios de los subgrupos siguen una distribución normal."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#notación-perliminar",
+    "href": "Modulo_3/Monitoreo.slides.html#notación-perliminar",
+    "title": "Monitoreo de Procesos",
+    "section": "Notación perliminar",
+    "text": "Notación perliminar\nRecuerda que hay \\(k\\) subgrupos con \\(n\\) observaciones cada uno. Las observaciones del i-ésimo subgrupo se denotan como \\(x_{i1}, x_{i2}, \\ldots, x_{in}\\), donde \\(i = 1, \\ldots, k.\\).\n\nEl promedio del i-ésimo grupo es \\(\\bar{X}_i = \\frac{x_{i1} + x_{i2} + \\cdots + x_{in}}{n}\\).\nEl rango del i-ésimo grupo es \\(R_i = \\max{(x_{i1},x_{i2}, \\ldots, x_{in})} - \\min{(x_{i1},x_{i2}, \\ldots, x_{in})}\\).\nEl gran promedio \\(\\bar{\\bar{X}} = \\frac{\\bar{X}_1 + \\bar{X}_2 + \\cdots + \\bar{X}_k}{k}\\).\nEl rango promedio \\(\\bar{R} = \\frac{R_1 + R_2 + \\cdots + R_k}{k}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-barx",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-barx",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica \\(\\bar{X}\\)",
+    "text": "Gráfica \\(\\bar{X}\\)\nLos elementos de la gráfica \\(\\bar{X}\\) son:\n\nLa línea central de la gráfica está dada por \\(\\bar{\\bar{X}}\\).\nEl límite de control superior es: \\(\\bar{\\bar{X}} + A_2 \\bar{R}\\).\nEl límite de control inferior es: \\(\\bar{\\bar{X}} - A_2 \\bar{R}\\).\n\nDonde \\(A_2\\) es una constante que se obtiene de tablas especiales dependiendo del tamaño del subgrupo (\\(n\\)).\nTécnicamente, la constante \\(A_2\\) hace que \\(A_2 \\bar{R}\\) sea un buen estimador de \\(3\\sigma\\) en la regla empírica."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-r",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-r",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica \\(R\\)",
+    "text": "Gráfica \\(R\\)\nLos elementos de la gráfica \\(R\\) son:\n\nLa línea central de la gráfica está dada por \\(\\bar{R}\\).\nEl límite de control superior es: \\(D_4 \\bar{R}\\).\nEl límite de control inferior es: \\(D_3 \\bar{R}\\).\n\nDonde \\(D_3\\) y \\(D_4\\) son constantes que se obtienen de tablas especiales y dependen del tamaño del subgrupo (\\(n\\)). Estas constantes aseguran que los límites tengan propiedades deseables."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-9",
+    "href": "Modulo_3/Monitoreo.slides.html#section-9",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Tamaño de subgrupo (\\(n\\))\n\\(A_2\\)\n\\(D_3\\)\n\\(D_4\\)\n\n\n\n\n2\n1.880\n0\n3.267\n\n\n3\n1.023\n0\n2.574\n\n\n4\n0.729\n0\n2.282\n\n\n5\n0.577\n0\n2.114\n\n\n6\n0.483\n0\n2.004\n\n\n7\n0.419\n0.076\n1.924\n\n\n8\n0.373\n0.136\n1.864\n\n\n9\n0.337\n0.184\n1.816\n\n\n10\n0.308\n0.223\n1.777"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#ejemplo-1",
+    "href": "Modulo_3/Monitoreo.slides.html#ejemplo-1",
+    "title": "Monitoreo de Procesos",
+    "section": "Ejemplo 1",
+    "text": "Ejemplo 1\n\nLa fuerza de tracción de un cable conectado a un circuito integrado está bajo monitoreo.\nUn ingeniero recopilo la fuerza de tracción de 20 subgrupos de cables tomados a través del tiempo. Cada subgrupo contiene 3 cables.\nEl archivo “Pull Strength.xlsx” contiene los datos.\n\nConstruye las gráficas \\(\\bar{X}\\) y \\(R\\).\nEncuentra los puntos que están fuera de control."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#construyendo-gráficas-de-control-en-python",
+    "href": "Modulo_3/Monitoreo.slides.html#construyendo-gráficas-de-control-en-python",
+    "title": "Monitoreo de Procesos",
+    "section": "Construyendo gráficas de control en Python",
+    "text": "Construyendo gráficas de control en Python"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#evaluando-la-normalidad-de-los-promedios-en-python",
+    "href": "Modulo_3/Monitoreo.slides.html#evaluando-la-normalidad-de-los-promedios-en-python",
+    "title": "Monitoreo de Procesos",
+    "section": "Evaluando la normalidad de los promedios en Python",
+    "text": "Evaluando la normalidad de los promedios en Python"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-de-valores-individuales",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-de-valores-individuales",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica de valores individuales",
+    "text": "Gráfica de valores individuales\nEn muchas situaciones, los subgrupos constan de una observacion (\\(n=1\\)). Por ejemplo:\n\n\nSe usa la tecnología de inspección y medición automatizada, y se analiza cada unidad fabricada.\nLa rapidez con que se saca la producción es muy lenta.\nLas mediciones repetidas del proceso tan solo difieren por el error de laboratorio o analisis.\n\n\nEn estas situaciones, usamos la gráfica de control para mediciones individuales. Aquí, se asume que las observaciones individuales siguen una distribución normal."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#notación",
+    "href": "Modulo_3/Monitoreo.slides.html#notación",
+    "title": "Monitoreo de Procesos",
+    "section": "Notación",
+    "text": "Notación\n\nEn este caso, hay \\(n=1\\) observación en cada uno de los \\(k\\) subgrupos.\nPodemos usar una notación más simple para las observaciones de cada subgrupo: \\(x_{1}, x_{2}, \\ldots, x_{k}\\), donde \\(x_i\\) es la observación del i-ésimo grupo.\n\nEl gran promedio es \\(\\bar{X} = \\frac{x_1 + x_2 + \\cdots + x_k}{k}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#rango-móvil",
+    "href": "Modulo_3/Monitoreo.slides.html#rango-móvil",
+    "title": "Monitoreo de Procesos",
+    "section": "Rango móvil",
+    "text": "Rango móvil\n\nLa gráfica de mediciones individuales usa el rango móvil de dos observaciones sucesivas para estimar la variabilidad del proceso.\nEl rango móvil del i-ésimo grupo se define como \\(MR_i = |x_i - x_{i-1}|\\). Es decir, la diferencia absoluta entre la observación actual y la anterior.\nEl rango móvil promedio es \\(\\bar{MR} = \\frac{MR_1 + MR_2 + \\cdots + MR_{k-1}}{k - 1}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-barx-versión-individual",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-barx-versión-individual",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica \\(\\bar{X}\\) (versión individual)",
+    "text": "Gráfica \\(\\bar{X}\\) (versión individual)\n\nLos elementos de la gráfica \\(\\bar{X}\\) individual son:\n\nLa línea central de la gráfica está dada por \\(\\bar{X}\\).\nEl límite de control superior es: \\(\\bar{X} + 3 \\frac{\\bar{MR}}{1.128}\\).\nEl límite de control inferior es: \\(\\bar{X} - 3 \\frac{\\bar{MR}}{1.128}\\).\n\nDonde el 1.128 se obtiene de tablas especiales."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-r-versión-individual",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-r-versión-individual",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica \\(R\\) (versión individual)",
+    "text": "Gráfica \\(R\\) (versión individual)\n\nLos elementos de la gráfica \\(R\\) individual son:\n\nLa línea central de la gráfica está dada por \\(\\bar{MR}\\)\nEl límite de control superior es: \\(3.267\\bar{MR}\\).\nEl límite de control inferior es: \\(0\\).\n\nDonde el 0 y 3.267 son constantes que se obtienen de tablas especiales."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#ejemplo-2",
+    "href": "Modulo_3/Monitoreo.slides.html#ejemplo-2",
+    "title": "Monitoreo de Procesos",
+    "section": "Ejemplo 2",
+    "text": "Ejemplo 2\n\nLa viscosidad de un producto químico se mide cada hora. Veinte muestras cada una de tamaño 1 se encuentran en el archivo “Viscosity.xlsx.”\n\nUtilizando todos los datos, calcula los límites de control de observaciones individuales y gráficos de rangos móviles.\nEncuentre las muestras que están fuera de control. Reproduce el gráfico de control sin esas muestras."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#western-electric-rules",
+    "href": "Modulo_3/Monitoreo.slides.html#western-electric-rules",
+    "title": "Monitoreo de Procesos",
+    "section": "Western Electric Rules",
+    "text": "Western Electric Rules\nCualquiera de las siguientes condiciones es evidencia de que un proceso está fuera de control:\n\n\nCualquier punto trazado fuera de los límites de control de \\(3\\sigma\\).\nDos de tres puntos consecutivos que se trazan por encima del límite superior de \\(2\\sigma\\), o dos de tres puntos consecutivos se ubican por debajo del límite inferior de \\(2\\sigma\\).\nCuatro de cinco puntos consecutivos que se trazan por encima del límite superior de \\(1\\sigma\\), o cuatro de cinco puntos consecutivos se ubican por debajo del límite inferior de \\(1\\sigma\\).\nOcho puntos consecutivos trazados en el mismo lado de la línea central."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#discusión",
+    "href": "Modulo_3/Monitoreo.slides.html#discusión",
+    "title": "Monitoreo de Procesos",
+    "section": "Discusión",
+    "text": "Discusión\nPara subgrupos de una o más observaciones, se recomienda primero estudiar la carta \\(R\\) porque si la variabilidad del proceso no es constante con el tiempo, los límites de control calculados para la carta \\(\\bar{X}\\) pueden llevar a conclusiones falsas.\nTen cuidado al interpretar la gráfica \\(R\\) individual porque los rangos móviles están correlacionados. Esta correlación con frecuencia puede inducir un patrón de cambios o ciclos en la gráfica.\nLas gráficas de valores individuales son mucho mejores para detectar cambios grandes. Para detectar cambios pequeños, la gráfica de control de suma acumulada es una mejor opción."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráficas-para-variables-categóricas",
+    "href": "Modulo_3/Monitoreo.slides.html#gráficas-para-variables-categóricas",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráficas para variables categóricas",
+    "text": "Gráficas para variables categóricas\nLas gráficas de control para variables categóricas son importantes por varias razones:\n\n\nExisten datos categóricos en cualquier situación técnica o administrativa\nLos datos categóricos generalmente están disponibles\nLos datos categóricos generalmente se obtiene de forma rápida y barata.\nLa mayoría de los datos recabados en un informe para la Gerencia con frecuencia es en forma de datos categóricos (bueno o malo) y éste puede beneficiar el análisis de la gráfica de control"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#tipos-de-defectos",
+    "href": "Modulo_3/Monitoreo.slides.html#tipos-de-defectos",
+    "title": "Monitoreo de Procesos",
+    "section": "Tipos de defectos",
+    "text": "Tipos de defectos\nDefectivo es cuando una unidad entera no logra el criterio de aceptación, independientemente del número de defectos en la unidad\nUn defecto es el incumplimiento de uno de los criterios de aceptación. Una unidad defectuosa puede tener múltiples defectos.\nEl criterio de conformidad debe estar claramente definido así como los procedimientos para decidir si los criterios se cumplen para producir resultados consistentes sobre el tiempo"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#grafica-p",
+    "href": "Modulo_3/Monitoreo.slides.html#grafica-p",
+    "title": "Monitoreo de Procesos",
+    "section": "Grafica p",
+    "text": "Grafica p\n\nEvalúa la fracción o porcentaje de unidades defectuosas\n\nSe utiliza en las siguientes situaciones:\n\nDecisiones Aceptar/Rechazar con tamaño de subgrupo constante (o variable):\n\nProporción de defectuosos\nProporción de artículos arriba (o abajo) de un valor nominal\nProporción de conformidad\n\nDecisiones de juicio:\n\nProporción de artículos dentro de una categoría especificada"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#notación-1",
+    "href": "Modulo_3/Monitoreo.slides.html#notación-1",
+    "title": "Monitoreo de Procesos",
+    "section": "Notación",
+    "text": "Notación\nRecuerda que tenemos \\(k\\) subgrupos y \\(n\\) unidades en cada subgrupo.\n\n\\(n_i\\) es el número de unidades defectuosas en el i-ésimo subgrupo.\n\\(p_i = n_i /n\\) es la proporción de unidades defectuosas en el i-ésimo subgrupo.\n\\(n p_i\\) es el número de unidades defectuosas en el i-ésimo subgrupo.\nEl promedio de las proporciones es \\(\\bar{p} = \\frac{n p_1 + n p_2  + \\cdots + n p_k}{nk}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-p",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-p",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica p",
+    "text": "Gráfica p\n\nLos elementos de la gráfica p son:\n\nLa linea central de la gráfica está dada por \\(\\bar{p}\\).\nEl límite de control superior es: \\(\\bar{p} + 3 \\sqrt{ \\frac{\\bar{p} (1- \\bar{p})}{n}}\\).\nEl límite de control inferior es: \\(\\bar{p} - 3 \\sqrt{ \\frac{\\bar{p} (1- \\bar{p})}{n}}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#ejemplo-3",
+    "href": "Modulo_3/Monitoreo.slides.html#ejemplo-3",
+    "title": "Monitoreo de Procesos",
+    "section": "Ejemplo 3",
+    "text": "Ejemplo 3\n\nEl concentrado de jugo de naranja congelado se presenta en latas de cartón de 6 onzas.\nEstas latas se forman en una máquina girándolas a partir de cartón y colocándoles un panel inferior de metal.\nAl inspeccionar una lata, podemos determinar si, cuando está llena, podría tener fugas en la costura lateral o alrededor de la junta inferior.\nTal lata no conforme tiene un sello inadecuado ya sea en la costura lateral o en el panel inferior."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-10",
+    "href": "Modulo_3/Monitoreo.slides.html#section-10",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Hagamos una gráfica de control para mejorar la fracción de latas no conformes producidas por esta máquina.\nPara establecer el gráfico de control, se seleccionaron 30 muestras de \\(n\\) = 50 latas cada una a intervalos de media hora durante un período de tres turnos en los que la máquina estuvo en funcionamiento continuo.\nLos datos están en el archivo de excel “Juice.xlsx”."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#en-python",
+    "href": "Modulo_3/Monitoreo.slides.html#en-python",
+    "title": "Monitoreo de Procesos",
+    "section": "En Python",
+    "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-np",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-np",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica np",
+    "text": "Gráfica np\n\nEvalúa el número de unidades defectuosas\n\nAsume que el tamaño de los subgrupos es constante.\nLos elementos de la gráfica np son:\n\nLa linea central de la gráfica está dada por \\(\\bar{np}\\).\nEl límite de control superior es: \\(n\\bar{p} + 3 \\sqrt{n \\bar{p} (1- \\bar{p})}\\).\nEl límite de control inferior es: \\(n\\bar{p} - 3 \\sqrt{n \\bar{p} (1- \\bar{p})}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#en-python-1",
+    "href": "Modulo_3/Monitoreo.slides.html#en-python-1",
+    "title": "Monitoreo de Procesos",
+    "section": "En Python",
+    "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#gráfica-p-contra-gráfica-np",
+    "href": "Modulo_3/Monitoreo.slides.html#gráfica-p-contra-gráfica-np",
+    "title": "Monitoreo de Procesos",
+    "section": "Gráfica p contra Gráfica np",
+    "text": "Gráfica p contra Gráfica np\n\nGráfica p:\n\nLa gráfica p se utiliza cuando el tamaño de la muestra varía de subgrupo a subgrupo.\nMonitorea la proporción de unidades no conformes en una muestra.\nEs útil cuando el tamaño de la muestra es relativamente pequeño y variable.\nSe calcula como el número de unidades no conformes dividido por el tamaño de la muestra."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-11",
+    "href": "Modulo_3/Monitoreo.slides.html#section-11",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#preguntas-de-práctica-para-examen",
+    "href": "Modulo_3/Monitoreo.slides.html#preguntas-de-práctica-para-examen",
+    "title": "Monitoreo de Procesos",
+    "section": "Preguntas de práctica para examen",
+    "text": "Preguntas de práctica para examen\n\nCierto tipo de circuito integrado está conectado a su estructura mediante cinco cables.\nSe tomaron treinta muestras de cinco unidades cada una y se midió la fuerza de tracción (en gramos) de un cable en cada unidad.\nLos datos se presentan en el archivo “Cables_Circuito.xlsx” en Canvas.\n\nCrea la gráfica de control de promedios-rangos.\n¿Está el proceso bajo control?"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#section-12",
+    "href": "Modulo_3/Monitoreo.slides.html#section-12",
+    "title": "Monitoreo de Procesos",
+    "section": "",
+    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
+  },
+  {
+    "objectID": "index.slides.html#tópicos-del-curso",
+    "href": "index.slides.html#tópicos-del-curso",
+    "title": "IN2032: Análisis Estadístico de Datos",
+    "section": "Tópicos del curso",
+    "text": "Tópicos del curso\nMódulo 1\n\nIntroducción a la Estadística (slides)\nDistribuciones Discretas de Probabilidad (slides)\nDistribuciones Continuas de Probabilidad (slides)\n\nMódulo 2\n\nIntroducción a los Intervalos de Confianza (slides)\nPruebas de Hipótesis (slides)\n\nMódulo 3\n\nPruebas de Hipótesis (slides)"
+  },
+  {
+    "objectID": "index.slides.html#about-the-author",
+    "href": "index.slides.html#about-the-author",
+    "title": "IN2032: Análisis Estadístico de Datos",
+    "section": "About the author",
+    "text": "About the author\nAlan R. Vazquez (website) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.\nLicense"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IN2032: Análisis Estadístico de Datos",
+    "section": "",
+    "text": "Tópicos del curso\n\nMódulo 1\n\nIntroducción a la Estadística (slides)\nDistribuciones Discretas de Probabilidad (slides)\nDistribuciones Continuas de Probabilidad (slides)\n\n\n\nMódulo 2\n\nIntroducción a los Intervalos de Confianza (slides)\nPruebas de Hipótesis (slides)\n\n\n\nMódulo 3\n\nPruebas de Hipótesis (slides)\n\n\n\n\nAbout the author\nAlan R. Vazquez (website) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.\n\nLicense",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#agenda",
+    "href": "Modulo_2/Hipotesis.slides.html#agenda",
+    "title": "Pruebas de Hipótesis",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nConceptos Básicos\nPruebas de Muestras Pequeñas\nComentarios Finales"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#introducción",
+    "href": "Modulo_2/Hipotesis.slides.html#introducción",
+    "title": "Pruebas de Hipótesis",
+    "section": "Introducción",
+    "text": "Introducción\n\nRecuerda que el objetivo de la estadística es hacer inferencias sobre parámetros poblacionales desconocidos basándose en la información contenida en los datos de la muestra.\n\nEstas inferencias se expresan de dos maneras:\n\nIntervalos de confianza de un parámetro.\nPrueba de hipótesis sobre su valor."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#idea-general",
+    "href": "Modulo_2/Hipotesis.slides.html#idea-general",
+    "title": "Pruebas de Hipótesis",
+    "section": "Idea general",
+    "text": "Idea general\n\nConsideremos una población (distribución) en estudio con un parámetro objetivo. Una prueba de hipótesis sigue los pasos generales siguientes.\n\nPlantear una hipótesis sobre el parámetro. Por ejemplo, equivale a un valor especificado por el usuario.\nRecolectar una muestra de la población y comparar los valores observados con la hipótesis.\nSi las observaciones no están de acuerdo con la hipótesis, la rechazamos. De lo contrario, concluimos que la hipótesis es verdadera o que la muestra no proporcionó suficiente información para la prueba."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#paso-1.-hipótesis",
+    "href": "Modulo_2/Hipotesis.slides.html#paso-1.-hipótesis",
+    "title": "Pruebas de Hipótesis",
+    "section": "Paso 1. Hipótesis",
+    "text": "Paso 1. Hipótesis\n\nUna hipótesis es una afirmación sobre un parámetro de población.\n\nHay dos tipos de hipótesis:\nLa hipótesis nula se denota con \\(H_0\\).\nLa hipótesis alternativa se denota con \\(H_1\\)."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section",
+    "href": "Modulo_2/Hipotesis.slides.html#section",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Para un parámetro objetivo \\(\\mu\\) y un valor hipotético (especificado por el usuario) \\(\\mu_0\\), nos concentraremos en hipótesis del siguiente tipo:\n\n\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu \\neq \\mu_0\\)\n\\(H_0: \\mu \\leq \\mu_0\\) contra \\(H_1: \\mu &gt; \\mu_0\\)\n\\(H_0: \\mu \\geq \\mu_0\\) contra \\(H_1: \\mu &lt; \\mu_0\\)\n\n\nLa hipótesis alternativa suele ser la hipótesis que buscamos sustentar con base en la información contenida en la muestra."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-1",
+    "href": "Modulo_2/Hipotesis.slides.html#section-1",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "A veces, también escribimos la hipótesis nula de esta manera:\n\n\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu \\neq \\mu_0\\)\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu &gt; \\mu_0\\)\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu &lt; \\mu_0\\)\n\n\nEsto es como asumir el valor más extremo posible de \\(\\mu\\) bajo \\(H_0\\).\nEs decir, el valor mínimo (o máximo) para que \\(H_0\\) sea verdadera."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#ejemplo-1",
+    "href": "Modulo_2/Hipotesis.slides.html#ejemplo-1",
+    "title": "Pruebas de Hipótesis",
+    "section": "Ejemplo 1",
+    "text": "Ejemplo 1\n\n\nPregunta de investigación 1: ¿El alquiler mensual promedio de un apartamento de un dormitorio en la zona Tec es mayor a 15,000 pesos? \\(H_0: \\mu \\leq 15,000\\) contra \\(H_1: \\mu &gt; 15,000\\), donde \\(\\mu\\) es el alquiler mensual promedio de todos los apartamentos de un dormitorio en la zona Tec.\nPregunta de investigación 2: ¿La mayoría de los estudiantes del campus del Tec tienen un perro? \\(H_0: p = 0.5\\) contra \\(H_1: p &gt; 0.5\\), donde \\(p\\) es la proporción poblacional de estudiantes que poseen un perro."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#paso-2.-muestra-y-estadístico-de-prueba",
+    "href": "Modulo_2/Hipotesis.slides.html#paso-2.-muestra-y-estadístico-de-prueba",
+    "title": "Pruebas de Hipótesis",
+    "section": "Paso 2. Muestra y Estadístico de Prueba",
+    "text": "Paso 2. Muestra y Estadístico de Prueba\n\nNormalmente, una prueba de hipótesis se especifica en términos de estadístico de prueba \\(T\\).\nUn estadístico de prueba es una función de la muestra \\(Y_1, \\ldots, Y_n\\), en la que se basará la decisión estadística. Por tanto, también es una variable aleatoria.\nUna estadística de prueba tiene una distribución de probabilidad asociada, que depende de la hipótesis asumida (\\(H_0\\) o \\(H_1\\))."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#ejemplo-prueba-de-hipótesis-sobre-la-media",
+    "href": "Modulo_2/Hipotesis.slides.html#ejemplo-prueba-de-hipótesis-sobre-la-media",
+    "title": "Pruebas de Hipótesis",
+    "section": "Ejemplo: Prueba de hipótesis sobre la media",
+    "text": "Ejemplo: Prueba de hipótesis sobre la media\nConsidera una muestra pequeña \\(y_1, \\ldots, y_n\\) que se distribuye como \\(N(\\mu, \\sigma^2)\\).\nHipótesis nula: \\(H_0: \\mu = \\mu_0\\) donde \\(\\mu\\) es un valor (constante) elegido por el usuario.\nPosibles Hipótesis Alternativas:\n\n\\(H_1: \\mu &gt; \\mu_0\\)\n\n\\(H_1: \\mu &lt; \\mu_0\\)\n\n\\(H_1: \\mu \\neq \\mu_0\\)\n\nEstadístico de Prueba: \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) donde \\(\\bar{y}\\) y \\(s\\) son el promedio y desviación estándar de la muestra observada."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#distribución-del-estadístico-de-prueba",
+    "href": "Modulo_2/Hipotesis.slides.html#distribución-del-estadístico-de-prueba",
+    "title": "Pruebas de Hipótesis",
+    "section": "Distribución del estadístico de prueba",
+    "text": "Distribución del estadístico de prueba\n\n\nSi \\(H_0: \\mu = \\mu_0\\) es verdadera, \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#paso-3.-rechazar-o-no-rechazar-h_0",
+    "href": "Modulo_2/Hipotesis.slides.html#paso-3.-rechazar-o-no-rechazar-h_0",
+    "title": "Pruebas de Hipótesis",
+    "section": "Paso 3. Rechazar o no rechazar \\(H_0\\)",
+    "text": "Paso 3. Rechazar o no rechazar \\(H_0\\)\n\nAl realizar una prueba de hipótesis, existen dos decisiones posibles: rechazar o no rechazar \\(H_0\\).\nPara ello, comprobamos si el valor observado del estadístico de prueba es poco o muy probable asumiendo que \\(H_0\\) es verdadera."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-2",
+    "href": "Modulo_2/Hipotesis.slides.html#section-2",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Si \\(H_0: \\mu = \\mu_0\\) es verdadera, \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad.\n\n\nSi \\(H_0\\) es verdad, \\(t_0\\) debería de estar cerca de 0, el valor con más densidad de la distribución \\(t\\)."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-3",
+    "href": "Modulo_2/Hipotesis.slides.html#section-3",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Si \\(H_0: \\mu = \\mu_0\\) no es verdadera, entonces \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) deberá estar lejos de 0, el valor con más densidad de la distribución \\(t\\).\n\n\nPor ejemplo, si \\(H_1: \\mu &gt; \\mu_0\\) es verdad, entonces \\(t_0\\) debería de estar lejos de 0 hacia la derecha. En otras palabras, \\(t_0\\) es poco probable asumiendo que \\(H_0\\) es verdadera."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#valor-p",
+    "href": "Modulo_2/Hipotesis.slides.html#valor-p",
+    "title": "Pruebas de Hipótesis",
+    "section": "Valor p",
+    "text": "Valor p\nDefinición: El valor p es la probabilidad de observar un valor al menos tan extremo como el valor observado de un estadístico \\(T\\), cuando \\(H_0\\) es verdadera.\n\n\nUn p-valor pequeño es equivalente a decir que \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) esta “lejos” de 0.\nSugiriendo que la hipótesis nula \\(H_0\\) no es verdadera."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-4",
+    "href": "Modulo_2/Hipotesis.slides.html#section-4",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Para \\(H_0: \\mu = \\mu_0\\) vs \\(H_1: \\mu &lt; \\mu_0\\), el p-valor se calcula usando la cola izquierda de la distribución \\(t\\).\n\n\nDe la misma manera, un p-valor pequeño es equivalente a decir que \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) esta “lejos” de 0.\nSugiriendo que la hipótesis nula \\(H_0\\) no es verdadera."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-5",
+    "href": "Modulo_2/Hipotesis.slides.html#section-5",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Para \\(H_0: \\mu = \\mu_0\\) vs \\(H_1: \\mu \\neq \\mu_0\\), el p-valor se calcula usando las dos colas de la distribución \\(t\\).\n\nUsamos las dos colas porque la hipótesis alternativa se enfoca en una diferencia entre el valor real \\(\\mu\\) y el asumido \\(\\mu_0\\) si importar si esta diferencia es positiva o negativa."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#el-valor-p-no-es-la-probabilidad-de-que-h_0-sea-cierta",
+    "href": "Modulo_2/Hipotesis.slides.html#el-valor-p-no-es-la-probabilidad-de-que-h_0-sea-cierta",
+    "title": "Pruebas de Hipótesis",
+    "section": "El valor p no es la probabilidad de que \\(H_0\\) sea cierta",
+    "text": "El valor p no es la probabilidad de que \\(H_0\\) sea cierta\n\nDado que el valor p es una probabilidad, y dado que los valores p pequeños indican que es poco probable que \\(H_0\\) sea cierta, es tentador pensar que el valor p representa la probabilidad de que \\(H_0\\)sea cierta.\n\n\n¡Este no es el caso!\n\n\nEl concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica a resultados que pueden producirse de diferentes maneras cuando se repiten los experimentos."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#qué-tan-pequeño-debe-de-ser-el-p-valor-para-rechazar-h_0",
+    "href": "Modulo_2/Hipotesis.slides.html#qué-tan-pequeño-debe-de-ser-el-p-valor-para-rechazar-h_0",
+    "title": "Pruebas de Hipótesis",
+    "section": "¿Qué tan pequeño debe de ser el p valor para rechazar \\(H_0\\)?",
+    "text": "¿Qué tan pequeño debe de ser el p valor para rechazar \\(H_0\\)?\n\n\n\nRespuesta: ¡Muy pequeño!\nPero, ¿qué tan pequeño?\nRespuesta: ¡Muy pequeño!\nPero, dime ¿qué tan pequeño?\nRespuesta: Esta bien, debe de ser menor que un valor llamado \\(\\alpha\\) el cual suele ser 0.1, 0.05, o 0.01.\n¡Gracias!\n\n\n\n\n\n\n\nSir. Ronald Fisher"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#significancia-estadística",
+    "href": "Modulo_2/Hipotesis.slides.html#significancia-estadística",
+    "title": "Pruebas de Hipótesis",
+    "section": "Significancia estadística",
+    "text": "Significancia estadística\n\nSiempre que el valor p es inferior al valor fijado de \\(\\alpha\\), se dice que el resultado es “estadísticamente significativo” en ese nivel.\n\nEs decir, si \\(\\alpha = 0.05\\) y el p valor es menor que \\(\\alpha\\), el resultado es estadísticamente significativo en el nivel 5%.\n\nY si \\(\\alpha = 0.01\\) y el p valor es menor que \\(\\alpha\\), el resultado es estadísticamente significativo al nivel 1%."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#resumen",
+    "href": "Modulo_2/Hipotesis.slides.html#resumen",
+    "title": "Pruebas de Hipótesis",
+    "section": "Resumen",
+    "text": "Resumen\n\nLos elementos de una prueba estadística son:\n\nHipótesis nula, \\(H_0\\).\nHipótesis alternativa, \\(H_1\\).\nEstadístico de prueba.\nRegión de rechazo."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis-sobre-la-media",
+    "href": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis-sobre-la-media",
+    "title": "Pruebas de Hipótesis",
+    "section": "Prueba de hipótesis sobre la media",
+    "text": "Prueba de hipótesis sobre la media\nConsidera una muestra pequeña \\(y_1, \\ldots, y_n\\) que se distribuye como \\(N(\\mu, \\sigma^2)\\).\nHipótesis nula: \\(H_0: \\mu = \\mu_0\\) donde \\(\\mu\\) es un valor (constante) elegido por el usuario.\nEstadístico de Prueba: \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) donde \\(\\bar{y}\\) y \\(s\\) son el promedio y desviación estándar de la muestra observada.\nSea \\(T\\) una variable aleatoria que sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#ejemplo-3",
+    "href": "Modulo_2/Hipotesis.slides.html#ejemplo-3",
+    "title": "Pruebas de Hipótesis",
+    "section": "Ejemplo 3",
+    "text": "Ejemplo 3\nUna bióloga estudia el peso corporal (en gramos) de cobayas al nacer. Ella recolectó una muestra de pesos de 27 cobayas recien nacidas. Los datos están en el archivo “Guinea Pigs.xlsx” en CANVAS.\nLa bióloga quiere probar la hipótesis de que el peso corporal medio es menor a 300 gramos. Técnicamente, quiere probar la hipótesis:\n\n\\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &lt; 300\\)\n\nDonde \\(\\mu\\) es la media o promedio teórico de los pesos de todas las cobayas recien nacidas. Utiliza \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#en-python",
+    "href": "Modulo_2/Hipotesis.slides.html#en-python",
+    "title": "Pruebas de Hipótesis",
+    "section": "En Python",
+    "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
+    "href": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
+    "title": "Pruebas de Hipótesis",
+    "section": "Pruebas para la diferencia de dos medias",
+    "text": "Pruebas para la diferencia de dos medias\n\nRecuerda que si la muestra aleatoria \\(Y_1, \\ldots, Y_{n_y}\\) sigue una distribución \\(N(\\mu_y, \\sigma_{y}^2)\\), entonces \\(\\bar{Y} \\sim N\\left(\\mu_y, \\frac{\\sigma_{y}^2}{n_y}\\right)\\).\nAdemás, si la muestra aleatoria \\(X_1, \\ldots, X_{n_x}\\) sigue una distribución \\(N(\\mu_x, \\sigma_{x}^2)\\), entonces \\(\\bar{X} \\sim N\\left(\\mu_x, \\frac{\\sigma_{x}^2}{n_x}\\right)\\)."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#el-esquema",
+    "href": "Modulo_2/Hipotesis.slides.html#el-esquema",
+    "title": "Pruebas de Hipótesis",
+    "section": "El esquema",
+    "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-7",
+    "href": "Modulo_2/Hipotesis.slides.html#section-7",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-8",
+    "href": "Modulo_2/Hipotesis.slides.html#section-8",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#cuando-las-distribuciones-tienen-la-misma-varianza",
+    "href": "Modulo_2/Hipotesis.slides.html#cuando-las-distribuciones-tienen-la-misma-varianza",
+    "title": "Pruebas de Hipótesis",
+    "section": "Cuando las distribuciones tienen la misma varianza",
+    "text": "Cuando las distribuciones tienen la misma varianza\n\nSi las distribuciones tienen la misma varianza teórica, entonces\n\\[\\text{ME} = s_p = \\sqrt{ \\frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} },\\]\ndonde \\(s_p\\) es la desviación estándar agrupada."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#pruebas-sobre-la-diferencia-de-dos-medias",
+    "href": "Modulo_2/Hipotesis.slides.html#pruebas-sobre-la-diferencia-de-dos-medias",
+    "title": "Pruebas de Hipótesis",
+    "section": "Pruebas sobre la diferencia de dos medias",
+    "text": "Pruebas sobre la diferencia de dos medias"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#cuando-las-distribuciones-tienen-diferentes-varianzas",
+    "href": "Modulo_2/Hipotesis.slides.html#cuando-las-distribuciones-tienen-diferentes-varianzas",
+    "title": "Pruebas de Hipótesis",
+    "section": "Cuando las distribuciones tienen diferentes varianzas",
+    "text": "Cuando las distribuciones tienen diferentes varianzas\n\nSi las distribuciones tienen diferentes varianzas teóricas, entonces\n\\[\\text{ME} = \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}}.\\]"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#pruebas-sobre-la-diferencia-de-dos-medias-1",
+    "href": "Modulo_2/Hipotesis.slides.html#pruebas-sobre-la-diferencia-de-dos-medias-1",
+    "title": "Pruebas de Hipótesis",
+    "section": "Pruebas sobre la diferencia de dos medias",
+    "text": "Pruebas sobre la diferencia de dos medias"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#ejemplo-4",
+    "href": "Modulo_2/Hipotesis.slides.html#ejemplo-4",
+    "title": "Pruebas de Hipótesis",
+    "section": "Ejemplo 4",
+    "text": "Ejemplo 4\nLa resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):\nR: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2. B: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.\n¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?\nEn otras palabras, prueba \\(H_0: \\mu_R = \\mu_B\\) contra \\(H_1: \\mu_R \\neq \\mu_B\\) donde \\(\\mu_R\\) y \\(\\mu_B\\) son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa ￼."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#en-python-1",
+    "href": "Modulo_2/Hipotesis.slides.html#en-python-1",
+    "title": "Pruebas de Hipótesis",
+    "section": "En Python",
+    "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#no-asumas-que-las-varianzas-son-iguales",
+    "href": "Modulo_2/Hipotesis.slides.html#no-asumas-que-las-varianzas-son-iguales",
+    "title": "Pruebas de Hipótesis",
+    "section": "No asumas que las varianzas son iguales",
+    "text": "No asumas que las varianzas son iguales\n\n\nEl supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.\nEl método puede resultar poco fiable si se utiliza cuando las varianzas teóricas no son iguales.\nComo normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#significativo-no-implica-importante",
+    "href": "Modulo_2/Hipotesis.slides.html#significativo-no-implica-importante",
+    "title": "Pruebas de Hipótesis",
+    "section": "Significativo no implica importante",
+    "text": "Significativo no implica importante\n\nEn el uso común, la palabra significativo significa “importante”.\nPor tanto, resulta tentador pensar que los resultados estadísticamente significativos siempre deben ser importantes. Este no es el caso.\nA veces, los resultados estadísticamente significativos no tienen ninguna importancia científica o práctica. En otras palabras, no son prácticamente significativos."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados-de-las-pruebas-de-hipótesis",
+    "href": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados-de-las-pruebas-de-hipótesis",
+    "title": "Pruebas de Hipótesis",
+    "section": "Conclusión de los resultados de las pruebas de hipótesis",
+    "text": "Conclusión de los resultados de las pruebas de hipótesis\n\nLas únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:\n\nRechazamos \\(H_0\\). En otras palabras, concluimos que \\(H_0\\) es falsa.\nNo rechazamos \\(H_0\\). En otras palabras, \\(H_0\\) es plausible. Nunca podemos concluir que \\(H_0\\) sea cierto. Podemos simplemente concluir que \\(H_0\\) podría ser plausible.\n\nDebemos decidir si el nivel de desacuerdo, medido con el valor p, es lo suficientemente grande como para hacer que la hipótesis nula sea inverosímil."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#elije-h_1-para-responder-la-pregunta",
+    "href": "Modulo_2/Hipotesis.slides.html#elije-h_1-para-responder-la-pregunta",
+    "title": "Pruebas de Hipótesis",
+    "section": "Elije \\(H_1\\) para responder la pregunta",
+    "text": "Elije \\(H_1\\) para responder la pregunta\n\nAl realizar una prueba de hipótesis, es importante elegir \\(H_0\\) y \\(H_1\\) apropiadamente para que el resultado de la prueba pueda ser útil para llegar a una conclusión.\nRecordemos que lo que nos importa es la hipótesis alternativa \\(H_1\\).\nPor ejemplo, en aplicaciones médicas, las pruebas de hipótesis se utilizan para comprobar el efecto de un nuevo tratamiento. Esto se afirma en \\(H_1\\), mientras que \\(H_0\\) afirma que el tratamiento no tiene ningún efecto."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#preguntas-de-práctica-para-examen",
+    "href": "Modulo_2/Hipotesis.slides.html#preguntas-de-práctica-para-examen",
+    "title": "Pruebas de Hipótesis",
+    "section": "Preguntas de práctica para examen",
+    "text": "Preguntas de práctica para examen\n\nSe realizó un experimento para determinar la viscosidad del aceite de auto de dos diferentes marcas, A y B. Los resultados de las mediciones de viscosidad se muestran abajo:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarca A\n10.28\n10.27\n10.30\n10.32\n10.27\n10.27\n10.28\n10.29\n\n\n\n\nMarca B\n10.31\n10.31\n10.26\n10.30\n10.27\n10.31\n10.29\n10.26\n\n\n\n\nPrueba la hipótesis \\(H_0: \\mu_A = \\mu_B\\) contra \\(H_0: \\mu_A \\neq \\mu_B\\) usando \\(\\alpha = 0.05\\). Asume que las observaciones siguen una distribución normal para cada grupo, y que las varianzas de estas distribuciones son diferentes."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#agenda",
+    "href": "Modulo_1/Continuas.slides.html#agenda",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nIntroducción\nDistribución Normal\nTeorema del Límite Central"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#función-de-densidad",
+    "href": "Modulo_1/Continuas.slides.html#función-de-densidad",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Función de densidad",
+    "text": "Función de densidad\nUna función importante para variables aleatorias continuas es la función de densidad de probabilidad.\nLa función de densidad de probabilidad de una variable aleatoria continua \\(X\\) es la función \\(f(x)\\) tal que\n\n\\(f(x) \\geq 0\\) para todos los valores de \\(x\\), \\(-\\infty &lt; x &lt; \\infty.\\)\n\\(\\int_{-\\infty}^\\infty f(x)dx =1.\\)\n\nLa función de densidad de probabilidad se usa para calcular probabilidades."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#ejemplos-de-funciones-de-densidad",
+    "href": "Modulo_1/Continuas.slides.html#ejemplos-de-funciones-de-densidad",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Ejemplos de funciones de densidad",
+    "text": "Ejemplos de funciones de densidad"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#función-de-densidad-como-aproximación-al-histograma-de-una-población",
+    "href": "Modulo_1/Continuas.slides.html#función-de-densidad-como-aproximación-al-histograma-de-una-población",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Función de densidad como aproximación al histograma de una población",
+    "text": "Función de densidad como aproximación al histograma de una población"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#calculando-probabilidades",
+    "href": "Modulo_1/Continuas.slides.html#calculando-probabilidades",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Calculando probabilidades",
+    "text": "Calculando probabilidades\nConsidera una variable aleatoria continua \\(X\\) con función de densidad \\(f(x)\\). Si \\(a\\) y \\(b\\) son dos números (\\(a&gt;b\\)) entonces\n\\[P(a\\le X \\le b)= P(a \\le X &lt; b) = P(a&lt;X\\le b)= \\int\n_{a}^b f(x) dx.\\]\nAdemás\n\\[P(X\\le a)= P(X &lt; a) = \\int_{-\\infty}^af(x)dx\\]\n\\[P(X\\ge a)= P(X &gt; a) = \\int_{a}^{\\infty}f(x)dx\\]"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section",
+    "href": "Modulo_1/Continuas.slides.html#section",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "La probabilidad es el [área bajo la curva}{style=“color: red”} creada por \\(f(x)\\)"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-1",
+    "href": "Modulo_1/Continuas.slides.html#section-1",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "Si \\(Y\\) es una variable aleatoria continua, entonces, para cualquier número \\(y_0\\),\n\\[P(Y = y_0) = 0.\\]\nDos explicaciones:\n\nEl área debajo de la curva y entre \\(y_0\\) y \\(y_0\\) no tiene ancho y, por lo tanto, no tiene área. Como la probabilidad es igual al área, la probabilidad es cero.\nSi \\(Y\\) es, digamos, una medida de lluvia diaria, la probabilidad de que sea exactamente 2.193478 pulgadas es cero."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#valor-esperado",
+    "href": "Modulo_1/Continuas.slides.html#valor-esperado",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Valor esperado",
+    "text": "Valor esperado\nEl promedio teórico o valor esperado de una variable aleatoria continua \\(X\\) es\n\\[E(X) = \\int_{-\\infty}^\\infty x f(x)dx\\]\nEsto es similar al valor esperado de una variable aleatoria discreta."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-2",
+    "href": "Modulo_1/Continuas.slides.html#section-2",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "El valor esperado define la locación del centro de la función de densidad."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-3",
+    "href": "Modulo_1/Continuas.slides.html#section-3",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "La varianza teórica de una variable aleatoria continua \\(X\\) es\n\\[V(X) = E\\left[ (X - \\mu)^2 \\right] = \\int_{-\\infty}^\\infty (x-\\mu)^2f(x)dx,\\]\ndonde \\(\\mu = E(X)\\).\nLa desviación estándar de \\(X\\) es la raíz cuadrada de \\(V(X)\\).\n\n\n\n\n\n\nDefine la dispersión de la función de densidad."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#más-sobre-variables-aleatorias-continuas",
+    "href": "Modulo_1/Continuas.slides.html#más-sobre-variables-aleatorias-continuas",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Más sobre variables aleatorias continuas",
+    "text": "Más sobre variables aleatorias continuas\nSea \\(X\\) una variable aleatoria continua con una función de densidad \\(f(x)\\).\nLa función de distribución acumulada de \\(X\\) es\n\n\n\\[F(x)=P(X\\le x)= \\int_{-\\infty}^xf(t)dt.\\]"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#introducción-1",
+    "href": "Modulo_1/Continuas.slides.html#introducción-1",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Introducción",
+    "text": "Introducción\nLa distribución normal (también llamada distribución gaussiana) es la distribución más utilizada en estadística.\nLa distribución tiene la familiar forma de campana y proporciona un buen modelo para muchas, aunque no todas, las poblaciones continuas.\nAplicaciones:\n\nDiseño experimental.\nControl de calidad.\nModelado estadístico."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#distribución-normal-1",
+    "href": "Modulo_1/Continuas.slides.html#distribución-normal-1",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Distribución Normal",
+    "text": "Distribución Normal\n\n\nLa distribución normal tiene dos parámetros: \\(\\mu\\) y \\(\\sigma\\). Aquí, \\(\\mu\\) puede ser cualquier número y \\(\\sigma\\) puede ser cualquier número positivo.\nLa función de densidad de probabilidad de una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\) está dada por\n\\[f(x)= \\frac{1}{\\sigma\\sqrt{2 \\pi}} e^{\\frac{-(x-\\mu)^2}{2\\sigma^2}},\\; -\\infty&lt;x&lt;\\infty.\\]\nSi \\(X\\) sigue una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\), escribimos \\(X\\sim{N(\\mu,\\sigma^2)}\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#media-y-varianza",
+    "href": "Modulo_1/Continuas.slides.html#media-y-varianza",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Media y varianza",
+    "text": "Media y varianza\n\nSi \\(X\\sim{N(\\mu,\\sigma^2)}\\), entonces\n\nEl promedio teórico de \\(X\\) es \\(\\mu\\).\nLa varianza teórica de \\(X\\) es \\(\\sigma\\).\nLa desviación estándar teórica de \\(X\\) es \\(\\sigma^2\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#efecto-de-los-parametros",
+    "href": "Modulo_1/Continuas.slides.html#efecto-de-los-parametros",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Efecto de los parametros",
+    "text": "Efecto de los parametros\n\n\n\nDebemos de pensar en \\(N(\\mu,\\sigma^2)\\) como una familia de distribuciones.\nCada miembro de esa familia tiene una combinación de valores para los parámetros \\(\\mu\\) y \\(\\sigma^2\\).\nCada miembro tiene una función de probabilidad diferente."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#encontrar-áreas-bajo-la-curva",
+    "href": "Modulo_1/Continuas.slides.html#encontrar-áreas-bajo-la-curva",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Encontrar áreas bajo la curva",
+    "text": "Encontrar áreas bajo la curva\n\nEl calculo de probabilidades usando la distribución normal necesita la integral de la función de densidad normal.\nSin embargo, esta integral no tiene una solución en forma cerrada.\nEn lugar de eso, se usan algoritmos de aproximación para realizar los cálculos.\nEn la práctica, los calculos de probabilidades se hacen usando software estadístico como Minitab, JMP, R, o Python."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#cálculo-de-probabilidades-usando-python",
+    "href": "Modulo_1/Continuas.slides.html#cálculo-de-probabilidades-usando-python",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Cálculo de probabilidades usando Python",
+    "text": "Cálculo de probabilidades usando Python"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#regla-empirica",
+    "href": "Modulo_1/Continuas.slides.html#regla-empirica",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Regla Empirica",
+    "text": "Regla Empirica\n\n\nConsidera una población que sigue una distribución normal con media \\(\\mu\\) y desviación estándar \\(\\sigma\\). Toma en cuenta que la curva es simétrica con respecto a \\(\\mu\\).\nAlrededor del 68% de la población se encuentra en el intervalo \\([\\mu - \\sigma, \\; \\mu + \\sigma]\\).\nAproximadamente el 95% de la población se encuentra en el intervalo \\([\\mu - 2\\sigma, \\; \\mu + 2\\sigma]\\).\nAproximadamente el 99.7% de la población se encuentra en el intervalo \\([\\mu - 3\\sigma, \\; \\mu + 3\\sigma]\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#unidades-estándar",
+    "href": "Modulo_1/Continuas.slides.html#unidades-estándar",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Unidades estándar",
+    "text": "Unidades estándar\nLa proporción de una población normal que se encuentra dentro de un número determinado de desviaciones estándar de la media es la misma para cualquier población normal.\nPor esta razón, cuando se trata de poblaciones normales, a menudo convertimos las unidades en las que se midieron originalmente los elementos de la población a unidades estándar.\nLas unidades estándar indican cuántas desviaciones estándar tiene una observación de la media poblacional."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#distribución-normal-estándar",
+    "href": "Modulo_1/Continuas.slides.html#distribución-normal-estándar",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Distribución Normal Estándar",
+    "text": "Distribución Normal Estándar\nEn general, convertimos a unidades estándar restando la media y dividiéndola por la desviación estándar.\nEntonces, si \\(X\\sim{N(\\mu,\\sigma^2)}\\), la unidad estándar de \\(X\\) es el siguiente número:\n\\[Z=\\frac{X-\\mu}{\\sigma}.\\]\nLa distribución de \\(Z\\) es normal con media 0 y desviación estándar 1. Esta distribución se llama distribución normal estándar."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#probablidades-de-la-distribución-normal-estándar",
+    "href": "Modulo_1/Continuas.slides.html#probablidades-de-la-distribución-normal-estándar",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Probablidades de la distribución normal estándar",
+    "text": "Probablidades de la distribución normal estándar\nSi \\(X \\sim N(\\mu, \\sigma^2)\\) y \\(x_0\\) es una constante, tenemos que\n\\[P(X &gt; x_0) = P \\left( \\frac{X-\\mu}{\\sigma} &gt; \\frac{x_0-\\mu}{\\sigma}\\right) = P \\left( Z &gt; z_0\\right),\\]\ndonde \\(Z \\sim N(0, 1)\\) y la constante \\(z_0 = \\frac{x_0-\\mu}{\\sigma}\\) es el valor estandarizado de \\(x_0\\).\nLo mismo para:\n\n\\(P(X &lt; x_0) = P(Z &lt; z_0)\\)\n\\(P(x_0 &lt; X &lt; x_1) = P(z_0 &lt; Z &lt; z_1)\\) donde \\(z_1 = \\frac{x_1-\\mu}{\\sigma}\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#propiedades-de-la-distribución-normal",
+    "href": "Modulo_1/Continuas.slides.html#propiedades-de-la-distribución-normal",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Propiedades de la distribución normal",
+    "text": "Propiedades de la distribución normal\n\nSi \\(X\\sim{N(\\mu,\\sigma^2)}\\) y tenemos las constantes \\(a \\neq 0\\) y \\(b\\). Entonces\n\n\\[aX + b \\sim N(a \\mu + b, a^2 \\sigma^2)\\]\n\nSi \\(X\\) y \\(Y\\) son variables aleatorias independentes con \\(X\\sim{N(\\mu_X,\\sigma^2_X)}\\) y \\(Y\\sim{N(\\mu_Y,\\sigma^2_Y)}\\). Entonces\n\n\\[X+ Y \\sim N(\\mu_X + \\mu_Y, \\sigma^2_X + \\sigma^2_Y)\\]\n\\[X -  Y \\sim N(\\mu_X - \\mu_Y, \\sigma^2_X + \\sigma^2_Y)\\]"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-4",
+    "href": "Modulo_1/Continuas.slides.html#section-4",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "Si \\(X_1, X_2, \\ldots, X_n\\) son variables aleatorias independentes y que siguen una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\). Entonces,\n\n\\[\\bar{X} =\\sum_{i=1}^{n} \\frac{X_i}{n} \\sim N\\left(\\mu,\\; \\frac{\\sigma^2}{n}\\right)\\]"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#muestra-aleatoria",
+    "href": "Modulo_1/Continuas.slides.html#muestra-aleatoria",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Muestra aleatoria",
+    "text": "Muestra aleatoria\n\nConsideremos una muestra de \\(n\\) observaciones seleccionadas aleatoriamente de una población.\nEn estadística, los valores de esas observaciones se consideran variables aleatorias.\nUsamos \\(Y_i\\) para la i-ésima observación y tenemos \\(n\\) de ellas, \\(Y_1, \\ldots, Y_n\\).\nSe dice que todas las \\(Y_i\\)’s sigue una misma distribución específica. Además, asumimos que todas ellas son independientes."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#motivación",
+    "href": "Modulo_1/Continuas.slides.html#motivación",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Motivación",
+    "text": "Motivación\n\nEn muchas aplicaciónes, el resumen estadístico más importante es el promedio:\n\\[\\bar{Y} = \\frac{\\sum_{i=1}^n Y_i}{n} = \\frac{Y_1 + Y_2 + \\cdots + Y_n}{n}\\]\nEl teorema del limite central nos permite aproximar la distribución de \\(\\bar{Y}\\) sin importar la distribución de los valores individuales \\(Y_i\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#teórema-del-límite-central",
+    "href": "Modulo_1/Continuas.slides.html#teórema-del-límite-central",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Teórema del límite central",
+    "text": "Teórema del límite central\n\nSi \\(Y_1, \\ldots, Y_n\\) es una muestra aleatoria que sigue una distribución con un promedio teórico \\(\\mu\\) y una varianza teórica \\(\\sigma^2\\), entonces …\nLa distribución de \\(\\bar{Y} = \\frac{\\sum_{i=1}^n Y_i}{n}\\) converge a una distribución \\(N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\\) cuando el valor de \\(n\\) es muy grande."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#aproximación-a-una-distribución-binomial",
+    "href": "Modulo_1/Continuas.slides.html#aproximación-a-una-distribución-binomial",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Aproximación a una distribución Binomial",
+    "text": "Aproximación a una distribución Binomial\n\nConsidera una muestra \\(Y_1, Y_2, \\ldots, Y_n\\) de variables aleatorias Bernoulli con probabilidad \\(p\\).\nSabemos que el promedio teórico es \\(p\\) y la varianza teórica es \\(p(1-p)\\) para una distribución Bernoulli.\nRecuerda que si \\(X = Y_1 + \\cdots + Y_n\\), entonces \\(X \\sim \\text{Bin}(n,p)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-6",
+    "href": "Modulo_1/Continuas.slides.html#section-6",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "Gracias al teorema del límite central, podemos decir que\n\n\\(X \\sim N(n p, np(1-p))\\) cuando \\(n\\) es muy grande.\n\nEsta aproximación a la distribución binomial funciona bien cuando \\(n\\) es grande y \\(p\\) no está muy cerca de 0 ni de 1.\nDe hecho, cuando \\(n\\) es grande, esta aproximación es la que se utiliza para calcular las probabilidades en una distribución binomial.\n\\[P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y}\\]\nEsto es debido a que es dificil calcular \\({n \\choose y}\\) en este caso porque sus valores pueden ser muy grandes."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#pregunta-de-práctica-para-examen",
+    "href": "Modulo_1/Continuas.slides.html#pregunta-de-práctica-para-examen",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Pregunta de práctica para examen",
+    "text": "Pregunta de práctica para examen\n\nLos pesos de las langostas de Maine en el momento de su captura se distribuyen normalmente con una media de 1.8 lb y una desviación estándar de 0.25 lb.\n¿Cuál es la probabilidad de que una langosta seleccionada al azar pese (a) entre 1.5 y 2 lb?, (b ) más de 1.55 lb?, (c) menos de 2.2 lb?"
+  }
+]

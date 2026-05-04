@@ -1,11 +1,11 @@
 project:
-  title: "TEC-IN2039 Data Visualization for Decision Making"
+  title: "TEC-IN2032 Statistical Data Analysis"
   type: website
   output-dir: docs
 editor: visual
 
 website:
-  title: "IN2004B Generation of Value with Data Analytics"
+  title: "IN2032 Análisis Estadístico de Datos"
   page-navigation: true
   sidebar:
     contents:
@@ -27,7 +27,7 @@ format:
     chalkboard: false
     multiplex: false
     footer: "Tecnologico de Monterrey"
-    logo: IN2004B_logo.png
+    logo: IN2032_logo.png
     css: style.css
     slide-number: True
 

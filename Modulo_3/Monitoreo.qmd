@@ -680,20 +680,20 @@ Los datos se presentan en el archivo “Cables_Circuito.xlsx” en Canvas.
 
 Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.
 
-::::: columns
-::: {.column width="60%"}
+:::::: columns
+:::: {.column width="60%"}
 ::: {style="font-size: 75%;"}
 [**Gráficas de Fase 1**]{style="color: #FF00FF"} se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.
 
 [**Gráficas de Fase 2**]{style="color: purple"} emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo.
 :::
-:::
+::::
 
 ::: {.column width="40%"}
 </br>
 
 ![](images/clipboard-2431984438.png){fig-align="center"}
 :::
-:::::
+::::::
 
 # [Return to main page](https://alanrvazquez.github.io/TEC-IN2032/)
