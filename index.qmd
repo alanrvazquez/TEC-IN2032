@@ -12,8 +12,9 @@ author:
 ### Módulo 1
 
 1.  Introducción a la Estadística ([slides](/Modulo_1/Introduccion.slides.html))
-2.  Distribuciones Discretas de Probabilidad ([slides](/Modulo_1/Discretas.slides.html))
-3.  Distribuciones Continuas de Probabilidad ([slides](/Modulo_1/Continuas.slides.html))
+2.  Introducción a Python ([slides](/Modulo_1/Python.slides.html))
+3.  Distribuciones Discretas de Probabilidad ([slides](/Modulo_1/Discretas.slides.html))
+4.  Distribuciones Continuas de Probabilidad ([slides](/Modulo_1/Continuas.slides.html))
 
 ### Módulo 2
 
