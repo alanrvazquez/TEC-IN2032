@@ -221,7 +221,7 @@
     "href": "Modulo_1/Introduccion.slides.html#ejemplo-1",
     "title": "Introducción a la Estadística",
     "section": "Ejemplo 1",
-    "text": "Ejemplo 1\n\n\nUna máquina fabrica varillas de acero para usar en dispositivos de almacenamiento óptico.\nLa especificación para el diámetro de las varillas es 0.45 ± 0.02 cm.\nDurante la última hora, la máquina ha fabricado 1000 varillas."
+    "text": "Ejemplo 1\n\n\n\nUna máquina fabrica varillas de acero para usar en dispositivos de almacenamiento óptico.\nLa especificación para el diámetro de las varillas es 0.45 ± 0.02 cm.\nDurante la última hora, la máquina ha fabricado 1000 varillas."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#section",
@@ -249,7 +249,7 @@
     "href": "Modulo_1/Introduccion.slides.html#section-2",
     "title": "Introducción a la Estadística",
     "section": "",
-    "text": "El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemplo:\n\n¿Qué intervalo da una buena estimación del porcentaje de varillas aceptables en la población con certeza razonable?\n¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?\n\n¡La estadística nos ayuda contestar preguntas como éstas!"
+    "text": "El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemplo:\n\n¿Qué intervalo da una buena estimación del porcentaje de varillas aceptables en la población con certeza razonable?\n¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?\n\n\n¡La estadística nos ayuda contestar preguntas como éstas!"
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#muestreo-1",
@@ -263,7 +263,7 @@
     "href": "Modulo_1/Introduccion.slides.html#ejemplo-2",
     "title": "Introducción a la Estadística",
     "section": "Ejemplo 2",
-    "text": "Ejemplo 2\nEn una universidad grande, una profesora está interesado en la altura promedio de los estudiantes de la universidad.\nObtiene una lista de los 50,000 estudiantes matriculados en la universidad y asigna un número a cada estudiante.\nElla utiliza un generador de números aleatorios por computadora para generar 100 números enteros aleatorios entre 1 y 50,000, y los estudiantes correspondientes a esos números son seleccionados para medir su altura.\nEsta es una muestra aleatoria simple."
+    "text": "Ejemplo 2\nEn una universidad grande, una profesora está interesado en la altura promedio de los estudiantes de la universidad.\nObtiene una lista de los 50,000 estudiantes matriculados en la universidad y asigna un número a cada estudiante.\nElla utiliza un generador de números aleatorios por computadora para generar 100 números enteros aleatorios entre 1 y 50,000, y los estudiantes correspondientes a esos números son seleccionados para medir su altura.\n\n\n\nEsta es una muestra aleatoria simple."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#variación-muestral",
@@ -277,35 +277,35 @@
     "href": "Modulo_1/Introduccion.slides.html#de-regreso-al-ejemplo-1",
     "title": "Introducción a la Estadística",
     "section": "De regreso al Ejemplo 1",
-    "text": "De regreso al Ejemplo 1\n\nEn la muestra que recopiló el ingeniero, el 92% cumplía con las especificaciones.\nDe la población de 1000 barras, es poco probable que exactamente el 92% cumpla con las especificaciones.\nDebido a la variación del muestreo, es más realista pensar que la verdadera proporción de varillas que cumplen con las especificaciones será cercana a la proporción de la muestra, o 92%."
+    "text": "De regreso al Ejemplo 1\nEn la muestra que recopiló el ingeniero, el 92% cumplía con las especificaciones.\n\nDe la población de 1000 barras, es poco probable que exactamente el 92% cumpla con las especificaciones.\n\nDebido a la variación del muestreo, es más realista pensar que la verdadera proporción de varillas que cumplen con las especificaciones será cercana a la proporción de la muestra, o 92%."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#población-conceptual",
     "href": "Modulo_1/Introduccion.slides.html#población-conceptual",
     "title": "Introducción a la Estadística",
     "section": "Población conceptual",
-    "text": "Población conceptual\n\nUna población conceptual consta de todos los valores que posiblemente podrían haberse observado en una población.\nPor ejemplo, un geólogo pesa una roca varias veces en una balanza sensible. Cada vez, la báscula da una lectura ligeramente diferente.\nAquí la población es conceptual. Consta de todas las lecturas que, en principio, la báscula podría producir."
+    "text": "Población conceptual\nUna población conceptual consta de todos los valores que posiblemente podrían haberse observado en una población.\n\nPor ejemplo, un geólogo pesa una roca varias veces en una balanza sensible. Cada vez, la báscula da una lectura ligeramente diferente.\n\nAquí la población es conceptual. Consta de todas las lecturas que, en principio, la báscula podría producir."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#independencia",
     "href": "Modulo_1/Introduccion.slides.html#independencia",
     "title": "Introducción a la Estadística",
     "section": "Independencia",
-    "text": "Independencia\nSe dice que los elementos de una muestra son independientes si conocer los valores de algunos de ellos no ayuda a predecir los valores de los demás.\nLos elementos de una muestra aleatoria simple pueden tratarse como independientes en la mayoría de los casos encontrados en la práctica.\nUna excepción ocurre cuando la población es finita y la muestra comprende una fracción sustancial (más del 5%) de la población."
+    "text": "Independencia\nSe dice que los elementos de una muestra son independientes si conocer los valores de algunos de ellos no ayuda a predecir los valores de los demás.\n\nLos elementos de una muestra aleatoria simple pueden tratarse como independientes en la mayoría de los casos encontrados en la práctica.\n\nUna excepción ocurre cuando la población es finita y la muestra comprende una fracción sustancial (más del 5%) de la población."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#estudios-observacionales",
     "href": "Modulo_1/Introduccion.slides.html#estudios-observacionales",
     "title": "Introducción a la Estadística",
     "section": "Estudios observacionales",
-    "text": "Estudios observacionales\nUn estudio observacional es aquel en el que el científico simplemente observa un fenómeno y registra datos, sin tener ningún control sobre el fenómeno.\nLos estudios observacionales son valiosos para descubrir tendencias y posibles asociaciones.\nSin embargo, ¡no son tan buenos como los experimentos controlados para obtener conclusiones confiables sobre causa-y-efecto!"
+    "text": "Estudios observacionales\nUn estudio observacional es aquel en el que el científico simplemente observa un fenómeno y registra datos, sin tener ningún control sobre el fenómeno.\n\nLos estudios observacionales son valiosos para descubrir tendencias y posibles asociaciones.\n\n\nSin embargo, ¡no son tan buenos como los experimentos controlados para obtener conclusiones confiables sobre causa-y-efecto!"
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#experimentos-controlados",
     "href": "Modulo_1/Introduccion.slides.html#experimentos-controlados",
     "title": "Introducción a la Estadística",
     "section": "Experimentos controlados",
-    "text": "Experimentos controlados\nUn experimento controlado es aquel en el que el científico tiene un grado de control sobre el fenómeno tal que le permite recolectar datos sobre el mismo de una manera estructurada.\nSe pueden utilizar muchos tipos de experimentos para generar datos:\n\nLos experimentos de una muestra involucran solo una población de interés y de ella se extrae una única muestra.\nLos experimentos de muestras múltiples involucran dos o más poblaciones de interés y se extrae una sola muestra de cada población.\n\nLos experimentos controlados permiten establecer relaciones de causa-y-efecto."
+    "text": "Experimentos controlados\nUn experimento controlado es aquel en el que el científico tiene un grado de control sobre el fenómeno tal que le permite recolectar datos sobre el mismo de una manera estructurada.\nSe pueden utilizar diferentes experimentos para generar datos:\n\n\nLos experimentos de una muestra involucran solo una población de interés y de ella se extrae una única muestra.\nLos experimentos de muestras múltiples involucran dos o más poblaciones de interés y se extrae una sola muestra de cada población.\n\n\n\nLos experimentos controlados permiten establecer relaciones de causa-y-efecto."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#tipos-de-datos-i",
@@ -319,14 +319,14 @@
     "href": "Modulo_1/Introduccion.slides.html#tipos-de-datos-ii",
     "title": "Introducción a la Estadística",
     "section": "Tipos de datos II",
-    "text": "Tipos de datos II\nCuando los elementos de muestra se colocan en categorías y se asignan nombres de categorías a los elementos de muestra, los datos son categóricos o cualitativos.\n\nColor de cabello.\nPaís de origen.\nCódigo postal."
+    "text": "Tipos de datos II\n\nCuando los elementos de muestra se colocan en categorías y se asignan nombres de categorías a los elementos de muestra, los datos son categóricos o cualitativos.\n\nColor de cabello.\nPaís de origen.\nCódigo postal."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#resúmenes-estadísticos",
     "href": "Modulo_1/Introduccion.slides.html#resúmenes-estadísticos",
     "title": "Introducción a la Estadística",
     "section": "Resúmenes estadísticos",
-    "text": "Resúmenes estadísticos\n\nUna muestra suele ser una larga lista de números. Para ayudar a resaltar las características importantes de una muestra, calculamos estadísticas resumidas.\nPara datos numéricos, las estadísticas resumidas más populares son:\n\nMuestra promedio.\nVariación de la muestra.\nDesviación estándar muestral."
+    "text": "Resúmenes estadísticos\nUna muestra suele ser una larga lista de números. Para ayudar a resaltar las características importantes de una muestra, calculamos estadísticas resumidas.\n\n\nPara datos numéricos, las estadísticas resumidas más populares son:\n\nMuestra promedio.\nVariación de la muestra.\nDesviación estándar muestral."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#media-muestral",
@@ -340,28 +340,28 @@
     "href": "Modulo_1/Introduccion.slides.html#varianza-muestral",
     "title": "Introducción a la Estadística",
     "section": "Varianza muestral",
-    "text": "Varianza muestral\n\nDenotemos \\(y_1, y_2, \\ldots, y_n\\) observaciones como \\(n\\). La varianza muestral es:\n\\[s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2 = \\frac{1}{n-1} \\left( (y_1 - \\bar{y})^2 + (y_2 - \\bar{y})^2 +\\cdots + (y_n - \\bar{y})^2\\right).\\]\nLa varianza muestral es como un promedio de las diferencias al cuadrado entre cada observación y la media muestral. Da una indicación de cuán dispersos están los datos."
+    "text": "Varianza muestral\n\nDenotemos \\(y_1, y_2, \\ldots, y_n\\) observaciones como \\(n\\). La varianza muestral es:\n\n\\[s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2 = \\frac{1}{n-1} \\left( (y_1 - \\bar{y})^2 + (y_2 - \\bar{y})^2 +\\cdots + (y_n - \\bar{y})^2\\right).\\]\n\nLa varianza muestral es como un promedio de las diferencias al cuadrado entre cada observación y la media muestral. Da una indicación de cuán dispersos están los datos."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#desviación-estándar-muestral",
     "href": "Modulo_1/Introduccion.slides.html#desviación-estándar-muestral",
     "title": "Introducción a la Estadística",
     "section": "Desviación estándar muestral",
-    "text": "Desviación estándar muestral\n[Un inconveniente de la varianza muestral es que no está en la misma escala que las observaciones reales.]{style = “color: darkred”} Esto se debe a que las diferencias entre cada observación y la media muestral se elevan al cuadrado.\nPara obtener una medida de dispersión cuyas unidades sean las mismas que las de la muestra, simplemente tomamos la raíz cuadrada de la varianza muestral.\n\\[s =\\sqrt{\\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2}.\\]\nEsta cantidad se conoce como desviación estándar muestral."
+    "text": "Desviación estándar muestral\n\nUn inconveniente de la varianza muestral es que no está en la misma escala que las observaciones reales. Esto se debe a que las diferencias entre cada observación y la media muestral se elevan al cuadrado.\nPara obtener una medida de dispersión cuyas unidades sean las mismas que las de la muestra, simplemente tomamos la raíz cuadrada de la varianza muestral.\n\\[s =\\sqrt{\\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2}.\\]\nEsta cantidad se conoce como desviación estándar muestral."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#estadísticas-muestrales-y-parámetros-de-población",
     "href": "Modulo_1/Introduccion.slides.html#estadísticas-muestrales-y-parámetros-de-población",
     "title": "Introducción a la Estadística",
     "section": "Estadísticas muestrales y parámetros de población",
-    "text": "Estadísticas muestrales y parámetros de población\n\nCada estadística de muestra aquí tiene una contraparte de parámetro poblacional.\nLos resúmenes numéricos de una muestra se llaman [estadísticas]{style = “color: darkblue”}.\nLos resúmenes numéricos o características de una población se denominan [parámetros]{style = “color: darkgreen”}."
+    "text": "Estadísticas muestrales y parámetros de población\n\nCada estadística de muestra aquí tiene una contraparte de parámetro poblacional.\nLos resúmenes numéricos de una muestra se llaman estadísticas.\nLos resúmenes numéricos o características de una población se denominan parámetros."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#section-3",
     "href": "Modulo_1/Introduccion.slides.html#section-3",
     "title": "Introducción a la Estadística",
     "section": "",
-    "text": "Para la población:\n\nLa media es \\(\\mu\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nPara la muestra:\n\nLa media (promedio) es \\(\\bar{y}\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nUno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra."
+    "text": "Para la población:\n\nLa media es \\(\\mu\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nPara la muestra:\n\nLa media (promedio) es \\(\\bar{y}\\).\nLa varianza es \\(s^2\\).\nLa desviación estándar es \\(s\\).\n\n\n\n\nUno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#resumen-estadistico-de-variables-categoricas",

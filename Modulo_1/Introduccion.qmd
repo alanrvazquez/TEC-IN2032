@@ -4,7 +4,7 @@ subtitle: "IN2032: Análisis Estadístico de Datos"
 author: 
   - name: Alan R. Vazquez
     affiliations:
-      - name: Department of Industrial Engineering
+      - name: Departmento de Ingeniería Industrial
 format: 
   revealjs:
     chalkboard: false
@@ -36,6 +36,7 @@ jupyter: python3
 
 </br>
 
+::: incremental
 - Hacer frente a la incertidumbre en mediciones científicas repetidas.
 
 - Sacar conclusiones confiables de los datos.
@@ -45,8 +46,11 @@ jupyter: python3
 - Construir modelos o algoritmos para predecir eventos futuros.
 
 - Ser un miembro bien informado de la sociedad.
+:::
 
 ## Ejemplo 1
+
+</br>
 
 ::::: columns
 ::: {.column width="60%"}
@@ -58,15 +62,17 @@ Durante la última hora, la máquina ha fabricado 1000 varillas.
 :::
 
 ::: {.column width="40%"}
+</br>
 ![](images/clipboard-3830659353.png){fig-align="center"}
 :::
 :::::
 
 ## 
 
+</br>
+
 ::::: columns
 ::: {.column width="60%"}
-
 </br>
 
 El ingeniero de calidad quiere saber aproximadamente cuántas de estas varillas cumplen con la especificación.
@@ -81,9 +87,10 @@ El ingeniero de calidad quiere saber aproximadamente cuántas de estas varillas 
 
 ## 
 
+</br>
+
 ::::: columns
 ::: {.column width="60%"}
-
 </br></br>
 
 [**Solución**]{.underline}: tomar una muestra aleatoria de 50 varillas y medirlas.
@@ -92,7 +99,6 @@ Al hacer esto, el ingeniero descubre que 46 de ellas (92%) cumplen con la especi
 :::
 
 ::: {.column width="40%"}
-
 ![](images/clipboard-3717050976.png){fig-align="center"}
 :::
 :::::
@@ -107,13 +113,17 @@ Al hacer esto, el ingeniero descubre que 46 de ellas (92%) cumplen con la especi
 
 ## 
 
-</br>
+</br></br>
 
 El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemplo:
 
+::: incremental
 - ¿Qué intervalo da una buena estimación del porcentaje de varillas aceptables en la población con certeza razonable?
 
 - ¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?
+:::
+
+. . . 
 
 [**¡La estadística nos ayuda contestar preguntas como éstas!**]{style="color: #000080;"}
 
@@ -123,11 +133,13 @@ El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemp
 
 Conceptos importantes preliminares:
 
-1. Una [**población**]{style="color: #000080;"} es la colección completa de objetos o resultados sobre los cuales se busca información.
+::: incremental
+1.  Una [**población**]{style="color: #000080;"} es la colección completa de objetos o resultados sobre los cuales se busca información.
 
-2. Una [**muestra**]{style="color: #000080;"} es un subconjunto de una población que contiene los objetos o resultados que realmente se observan.
+2.  Una [**muestra**]{style="color: #000080;"} es un subconjunto de una población que contiene los objetos o resultados que realmente se observan.
 
-3. Una [**muestra aleatoria simple (MAS)**]{style="color: #000080;"} de tamaño $n$ es una muestra elegida mediante un método en el que cada colección de $n$ elementos de la población tiene la misma probabilidad de constituir la muestra, tal como en la lotería.
+3.  Una [**muestra aleatoria simple (MAS)**]{style="color: #000080;"} de tamaño $n$ es una muestra elegida mediante un método en el que cada colección de $n$ elementos de la población tiene la misma probabilidad de constituir la muestra, tal como en la lotería.
+:::
 
 ## Ejemplo 2
 
@@ -137,7 +149,13 @@ Obtiene una lista de los 50,000 estudiantes matriculados en la universidad y asi
 
 Ella utiliza un generador de números aleatorios por computadora para generar 100 números enteros aleatorios entre 1 y 50,000, y los estudiantes correspondientes a esos números son seleccionados para medir su altura.
 
+</br>
+
+. . .
+
+::: {style="text-align: center;"}
 [**Esta es una muestra aleatoria simple.**]{style="color: #000080;"}
+:::
 
 ## Variación muestral
 
@@ -147,28 +165,31 @@ No se garantiza que una muestra aleatoria simple (MAS) refleje perfectamente la 
 
 Las MAS siempre difieren en algunos aspectos entre sí; ocasionalmente una muestra es sustancialmente diferente de la población.
 
-Dos muestras diferentes de la misma población también variarán 
-entre sí.
+Dos muestras diferentes de la misma población también variarán entre sí.
 
-Este fenómeno se conoce como [**variación muestral**]{style="color: darkgreen;"}. 
+Este fenómeno se conoce como [**variación muestral**]{style="color: darkgreen;"}.
 
 ## De regreso al Ejemplo 1
 
-</br>
-
 En la muestra que recopiló el ingeniero, el 92% cumplía con las especificaciones.
 
+</br>
+
 De la población de 1000 barras, es poco probable que exactamente el 92% cumpla con las especificaciones.
+
+</br>
 
 Debido a la variación del muestreo, es más realista pensar que la verdadera proporción de varillas que cumplen con las especificaciones [será cercana a la proporción de la muestra, o 92%]{style="color: #B2AC88"}.
 
 ## Población conceptual
 
-</br>
-
 Una **población conceptual** consta de todos los valores que posiblemente podrían haberse observado en una población.
 
+</br>
+
 Por ejemplo, un geólogo pesa una roca varias veces en una balanza sensible. Cada vez, la báscula da una lectura ligeramente diferente.
+
+</br>
 
 Aquí la población es conceptual. Consta de todas las lecturas que, en principio, la báscula podría producir.
 
@@ -176,17 +197,27 @@ Aquí la población es conceptual. Consta de todas las lecturas que, en principi
 
 Se dice que los elementos de una muestra son [**independientes**]{style="color: darkgreen"} si conocer los valores de algunos de ellos no ayuda a predecir los valores de los demás.
 
-Los elementos de una muestra aleatoria simple pueden tratarse como independientes en la mayoría de los casos encontrados en la práctica. 
+</br>
+
+Los elementos de una muestra aleatoria simple pueden tratarse como independientes en la mayoría de los casos encontrados en la práctica.
+
+</br>
 
 Una excepción ocurre cuando la población es finita y la muestra comprende una fracción sustancial (más del 5%) de la población.
 
-# Experimentos y estudios observacionales
+# Experimentos y Estudios Observacionales
 
 ## Estudios observacionales
 
 Un [**estudio observacional**]{style="color: darkgreen"} es aquel en el que el científico simplemente observa un fenómeno y registra datos, sin tener ningún control sobre el fenómeno.
 
+</br>
+
 Los estudios observacionales son valiosos para descubrir tendencias y posibles asociaciones.
+
+</br>
+
+. . . 
 
 [Sin embargo, ¡no son tan buenos como los experimentos controlados para obtener conclusiones confiables sobre causa-y-efecto!]{style="color: red"}
 
@@ -194,11 +225,17 @@ Los estudios observacionales son valiosos para descubrir tendencias y posibles a
 
 Un experimento controlado es aquel en el que el científico tiene un grado de control sobre el fenómeno tal que le permite recolectar datos sobre el mismo de una manera estructurada.
 
-Se pueden utilizar muchos tipos de experimentos para generar datos:
+Se pueden utilizar diferentes experimentos para generar datos:
 
+::: incremental
+::: {style="font-size: 88%;"}
 - Los **experimentos de una muestra** involucran solo una población de interés y de ella se extrae una única muestra.
 
 - Los **experimentos de muestras múltiples** involucran dos o más poblaciones de interés y se extrae una sola muestra de cada población.
+:::
+:::
+
+. . . 
 
 Los experimentos controlados permiten establecer relaciones de causa-y-efecto.
 
@@ -218,6 +255,8 @@ Cuando se asigna una cantidad numérica que designa cuánto o cuántos a cada el
 
 ## Tipos de datos II
 
+</br></br>
+
 Cuando los elementos de muestra se colocan en categorías y se asignan nombres de categorías a los elementos de muestra, los datos son [**categóricos**]{style="color: pink"} o [**cualitativos**]{style="color: pink"}.
 
 - Color de cabello.
@@ -228,23 +267,27 @@ Cuando los elementos de muestra se colocan en categorías y se asignan nombres d
 
 ## Resúmenes estadísticos
 
+Una muestra suele ser una larga lista de números. Para ayudar a resaltar las características importantes de una muestra, **calculamos estadísticas resumidas**.
+
 </br>
 
-Una muestra suele ser una larga lista de números. Para ayudar a resaltar las características importantes de una muestra, **calculamos estadísticas resumidas**.
+. . . 
 
 Para datos numéricos, las estadísticas resumidas más populares son:
 
+::: incremental
 - Muestra promedio.
 
 - Variación de la muestra.
 
 - Desviación estándar muestral.
+:::
 
 ## Media muestral
 
 </br></br>
 
-Denotemos $y_1, y_2, \ldots, y_n$ observaciones como $n$. La media muestral (promedio) es:
+Denotemos $y_1, y_2, \ldots, y_n$ observaciones como $n$. La [**media muestral (promedio)**]{style="color: #4682B4;"} es:
 
 $$\bar{y} = \frac{1}{n}\sum_{i=1}^{n} y_i = \frac{y_1+y_2+\cdots+y_n}{n}.$$
 
@@ -254,23 +297,25 @@ La media muestral indica el centro de los datos.
 
 </br></br>
 
-Denotemos $y_1, y_2, \ldots, y_n$ observaciones como $n$. La varianza muestral es:
+Denotemos $y_1, y_2, \ldots, y_n$ observaciones como $n$. La [**varianza muestral**]{style="color: #4682B4;"} es:
 
+::: {style="font-size: 78%;"}
 $$s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2 = \frac{1}{n-1} \left( (y_1 - \bar{y})^2 + (y_2 - \bar{y})^2 +\cdots + (y_n - \bar{y})^2\right).$$
+::: 
 
-La varianza muestral es como un promedio de las diferencias al cuadrado entre cada observación y la media muestral.
-Da una indicación de cuán dispersos están los datos.
+La varianza muestral es como un promedio de las diferencias al cuadrado entre cada observación y la media muestral. Da una indicación de cuán dispersos están los datos.
 
 ## Desviación estándar muestral
 
-[Un inconveniente de la varianza muestral es que no está en la misma escala que las observaciones reales.]{style = "color: darkred"} Esto se debe a que las diferencias entre cada observación y la media muestral se elevan al cuadrado.
+::: {style="font-size: 90%;"}
+[Un inconveniente de la varianza muestral es que no está en la misma escala que las observaciones reales.]{style="color: darkred;"} Esto se debe a que las diferencias entre cada observación y la media muestral se elevan al cuadrado.
 
 Para obtener una medida de dispersión cuyas unidades sean las mismas que las de la muestra, simplemente tomamos la raíz cuadrada de la varianza muestral.
 
 $$s =\sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2}.$$
 
-Esta cantidad se conoce como desviación estándar muestral. 
-
+Esta cantidad se conoce como [**desviación estándar muestral**]{style="color: #4682B4;"}.
+:::
 
 ## Estadísticas muestrales y parámetros de población
 
@@ -278,15 +323,16 @@ Esta cantidad se conoce como desviación estándar muestral.
 
 Cada estadística de muestra aquí tiene una contraparte de parámetro poblacional.
 
-Los resúmenes numéricos de una **muestra** se llaman [**estadísticas**]{style = "color: darkblue"}.
+Los resúmenes numéricos de una **muestra** se llaman [**estadísticas**]{style="color: darkblue;"}.
 
-Los resúmenes numéricos o características de una **población** se denominan [**parámetros**]{style = "color: darkgreen"}.
+Los resúmenes numéricos o características de una **población** se denominan [**parámetros**]{style="color: darkgreen;"}.
 
-##
+## 
+
+</br></br>
 
 ::::: columns
 ::: {.column width="50%"}
-
 Para la población:
 
 - La media es $\mu$.
@@ -301,11 +347,15 @@ Para la muestra:
 
 - La media (promedio) es $\bar{y}$.
 
-- La varianza es $\sigma^2$.
+- La varianza es $s^2$.
 
-- La desviación estándar es $\sigma$.
+- La desviación estándar es $s$.
 :::
 :::::
+
+</br>
+
+. . . 
 
 [Uno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra.]{style="color: #D8A7B1"}
 

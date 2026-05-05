@@ -4,7 +4,7 @@ subtitle: "IN2032: Análisis Estadístico de Datos"
 author: 
   - name: Alan R. Vazquez
     affiliations:
-      - name: Department of Industrial Engineering
+      - name: Departmento de Ingeniería Industrial
 format: 
   revealjs:
     chalkboard: false

@@ -141,7 +141,7 @@
 Alan R. Vazquez 
 </div>
         <p class="quarto-title-affiliation">
-            Department of Industrial Engineering
+            Departmento de Ingeniería Industrial
           </p>
     </div>
 </div>
@@ -166,30 +166,28 @@ Alan R. Vazquez
 <h2>¿Por qué la estadística?</h2>
 <p><br></p>
 <ul>
-<li><p>Hacer frente a la incertidumbre en mediciones científicas repetidas.</p></li>
-<li><p>Sacar conclusiones confiables de los datos.</p></li>
-<li><p>Diseñar experimentos válidos y sacar conclusiones fiables.</p></li>
-<li><p>Construir modelos o algoritmos para predecir eventos futuros.</p></li>
-<li><p>Ser un miembro bien informado de la sociedad.</p></li>
+<li class="fragment"><p>Hacer frente a la incertidumbre en mediciones científicas repetidas.</p></li>
+<li class="fragment"><p>Sacar conclusiones confiables de los datos.</p></li>
+<li class="fragment"><p>Diseñar experimentos válidos y sacar conclusiones fiables.</p></li>
+<li class="fragment"><p>Construir modelos o algoritmos para predecir eventos futuros.</p></li>
+<li class="fragment"><p>Ser un miembro bien informado de la sociedad.</p></li>
 </ul>
 </section>
 <section id="ejemplo-1" class="slide level2">
 <h2>Ejemplo 1</h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Una máquina fabrica varillas de acero para usar en dispositivos de almacenamiento óptico.</p>
 <p>La especificación para el diámetro de las varillas es 0.45 ± 0.02 cm.</p>
 <p>Durante la última hora, la máquina ha fabricado 1000 varillas.</p>
 </div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/clipboard-3830659353.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
+<p><br> <img data-src="images/clipboard-3830659353.png" class="quarto-figure quarto-figure-center"></p>
 </div></div>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><br></p>
@@ -205,6 +203,7 @@ Alan R. Vazquez
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><br><br></p>
@@ -228,13 +227,15 @@ Alan R. Vazquez
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-<p><br></p>
+<p><br><br></p>
 <p>El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemplo:</p>
 <ul>
-<li><p>¿Qué intervalo da una buena estimación del porcentaje de varillas aceptables en la población con certeza razonable?</p></li>
-<li><p>¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?</p></li>
+<li class="fragment"><p>¿Qué intervalo da una buena estimación del porcentaje de varillas aceptables en la población con certeza razonable?</p></li>
+<li class="fragment"><p>¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?</p></li>
 </ul>
+<div class="fragment">
 <p><span style="color: #000080;"><strong>¡La estadística nos ayuda contestar preguntas como éstas!</strong></span></p>
+</div>
 </section></section>
 <section>
 <section id="muestreo" class="title-slide slide level1 center">
@@ -245,9 +246,9 @@ Alan R. Vazquez
 <h2>Muestreo</h2>
 <p>Conceptos importantes preliminares:</p>
 <ol type="1">
-<li><p>Una <span style="color: #000080;"><strong>población</strong></span> es la colección completa de objetos o resultados sobre los cuales se busca información.</p></li>
-<li><p>Una <span style="color: #000080;"><strong>muestra</strong></span> es un subconjunto de una población que contiene los objetos o resultados que realmente se observan.</p></li>
-<li><p>Una <span style="color: #000080;"><strong>muestra aleatoria simple (MAS)</strong></span> de tamaño <span class="math inline">\(n\)</span> es una muestra elegida mediante un método en el que cada colección de <span class="math inline">\(n\)</span> elementos de la población tiene la misma probabilidad de constituir la muestra, tal como en la lotería.</p></li>
+<li class="fragment"><p>Una <span style="color: #000080;"><strong>población</strong></span> es la colección completa de objetos o resultados sobre los cuales se busca información.</p></li>
+<li class="fragment"><p>Una <span style="color: #000080;"><strong>muestra</strong></span> es un subconjunto de una población que contiene los objetos o resultados que realmente se observan.</p></li>
+<li class="fragment"><p>Una <span style="color: #000080;"><strong>muestra aleatoria simple (MAS)</strong></span> de tamaño <span class="math inline">\(n\)</span> es una muestra elegida mediante un método en el que cada colección de <span class="math inline">\(n\)</span> elementos de la población tiene la misma probabilidad de constituir la muestra, tal como en la lotería.</p></li>
 </ol>
 </section>
 <section id="ejemplo-2" class="slide level2">
@@ -255,7 +256,12 @@ Alan R. Vazquez
 <p>En una universidad grande, una profesora está interesado en la altura promedio de los estudiantes de la universidad.</p>
 <p>Obtiene una lista de los 50,000 estudiantes matriculados en la universidad y asigna un número a cada estudiante.</p>
 <p>Ella utiliza un generador de números aleatorios por computadora para generar 100 números enteros aleatorios entre 1 y 50,000, y los estudiantes correspondientes a esos números son seleccionados para medir su altura.</p>
+<p><br></p>
+<div class="fragment">
+<div style="text-align: center;">
 <p><span style="color: #000080;"><strong>Esta es una muestra aleatoria simple.</strong></span></p>
+</div>
+</div>
 </section>
 <section id="variación-muestral" class="slide level2">
 <h2>Variación muestral</h2>
@@ -267,44 +273,56 @@ Alan R. Vazquez
 </section>
 <section id="de-regreso-al-ejemplo-1" class="slide level2">
 <h2>De regreso al Ejemplo 1</h2>
-<p><br></p>
 <p>En la muestra que recopiló el ingeniero, el 92% cumplía con las especificaciones.</p>
+<p><br></p>
 <p>De la población de 1000 barras, es poco probable que exactamente el 92% cumpla con las especificaciones.</p>
+<p><br></p>
 <p>Debido a la variación del muestreo, es más realista pensar que la verdadera proporción de varillas que cumplen con las especificaciones <span style="color: #B2AC88">será cercana a la proporción de la muestra, o 92%</span>.</p>
 </section>
 <section id="población-conceptual" class="slide level2">
 <h2>Población conceptual</h2>
-<p><br></p>
 <p>Una <strong>población conceptual</strong> consta de todos los valores que posiblemente podrían haberse observado en una población.</p>
+<p><br></p>
 <p>Por ejemplo, un geólogo pesa una roca varias veces en una balanza sensible. Cada vez, la báscula da una lectura ligeramente diferente.</p>
+<p><br></p>
 <p>Aquí la población es conceptual. Consta de todas las lecturas que, en principio, la báscula podría producir.</p>
 </section>
 <section id="independencia" class="slide level2">
 <h2>Independencia</h2>
 <p>Se dice que los elementos de una muestra son <span style="color: darkgreen"><strong>independientes</strong></span> si conocer los valores de algunos de ellos no ayuda a predecir los valores de los demás.</p>
+<p><br></p>
 <p>Los elementos de una muestra aleatoria simple pueden tratarse como independientes en la mayoría de los casos encontrados en la práctica.</p>
+<p><br></p>
 <p>Una excepción ocurre cuando la población es finita y la muestra comprende una fracción sustancial (más del 5%) de la población.</p>
 </section></section>
 <section>
 <section id="experimentos-y-estudios-observacionales" class="title-slide slide level1 center">
-<h1>Experimentos y estudios observacionales</h1>
+<h1>Experimentos y Estudios Observacionales</h1>
 
 </section>
 <section id="estudios-observacionales" class="slide level2">
 <h2>Estudios observacionales</h2>
 <p>Un <span style="color: darkgreen"><strong>estudio observacional</strong></span> es aquel en el que el científico simplemente observa un fenómeno y registra datos, sin tener ningún control sobre el fenómeno.</p>
+<p><br></p>
 <p>Los estudios observacionales son valiosos para descubrir tendencias y posibles asociaciones.</p>
+<p><br></p>
+<div class="fragment">
 <p><span style="color: red">Sin embargo, ¡no son tan buenos como los experimentos controlados para obtener conclusiones confiables sobre causa-y-efecto!</span></p>
+</div>
 </section>
 <section id="experimentos-controlados" class="slide level2">
 <h2>Experimentos controlados</h2>
 <p>Un experimento controlado es aquel en el que el científico tiene un grado de control sobre el fenómeno tal que le permite recolectar datos sobre el mismo de una manera estructurada.</p>
-<p>Se pueden utilizar muchos tipos de experimentos para generar datos:</p>
+<p>Se pueden utilizar diferentes experimentos para generar datos:</p>
+<div style="font-size: 88%;">
 <ul>
-<li><p>Los <strong>experimentos de una muestra</strong> involucran solo una población de interés y de ella se extrae una única muestra.</p></li>
-<li><p>Los <strong>experimentos de muestras múltiples</strong> involucran dos o más poblaciones de interés y se extrae una sola muestra de cada población.</p></li>
+<li class="fragment"><p>Los <strong>experimentos de una muestra</strong> involucran solo una población de interés y de ella se extrae una única muestra.</p></li>
+<li class="fragment"><p>Los <strong>experimentos de muestras múltiples</strong> involucran dos o más poblaciones de interés y se extrae una sola muestra de cada población.</p></li>
 </ul>
+</div>
+<div class="fragment">
 <p>Los experimentos controlados permiten establecer relaciones de causa-y-efecto.</p>
+</div>
 </section></section>
 <section>
 <section id="resumenes-estadísticos" class="title-slide slide level1 center">
@@ -323,6 +341,7 @@ Alan R. Vazquez
 </section>
 <section id="tipos-de-datos-ii" class="slide level2">
 <h2>Tipos de datos II</h2>
+<p><br><br></p>
 <p>Cuando los elementos de muestra se colocan en categorías y se asignan nombres de categorías a los elementos de muestra, los datos son <span style="color: pink"><strong>categóricos</strong></span> o <span style="color: pink"><strong>cualitativos</strong></span>.</p>
 <ul>
 <li><p>Color de cabello.</p></li>
@@ -332,45 +351,52 @@ Alan R. Vazquez
 </section>
 <section id="resúmenes-estadísticos" class="slide level2">
 <h2>Resúmenes estadísticos</h2>
-<p><br></p>
 <p>Una muestra suele ser una larga lista de números. Para ayudar a resaltar las características importantes de una muestra, <strong>calculamos estadísticas resumidas</strong>.</p>
+<p><br></p>
+<div class="fragment">
 <p>Para datos numéricos, las estadísticas resumidas más populares son:</p>
 <ul>
-<li><p>Muestra promedio.</p></li>
-<li><p>Variación de la muestra.</p></li>
-<li><p>Desviación estándar muestral.</p></li>
+<li class="fragment"><p>Muestra promedio.</p></li>
+<li class="fragment"><p>Variación de la muestra.</p></li>
+<li class="fragment"><p>Desviación estándar muestral.</p></li>
 </ul>
+</div>
 </section>
 <section id="media-muestral" class="slide level2">
 <h2>Media muestral</h2>
 <p><br><br></p>
-<p>Denotemos <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span> observaciones como <span class="math inline">\(n\)</span>. La media muestral (promedio) es:</p>
+<p>Denotemos <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span> observaciones como <span class="math inline">\(n\)</span>. La <span style="color: #4682B4;"><strong>media muestral (promedio)</strong></span> es:</p>
 <p><span class="math display">\[\bar{y} = \frac{1}{n}\sum_{i=1}^{n} y_i = \frac{y_1+y_2+\cdots+y_n}{n}.\]</span></p>
 <p>La media muestral indica el centro de los datos.</p>
 </section>
 <section id="varianza-muestral" class="slide level2">
 <h2>Varianza muestral</h2>
 <p><br><br></p>
-<p>Denotemos <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span> observaciones como <span class="math inline">\(n\)</span>. La varianza muestral es:</p>
+<p>Denotemos <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span> observaciones como <span class="math inline">\(n\)</span>. La <span style="color: #4682B4;"><strong>varianza muestral</strong></span> es:</p>
+<div style="font-size: 78%;">
 <p><span class="math display">\[s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2 = \frac{1}{n-1} \left( (y_1 - \bar{y})^2 + (y_2 - \bar{y})^2 +\cdots + (y_n - \bar{y})^2\right).\]</span></p>
+</div>
 <p>La varianza muestral es como un promedio de las diferencias al cuadrado entre cada observación y la media muestral. Da una indicación de cuán dispersos están los datos.</p>
 </section>
 <section id="desviación-estándar-muestral" class="slide level2">
 <h2>Desviación estándar muestral</h2>
-<p>[Un inconveniente de la varianza muestral es que no está en la misma escala que las observaciones reales.]{style = “color: darkred”} Esto se debe a que las diferencias entre cada observación y la media muestral se elevan al cuadrado.</p>
+<div style="font-size: 90%;">
+<p><span style="color: darkred;">Un inconveniente de la varianza muestral es que no está en la misma escala que las observaciones reales.</span> Esto se debe a que las diferencias entre cada observación y la media muestral se elevan al cuadrado.</p>
 <p>Para obtener una medida de dispersión cuyas unidades sean las mismas que las de la muestra, simplemente tomamos la raíz cuadrada de la varianza muestral.</p>
 <p><span class="math display">\[s =\sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2}.\]</span></p>
-<p>Esta cantidad se conoce como desviación estándar muestral.</p>
+<p>Esta cantidad se conoce como <span style="color: #4682B4;"><strong>desviación estándar muestral</strong></span>.</p>
+</div>
 </section>
 <section id="estadísticas-muestrales-y-parámetros-de-población" class="slide level2">
 <h2>Estadísticas muestrales y parámetros de población</h2>
 <p><br></p>
 <p>Cada estadística de muestra aquí tiene una contraparte de parámetro poblacional.</p>
-<p>Los resúmenes numéricos de una <strong>muestra</strong> se llaman [<strong>estadísticas</strong>]{style = “color: darkblue”}.</p>
-<p>Los resúmenes numéricos o características de una <strong>población</strong> se denominan [<strong>parámetros</strong>]{style = “color: darkgreen”}.</p>
+<p>Los resúmenes numéricos de una <strong>muestra</strong> se llaman <span style="color: darkblue;"><strong>estadísticas</strong></span>.</p>
+<p>Los resúmenes numéricos o características de una <strong>población</strong> se denominan <span style="color: darkgreen;"><strong>parámetros</strong></span>.</p>
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
+<p><br><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Para la población:</p>
@@ -383,11 +409,14 @@ Alan R. Vazquez
 <p>Para la muestra:</p>
 <ul>
 <li><p>La media (promedio) es <span class="math inline">\(\bar{y}\)</span>.</p></li>
-<li><p>La varianza es <span class="math inline">\(\sigma^2\)</span>.</p></li>
-<li><p>La desviación estándar es <span class="math inline">\(\sigma\)</span>.</p></li>
+<li><p>La varianza es <span class="math inline">\(s^2\)</span>.</p></li>
+<li><p>La desviación estándar es <span class="math inline">\(s\)</span>.</p></li>
 </ul>
 </div></div>
+<p><br></p>
+<div class="fragment">
 <p><span style="color: #D8A7B1">Uno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra.</span></p>
+</div>
 </section>
 <section id="resumen-estadistico-de-variables-categoricas" class="slide level2">
 <h2>Resumen estadistico de variables categoricas</h2>
