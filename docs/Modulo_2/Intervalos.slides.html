@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="../style.css">
@@ -126,6 +192,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,7 +210,7 @@
 Alan R. Vazquez 
 </div>
         <p class="quarto-title-affiliation">
-            Department of Industrial Engineering
+            Departamento de Ingeniería Industrial
           </p>
     </div>
 </div>
@@ -155,6 +224,18 @@ Alan R. Vazquez
 <li><p>Estimadores de intervalos</p></li>
 <li><p>Intervalos de confianza para la diferencia de medias</p></li>
 </ul>
+</section>
+<section id="carguemos-las-librerías" class="slide level2">
+<h2>Carguemos las librerías</h2>
+<p><br><br><br></p>
+<p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
+<div id="6df8bb95" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> sem, t, ttest_ind</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>En el cógido de arriba, indicamos que utilizaremos la función <code>sem()</code> de la librería <strong>scipy.stats</strong>.</p>
 </section>
 <section>
 <section id="introducción" class="title-slide slide level1 center">
@@ -171,41 +252,57 @@ Alan R. Vazquez
 <section id="por-ejemplo" class="slide level2">
 <h2>Por ejemplo …</h2>
 <p><span style="color: darkgreen"><strong>Problema 1</strong></span>: Estimar el peso promedio de un componente electrónico para ver si cumple con especificaciones de calidad.</p>
+<div class="fragment">
 <p><u>Solución</u>:</p>
+<div style="font-size: 90%;">
 <ol type="1">
-<li><p><span style="color: pink"><strong>Suponemos</strong></span> que el peso de los componentes sigue una <span style="color: pink"><strong><em>distribución</em></strong> <span class="math inline">\(N(\mu, \sigma^2)\)</span></span>. Entonces, <span class="math inline">\(\mu\)</span> es el verdadero peso promedio de todos los componentes que pueden existir.</p></li>
-<li><p>Recolectamos una muestra de pesos de <span class="math inline">\(n\)</span> componentes seleccionados al azar. Los pesos son observaciones (de variables aleatorias): <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span>.</p></li>
-<li><p>Luego, usamos la muestra para estimar el peso promedio <span class="math inline">\(\mu\)</span> (o incluso <span class="math inline">\(\sigma^2\)</span>).</p></li>
+<li class="fragment"><p><span style="color: pink"><strong>Suponemos</strong></span> que el peso de los componentes sigue una <span style="color: pink"><strong><em>distribución</em></strong> <span class="math inline">\(N(\mu, \sigma^2)\)</span></span>. Entonces, <span class="math inline">\(\mu\)</span> es el verdadero peso promedio de todos los componentes que pueden existir.</p></li>
+<li class="fragment"><p>Recolectamos una muestra de pesos de <span class="math inline">\(n\)</span> componentes seleccionados al azar. Los pesos son observaciones (de variables aleatorias): <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span>.</p></li>
+<li class="fragment"><p>Luego, usamos la muestra para estimar el peso promedio <span class="math inline">\(\mu\)</span> (o incluso <span class="math inline">\(\sigma^2\)</span>).</p></li>
 </ol>
+</div>
+</div>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
 <p><span style="color: darkgreen"><strong>Problema 2</strong></span>: Calcular la proporción de componentes electrónicos que fallan.</p>
+<div class="fragment">
 <p><u>Solución</u>:</p>
+<div style="font-size: 90%;">
 <ol type="1">
-<li><p><span style="color: pink"><strong>Suponemos</strong></span> que la proporción de componentes electrónicos que fallan sigue una <span style="color: pink"><strong><em>distribución</em></strong> <span class="math inline">\(\text{Bin}(n, p)\)</span></span>. Entonces, <span class="math inline">\(p\)</span> es la verdadera proporción de que componentes que fallan de entre todos los componentes que se pueden producir.</p></li>
-<li><p>Probamos <span class="math inline">\(n\)</span> componentes seleccionados al azar y vemos si fallan o no. Las fallas de los componentes son observaciones de variables aleatorias Bernoulli: <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span>, donde <span class="math inline">\(y_i = 1\)</span> si el <em>i</em>-ésimo componente falló y <span class="math inline">\(y_i = 0\)</span> si no falló.</p></li>
-<li><p>Luego, usamos la muestra para estimar <span class="math inline">\(p\)</span>.</p></li>
+<li class="fragment"><p><span style="color: pink"><strong>Suponemos</strong></span> que la proporción de componentes electrónicos que fallan sigue una <span style="color: pink"><strong><em>distribución</em></strong> <span class="math inline">\(\text{Bin}(n, p)\)</span></span>. Entonces, <span class="math inline">\(p\)</span> es la verdadera proporción de que componentes que fallan de entre todos los componentes que se pueden producir.</p></li>
+<li class="fragment"><p>Probamos <span class="math inline">\(n\)</span> componentes seleccionados al azar y vemos si fallan o no. Las fallas de los componentes son observaciones de variables aleatorias Bernoulli: <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span>, donde <span class="math inline">\(y_i = 1\)</span> si el <em>i</em>-ésimo componente falló y <span class="math inline">\(y_i = 0\)</span> si no falló.</p></li>
+<li class="fragment"><p>Luego, usamos la muestra para estimar <span class="math inline">\(p\)</span>.</p></li>
 </ol>
+</div>
+</div>
 </section>
 <section id="tipos-de-estimadores" class="slide level2">
 <h2>Tipos de estimadores</h2>
 <p><br><br></p>
-<p>Un estimador es una función de la muestra que provee información sobre un parametro de una distribución.</p>
+<p>Un <strong>estimador</strong> es una función de la muestra que provee información sobre un parametro de una distribución.</p>
+<div class="fragment">
 <p>Hay dos tipos de estimadores:</p>
 <ul>
 <li><p><span style="color: darkblue"><strong><em>Estimador Puntual</em></strong></span>: Un resúmen estadístico de la muestra.</p></li>
 <li><p><span style="color: darkgreen"><strong><em>Estimador de Intervalo</em></strong></span>: Un par de cantidades <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span> calculadas sobre una muestra donde <span class="math inline">\(L \leq U\)</span>.</p></li>
 </ul>
+</div>
 </section>
 <section id="aplicación" class="slide level2">
 <h2>Aplicación</h2>
-<p>Supongamos que deseamos estimar el tiempo promedio de ensamblaje por unidad <span class="math inline">\(\mu\)</span> de una nueva máquina de ensamble automatizada en una línea de producción. Esta métrica es fundamental para evaluar la eficiencia del proceso y planificar la capacidad de producción.</p>
+<p><br></p>
+<p>Supongamos que deseamos estimar el tiempo promedio de ensamblaje por unidad <span class="math inline">\(\mu\)</span> de una nueva máquina de ensamble automatizada en una línea de producción.</p>
+<p>Esta métrica es fundamental para evaluar la eficiencia del proceso y planificar la capacidad de producción.</p>
 <p>Supongamos que hemos observado una muestra aleatoria de 10 unidades producidas por esta máquina, <span class="math inline">\(y_1, y_2, \ldots, y_{10}\)</span>.</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><br><br></p>
 <p>Podemos utilizar la muestra aleatoria para construir dos estimaciones:</p>
 <ul>
-<li><p><span style="color: darkblue">Estimación puntual</span>: un solo número que es 42.8 segundos por unidad.</p></li>
-<li><p><span style="color: darkgreen">Estimación de intervalo</span>: El intervalo (40.2, 45.4) segundos que tiene una alta “confianza” de incluir el valor verdadero de <span class="math inline">\(\mu\)</span>.</p></li>
+<li class="fragment"><p><span style="color: darkblue">Estimación puntual</span>: un solo número que es 42.8 segundos por unidad.</p></li>
+<li class="fragment"><p><span style="color: darkgreen">Estimación de intervalo</span>: El intervalo (40.2, 45.4) segundos que tiene una alta “confianza” de incluir el valor verdadero de <span class="math inline">\(\mu\)</span>.</p></li>
 </ul>
 </section></section>
 <section>
@@ -217,15 +314,20 @@ Alan R. Vazquez
 <h2>Estimador de intervalo</h2>
 <p><br></p>
 <p>Un <span style="color: darkgreen"><strong><em>estimador de intervalo</em></strong></span> es un método para utilizar las observaciones de la muestra para calcular dos números que forman los puntos finales de un intervalo.</p>
+<div class="fragment">
 <p>Idealmente, el intervalo tiene dos propiedades:</p>
 <ul>
 <li><p>Contiene el parámetro bajo estudio <span class="math inline">\(\mu\)</span>.</p></li>
 <li><p>Es relativamente pequeño.</p></li>
 </ul>
+</div>
+<div class="fragment">
 <p>Los estimadores de intervalos se denominan comúnmente <span style="color: #4682B4"><strong><em>intervalos de confianza</em></strong></span>.</p>
+</div>
 </section>
 <section id="estructura-de-los-estimadores-de-intervalo" class="slide level2">
 <h2>Estructura de los estimadores de intervalo</h2>
+<p><br></p>
 <p>Los estimadores de intervalo tienen la forma <span class="math inline">\([L,U]\)</span> o <span class="math inline">\(L \leq \mu \leq U\)</span>; donde:</p>
 <ul>
 <li><span class="math inline">\(L\)</span> es el límite de confianza inferior.</li>
@@ -235,7 +337,17 @@ Alan R. Vazquez
 </section>
 <section id="intervalo-de-confianza-para-la-media" class="slide level2">
 <h2>Intervalo de confianza para la media</h2>
+<p><br><br></p>
 <p>Considera una muestra pequeña de observaciones <span class="math inline">\(y_1, \ldots, y_n\)</span>, donde se <u>asume que se obtuvieron</u> de una distribución <span style="color: red"><span class="math inline">\(N(\mu, \sigma^2)\)</span></span>. Un <span style="color: #4682B4">intervalo de confianza para <span class="math inline">\(\mu\)</span></span> es</p>
+<div class="fragment">
+<div style="font-size: 110%;">
+<p><span class="math display">\[\left[\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},~ \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right],\]</span></p>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><br><br></p>
 <p><span class="math display">\[\left[\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},~ \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right],\]</span></p>
 <ul>
 <li><span class="math inline">\(\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i\)</span> es la media muestral donde <span class="math inline">\(n\)</span> es el numero de observaciones.</li>
@@ -246,7 +358,8 @@ Alan R. Vazquez
 <section id="la-distribución-t" class="slide level2">
 <h2>La distribución <span class="math inline">\(t\)</span></h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:55%;">
+<div style="font-size: 90%;">
 <p>La distribución <span class="math inline">\(t\)</span> es una distribución de probabilidad que surge en el contexto de la inferencia estadística.</p>
 <p>Sus características principales:</p>
 <ul>
@@ -254,13 +367,16 @@ Alan R. Vazquez
 <li>Su forma depende un parametro <span class="math inline">\(\nu\)</span> llamado “grados de libertad”.</li>
 <li>Cuando el valor de este parámetro es muy grande, la distribución <span class="math inline">\(t\)</span> converge a la <span class="math inline">\(N(0,1)\)</span>.</li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div>
+</div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/clipboard-309922779.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
+<div style="font-size: 50%;">
 <p><a href="https://en.wikipedia.org/wiki/Student%27s_t-distribution" class="uri">https://en.wikipedia.org/wiki/Student%27s_t-distribution</a></p>
+</div>
 </div></div>
 </section>
 <section id="percentiles-de-una-distribución-t" class="slide level2">
@@ -274,28 +390,149 @@ Alan R. Vazquez
 <p>El valor de <span class="math inline">\(1-\alpha\)</span> define el <span style="color: purple"><strong>nivel de confianza</strong></span> (o <span style="color: purple"><em>cobertura</em></span>) del intervalo de confianza.</p>
 <p>Usualmente, el valor de <span class="math inline">\(\alpha\)</span> es 0.1, 0.05, o 0.01, lo cual resulta en intervalos con un nivel de confianza de 90%, 95%, y 99%, respectivamente.</p>
 </section>
+<section id="definición-formal-de-un-ic" class="slide level2">
+<h2>Definición formal de un IC</h2>
+<p><br></p>
+<p>Debido a que <span class="math inline">\(L\)</span> y <span class="math inline">\(U\)</span> son aleatorios, un intervalo de confianza debe de tener una alta <span style="color: pink"><em>probabilidad de covertura</em></span> de contener el valor verdadero de <span class="math inline">\(\mu\)</span>.</p>
+<div class="fragment">
+<p>Matemáticamente, expresamos esto como</p>
+<div style="font-size: 95%;">
+<p><span class="math display">\[P\left(\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq  \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right) = 1 - \alpha,\]</span></p>
+</div>
+<p>Donde la probailidad <span class="math inline">\((1-\alpha)\)</span> es el <span style="color: darkgreen"><em>nivel de confianza</em></span>.</p>
+</div>
+</section>
 <section id="interpretación-de-un-ic" class="slide level2">
 <h2>Interpretación de un IC</h2>
-<p>Debido a que <span class="math inline">\(L\)</span> y <span class="math inline">\(U\)</span> son aleatorios, un intervalo de confianza debe de tener una alta <span style="color: pink"><em>probabilidad de covertura</em></span> de contener el valor verdadero de <span class="math inline">\(\mu\)</span>.</p>
-<p>Matemáticamente, expresamos esto como</p>
+<p><br><br></p>
+<div style="font-size: 95%;">
 <p><span class="math display">\[P\left(\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq  \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right) = 1 - \alpha,\]</span></p>
-<p>Donde la probailidad <span class="math inline">\((1-\alpha)\)</span> es el <span style="color: darkgreen"><em>nivel de confianza</em></span>.</p>
-<p><span style="color: pink"><strong><em>Interpretación</em></strong></span>: Si, en el muestreo aleatorio repetido, construimos muchos intervalos de confianza <span class="math inline">\([L, U]\)</span>, <span class="math inline">\(100(1-\alpha)\)</span>% de ellos incluirán el verdadero valor de <span class="math inline">\(\mu\)</span>.</p>
+</div>
+<p><span style="color: pink"><strong><em>Interpretación</em></strong></span>: Si, en el muestreo aleatorio repetido, construimos <strong>muchos</strong> intervalos de confianza <span class="math inline">\([L, U]\)</span>, <span class="math inline">\(100(1-\alpha)\)</span>% de ellos incluirán el verdadero valor de <span class="math inline">\(\mu\)</span>.</p>
 </section>
 <section id="más-sobre-niveles-de-confianza" class="slide level2">
 <h2>Más sobre niveles de confianza</h2>
 <ul>
-<li><p>El nivel de confianza de un intervalo mide la confiabilidad del método utilizado para calcular el intervalo.</p></li>
-<li><p>Un nivel confianza <span class="math inline">\(100(1-\alpha)\%\)</span> es aquel calculado mediante un método que a largo plazo logrará <span style="color: purple"><em>cubrir</em></span> la media poblacional una proporción <span class="math inline">\(1-\alpha\)</span> de todas las veces que se utiliza.</p></li>
-<li><p>En la práctica, debemos de fijar el valor de <span class="math inline">\(\alpha\)</span>. Entre más pequeño el valor de <span class="math inline">\(\alpha\)</span>, más grande la confianza y el tamaño del intervalo.</p></li>
-<li><p>Los intervalos con mayor confianza son menos precisos.</p></li>
+<li class="fragment"><p>El nivel de confianza de un intervalo mide la confiabilidad del método utilizado para calcular el intervalo.</p></li>
+<li class="fragment"><p>Un nivel confianza <span class="math inline">\(100(1-\alpha)\%\)</span> es aquel calculado mediante un método que a largo plazo logrará <span style="color: purple"><em>cubrir</em></span> la media poblacional una proporción <span class="math inline">\(1-\alpha\)</span> de todas las veces que se utiliza.</p></li>
+<li class="fragment"><p>En la práctica, debemos de fijar el valor de <span class="math inline">\(\alpha\)</span>. Entre más pequeño el valor de <span class="math inline">\(\alpha\)</span>, más grande la confianza y el tamaño del intervalo.</p></li>
+<li class="fragment"><p>Los intervalos con mayor confianza son menos precisos.</p></li>
 </ul>
 </section>
 <section id="ejemplo-1" class="slide level2">
 <h2>Ejemplo 1</h2>
-<p>Un modelo de transferencia de calor desde un cilindro sumergido en un líquido predice que el coeficiente de transferencia de calor del cilindro se volverá constante a caudales de fluido muy bajos. Se toma una muestra de 10 medidas. Los resultados, en ￼, son</p>
+<p><br><br></p>
+<p>Un modelo de transferencia de calor desde un cilindro sumergido en un líquido predice que el coeficiente de transferencia de calor del cilindro se volverá constante a caudales de fluido muy bajos. Se toma una muestra de 10 medidas. Los resultados, en <span class="math inline">\(W/m^2 K\)</span>, son</p>
 <p>13.7, 12.0, 13.1, 14.1, 13.1, 14.1, 14.4, 12.2, 11.9, 11.8</p>
 <p>Encuentra un intervalo de confianza del 95% para el coeficiente de transferencia de calor.</p>
+</section>
+<section id="intervalos-de-confianza-en-python" class="slide level2">
+<h2>Intervalos de confianza en Python</h2>
+<p>Primero, leamos los datos que están en el archivo “Cilindro.xlsx”.</p>
+<div id="996d3863" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>cilinder_data <span class="op">=</span> pd.read_excel(<span class="st">"Cilindro.xlsx"</span>)</span>
+<span id="cb2-2"><a></a>cilinder_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Coeficiente</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>13.7</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>12.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>13.1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>14.1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>13.1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="visualización-simple-a-través-de-un-histograma" class="slide level2">
+<h2>Visualización simple a través de un histograma</h2>
+<div id="5678f6a3" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) <span class="co"># Crea espacio para la figura.</span></span>
+<span id="cb3-2"><a></a>sns.histplot(data <span class="op">=</span> cilinder_data, x <span class="op">=</span> <span class="st">'Coeficiente'</span>) <span class="co"># Crea el histograma.</span></span>
+<span id="cb3-3"><a></a>plt.title(<span class="st">"Histograma de Coeficiente"</span>) <span class="co"># Título de la gráfica.</span></span>
+<span id="cb3-4"><a></a>plt.xlabel(<span class="st">"Coeficiente"</span>) <span class="co"># Etiqueta del eje X</span></span>
+<span id="cb3-5"><a></a>plt.show() <span class="co"># Muestra la Gráfica</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Intervalos_files/figure-revealjs/cell-4-output-1.png" class="quarto-figure quarto-figure-center" width="598" height="376"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="configuración" class="slide level2">
+<h2>Configuración</h2>
+<p>Desafortunadamente, para calcular un IC en Python debemos de especificar explicitamente ciertos objetos, incluyendo el tamaño de muestra (<span class="math inline">\(n\)</span>) y el promedio de la variable (<span class="math inline">\(\bar{X}\)</span>). Esto se puede hacer con las funciones de <strong>pandas</strong> que ya vimos.</p>
+<div id="39aa6dc4" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>X <span class="op">=</span> cilinder_data.<span class="bu">filter</span>([<span class="st">'Coeficiente'</span>])</span>
+<span id="cb4-2"><a></a>confianza <span class="op">=</span> <span class="fl">0.95</span></span>
+<span id="cb4-3"><a></a>n <span class="op">=</span> cilinder_data.<span class="bu">filter</span>([<span class="st">'Coeficiente'</span>]).count()</span>
+<span id="cb4-4"><a></a>media <span class="op">=</span> cilinder_data.<span class="bu">filter</span>([<span class="st">'Coeficiente'</span>]).agg([<span class="st">"mean"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p>Además, también necesitamos el <em>error estándar</em>, que es igual a <span class="math inline">\(s/\sqrt{n}\)</span>. Para calcular esta cantidad, usamos la funcion <code>sem()</code> de <strong>scipy.stats</strong>.</p>
+<div id="9b7d3c36" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>desviacion_error <span class="op">=</span> sem(X) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+<section id="intervalo-de-confianza-en-python" class="slide level2">
+<h2>Intervalo de confianza en Python</h2>
+<p><br><br></p>
+<p>Ahora, creamos el intervalo de confianza usando la función <code>t.interval()</code> de <strong>scipy.stats</strong>.</p>
+<div id="5d5b5e93" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>intervalo <span class="op">=</span> t.interval(confianza, n<span class="op">-</span><span class="dv">1</span>, loc <span class="op">=</span> media, </span>
+<span id="cb6-2"><a></a>                      scale <span class="op">=</span> desviacion_error)</span>
+<span id="cb6-3"><a></a>intervalo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>(array([[12.31815482]]), array([[13.76184518]]))</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>El intervalo de confianza del 95% es <span class="math inline">\([12.32, 13.76]\)</span> o <span class="math inline">\(12.32 \leq \mu \leq 13.76\)</span></p>
 </section></section>
 <section>
 <section id="intervalos-de-confianza-para-la-diferencia-de-medias" class="title-slide slide level1 center">
@@ -311,7 +548,7 @@ Alan R. Vazquez
 <li><p>Ella midió las temperaturas observadas para los 30 tubos en grados Farenheit.</p></li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 
 <img data-src="images/ingeniera.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
@@ -319,7 +556,7 @@ Alan R. Vazquez
 <li><p>Es decir, le interesa saber <span class="math inline">\(\mu_2 - \mu_1\)</span> donde <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> es la temperatura promedio del tubo tipo 1 y 2, respectivamente.</p></li>
 </ul>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <p><br><br></p>
 <ul>
@@ -330,17 +567,20 @@ Alan R. Vazquez
 </section>
 <section id="cómo-podemos-estimar-el-valor-de-mu_2---mu_1" class="slide level2">
 <h2>¿Cómo podemos estimar el valor de <span class="math inline">\(\mu_2 - \mu_1\)</span>?</h2>
+<div style="font-size: 95%;">
 <ul>
 <li><p>Utilizando un intervalo de confianza sobre <span class="math inline">\(\mu_2 - \mu_1\)</span>.</p></li>
 <li><p>Si el intervalo de confianza contiene puros valores positivos, entonces tenemos una gran <em>confianza</em> que <span class="math inline">\(\mu_2 - \mu_1 &gt; 0\)</span>.</p></li>
 <li><p>Si el intervalo de confianza contiene puros valores negativos, entonces tenemos una gran <em>confianza</em> que <span class="math inline">\(\mu_2 - \mu_1 &lt; 0\)</span>.</p></li>
 <li><p>Si el intervalo de confianza contiene valores positivos y negativos, entonces no podemos asegurar que <span class="math inline">\(\mu_2 - \mu_1 &gt; 0\)</span> o <span class="math inline">\(\mu_2 - \mu_1 &lt; 0\)</span>. En este caso, podriamos considerar que <span class="math inline">\(\mu_2 - \mu_1 = 0\)</span>.</p></li>
 </ul>
+</div>
 </section>
 <section id="ic-para-la-diferencia-de-dos-medias" class="slide level2">
 <h2>IC para la diferencia de dos medias</h2>
 <p><br><br></p>
 <p>Recuerda que si la muestra aleatoria <span class="math inline">\(Y_1, \ldots, Y_{n_y}\)</span> sigue una distribución <span class="math inline">\(N(\mu_y, \sigma_{y}^2)\)</span>, entonces <span class="math inline">\(\bar{Y} \sim N\left(\mu_y, \frac{\sigma_{y}^2}{n_y}\right)\)</span>.</p>
+<p><br></p>
 <p>Además, si la muestra aleatoria <span class="math inline">\(X_1, \ldots, X_{n_x}\)</span> sigue una distribución <span class="math inline">\(N(\mu_x, \sigma_{x}^2)\)</span>, entonces <span class="math inline">\(\bar{X} \sim N\left(\mu_x, \frac{\sigma_{x}^2}{n_x}\right)\)</span>.</p>
 </section>
 <section id="el-esquema" class="slide level2">
@@ -354,9 +594,9 @@ Alan R. Vazquez
 <li><span class="math inline">\(s^2_y =\frac{1}{n_y-1} \sum_{i=1}^{n_y} (y_i - \bar{y})^2\)</span> es la varianza muestral.</li>
 </ul>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
-<p><br><br></p>
+<p><br><br><br></p>
 <p>Para la segunda muestra de observaciones <span class="math inline">\(x_1, x_2, \ldots, x_{n_x}\)</span>:</p>
 <ul>
 <li><span class="math inline">\(n_x\)</span> es el número de observaciones.</li>
@@ -364,9 +604,10 @@ Alan R. Vazquez
 <li><span class="math inline">\(s^2_{x} =\frac{1}{n_x -1} \sum_{i=1}^{n_x} (x_i - \bar{x})^2\)</span> es la varianza muestral.</li>
 </ul>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
-<p>Si las dos muestras son independientes, entonces un <span style="color: #4682B4">intervalo de confianza de nivel <span class="math inline">\(100(1-\alpha)\%\)</span> para <span class="math inline">\(\mu_y - \mu_x\)</span></span> es</p>
+<p><br></p>
+<p>Si las dos muestras son independientes, un <span style="color: #4682B4">intervalo de confianza de nivel <span class="math inline">\(100(1-\alpha)\%\)</span> para <span class="math inline">\(\mu_y - \mu_x\)</span></span> es</p>
 <p><span class="math display">\[\left[ (\bar{y} - \bar{x}) - \text{ME}, (\bar{y} - \bar{x}) + \text{ME} \right] \]</span></p>
 <p>donde ME es el <em>margen de error</em>.</p>
 <p>Existen dos valores posibles para ME según los casos:</p>
@@ -375,17 +616,22 @@ Alan R. Vazquez
 <li>Las varianzas téoricas de las distribuciones <strong>no</strong> son iguales (<span class="math inline">\(\sigma_y^{2} \neq \sigma_x^{2}\)</span>).</li>
 </ul>
 </section>
-<section id="si-las-distribuciones-tienen-la-misma-varianza" class="slide level2">
-<h2>Si las distribuciones tienen la misma varianza</h2>
-<p>Si las distribuciones tienen la misma varianza, entonces un <span style="color: #4682B4">intervalo de confianza de nivel <span class="math inline">\(100(1-\alpha)\%\)</span> para <span class="math inline">\(\mu_y - \mu_x\)</span></span> es</p>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>Si las distribuciones tienen la <strong>misma varianza</strong>, un <span style="color: #4682B4">intervalo de confianza de nivel <span class="math inline">\(100(1-\alpha)\%\)</span> para <span class="math inline">\(\mu_y - \mu_x\)</span></span> es</p>
+<div style="font-size: 70%;">
 <p><span class="math display">\[\left[ (\bar{y} - \bar{x}) - t_{n_y + n_x - 2, \alpha/2}\cdot s_p\sqrt{\frac{1}{n_y} + \frac{1}{n_x}}, \; (\bar{y} - \bar{x}) + t_{n_y + n_x - 2, \alpha/2}\cdot s_p \sqrt{\frac{1}{n_y} + \frac{1}{n_x}} \right].\]</span></p>
+</div>
+<p><br></p>
 <p>La cantidad <span class="math inline">\(s_p\)</span> se llama <span style="color: purple"><em>desviación estándar agrupada</em></span></p>
 <p><span class="math display">\[s_p = \sqrt{ \frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} }.\]</span></p>
 </section>
-<section id="si-las-distribuciones-tienen-diferentes-varianzas" class="slide level2">
-<h2>Si las distribuciones tienen diferentes varianzas</h2>
-<p>Si las distribuciones tienen differentes varianzas, entonces un <span style="color: #4682B4">intervalo de confianza de nivel <span class="math inline">\(100(1-\alpha)\%\)</span> para <span class="math inline">\(\mu_y - \mu_x\)</span></span> es</p>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p>Si las distribuciones tienen <strong>differentes varianzas</strong>, un <span style="color: #4682B4">intervalo de confianza de nivel <span class="math inline">\(100(1-\alpha)\%\)</span> para <span class="math inline">\(\mu_y - \mu_x\)</span></span> es</p>
+<div style="font-size: 90%;">
 <p><span class="math display">\[\left[(\bar{y} - \bar{x}) - t_{\nu, \alpha/2} \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}}, \; (\bar{y} - \bar{x}) - t_{\nu, \alpha/2} \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}} \right].\]</span></p>
+</div>
 <p>donde el número de grados de libertad viene dado por el valor <span class="math inline">\(\nu = \frac{\left( \frac{s_y^2}{n_y} + \frac{s_x^2}{n_x} \right)^2 }{ \frac{ \left(s_{y}^2/n_y\right)^2}{n_y - 1} + \frac{ \left (s_{x}^2/n_x \right)^2}{n_x - 1} }\)</span> (redondeado al número entero más cercano).</p>
 </section>
 <section id="en-python" class="slide level2">
@@ -400,7 +646,7 @@ Alan R. Vazquez
 <li><p>Como normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales.</p></li>
 </ul>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <p><br><br></p>
 <ul>

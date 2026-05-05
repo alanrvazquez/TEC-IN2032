@@ -4,7 +4,7 @@ subtitle: "IN2032: Análisis Estadístico de Datos"
 author: 
   - name: Alan R. Vazquez
     affiliations:
-      - name: Department of Industrial Engineering
+      - name: Departamento de Ingeniería Industrial
 format: 
   revealjs:
     chalkboard: false
@@ -15,7 +15,6 @@ format:
     slide-number: True
     html-math-method: mathjax
 editor: visual
-jupyter: python3
 ---
 
 ## Agenda
@@ -27,6 +26,24 @@ jupyter: python3
 - Estimadores de intervalos
 
 - Intervalos de confianza para la diferencia de medias
+
+## Carguemos las librerías
+
+</br></br></br>
+
+Antes de empezar, carguemos las librerías que usaremos hoy.
+
+```{python}
+#| echo: true
+#| output: true
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import sem, t, ttest_ind
+```
+
+En el cógido de arriba, indicamos que utilizaremos la función `sem()` de la librería **scipy.stats**.
 
 # Introducción
 
@@ -44,31 +61,45 @@ Debido a que las distribuciones se caracterizan por sus parámetros, el objetivo
 
 [**Problema 1**]{style="color: darkgreen"}: Estimar el peso promedio de un componente electrónico para ver si cumple con especificaciones de calidad.
 
+. . . 
+
 [Solución]{.underline}:
 
+::: incremental
+::: {style="font-size: 90%;"}
 1.  [**Suponemos**]{style="color: pink"} que el peso de los componentes sigue una [***distribución*** $N(\mu, \sigma^2)$]{style="color: pink"}. Entonces, $\mu$ es el verdadero peso promedio de todos los componentes que pueden existir.
 
 2.  Recolectamos una muestra de pesos de $n$ componentes seleccionados al azar. Los pesos son observaciones (de variables aleatorias): $y_1, y_2, \ldots, y_n$.
 
 3.  Luego, usamos la muestra para estimar el peso promedio $\mu$ (o incluso $\sigma^2$).
+:::
+:::
 
 ## 
 
 [**Problema 2**]{style="color: darkgreen"}: Calcular la proporción de componentes electrónicos que fallan.
 
+. . . 
+
 [Solución]{.underline}:
 
+::: incremental
+::: {style="font-size: 90%;"}
 1.  [**Suponemos**]{style="color: pink"} que la proporción de componentes electrónicos que fallan sigue una [***distribución*** $\text{Bin}(n, p)$]{style="color: pink"}. Entonces, $p$ es la verdadera proporción de que componentes que fallan de entre todos los componentes que se pueden producir.
 
 2.  Probamos $n$ componentes seleccionados al azar y vemos si fallan o no. Las fallas de los componentes son observaciones de variables aleatorias Bernoulli: $y_1, y_2, \ldots, y_n$, donde $y_i = 1$ si el *i*-ésimo componente falló y $y_i = 0$ si no falló.
 
 3.  Luego, usamos la muestra para estimar $p$.
+:::
+:::
 
 ## Tipos de estimadores
 
 </br></br>
 
-Un estimador es una función de la muestra que provee información sobre un parametro de una distribución.
+Un **estimador** es una función de la muestra que provee información sobre un parametro de una distribución.
+
+. . . 
 
 Hay dos tipos de estimadores:
 
@@ -78,15 +109,25 @@ Hay dos tipos de estimadores:
 
 ## Aplicación
 
-Supongamos que deseamos estimar el tiempo promedio de ensamblaje por unidad $\mu$ de una nueva máquina de ensamble automatizada en una línea de producción. Esta métrica es fundamental para evaluar la eficiencia del proceso y planificar la capacidad de producción.
+</br>
+
+Supongamos que deseamos estimar el tiempo promedio de ensamblaje por unidad $\mu$ de una nueva máquina de ensamble automatizada en una línea de producción. 
+
+Esta métrica es fundamental para evaluar la eficiencia del proceso y planificar la capacidad de producción.
 
 Supongamos que hemos observado una muestra aleatoria de 10 unidades producidas por esta máquina, $y_1, y_2, \ldots, y_{10}$.
 
+##
+
+</br></br>
+
 Podemos utilizar la muestra aleatoria para construir dos estimaciones:
 
+::: incremental
 - [Estimación puntual]{style="color: darkblue"}: un solo número que es 42.8 segundos por unidad.
 
 - [Estimación de intervalo]{style="color: darkgreen"}: El intervalo (40.2, 45.4) segundos que tiene una alta "confianza" de incluir el valor verdadero de $\mu$.
+:::
 
 # Estimadores de intervalos
 
@@ -96,15 +137,21 @@ Podemos utilizar la muestra aleatoria para construir dos estimaciones:
 
 Un [***estimador de intervalo***]{style="color: darkgreen"} es un método para utilizar las observaciones de la muestra para calcular dos números que forman los puntos finales de un intervalo.
 
+. . . 
+
 Idealmente, el intervalo tiene dos propiedades:
 
 - Contiene el parámetro bajo estudio $\mu$.
 
 - Es relativamente pequeño.
 
+. . . 
+
 Los estimadores de intervalos se denominan comúnmente [***intervalos de confianza***]{style="color: #4682B4"}.
 
 ## Estructura de los estimadores de intervalo
+
+</br>
 
 Los estimadores de intervalo tienen la forma $[L,U]$ o $L \leq \mu \leq U$; donde:
 
@@ -115,7 +162,19 @@ Técnicamente, $L$ y $U$ son [***variables aleatorias***]{style="color: purple"}
 
 ## Intervalo de confianza para la media
 
+</br></br>
+
 Considera una muestra pequeña de observaciones $y_1, \ldots, y_n$, donde se [asume que se obtuvieron]{.underline} de una distribución [$N(\mu, \sigma^2)$]{style="color: red"}. Un [intervalo de confianza para $\mu$]{style="color: #4682B4"} es
+
+. . . 
+
+::: {style="font-size: 110%;"}
+$$\left[\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},~ \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right],$$
+:::
+
+##
+
+</br></br>
 
 $$\left[\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},~ \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right],$$
 
@@ -126,7 +185,8 @@ $$\left[\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},~ \bar{y} + t_{n-1, \alph
 ## La distribución $t$
 
 ::::: columns
-::: {.column width="50%"}
+::: {.column width="55%"}
+::: {style="font-size: 90%;"}
 La distribución $t$ es una distribución de probabilidad que surge en el contexto de la inferencia estadística.
 
 Sus características principales:
@@ -135,11 +195,13 @@ Sus características principales:
 - Su forma depende un parametro $\nu$ llamado “grados de libertad”.
 - Cuando el valor de este parámetro es muy grande, la distribución $t$ converge a la $N(0,1)$.
 :::
-
-::: {.column width="50%"}
+:::
+::: {.column width="45%"}
 ![](images/clipboard-309922779.png){fig-align="center"}
 
+::: {style="font-size: 50%;"}
 <https://en.wikipedia.org/wiki/Student%27s_t-distribution>
+:::
 :::
 :::::
 
@@ -157,20 +219,35 @@ El valor de $1-\alpha$ define el [**nivel de confianza**]{style="color: purple"}
 
 Usualmente, el valor de $\alpha$ es 0.1, 0.05, o 0.01, lo cual resulta en intervalos con un nivel de confianza de 90%, 95%, y 99%, respectivamente.
 
-## Interpretación de un IC
+## Definición formal de un IC
+
+</br>
 
 Debido a que $L$ y $U$ son aleatorios, un intervalo de confianza debe de tener una alta [*probabilidad de covertura*]{style="color: pink"} de contener el valor verdadero de $\mu$.
 
+. . . 
+
 Matemáticamente, expresamos esto como
 
+::: {style="font-size: 95%;"}
 $$P\left(\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq  \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right) = 1 - \alpha,$$
+:::
 
 Donde la probailidad $(1-\alpha)$ es el [*nivel de confianza*]{style="color: darkgreen"}.
 
-[***Interpretación***]{style="color: pink"}: Si, en el muestreo aleatorio repetido, construimos muchos intervalos de confianza $[L, U]$, $100(1-\alpha)$% de ellos incluirán el verdadero valor de $\mu$.
+## Interpretación de un IC
+
+</br></br>
+
+::: {style="font-size: 95%;"}
+$$P\left(\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \leq \mu \leq  \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right) = 1 - \alpha,$$
+:::
+
+[***Interpretación***]{style="color: pink"}: Si, en el muestreo aleatorio repetido, construimos **muchos** intervalos de confianza $[L, U]$, $100(1-\alpha)$% de ellos incluirán el verdadero valor de $\mu$.
 
 ## Más sobre niveles de confianza
 
+::: incremental
 - El nivel de confianza de un intervalo mide la confiabilidad del método utilizado para calcular el intervalo.
 
 - Un nivel confianza $100(1-\alpha)\%$ es aquel calculado mediante un método que a largo plazo logrará [*cubrir*]{style="color: purple"} la media poblacional una proporción $1-\alpha$ de todas las veces que se utiliza.
@@ -178,14 +255,83 @@ Donde la probailidad $(1-\alpha)$ es el [*nivel de confianza*]{style="color: dar
 - En la práctica, debemos de fijar el valor de $\alpha$. Entre más pequeño el valor de $\alpha$, más grande la confianza y el tamaño del intervalo.
 
 - Los intervalos con mayor confianza son menos precisos.
+:::
 
 ## Ejemplo 1
 
-Un modelo de transferencia de calor desde un cilindro sumergido en un líquido predice que el coeficiente de transferencia de calor del cilindro se volverá constante a caudales de fluido muy bajos. Se toma una muestra de 10 medidas. Los resultados, en ￼, son
+</br></br>
+
+Un modelo de transferencia de calor desde un cilindro sumergido en un líquido predice que el coeficiente de transferencia de calor del cilindro se volverá constante a caudales de fluido muy bajos. Se toma una muestra de 10 medidas. Los resultados, en $W/m^2 K$, son
 
 13.7, 12.0, 13.1, 14.1, 13.1, 14.1, 14.4, 12.2, 11.9, 11.8
 
 Encuentra un intervalo de confianza del 95% para el coeficiente de transferencia de calor.
+
+## Intervalos de confianza en Python
+
+Primero, leamos los datos que están en el archivo "Cilindro.xlsx".
+
+```{python}
+#| echo: true
+
+cilinder_data = pd.read_excel("Cilindro.xlsx")
+cilinder_data.head()
+```
+
+## Visualización simple a través de un histograma
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+#| code-fold: true
+
+plt.figure(figsize=(7,4)) # Crea espacio para la figura.
+sns.histplot(data = cilinder_data, x = 'Coeficiente') # Crea el histograma.
+plt.title("Histograma de Coeficiente") # Título de la gráfica.
+plt.xlabel("Coeficiente") # Etiqueta del eje X
+plt.show() # Muestra la Gráfica
+```
+
+## Configuración
+
+Desafortunadamente, para calcular un IC en Python debemos de especificar explicitamente ciertos objetos, incluyendo el tamaño de muestra ($n$) y el promedio de la variable ($\bar{X}$). Esto se puede hacer con las funciones de **pandas** que ya vimos.
+
+```{python}
+#| echo: true
+
+X = cilinder_data.filter(['Coeficiente'])
+confianza = 0.95
+n = cilinder_data.filter(['Coeficiente']).count()
+media = cilinder_data.filter(['Coeficiente']).agg(["mean"])
+```
+
+. . . 
+
+Además, también necesitamos el *error estándar*, que es igual a $s/\sqrt{n}$. Para calcular esta cantidad, usamos la funcion `sem()` de **scipy.stats**.
+
+```{python}
+#| echo: true
+
+desviacion_error = sem(X) 
+```
+
+## Intervalo de confianza en Python
+
+</br></br>
+
+Ahora, creamos el intervalo de confianza usando la función `t.interval()` de **scipy.stats**.
+
+```{python}
+#| echo: true
+
+intervalo = t.interval(confianza, n-1, loc = media, 
+                      scale = desviacion_error)
+intervalo
+```
+</br>
+
+El intervalo de confianza del 95% es $[12.32, 13.76]$ o $12.32 \leq \mu \leq 13.76$
 
 # Intervalos de confianza para la diferencia de medias
 
@@ -219,6 +365,7 @@ Encuentra un intervalo de confianza del 95% para el coeficiente de transferencia
 
 ## ¿Cómo podemos estimar el valor de $\mu_2 - \mu_1$?
 
+::: {style="font-size: 95%;"}
 - Utilizando un intervalo de confianza sobre $\mu_2 - \mu_1$.
 
 - Si el intervalo de confianza contiene puros valores positivos, entonces tenemos una gran *confianza* que $\mu_2 - \mu_1 > 0$.
@@ -226,12 +373,15 @@ Encuentra un intervalo de confianza del 95% para el coeficiente de transferencia
 - Si el intervalo de confianza contiene puros valores negativos, entonces tenemos una gran *confianza* que $\mu_2 - \mu_1 < 0$.
 
 - Si el intervalo de confianza contiene valores positivos y negativos, entonces no podemos asegurar que $\mu_2 - \mu_1 > 0$ o $\mu_2 - \mu_1 < 0$. En este caso, podriamos considerar que $\mu_2 - \mu_1 = 0$.
+:::
 
 ## IC para la diferencia de dos medias
 
 </br></br>
 
 Recuerda que si la muestra aleatoria $Y_1, \ldots, Y_{n_y}$ sigue una distribución $N(\mu_y, \sigma_{y}^2)$, entonces $\bar{Y} \sim N\left(\mu_y, \frac{\sigma_{y}^2}{n_y}\right)$.
+
+</br>
 
 Además, si la muestra aleatoria $X_1, \ldots, X_{n_x}$ sigue una distribución $N(\mu_x, \sigma_{x}^2)$, entonces $\bar{X} \sim N\left(\mu_x, \frac{\sigma_{x}^2}{n_x}\right)$.
 
@@ -249,7 +399,7 @@ Para la primera muestra de observaciones $y_1, y_2, \ldots, y_{n_y}$:
 
 ## 
 
-</br></br>
+</br></br></br>
 
 Para la segunda muestra de observaciones $x_1, x_2, \ldots, x_{n_x}$:
 
@@ -259,7 +409,10 @@ Para la segunda muestra de observaciones $x_1, x_2, \ldots, x_{n_x}$:
 
 ## 
 
-Si las dos muestras son independientes, entonces un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es
+</br>
+
+Si las dos muestras son independientes, un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es
+
 
 $$\left[ (\bar{y} - \bar{x}) - \text{ME}, (\bar{y} - \bar{x}) + \text{ME} \right] $$
 
@@ -270,25 +423,41 @@ Existen dos valores posibles para ME según los casos:
 - Las varianzas téoricas de las distribuciones son iguales ($\sigma_y^{2} = \sigma_x^{2}$).
 - Las varianzas téoricas de las distribuciones **no** son iguales ($\sigma_y^{2} \neq \sigma_x^{2}$).
 
-## Si las distribuciones tienen la misma varianza
+## 
 
-Si las distribuciones tienen la misma varianza, entonces un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es
+Si las distribuciones tienen la **misma varianza**, un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es
 
+::: {style="font-size: 70%;"}
 $$\left[ (\bar{y} - \bar{x}) - t_{n_y + n_x - 2, \alpha/2}\cdot s_p\sqrt{\frac{1}{n_y} + \frac{1}{n_x}}, \; (\bar{y} - \bar{x}) + t_{n_y + n_x - 2, \alpha/2}\cdot s_p \sqrt{\frac{1}{n_y} + \frac{1}{n_x}} \right].$$
+:::
+
+</br>
 
 La cantidad $s_p$ se llama [*desviación estándar agrupada*]{style="color: purple"}
 
 $$s_p = \sqrt{ \frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} }.$$
 
-## Si las distribuciones tienen diferentes varianzas
+## 
 
-Si las distribuciones tienen differentes varianzas, entonces un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es
+Si las distribuciones tienen **differentes varianzas**, un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es
 
+::: {style="font-size: 90%;"}
 $$\left[(\bar{y} - \bar{x}) - t_{\nu, \alpha/2} \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}}, \; (\bar{y} - \bar{x}) - t_{\nu, \alpha/2} \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}} \right].$$
+:::
 
 donde el número de grados de libertad viene dado por el valor $\nu = \frac{\left( \frac{s_y^2}{n_y} + \frac{s_x^2}{n_x} \right)^2 }{ \frac{ \left(s_{y}^2/n_y\right)^2}{n_y - 1} + \frac{ \left (s_{x}^2/n_x \right)^2}{n_x - 1} }$ (redondeado al número entero más cercano).
 
 ## En Python
+
+```{python}
+
+# Perform t-test (use equal_var=False for Welch's t-test)
+#res = stats.ttest_ind(group1, group2, equal_var=False)
+
+# Get 95% confidence interval
+#ci = res.confidence_interval(confidence_level=0.95)
+#print(f"95% CI: ({ci.low:.2f}, {ci.high:.2f})")
+```
 
 ## No asumas que las varianzas son iguales...
 
