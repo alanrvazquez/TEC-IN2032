@@ -15,7 +15,6 @@ format:
     slide-number: True
     html-math-method: mathjax
 editor: visual
-jupyter: python3
 ---
 
 ## Agenda
@@ -58,8 +57,10 @@ Antes de empezar, carguemos las librerías que usaremos hoy.
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import scipy.stats
+from scipy.stats import binom
 ```
+
+En el cógido de arriba, indicamos que utilizaremos la función `binom()` de la librería **scipy.stats**.
 
 # Introducción
 
@@ -440,6 +441,150 @@ Si $Y\sim\text{Bin}(n,p)$, tenemos que
 :::::
 
 ## Calculo de probabilidades en Python
+
+</br>
+
+Consideremos que un jugador de baloncesto anota 4 de 10 canastas ($p = 0.4$). Si el jugador lanza 20 canastas (20 intentos), calcula lo suiguiente:
+
+A. La probabilidad de anotar 1 canasta, $P(X = 1)$.
+
+B. La probabilidad de anotar 6 o menos canastas, $P(X \leq 6)$.
+
+C. La probabilidad de anotar menos de 6 canastas, $P(X < 6)$.
+
+D. La probabilidad de anotar más de 12 canastas, $P(X > 12)$.
+
+E. La probabilidad de anotar entre 7 y 11 canastas, $P(7 \leq X \leq 11)$.
+
+## Primero...
+
+</br></br></br>
+
+Definamos los valores apropiados para $n$ y $p$ en Python.
+
+```{python}
+#| echo: true
+#| output: true
+
+n = 20 # Numero de experimentos Bernoulli.
+p = 0.4 # Probabilidad de éxito.
+```
+
+##
+
+</br>
+
+**A**. La probabilidad de anotar 1 canasta, $P(X = 1)$.
+
+</br>
+
+Para calcular la probabilidad de que una variable Binomial ($X$) tome **exactamente** el valor $k$ usamos la función `binom.pmf(k, n, p)`.
+
+```{python}
+#| echo: true
+#| output: true
+
+k = 1
+prob_exacta = binom.pmf(k, n, p)
+print(f"P(X = {k}) = {prob_exacta:.4f}")
+```
+
+##
+
+</br>
+
+**B**. La probabilidad de anotar 6 o menos canastas, $P(X \leq 6)$.
+
+</br>
+
+Para calcular la probabilidad de que una variable Binomial ($X$) tome un **valor menor o igual** a $k$ usamos la función `binom.cdf(k, n, p)`.
+
+```{python}
+#| echo: true
+#| output: true
+
+k = 6
+prob_acumulada = binom.cdf(k, n, p)
+print(f"P(X <= {k}) = {prob_acumulada:.4f}")
+```
+
+##
+
+</br>
+
+**C**. La probabilidad de anotar menos de 6 canastas, $P(X < 6)$.
+
+</br>
+
+Para calcular la probabilidad de que una variable Binomial ($X$) tome un **valor extrictamente menor** a $k$ usamos la función `binom.cdf(k-1, n, p)`, [usando $k-1$!]{style="color:darkred"}
+
+```{python}
+#| echo: true
+#| output: true
+
+k = 6
+prob_menos_que = binom.cdf(k-1, n, p)
+print(f"P(X < {k}) = {prob_menos_que:.4f}")
+```
+
+. . . 
+
+</br>
+
+Esto ya que $P(X < 6) = P(X \leq 5)$.
+
+##
+
+**D**. La probabilidad de anotar más de 12 canastas, $P(X > 12)$.
+
+Para calcular la probabilidad de que una variable Binomial ($X$) tome un **valor extrictamente mayor** a $k$ usamos la función `binom.sf(k, n, p)`.
+
+```{python}
+#| echo: true
+#| output: true
+
+k = 12
+prob_mas_de = binom.sf(k, n, p)
+print(f"P(X > {k}) = {prob_mas_de:.4f}")
+```
+
+. . . 
+
+Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:
+
+```{python}
+#| echo: true
+#| output: true
+
+print(1 - binom.cdf(k, n, p))
+```
+
+Que se traduce en $P(X > k) = 1 - P(X \leq k)$.
+
+##
+
+**E**. La probabilidad de anotar entre 7 y 11 canastas, $P(7 \leq X \leq 11)$.
+
+Para este caso, debemos de ver 
+
+::: {style="font-size: 85%;"}
+$$P(7 \leq X \leq 11) = P(X \leq 11) - P(X < 7) = P(X \leq 11) - P(X \leq 6).$$
+:::
+
+</br>
+
+En Python, esto se logra con `binom.cdf()` como sigue:
+
+```{python}
+#| echo: true
+#| output: true
+
+k_superior = 11
+k_inferior = 7
+
+prob = binom.cdf(k_superior, n, p) - binom.cdf(k_inferior - 1, n, p)
+print(f"P({k_inferior} <= X <= {k_superior}): {prob:.4f}")
+```
 
 ## 
 

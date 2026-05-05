@@ -245,12 +245,13 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="ce34c8d8" class="cell" data-execution_count="1">
+<div id="bfbfeba9" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a></a><span class="im">import</span> scipy.stats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>En el cógido de arriba, indicamos que utilizaremos la función <code>binom()</code> de la librería <strong>scipy.stats</strong>.</p>
 </section>
 <section>
 <section id="introducción" class="title-slide slide level1 center">
@@ -396,7 +397,7 @@ Alan R. Vazquez
 <section id="gráfica-de-probabilidad" class="slide level2">
 <h2>Gráfica de probabilidad</h2>
 <p>Muestra las probabilidades para cada uno de los valores de una variable aleatoria.</p>
-<div id="8a8ccfa8" class="cell" data-execution_count="2">
+<div id="0694e555" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>variables <span class="op">=</span> {</span>
@@ -690,8 +691,116 @@ Alan R. Vazquez
 </section>
 <section id="calculo-de-probabilidades-en-python" class="slide level2">
 <h2>Calculo de probabilidades en Python</h2>
+<p><br></p>
+<p>Consideremos que un jugador de baloncesto anota 4 de 10 canastas (<span class="math inline">\(p = 0.4\)</span>). Si el jugador lanza 20 canastas (20 intentos), calcula lo suiguiente:</p>
+<p>A. La probabilidad de anotar 1 canasta, <span class="math inline">\(P(X = 1)\)</span>.</p>
+<p>B. La probabilidad de anotar 6 o menos canastas, <span class="math inline">\(P(X \leq 6)\)</span>.</p>
+<p>C. La probabilidad de anotar menos de 6 canastas, <span class="math inline">\(P(X &lt; 6)\)</span>.</p>
+<p>D. La probabilidad de anotar más de 12 canastas, <span class="math inline">\(P(X &gt; 12)\)</span>.</p>
+<p>E. La probabilidad de anotar entre 7 y 11 canastas, <span class="math inline">\(P(7 \leq X \leq 11)\)</span>.</p>
+</section>
+<section id="primero" class="slide level2">
+<h2>Primero…</h2>
+<p><br><br><br></p>
+<p>Definamos los valores apropiados para <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> en Python.</p>
+<div id="4190feff" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>n <span class="op">=</span> <span class="dv">20</span> <span class="co"># Numero de experimentos Bernoulli.</span></span>
+<span id="cb3-2"><a></a>p <span class="op">=</span> <span class="fl">0.4</span> <span class="co"># Probabilidad de éxito.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="section-8" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p><strong>A</strong>. La probabilidad de anotar 1 canasta, <span class="math inline">\(P(X = 1)\)</span>.</p>
+<p><br></p>
+<p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome <strong>exactamente</strong> el valor <span class="math inline">\(k\)</span> usamos la función <code>binom.pmf(k, n, p)</code>.</p>
+<div id="eff5e7c1" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>k <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-2"><a></a>prob_exacta <span class="op">=</span> binom.pmf(k, n, p)</span>
+<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X = </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_exacta<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X = 1) = 0.0005</code></pre>
+</div>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p><strong>B</strong>. La probabilidad de anotar 6 o menos canastas, <span class="math inline">\(P(X \leq 6)\)</span>.</p>
+<p><br></p>
+<p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor menor o igual</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.cdf(k, n, p)</code>.</p>
+<div id="2e112828" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>k <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb6-2"><a></a>prob_acumulada <span class="op">=</span> binom.cdf(k, n, p)</span>
+<span id="cb6-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt;= </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_acumulada<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &lt;= 6) = 0.2500</code></pre>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p><strong>C</strong>. La probabilidad de anotar menos de 6 canastas, <span class="math inline">\(P(X &lt; 6)\)</span>.</p>
+<p><br></p>
+<p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor extrictamente menor</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.cdf(k-1, n, p)</code>, <span style="color:darkred">usando <span class="math inline">\(k-1\)</span>!</span></p>
+<div id="1416abf0" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>k <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb8-2"><a></a>prob_menos_que <span class="op">=</span> binom.cdf(k<span class="op">-</span><span class="dv">1</span>, n, p)</span>
+<span id="cb8-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_menos_que<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &lt; 6) = 0.1256</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<p>Esto ya que <span class="math inline">\(P(X &lt; 6) = P(X \leq 5)\)</span>.</p>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p><strong>D</strong>. La probabilidad de anotar más de 12 canastas, <span class="math inline">\(P(X &gt; 12)\)</span>.</p>
+<p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor extrictamente mayor</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.sf(k, n, p)</code>.</p>
+<div id="7f435b20" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>k <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb10-2"><a></a>prob_mas_de <span class="op">=</span> binom.sf(k, n, p)</span>
+<span id="cb10-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &gt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_mas_de<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &gt; 12) = 0.0210</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:</p>
+<div id="22849233" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">-</span> binom.cdf(k, n, p))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.021028927477771187</code></pre>
+</div>
+</div>
+<p>Que se traduce en <span class="math inline">\(P(X &gt; k) = 1 - P(X \leq k)\)</span>.</p>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p><strong>E</strong>. La probabilidad de anotar entre 7 y 11 canastas, <span class="math inline">\(P(7 \leq X \leq 11)\)</span>.</p>
+<p>Para este caso, debemos de ver</p>
+<div style="font-size: 85%;">
+<p><span class="math display">\[P(7 \leq X \leq 11) = P(X \leq 11) - P(X &lt; 7) = P(X \leq 11) - P(X \leq 6).\]</span></p>
+</div>
+<p><br></p>
+<p>En Python, esto se logra con <code>binom.cdf()</code> como sigue:</p>
+<div id="df0ba7fc" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>k_superior <span class="op">=</span> <span class="dv">11</span></span>
+<span id="cb14-2"><a></a>k_inferior <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb14-3"><a></a></span>
+<span id="cb14-4"><a></a>prob <span class="op">=</span> binom.cdf(k_superior, n, p) <span class="op">-</span> binom.cdf(k_inferior <span class="op">-</span> <span class="dv">1</span>, n, p)</span>
+<span id="cb14-5"><a></a><span class="bu">print</span>(<span class="ss">f"P(</span><span class="sc">{</span>k_inferior<span class="sc">}</span><span class="ss"> &lt;= X &lt;= </span><span class="sc">{</span>k_superior<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(7 &lt;= X &lt;= 11): 0.6935</code></pre>
+</div>
+</div>
+</section>
+<section id="section-13" class="slide level2">
 <h2></h2>
 <p>Una variable aleatoria binomial se puede expresar como <span style="color: red">una suma de variables aleatorias de Bernoulli</span>:</p>
 <ul>

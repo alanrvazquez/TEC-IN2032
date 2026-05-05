@@ -1988,14 +1988,14 @@
     "href": "Modulo_1/Discretas.slides.html#calculo-de-probabilidades-en-python",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Calculo de probabilidades en Python",
-    "text": "Calculo de probabilidades en Python"
+    "text": "Calculo de probabilidades en Python\n\nConsideremos que un jugador de baloncesto anota 4 de 10 canastas (\\(p = 0.4\\)). Si el jugador lanza 20 canastas (20 intentos), calcula lo suiguiente:\nA. La probabilidad de anotar 1 canasta, \\(P(X = 1)\\).\nB. La probabilidad de anotar 6 o menos canastas, \\(P(X \\leq 6)\\).\nC. La probabilidad de anotar menos de 6 canastas, \\(P(X &lt; 6)\\).\nD. La probabilidad de anotar más de 12 canastas, \\(P(X &gt; 12)\\).\nE. La probabilidad de anotar entre 7 y 11 canastas, \\(P(7 \\leq X \\leq 11)\\)."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#section-8",
     "href": "Modulo_1/Discretas.slides.html#section-8",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "",
-    "text": "Una variable aleatoria binomial se puede expresar como una suma de variables aleatorias de Bernoulli:\n\nSupongamos que se realizan \\(n\\) experimentos independientes de Bernoulli.\nCada experimento tiene probabilidad de éxito \\(p\\).\nConsidera las variables \\(Y_1, \\ldots, Y_n\\) donde \\(Y_i = 1\\) si el resultado del i-ésimo experimento es éxito, y \\(Y_i = 0\\) de otro modo. Es decir \\(Y_i \\sim \\text{Bernoulli}(p)\\).\nAhora, considera la suma del número de éxitos entre los \\(n\\) experimentos \\(X = Y_1 + \\cdots + Y_n\\).\nEntonces, \\(X \\sim \\text{Bin}(n,p)\\)."
+    "text": "A. La probabilidad de anotar 1 canasta, \\(P(X = 1)\\).\n\nPara calcular la probabilidad de que una variable Binomial (\\(X\\)) tome exactamente el valor \\(k\\) usamos la función binom.pmf(k, n, p).\n\nk = 1\nprob_exacta = binom.pmf(k, n, p)\nprint(f\"P(X = {k}) = {prob_exacta:.4f}\")\n\nP(X = 1) = 0.0005"
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#pregunta-de-práctica-para-examen",
@@ -2009,7 +2009,7 @@
     "href": "Modulo_1/Discretas.slides.html#carguemos-las-librerías",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Carguemos las librerías",
-    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport scipy.stats"
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import binom\n\nEn el cógido de arriba, indicamos que utilizaremos la función binom() de la librería scipy.stats."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-2",
@@ -2024,5 +2024,47 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Una nueva librería: scipy.stats",
     "text": "Una nueva librería: scipy.stats\n\n\n\n\n\n\n\n\n\n\nscipy.stats es un módulo de la librería SciPy para realizar análisis estadístico en Python.\nProporciona herramientas para trabajar con distribuciones de probabilidad, pruebas de hipótesis, intervalos de confianza y estadística descriptiva.\nEstá construida sobre numpy para cálculos numéricos eficientes.\nhttps://scipy.org/es/"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-9",
+    "href": "Modulo_1/Discretas.slides.html#section-9",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "B. La probabilidad de anotar 6 o menos canastas, \\(P(X \\leq 6)\\).\n\nPara calcular la probabilidad de que una variable Binomial (\\(X\\)) tome un valor menor o igual a \\(k\\) usamos la función binom.cdf(k, n, p).\n\nk = 6\nprob_acumulada = binom.cdf(k, n, p)\nprint(f\"P(X &lt;= {k}) = {prob_acumulada:.4f}\")\n\nP(X &lt;= 6) = 0.2500"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#primero",
+    "href": "Modulo_1/Discretas.slides.html#primero",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Primero…",
+    "text": "Primero…\n\nDefinamos los valores apropiados para \\(n\\) y \\(p\\) en Python.\n\nn = 20 # Numero de experimentos Bernoulli.\np = 0.4 # Probabilidad de éxito."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-10",
+    "href": "Modulo_1/Discretas.slides.html#section-10",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "C. La probabilidad de anotar menos de 6 canastas, \\(P(X &lt; 6)\\).\n\nPara calcular la probabilidad de que una variable Binomial (\\(X\\)) tome un valor extrictamente menor a \\(k\\) usamos la función binom.cdf(k-1, n, p), usando \\(k-1\\)!\n\nk = 6\nprob_menos_que = binom.cdf(k-1, n, p)\nprint(f\"P(X &lt; {k}) = {prob_menos_que:.4f}\")\n\nP(X &lt; 6) = 0.1256\n\n\n\n\nEsto ya que \\(P(X &lt; 6) = P(X \\leq 5)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-11",
+    "href": "Modulo_1/Discretas.slides.html#section-11",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "D. La probabilidad de anotar más de 12 canastas, \\(P(X &gt; 12)\\).\nPara calcular la probabilidad de que una variable Binomial (\\(X\\)) tome un valor extrictamente mayor a \\(k\\) usamos la función binom.sf(k, n, p).\n\nk = 12\nprob_mas_de = binom.sf(k, n, p)\nprint(f\"P(X &gt; {k}) = {prob_mas_de:.4f}\")\n\nP(X &gt; 12) = 0.0210\n\n\n\nAlternativamente, por reglas de probabilidad, podemos usar el siguiente código:\n\nprint(1 - binom.cdf(k, n, p))\n\n0.021028927477771187\n\n\nQue se traduce en \\(P(X &gt; k) = 1 - P(X \\leq k)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-12",
+    "href": "Modulo_1/Discretas.slides.html#section-12",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "E. La probabilidad de anotar entre 7 y 11 canastas, \\(P(7 \\leq X \\leq 11)\\).\nPara este caso, debemos de ver\n\n\\[P(7 \\leq X \\leq 11) = P(X \\leq 11) - P(X &lt; 7) = P(X \\leq 11) - P(X \\leq 6).\\]\n\n\nEn Python, esto se logra con binom.cdf() como sigue:\n\nk_superior = 11\nk_inferior = 7\n\nprob = binom.cdf(k_superior, n, p) - binom.cdf(k_inferior - 1, n, p)\nprint(f\"P({k_inferior} &lt;= X &lt;= {k_superior}): {prob:.4f}\")\n\nP(7 &lt;= X &lt;= 11): 0.6935"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#section-13",
+    "href": "Modulo_1/Discretas.slides.html#section-13",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "",
+    "text": "Una variable aleatoria binomial se puede expresar como una suma de variables aleatorias de Bernoulli:\n\nSupongamos que se realizan \\(n\\) experimentos independientes de Bernoulli.\nCada experimento tiene probabilidad de éxito \\(p\\).\nConsidera las variables \\(Y_1, \\ldots, Y_n\\) donde \\(Y_i = 1\\) si el resultado del i-ésimo experimento es éxito, y \\(Y_i = 0\\) de otro modo. Es decir \\(Y_i \\sim \\text{Bernoulli}(p)\\).\nAhora, considera la suma del número de éxitos entre los \\(n\\) experimentos \\(X = Y_1 + \\cdots + Y_n\\).\nEntonces, \\(X \\sim \\text{Bin}(n,p)\\)."
   }
 ]
