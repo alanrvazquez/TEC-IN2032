@@ -265,6 +265,10 @@ Cuando los elementos de muestra se colocan en categorías y se asignan nombres d
 
 - Código postal.
 
+## Tipos de datos III
+
+![](images/Images.002.jpeg){fig-align="center"}
+
 ## Resúmenes estadísticos
 
 Una muestra suele ser una larga lista de números. Para ayudar a resaltar las características importantes de una muestra, **calculamos estadísticas resumidas**.

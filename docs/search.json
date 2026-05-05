@@ -1506,5 +1506,1160 @@
     "title": "Distribuciones Continuas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nLos pesos de las langostas de Maine en el momento de su captura se distribuyen normalmente con una media de 1.8 lb y una desviación estándar de 0.25 lb.\n¿Cuál es la probabilidad de que una langosta seleccionada al azar pese (a) entre 1.5 y 2 lb?, (b ) más de 1.55 lb?, (c) menos de 2.2 lb?"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#agenda",
+    "href": "Modulo_1/Python.slides.html#agenda",
+    "title": "Introducción a Python",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nIntroducción a Python\nLectura de Datos con Python\nManipulación de Datos con pandas\nVisualización de Datos con matplotlib y seaborn"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#agenda-1",
+    "href": "Modulo_1/Python.slides.html#agenda-1",
+    "title": "Introducción a la Estadística",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nData manipulation with pandas\nBasic data wrangling"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#python",
+    "href": "Modulo_1/Python.slides.html#python",
+    "title": "Introducción a Python",
+    "section": "Python",
+    "text": "Python\n\n\n\n\nUn lenguaje de programación versátil.\n¡Es gratuito!\nSe utiliza ampliamente para la limpieza, visualización y modelado de datos.\nSe puede ampliar con paquetes (librerías) desarrollados por otros usuarios."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#google-colab",
+    "href": "Modulo_1/Python.slides.html#google-colab",
+    "title": "Introducción a Python",
+    "section": "Google Colab",
+    "text": "Google Colab\nPlataforma gratuita de colaboración en la nube de Google para crear documentos Python.\n\nEjecuta Python y colabora en cuadernos Jupyter gratis.\nAprovecha la potencia de las GPU gratis para acelerar tus proyectos de ciencia de datos.\nGuarda y sube fácilmente tus cuadernos a Google Drive."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#lets-try-a-command-in-python",
+    "href": "Modulo_1/Python.slides.html#lets-try-a-command-in-python",
+    "title": "Introducción a la Estadística",
+    "section": "Let’s try a command in Python",
+    "text": "Let’s try a command in Python\nWhat do you think will happen if we run this command?\n\nprint(\"Hello world!\")\n\n\n\n\nHello world!"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#lets-try-another-command",
+    "href": "Modulo_1/Python.slides.html#lets-try-another-command",
+    "title": "Introducción a la Estadística",
+    "section": "Let’s try another command",
+    "text": "Let’s try another command\nWhat do you think will happen if we run this command?\n\nsum([1, 5, 10])\n\n\n\n\n16"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#use-python-as-a-basic-calculator",
+    "href": "Modulo_1/Python.slides.html#use-python-as-a-basic-calculator",
+    "title": "Introducción a la Estadística",
+    "section": "Use Python as a basic calculator",
+    "text": "Use Python as a basic calculator\n\n5 + 1\n\n6\n\n\n\n10 - 3\n\n7\n\n\n\n2 * 4\n\n8\n\n\n\n9 / 3\n\n3.0"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#comments",
+    "href": "Modulo_1/Python.slides.html#comments",
+    "title": "Introducción a la Estadística",
+    "section": "Comments",
+    "text": "Comments\n\nSometimes we write things in the coding window that we want Python to ignore. These are called comments and start with #.\n\nPython will ignore the comments and just execute the code.\n\n# you can put whatever after #\n# for example... blah blah blah\n\n\nSi desea escribir un comentario que ocupe más de una línea, es una buena idea poner un # al principio de cada línea."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#introduction-to-functions-in-python",
+    "href": "Modulo_1/Python.slides.html#introduction-to-functions-in-python",
+    "title": "Introducción a la Estadística",
+    "section": "Introduction to functions in Python",
+    "text": "Introduction to functions in Python\n\nOne of the best things about Python is that there are many built-in commands you can use. These are called functions.\n\nFunctions have two basic parts:\n\nThe first part is the name of the function (for example, sum).\nThe second part is the input to the function, which goes inside the parentheses (sum([1, 5, 15]))."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#python-is-strict",
+    "href": "Modulo_1/Python.slides.html#python-is-strict",
+    "title": "Introducción a la Estadística",
+    "section": "Python is strict",
+    "text": "Python is strict\nPython, like all programming languages, is very strict. For example, if you write\n\nsum([1, 100])\n\n101\n\n\nit will tell you the answer, 101.\n\nBut if you write\n\nSum([1, 100])\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[11], line 1\n----&gt; 1 Sum([1, 100])\n\nNameError: name 'Sum' is not defined\n\n\n\nwith the “s” capitalized, he will act like he has no idea what we are talking about!\n\nlo mismo si olvidas incluir un parentesis"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#save-your-work-in-python-objects",
+    "href": "Modulo_1/Python.slides.html#save-your-work-in-python-objects",
+    "title": "Introducción a la Estadística",
+    "section": "Save your work in Python objects",
+    "text": "Save your work in Python objects\n\nVirtually anything, including the results of any Python function, can be saved in an object.\nThis is accomplished by using an assignment operator, which can be an equals symbol (=).\n\nYou can make up any name you want for a Python object. However, there are two basic rules for this:\n\nIt has to be different from a function name in Python.\nIt has to be as specific as possible."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#for-example",
+    "href": "Modulo_1/Python.slides.html#for-example",
+    "title": "Introducción a la Estadística",
+    "section": "For example",
+    "text": "For example\n\n\n# This code will assign the number 18\n# to the object called my_favorite_number\n\nmy_favorite_number = 18\n\nAfter running this code, nothing happens. But if we run the object on its own, we can see what’s inside it.\n\nmy_favorite_number\n\n18\n\n\nYou can also use print(my_favorite_number)."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#lists",
+    "href": "Modulo_1/Python.slides.html#lists",
+    "title": "Introducción a la Estadística",
+    "section": "Lists",
+    "text": "Lists\n\nSo far we have used Python objects to store a single number. But in statistics we are dealing with variation, which by definition needs more than one number.\n\nA Python object can also store a complete set of numbers, called a list.\nYou can think of a list as a vector of numbers (or values).\n\n\nThe [] command can be used to combine several individual values into a list.\n\npuedes pensar que el c es por combinar"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#for-example-1",
+    "href": "Modulo_1/Python.slides.html#for-example-1",
+    "title": "Introducción a la Estadística",
+    "section": "For example",
+    "text": "For example\n\nThis code creates two vectors\n\nmy_list = [1, 2, 3, 4, 5]\nmy_list_2 = [10, 10, 10, 10, 10]\n\nLet’s see its content\n\nmy_list\n\n[1, 2, 3, 4, 5]\n\n\n\nmy_list_2\n\n[10, 10, 10, 10, 10]"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#operations",
+    "href": "Modulo_1/Python.slides.html#operations",
+    "title": "Introducción a la Estadística",
+    "section": "Operations",
+    "text": "Operations\n\nWe can do simple operations with vectors. For example, we can sum all the elements of a list.\n\nmy_list = [1, 2, 3, 4, 5]\nsum(my_list)\n\n15"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#indexing",
+    "href": "Modulo_1/Python.slides.html#indexing",
+    "title": "Introducción a la Estadística",
+    "section": "Indexing",
+    "text": "Indexing\n\nWe can index a position in the vector using square brackets with a number like this: [1].\nSo, if we wanted to print the contents of the first position in my_list, we could write\n\nmy_list[1]\n\n2\n\n\nAn feature of Python is that the first element of a list or vector is indexed using the number 0.\n\nmy_list[0]\n\n1"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#a-little-more-about-objects-in-python",
+    "href": "Modulo_1/Python.slides.html#a-little-more-about-objects-in-python",
+    "title": "Introducción a la Estadística",
+    "section": "A little more about objects in Python",
+    "text": "A little more about objects in Python\n\nYou can think of Python objects as containers that hold values.\nA Python object can hold a single value, or it can hold a group of values (as in a vector).\nSo far, we’ve only put numbers into Python objects.\n\n\nPython objects can actually contain three types of values: numbers, characters, and booleans."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#character-values",
+    "href": "Modulo_1/Python.slides.html#character-values",
+    "title": "Introducción a la Estadística",
+    "section": "Character values",
+    "text": "Character values\n\nCharacters are made up of text, such as words or sentences. An example of a list with characters as elements is:\n\n\nmany_greetings = [\"hi\", \"hello\", \"hola\", \"bonjour\", \"ni hao\", \"merhaba\"]\nmany_greetings\n\n['hi', 'hello', 'hola', 'bonjour', 'ni hao', 'merhaba']\n\n\n\n\nIt is important to know that numbers can also be treated as characters, depending on the context.\nFor example, when 20 is enclosed in quotes (\"20\") it will be treated as a character value, even though it encloses a number in quotes."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#boolean-values",
+    "href": "Modulo_1/Python.slides.html#boolean-values",
+    "title": "Introducción a la Estadística",
+    "section": "Boolean values",
+    "text": "Boolean values\n\nBoolean values are True or False.\nWe may have a question like:\n\nIs the first element of the vector many_greetings \"hola\"?\n\n\nWe can ask Python to find out and return the answer True or False.\n\nmany_greetings[1] == \"hola\"\n\nFalse"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#logical-operators",
+    "href": "Modulo_1/Python.slides.html#logical-operators",
+    "title": "Introducción a la Estadística",
+    "section": "Logical operators",
+    "text": "Logical operators\n\nMost of the questions we ask Python to answer with True or False involve comparison operators like &gt;, &lt;, &gt;=, &lt;=, and ==.\nThe double == sign checks whether two values are equal. There is even a comparison operator to check whether values are not equal: !=.\nFor example, 5 != 3 is a True statement."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#common-logical-operators",
+    "href": "Modulo_1/Python.slides.html#common-logical-operators",
+    "title": "Introducción a la Estadística",
+    "section": "Common logical operators",
+    "text": "Common logical operators\n\n\n&gt; (larger than)\n&gt;= (larger than or equal to)\n&lt; (smaller than)\n&lt;= (smaller than or equal to)\n== (equal to)\n!= (not equal to)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#question",
+    "href": "Modulo_1/Python.slides.html#question",
+    "title": "Introducción a la Estadística",
+    "section": "Question",
+    "text": "Question\n\nRead this code and predict its response. Then, run the code in Google Colab and validate if you were correct.\n\nA = 1\nB = 5\ncompare = A &gt; B\ncompare"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#programming-culture-trial-and-error",
+    "href": "Modulo_1/Python.slides.html#programming-culture-trial-and-error",
+    "title": "Introducción a la Estadística",
+    "section": "Programming culture: Trial and error",
+    "text": "Programming culture: Trial and error\n\nThe best way to learn programming is to try things out and see what happens. Write some code, run it, and think about why it didn’t work.\nThere are many ways to make small mistakes in programming (for example, typing a capital letter when a lowercase letter is needed).\nWe often have to find these mistakes through trial and error."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#python-libraries",
+    "href": "Modulo_1/Python.slides.html#python-libraries",
+    "title": "Introducción a la Estadística",
+    "section": "Python libraries",
+    "text": "Python libraries\n\nLibraries are the fundamental units of reproducible Python code. They include reusable Python functions, documentation describing how to use them, and sample data.\nIn this course, we will be working mostly with the following libraries:\n\npandas for data manipulation\nmatplotlib and seaborn for data visualization\nstatsmodels and scikit-learn for data modelling"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#data-organization",
+    "href": "Modulo_1/Python.slides.html#data-organization",
+    "title": "Introducción a la Estadística",
+    "section": "Data organization",
+    "text": "Data organization\nIn data science, we organize data into rows and columns.\n\n    Condition  Age   Wt    Wt2\n1  Uninformed   35  136  135.8\n2  Uninformed   45  162  161.8\n3    Informed   52  117  116.8\n4    Informed   29  184  182.8\n5  Uninformed   38  134  136.6\n6    Informed   39  189  183.2\n\n\nThe rows are the sampled cases. In this example, the rows are housekeepers from different hotels. There are six rows, so there are six housekeepers in this data set.\n\n\nDepending on the study, the rows could be people, states, couples, mice—any case you’re taking a sample from to study."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section",
+    "href": "Modulo_1/Python.slides.html#section",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "El conjunto de datos penguins.xlsx contiene información sobre pingüinos que viven en tres islas."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-1",
+    "href": "Modulo_1/Python.slides.html#section-1",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "Vamos a comprobar de nuevo el tipo de variables.\n\npenguins_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 344 entries, 0 to 343\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype   \n---  ------             --------------  -----   \n 0   species            344 non-null    category\n 1   island             344 non-null    category\n 2   bill_length_mm     342 non-null    float64 \n 3   bill_depth_mm      342 non-null    float64 \n 4   flipper_length_mm  342 non-null    float64 \n 5   body_mass_g        342 non-null    float64 \n 6   sex                333 non-null    category\n 7   year               344 non-null    int64   \ndtypes: category(3), float64(4), int64(1)\nmemory usage: 14.9 KB"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#loading-data-in-python",
+    "href": "Modulo_1/Python.slides.html#loading-data-in-python",
+    "title": "Introducción a la Estadística",
+    "section": "Loading data in Python",
+    "text": "Loading data in Python\nIn this course, we will assume that data is stored in an Excel file with the above organization. As an example, let’s use the file penguins.xlsx.\n\n\n\n\n\n\n\nThe file must be previously uploaded to Google Colab."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-2",
+    "href": "Modulo_1/Python.slides.html#section-2",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "Para practicar, utilizaremos el conjunto de datos penguins_data."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#pandas-library",
+    "href": "Modulo_1/Python.slides.html#pandas-library",
+    "title": "Introducción a Python",
+    "section": "pandas library",
+    "text": "pandas library\n\n\n\n\n\n\n\n\n\n\npandas es una biblioteca de Python de código abierto para la manipulación y el análisis de datos.\nEstá construida sobre numpy para operaciones de datos de alto rendimiento.\nPermite al usuario importar, limpiar, transformar y analizar datos de forma eficiente.\nhttps://pandas.pydata.org/"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#importing-pandas",
+    "href": "Modulo_1/Python.slides.html#importing-pandas",
+    "title": "Introducción a la Estadística",
+    "section": "Importing pandas",
+    "text": "Importing pandas\nFortunately, the pandas library is already pre-installed in Google Colab.\n\nHowever, we need to inform Google Colab that we want to use pandas and its functions using the following command:\n\nimport pandas as pd\n\n\nThe command as pd allows us to have a short name for pandas. To use a function of pandas, we use the command pd.function()."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#loading-data-using-pandas",
+    "href": "Modulo_1/Python.slides.html#loading-data-using-pandas",
+    "title": "Introducción a la Estadística",
+    "section": "Loading data using pandas",
+    "text": "Loading data using pandas\n\nThe following code shows how to read the data in the file “penguins.xlsx” into Python.\n\n# Load the Excel file into a pandas DataFrame.\npenguins_data = pd.read_excel(\"penguins.xlsx\")"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#the-function-head",
+    "href": "Modulo_1/Python.slides.html#the-function-head",
+    "title": "Introducción a la Estadística",
+    "section": "The function head()",
+    "text": "The function head()\nThe function head() allows you to print the first rows of a pandas data frame.\n\n# Print the first 4 rows of the dataset.\npenguins_data.head(4)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#indexing-variables-a-dataset",
+    "href": "Modulo_1/Python.slides.html#indexing-variables-a-dataset",
+    "title": "Introducción a la Estadística",
+    "section": "Indexing variables a dataset",
+    "text": "Indexing variables a dataset\nWe can select a specific variables of a data frame using the syntaxis below.\n\npenguins_data['bill_length_mm']\n\n0      39.1\n1      39.5\n2      40.3\n3       NaN\n4      36.7\n       ... \n339    55.8\n340    43.5\n341    49.6\n342    50.8\n343    50.2\nName: bill_length_mm, Length: 344, dtype: float64\n\n\nHere, we selected the variable bill_length_mm in the penguins_data dataset."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-3",
+    "href": "Modulo_1/Python.slides.html#section-3",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "El argumento axis le indica a .filter() si debe seleccionar filas (0) o columnas (1) del dataframe.\n\n(penguins_data\n  .filter([\"species\", \"body_mass_g\", \"sex\"], axis = 1)\n).head()\n\n\n\nEl comando .head() nos permite imprimir las primeras seis filas del nuevo dataframe. Debemos eliminarlo para obtener el dataframe completo."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#indexing-rows",
+    "href": "Modulo_1/Python.slides.html#indexing-rows",
+    "title": "Introducción a la Estadística",
+    "section": "Indexing rows",
+    "text": "Indexing rows\nTo index rows in a dataset, we use the argument loc from pandas. For example, we select the rows 3 to 6 of the penguins_dataset dataset:\n\nrows_penguins_data = penguins_data.loc[2:5]\nrows_penguins_data\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n5\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nmale\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-4",
+    "href": "Modulo_1/Python.slides.html#section-4",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "También podemos usar .filter() para seleccionar filas. Para ello, establecemos axis = 1. Podemos seleccionar filas específicas, como la 0 y la 10.\n\n(penguins_data\n  .filter([0, 10], axis = 0)\n)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n10\nAdelie\nTorgersen\n37.8\n17.1\n186.0\n3300.0\nNaN\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#indexing-rows-and-columns",
+    "href": "Modulo_1/Python.slides.html#indexing-rows-and-columns",
+    "title": "Introducción a la Estadística",
+    "section": "Indexing rows and columns",
+    "text": "Indexing rows and columns\nUsing loc, we can also retrieve a subset from the dataset by selecting specific columns and rows.\n\nsub_rows_pdata = penguins_data.loc[2:5, ['bill_length_mm',  'species', 'island'] ]\nsub_rows_pdata\n\n\n\n\n\n\n\n\nbill_length_mm\nspecies\nisland\n\n\n\n\n2\n40.3\nAdelie\nTorgersen\n\n\n3\nNaN\nAdelie\nTorgersen\n\n\n4\n36.7\nAdelie\nTorgersen\n\n\n5\n39.3\nAdelie\nTorgersen"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#agenda-2",
+    "href": "Modulo_1/Python.slides.html#agenda-2",
+    "title": "Introducción a la Estadística",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nReview of data types and summary statistics\nData visualizations"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#chaining-operations-with-pandas",
+    "href": "Modulo_1/Python.slides.html#chaining-operations-with-pandas",
+    "title": "Introducción a la Estadística",
+    "section": "Chaining operations with pandas",
+    "text": "Chaining operations with pandas\nOne of the most important techniques in pandas is chaining, which allows for cleaner and more readable data manipulation.\nThe general structure of chaining looks like this:"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#key-pandas-methods",
+    "href": "Modulo_1/Python.slides.html#key-pandas-methods",
+    "title": "Introducción a la Estadística",
+    "section": "Key pandas methods",
+    "text": "Key pandas methods\npandas provides methods or functions to solve common data manipulation tasks:\n\n.filter() selects specific columns or rows.\n.query() filters observations based on conditions.\n.assign() adds new variables that are functions of existing variables.\n.sort_values() changes the order of rows.\n.agg() reduces multiple values to a single numerical summary."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-5",
+    "href": "Modulo_1/Python.slides.html#section-5",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "O bien, podemos seleccionar un conjunto de filas usando la función range(). Por ejemplo, seleccionemos las primeras 5 filas.\n\n(penguins_data\n  .filter(range(5), axis = 0)\n)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#example-1",
+    "href": "Modulo_1/Python.slides.html#example-1",
+    "title": "Introducción a la Estadística",
+    "section": "Example 1",
+    "text": "Example 1\nLet’s load the dataset and the pandas library.\n\nimport pandas as pd\n\n# Load the Excel file into a pandas DataFrame.\npenguins_data = pd.read_excel(\"penguins.xlsx\")\n\n# Preview the dataset.\npenguins_data.head(4)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#selecting-columns-with-.filter",
+    "href": "Modulo_1/Python.slides.html#selecting-columns-with-.filter",
+    "title": "Introducción a la Estadística",
+    "section": "Selecting columns with .filter()",
+    "text": "Selecting columns with .filter()\nSelect the columns species, body_mass_g and sex.\n\n(penguins_data\n  .filter([\"species\", \"body_mass_g\", \"sex\"], axis = 1)\n).head()\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\nsex\n\n\n\n\n0\nAdelie\n3750.0\nmale\n\n\n1\nAdelie\n3800.0\nfemale\n\n\n2\nAdelie\n3250.0\nfemale\n\n\n3\nAdelie\nNaN\nNaN\n\n\n4\nAdelie\n3450.0\nfemale"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-6",
+    "href": "Modulo_1/Python.slides.html#section-6",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "(penguins_data\n  .query(\"species == 'Gentoo'\")\n).head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n152\nGentoo\nBiscoe\n46.1\n13.2\n211.0\n4500.0\nfemale\n2007\n\n\n153\nGentoo\nBiscoe\n50.0\n16.3\n230.0\n5700.0\nmale\n2007\n\n\n154\nGentoo\nBiscoe\n48.7\n14.1\n210.0\n4450.0\nfemale\n2007\n\n\n155\nGentoo\nBiscoe\n50.0\n15.2\n218.0\n5700.0\nmale\n2007\n\n\n156\nGentoo\nBiscoe\n47.6\n14.5\n215.0\n5400.0\nmale\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-7",
+    "href": "Modulo_1/Python.slides.html#section-7",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "También podemos filtrar los datos para obtener pingüinos con una masa corporal superior a 5000g.\n\n(penguins_data\n  .query(\"body_mass_g &gt; 5000\")\n).head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n153\nGentoo\nBiscoe\n50.0\n16.3\n230.0\n5700.0\nmale\n2007\n\n\n155\nGentoo\nBiscoe\n50.0\n15.2\n218.0\n5700.0\nmale\n2007\n\n\n156\nGentoo\nBiscoe\n47.6\n14.5\n215.0\n5400.0\nmale\n2007\n\n\n159\nGentoo\nBiscoe\n46.7\n15.3\n219.0\n5200.0\nmale\n2007\n\n\n161\nGentoo\nBiscoe\n46.8\n15.4\n215.0\n5150.0\nmale\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-8",
+    "href": "Modulo_1/Python.slides.html#section-8",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "Incluso podemos combinar .filter() y .query(). Por ejemplo, seleccionemos las columnas species, body_mass_g y sex, y luego filtremos los datos para la especie “Gentoo”.\n\n(penguins_data\n  .filter([\"species\", \"body_mass_g\", \"sex\"], axis = 1)\n  .query(\"species == 'Gentoo'\")\n).head(4)\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\nsex\n\n\n\n\n152\nGentoo\n4500.0\nfemale\n\n\n153\nGentoo\n5700.0\nmale\n\n\n154\nGentoo\n4450.0\nfemale\n\n\n155\nGentoo\n5700.0\nmale"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#filtering-rows-with-.query",
+    "href": "Modulo_1/Python.slides.html#filtering-rows-with-.query",
+    "title": "Introducción a la Estadística",
+    "section": "Filtering rows with .query()",
+    "text": "Filtering rows with .query()\n\nAn alternative way of selecting rows is .query(). Compared to .filter(), .query() allows us to filter the data using statements or queries involving the variables.\n\nFor example, let’s filter the data for the species “Gentoo.”\n\n(penguins_data\n  .query(\"species == 'Gentoo'\")\n)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-9",
+    "href": "Modulo_1/Python.slides.html#section-9",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "En este código, el df después de lambda indica que el dataframe (penguins_data) se denominará df dentro de la función. Los dos puntos : marcan el inicio de la función.\n\n(penguins_data\n  .assign(LDRatio = lambda df: df[\"bill_length_mm\"] / df[\"bill_depth_mm\"])\n)\n\nEl código agrega la nueva variable al final del dataframe resultante."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-10",
+    "href": "Modulo_1/Python.slides.html#section-10",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "Podemos ver la nueva variable usando .filter().\n\n(penguins_data\n  .assign(LDRatio = lambda df: df[\"bill_length_mm\"] / df[\"bill_depth_mm\"])\n  .filter([\"bill_length_mm\", \"bill_depth_mm\", \"LDRatio\"], axis = 1)\n).head()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nLDRatio\n\n\n\n\n0\n39.1\n18.7\n2.090909\n\n\n1\n39.5\n17.4\n2.270115\n\n\n2\n40.3\n18.0\n2.238889\n\n\n3\nNaN\nNaN\nNaN\n\n\n4\n36.7\n19.3\n1.901554"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-11",
+    "href": "Modulo_1/Python.slides.html#section-11",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "Para ordenar en orden descendente, utilice ascending=False dentro de sort_values().\n\n(penguins_data\n  .sort_values(\"bill_length_mm\", ascending=False)\n).head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n185\nGentoo\nBiscoe\n59.6\n17.0\n230.0\n6050.0\nmale\n2007\n\n\n293\nChinstrap\nDream\n58.0\n17.8\n181.0\n3700.0\nfemale\n2007\n\n\n253\nGentoo\nBiscoe\n55.9\n17.0\n228.0\n5600.0\nmale\n2009\n\n\n339\nChinstrap\nDream\n55.8\n19.8\n207.0\n4000.0\nmale\n2009\n\n\n267\nGentoo\nBiscoe\n55.1\n16.0\n230.0\n5850.0\nmale\n2009"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#create-new-columns-with-.assign",
+    "href": "Modulo_1/Python.slides.html#create-new-columns-with-.assign",
+    "title": "Introducción a la Estadística",
+    "section": "Create new columns with .assign()",
+    "text": "Create new columns with .assign()\nWith .assign(), we can create new columns (variables) that are functions of existing ones. This function uses a special Python keyword called lambda. Technically, this keyword defines an anonymous function.\nFor example, we create a new variable LDRatio equaling the ratio of bill_length_mm and bill_depth_mm.\n\n(penguins_data\n  .assign(LDRatio = lambda df: df[\"bill_length_mm\"] / df[\"bill_depth_mm\"])\n)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-12",
+    "href": "Modulo_1/Python.slides.html#section-12",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "Podemos calcular resúmenes estadísticos de varias columnas al mismo tiempo.\n\n(penguins_data\n  .filter([\"bill_length_mm\", \"bill_depth_mm\", \"body_mass_g\"], axis = 1)\n  .agg([\"mean\", \"var\", \"std\"])\n)\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nbody_mass_g\n\n\n\n\nmean\n43.921930\n17.151170\n4201.754386\n\n\nvar\n29.807054\n3.899808\n643131.077327\n\n\nstd\n5.459584\n1.974793\n801.954536"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-13",
+    "href": "Modulo_1/Python.slides.html#section-13",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "El conjunto de datos se encuentra en el archivo “glass.xlsx”. Vamos a cargarlo usando pandas.\n\n# Cargar el archivo de Excel en un DataFrame de pandas.\nglass_data = pd.read_excel(\"glass.xlsx\")\n\n\nLa variable Type es categórica. Por lo tanto, asegurémonos de que Python lo sepa usando el siguiente código.\n\nglass_data['Type'] = pd.Categorical(glass_data['Type'])"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#sorting-with-.sort_values",
+    "href": "Modulo_1/Python.slides.html#sorting-with-.sort_values",
+    "title": "Introducción a la Estadística",
+    "section": "Sorting with .sort_values()",
+    "text": "Sorting with .sort_values()\nWe can sort the data based on a column like bill_length_mm.\n\n(penguins_data\n  .sort_values(\"bill_length_mm\")\n).head(4)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n142\nAdelie\nDream\n32.1\n15.5\n188.0\n3050.0\nfemale\n2009\n\n\n98\nAdelie\nDream\n33.1\n16.1\n178.0\n2900.0\nfemale\n2008\n\n\n70\nAdelie\nTorgersen\n33.5\n19.0\n190.0\n3600.0\nfemale\n2008\n\n\n92\nAdelie\nDream\n34.0\n17.1\n185.0\n3400.0\nfemale\n2008"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-14",
+    "href": "Modulo_1/Python.slides.html#section-14",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "In Python, the quartiles are calculated using the function quantile().\n\n# Set the quantiles.\nset_quantiles = [0.25, 0.5, 0.75]\n# Compute the quantiles.\n(penguins_data\n .filter(['bill_length_mm'], axis = 1)\n .agg(\"quantile\", q = set_quantiles)\n)\n\n\n\n\n\n\n\n\nbill_length_mm\n\n\n\n\n0.25\n39.225\n\n\n0.50\n44.450\n\n\n0.75\n48.500"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#summarizing-with-.agg",
+    "href": "Modulo_1/Python.slides.html#summarizing-with-.agg",
+    "title": "Introducción a la Estadística",
+    "section": "Summarizing with .agg()",
+    "text": "Summarizing with .agg()\nWe can calculate summary statistics of the columns bill_length_mm, bill_depth_mm, and body_mass_g.\n\n(penguins_data\n  .filter([\"bill_length_mm\", \"bill_depth_mm\", \"body_mass_g\"], axis = 1)\n  .agg([\"mean\"])\n)\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nbody_mass_g\n\n\n\n\nmean\n43.92193\n17.15117\n4201.754386\n\n\n\n\n\n\n\n\n\nBy default, agg() ignores missing values."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#saving-results-in-new-objects",
+    "href": "Modulo_1/Python.slides.html#saving-results-in-new-objects",
+    "title": "Introducción a la Estadística",
+    "section": "Saving results in new objects",
+    "text": "Saving results in new objects\n\nAfter performing operations on our data, we can save the modified dataset as a new object.\n\nmean_penguins_data = (penguins_data\n  .filter([\"bill_length_mm\", \"bill_depth_mm\", \"body_mass_g\"], axis = 1)\n  .agg([\"mean\"])\n)\n\nmean_penguins_data\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nbody_mass_g\n\n\n\n\nmean\n43.92193\n17.15117\n4201.754386"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#more-on-pandas",
+    "href": "Modulo_1/Python.slides.html#more-on-pandas",
+    "title": "Introducción a la Estadística",
+    "section": "More on pandas",
+    "text": "More on pandas\n\n\nhttps://wesmckinney.com/book/"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#agenda-3",
+    "href": "Modulo_1/Python.slides.html#agenda-3",
+    "title": "Introducción a la Estadística",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nReview of data types and summary statistics\nData visualizations"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#types-of-data-i",
+    "href": "Modulo_1/Python.slides.html#types-of-data-i",
+    "title": "Introducción a la Estadística",
+    "section": "Types of data I",
+    "text": "Types of data I\n\nWhen a numerical quantity designating how much or how many is assigned to each item in the sample, the resulting set of values is numerical or quantitative.\n\nHeight (in ft).\nWeight (in lbs).\nAge (in years)."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#types-of-data-ii",
+    "href": "Modulo_1/Python.slides.html#types-of-data-ii",
+    "title": "Introducción a la Estadística",
+    "section": "Types of data II",
+    "text": "Types of data II\n\nWhen sample items are placed into categories and category names are assigned to the sample items, the data are categorical or qualitative.\n\nHair color.\nCountry of origin.\nZIP code."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#data-types",
+    "href": "Modulo_1/Python.slides.html#data-types",
+    "title": "Introducción a la Estadística",
+    "section": "Data types",
+    "text": "Data types"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#example-1-1",
+    "href": "Modulo_1/Python.slides.html#example-1-1",
+    "title": "Introducción a la Estadística",
+    "section": "Example 1",
+    "text": "Example 1\nLet’s load the data in “penguins.xlsx”.\n\n# Load pandas.\nimport pandas as pd\n\n# Load the Excel file into a pandas DataFrame.\npenguins_data = pd.read_excel(\"penguins.xlsx\")\n\n# Print the first 4 rows of the dataset.\npenguins_data.head(4)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-15",
+    "href": "Modulo_1/Python.slides.html#section-15",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "En Python, los cuartiles se calculan utilizando la función quantile().\n\n# Fijar cuantiles.\nset_quantiles = [0.25, 0.5, 0.75]\n# Calcular cuantiles.\n(penguins_data\n .filter(['bill_length_mm'], axis = 1)\n .agg(\"quantile\", q = set_quantiles)\n)\n\n\n\n\n\n\n\n\nbill_length_mm\n\n\n\n\n0.25\n39.225\n\n\n0.50\n44.450\n\n\n0.75\n48.500"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#general-python-formats",
+    "href": "Modulo_1/Python.slides.html#general-python-formats",
+    "title": "Introducción a la Estadística",
+    "section": "General Python formats",
+    "text": "General Python formats\n\n\nfloat64 format for numerical variables with decimals.\nint64 format for numerical variables with integers.\nobject format for general variables with characters."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#define-categorical-variables",
+    "href": "Modulo_1/Python.slides.html#define-categorical-variables",
+    "title": "Introducción a la Estadística",
+    "section": "Define categorical variables",
+    "text": "Define categorical variables\nTechnically, the variable sex in penguins_data is categorical. To explicitly tell this to Python, we use the following code.\n\npenguins_data['sex'] = pd.Categorical(penguins_data['sex'])\n\nSetting sex to categorical allows us to use effective visualization for this data.\nWe do the same for the other categorical variables species and island.\n\npenguins_data['species'] = pd.Categorical(penguins_data['species'])\npenguins_data['island'] = pd.Categorical(penguins_data['island'])"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-16",
+    "href": "Modulo_1/Python.slides.html#section-16",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "Creamos el gráfico de barras utilizando la función countplot() de seaborn.\n\n\nCode\n# Create plot.\nplt.figure(figsize=(7,4)) # Create space for the plot.\nsns.countplot(data = glass_data, x = 'Type') # Show the plot.\nplt.title(\"Bar chart of Type of Glasses\") # Set plot title.\nplt.ylabel(\"Frequency\") # Set label for Y axis.\nplt.show() # Show plot."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#summary-statistics",
+    "href": "Modulo_1/Python.slides.html#summary-statistics",
+    "title": "Introducción a la Estadística",
+    "section": "Summary statistics",
+    "text": "Summary statistics\n\nA sample is often a long list of numbers. To help make the important features of a sample stand out, we compute summary statistics.\nFor numerical data, the most popular summary statistics are:\n\nSample mean\nSample variance and sample standard deviation\nSample quartiles\nSample maximum and minimum"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#sample-mean",
+    "href": "Modulo_1/Python.slides.html#sample-mean",
+    "title": "Introducción a la Estadística",
+    "section": "Sample mean",
+    "text": "Sample mean\n\nLet \\(y_1, y_2, \\ldots, y_n\\) be an observed sample of size \\(n\\).\nThe sample mean is\n\\[\\bar{y} = \\frac{1}{n}\\sum_{i=1}^{n} y_i = \\frac{y_1 + y_2 + \\cdots + y_n}{n}.\\]\nThe sample mean gives an indication of the center of the data."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#in-python",
+    "href": "Modulo_1/Python.slides.html#in-python",
+    "title": "Introducción a la Estadística",
+    "section": "In Python",
+    "text": "In Python\n\nThe sample mean is calculated using the function .agg() with “mean”.\n\nbill_length_mean = (penguins_data\n                    .filter(['bill_length_mm'], axis = 1)\n                    .agg(\"mean\")\n                    )\nprint(bill_length_mean)\n\nbill_length_mm    43.92193\ndtype: float64\n\n\nWe use the function print to show the number. Otherwise, Python will show the computer type of value stored in bill_length_mean."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-17",
+    "href": "Modulo_1/Python.slides.html#section-17",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "plt.figure(figsize=(5, 5))\nsns.countplot(data = glass_data, x = 'Type')\nplt.title('Relative Frequency of Each Category', fontsize = 12)\nplt.ylabel('Relative Frequency', fontsize = 12)\nplt.xlabel('Category', fontsize = 15)\nplt.xticks(fontsize = 12)\nplt.yticks(fontsize = 12)\nplt.savefig('bar_chart.png',dpi=300)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#sample-variance",
+    "href": "Modulo_1/Python.slides.html#sample-variance",
+    "title": "Introducción a la Estadística",
+    "section": "Sample variance",
+    "text": "Sample variance\n\nLet \\(y_1, y_2, \\ldots, y_n\\) be an observed sample of size \\(n\\). The sample mean is\n\\[s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2 = \\frac{(y_1 - \\bar{y})^2  + \\cdots + (y_n - \\bar{y})^2}{n-1}\\]\n\nThe sample variance is like an average of the squared differences between each observation and the sample mean.\nIt gives an indication of how spread out the data are."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-18",
+    "href": "Modulo_1/Python.slides.html#section-18",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "We create the bar chart using the function countplot() from seaborn.\n\n\nCode\n# Create plot.\nplt.figure(figsize=(7,4)) # Create space for the plot.\nsns.countplot(data = glass_data, x = 'Type') # Show the plot.\nplt.title(\"Bar chart of Type of Glasses\") # Set plot title.\nplt.ylabel(\"Frequency\") # Set label for Y axis.\nplt.show() # Show plot."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#sample-standard-deviation",
+    "href": "Modulo_1/Python.slides.html#sample-standard-deviation",
+    "title": "Introducción a la Estadística",
+    "section": "Sample standard deviation",
+    "text": "Sample standard deviation\nA drawback of the sample variance is that it is not on the same scale as the actual observations.\nTo obtain a measure of spread whose units are the same as those of the sample, we simply take the squared root of the sample variance\n\\[s = \\left(\\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2 \\right)^{1/2}\\]\nThis quantity is known as the sample standard deviation. It is in the same units as the observations."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-19",
+    "href": "Modulo_1/Python.slides.html#section-19",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "plt.figure(figsize=(5, 5))\nsns.countplot(data = glass_data, x = 'Type')\nplt.title('Relative Frequency of Each Category', fontsize = 12)\nplt.ylabel('Relative Frequency', fontsize = 12)\nplt.xlabel('Category', fontsize = 15)\nplt.xticks(fontsize = 12)\nplt.yticks(fontsize = 12)\nplt.savefig('bar_chart.png',dpi=300)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#sample-quartiles",
+    "href": "Modulo_1/Python.slides.html#sample-quartiles",
+    "title": "Introducción a la Estadística",
+    "section": "Sample quartiles",
+    "text": "Sample quartiles\n\nThe sample median is the middle number of the ordered data values.\n\nSample quartiles divide the data as nearly as possible into quarters:\n\nFirst quartile (\\(Q_1\\)) is the median of the lower half of the data.\nSecond quartile (\\(Q_2\\)) is the median of the data.\nThird quartile (\\(Q_3\\)) is the median of the upper half of the data."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-21",
+    "href": "Modulo_1/Python.slides.html#section-21",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "In Python, the quartiles are calculated using the function quantile().\n\n# Set the quantiles.\nset_quantiles = [0.25, 0.5, 0.75]\n# Compute the quantiles.\n(penguins_data\n .filter(['bill_length_mm'], axis = 1)\n .agg(\"quantile\", q = set_quantiles)\n)\n\n\n\n\n\n\n\n\nbill_length_mm\n\n\n\n\n0.25\n39.225\n\n\n0.50\n44.450\n\n\n0.75\n48.500"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#sample-maximum-and-minimum",
+    "href": "Modulo_1/Python.slides.html#sample-maximum-and-minimum",
+    "title": "Introducción a la Estadística",
+    "section": "Sample maximum and minimum",
+    "text": "Sample maximum and minimum\nOther relevant summary statistics are the maximum and minimum, which are calculated using the functions max() and min(), respectively.\n\nbill_length_max = (penguins_data\n                   .filter(['bill_length_mm'], axis = 1)\n                   .agg(\"max\")\n                  )\nprint(bill_length_max)\n\nbill_length_mm    59.6\ndtype: float64\n\n\n\nbill_length_min = (penguins_data\n                   .filter(['bill_length_mm'], axis = 1)\n                   .agg(\"min\")\n                  )\nprint(bill_length_min)\n\nbill_length_mm    32.1\ndtype: float64"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#summary-statistics-for-categorical-data",
+    "href": "Modulo_1/Python.slides.html#summary-statistics-for-categorical-data",
+    "title": "Introducción a Python",
+    "section": "Summary statistics for categorical data",
+    "text": "Summary statistics for categorical data\n\nThe most commonly used statistical summaries for categorical data are:\n\nThe frequency of a category is the number of observations that belong to that category.\nThe relative frequency is the frequency divided by the total number of observations."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#frequency-table",
+    "href": "Modulo_1/Python.slides.html#frequency-table",
+    "title": "Introducción a Python",
+    "section": "Frequency table",
+    "text": "Frequency table\nSummarizes a categorical variable by counting the values per category.\n\n\n\n(penguins_data\n  .filter(['species'], axis = 1)\n  .value_counts()\n)  \n\nspecies  \nAdelie       152\nGentoo       124\nChinstrap     68\nName: count, dtype: int64\n\n\n\n\n\n\nSpecie\nFrequency\n\n\n\n\nAdelie\n152\n\n\nChinstrap\n68\n\n\nGentoo\n124\n\n\nTotal\n344\n\n\n\n\n\nFrequency: Number of observations in each category.\nTotal: Total sum of observations.\n\n\n\nVentajas de las frequencias.\nResumen claro y conciso de los datos categóricos.\nFacilita la identificación de patrones y tendencias.\nAyuda en la toma de decisiones informadas."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#relative-frequency-table",
+    "href": "Modulo_1/Python.slides.html#relative-frequency-table",
+    "title": "Introducción a Python",
+    "section": "Relative Frequency Table",
+    "text": "Relative Frequency Table\nSummarizes a categorical variable by calculating the proportion of values per category.\n\n\n\n(penguins_data\n .filter(['species'], axis = 1)\n .value_counts(normalize = True)\n)\n\nspecies  \nAdelie       0.441860\nGentoo       0.360465\nChinstrap    0.197674\nName: proportion, dtype: float64\n\n\n\n\n\n\nSpecie\nRelative Frequency\n\n\n\n\nAdelie\n0.4418605\n\n\nChinstrap\n0.1976744\n\n\nGentoo\n0.3604651\n\n\nSum\n1\n\n\n\n\n\nRelative frequency: Number of observations in each category divided by the total.\n\n\nLa ventaja de la frequencia relativa es que se puede interpretar como una probabilidad. Lo que da mas información."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#example-2",
+    "href": "Modulo_1/Python.slides.html#example-2",
+    "title": "Introducción a Python",
+    "section": "Example 2",
+    "text": "Example 2\n\nA criminologist is developing a rule-based system to classify the types of glasses encountered in criminal investigations.\nThe data consist of 214 glass samples labeled as one of seven class categories.\nThere are nine predictors, including refractive index and percentages of eight elements: Na, Mg, AL, Is, K, Ca, Ba, and Fe. The response is the type of glass."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-22",
+    "href": "Modulo_1/Python.slides.html#section-22",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "The dataset is in the file “glass.xlsx”. Let’s load it using pandas.\n\n# Load the Excel file into a pandas DataFrame.\nglass_data = pd.read_excel(\"glass.xlsx\")\n\n\nThe variable Type is categorical. So, let’s ensure Python knows this using the code below.\n\nglass_data['Type'] = pd.Categorical(glass_data['Type'])"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#matplotlib-library",
+    "href": "Modulo_1/Python.slides.html#matplotlib-library",
+    "title": "Introducción a Python",
+    "section": "matplotlib library",
+    "text": "matplotlib library\n\nmatplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python\nIt is widely used in the data science community for plotting data in various formats\nIdeal for creating simple visualizations like line plots, bar charts, scatter plots, and more\nhttps://matplotlib.org/"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#seaborn-library",
+    "href": "Modulo_1/Python.slides.html#seaborn-library",
+    "title": "Introducción a Python",
+    "section": "seaborn library",
+    "text": "seaborn library\n\nseaborn is a Python library built on top of Matplotlib\nDesigned to make statistical data visualization easy and beautiful\nIdeal for creating informative and attractive visualizations with minimal code\nhttps://seaborn.pydata.org/index.html"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#importing-the-libraries",
+    "href": "Modulo_1/Python.slides.html#importing-the-libraries",
+    "title": "Introducción a Python",
+    "section": "Importing the libraries",
+    "text": "Importing the libraries\n\nThe matplotlib and seaborn libraries are pre-installed in Google Colab. However, we need to inform Google Colab that we want to use them and its functions using the following command:\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nSimilar to pandas, the command as sns allows us to have a short name for seaborn. Similarly, we rename matplotlib as plt."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#histogram",
+    "href": "Modulo_1/Python.slides.html#histogram",
+    "title": "Introducción a Python",
+    "section": "Histogram",
+    "text": "Histogram\n\nGraphical display that gives an idea of the “shape” of the sample, indicating regions where sample points are concentrated and regions where they are sparse.\n\nThe bars of the histogram touch each other. A space indicates that there are no observations in that interval."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#histogram-of-na",
+    "href": "Modulo_1/Python.slides.html#histogram-of-na",
+    "title": "Introducción a Python",
+    "section": "Histogram of Na",
+    "text": "Histogram of Na\nTo create a histogram, we use the function histplot() from seabron.\n\n\nCode\nplt.figure(figsize=(7,4)) # Create space for figure.\nsns.histplot(data = glass_data, x = 'Na') # Create the histogram.\nplt.title(\"Histogram of Na\") # Plot title.\nplt.xlabel(\"Na\") # X label\nplt.show() # Display the plot"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#box-plot",
+    "href": "Modulo_1/Python.slides.html#box-plot",
+    "title": "Introducción a Python",
+    "section": "Box plot",
+    "text": "Box plot\n\nA box plot is a graphic that presents the median, the first and third quartiles, and any “outliers” present in the sample.\n\nThe interquartile range (IQR) is the difference between the third quartile and the first quartile (\\(Q_3 - Q_1\\)). This is the distance needed to span the middle half of the data."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#anatomy-of-a-box-plot",
+    "href": "Modulo_1/Python.slides.html#anatomy-of-a-box-plot",
+    "title": "Introducción a Python",
+    "section": "Anatomy of a box plot",
+    "text": "Anatomy of a box plot\n\nSee also https://towardsdatascience.com/why-1-5-in-iqr-method-of-outlier-detection-5d07fdc82097"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#box-plot-of-na",
+    "href": "Modulo_1/Python.slides.html#box-plot-of-na",
+    "title": "Introducción a Python",
+    "section": "Box plot of Na",
+    "text": "Box plot of Na\nTo create a boxplot, we use the function boxplot() from seabron.\n\n\nCode\nplt.figure(figsize=(7,4)) # Create space for the figure.\nsns.boxplot(data = glass_data, y = 'Na') # Create boxplot.\nplt.title(\"Box plot of Na\") # Add title.\nplt.show() # Show the plot."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#outliers",
+    "href": "Modulo_1/Python.slides.html#outliers",
+    "title": "Introducción a Python",
+    "section": "Outliers",
+    "text": "Outliers\n\nOutliers are points that are much larger or smaller than the rest of the sample points.\nOutliers may be data entry errors or they may be points that really are different from the rest.\nOutliers should not be deleted without considerable thought—sometimes calculations and analyses will be done with and without outliers and then compared."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#scatter-plot",
+    "href": "Modulo_1/Python.slides.html#scatter-plot",
+    "title": "Introducción a la Estadística",
+    "section": "Scatter plot",
+    "text": "Scatter plot\n\nData for which items consists of a pair of numeric values is called bivariate. The graphical summary for bivariate data is a scatterplot.\nThe variables \\(X\\) and \\(Y\\) are placed on the horizontal and vertical axes, respectively. Each point on the graph marks the position of a pair of values of \\(X\\) and \\(Y\\).\nA scatterplot allows us to explore lineal and nonlinear relationships between two variables."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#scatter-plot-of-na-versus-ri",
+    "href": "Modulo_1/Python.slides.html#scatter-plot-of-na-versus-ri",
+    "title": "Introducción a la Estadística",
+    "section": "Scatter plot of Na versus RI",
+    "text": "Scatter plot of Na versus RI\nTo create a scatter plot, we use the function scatter() from seabron. In this function, you must state the\n\n\nCode\nplt.figure(figsize=(7,4)) # Create space for the plot.\nsns.scatterplot(data = glass_data, x = 'Na', y = 'RI') # Show the plot.\nplt.title(\"Scatter plot of Na vs RI\") # Set plot title.\nplt.xlabel(\"Na\") # Set label for X axis.\nplt.ylabel(\"RI\") # Set label for Y axis.\nplt.show() # Show plot."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#bar-charts",
+    "href": "Modulo_1/Python.slides.html#bar-charts",
+    "title": "Introducción a Python",
+    "section": "Bar charts",
+    "text": "Bar charts\nBar charts are commonly used to describe qualitative data classified into various categories based on sector, region, different time periods, or other such factors.\nDifferent sectors, different regions, or different time periods are then labeled as specific categories.\nA bar chart is constructed by creating categories that are represented by labeling each category and which are represented by intervals of equal length on a horizontal axis.\nThe count or frequency within the corresponding category is represented by a bar of height proportional to the frequency."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-23",
+    "href": "Modulo_1/Python.slides.html#section-23",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "We create the bar chart using the function countplot() from seaborn.\n\n\nCode\n# Create plot.\nplt.figure(figsize=(7,4)) # Create space for the plot.\nsns.countplot(data = glass_data, x = 'Type') # Show the plot.\nplt.title(\"Bar chart of Type of Glasses\") # Set plot title.\nplt.ylabel(\"Frequency\") # Set label for Y axis.\nplt.show() # Show plot."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#saving-plots",
+    "href": "Modulo_1/Python.slides.html#saving-plots",
+    "title": "Introducción a Python",
+    "section": "Saving plots",
+    "text": "Saving plots\n\nWe save a figure using the save.fig function from matplotlib. The dpi argument of this function sets the resolution of the image. The higher the dpi, the better the resolution.\n\nplt.figure(figsize=(5, 7))\nsns.countplot(data = glass_data, x = 'Type')\nplt.title('Frequency of Each Category')\nplt.ylabel('Frequency')\nplt.xlabel('Category')\nplt.savefig('bar_chart.png',dpi=300)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#improving-the-figure",
+    "href": "Modulo_1/Python.slides.html#improving-the-figure",
+    "title": "Introducción a Python",
+    "section": "Improving the figure",
+    "text": "Improving the figure\n\nWe can also use other functions to improve the aspect of the figure:\n\nplt.title(fontsize): Font size of the title.\nplt.ylabel(fontsize): Font size of y axis title.\nplt.xlabel(fontsize): Font size of x axis title.\nplt.yticks(fontsize): Font size of the y axis labels.\nplt.xticks(fontsize): Font size of the x axis labels."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-24",
+    "href": "Modulo_1/Python.slides.html#section-24",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "plt.figure(figsize=(5, 5))\nsns.countplot(data = glass_data, x = 'Type')\nplt.title('Relative Frequency of Each Category', fontsize = 12)\nplt.ylabel('Relative Frequency', fontsize = 12)\nplt.xlabel('Category', fontsize = 15)\nplt.xticks(fontsize = 12)\nplt.yticks(fontsize = 12)\nplt.savefig('bar_chart.png',dpi=300)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#probemos-un-comando-en-python",
+    "href": "Modulo_1/Python.slides.html#probemos-un-comando-en-python",
+    "title": "Introducción a Python",
+    "section": "Probemos un comando en Python",
+    "text": "Probemos un comando en Python\n\n¿Qué crees que sucederá si ejecutamos este comando?\n\nprint(\"Hello world!\")\n\n\n\n\nHello world!"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#probemos-con-otro-comando",
+    "href": "Modulo_1/Python.slides.html#probemos-con-otro-comando",
+    "title": "Introducción a Python",
+    "section": "Probemos con otro comando",
+    "text": "Probemos con otro comando\n\n¿Qué crees que sucederá si ejecutamos este comando?\n\nsum([1, 5, 10])\n\n\n\n\n16"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#usar-python-como-calculadora-básica",
+    "href": "Modulo_1/Python.slides.html#usar-python-como-calculadora-básica",
+    "title": "Introducción a Python",
+    "section": "Usar Python como calculadora básica",
+    "text": "Usar Python como calculadora básica\n\n\n5 + 1\n\n6\n\n\n\n10 - 3\n\n7\n\n\n\n2 * 4\n\n8\n\n\n\n9 / 3\n\n3.0"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#comentarios",
+    "href": "Modulo_1/Python.slides.html#comentarios",
+    "title": "Introducción a Python",
+    "section": "Comentarios",
+    "text": "Comentarios\n\nA veces escribimos cosas en la ventana de código que queremos que Python ignore. Estos se llaman comentarios y comienzan con #.\n\nPython ignorará los comentarios y simplemente ejecutará el código.\n\n# puedes poner lo que sea después de #\n# por ejemplo... blah blah blah\n\n\nSi desea escribir un comentario que ocupe más de una línea, es una buena idea poner un # al principio de cada línea."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#introducción-a-las-funciones-en-python",
+    "href": "Modulo_1/Python.slides.html#introducción-a-las-funciones-en-python",
+    "title": "Introducción a Python",
+    "section": "Introducción a las funciones en Python",
+    "text": "Introducción a las funciones en Python\n\nUna de las mejores características de Python es la gran cantidad de comandos integrados que puedes usar. Estos se llaman funciones.\n\nLas funciones tienen dos partes básicas:\n\nLa primera parte es el nombre de la función (por ejemplo, sum).\nLa segunda parte es el valor de entrada para la función, que va dentro de los paréntesis (sum([1, 5, 15]))."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#python-es-estricto",
+    "href": "Modulo_1/Python.slides.html#python-es-estricto",
+    "title": "Introducción a Python",
+    "section": "Python es estricto",
+    "text": "Python es estricto\nPython es muy estricto. Por ejemplo, si escribes:\n\nsum([1, 100])\n\n101\n\n\nte dará como resultado 101.\n\nPero si escribes:\n\nSum([1, 100])\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[11], line 1\n----&gt; 1 Sum([1, 100])\n\nNameError: name 'Sum' is not defined\n\n\n\ncon la “s” en mayúscula, actuará como si no tuviera ni idea de lo que estamos hablando.\n\nlo mismo si olvidas incluir un parentesis"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#guarda-tu-trabajo-en-objetos-de-python",
+    "href": "Modulo_1/Python.slides.html#guarda-tu-trabajo-en-objetos-de-python",
+    "title": "Introducción a Python",
+    "section": "Guarda tu trabajo en objetos de Python",
+    "text": "Guarda tu trabajo en objetos de Python\n\nPrácticamente cualquier cosa, incluyendo los resultados de cualquier función de Python, se puede guardar en un objeto.\nEsto se logra usando el operador de asignación, que puede ser el símbolo de igual (=).\n\nPuedes inventar cualquier nombre para un objeto de Python. Sin embargo, hay dos reglas básicas:\n\nDebe ser diferente del nombre de una función en Python.\nDebe ser lo más específico posible."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#por-ejemplo",
+    "href": "Modulo_1/Python.slides.html#por-ejemplo",
+    "title": "Introducción a Python",
+    "section": "Por ejemplo",
+    "text": "Por ejemplo\n\n\n# Este código asignará el número 18\n# al objeto llamado my_favorite_number\n\nmi_numero_favorito = 18\n\nTras ejecutar este código, no ocurre nada. Pero si ejecutamos el objeto por separado, podemos ver qué contiene.\n\nmi_numero_favorito\n\n18\n\n\nTambién puedes usar print(mi_numero_favorito)."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#listas",
+    "href": "Modulo_1/Python.slides.html#listas",
+    "title": "Introducción a Python",
+    "section": "Listas",
+    "text": "Listas\nHasta ahora hemos usado objetos de Python para almacenar un solo número. Pero en estadística trabajamos con variación, que por definición requiere más de un número.\n\nUn objeto de Python también puede almacenar un conjunto completo de números, llamado lista.\nPuedes pensar en una lista como un vector de números (o valores).\n\n\nEl comando [] se puede usar para combinar varios valores individuales en una lista.\n\npuedes pensar que el c es por combinar"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#por-ejemplo-1",
+    "href": "Modulo_1/Python.slides.html#por-ejemplo-1",
+    "title": "Introducción a Python",
+    "section": "Por ejemplo",
+    "text": "Por ejemplo\n\nEste código crea dos vectores\n\nmi_lista = [1, 2, 3, 4, 5]\nmi_lista_2 = [10, 10, 10, 10, 10]\n\nVeamos su contenido\n\nmi_lista\n\n[1, 2, 3, 4, 5]\n\n\n\nmi_lista_2\n\n[10, 10, 10, 10, 10]"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#operaciones",
+    "href": "Modulo_1/Python.slides.html#operaciones",
+    "title": "Introducción a Python",
+    "section": "Operaciones",
+    "text": "Operaciones\n\nPodemos realizar operaciones sencillas con vectores. Por ejemplo, podemos sumar todos los elementos de una lista.\n\nmi_lista = [1, 2, 3, 4, 5]\nsum(mi_lista)\n\n15"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#indexación",
+    "href": "Modulo_1/Python.slides.html#indexación",
+    "title": "Introducción a Python",
+    "section": "Indexación",
+    "text": "Indexación\n\nPodemos indexar una posición en el vector usando corchetes con un número como este: [1].\nAsí, si quisiéramos imprimir el contenido de la primera posición en my_list, podríamos escribir:\n\nmi_lista[1]\n\n2\n\n\nUna característica de Python es que el primer elemento de una lista o vector se indexa usando el número 0.\n\nmi_lista[0]\n\n1"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#un-poco-más-sobre-objetos-en-python",
+    "href": "Modulo_1/Python.slides.html#un-poco-más-sobre-objetos-en-python",
+    "title": "Introducción a Python",
+    "section": "Un poco más sobre objetos en Python",
+    "text": "Un poco más sobre objetos en Python\n\nPuedes pensar en los objetos de Python como contenedores que almacenan valores.\nUn objeto de Python puede almacenar un solo valor o un grupo de valores (como un vector).\nHasta ahora, solo hemos almacenado números en objetos de Python.\n\n\nLos objetos de Python pueden contener tres tipos de valores: números, caracteres y booleanos."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#valores-de-los-caracteres",
+    "href": "Modulo_1/Python.slides.html#valores-de-los-caracteres",
+    "title": "Introducción a Python",
+    "section": "Valores de los caracteres",
+    "text": "Valores de los caracteres\nLos caracteres se componen de texto, como palabras u oraciones. Un ejemplo de una lista con caracteres como elementos es:\n\n\nmuchos_saludos = [\"hi\", \"hello\", \"hola\", \"bonjour\", \"ni hao\", \"merhaba\"]\nmuchos_saludos\n\n['hi', 'hello', 'hola', 'bonjour', 'ni hao', 'merhaba']\n\n\n\n\nEs importante saber que los números también pueden tratarse como caracteres, según el contexto.\nPor ejemplo, cuando el número 20 se escribe entre comillas (\"20\"), se tratará como un carácter, aunque esté entre comillas."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#valores-booleanos",
+    "href": "Modulo_1/Python.slides.html#valores-booleanos",
+    "title": "Introducción a Python",
+    "section": "Valores booleanos",
+    "text": "Valores booleanos\n\nLos valores booleanos son Verdadero o Falso.\nPodríamos tener una pregunta como esta:\n\n¿El primer elemento del vector many_greetings es \"hola\"?\n\n\nPodemos pedirle a Python que lo averigüe y devuelva la respuesta Verdadero o Falso.\n\nmuchos_saludos[1] == \"hola\"\n\nFalse"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#operadores-lógicos",
+    "href": "Modulo_1/Python.slides.html#operadores-lógicos",
+    "title": "Introducción a Python",
+    "section": "Operadores lógicos",
+    "text": "Operadores lógicos\n\nLa mayoría de las preguntas que le pedimos a Python que responda con True o False involucran operadores de comparación como &gt;, &lt;, &gt;=, &lt;= y ==.\nEl doble signo == comprueba si dos valores son iguales. Incluso existe un operador de comparación para comprobar si los valores no son iguales: !=.\nPor ejemplo, 5 != 3 es una proposición True."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#operadores-lógicos-comunes",
+    "href": "Modulo_1/Python.slides.html#operadores-lógicos-comunes",
+    "title": "Introducción a Python",
+    "section": "Operadores lógicos comunes",
+    "text": "Operadores lógicos comunes\n\n\n&gt; (mayor que)\n&gt;= (mayor o igual que)\n&lt; (menor que)\n&lt;= (menor o igual que)\n== (igual a)\n!= (distinto de)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#pregunta",
+    "href": "Modulo_1/Python.slides.html#pregunta",
+    "title": "Introducción a Python",
+    "section": "Pregunta",
+    "text": "Pregunta\n\nLee este código y predice su respuesta. Luego, ejecuta el código en Google Colab y comprueba si acertaste.\n\nA = 1\nB = 5\ncomparacion = A &gt; B\ncomparacion"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#cultura-de-la-programación-ensayo-y-error",
+    "href": "Modulo_1/Python.slides.html#cultura-de-la-programación-ensayo-y-error",
+    "title": "Introducción a Python",
+    "section": "Cultura de la programación: Ensayo y error",
+    "text": "Cultura de la programación: Ensayo y error\n\nLa mejor manera de aprender a programar es experimentando y viendo qué sucede. Escribe código, ejecútalo y analiza por qué no funcionó.\nHay muchas maneras de cometer pequeños errores al programar (por ejemplo, escribir una mayúscula cuando se necesita una minúscula).\nA menudo tenemos que encontrar estos errores mediante ensayo y error."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#bibliotecas-de-python",
+    "href": "Modulo_1/Python.slides.html#bibliotecas-de-python",
+    "title": "Introducción a Python",
+    "section": "Bibliotecas de Python",
+    "text": "Bibliotecas de Python\n\nLas bibliotecas son las unidades fundamentales del código Python reproducible. Incluyen funciones reutilizables, documentación sobre cómo usarlas y datos de ejemplo.\nEn este curso, trabajaremos principalmente con las siguientes bibliotecas:\n\npandas para manipulación de datos\nmatplotlib y seaborn para visualización de datos\nscipy y statsmodels para el análisis de datos"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#carga-de-datos-en-python",
+    "href": "Modulo_1/Python.slides.html#carga-de-datos-en-python",
+    "title": "Introducción a Python",
+    "section": "Carga de datos en Python",
+    "text": "Carga de datos en Python\nEn este curso, asumiremos que los datos están almacenados en un archivo de Excel. Como ejemplo, utilizaremos el archivo penguins.xlsx.\n\n\n\n\n\n\n\n\nEl archivo debe haber sido subido previamente a Google Colab."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#importación-de-pandas",
+    "href": "Modulo_1/Python.slides.html#importación-de-pandas",
+    "title": "Introducción a Python",
+    "section": "Importación de pandas",
+    "text": "Importación de pandas\nAfortunadamente, la librería pandas ya viene preinstalada en Google Colab.\n\nSin embargo, debemos indicarle a Google Colab que queremos usar pandas y sus funciones mediante el siguiente comando:\n\nimport pandas as pd\n\n\nEl comando as pd nos permite asignar un nombre corto a pandas. Para usar una función de pandas, usamos el comando pd.function()."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#carga-de-datos-con-pandas",
+    "href": "Modulo_1/Python.slides.html#carga-de-datos-con-pandas",
+    "title": "Introducción a Python",
+    "section": "Carga de datos con pandas",
+    "text": "Carga de datos con pandas\n\nEl siguiente código muestra cómo leer los datos del archivo “penguins.xlsx” en Python.\n\npenguins_data = pd.read_excel(\"penguins.xlsx\")"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#la-función-head",
+    "href": "Modulo_1/Python.slides.html#la-función-head",
+    "title": "Introducción a Python",
+    "section": "La función head()",
+    "text": "La función head()\nLa función head() permite imprimir las primeras filas de un dataframe de pandas.\n\n# Imprime las primeras 4 filas de los datos.\npenguins_data.head(4)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#encadenamiento-de-operaciones-con-pandas",
+    "href": "Modulo_1/Python.slides.html#encadenamiento-de-operaciones-con-pandas",
+    "title": "Introducción a Python",
+    "section": "Encadenamiento de operaciones con pandas",
+    "text": "Encadenamiento de operaciones con pandas\nUna de las técnicas más importantes de pandas es el encadenamiento (chaining), que permite una manipulación de datos más limpia y legible.\nLa estructura general del encadenamiento es la siguiente:"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#métodos-clave-de-pandas",
+    "href": "Modulo_1/Python.slides.html#métodos-clave-de-pandas",
+    "title": "Introducción a Python",
+    "section": "Métodos clave de pandas",
+    "text": "Métodos clave de pandas\npandas proporciona métodos o funciones para resolver tareas comunes de manipulación de datos:\n\n.filter() selecciona columnas o filas específicas.\n.query() filtra observaciones según ciertas condiciones.\n.assign() agrega nuevas variables que son funciones de variables existentes.\n.sort_values() cambia el orden de las filas.\n.agg() reduce varios valores a un único resumen numérico."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#selección-de-columnas-con-.filter",
+    "href": "Modulo_1/Python.slides.html#selección-de-columnas-con-.filter",
+    "title": "Introducción a Python",
+    "section": "Selección de columnas con .filter()",
+    "text": "Selección de columnas con .filter()\nSeleccione las columnas species, body_mass_g y sex.\n\n(penguins_data\n  .filter([\"species\", \"body_mass_g\", \"sex\"], axis = 1)\n).head()\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\nsex\n\n\n\n\n0\nAdelie\n3750.0\nmale\n\n\n1\nAdelie\n3800.0\nfemale\n\n\n2\nAdelie\n3250.0\nfemale\n\n\n3\nAdelie\nNaN\nNaN\n\n\n4\nAdelie\n3450.0\nfemale"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#filtrado-de-filas-con-.query",
+    "href": "Modulo_1/Python.slides.html#filtrado-de-filas-con-.query",
+    "title": "Introducción a Python",
+    "section": "Filtrado de filas con .query()",
+    "text": "Filtrado de filas con .query()\n\nUna forma alternativa de seleccionar filas es mediante .query(). A diferencia de .filter(), .query() nos permite filtrar los datos utilizando sentencias o consultas que involucran las variables.\n\nPor ejemplo, filtremos los datos de la especie “Gentoo”.\n\n(penguins_data\n  .query(\"species == 'Gentoo'\")\n)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#crear-nuevas-columnas-con-.assign",
+    "href": "Modulo_1/Python.slides.html#crear-nuevas-columnas-con-.assign",
+    "title": "Introducción a Python",
+    "section": "Crear nuevas columnas con .assign()",
+    "text": "Crear nuevas columnas con .assign()\nCon .assign(), podemos crear nuevas columnas (variables) que son funciones de las existentes. Esta función utiliza una palabra clave especial de Python llamada lambda. Técnicamente, esta palabra clave define una función anónima.\nPor ejemplo, creamos una nueva variable LDRatio que es igual a la relación entre bill_length_mm y bill_depth_mm.\n\n(penguins_data\n  .assign(LDRatio = lambda df: df[\"bill_length_mm\"] / df[\"bill_depth_mm\"])\n)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#ordenación-con-.sort_values",
+    "href": "Modulo_1/Python.slides.html#ordenación-con-.sort_values",
+    "title": "Introducción a Python",
+    "section": "Ordenación con .sort_values()",
+    "text": "Ordenación con .sort_values()\nPodemos ordenar los datos según una columna como bill_length_mm.\n\n(penguins_data\n  .sort_values(\"bill_length_mm\")\n).head(4)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n142\nAdelie\nDream\n32.1\n15.5\n188.0\n3050.0\nfemale\n2009\n\n\n98\nAdelie\nDream\n33.1\n16.1\n178.0\n2900.0\nfemale\n2008\n\n\n70\nAdelie\nTorgersen\n33.5\n19.0\n190.0\n3600.0\nfemale\n2008\n\n\n92\nAdelie\nDream\n34.0\n17.1\n185.0\n3400.0\nfemale\n2008"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#resumen-con-.agg",
+    "href": "Modulo_1/Python.slides.html#resumen-con-.agg",
+    "title": "Introducción a Python",
+    "section": "Resumen con .agg()",
+    "text": "Resumen con .agg()\nPodemos calcular resúmenes estadísticos de body_mass_g.\n\n(penguins_data\n  .filter([\"body_mass_g\"], axis = 1)\n  .agg([\"mean\", \"var\", \"std\"])\n)\n\n\n\n\n\n\n\n\nbody_mass_g\n\n\n\n\nmean\n4201.754386\n\n\nvar\n643131.077327\n\n\nstd\n801.954536\n\n\n\n\n\n\n\n\nPor defecto, agg() ignora los valores faltantes."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#guardar-los-resultados-en-nuevos-objetos",
+    "href": "Modulo_1/Python.slides.html#guardar-los-resultados-en-nuevos-objetos",
+    "title": "Introducción a Python",
+    "section": "Guardar los resultados en nuevos objetos",
+    "text": "Guardar los resultados en nuevos objetos\nTras realizar operaciones con nuestros datos, podemos guardar el conjunto de datos modificado como un nuevo objeto.\n\nsummary_penguins_data = (penguins_data\n  .filter([\"bill_length_mm\", \"bill_depth_mm\", \"body_mass_g\"], axis = 1)\n  .agg([\"mean\", \"var\", \"std\"])\n)\n\nsummary_penguins_data\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nbody_mass_g\n\n\n\n\nmean\n43.921930\n17.151170\n4201.754386\n\n\nvar\n29.807054\n3.899808\n643131.077327\n\n\nstd\n5.459584\n1.974793\n801.954536"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#más-sobre-pandas",
+    "href": "Modulo_1/Python.slides.html#más-sobre-pandas",
+    "title": "Introducción a Python",
+    "section": "Más sobre pandas",
+    "text": "Más sobre pandas\n\n\nhttps://wesmckinney.com/book/"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#tipos-de-datos-i",
+    "href": "Modulo_1/Python.slides.html#tipos-de-datos-i",
+    "title": "Introducción a Python",
+    "section": "Tipos de datos I",
+    "text": "Tipos de datos I\n\nCuando se asigna una cantidad numérica que designa cuánto o cuántos a cada elemento de la muestra, el conjunto de valores resultante es numérico o cuantitativo.\n\nAltura (en centímetros).\nPeso (en kilogramos).\nEdad (en años)."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#tipos-de-datos-ii",
+    "href": "Modulo_1/Python.slides.html#tipos-de-datos-ii",
+    "title": "Introducción a Python",
+    "section": "Tipos de datos II",
+    "text": "Tipos de datos II\n\nCuando los elementos de muestra se colocan en categorías y se asignan nombres de categorías a los elementos de muestra, los datos son categóricos o cualitativos.\n\nColor de cabello.\nPaís de origen.\nCódigo postal."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#tipos-de-datos",
+    "href": "Modulo_1/Python.slides.html#tipos-de-datos",
+    "title": "Introducción a Python",
+    "section": "Tipos de datos",
+    "text": "Tipos de datos\nEn Python, comprobamos el tipo de cada variable en un conjunto de datos utilizando la función info().\n\npenguins_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 344 entries, 0 to 343\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            344 non-null    object \n 1   island             344 non-null    object \n 2   bill_length_mm     342 non-null    float64\n 3   bill_depth_mm      342 non-null    float64\n 4   flipper_length_mm  342 non-null    float64\n 5   body_mass_g        342 non-null    float64\n 6   sex                333 non-null    object \n 7   year               344 non-null    int64  \ndtypes: float64(4), int64(1), object(3)\nmemory usage: 21.6+ KB"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#formatos-generales-de-python",
+    "href": "Modulo_1/Python.slides.html#formatos-generales-de-python",
+    "title": "Introducción a Python",
+    "section": "Formatos generales de Python",
+    "text": "Formatos generales de Python\n\n\nFormato float64 para variables numéricas con decimales.\nFormato int64 para variables numéricas con enteros.\nFormato object para variables generales con caracteres."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#definir-variables-categóricas",
+    "href": "Modulo_1/Python.slides.html#definir-variables-categóricas",
+    "title": "Introducción a Python",
+    "section": "Definir variables categóricas",
+    "text": "Definir variables categóricas\nTécnicamente, la variable sex en penguins_data es categórica. Para indicárselo explícitamente a Python, usamos el siguiente código.\n\npenguins_data['sex'] = pd.Categorical(penguins_data['sex'])\n\nAl definir la variable sex como categórica, podemos utilizar una visualización eficaz para estos datos.\nHacemos lo mismo con las demás variables categóricas: species e isisland.\n\npenguins_data['species'] = pd.Categorical(penguins_data['species'])\npenguins_data['island'] = pd.Categorical(penguins_data['island'])"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#en-python",
+    "href": "Modulo_1/Python.slides.html#en-python",
+    "title": "Introducción a Python",
+    "section": "En Python",
+    "text": "En Python\n\nLa media de la muestra se calcula utilizando la función .agg() con “mean”.\n\nbill_length_mean = (penguins_data\n                    .filter(['bill_length_mm'], axis = 1)\n                    .agg(\"mean\")\n                    )\nprint(bill_length_mean)\n\nbill_length_mm    43.92193\ndtype: float64\n\n\nUsamos la función print para mostrar el número. De lo contrario, Python mostrará el tipo de valor informático almacenado en bill_length_mean."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#varianza-muestral",
+    "href": "Modulo_1/Python.slides.html#varianza-muestral",
+    "title": "Introducción a Python",
+    "section": "Varianza muestral",
+    "text": "Varianza muestral\n\nDenotemos \\(y_1, y_2, \\ldots, y_n\\) observaciones como \\(n\\). La varianza muestral es:\n\n\\[s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2 = \\frac{1}{n-1} \\left( (y_1 - \\bar{y})^2 + (y_2 - \\bar{y})^2 +\\cdots + (y_n - \\bar{y})^2\\right).\\]\n\nLa varianza muestral es como un promedio de las diferencias al cuadrado entre cada observación y la media muestral. Da una indicación de cuán dispersos están los datos."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#desviación-estándar-muestral",
+    "href": "Modulo_1/Python.slides.html#desviación-estándar-muestral",
+    "title": "Introducción a Python",
+    "section": "Desviación estándar muestral",
+    "text": "Desviación estándar muestral\n\nLa varianza muestral es que no está en la misma escala que las observaciones reales. Esto ya que las diferencias entre cada observación y la media muestral se elevan al cuadrado.\nPara obtener una medida de dispersión con las mismas unidades que las de la muestra, tomamos la raíz cuadrada de la varianza muestral.\n\\[s =\\sqrt{\\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2}.\\]\nEsta cantidad se conoce como desviación estándar muestral."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#estadísticas-muestrales-y-parámetros-de-población",
+    "href": "Modulo_1/Python.slides.html#estadísticas-muestrales-y-parámetros-de-población",
+    "title": "Introducción a Python",
+    "section": "Estadísticas muestrales y parámetros de población",
+    "text": "Estadísticas muestrales y parámetros de población\n\nCada estadística de muestra aquí tiene una contraparte de parámetro poblacional.\nLos resúmenes numéricos de una muestra se llaman estadísticas.\nLos resúmenes numéricos o características de una población se denominan parámetros."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#section-20",
+    "href": "Modulo_1/Python.slides.html#section-20",
+    "title": "Introducción a Python",
+    "section": "",
+    "text": "plt.figure(figsize=(5, 5))\nsns.countplot(data = glass_data, x = 'Type')\nplt.title('Relative Frequency of Each Category', fontsize = 12)\nplt.ylabel('Relative Frequency', fontsize = 12)\nplt.xlabel('Category', fontsize = 15)\nplt.xticks(fontsize = 12)\nplt.yticks(fontsize = 12)\nplt.savefig('bar_chart.png',dpi=300)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#funciones-en-python",
+    "href": "Modulo_1/Python.slides.html#funciones-en-python",
+    "title": "Introducción a Python",
+    "section": "Funciones en Python",
+    "text": "Funciones en Python\n\nUna de las mejores características de Python es la gran cantidad de comandos integrados que puedes usar. Estos se llaman funciones.\n\nLas funciones tienen dos partes básicas:\n\nLa primera parte es el nombre de la función (por ejemplo, sum).\nLa segunda parte es el valor de entrada para la función, que va dentro de los paréntesis (sum([1, 5, 15]))."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#guarda-tu-trabajo-en-objetos",
+    "href": "Modulo_1/Python.slides.html#guarda-tu-trabajo-en-objetos",
+    "title": "Introducción a Python",
+    "section": "Guarda tu trabajo en objetos",
+    "text": "Guarda tu trabajo en objetos\n\nPrácticamente cualquier cosa, incluyendo los resultados de cualquier función de Python, se puede guardar en un objeto.\nEsto se logra usando el operador de asignación, que puede ser el símbolo de igual (=).\n\nPuedes inventar cualquier nombre para un objeto de Python. Sin embargo, hay dos reglas básicas:\n\nDebe ser diferente del nombre de una función en Python.\nDebe ser lo más específico posible."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#librería-pandas",
+    "href": "Modulo_1/Python.slides.html#librería-pandas",
+    "title": "Introducción a Python",
+    "section": "Librería pandas",
+    "text": "Librería pandas\n\n\n\n\n\n\n\n\n\npandas es una librería de Python de código abierto para la manipulación y el análisis de datos.\nEstá construida sobre numpy para operaciones de datos de alto rendimiento.\nPermite al usuario importar, limpiar, transformar y analizar datos de forma eficiente.\nhttps://pandas.pydata.org/"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#encadenamiento-de-operaciones",
+    "href": "Modulo_1/Python.slides.html#encadenamiento-de-operaciones",
+    "title": "Introducción a Python",
+    "section": "Encadenamiento de operaciones",
+    "text": "Encadenamiento de operaciones\nUna de las técnicas más importantes de pandas es el encadenamiento (chaining), que permite una manipulación de datos más limpia y legible.\nLa estructura general del encadenamiento es la siguiente:"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#guarda-los-resultados-en-un-objeto",
+    "href": "Modulo_1/Python.slides.html#guarda-los-resultados-en-un-objeto",
+    "title": "Introducción a Python",
+    "section": "Guarda los resultados en un objeto",
+    "text": "Guarda los resultados en un objeto\nTras realizar operaciones con nuestros datos, podemos guardar el resultado como un nuevo objeto.\n\nsummary_penguins_data = (penguins_data\n  .filter([\"bill_length_mm\", \"bill_depth_mm\", \"body_mass_g\"], axis = 1)\n  .agg([\"mean\", \"var\", \"std\"])\n)\n\nsummary_penguins_data\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nbody_mass_g\n\n\n\n\nmean\n43.921930\n17.151170\n4201.754386\n\n\nvar\n29.807054\n3.899808\n643131.077327\n\n\nstd\n5.459584\n1.974793\n801.954536"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#ejemplo",
+    "href": "Modulo_1/Python.slides.html#ejemplo",
+    "title": "Introducción a Python",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\nUn criminólogo está desarrollando un sistema basado en reglas para clasificar los tipos de vidrio encontrados en investigaciones criminales.\nLos datos consisten en 214 muestras de vidrio etiquetadas en una de siete categorías.\nHay nueve predictores, incluyendo el índice de refracción y los porcentajes de ocho elementos: Na, Mg, Al, Is, K, Ca, Ba y Fe. La respuesta es el tipo de vidrio."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#librería-matplotlib",
+    "href": "Modulo_1/Python.slides.html#librería-matplotlib",
+    "title": "Introducción a Python",
+    "section": "Librería matplotlib",
+    "text": "Librería matplotlib\n\nmatplotlib es una librería completa para crear visualizaciones estáticas, animadas e interactivas.\nEs ampliamente utilizada en la comunidad de ciencia de datos para graficar datos en diversos formatos.\nIdeal para crear visualizaciones sencillas como gráficos de líneas, gráficos de barras, diagramas de dispersión y más.\nhttps://matplotlib.org/"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#librería-seaborn",
+    "href": "Modulo_1/Python.slides.html#librería-seaborn",
+    "title": "Introducción a Python",
+    "section": "Librería seaborn",
+    "text": "Librería seaborn\n\nseaborn es una librería de Python basada en Matplotlib.\nDiseñada para facilitar y embellecer la visualización de datos estadísticos.\nIdeal para crear visualizaciones informativas y atractivas con un mínimo de código.\nhttps://seaborn.pydata.org/index.html"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#importación-de-las-bibliotecas",
+    "href": "Modulo_1/Python.slides.html#importación-de-las-bibliotecas",
+    "title": "Introducción a Python",
+    "section": "Importación de las bibliotecas",
+    "text": "Importación de las bibliotecas\nLas librerías matplotlib y seaborn vienen preinstaladas en Google Colab. Sin embargo, debemos indicarle a Google Colab que queremos usarlas, junto con sus funciones, mediante el siguiente comando:\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nAl igual que con pandas, el comando as sns nos permite usar un nombre corto para seaborn. De forma similar, renombramos matplotlib como plt."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#histograma",
+    "href": "Modulo_1/Python.slides.html#histograma",
+    "title": "Introducción a Python",
+    "section": "Histograma",
+    "text": "Histograma\n\nRepresentación gráfica que muestra la distribución de la muestra, indicando las regiones donde se concentran los puntos y las regiones donde son menos numerosos.\n\nLas barras del histograma se tocan. Un espacio indica que no hay observaciones en ese intervalo."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#histograma-de-na",
+    "href": "Modulo_1/Python.slides.html#histograma-de-na",
+    "title": "Introducción a Python",
+    "section": "Histograma de Na",
+    "text": "Histograma de Na\nPara crear un histograma, utilizamos la función histplot() de seabron.\n\n\nCode\nplt.figure(figsize=(7,4)) # Crea espacio para la figura.\nsns.histplot(data = glass_data, x = 'Na') # Crea el histograma.\nplt.title(\"Histogram of Na\") # Título de la gráfica.\nplt.xlabel(\"Na\") # Etiqueta del eje X\nplt.show() # Muestra la Gráfica"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#valores-atípicos",
+    "href": "Modulo_1/Python.slides.html#valores-atípicos",
+    "title": "Introducción a Python",
+    "section": "Valores atípicos",
+    "text": "Valores atípicos\n\nLos valores atípicos son puntos que son mucho mayores o menores que el resto de los puntos de la muestra.\nPueden deberse a errores de introducción de datos o a que realmente son diferentes del resto.\nNo se deben eliminar los valores atípicos sin una cuidadosa consideración; a veces, los cálculos y análisis se realizan con y sin valores atípicos, y luego se comparan."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#gráficos-de-barras",
+    "href": "Modulo_1/Python.slides.html#gráficos-de-barras",
+    "title": "Introducción a Python",
+    "section": "Gráficos de barras",
+    "text": "Gráficos de barras\nLos gráficos de barras se utilizan comúnmente para describir datos categóricos clasificados en diversas categorías según el sector, la región, diferentes periodos de tiempo u otros factores similares.\nLos diferentes sectores, regiones o periodos de tiempo se etiquetan como categorías específicas.\nUn gráfico de barras se construye creando categorías que se representan mediante etiquetas y que se representan mediante intervalos de igual longitud en un eje horizontal.\nLa frecuencia o el recuento dentro de la categoría correspondiente se representa mediante una barra cuya altura es proporcional a la frecuencia."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#guardar-gráficos",
+    "href": "Modulo_1/Python.slides.html#guardar-gráficos",
+    "title": "Introducción a Python",
+    "section": "Guardar gráficos",
+    "text": "Guardar gráficos\n\nGuardamos una figura usando la función .save.fig() de matplotlib. El argumento dpi de esta función establece la resolución de la imagen. Cuanto mayor sea el valor de dpi, mejor será la resolución.\n\nplt.figure(figsize=(5, 7))\nsns.countplot(data = glass_data, x = 'Type')\nplt.title('Frequency of Each Category')\nplt.ylabel('Frequency')\nplt.xlabel('Category')\nplt.savefig('bar_chart.png',dpi=300)"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#mejorando-la-figura",
+    "href": "Modulo_1/Python.slides.html#mejorando-la-figura",
+    "title": "Introducción a Python",
+    "section": "Mejorando la figura",
+    "text": "Mejorando la figura\nTambién podemos usar otras funciones para mejorar el aspecto de la figura:\n\n\nplt.title(fontsize): Tamaño de fuente del título.\nplt.ylabel(fontsize): Tamaño de fuente del título del eje Y.\nplt.xlabel(fontsize): Tamaño de fuente del título del eje X.\nplt.yticks(fontsize): Tamaño de fuente de las etiquetas del eje Y.\nplt.xticks(fontsize): Tamaño de fuente de las etiquetas del eje X."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#gráfica-de-caja",
+    "href": "Modulo_1/Python.slides.html#gráfica-de-caja",
+    "title": "Introducción a Python",
+    "section": "Gráfica de caja",
+    "text": "Gráfica de caja\nMuestra la mediana, el primer y tercer cuartil, y cualquier valor “atípico” presente en la muestra.\n\nLa mediana muestral es el valor central de los datos ordenados.\n\n\nLos cuartiles de muestra dividen los datos en cuartiles lo más aproximado posible:\n\n\nEl primer cuartil (\\(Q_1\\)) es la mediana de la mitad inferior de los datos.\nEl segundo cuartil (\\(Q_2\\)) es la mediana o valor central de los datos.\nEl tercer cuartil (\\(Q_3\\)) es la mediana de la mitad superior de los datos."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#anatomía-de-una-gráfica-de-cajas",
+    "href": "Modulo_1/Python.slides.html#anatomía-de-una-gráfica-de-cajas",
+    "title": "Introducción a Python",
+    "section": "Anatomía de una gráfica de cajas",
+    "text": "Anatomía de una gráfica de cajas\n\n\nEl rango intercuartil (RIC) es la diferencia entre el tercer cuartil y el primer cuartil (\\(Q_3 - Q_1\\)). Esta es la distancia necesaria para abarcar la mitad central de los datos.\n\n\n\n\n\n\n\n\nVer https://towardsdatascience.com/why-1-5-in-iqr-method-of-outlier-detection-5d07fdc82097"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#gráfica-de-caja-de-na",
+    "href": "Modulo_1/Python.slides.html#gráfica-de-caja-de-na",
+    "title": "Introducción a Python",
+    "section": "Gráfica de caja de Na",
+    "text": "Gráfica de caja de Na\nPara crear una gráfica de caja, utilizamos la función boxplot() de seabron.\n\n\nCode\nplt.figure(figsize=(7,4)) # Create space for the figure.\nsns.boxplot(data = glass_data, y = 'Na') # Create boxplot.\nplt.title(\"Box plot of Na\") # Add title.\nplt.show() # Show the plot."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#librerías-de-python",
+    "href": "Modulo_1/Python.slides.html#librerías-de-python",
+    "title": "Introducción a Python",
+    "section": "Librerías de Python",
+    "text": "Librerías de Python\n\nLas librerías son las unidades fundamentales del código Python reproducible. Incluyen funciones reutilizables, documentación sobre cómo usarlas y datos de ejemplo.\nEn este curso, trabajaremos principalmente con las siguientes librerías:\n\npandas para manipulación de datos\nmatplotlib y seaborn para visualización de datos\nscipy y statsmodels para el análisis de datos"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#importación-de-las-librerías",
+    "href": "Modulo_1/Python.slides.html#importación-de-las-librerías",
+    "title": "Introducción a Python",
+    "section": "Importación de las librerías",
+    "text": "Importación de las librerías\n\nLas librerías matplotlib y seaborn vienen preinstaladas en Google Colab. Sin embargo, debemos indicarle a Google Colab que queremos usarlas, junto con sus funciones, mediante el siguiente comando:\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nAl igual que con pandas, el comando as sns nos permite usar un nombre corto para seaborn. De forma similar, renombramos matplotlib como plt."
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#seleccionar-columnas-con-.filter",
+    "href": "Modulo_1/Python.slides.html#seleccionar-columnas-con-.filter",
+    "title": "Introducción a Python",
+    "section": "Seleccionar columnas con .filter()",
+    "text": "Seleccionar columnas con .filter()\nSeleccione las columnas species, body_mass_g y sex.\n\n(penguins_data\n  .filter([\"species\", \"body_mass_g\", \"sex\"], axis = 1)\n).head()\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\nsex\n\n\n\n\n0\nAdelie\n3750.0\nmale\n\n\n1\nAdelie\n3800.0\nfemale\n\n\n2\nAdelie\n3250.0\nfemale\n\n\n3\nAdelie\nNaN\nNaN\n\n\n4\nAdelie\n3450.0\nfemale"
+  },
+  {
+    "objectID": "Modulo_1/Python.slides.html#gráfica-de-barras",
+    "href": "Modulo_1/Python.slides.html#gráfica-de-barras",
+    "title": "Introducción a Python",
+    "section": "Gráfica de barras",
+    "text": "Gráfica de barras\nDescribe datos categóricos clasificados en diversas categorías según el sector, la región, diferentes periodos de tiempo u otros factores similares.\nLos diferentes sectores, regiones o periodos de tiempo se etiquetan como categorías específicas.\nUn gráfico de barras se construye creando categorías que se representan mediante etiquetas y que se representan mediante intervalos de igual longitud en un eje horizontal.\nLa frecuencia o el recuento dentro de la categoría correspondiente se representa mediante una barra cuya altura es proporcional a la frecuencia."
   }
 ]
