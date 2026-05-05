@@ -1809,6 +1809,20 @@
     "text": "Agenda\n\n\nIntroducción\nDistribución de Bernoulli\nDistribución Binomial"
   },
   {
+    "objectID": "Modulo_1/Discretas.slides.html#una-nueva-librería-scipy.stats",
+    "href": "Modulo_1/Discretas.slides.html#una-nueva-librería-scipy.stats",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Una nueva librería: scipy.stats",
+    "text": "Una nueva librería: scipy.stats\n\n\n\n\n\n\n\n\n\n\nscipy.stats es un módulo de la librería SciPy para realizar análisis estadístico en Python.\nProporciona herramientas para trabajar con distribuciones de probabilidad, pruebas de hipótesis, intervalos de confianza y estadística descriptiva.\nEstá construida sobre numpy para cálculos numéricos eficientes.\nhttps://scipy.org/es/"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#carguemos-las-librerías",
+    "href": "Modulo_1/Discretas.slides.html#carguemos-las-librerías",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Carguemos las librerías",
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import binom\n\nEn el cógido de arriba, indicamos que utilizaremos la función binom() de la librería scipy.stats."
+  },
+  {
     "objectID": "Modulo_1/Discretas.slides.html#variables-aleatorias-discretas",
     "href": "Modulo_1/Discretas.slides.html#variables-aleatorias-discretas",
     "title": "Distribuciones Discretas de Probabilidad",
@@ -1872,6 +1886,13 @@
     "text": "Función de distribución acumulativa\n\nLa función de distribución acumulativa especifica la probabilidad de que una variable aleatoria sea menor o igual a un valor dado.\nLa función de distribución acumulativa de la variable \\(Y\\) es la función\n\n\\[F(y) = P(Y \\leq y).\\]"
   },
   {
+    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.",
+    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Ejemplo 1 (cont.)",
+    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nLa probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:\n\n\\[P(Y \\leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.\\]"
+  },
+  {
     "objectID": "Modulo_1/Discretas.slides.html#valor-esperado",
     "href": "Modulo_1/Discretas.slides.html#valor-esperado",
     "title": "Distribuciones Discretas de Probabilidad",
@@ -1879,11 +1900,11 @@
     "text": "Valor esperado\nEl promedio teórico o valor esperado de una variable discreta \\(Y\\) es igual a la suma de todos sus valores multiplicado por su probabilidad correspondiente. Técnicamente, el valor esperado de \\(Y\\) es\n\\[E(Y) = \\sum_{y} y p(y),\\]\ndonde la suma es sobre todos los posibles valores de \\(Y\\).\n\n\n\nEl valor esperado \\(E(Y)\\) es una constante."
   },
   {
-    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.",
-    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.",
+    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-1",
+    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-1",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Ejemplo 1 (cont.)",
-    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nLa probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:\n\n\\[P(Y \\leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.\\]"
+    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nEl promedio teórico o numero esperado de cirugías en un día es:\n\n\\[E(Y) = 0\\times p(0) + 1\\times p(1) + 2\\times p(2) + 3\\times p(3) + 4\\times p(4) + 5\\times p(5) = 3.92\\]"
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#varianza-y-desviación-estándar-teóricas",
@@ -1893,11 +1914,11 @@
     "text": "Varianza y desviación estándar teóricas\nLa varianza teórica de una variable aleatoria \\(Y\\) es el valor esperado de \\((Y - E(Y))^2\\), donde \\(E(Y)\\) es el valor esperado de \\(Y\\). Es decir, la varianza de \\(Y\\) es\n\\[V(Y) = E\\left[ (Y - E(Y))^2 \\right] = \\sum_{y} (y - E(Y))^2 p(y).\\]\nLa desviación estándar de \\(Y\\) es la raíz cuadrada de \\(V(Y)\\).\n\n\n\nLa varianza y desviación estándar teóricas son constantes."
   },
   {
-    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-1",
-    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-1",
+    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-2",
+    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-2",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Ejemplo 1 (cont.)",
-    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nEl promedio teórico o numero esperado de cirugías en un día es:\n\n\\[E(Y) = 0\\times p(0) + 1\\times p(1) + 2\\times p(2) + 3\\times p(3) + 4\\times p(4) + 5\\times p(5) = 3.92\\]"
+    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nLa varianza del numero de cirugías en un día es:\n\n\\[V(Y) = \\sum_{y} (y - 3.92)^2 p(y) = (0 - 3.92)^2 \\times p(0) + (1 - 3.92)^2 \\times p(1) + \\cdots + (5 - 3.92)^2 \\times p(5) = 1.81\\]"
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#section-3",
@@ -1963,13 +1984,6 @@
     "text": "La distribución binomial\nSi \\(Y\\sim\\text{Bin}(n,p)\\), la función de probabilidad \\(Y\\) es\n\\[P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y},\\]\ndonde \\(y = 0, 1, \\ldots, n\\) y \\(0 \\leq p \\leq 1\\). Además,\n\n\\(p^y\\): Probabilidad de \\(y\\) éxitos.\n\\({n \\choose y}\\): Numero de posibles combinaciones de \\(y\\) exitos en \\(n\\) experimentos Bernoulli.\n\\((1 -p)^{n -y}\\): Probabilidad de que los otros \\(n-y\\) experimentos sean fracasos."
   },
   {
-    "objectID": "Modulo_1/Discretas.slides.html#elementos",
-    "href": "Modulo_1/Discretas.slides.html#elementos",
-    "title": "Distribuciones Discretas de Probabilidad",
-    "section": "Elementos",
-    "text": "Elementos\n\n\\(P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y},\\)\n\n\\(p^y\\): Probabilidad de \\(y\\) éxitos.\n\\({n \\choose y}\\): Numero de posibles combinaciones de \\(y\\) exitos en \\(n\\) experimentos Bernoulli.\n\\((1 -p)^{n -y}\\): Probabilidad de que los otros \\(n-y\\) experimentos sean fracasos."
-  },
-  {
     "objectID": "Modulo_1/Discretas.slides.html#section-6",
     "href": "Modulo_1/Discretas.slides.html#section-6",
     "title": "Distribuciones Discretas de Probabilidad",
@@ -1991,6 +2005,13 @@
     "text": "Calculo de probabilidades en Python\n\nConsideremos que un jugador de baloncesto anota 4 de 10 canastas (\\(p = 0.4\\)). Si el jugador lanza 20 canastas (20 intentos), calcula lo suiguiente:\nA. La probabilidad de anotar 1 canasta, \\(P(X = 1)\\).\nB. La probabilidad de anotar 6 o menos canastas, \\(P(X \\leq 6)\\).\nC. La probabilidad de anotar menos de 6 canastas, \\(P(X &lt; 6)\\).\nD. La probabilidad de anotar más de 12 canastas, \\(P(X &gt; 12)\\).\nE. La probabilidad de anotar entre 7 y 11 canastas, \\(P(7 \\leq X \\leq 11)\\)."
   },
   {
+    "objectID": "Modulo_1/Discretas.slides.html#primero",
+    "href": "Modulo_1/Discretas.slides.html#primero",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Primero…",
+    "text": "Primero…\n\nDefinamos los valores apropiados para \\(n\\) y \\(p\\) en Python.\n\nn = 20 # Numero de experimentos Bernoulli.\np = 0.4 # Probabilidad de éxito."
+  },
+  {
     "objectID": "Modulo_1/Discretas.slides.html#section-8",
     "href": "Modulo_1/Discretas.slides.html#section-8",
     "title": "Distribuciones Discretas de Probabilidad",
@@ -1998,46 +2019,11 @@
     "text": "A. La probabilidad de anotar 1 canasta, \\(P(X = 1)\\).\n\nPara calcular la probabilidad de que una variable Binomial (\\(X\\)) tome exactamente el valor \\(k\\) usamos la función binom.pmf(k, n, p).\n\nk = 1\nprob_exacta = binom.pmf(k, n, p)\nprint(f\"P(X = {k}) = {prob_exacta:.4f}\")\n\nP(X = 1) = 0.0005"
   },
   {
-    "objectID": "Modulo_1/Discretas.slides.html#pregunta-de-práctica-para-examen",
-    "href": "Modulo_1/Discretas.slides.html#pregunta-de-práctica-para-examen",
-    "title": "Distribuciones Discretas de Probabilidad",
-    "section": "Pregunta de práctica para examen",
-    "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
-  },
-  {
-    "objectID": "Modulo_1/Discretas.slides.html#carguemos-las-librerías",
-    "href": "Modulo_1/Discretas.slides.html#carguemos-las-librerías",
-    "title": "Distribuciones Discretas de Probabilidad",
-    "section": "Carguemos las librerías",
-    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import binom\n\nEn el cógido de arriba, indicamos que utilizaremos la función binom() de la librería scipy.stats."
-  },
-  {
-    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-2",
-    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-2",
-    "title": "Distribuciones Discretas de Probabilidad",
-    "section": "Ejemplo 1 (cont.)",
-    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nLa varianza del numero de cirugías en un día es:\n\n\\[V(Y) = \\sum_{y} (y - 3.92)^2 p(y) = (0 - 3.92)^2 \\times p(0) + (1 - 3.92)^2 \\times p(1) + \\cdots + (5 - 3.92)^2 \\times p(5) = 1.81\\]"
-  },
-  {
-    "objectID": "Modulo_1/Discretas.slides.html#una-nueva-librería-scipy.stats",
-    "href": "Modulo_1/Discretas.slides.html#una-nueva-librería-scipy.stats",
-    "title": "Distribuciones Discretas de Probabilidad",
-    "section": "Una nueva librería: scipy.stats",
-    "text": "Una nueva librería: scipy.stats\n\n\n\n\n\n\n\n\n\n\nscipy.stats es un módulo de la librería SciPy para realizar análisis estadístico en Python.\nProporciona herramientas para trabajar con distribuciones de probabilidad, pruebas de hipótesis, intervalos de confianza y estadística descriptiva.\nEstá construida sobre numpy para cálculos numéricos eficientes.\nhttps://scipy.org/es/"
-  },
-  {
     "objectID": "Modulo_1/Discretas.slides.html#section-9",
     "href": "Modulo_1/Discretas.slides.html#section-9",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "",
     "text": "B. La probabilidad de anotar 6 o menos canastas, \\(P(X \\leq 6)\\).\n\nPara calcular la probabilidad de que una variable Binomial (\\(X\\)) tome un valor menor o igual a \\(k\\) usamos la función binom.cdf(k, n, p).\n\nk = 6\nprob_acumulada = binom.cdf(k, n, p)\nprint(f\"P(X &lt;= {k}) = {prob_acumulada:.4f}\")\n\nP(X &lt;= 6) = 0.2500"
-  },
-  {
-    "objectID": "Modulo_1/Discretas.slides.html#primero",
-    "href": "Modulo_1/Discretas.slides.html#primero",
-    "title": "Distribuciones Discretas de Probabilidad",
-    "section": "Primero…",
-    "text": "Primero…\n\nDefinamos los valores apropiados para \\(n\\) y \\(p\\) en Python.\n\nn = 20 # Numero de experimentos Bernoulli.\np = 0.4 # Probabilidad de éxito."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#section-10",
@@ -2066,5 +2052,12 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "",
     "text": "Una variable aleatoria binomial se puede expresar como una suma de variables aleatorias de Bernoulli:\n\nSupongamos que se realizan \\(n\\) experimentos independientes de Bernoulli.\nCada experimento tiene probabilidad de éxito \\(p\\).\nConsidera las variables \\(Y_1, \\ldots, Y_n\\) donde \\(Y_i = 1\\) si el resultado del i-ésimo experimento es éxito, y \\(Y_i = 0\\) de otro modo. Es decir \\(Y_i \\sim \\text{Bernoulli}(p)\\).\nAhora, considera la suma del número de éxitos entre los \\(n\\) experimentos \\(X = Y_1 + \\cdots + Y_n\\).\nEntonces, \\(X \\sim \\text{Bin}(n,p)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#pregunta-de-práctica-para-examen",
+    "href": "Modulo_1/Discretas.slides.html#pregunta-de-práctica-para-examen",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Pregunta de práctica para examen",
+    "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
   }
 ]
