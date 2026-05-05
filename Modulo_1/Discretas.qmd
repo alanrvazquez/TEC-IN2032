@@ -28,6 +28,23 @@ jupyter: python3
 
 - Distribución Binomial
 
+## Una nueva librería: **scipy.stats**
+
+::::: columns
+::: {.column width="30%"}
+</br>
+
+![](images/scipy-logo-300.svg){fig-align="left"}
+:::
+
+::: {.column width="70%"}
+- **scipy.stats** es un módulo de la librería **SciPy** para realizar análisis estadístico en Python.
+- Proporciona herramientas para trabajar con distribuciones de probabilidad, pruebas de hipótesis, intervalos de confianza y estadística descriptiva.
+- Está construida sobre **numpy** para cálculos numéricos eficientes.
+- <https://scipy.org/es/>
+:::
+:::::
+
 ## Carguemos las librerías
 
 </br></br></br>
@@ -35,10 +52,13 @@ jupyter: python3
 Antes de empezar, carguemos las librerías que usaremos hoy.
 
 ```{python}
+#| echo: true
+#| output: true
 
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import scipy.stats
 ```
 
 # Introducción

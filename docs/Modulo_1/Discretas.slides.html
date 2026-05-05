@@ -222,10 +222,35 @@ Alan R. Vazquez
 <li><p>Distribución Binomial</p></li>
 </ul>
 </section>
+<section id="una-nueva-librería-scipy.stats" class="slide level2">
+<h2>Una nueva librería: <strong>scipy.stats</strong></h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/scipy-logo-300.svg" class="quarto-figure quarto-figure-left"></p>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><strong>scipy.stats</strong> es un módulo de la librería <strong>SciPy</strong> para realizar análisis estadístico en Python.</li>
+<li>Proporciona herramientas para trabajar con distribuciones de probabilidad, pruebas de hipótesis, intervalos de confianza y estadística descriptiva.</li>
+<li>Está construida sobre <strong>numpy</strong> para cálculos numéricos eficientes.</li>
+<li><a href="https://scipy.org/es/" class="uri">https://scipy.org/es/</a></li>
+</ul>
+</div></div>
+</section>
 <section id="carguemos-las-librerías" class="slide level2">
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
+<div id="ce34c8d8" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a></a><span class="im">import</span> scipy.stats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section>
 <section id="introducción" class="title-slide slide level1 center">
@@ -371,23 +396,23 @@ Alan R. Vazquez
 <section id="gráfica-de-probabilidad" class="slide level2">
 <h2>Gráfica de probabilidad</h2>
 <p>Muestra las probabilidades para cada uno de los valores de una variable aleatoria.</p>
-<div id="c42b71d8" class="cell" data-execution_count="2">
+<div id="8a8ccfa8" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>variables <span class="op">=</span> {</span>
-<span id="cb1-2"><a></a>    <span class="st">"y"</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
-<span id="cb1-3"><a></a>    <span class="st">"p(y)"</span>: [<span class="fl">0.02</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.15</span>, <span class="fl">0.18</span>, <span class="fl">0.50</span>]</span>
-<span id="cb1-4"><a></a>}</span>
-<span id="cb1-5"><a></a>datos <span class="op">=</span> pd.DataFrame(variables)</span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a><span class="co"># Crear la gráfica de barras</span></span>
-<span id="cb1-8"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb1-9"><a></a>sns.barplot(x<span class="op">=</span><span class="st">"y"</span>, y<span class="op">=</span><span class="st">"p(y)"</span>, data<span class="op">=</span>datos, color<span class="op">=</span><span class="st">"#4682B4"</span>)</span>
-<span id="cb1-10"><a></a>plt.title(<span class="st">"Distribución de Probabilidad $p(y)$"</span>)</span>
-<span id="cb1-11"><a></a>plt.xlabel(<span class="st">"Variable Aleatoria (Y)"</span>)</span>
-<span id="cb1-12"><a></a>plt.ylabel(<span class="st">"Probabilidad"</span>)</span>
-<span id="cb1-13"><a></a>plt.ylim(<span class="dv">0</span>, <span class="fl">0.6</span>) </span>
-<span id="cb1-14"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>variables <span class="op">=</span> {</span>
+<span id="cb2-2"><a></a>    <span class="st">"y"</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
+<span id="cb2-3"><a></a>    <span class="st">"p(y)"</span>: [<span class="fl">0.02</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.15</span>, <span class="fl">0.18</span>, <span class="fl">0.50</span>]</span>
+<span id="cb2-4"><a></a>}</span>
+<span id="cb2-5"><a></a>datos <span class="op">=</span> pd.DataFrame(variables)</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="co"># Crear la gráfica de barras</span></span>
+<span id="cb2-8"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb2-9"><a></a>sns.barplot(x<span class="op">=</span><span class="st">"y"</span>, y<span class="op">=</span><span class="st">"p(y)"</span>, data<span class="op">=</span>datos, color<span class="op">=</span><span class="st">"#4682B4"</span>)</span>
+<span id="cb2-10"><a></a>plt.title(<span class="st">"Distribución de Probabilidad $p(y)$"</span>)</span>
+<span id="cb2-11"><a></a>plt.xlabel(<span class="st">"Variable Aleatoria (Y)"</span>)</span>
+<span id="cb2-12"><a></a>plt.ylabel(<span class="st">"Probabilidad"</span>)</span>
+<span id="cb2-13"><a></a>plt.ylim(<span class="dv">0</span>, <span class="fl">0.6</span>) </span>
+<span id="cb2-14"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
