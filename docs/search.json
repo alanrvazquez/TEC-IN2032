@@ -497,6 +497,20 @@
     "text": "Agenda\n\n\nIntroducción\nDistribución Normal\nTeorema del Límite Central"
   },
   {
+    "objectID": "Modulo_1/Continuas.slides.html#carguemos-las-librerías",
+    "href": "Modulo_1/Continuas.slides.html#carguemos-las-librerías",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Carguemos las librerías",
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm\n\nEn el cógido de arriba, indicamos que utilizaremos la función norm() de la librería scipy.stats para calcular probabilidades."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#introducción",
+    "href": "Modulo_1/Continuas.slides.html#introducción",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Introducción",
+    "text": "Introducción\n\nUna variable aleatoria es continua si puede tomar un número infinito de valores reales posibles.\n\nPor ejemplo,\n\nLa cantidad de lluvia en un área específica.\nEl rendimiento de un antibiótico en un proceso de fermentación.\nLa duración de vida de una lavadora."
+  },
+  {
     "objectID": "Modulo_1/Continuas.slides.html#función-de-densidad",
     "href": "Modulo_1/Continuas.slides.html#función-de-densidad",
     "title": "Distribuciones Continuas de Probabilidad",
@@ -539,13 +553,6 @@
     "text": "La probabilidad es el área bajo la curva creada por \\(f(x)\\)"
   },
   {
-    "objectID": "Modulo_1/Continuas.slides.html#valor-esperado",
-    "href": "Modulo_1/Continuas.slides.html#valor-esperado",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Valor esperado",
-    "text": "Valor esperado\n\nEl promedio teórico o valor esperado de una variable aleatoria continua \\(X\\) es\n\\[E(X) = \\int_{-\\infty}^\\infty x f(x)dx\\]\nEsto es similar al valor esperado de una variable aleatoria discreta."
-  },
-  {
     "objectID": "Modulo_1/Continuas.slides.html#section-2",
     "href": "Modulo_1/Continuas.slides.html#section-2",
     "title": "Distribuciones Continuas de Probabilidad",
@@ -553,11 +560,32 @@
     "text": "Si \\(Y\\) es una variable aleatoria continua, entonces, para cualquier número \\(y_0\\),\n\\[P(Y = y_0) = 0.\\]\n\nDos explicaciones:\n\nEl área debajo de la curva y entre \\(y_0\\) y \\(y_0\\) no tiene ancho y, por lo tanto, no tiene área. Como la probabilidad es igual al área, la probabilidad es cero.\nSi \\(Y\\) es, digamos, una medida de lluvia diaria, la probabilidad de que sea exactamente 2.193478 pulgadas es cero."
   },
   {
+    "objectID": "Modulo_1/Continuas.slides.html#valor-esperado",
+    "href": "Modulo_1/Continuas.slides.html#valor-esperado",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Valor esperado",
+    "text": "Valor esperado\n\nEl promedio teórico o valor esperado de una variable aleatoria continua \\(X\\) es\n\\[E(X) = \\int_{-\\infty}^\\infty x f(x)dx\\]\nEsto es similar al valor esperado de una variable aleatoria discreta."
+  },
+  {
     "objectID": "Modulo_1/Continuas.slides.html#section-3",
     "href": "Modulo_1/Continuas.slides.html#section-3",
     "title": "Distribuciones Continuas de Probabilidad",
     "section": "",
     "text": "El valor esperado define la locación del centro de la función de densidad."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#varianza-y-desviación-estándar",
+    "href": "Modulo_1/Continuas.slides.html#varianza-y-desviación-estándar",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Varianza y desviación estándar",
+    "text": "Varianza y desviación estándar\n\nLa varianza teórica de una variable aleatoria continua \\(X\\) es\n\\[V(X) = E\\left[ (X - \\mu)^2 \\right] = \\int_{-\\infty}^\\infty (x-\\mu)^2f(x)dx,\\]\ndonde \\(\\mu = E(X)\\).\n\nLa desviación estándar de \\(X\\) es la raíz cuadrada de \\(V(X)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-4",
+    "href": "Modulo_1/Continuas.slides.html#section-4",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "La desviación estándard define la dispersión de la función de densidad."
   },
   {
     "objectID": "Modulo_1/Continuas.slides.html#más-sobre-variables-aleatorias-continuas",
@@ -602,11 +630,39 @@
     "text": "Encontrar áreas bajo la curva\n\n\nEl calculo de probabilidades usando la distribución normal necesita la integral de la función de densidad normal.\nSin embargo, esta integral no tiene una solución en forma cerrada.\nEn lugar de eso, se usan algoritmos de aproximación para realizar los cálculos.\nEn la práctica, los calculos de probabilidades se hacen usando software estadístico como Minitab, JMP, R, o Python."
   },
   {
-    "objectID": "Modulo_1/Continuas.slides.html#cálculo-de-probabilidades-usando-python",
-    "href": "Modulo_1/Continuas.slides.html#cálculo-de-probabilidades-usando-python",
+    "objectID": "Modulo_1/Continuas.slides.html#calculo-de-probabilidades-en-python",
+    "href": "Modulo_1/Continuas.slides.html#calculo-de-probabilidades-en-python",
     "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Cálculo de probabilidades usando Python",
-    "text": "Cálculo de probabilidades usando Python"
+    "section": "Calculo de probabilidades en Python",
+    "text": "Calculo de probabilidades en Python\nConsideremos una máquina que envasa arroz dentro de cajas. El proceso sigue una distribución Normal y se sabe que la media del peso de cada caja es 1000 gramos y la desviación estándar es 10 gramos.\n\nA. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. \\(P(X &lt; 1010) = P(X \\leq 1010)\\).\nB. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. \\(P(X &gt; 980) = P(X \\geq 980)\\).\nC. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos. \\(P(X &lt; 1000) - P(X &lt;990) = P(X \\leq 1000)−P(X \\leq 990)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#primero",
+    "href": "Modulo_1/Continuas.slides.html#primero",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "Primero…",
+    "text": "Primero…\n\nDefinamos los valores apropiados para \\(\\mu\\) y \\(\\sigma\\) en Python.\n\nm = 1000 # Media de la distribución normal.\ns = 10 # Desviación estándard de la distribución normal."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-6",
+    "href": "Modulo_1/Continuas.slides.html#section-6",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "A. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. \\(P(X &lt; 1010) = P(X \\leq 1010)\\).\n\nPara calcular la probabilidad de que una variable Normal (\\(X\\)) tome un valor menor (o igual) a \\(k\\) usamos la función norm.cdf(k, loc, scale). En este caso, loc y scale especifican los valores de \\(\\mu\\) y \\(\\sigma\\), respectivamente\n\nk = 1010\nprob = norm.cdf(k, loc = m, scale = s)\nprint(f\"P(X &lt;= {k}) = {prob:.4f}\")\n\nP(X &lt;= 1010) = 0.8413"
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-7",
+    "href": "Modulo_1/Continuas.slides.html#section-7",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "B. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. \\(P(X &gt; 980) = P(X \\geq 980)\\).\nPara calcular la probabilidad de que una variable Normal (\\(X\\)) tome un valor mayor (o igual) a \\(k\\) usamos la función norm.sf(k, loc, scale).\n\nk = 980\nprob_mas_de = norm.sf(k, loc = m, scale = s)\nprint(f\"P(X &gt; {k}) = {prob_mas_de:.4f}\")\n\nP(X &gt; 980) = 0.9772\n\n\n\nAlternativamente, por reglas de probabilidad, podemos usar el siguiente código:\n\nprint(1 - norm.cdf(k, loc = m, scale = s))\n\n0.9772498680518208\n\n\nQue se traduce en \\(P(X &gt; k) = 1 - P(X \\leq k)\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-8",
+    "href": "Modulo_1/Continuas.slides.html#section-8",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "C. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos.\nPara este caso, tenemos que\n\n\\[P(X &lt; 1000) - P(X &lt;990) = P(X \\leq 1000)−P(X \\leq 990).\\]\n\n\n\nEn Python, esto se logra con norm.cdf() como sigue:\n\nk_superior = 1000\nk_inferior = 990\n\nprob = norm.cdf(k_superior, loc = m, \n                scale = s) - norm.cdf(k_inferior - 1, \n                loc = m, scale = s)\nprint(f\"P({k_inferior} &lt;= X &lt;= {k_superior}): {prob:.4f}\")\n\nP(990 &lt;= X &lt;= 1000): 0.3643"
   },
   {
     "objectID": "Modulo_1/Continuas.slides.html#regla-empirica",
@@ -630,11 +686,18 @@
     "text": "Distribución Normal Estándar\n\nEn general, convertimos a unidades estándar restando la media y dividiéndola por la desviación estándar.\nEntonces, si \\(X\\sim{N(\\mu,\\sigma^2)}\\), la unidad estándar de \\(X\\) es el siguiente número:\n\\[Z=\\frac{X-\\mu}{\\sigma}.\\]\n\nLa distribución de \\(Z\\) es normal con media 0 y desviación estándar 1. Esta distribución se llama distribución normal estándar."
   },
   {
-    "objectID": "Modulo_1/Continuas.slides.html#probablidades-de-la-distribución-normal-estándar",
-    "href": "Modulo_1/Continuas.slides.html#probablidades-de-la-distribución-normal-estándar",
+    "objectID": "Modulo_1/Continuas.slides.html#calculo-de-probablidades",
+    "href": "Modulo_1/Continuas.slides.html#calculo-de-probablidades",
     "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Probablidades de la distribución normal estándar",
-    "text": "Probablidades de la distribución normal estándar\nSi \\(X \\sim N(\\mu, \\sigma^2)\\) y \\(x_0\\) es una constante, tenemos que\n\\[P(X &gt; x_0) = P \\left( \\frac{X-\\mu}{\\sigma} &gt; \\frac{x_0-\\mu}{\\sigma}\\right) = P \\left( Z &gt; z_0\\right),\\]\ndonde \\(Z \\sim N(0, 1)\\) y la constante \\(z_0 = \\frac{x_0-\\mu}{\\sigma}\\) es el valor estandarizado de \\(x_0\\).\nLo mismo para:\n\n\\(P(X &lt; x_0) = P(Z &lt; z_0)\\)\n\\(P(x_0 &lt; X &lt; x_1) = P(z_0 &lt; Z &lt; z_1)\\) donde \\(z_1 = \\frac{x_1-\\mu}{\\sigma}\\)."
+    "section": "Calculo de probablidades",
+    "text": "Calculo de probablidades\n\nSi \\(X \\sim N(\\mu, \\sigma^2)\\) y \\(x_0\\) es una constante, tenemos que\n\\[P(X &gt; x_0) = P \\left( \\frac{X-\\mu}{\\sigma} &gt; \\frac{x_0-\\mu}{\\sigma}\\right) = P \\left( Z &gt; z_0\\right),\\]\ndonde \\(Z \\sim N(0, 1)\\) y la constante \\(z_0 = \\frac{x_0-\\mu}{\\sigma}\\) es el valor estandarizado de \\(x_0\\)."
+  },
+  {
+    "objectID": "Modulo_1/Continuas.slides.html#section-9",
+    "href": "Modulo_1/Continuas.slides.html#section-9",
+    "title": "Distribuciones Continuas de Probabilidad",
+    "section": "",
+    "text": "Lo mismo para:\n\n\\(P(X &lt; x_0) = P(Z &lt; z_0)\\)\n\\(P(x_0 &lt; X &lt; x_1) = P(z_0 &lt; Z &lt; z_1)\\) donde \\(z_1 = \\frac{x_1-\\mu}{\\sigma}\\)."
   },
   {
     "objectID": "Modulo_1/Continuas.slides.html#propiedades-de-la-distribución-normal",
@@ -644,11 +707,11 @@
     "text": "Propiedades de la distribución normal\n\nSi \\(X\\sim{N(\\mu,\\sigma^2)}\\) y tenemos las constantes \\(a \\neq 0\\) y \\(b\\). Entonces\n\n\n\\(aX + b \\sim N(a \\mu + b, a^2 \\sigma^2)\\)\n\n\n\nSi \\(X\\) y \\(Y\\) son variables aleatorias independentes con \\(X\\sim{N(\\mu_X,\\sigma^2_X)}\\) y \\(Y\\sim{N(\\mu_Y,\\sigma^2_Y)}\\). Entonces\n\n\n\\(X+ Y \\sim N(\\mu_X + \\mu_Y, \\sigma^2_X + \\sigma^2_Y)\\)\n\\(X -  Y \\sim N(\\mu_X - \\mu_Y, \\sigma^2_X + \\sigma^2_Y)\\)"
   },
   {
-    "objectID": "Modulo_1/Continuas.slides.html#section-4",
-    "href": "Modulo_1/Continuas.slides.html#section-4",
+    "objectID": "Modulo_1/Continuas.slides.html#section-10",
+    "href": "Modulo_1/Continuas.slides.html#section-10",
     "title": "Distribuciones Continuas de Probabilidad",
     "section": "",
-    "text": "La desviación estándard define la dispersión de la función de densidad."
+    "text": "Si \\(X_1, X_2, \\ldots, X_n\\) son variables aleatorias independentes y que siguen una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\). Entonces,\n\n\\[\\bar{X} =\\sum_{i=1}^{n} \\frac{X_i}{n} \\sim N\\left(\\mu,\\; \\frac{\\sigma^2}{n}\\right)\\]"
   },
   {
     "objectID": "Modulo_1/Continuas.slides.html#muestra-aleatoria",
@@ -679,11 +742,11 @@
     "text": "Aproximación a una distribución Binomial\n\nConsidera una muestra \\(Y_1, Y_2, \\ldots, Y_n\\) de variables aleatorias Bernoulli con probabilidad \\(p\\).\nSabemos que el promedio teórico es \\(p\\) y la varianza teórica es \\(p(1-p)\\) para una distribución Bernoulli.\nRecuerda que si \\(X = Y_1 + \\cdots + Y_n\\), entonces \\(X \\sim \\text{Bin}(n,p)\\).\nGracias al teorema del límite central, podemos decir que\n\n\\(X \\sim N(n p, np(1-p))\\) cuando \\(n\\) es muy grande."
   },
   {
-    "objectID": "Modulo_1/Continuas.slides.html#section-6",
-    "href": "Modulo_1/Continuas.slides.html#section-6",
+    "objectID": "Modulo_1/Continuas.slides.html#section-12",
+    "href": "Modulo_1/Continuas.slides.html#section-12",
     "title": "Distribuciones Continuas de Probabilidad",
     "section": "",
-    "text": "A. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. \\(P(X &lt; 1010) = P(X \\leq 1010)\\).\n\nPara calcular la probabilidad de que una variable Normal (\\(X\\)) tome un valor menor (o igual) a \\(k\\) usamos la función norm.cdf(k, loc, scale). En este caso, loc y scale especifican los valores de \\(\\mu\\) y \\(\\sigma\\), respectivamente\n\nk = 1010\nprob = norm.cdf(k, loc = m, scale = s)\nprint(f\"P(X &lt;= {k}) = {prob:.4f}\")\n\nP(X &lt;= 1010) = 0.8413"
+    "text": "\\(X \\sim N(n p, np(1-p))\\)\n\nEsta aproximación a la distribución binomial funciona bien cuando \\(n\\) es grande y \\(p\\) no está muy cerca de 0 ni de 1.\nDe hecho, cuando \\(n\\) es grande, esta aproximación es la que se utiliza para calcular las probabilidades en una distribución binomial.\n\\[P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y}\\]\nEsto es debido a que es dificil calcular \\({n \\choose y}\\) en este caso porque sus valores pueden ser muy grandes."
   },
   {
     "objectID": "Modulo_1/Continuas.slides.html#pregunta-de-práctica-para-examen",
@@ -2059,96 +2122,5 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#introducción",
-    "href": "Modulo_1/Continuas.slides.html#introducción",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Introducción",
-    "text": "Introducción\n\nUna variable aleatoria es continua si puede tomar un número infinito de valores reales posibles.\n\nPor ejemplo,\n\nLa cantidad de lluvia en un área específica.\nEl rendimiento de un antibiótico en un proceso de fermentación.\nLa duración de vida de una lavadora."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#section-5",
-    "href": "Modulo_1/Continuas.slides.html#section-5",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "",
-    "text": "Si \\(X_1, X_2, \\ldots, X_n\\) son variables aleatorias independentes y que siguen una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\). Entonces,\n\n\\[\\bar{X} =\\sum_{i=1}^{n} \\frac{X_i}{n} \\sim N\\left(\\mu,\\; \\frac{\\sigma^2}{n}\\right)\\]"
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#section-7",
-    "href": "Modulo_1/Continuas.slides.html#section-7",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "",
-    "text": "B. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. \\(P(X &gt; 980) = P(X \\geq 980)\\).\nPara calcular la probabilidad de que una variable Normal (\\(X\\)) tome un valor mayor (o igual) a \\(k\\) usamos la función norm.sf(k, loc, scale).\n\nk = 980\nprob_mas_de = norm.sf(k, loc = m, scale = s)\nprint(f\"P(X &gt; {k}) = {prob_mas_de:.4f}\")\n\nP(X &gt; 980) = 0.9772\n\n\n\nAlternativamente, por reglas de probabilidad, podemos usar el siguiente código:\n\nprint(1 - norm.cdf(k, loc = m, scale = s))\n\n0.9772498680518208\n\n\nQue se traduce en \\(P(X &gt; k) = 1 - P(X \\leq k)\\)."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#varianza-y-desviación-estándar",
-    "href": "Modulo_1/Continuas.slides.html#varianza-y-desviación-estándar",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Varianza y desviación estándar",
-    "text": "Varianza y desviación estándar\n\nLa varianza teórica de una variable aleatoria continua \\(X\\) es\n\\[V(X) = E\\left[ (X - \\mu)^2 \\right] = \\int_{-\\infty}^\\infty (x-\\mu)^2f(x)dx,\\]\ndonde \\(\\mu = E(X)\\).\n\nLa desviación estándar de \\(X\\) es la raíz cuadrada de \\(V(X)\\)."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#section-8",
-    "href": "Modulo_1/Continuas.slides.html#section-8",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "",
-    "text": "C. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos.\nPara este caso, tenemos que\n\n\\[P(X &lt; 1000) - P(X &lt;990) = P(X \\leq 1000)−P(X \\leq 990).\\]\n\n\n\nEn Python, esto se logra con norm.cdf() como sigue:\n\nk_superior = 1000\nk_inferior = 990\n\nprob = norm.cdf(k_superior, loc = m, \n                scale = s) - norm.cdf(k_inferior - 1, \n                loc = m, scale = s)\nprint(f\"P({k_inferior} &lt;= X &lt;= {k_superior}): {prob:.4f}\")\n\nP(990 &lt;= X &lt;= 1000): 0.3643"
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#carguemos-las-librerías",
-    "href": "Modulo_1/Continuas.slides.html#carguemos-las-librerías",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Carguemos las librerías",
-    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm\n\nEn el cógido de arriba, indicamos que utilizaremos la función norm() de la librería scipy.stats para calcular probabilidades."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#calculo-de-probabilidades-en-python",
-    "href": "Modulo_1/Continuas.slides.html#calculo-de-probabilidades-en-python",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Calculo de probabilidades en Python",
-    "text": "Calculo de probabilidades en Python\nConsideremos una máquina que envasa arroz dentro de cajas. El proceso sigue una distribución Normal y se sabe que la media del peso de cada caja es 1000 gramos y la desviación estándar es 10 gramos.\n\nA. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. \\(P(X &lt; 1010) = P(X \\leq 1010)\\).\nB. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. \\(P(X &gt; 980) = P(X \\geq 980)\\).\nC. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos. \\(P(X &lt; 1000) - P(X &lt;990) = P(X \\leq 1000)−P(X \\leq 990)\\)."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#primero",
-    "href": "Modulo_1/Continuas.slides.html#primero",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Primero…",
-    "text": "Primero…\n\nDefinamos los valores apropiados para \\(\\mu\\) y \\(\\sigma\\) en Python.\n\nm = 1000 # Media de la distribución normal.\ns = 10 # Desviación estándard de la distribución normal."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#section-9",
-    "href": "Modulo_1/Continuas.slides.html#section-9",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "",
-    "text": "Lo mismo para:\n\n\\(P(X &lt; x_0) = P(Z &lt; z_0)\\)\n\\(P(x_0 &lt; X &lt; x_1) = P(z_0 &lt; Z &lt; z_1)\\) donde \\(z_1 = \\frac{x_1-\\mu}{\\sigma}\\)."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#section-11",
-    "href": "Modulo_1/Continuas.slides.html#section-11",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "",
-    "text": "Gracias al teorema del límite central, podemos decir que\n\n\\(X \\sim N(n p, np(1-p))\\) cuando \\(n\\) es muy grande.\n\nEsta aproximación a la distribución binomial funciona bien cuando \\(n\\) es grande y \\(p\\) no está muy cerca de 0 ni de 1.\nDe hecho, cuando \\(n\\) es grande, esta aproximación es la que se utiliza para calcular las probabilidades en una distribución binomial.\n\\[P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y}\\]\nEsto es debido a que es dificil calcular \\({n \\choose y}\\) en este caso porque sus valores pueden ser muy grandes."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#calculo-de-probablidades",
-    "href": "Modulo_1/Continuas.slides.html#calculo-de-probablidades",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "Calculo de probablidades",
-    "text": "Calculo de probablidades\n\nSi \\(X \\sim N(\\mu, \\sigma^2)\\) y \\(x_0\\) es una constante, tenemos que\n\\[P(X &gt; x_0) = P \\left( \\frac{X-\\mu}{\\sigma} &gt; \\frac{x_0-\\mu}{\\sigma}\\right) = P \\left( Z &gt; z_0\\right),\\]\ndonde \\(Z \\sim N(0, 1)\\) y la constante \\(z_0 = \\frac{x_0-\\mu}{\\sigma}\\) es el valor estandarizado de \\(x_0\\)."
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#section-10",
-    "href": "Modulo_1/Continuas.slides.html#section-10",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "",
-    "text": "Si \\(X_1, X_2, \\ldots, X_n\\) son variables aleatorias independentes y que siguen una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\). Entonces,\n\n\\[\\bar{X} =\\sum_{i=1}^{n} \\frac{X_i}{n} \\sim N\\left(\\mu,\\; \\frac{\\sigma^2}{n}\\right)\\]"
-  },
-  {
-    "objectID": "Modulo_1/Continuas.slides.html#section-12",
-    "href": "Modulo_1/Continuas.slides.html#section-12",
-    "title": "Distribuciones Continuas de Probabilidad",
-    "section": "",
-    "text": "\\(X \\sim N(n p, np(1-p))\\)\n\nEsta aproximación a la distribución binomial funciona bien cuando \\(n\\) es grande y \\(p\\) no está muy cerca de 0 ni de 1.\nDe hecho, cuando \\(n\\) es grande, esta aproximación es la que se utiliza para calcular las probabilidades en una distribución binomial.\n\\[P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y}\\]\nEsto es debido a que es dificil calcular \\({n \\choose y}\\) en este caso porque sus valores pueden ser muy grandes."
   }
 ]
