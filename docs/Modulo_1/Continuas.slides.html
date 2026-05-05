@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="../style.css">
@@ -156,30 +222,49 @@ Alan R. Vazquez
 <li><p>Teorema del Límite Central</p></li>
 </ul>
 </section>
-<section>
-<section id="introducción" class="title-slide slide level1 center">
-<h1>Introducción</h1>
+<section id="carguemos-las-librerías" class="slide level2">
+<h2>Carguemos las librerías</h2>
+<p><br><br><br></p>
+<p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
+<div id="990a6dbc" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>En el cógido de arriba, indicamos que utilizaremos la función <code>norm()</code> de la librería <strong>scipy.stats</strong> para calcular probabilidades.</p>
+</section>
+<section id="introducción" class="slide level2">
+<h2>Introducción</h2>
 <p><br></p>
 <p>Una variable aleatoria es <span style="color: darkblue"><strong>continua</strong></span> si puede tomar un número infinito de valores reales posibles.</p>
+<div class="fragment">
 <p>Por ejemplo,</p>
 <ul>
-<li><p>La cantidad de lluvia en un área específica.</p></li>
-<li><p>El rendimiento de un antibiótico en un proceso de fermentación.</p></li>
-<li><p>La duración de vida de una lavadora.</p></li>
+<li class="fragment"><p>La cantidad de lluvia en un área específica.</p></li>
+<li class="fragment"><p>El rendimiento de un antibiótico en un proceso de fermentación.</p></li>
+<li class="fragment"><p>La duración de vida de una lavadora.</p></li>
 </ul>
+</div>
 </section>
 <section id="función-de-densidad" class="slide level2">
 <h2>Función de densidad</h2>
 <p>Una función importante para variables aleatorias continuas es la función de densidad de probabilidad.</p>
+<div class="fragment">
+<p><br></p>
 <p>La <span style="color: #4682B4"><strong>función de densidad de probabilidad</strong></span> de una variable aleatoria continua <span class="math inline">\(X\)</span> es la función <span class="math inline">\(f(x)\)</span> tal que</p>
 <ul>
 <li><p><span class="math inline">\(f(x) \geq 0\)</span> para todos los valores de <span class="math inline">\(x\)</span>, <span class="math inline">\(-\infty &lt; x &lt; \infty.\)</span></p></li>
 <li><p><span class="math inline">\(\int_{-\infty}^\infty f(x)dx =1.\)</span></p></li>
 </ul>
+</div>
+<div class="fragment">
 <p>La función de densidad de probabilidad se usa para <strong>calcular probabilidades</strong>.</p>
+</div>
 </section>
 <section id="ejemplos-de-funciones-de-densidad" class="slide level2">
 <h2>Ejemplos de funciones de densidad</h2>
+<p><br><br></p>
 
 <img data-src="images/ejemplos.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="función-de-densidad-como-aproximación-al-histograma-de-una-población" class="slide level2">
@@ -188,71 +273,73 @@ Alan R. Vazquez
 <img data-src="images/clipboard-2392146745.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="calculando-probabilidades" class="slide level2">
 <h2>Calculando probabilidades</h2>
-<p>Considera una variable aleatoria continua <span class="math inline">\(X\)</span> con función de densidad <span class="math inline">\(f(x)\)</span>. Si <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son dos números (<span class="math inline">\(a&gt;b\)</span>) entonces</p>
+<p><br><br></p>
+<p>Considera una variable aleatoria continua <span class="math inline">\(X\)</span> con función de densidad <span class="math inline">\(f(x)\)</span>.</p>
+<p><br></p>
+<p>Si <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son dos números (<span class="math inline">\(a&gt;b\)</span>) entonces</p>
+<div style="font-size: 87%;">
 <p><span class="math display">\[P(a\le X \le b)= P(a \le X &lt; b) = P(a&lt;X\le b)= \int
 _{a}^b f(x) dx.\]</span></p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><br><br></p>
 <p>Además</p>
 <p><span class="math display">\[P(X\le a)= P(X &lt; a) = \int_{-\infty}^af(x)dx\]</span></p>
 <p><span class="math display">\[P(X\ge a)= P(X &gt; a) = \int_{a}^{\infty}f(x)dx\]</span></p>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
-<p>La probabilidad es el [<strong>área bajo la curva</strong>}{style=“color: red”} creada por <span class="math inline">\(f(x)\)</span></p>
+<p><br><br></p>
+<p>La probabilidad es el <span style="color: purple"><strong>área bajo la curva</strong></span> creada por <span class="math inline">\(f(x)\)</span></p>
 
 <img data-src="images/clipboard-94097291.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <p>Si <span class="math inline">\(Y\)</span> es una <span style="color: #4682B4"><strong>variable aleatoria continua</strong></span>, entonces, para cualquier número <span class="math inline">\(y_0\)</span>,</p>
 <p><span class="math display">\[P(Y = y_0) = 0.\]</span></p>
+<div class="fragment">
 <p>Dos explicaciones:</p>
 <ul>
-<li><p>El área debajo de la curva y entre <span class="math inline">\(y_0\)</span> y <span class="math inline">\(y_0\)</span> no tiene ancho y, por lo tanto, no tiene área. Como la probabilidad es igual al área, la probabilidad es cero.</p></li>
-<li><p>Si <span class="math inline">\(Y\)</span> es, digamos, una medida de lluvia diaria, la probabilidad de que sea exactamente 2.193478 pulgadas es cero.</p></li>
+<li class="fragment"><p>El área debajo de la curva y entre <span class="math inline">\(y_0\)</span> y <span class="math inline">\(y_0\)</span> no tiene ancho y, por lo tanto, no tiene área. Como la probabilidad es igual al área, la probabilidad es cero.</p></li>
+<li class="fragment"><p>Si <span class="math inline">\(Y\)</span> es, digamos, una medida de lluvia diaria, la probabilidad de que sea exactamente 2.193478 pulgadas es cero.</p></li>
 </ul>
+</div>
 </section>
 <section id="valor-esperado" class="slide level2">
 <h2>Valor esperado</h2>
+<p><br><br></p>
 <p>El <span style="color: #5E7D6A"><strong>promedio teórico</strong></span> o <span style="color: #5E7D6A"><strong>valor esperado</strong></span> de una variable aleatoria continua <span class="math inline">\(X\)</span> es</p>
 <p><span class="math display">\[E(X) = \int_{-\infty}^\infty x f(x)dx\]</span></p>
 <p>Esto es similar al valor esperado de una variable aleatoria discreta.</p>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <p>El valor esperado define la locación del centro de la función de densidad.</p>
 
 <img data-src="images/clipboard-14447961.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="varianza-y-desviación-estándar" class="slide level2">
+<h2>Varianza y desviación estándar</h2>
+<p><br><br></p>
 <p>La <span style="color: #5E7D6A"><strong>varianza teórica</strong></span> de una variable aleatoria continua <span class="math inline">\(X\)</span> es</p>
 <p><span class="math display">\[V(X) = E\left[ (X - \mu)^2 \right] = \int_{-\infty}^\infty (x-\mu)^2f(x)dx,\]</span></p>
 <p>donde <span class="math inline">\(\mu = E(X)\)</span>.</p>
+<p><br></p>
 <p>La <span style="color: #5E7D6A"><strong>desviación estándar</strong></span> de <span class="math inline">\(X\)</span> es la raíz cuadrada de <span class="math inline">\(V(X)\)</span>.</p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/clipboard-1952375535.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-<p>Define la <strong><em>dispersión</em></strong> de la función de densidad.</p>
-</div></div>
 </section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p><br><br></p>
+<p>La desviación estándard define la <strong><em>dispersión</em></strong> de la función de densidad.</p>
+
+<img data-src="images/clipboard-1952375535.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="más-sobre-variables-aleatorias-continuas" class="slide level2">
 <h2>Más sobre variables aleatorias continuas</h2>
-<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua con una función de densidad <span class="math inline">\(f(x)\)</span>.</p>
-<p>La <span style="color: darkblue"><strong>función de distribución acumulada</strong></span> de <span class="math inline">\(X\)</span> es</p>
-<div class="columns">
-<div class="column" style="width:50%;">
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua con una función de densidad <span class="math inline">\(f(x)\)</span>. La <span style="color: darkblue"><strong>función de distribución acumulada</strong></span> de <span class="math inline">\(X\)</span> es</p>
 <p><span class="math display">\[F(x)=P(X\le x)= \int_{-\infty}^xf(t)dt.\]</span></p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/clipboard-1945788539.png" class="quarto-figure quarto-figure-center" width="248"></p>
-</figure>
-</div>
-</div></div>
-</section></section>
+
+<img data-src="images/clipboard-1945788539.png" class="quarto-figure quarto-figure-center r-stretch" width="248"></section>
 <section>
 <section id="distribución-normal" class="title-slide slide level1 center">
 <h1>Distribución Normal</h1>
@@ -262,50 +349,49 @@ _{a}^b f(x) dx.\]</span></p>
 <h2>Introducción</h2>
 <p>La <span style="color: #4682B4"><strong>distribución normal</strong></span> (también llamada <strong>distribución gaussiana</strong>) es la distribución más utilizada en estadística.</p>
 <p>La distribución tiene la familiar forma de campana y proporciona un buen modelo para muchas, aunque no todas, las poblaciones continuas.</p>
+<div class="fragment">
 <p>Aplicaciones:</p>
 <ul>
 <li><p>Diseño experimental.</p></li>
 <li><p>Control de calidad.</p></li>
 <li><p>Modelado estadístico.</p></li>
 </ul>
+</div>
 </section>
 <section id="distribución-normal-1" class="slide level2">
 <h2>Distribución Normal</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
 <p>La distribución normal tiene <strong>dos parámetros</strong>: <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span>. Aquí, <span class="math inline">\(\mu\)</span> puede ser cualquier número y <span class="math inline">\(\sigma\)</span> puede ser cualquier número positivo.</p>
-<p>La función de densidad de probabilidad de una distribución normal con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span> está dada por</p>
+<p>La función de <span style="color: #4682B4"><strong>densidad de probabilidad</strong></span> de una distribución normal con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span> está dada por</p>
 <p><span class="math display">\[f(x)= \frac{1}{\sigma\sqrt{2 \pi}} e^{\frac{-(x-\mu)^2}{2\sigma^2}},\; -\infty&lt;x&lt;\infty.\]</span></p>
 <p>Si <span class="math inline">\(X\)</span> sigue una distribución normal con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>, escribimos <span class="math inline">\(X\sim{N(\mu,\sigma^2)}\)</span>.</p>
-</div><div class="column" style="width:20%;">
-<p><br><br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/clipboard-4081450505.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div></div>
 </section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p><br><br></p>
+
+<img data-src="images/clipboard-4081450505.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="media-y-varianza" class="slide level2">
 <h2>Media y varianza</h2>
 <p><br><br></p>
 <p>Si <span class="math inline">\(X\sim{N(\mu,\sigma^2)}\)</span>, entonces</p>
 <ul>
 <li><p>El promedio teórico de <span class="math inline">\(X\)</span> es <span class="math inline">\(\mu\)</span>.</p></li>
-<li><p>La varianza teórica de <span class="math inline">\(X\)</span> es <span class="math inline">\(\sigma\)</span>.</p></li>
-<li><p>La desviación estándar teórica de <span class="math inline">\(X\)</span> es <span class="math inline">\(\sigma^2\)</span>.</p></li>
+<li><p>La varianza teórica de <span class="math inline">\(X\)</span> es <span class="math inline">\(\sigma^2\)</span>.</p></li>
+<li><p>La desviación estándar teórica de <span class="math inline">\(X\)</span> es <span class="math inline">\(\sigma\)</span>.</p></li>
 </ul>
 </section>
 <section id="efecto-de-los-parametros" class="slide level2">
 <h2>Efecto de los parametros</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:45%;">
+<div style="font-size: 90%;">
 <ul>
 <li><p>Debemos de pensar en <span class="math inline">\(N(\mu,\sigma^2)\)</span> como una <span style="color: #5E7D6A"><em>familia</em></span> de distribuciones.</p></li>
 <li><p>Cada miembro de esa familia tiene una combinación de valores para los parámetros <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span>.</p></li>
 <li><p>Cada miembro tiene una función de probabilidad diferente.</p></li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div>
+</div><div class="column" style="width:55%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -316,6 +402,7 @@ _{a}^b f(x) dx.\]</span></p>
 </section>
 <section id="encontrar-áreas-bajo-la-curva" class="slide level2">
 <h2>Encontrar áreas bajo la curva</h2>
+<p><br></p>
 <ul>
 <li><p>El calculo de probabilidades usando la distribución normal necesita la integral de la función de densidad normal.</p></li>
 <li><p>Sin embargo, esta integral no tiene una solución en forma cerrada.</p></li>
@@ -323,14 +410,91 @@ _{a}^b f(x) dx.\]</span></p>
 <li><p>En la práctica, los calculos de probabilidades se hacen usando software estadístico como Minitab, JMP, R, o Python.</p></li>
 </ul>
 </section>
-<section id="cálculo-de-probabilidades-usando-python" class="slide level2">
-<h2>Cálculo de probabilidades usando Python</h2>
+<section id="calculo-de-probabilidades-en-python" class="slide level2">
+<h2>Calculo de probabilidades en Python</h2>
+<p>Consideremos una máquina que envasa arroz dentro de cajas. El proceso sigue una distribución Normal y se sabe que la media del peso de cada caja es 1000 gramos y la desviación estándar es 10 gramos.</p>
+<div style="font-size: 83%;">
+<p>A. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. <span class="math inline">\(P(X &lt; 1010) = P(X \leq 1010)\)</span>.</p>
+<p>B. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. <span class="math inline">\(P(X &gt; 980) = P(X \geq 980)\)</span>.</p>
+<p>C. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos. <span class="math inline">\(P(X &lt; 1000) - P(X &lt;990) = P(X \leq 1000)−P(X \leq 990)\)</span>.</p>
+</div>
+</section>
+<section id="primero" class="slide level2">
+<h2>Primero…</h2>
+<p><br><br><br></p>
+<p>Definamos los valores apropiados para <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span> en Python.</p>
+<div id="e382ef8d" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>m <span class="op">=</span> <span class="dv">1000</span> <span class="co"># Media de la distribución normal.</span></span>
+<span id="cb2-2"><a></a>s <span class="op">=</span> <span class="dv">10</span> <span class="co"># Desviación estándard de la distribución normal.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p><strong>A</strong>. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. <span class="math inline">\(P(X &lt; 1010) = P(X \leq 1010)\)</span>.</p>
+<p><br></p>
+<p>Para calcular la probabilidad de que una variable Normal (<span class="math inline">\(X\)</span>) tome un <strong>valor menor (o igual)</strong> a <span class="math inline">\(k\)</span> usamos la función <code>norm.cdf(k, loc, scale)</code>. En este caso, <code>loc</code> y <code>scale</code> especifican los valores de <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span>, respectivamente</p>
+<div id="26c3da94" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>k <span class="op">=</span> <span class="dv">1010</span></span>
+<span id="cb3-2"><a></a>prob <span class="op">=</span> norm.cdf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s)</span>
+<span id="cb3-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt;= </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &lt;= 1010) = 0.8413</code></pre>
+</div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p><strong>B</strong>. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. <span class="math inline">\(P(X &gt; 980) = P(X \geq 980)\)</span>.</p>
+<p>Para calcular la probabilidad de que una variable Normal (<span class="math inline">\(X\)</span>) tome un <strong>valor mayor (o igual)</strong> a <span class="math inline">\(k\)</span> usamos la función <code>norm.sf(k, loc, scale)</code>.</p>
+<div id="b79070d0" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>k <span class="op">=</span> <span class="dv">980</span></span>
+<span id="cb5-2"><a></a>prob_mas_de <span class="op">=</span> norm.sf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s)</span>
+<span id="cb5-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &gt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_mas_de<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &gt; 980) = 0.9772</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:</p>
+<div id="4e761c78" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">-</span> norm.cdf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.9772498680518208</code></pre>
+</div>
+</div>
+<p>Que se traduce en <span class="math inline">\(P(X &gt; k) = 1 - P(X \leq k)\)</span>.</p>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p><strong>C</strong>. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos.</p>
+<p>Para este caso, tenemos que</p>
+<div style="font-size: 90%;">
+<p><span class="math display">\[P(X &lt; 1000) - P(X &lt;990) = P(X \leq 1000)−P(X \leq 990).\]</span></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p>En Python, esto se logra con <code>norm.cdf()</code> como sigue:</p>
+<div id="d431950d" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>k_superior <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb9-2"><a></a>k_inferior <span class="op">=</span> <span class="dv">990</span></span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a>prob <span class="op">=</span> norm.cdf(k_superior, loc <span class="op">=</span> m, </span>
+<span id="cb9-5"><a></a>                scale <span class="op">=</span> s) <span class="op">-</span> norm.cdf(k_inferior <span class="op">-</span> <span class="dv">1</span>, </span>
+<span id="cb9-6"><a></a>                loc <span class="op">=</span> m, scale <span class="op">=</span> s)</span>
+<span id="cb9-7"><a></a><span class="bu">print</span>(<span class="ss">f"P(</span><span class="sc">{</span>k_inferior<span class="sc">}</span><span class="ss"> &lt;= X &lt;= </span><span class="sc">{</span>k_superior<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(990 &lt;= X &lt;= 1000): 0.3643</code></pre>
+</div>
+</div>
+</div>
 </section>
 <section id="regla-empirica" class="slide level2">
 <h2>Regla Empirica</h2>
 
 <img data-src="images/clipboard-899837028.png" class="quarto-figure quarto-figure-center r-stretch"><div style="font-size: 80%;">
-<p>Considera una población que sigue una distribución normal con media <span class="math inline">\(\mu\)</span> y desviación estándar <span class="math inline">\(\sigma\)</span>. Toma en cuenta que la curva es simétrica con respecto a <span class="math inline">\(\mu\)</span>.</p>
+<p>Considera una población que sigue una distribución normal con media <span class="math inline">\(\mu\)</span> y desviación estándar <span class="math inline">\(\sigma\)</span>. Nota que la curva es simétrica con respecto a <span class="math inline">\(\mu\)</span>.</p>
 <p>Alrededor del 68% de la población se encuentra en el intervalo <span class="math inline">\([\mu - \sigma, \; \mu + \sigma]\)</span>.</p>
 <p>Aproximadamente el 95% de la población se encuentra en el intervalo <span class="math inline">\([\mu - 2\sigma, \; \mu + 2\sigma]\)</span>.</p>
 <p>Aproximadamente el 99.7% de la población se encuentra en el intervalo <span class="math inline">\([\mu - 3\sigma, \; \mu + 3\sigma]\)</span>.</p>
@@ -338,22 +502,31 @@ _{a}^b f(x) dx.\]</span></p>
 </section>
 <section id="unidades-estándar" class="slide level2">
 <h2>Unidades estándar</h2>
+<p><br></p>
 <p>La proporción de una población normal que se encuentra dentro de un número determinado de desviaciones estándar de la media es la misma para cualquier población normal.</p>
 <p>Por esta razón, cuando se trata de poblaciones normales, a menudo convertimos las unidades en las que se midieron originalmente los elementos de la población a <span style="color: #B2AC88"><strong>unidades estándar</strong></span>.</p>
 <p>Las unidades estándar indican cuántas desviaciones estándar tiene una observación de la media poblacional.</p>
 </section>
 <section id="distribución-normal-estándar" class="slide level2">
 <h2>Distribución Normal Estándar</h2>
+<p><br></p>
 <p>En general, convertimos a unidades estándar restando la media y dividiéndola por la desviación estándar.</p>
 <p>Entonces, si <span class="math inline">\(X\sim{N(\mu,\sigma^2)}\)</span>, la unidad estándar de <span class="math inline">\(X\)</span> es el siguiente número:</p>
 <p><span class="math display">\[Z=\frac{X-\mu}{\sigma}.\]</span></p>
+<div class="fragment">
 <p>La distribución de <span class="math inline">\(Z\)</span> es normal con media 0 y desviación estándar 1. Esta distribución se llama <span style="color: #B2AC88"><strong>distribución normal estándar</strong></span>.</p>
+</div>
 </section>
-<section id="probablidades-de-la-distribución-normal-estándar" class="slide level2">
-<h2>Probablidades de la distribución normal estándar</h2>
+<section id="calculo-de-probablidades" class="slide level2">
+<h2>Calculo de probablidades</h2>
+<p><br><br></p>
 <p>Si <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span> y <span class="math inline">\(x_0\)</span> es una constante, tenemos que</p>
 <p><span class="math display">\[P(X &gt; x_0) = P \left( \frac{X-\mu}{\sigma} &gt; \frac{x_0-\mu}{\sigma}\right) = P \left( Z &gt; z_0\right),\]</span></p>
 <p>donde <span class="math inline">\(Z \sim N(0, 1)\)</span> y la constante <span class="math inline">\(z_0 = \frac{x_0-\mu}{\sigma}\)</span> es el <span style="color: purple"><em>valor estandarizado</em></span> de <span class="math inline">\(x_0\)</span>.</p>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p><br><br><br></p>
 <p>Lo mismo para:</p>
 <ul>
 <li><span class="math inline">\(P(X &lt; x_0) = P(Z &lt; z_0)\)</span></li>
@@ -365,15 +538,22 @@ _{a}^b f(x) dx.\]</span></p>
 <ul>
 <li>Si <span class="math inline">\(X\sim{N(\mu,\sigma^2)}\)</span> y tenemos las constantes <span class="math inline">\(a \neq 0\)</span> y <span class="math inline">\(b\)</span>. Entonces</li>
 </ul>
-<p><span class="math display">\[aX + b \sim N(a \mu + b, a^2 \sigma^2)\]</span></p>
+<div style="text-align: center;">
+<p><span class="math inline">\(aX + b \sim N(a \mu + b, a^2 \sigma^2)\)</span></p>
+</div>
+<div class="fragment">
 <ul>
-<li>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son variables aleatorias <span style="color: #ADD8E6">independentes</span> con <span class="math inline">\(X\sim{N(\mu_X,\sigma^2_X)}\)</span> y <span class="math inline">\(Y\sim{N(\mu_Y,\sigma^2_Y)}\)</span>. Entonces</li>
+<li>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son variables aleatorias <span style="color: #4682B4">independentes</span> con <span class="math inline">\(X\sim{N(\mu_X,\sigma^2_X)}\)</span> y <span class="math inline">\(Y\sim{N(\mu_Y,\sigma^2_Y)}\)</span>. Entonces</li>
 </ul>
-<p><span class="math display">\[X+ Y \sim N(\mu_X + \mu_Y, \sigma^2_X + \sigma^2_Y)\]</span></p>
-<p><span class="math display">\[X -  Y \sim N(\mu_X - \mu_Y, \sigma^2_X + \sigma^2_Y)\]</span></p>
+<div style="text-align: center;">
+<p><span class="math inline">\(X+ Y \sim N(\mu_X + \mu_Y, \sigma^2_X + \sigma^2_Y)\)</span></p>
+<p><span class="math inline">\(X -  Y \sim N(\mu_X - \mu_Y, \sigma^2_X + \sigma^2_Y)\)</span></p>
+</div>
+</div>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
+<p><br><br><br></p>
 <ul>
 <li>Si <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> son variables aleatorias independentes y que siguen una distribución normal con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>. Entonces,</li>
 </ul>
@@ -393,8 +573,9 @@ _{a}^b f(x) dx.\]</span></p>
 <li><p>Se dice que todas las <span class="math inline">\(Y_i\)</span>’s sigue una misma distribución específica. Además, asumimos que todas ellas son independientes.</p></li>
 </ul>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
+<p><br><br><br></p>
 
 <img data-src="images/muestra.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="motivación" class="slide level2">
@@ -402,26 +583,32 @@ _{a}^b f(x) dx.\]</span></p>
 <p><br></p>
 <p>En muchas aplicaciónes, el resumen estadístico más importante es el promedio:</p>
 <p><span class="math display">\[\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n} = \frac{Y_1 + Y_2 + \cdots + Y_n}{n}\]</span></p>
-<p>El teorema del limite central nos permite aproximar la distribución de <span class="math inline">\(\bar{Y}\)</span> <span style="color: #ADD8E6"><em>sin importar la distribución</em></span> de los valores individuales <span class="math inline">\(Y_i\)</span>.</p>
+<p>El teorema del limite central nos permite aproximar la distribución de <span class="math inline">\(\bar{Y}\)</span> <span style="color: #5E7D6A"><em>sin importar la distribución</em></span> de los valores individuales <span class="math inline">\(Y_i\)</span>.</p>
 </section>
 <section id="teórema-del-límite-central" class="slide level2">
 <h2>Teórema del límite central</h2>
 <p><br><br></p>
 <p>Si <span class="math inline">\(Y_1, \ldots, Y_n\)</span> es una muestra aleatoria que sigue <span style="color: purple"><em>una distribución</em></span> con un promedio teórico <span class="math inline">\(\mu\)</span> y una varianza teórica <span class="math inline">\(\sigma^2\)</span>, entonces …</p>
-<p><span style="color: #ADD8E6">La distribución de <span class="math inline">\(\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n}\)</span> converge a una distribución <span class="math inline">\(N\left(\mu, \frac{\sigma^2}{n}\right)\)</span> cuando el valor de <span class="math inline">\(n\)</span> es muy grande.</span></p>
+<div class="fragment">
+<p><span style="color: #5E7D6A">La distribución de <span class="math inline">\(\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n}\)</span> converge a una distribución <span class="math inline">\(N\left(\mu, \frac{\sigma^2}{n}\right)\)</span> cuando el valor de <span class="math inline">\(n\)</span> es muy grande.</span></p>
+</div>
 </section>
 <section id="aproximación-a-una-distribución-binomial" class="slide level2">
 <h2>Aproximación a una distribución Binomial</h2>
-<p><br><br></p>
-<p>Considera una muestra <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> de variables aleatorias Bernoulli con probabilidad <span class="math inline">\(p\)</span>.</p>
-<p>Sabemos que el promedio teórico es <span class="math inline">\(p\)</span> y la varianza teórica es <span class="math inline">\(p(1-p)\)</span> para una distribución Bernoulli.</p>
-<p>Recuerda que si <span class="math inline">\(X = Y_1 + \cdots + Y_n\)</span>, entonces <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>.</p>
-</section>
-<section id="section-6" class="slide level2">
-<h2></h2>
-<p>Gracias al teorema del límite central, podemos decir que</p>
 <ul>
-<li><span style="color: green"><span class="math inline">\(X \sim N(n p, np(1-p))\)</span> cuando <span class="math inline">\(n\)</span> es muy grande.</span></li>
+<li class="fragment"><p>Considera una muestra <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> de variables aleatorias Bernoulli con probabilidad <span class="math inline">\(p\)</span>.</p></li>
+<li class="fragment"><p>Sabemos que el promedio teórico es <span class="math inline">\(p\)</span> y la varianza teórica es <span class="math inline">\(p(1-p)\)</span> para una distribución Bernoulli.</p></li>
+<li class="fragment"><p>Recuerda que si <span class="math inline">\(X = Y_1 + \cdots + Y_n\)</span>, entonces <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>.</p></li>
+<li class="fragment"><p>Gracias al teorema del límite central, podemos decir que</p>
+<ul>
+<li class="fragment"><span style="color: green"><span class="math inline">\(X \sim N(n p, np(1-p))\)</span> cuando <span class="math inline">\(n\)</span> es muy grande.</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<ul>
+<li><span style="color: green"><span class="math inline">\(X \sim N(n p, np(1-p))\)</span></span></li>
 </ul>
 <p>Esta aproximación a la distribución binomial funciona bien cuando <span class="math inline">\(n\)</span> es grande y <span class="math inline">\(p\)</span> no está muy cerca de 0 ni de 1.</p>
 <p>De hecho, cuando <span class="math inline">\(n\)</span> es grande, esta aproximación es la que se utiliza para calcular las probabilidades en una distribución binomial.</p>
