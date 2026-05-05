@@ -229,7 +229,7 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="6df8bb95" class="cell" data-execution_count="1">
+<div id="253d4b4f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -429,7 +429,7 @@ Alan R. Vazquez
 <section id="intervalos-de-confianza-en-python" class="slide level2">
 <h2>Intervalos de confianza en Python</h2>
 <p>Primero, leamos los datos que están en el archivo “Cilindro.xlsx”.</p>
-<div id="996d3863" class="cell" data-execution_count="2">
+<div id="e2487808" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>cilinder_data <span class="op">=</span> pd.read_excel(<span class="st">"Cilindro.xlsx"</span>)</span>
 <span id="cb2-2"><a></a>cilinder_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -485,7 +485,7 @@ Alan R. Vazquez
 </section>
 <section id="visualización-simple-a-través-de-un-histograma" class="slide level2">
 <h2>Visualización simple a través de un histograma</h2>
-<div id="5678f6a3" class="cell" data-execution_count="3">
+<div id="7eec5548" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) <span class="co"># Crea espacio para la figura.</span></span>
@@ -506,7 +506,7 @@ Alan R. Vazquez
 <section id="configuración" class="slide level2">
 <h2>Configuración</h2>
 <p>Desafortunadamente, para calcular un IC en Python debemos de especificar explicitamente ciertos objetos, incluyendo el tamaño de muestra (<span class="math inline">\(n\)</span>) y el promedio de la variable (<span class="math inline">\(\bar{X}\)</span>). Esto se puede hacer con las funciones de <strong>pandas</strong> que ya vimos.</p>
-<div id="39aa6dc4" class="cell" data-execution_count="4">
+<div id="b755ebec" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>X <span class="op">=</span> cilinder_data.<span class="bu">filter</span>([<span class="st">'Coeficiente'</span>])</span>
 <span id="cb4-2"><a></a>confianza <span class="op">=</span> <span class="fl">0.95</span></span>
 <span id="cb4-3"><a></a>n <span class="op">=</span> cilinder_data.<span class="bu">filter</span>([<span class="st">'Coeficiente'</span>]).count()</span>
@@ -514,7 +514,7 @@ Alan R. Vazquez
 </div>
 <div class="fragment">
 <p>Además, también necesitamos el <em>error estándar</em>, que es igual a <span class="math inline">\(s/\sqrt{n}\)</span>. Para calcular esta cantidad, usamos la funcion <code>sem()</code> de <strong>scipy.stats</strong>.</p>
-<div id="9b7d3c36" class="cell" data-execution_count="5">
+<div id="af2de77d" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>desviacion_error <span class="op">=</span> sem(X) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -523,7 +523,7 @@ Alan R. Vazquez
 <h2>Intervalo de confianza en Python</h2>
 <p><br><br></p>
 <p>Ahora, creamos el intervalo de confianza usando la función <code>t.interval()</code> de <strong>scipy.stats</strong>.</p>
-<div id="5d5b5e93" class="cell" data-execution_count="6">
+<div id="15396989" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>intervalo <span class="op">=</span> t.interval(confianza, n<span class="op">-</span><span class="dv">1</span>, loc <span class="op">=</span> media, </span>
 <span id="cb6-2"><a></a>                      scale <span class="op">=</span> desviacion_error)</span>
 <span id="cb6-3"><a></a>intervalo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -636,17 +636,161 @@ Alan R. Vazquez
 </section>
 <section id="en-python" class="slide level2">
 <h2>En Python</h2>
+<p>Antes de empezar, carguemos los datos que están en el archivo “Tubos.xlsx”</p>
+<div id="20496293" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>tube_data <span class="op">=</span> pd.read_excel(<span class="st">"Tubos.xlsx"</span>)</span>
+<span id="cb8-2"><a></a>tube_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Tipo</th>
+<th data-quarto-table-cell-role="th">Temperatura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>206</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>1</td>
+<td>188</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>1</td>
+<td>205</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>1</td>
+<td>187</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>1</td>
+<td>194</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="cuidado" class="slide level2">
+<h2>Cuidado!</h2>
+<p>La variable <code>Tubos</code> es <span style="color: red"><strong>categorica</strong></span>! Entonces, debemos de informar a Python sobre esto usando la función <code>pd.Categorical()</code>.</p>
+<div id="1d5894d0" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>tube_data[<span class="st">'Tipo'</span>] <span class="op">=</span> pd.Categorical(tube_data[<span class="st">'Tipo'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Veamos el resultado:</p>
+<div id="46342ddf" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>tube_data.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 30 entries, 0 to 29
+Data columns (total 2 columns):
+ #   Column       Non-Null Count  Dtype   
+---  ------       --------------  -----   
+ 0   Tipo         30 non-null     category
+ 1   Temperatura  30 non-null     int64   
+dtypes: category(1), int64(1)
+memory usage: 522.0 bytes</code></pre>
+</div>
+</div>
+</section>
+<section id="visualización" class="slide level2">
+<h2>Visualización</h2>
+<p>Podemos visualizar los datos de los dos grupos definitos por los tubos del tipo 1 y 2 usando gráficas de cajas lado a lado.</p>
+<div id="9e534bfd" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) <span class="co"># Create space for the figure.</span></span>
+<span id="cb12-2"><a></a>sns.boxplot(data <span class="op">=</span> tube_data, y <span class="op">=</span> <span class="st">'Temperatura'</span>, x <span class="op">=</span> <span class="st">'Tipo'</span>) </span>
+<span id="cb12-3"><a></a>plt.ylabel(<span class="st">"Temperatura"</span>) </span>
+<span id="cb12-4"><a></a>plt.xlabel(<span class="st">"Tipo de tubo"</span>) </span>
+<span id="cb12-5"><a></a>plt.show() <span class="co"># Show the plot.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Intervalos_files/figure-revealjs/cell-11-output-1.png" class="quarto-figure quarto-figure-center" width="593" height="356"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="configuración-1" class="slide level2">
+<h2>Configuración</h2>
+<p>Un problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.</p>
+<p>Sin embargo, podemos crear las dos columnas con nuestras funciones de <strong>pandas</strong>.</p>
+<div id="3a8013dc" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>Temp_Tubo1 <span class="op">=</span> (tube_data</span>
+<span id="cb13-2"><a></a>  .query(<span class="st">"Tipo == 1"</span>)</span>
+<span id="cb13-3"><a></a>  .<span class="bu">filter</span>([<span class="st">'Temperatura'</span>])</span>
+<span id="cb13-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="b4d9379f" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>Temp_Tubo2 <span class="op">=</span> (tube_data</span>
+<span id="cb14-2"><a></a>  .query(<span class="st">"Tipo == 2"</span>)</span>
+<span id="cb14-3"><a></a>  .<span class="bu">filter</span>([<span class="st">'Temperatura'</span>])</span>
+<span id="cb14-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="intervalo-de-confianza" class="slide level2">
+<h2>Intervalo de confianza</h2>
+<p><br><br></p>
+<p>Ahora, construímos el intervalo de confianza en dos pasos.</p>
+<p>Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función <code>ttest_ind()</code> de <strong>scipy.stats</strong>.</p>
+<div id="c169c9cf" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>prueba_hip <span class="op">=</span> ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>El parámetro <code>equal_var</code> ene sta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.</p>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p><br><br></p>
+<p>Segundo, aplicamos la función <code>.confidence_interval()</code> al objeto anterior (<code>prueba_hip</code>) para obtener el intervalo de confianza.</p>
+<div id="014d4f1a" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>ci <span class="op">=</span> prueba_hip.confidence_interval(confidence_level <span class="op">=</span> <span class="fl">0.95</span>)</span>
+<span id="cb16-2"><a></a>ci</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>ConfidenceInterval(low=array([-3.12936848]), high=array([11.79603514]))</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>El intervalo es <span class="math inline">\([-3.12, 11.79]\)</span> o <span class="math inline">\(-3.12 \leq \mu_2 - \mu_1  \leq 11.79\)</span>.</p>
 </section>
 <section id="no-asumas-que-las-varianzas-son-iguales" class="slide level2">
 <h2>No asumas que las varianzas son iguales…</h2>
-<p><br><br></p>
+<p><br></p>
 <ul>
 <li><p>El supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.</p></li>
 <li><p>El método puede resultar poco fiable si se utiliza cuando las varianzas teóricas no son iguales.</p></li>
 <li><p>Como normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales.</p></li>
 </ul>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <p><br><br></p>
 <ul>
@@ -657,7 +801,6 @@ Alan R. Vazquez
 </section>
 <section id="preguntas-de-práctica-para-examen" class="slide level2">
 <h2>Preguntas de práctica para examen</h2>
-<p><br></p>
 <p>La resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):</p>
 <ul>
 <li><p><strong>R</strong>: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.</p></li>

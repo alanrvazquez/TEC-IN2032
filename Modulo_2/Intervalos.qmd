@@ -449,19 +449,119 @@ donde el número de grados de libertad viene dado por el valor $\nu = \frac{\lef
 
 ## En Python
 
+Antes de empezar, carguemos los datos que están en el archivo "Tubos.xlsx"
+
 ```{python}
+#| echo: true
+#| output: true
 
-# Perform t-test (use equal_var=False for Welch's t-test)
-#res = stats.ttest_ind(group1, group2, equal_var=False)
-
-# Get 95% confidence interval
-#ci = res.confidence_interval(confidence_level=0.95)
-#print(f"95% CI: ({ci.low:.2f}, {ci.high:.2f})")
+tube_data = pd.read_excel("Tubos.xlsx")
+tube_data.head()
 ```
+
+## Cuidado!
+
+La variable `Tubos` es [**categorica**]{style="color: red"}! Entonces, debemos de informar a Python sobre esto usando la función `pd.Categorical()`.
+
+```{python}
+#| echo: true
+#| output: true
+
+tube_data['Tipo'] = pd.Categorical(tube_data['Tipo'])
+```
+
+Veamos el resultado:
+
+```{python}
+#| echo: true
+#| output: true
+
+tube_data.info()
+```
+
+## Visualización
+
+Podemos visualizar los datos de los dos grupos definitos por los tubos del tipo 1 y 2 usando gráficas de cajas lado a lado.
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+#| code-fold: true
+
+plt.figure(figsize=(7,4)) # Create space for the figure.
+sns.boxplot(data = tube_data, y = 'Temperatura', x = 'Tipo') 
+plt.ylabel("Temperatura") 
+plt.xlabel("Tipo de tubo") 
+plt.show() # Show the plot.
+```
+
+## Configuración
+
+Un problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.
+
+Sin embargo, podemos crear las dos columnas con nuestras funciones de **pandas**.
+
+```{python}
+#| echo: true
+#| output: true
+
+Temp_Tubo1 = (tube_data
+  .query("Tipo == 1")
+  .filter(['Temperatura'])
+)
+```
+
+```{python}
+#| echo: true
+#| output: true
+
+Temp_Tubo2 = (tube_data
+  .query("Tipo == 2")
+  .filter(['Temperatura'])
+)
+```
+
+
+## Intervalo de confianza
+
+</br></br>
+
+Ahora, construímos el intervalo de confianza en dos pasos.  
+
+Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función `ttest_ind()` de **scipy.stats**. 
+
+```{python}
+#| echo: true
+#| output: true
+
+prueba_hip = ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var = False)
+```
+
+El parámetro `equal_var` ene sta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.
+
+## 
+
+</br></br>
+
+Segundo, aplicamos la función `.confidence_interval()` al objeto anterior (`prueba_hip`) para obtener el intervalo de confianza.
+
+```{python}
+#| echo: true
+#| output: true
+
+ci = prueba_hip.confidence_interval(confidence_level = 0.95)
+ci
+```
+
+</br>
+
+El intervalo es $[-3.12, 11.79]$ o $-3.12 \leq \mu_2 - \mu_1  \leq 11.79$.
+
 
 ## No asumas que las varianzas son iguales...
 
-</br></br>
+</br>
 
 - El supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.
 
@@ -480,8 +580,6 @@ donde el número de grados de libertad viene dado por el valor $\nu = \frac{\lef
 - **Solución**: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales.
 
 ## Preguntas de práctica para examen
-
-</br>
 
 La resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):
 

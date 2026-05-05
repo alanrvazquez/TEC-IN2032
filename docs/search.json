@@ -1659,7 +1659,7 @@
     "href": "Modulo_2/Intervalos.slides.html#en-python",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "En Python",
-    "text": "En Python"
+    "text": "En Python\nAntes de empezar, carguemos los datos que están en el archivo “Tubos.xlsx”\n\ntube_data = pd.read_excel(\"Tubos.xlsx\")\ntube_data.head()\n\n\n\n\n\n\n\n\nTipo\nTemperatura\n\n\n\n\n0\n1\n206\n\n\n1\n1\n188\n\n\n2\n1\n205\n\n\n3\n1\n187\n\n\n4\n1\n194"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#no-asumas-que-las-varianzas-son-iguales",
@@ -1680,7 +1680,7 @@
     "href": "Modulo_2/Intervalos.slides.html#preguntas-de-práctica-para-examen",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "Preguntas de práctica para examen",
-    "text": "Preguntas de práctica para examen\n\nLa resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):\n\nR: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.\nB: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.\n\nEncuentra un intervalo de confianza del 98% para la diferencia entre las resistencias medias a la rotura de los ejes de palos de hockey fabricados con los dos materiales."
+    "text": "Preguntas de práctica para examen\nLa resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):\n\nR: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.\nB: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.\n\nEncuentra un intervalo de confianza del 98% para la diferencia entre las resistencias medias a la rotura de los ejes de palos de hockey fabricados con los dos materiales."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#agenda",
@@ -2189,6 +2189,41 @@
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-9",
     "href": "Modulo_2/Intervalos.slides.html#section-9",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([-3.12936848]), high=array([11.79603514]))\n\n\n\nEl intervalo es \\([-3.12, 11.79]\\) o \\(-3.12 \\leq \\mu_2 - \\mu_1  \\leq 11.79\\)."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#cuidado",
+    "href": "Modulo_2/Intervalos.slides.html#cuidado",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Cuidado!",
+    "text": "Cuidado!\nLa variable Tubos es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\ntube_data['Tipo'] = pd.Categorical(tube_data['Tipo'])\n\nVeamos el resultado:\n\ntube_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 30 entries, 0 to 29\nData columns (total 2 columns):\n #   Column       Non-Null Count  Dtype   \n---  ------       --------------  -----   \n 0   Tipo         30 non-null     category\n 1   Temperatura  30 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 522.0 bytes"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#visualización",
+    "href": "Modulo_2/Intervalos.slides.html#visualización",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Visualización",
+    "text": "Visualización\nPodemos visualizar los datos de los dos grupos definitos por los tubos del tipo 1 y 2 usando gráficas de cajas lado a lado.\n\n\nCode\nplt.figure(figsize=(7,4)) # Create space for the figure.\nsns.boxplot(data = tube_data, y = 'Temperatura', x = 'Tipo') \nplt.ylabel(\"Temperatura\") \nplt.xlabel(\"Tipo de tubo\") \nplt.show() # Show the plot."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#configuración-1",
+    "href": "Modulo_2/Intervalos.slides.html#configuración-1",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Configuración",
+    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nTemp_Tubo1 = (tube_data\n  .query(\"Tipo == 1\")\n  .filter(['Temperatura'])\n)\n\n\nTemp_Tubo2 = (tube_data\n  .query(\"Tipo == 2\")\n  .filter(['Temperatura'])\n)"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
+    "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Intervalo de confianza",
+    "text": "Intervalo de confianza\n\nAhora, construímos el intervalo de confianza en dos pasos.\nPrimero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var = False)\n\nEl parámetro equal_var ene sta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-10",
+    "href": "Modulo_2/Intervalos.slides.html#section-10",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
     "text": "Cuando las varianzas de la muestra son casi iguales, es tentador suponer que las varianzas de la población también lo son.\nSin embargo, con tamaños de muestra pequeños, las varianzas de la muestra pueden no aproximarse bien a las varianzas teóricas de la distribución.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
