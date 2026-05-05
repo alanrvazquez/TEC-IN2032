@@ -1813,21 +1813,21 @@
     "href": "Modulo_1/Discretas.slides.html#variables-aleatorias-discretas",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Variables Aleatorias Discretas",
-    "text": "Variables Aleatorias Discretas\n\nUna variable aleatoria es discreta si sólo puede asumir un número finito de valores distintos.\nPor ejemplo,\n\nEl número de bacterias por unidad de área.\nNúmero de piezas defectuosas en un envío de 100 piezas.\nEl número de personas que están de acuerdo en una encuesta."
+    "text": "Variables Aleatorias Discretas\n\nUna variable aleatoria es discreta si sólo puede asumir un número finito de valores distintos.\n\nPor ejemplo,\n\nEl número de bacterias por unidad de área.\nNúmero de piezas defectuosas en un envío de 100 piezas.\nEl número de personas que están de acuerdo en una encuesta."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#notación",
     "href": "Modulo_1/Discretas.slides.html#notación",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Notación",
-    "text": "Notación\n\nEn lo que sigue, usaremos una letra mayúscula, como \\(Y\\), para indicar una variable aleatoria.\nUsaremos letras minúsculas, como \\(y\\), para indicar un valor particular de la variable aleatoria.\nLas expresiones \\(P(Y=y)\\) y \\(p(y)\\) denotan la probabilidad de que \\(Y\\) tome el valor \\(y\\)."
+    "text": "Notación\n\nEn lo que sigue, usaremos una letra mayúscula, como \\(Y\\), para indicar una variable aleatoria.\n\nUsaremos letras minúsculas, como \\(y\\), para indicar un valor particular de la variable aleatoria.\n\nLas expresiones \\(P(Y=y)\\) y \\(p(y)\\) denotan la probabilidad de que \\(Y\\) tome el valor \\(y\\)."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#función-de-probabilidad",
     "href": "Modulo_1/Discretas.slides.html#función-de-probabilidad",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Función de probabilidad",
-    "text": "Función de probabilidad\n\nLa descripción de los posibles valores de \\(Y\\) y las probabilidades de cada uno tiene un nombre: función de probabilidad.\nLa función de probabilidad de una variable aleatoria discreta \\(Y\\) es la función\n\\[p(y) = P(Y=y).\\]"
+    "text": "Función de probabilidad\n\nLa descripción de los posibles valores de \\(Y\\) y las probabilidades de cada uno tiene un nombre: función de probabilidad.\n\nLa función de probabilidad de una variable aleatoria discreta \\(Y\\) es la función\n\n\\[p(y) = P(Y=y).\\]"
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#section",
@@ -1848,56 +1848,56 @@
     "href": "Modulo_1/Discretas.slides.html#section-1",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "",
-    "text": "\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\nLa probabilidad de que se realicen 2 cirugías es \\(p(2) = 0.10\\) o 10%.\nLa probabilidad de que se realicen 5 cirugías es \\(p(5) = 0.50\\) o 50%.\nComo es una distribución de probabilidad, tenemos que \\(p(0) + p(1) + p(2) + p(3) + p(4) + p(5) = 1\\)."
+    "text": "\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nLa probabilidad de que se realicen 2 cirugías es \\(p(2) = 0.10\\) o 10%.\nLa probabilidad de que se realicen 5 cirugías es \\(p(5) = 0.50\\) o 50%.\nComo es una distribución de probabilidad, tenemos que \\(p(0) + p(1) + p(2) + p(3) + p(4) + p(5) = 1\\)."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#section-2",
     "href": "Modulo_1/Discretas.slides.html#section-2",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "",
-    "text": "\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n¿Cuál es la probailidad de que se realicen 6 cirugías?\n\\(p(6) = 0\\) ya que no forma parte de la distribución de probabilidad."
+    "text": "\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\n¿Cuál es la probailidad de que se realicen 6 cirugías?\n\n\\(p(6) = 0\\) ya que no forma parte de la distribución de probabilidad."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#gráfica-de-probabilidad",
     "href": "Modulo_1/Discretas.slides.html#gráfica-de-probabilidad",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Gráfica de probabilidad",
-    "text": "Gráfica de probabilidad\nMuestra las probabilidades para cada uno de los valores de una variable aleatoria."
+    "text": "Gráfica de probabilidad\nMuestra las probabilidades para cada uno de los valores de una variable aleatoria.\n\n\nCode\nvariables = {\n    \"y\": [0, 1, 2, 3, 4, 5],\n    \"p(y)\": [0.02, 0.05, 0.10, 0.15, 0.18, 0.50]\n}\ndatos = pd.DataFrame(variables)\n\n# Crear la gráfica de barras\nplt.figure(figsize=(8, 4))\nsns.barplot(x=\"y\", y=\"p(y)\", data=datos, color=\"#4682B4\")\nplt.title(\"Distribución de Probabilidad $p(y)$\")\nplt.xlabel(\"Variable Aleatoria (Y)\")\nplt.ylabel(\"Probabilidad\")\nplt.ylim(0, 0.6) \nplt.show()"
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#función-de-distribución-acumulativa",
     "href": "Modulo_1/Discretas.slides.html#función-de-distribución-acumulativa",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Función de distribución acumulativa",
-    "text": "Función de distribución acumulativa\nLa función de probabilidad especifica la probabilidad de que una variable aleatoria sea igual a un valor dado.\nLa función de distribución acumulativa especifica la probabilidad de que una variable aleatoria sea menor o igual a un valor dado.\nLa función de distribución acumulativa de la variable \\(Y\\) es la función\n\\[F(y) = P(Y \\leq y).\\] ## Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\nLa probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:\n\\[P(Y \\leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.\\]"
+    "text": "Función de distribución acumulativa\n\nLa función de distribución acumulativa especifica la probabilidad de que una variable aleatoria sea menor o igual a un valor dado.\nLa función de distribución acumulativa de la variable \\(Y\\) es la función\n\n\\[F(y) = P(Y \\leq y).\\]"
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#valor-esperado",
     "href": "Modulo_1/Discretas.slides.html#valor-esperado",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Valor esperado",
-    "text": "Valor esperado\nEl promedio teórico o valor esperado de una variable discreta \\(Y\\) es igual a la suma de todos sus valores multiplicado por su probabilidad correspondiente. Técnicamente, el valor esperado de \\(Y\\) es\n\\[E(Y) = \\sum_{y} y p(y),\\]\ndonde la suma es sobre todos los posibles valores de \\(Y\\).\n\nEl valor esperado \\(E(Y)\\) es una constante."
+    "text": "Valor esperado\nEl promedio teórico o valor esperado de una variable discreta \\(Y\\) es igual a la suma de todos sus valores multiplicado por su probabilidad correspondiente. Técnicamente, el valor esperado de \\(Y\\) es\n\\[E(Y) = \\sum_{y} y p(y),\\]\ndonde la suma es sobre todos los posibles valores de \\(Y\\).\n\n\n\nEl valor esperado \\(E(Y)\\) es una constante."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.",
     "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Ejemplo 1 (cont.)",
-    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\nEl promedio teórico o numero esperado de cirugías en un día es:\n\n\\[E(Y) = 0\\times p(0) + 1\\times p(1) + 2\\times p(2) + 3\\times p(3) + 4\\times p(4) + 5\\times p(5) = 3.92\\]"
+    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nLa probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:\n\n\\[P(Y \\leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.\\]"
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#varianza-y-desviación-estándar-teóricas",
     "href": "Modulo_1/Discretas.slides.html#varianza-y-desviación-estándar-teóricas",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Varianza y desviación estándar teóricas",
-    "text": "Varianza y desviación estándar teóricas\nLa varianza teórica de una variable aleatoria \\((Y - E(Y))^2\\) es el valor esperado de \\((Y\\), donde \\(E(Y)\\) es el valor esperado de la variable aleatoria. Tecnicamente, la varianza de \\(Y\\) es\n\\[V(Y) = E\\left[ (Y - E(Y))^2 \\right] = \\sum_{y} (y - E(Y))^2 p(y).\\]\nLa desviación estándar de \\(Y\\) es la raíz cuadrada de \\(V(Y)\\).\n\nLa varianza y desviación estándar teóricas son constantes."
+    "text": "Varianza y desviación estándar teóricas\nLa varianza teórica de una variable aleatoria \\(Y\\) es el valor esperado de \\((Y - E(Y))^2\\), donde \\(E(Y)\\) es el valor esperado de \\(Y\\). Es decir, la varianza de \\(Y\\) es\n\\[V(Y) = E\\left[ (Y - E(Y))^2 \\right] = \\sum_{y} (y - E(Y))^2 p(y).\\]\nLa desviación estándar de \\(Y\\) es la raíz cuadrada de \\(V(Y)\\).\n\n\n\nLa varianza y desviación estándar teóricas son constantes."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-1",
     "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-1",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Ejemplo 1 (cont.)",
-    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\nLa varianza del numero de cirugías en un día es:\n\n\\[V(Y) = \\sum_{y} (y - 3.92)^2 p(y) = (0 - 3.92)^2 \\times p(0) + (1 - 3.92)^2 \\times p(1) + \\cdots + (5 - 3.92)^2 \\times p(5) = 1.81\\]"
+    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nEl promedio teórico o numero esperado de cirugías en un día es:\n\n\\[E(Y) = 0\\times p(0) + 1\\times p(1) + 2\\times p(2) + 3\\times p(3) + 4\\times p(4) + 5\\times p(5) = 3.92\\]"
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#section-3",
@@ -1911,14 +1911,14 @@
     "href": "Modulo_1/Discretas.slides.html#la-distribución-de-bernoulli",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "La distribución de Bernoulli",
-    "text": "La distribución de Bernoulli\nUsamos la distribución de Bernoulli cuando tenemos un experimento que tiene dos posibles resultados. Un resultado se denomina “éxito” y el otro resultado se denomina “fracaso”.\nLa probabilidad de éxito se denota por \\(p\\). La probabilidad de fracaso es entonces \\(1-p\\).\nUn experimento de este tipo se llama experimento de Bernoulli con probabilidad de éxito \\(p\\)."
+    "text": "La distribución de Bernoulli\n\nUsamos la distribución de Bernoulli cuando tenemos un experimento que tiene dos posibles resultados. Un resultado se denomina “éxito” y el otro resultado se denomina “fracaso”.\nLa probabilidad de éxito se denota por \\(p\\). La probabilidad de fracaso es entonces \\(1-p\\).\nUn experimento de este tipo se llama experimento de Bernoulli con probabilidad de éxito \\(p\\)."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#ejemplo-2",
     "href": "Modulo_1/Discretas.slides.html#ejemplo-2",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Ejemplo 2",
-    "text": "Ejemplo 2\n\nEl experimento Bernoulli más sencillo es lanzar una moneda al aire. Los dos resultados son cara y cruz. Si definimos cara como el resultado del éxito, entonces \\(p\\) es la probabilidad de que la moneda salga cara. Para una moneda justa, \\(p = 0.5\\).\nOtro experimento Bernoulli es la selección de un componente de una población de componentes, algunos de los cuales son defectuosos. Si definimos “éxito” como un componente defectuoso, entonces \\(p\\) es la proporción de componentes defectuosos en la población."
+    "text": "Ejemplo 2\n\n\nEl experimento Bernoulli más sencillo es lanzar una moneda al aire. Los dos resultados son cara y cruz. Si definimos cara como el resultado del éxito, entonces \\(p\\) es la probabilidad de que la moneda salga cara. Para una moneda justa, \\(p = 0.5\\).\nOtro experimento Bernoulli es la selección de un componente de una población de componentes, algunos de los cuales son defectuosos. Si definimos “éxito” como un componente defectuoso, entonces \\(p\\) es la proporción de componentes defectuosos en la población."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#section-4",
@@ -1932,7 +1932,7 @@
     "href": "Modulo_1/Discretas.slides.html#notación-1",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Notación",
-    "text": "Notación\nSi la distribución de \\(Y\\) es la distribución de Bernoulli, decimos que “\\(Y\\) sigue una distribución de Bernoulli”.\nMatemáticamente, decimos \\(Y \\sim \\text{Bernoulli}(p)\\) donde el símbolo ‘\\(\\sim\\)’ se lee como ‘sigue’.\nEn esta notación, enfatizamos que la distribución de Bernoulli tiene un parámetro (constante) denotado por \\(p\\), que representa la probabilidad de éxito."
+    "text": "Notación\nSi la distribución de \\(Y\\) es la distribución de Bernoulli, decimos que “\\(Y\\) sigue una distribución de Bernoulli”.\n\nMatemáticamente, decimos \\(Y \\sim \\text{Bernoulli}(p)\\) donde el símbolo ‘\\(\\sim\\)’ se lee como ‘sigue’.\n\nEn esta notación, enfatizamos que la distribución de Bernoulli tiene un parámetro (constante) denotado por \\(p\\), que representa la probabilidad de éxito."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#media-y-varianza",
@@ -1953,14 +1953,14 @@
     "href": "Modulo_1/Discretas.slides.html#section-5",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "",
-    "text": "\\(Y\\) tiene la distribución binomial con parámetros \\(n\\) y \\(p\\), si:\n\nSe realizan un total de \\(n\\) experimentos de Bernoulli.\nLos experimentos son independientes.\nCada experimento tiene la misma probabilidad de éxito \\(p\\).\n\\(Y\\) es el número de éxitos en los \\(n\\) experimentos.\n\nEn este caso, \\(Y\\sim\\text{Bin}(n,p)\\) donde \\(n\\) y \\(p\\) son los parámetros (constantes) de la distribución."
+    "text": "\\(Y\\) tiene la distribución binomial con parámetros \\(n\\) y \\(p\\), si:\n\nSe realizan un total de \\(n\\) experimentos de Bernoulli.\nLos experimentos son independientes.\nCada experimento tiene la misma probabilidad de éxito \\(p\\).\n\\(Y\\) es el número de éxitos en los \\(n\\) experimentos.\n\n\nEn este caso, \\(Y\\sim\\text{Bin}(n,p)\\) donde \\(n\\) y \\(p\\) son los parámetros (constantes) de la distribución."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#la-distribución-binomial",
     "href": "Modulo_1/Discretas.slides.html#la-distribución-binomial",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "La distribución binomial",
-    "text": "La distribución binomial\n\nSi \\(Y\\sim\\text{Bin}(n,p)\\), la función de probabilidad \\(Y\\) es\n\\(P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y},\\)\ndonde \\(y = 0, 1, \\ldots, n\\) y \\(0 \\leq p \\leq 1\\)."
+    "text": "La distribución binomial\nSi \\(Y\\sim\\text{Bin}(n,p)\\), la función de probabilidad \\(Y\\) es\n\\[P(Y = y) = {n \\choose y}p^y (1 -p)^{n -y},\\]\ndonde \\(y = 0, 1, \\ldots, n\\) y \\(0 \\leq p \\leq 1\\). Además,\n\n\\(p^y\\): Probabilidad de \\(y\\) éxitos.\n\\({n \\choose y}\\): Numero de posibles combinaciones de \\(y\\) exitos en \\(n\\) experimentos Bernoulli.\n\\((1 -p)^{n -y}\\): Probabilidad de que los otros \\(n-y\\) experimentos sean fracasos."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#elementos",
@@ -2003,5 +2003,19 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#carguemos-las-librerías",
+    "href": "Modulo_1/Discretas.slides.html#carguemos-las-librerías",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Carguemos las librerías",
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy."
+  },
+  {
+    "objectID": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-2",
+    "href": "Modulo_1/Discretas.slides.html#ejemplo-1-cont.-2",
+    "title": "Distribuciones Discretas de Probabilidad",
+    "section": "Ejemplo 1 (cont.)",
+    "text": "Ejemplo 1 (cont.)\n\n\n\n\n\\(Y = y\\)\n0\n1\n2\n3\n4\n5\n\n\n\n\n\\(p(y)\\)\n0.02\n0.05\n0.10\n0.15\n0.18\n0.50\n\n\n\n\nLa varianza del numero de cirugías en un día es:\n\n\\[V(Y) = \\sum_{y} (y - 3.92)^2 p(y) = (0 - 3.92)^2 \\times p(0) + (1 - 3.92)^2 \\times p(1) + \\cdots + (5 - 3.92)^2 \\times p(5) = 1.81\\]"
   }
 ]

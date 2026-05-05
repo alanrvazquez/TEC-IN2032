@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="../style.css">
@@ -156,6 +222,11 @@ Alan R. Vazquez
 <li><p>Distribución Binomial</p></li>
 </ul>
 </section>
+<section id="carguemos-las-librerías" class="slide level2">
+<h2>Carguemos las librerías</h2>
+<p><br><br><br></p>
+<p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
+</section>
 <section>
 <section id="introducción" class="title-slide slide level1 center">
 <h1>Introducción</h1>
@@ -165,26 +236,33 @@ Alan R. Vazquez
 <h2>Variables Aleatorias Discretas</h2>
 <p><br></p>
 <p>Una variable aleatoria es <span style="color: darkgreen"><strong>discreta</strong></span> si sólo puede asumir un número finito de valores distintos.</p>
+<div class="fragment">
 <p>Por ejemplo,</p>
 <ul>
-<li><p>El número de bacterias por unidad de área.</p></li>
-<li><p>Número de piezas defectuosas en un envío de 100 piezas.</p></li>
-<li><p>El número de personas que están de acuerdo en una encuesta.</p></li>
+<li class="fragment"><p>El número de bacterias por unidad de área.</p></li>
+<li class="fragment"><p>Número de piezas defectuosas en un envío de 100 piezas.</p></li>
+<li class="fragment"><p>El número de personas que están de acuerdo en una encuesta.</p></li>
 </ul>
+</div>
 </section>
 <section id="notación" class="slide level2">
 <h2>Notación</h2>
 <p><br></p>
 <p>En lo que sigue, usaremos una letra mayúscula, como <span class="math inline">\(Y\)</span>, para indicar una variable aleatoria.</p>
+<p><br></p>
 <p>Usaremos letras minúsculas, como <span class="math inline">\(y\)</span>, para indicar un valor particular de la variable aleatoria.</p>
+<p><br></p>
 <p>Las expresiones <span class="math inline">\(P(Y=y)\)</span> y <span class="math inline">\(p(y)\)</span> denotan la probabilidad de que <span class="math inline">\(Y\)</span> tome el valor <span class="math inline">\(y\)</span>.</p>
 </section>
 <section id="función-de-probabilidad" class="slide level2">
 <h2>Función de probabilidad</h2>
 <p><br></p>
 <p>La descripción de los posibles valores de <span class="math inline">\(Y\)</span> y las probabilidades de cada uno tiene un nombre: función de probabilidad.</p>
+<p><br></p>
 <p>La <span style="color: #4682B4"><strong>función de probabilidad</strong></span> de una variable aleatoria discreta <span class="math inline">\(Y\)</span> es la función</p>
+<div style="font-size: 110%;">
 <p><span class="math display">\[p(y) = P(Y=y).\]</span></p>
+</div>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -252,49 +330,13 @@ Alan R. Vazquez
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>La probabilidad de que se realicen 2 cirugías es <span class="math inline">\(p(2) = 0.10\)</span> o 10%.</p>
 <p>La probabilidad de que se realicen 5 cirugías es <span class="math inline">\(p(5) = 0.50\)</span> o 50%.</p>
 <p>Como es una distribución de probabilidad, tenemos que <span class="math inline">\(p(0) + p(1) + p(2) + p(3) + p(4) + p(5) = 1\)</span>.</p>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><span class="math inline">\(Y = y\)</span></th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(p(y)\)</span></td>
-<td>0.02</td>
-<td>0.05</td>
-<td>0.10</td>
-<td>0.15</td>
-<td>0.18</td>
-<td>0.50</td>
-</tr>
-</tbody>
-</table>
-<p>¿Cuál es la probailidad de que se realicen 6 cirugías?</p>
-<p><span class="math inline">\(p(6) = 0\)</span> ya que no forma parte de la distribución de probabilidad.</p>
-</section>
-<section id="gráfica-de-probabilidad" class="slide level2">
-<h2>Gráfica de probabilidad</h2>
-<p>Muestra las probabilidades para cada uno de los valores de una variable aleatoria.</p>
-</section>
-<section id="función-de-distribución-acumulativa" class="slide level2">
-<h2>Función de distribución acumulativa</h2>
-<p>La función de probabilidad especifica la probabilidad de que una variable aleatoria sea igual a un valor dado.</p>
-<p>La <span style="color: purple"><strong>función de distribución acumulativa</strong></span> especifica la probabilidad de que una variable aleatoria sea menor o igual a un valor dado.</p>
-<p>La función de distribución acumulativa de la variable <span class="math inline">\(Y\)</span> es la función</p>
-<p><span class="math display">\[F(y) = P(Y \leq y).\]</span> ## Ejemplo 1 (cont.)</p>
 <p><br></p>
 <table class="caption-top">
 <thead>
@@ -320,16 +362,49 @@ Alan R. Vazquez
 </tr>
 </tbody>
 </table>
-<p>La probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:</p>
-<p><span class="math display">\[P(Y \leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.\]</span></p>
+<p><br></p>
+<p>¿Cuál es la probailidad de que se realicen 6 cirugías?</p>
+<div class="fragment">
+<p><span class="math inline">\(p(6) = 0\)</span> ya que no forma parte de la distribución de probabilidad.</p>
+</div>
 </section>
-<section id="valor-esperado" class="slide level2">
-<h2>Valor esperado</h2>
-<p>El promedio teórico o valor esperado de una variable discreta <span class="math inline">\(Y\)</span> es igual a la suma de todos sus valores multiplicado por su probabilidad correspondiente. Técnicamente, el valor esperado de <span class="math inline">\(Y\)</span> es</p>
-<p><span class="math display">\[E(Y) = \sum_{y} y p(y),\]</span></p>
-<p>donde la suma es sobre todos los posibles valores de <span class="math inline">\(Y\)</span>.</p>
-<div style="text-align: center;">
-<p><span style="color: #4682B4;"><em>El valor esperado</em> <span class="math inline">\(E(Y)\)</span> es una constante.</span></p>
+<section id="gráfica-de-probabilidad" class="slide level2">
+<h2>Gráfica de probabilidad</h2>
+<p>Muestra las probabilidades para cada uno de los valores de una variable aleatoria.</p>
+<div id="c42b71d8" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>variables <span class="op">=</span> {</span>
+<span id="cb1-2"><a></a>    <span class="st">"y"</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
+<span id="cb1-3"><a></a>    <span class="st">"p(y)"</span>: [<span class="fl">0.02</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.15</span>, <span class="fl">0.18</span>, <span class="fl">0.50</span>]</span>
+<span id="cb1-4"><a></a>}</span>
+<span id="cb1-5"><a></a>datos <span class="op">=</span> pd.DataFrame(variables)</span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co"># Crear la gráfica de barras</span></span>
+<span id="cb1-8"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb1-9"><a></a>sns.barplot(x<span class="op">=</span><span class="st">"y"</span>, y<span class="op">=</span><span class="st">"p(y)"</span>, data<span class="op">=</span>datos, color<span class="op">=</span><span class="st">"#4682B4"</span>)</span>
+<span id="cb1-10"><a></a>plt.title(<span class="st">"Distribución de Probabilidad $p(y)$"</span>)</span>
+<span id="cb1-11"><a></a>plt.xlabel(<span class="st">"Variable Aleatoria (Y)"</span>)</span>
+<span id="cb1-12"><a></a>plt.ylabel(<span class="st">"Probabilidad"</span>)</span>
+<span id="cb1-13"><a></a>plt.ylim(<span class="dv">0</span>, <span class="fl">0.6</span>) </span>
+<span id="cb1-14"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Discretas_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center" width="663" height="378"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="función-de-distribución-acumulativa" class="slide level2">
+<h2>Función de distribución acumulativa</h2>
+<p><br><br></p>
+<p>La <span style="color: purple"><strong>función de distribución acumulativa</strong></span> especifica la probabilidad de que una variable aleatoria sea menor o igual a un valor dado.</p>
+<p>La función de distribución acumulativa de la variable <span class="math inline">\(Y\)</span> es la función</p>
+<div style="font-size: 110%;">
+<p><span class="math display">\[F(y) = P(Y \leq y).\]</span></p>
 </div>
 </section>
 <section id="ejemplo-1-cont." class="slide level2">
@@ -359,18 +434,22 @@ Alan R. Vazquez
 </tr>
 </tbody>
 </table>
-<p>El promedio teórico o numero esperado de cirugías en un día es:</p>
-<div style="font-size: 70%;">
-<p><span class="math display">\[E(Y) = 0\times p(0) + 1\times p(1) + 2\times p(2) + 3\times p(3) + 4\times p(4) + 5\times p(5) = 3.92\]</span></p>
+<p><br></p>
+<p>La probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:</p>
+<div style="font-size: 95%;">
+<p><span class="math display">\[P(Y \leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.\]</span></p>
 </div>
 </section>
-<section id="varianza-y-desviación-estándar-teóricas" class="slide level2">
-<h2>Varianza y desviación estándar teóricas</h2>
-<p>La <span style="color: darkgreen;"><strong>varianza teórica</strong></span> de una variable aleatoria <span class="math inline">\((Y - E(Y))^2\)</span> es el valor esperado de <span class="math inline">\((Y\)</span>, donde <span class="math inline">\(E(Y)\)</span> es el valor esperado de la variable aleatoria. Tecnicamente, la varianza de <span class="math inline">\(Y\)</span> es</p>
-<p><span class="math display">\[V(Y) = E\left[ (Y - E(Y))^2 \right] = \sum_{y} (y - E(Y))^2 p(y).\]</span></p>
-<p>La <span style="color: darkgreen;"><strong>desviación estándar</strong></span> de <span class="math inline">\(Y\)</span> es la raíz cuadrada de <span class="math inline">\(V(Y)\)</span>.</p>
+<section id="valor-esperado" class="slide level2">
+<h2>Valor esperado</h2>
+<p>El promedio teórico o valor esperado de una variable discreta <span class="math inline">\(Y\)</span> es igual a la suma de todos sus valores multiplicado por su probabilidad correspondiente. Técnicamente, el valor esperado de <span class="math inline">\(Y\)</span> es</p>
+<p><span class="math display">\[E(Y) = \sum_{y} y p(y),\]</span></p>
+<p>donde la suma es sobre todos los posibles valores de <span class="math inline">\(Y\)</span>.</p>
+<div class="fragment">
+<p><br></p>
 <div style="text-align: center;">
-<p><span style="color: green;"><em>La varianza y desviación estándar teóricas son constantes.</em></span></p>
+<p><span style="color: #4682B4;"><em>El valor esperado</em> <span class="math inline">\(E(Y)\)</span> es una constante.</span></p>
+</div>
 </div>
 </section>
 <section id="ejemplo-1-cont.-1" class="slide level2">
@@ -400,18 +479,66 @@ Alan R. Vazquez
 </tr>
 </tbody>
 </table>
+<p><br></p>
+<p>El promedio teórico o numero esperado de cirugías en un día es:</p>
+<div style="font-size: 70%;">
+<p><span class="math display">\[E(Y) = 0\times p(0) + 1\times p(1) + 2\times p(2) + 3\times p(3) + 4\times p(4) + 5\times p(5) = 3.92\]</span></p>
+</div>
+</section>
+<section id="varianza-y-desviación-estándar-teóricas" class="slide level2">
+<h2>Varianza y desviación estándar teóricas</h2>
+<p>La <span style="color: darkgreen;"><strong>varianza teórica</strong></span> de una variable aleatoria <span class="math inline">\(Y\)</span> es el valor esperado de <span class="math inline">\((Y - E(Y))^2\)</span>, donde <span class="math inline">\(E(Y)\)</span> es el valor esperado de <span class="math inline">\(Y\)</span>. Es decir, la varianza de <span class="math inline">\(Y\)</span> es</p>
+<p><span class="math display">\[V(Y) = E\left[ (Y - E(Y))^2 \right] = \sum_{y} (y - E(Y))^2 p(y).\]</span></p>
+<p>La <span style="color: darkgreen;"><strong>desviación estándar</strong></span> de <span class="math inline">\(Y\)</span> es la raíz cuadrada de <span class="math inline">\(V(Y)\)</span>.</p>
+<div class="fragment">
+<p><br></p>
+<div style="text-align: center;">
+<p><span style="color: green;"><em>La varianza y desviación estándar teóricas son constantes.</em></span></p>
+</div>
+</div>
+</section>
+<section id="ejemplo-1-cont.-2" class="slide level2">
+<h2>Ejemplo 1 (cont.)</h2>
+<p><br></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Y = y\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p(y)\)</span></td>
+<td>0.02</td>
+<td>0.05</td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.18</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <p>La varianza del numero de cirugías en un día es:</p>
-<div style="font-size: 50%;">
+<div style="font-size: 55%;">
 <p><span class="math display">\[V(Y) = \sum_{y} (y - 3.92)^2 p(y) = (0 - 3.92)^2 \times p(0) + (1 - 3.92)^2 \times p(1) + \cdots + (5 - 3.92)^2 \times p(5) = 1.81\]</span></p>
 </div>
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p><br><br></p>
 <p>La varianza es una medida de dispersión de los valores de <span class="math inline">\(Y\)</span> alrededor de <span class="math inline">\(E(Y)\)</span> donde se pondera la probabilidad de este valor.</p>
 </div><div class="column" style="width:60%;">
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/varianza.png" class="quarto-figure quarto-figure-center"></p>
@@ -426,19 +553,22 @@ Alan R. Vazquez
 </section>
 <section id="la-distribución-de-bernoulli" class="slide level2">
 <h2>La distribución de Bernoulli</h2>
+<p><br><br></p>
 <p>Usamos la distribución de Bernoulli cuando tenemos un experimento que tiene dos posibles resultados. Un resultado se denomina “éxito” y el otro resultado se denomina “fracaso”.</p>
 <p>La probabilidad de éxito se denota por <span class="math inline">\(p\)</span>. La probabilidad de fracaso es entonces <span class="math inline">\(1-p\)</span>.</p>
 <p>Un experimento de este tipo se llama <span style="color: green;">experimento de Bernoulli</span> con probabilidad de éxito <span class="math inline">\(p\)</span>.</p>
 </section>
 <section id="ejemplo-2" class="slide level2">
 <h2>Ejemplo 2</h2>
+<p><br></p>
 <ol type="1">
-<li><p>El experimento Bernoulli más sencillo es lanzar una moneda al aire. Los dos resultados son cara y cruz. Si definimos cara como el resultado del éxito, entonces <span class="math inline">\(p\)</span> es la probabilidad de que la moneda salga cara. Para una moneda justa, <span class="math inline">\(p = 0.5\)</span>.</p></li>
-<li><p>Otro experimento Bernoulli es la selección de un componente de una población de componentes, algunos de los cuales son defectuosos. Si definimos “éxito” como un componente defectuoso, entonces <span class="math inline">\(p\)</span> es la proporción de componentes defectuosos en la población.</p></li>
+<li class="fragment"><p>El experimento Bernoulli más sencillo es lanzar una moneda al aire. Los dos resultados son cara y cruz. Si definimos cara como el resultado del éxito, entonces <span class="math inline">\(p\)</span> es la probabilidad de que la moneda salga cara. Para una moneda justa, <span class="math inline">\(p = 0.5\)</span>.</p></li>
+<li class="fragment"><p>Otro experimento Bernoulli es la selección de un componente de una población de componentes, algunos de los cuales son defectuosos. Si definimos “éxito” como un componente defectuoso, entonces <span class="math inline">\(p\)</span> es la proporción de componentes defectuosos en la población.</p></li>
 </ol>
 </section>
 <section id="section-4" class="slide level2">
 <h2></h2>
+<p><br></p>
 <p>Para un experimento Bernoulli, definimos la variable <span class="math inline">\(Y\)</span> como sigue:</p>
 <p>Si el experimento resulta en “éxito”, entonces <span class="math inline">\(Y=1\)</span>. De lo contrario, <span class="math inline">\(Y=0\)</span>.</p>
 <p>Esto implica que <span class="math inline">\(Y\)</span> es una variable aleatoria discreta con función de probabilidad <span class="math inline">\(p(y)\)</span>:</p>
@@ -451,7 +581,9 @@ Alan R. Vazquez
 <section id="notación-1" class="slide level2">
 <h2>Notación</h2>
 <p>Si la distribución de <span class="math inline">\(Y\)</span> es la distribución de Bernoulli, decimos que “<span class="math inline">\(Y\)</span> sigue una distribución de Bernoulli”.</p>
+<p><br></p>
 <p>Matemáticamente, decimos <span class="math inline">\(Y \sim \text{Bernoulli}(p)\)</span> donde el símbolo ‘<span class="math inline">\(\sim\)</span>’ se lee como ‘sigue’.</p>
+<p><br></p>
 <p>En esta notación, enfatizamos que la <span style="color: purple"><strong>distribución de Bernoulli tiene un parámetro (constante)</strong> denotado por <span class="math inline">\(p\)</span>, que representa la probabilidad de éxito.</span></p>
 </section>
 <section id="media-y-varianza" class="slide level2">
@@ -472,37 +604,34 @@ Alan R. Vazquez
 <h2>Motivación</h2>
 <p>Un ejemplo de un experimento Bernoulli es tomar muestras de un solo componente de un lote y determinar si está defectuoso.</p>
 <ul>
-<li><p>En la práctica, podríamos tomar muestras de varios componentes de un lote muy grande y contar el número de defectuosos entre ellos.</p></li>
-<li><p>Esto equivale a realizar varios experimentos Bernoulli independientes y contar el número de éxitos.</p></li>
-<li><p>El número de éxitos es entonces una variable aleatoria, que se dice que tiene una <span style="color: darkgreen"><strong>distribución binomial</strong></span>.</p></li>
+<li class="fragment"><p>En la práctica, podríamos tomar muestras de varios componentes de un lote muy grande y contar el número de defectuosos entre ellos.</p></li>
+<li class="fragment"><p>Esto equivale a realizar varios experimentos Bernoulli independientes y contar el número de éxitos.</p></li>
+<li class="fragment"><p>El número de éxitos es entonces una variable aleatoria, que se dice que tiene una <span style="color: darkgreen"><strong>distribución binomial</strong></span>.</p></li>
 </ul>
 </section>
 <section id="section-5" class="slide level2">
 <h2></h2>
+<p><br><br></p>
 <p><span class="math inline">\(Y\)</span> tiene la distribución binomial con <span style="color: purple"><strong>parámetros</strong> <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span></span>, si:</p>
 <ol type="1">
-<li><p>Se realizan un total de <span class="math inline">\(n\)</span> experimentos de Bernoulli.</p></li>
-<li><p>Los experimentos son independientes.</p></li>
-<li><p>Cada experimento tiene la misma probabilidad de éxito <span class="math inline">\(p\)</span>.</p></li>
-<li><p><span class="math inline">\(Y\)</span> es el número de éxitos en los <span class="math inline">\(n\)</span> experimentos.</p></li>
+<li class="fragment"><p>Se realizan un total de <span class="math inline">\(n\)</span> experimentos de Bernoulli.</p></li>
+<li class="fragment"><p>Los experimentos son independientes.</p></li>
+<li class="fragment"><p>Cada experimento tiene la misma probabilidad de éxito <span class="math inline">\(p\)</span>.</p></li>
+<li class="fragment"><p><span class="math inline">\(Y\)</span> es el número de éxitos en los <span class="math inline">\(n\)</span> experimentos.</p></li>
 </ol>
+<div class="fragment">
 <p>En este caso, <span class="math inline">\(Y\sim\text{Bin}(n,p)\)</span> donde <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> son los parámetros (constantes) de la distribución.</p>
+</div>
 </section>
 <section id="la-distribución-binomial" class="slide level2">
 <h2>La distribución binomial</h2>
-<p><br><br></p>
 <p>Si <span class="math inline">\(Y\sim\text{Bin}(n,p)\)</span>, la función de probabilidad <span class="math inline">\(Y\)</span> es</p>
-<p><span class="math inline">\(P(Y = y) = {n \choose y}p^y (1 -p)^{n -y},\)</span></p>
-<p>donde <span class="math inline">\(y = 0, 1, \ldots, n\)</span> y <span class="math inline">\(0 \leq p \leq 1\)</span>.</p>
-</section>
-<section id="elementos" class="slide level2">
-<h2>Elementos</h2>
-<p><br><br></p>
-<p><span class="math inline">\(P(Y = y) = {n \choose y}p^y (1 -p)^{n -y},\)</span></p>
+<p><span class="math display">\[P(Y = y) = {n \choose y}p^y (1 -p)^{n -y},\]</span></p>
+<p>donde <span class="math inline">\(y = 0, 1, \ldots, n\)</span> y <span class="math inline">\(0 \leq p \leq 1\)</span>. Además,</p>
 <ul>
-<li><p><span class="math inline">\(p^y\)</span>: Probabilidad de <span class="math inline">\(y\)</span> éxitos.</p></li>
-<li><p><span class="math inline">\({n \choose y}\)</span>: Numero de posibles combinaciones de <span class="math inline">\(y\)</span> exitos en <span class="math inline">\(n\)</span> experimentos Bernoulli.</p></li>
-<li><p><span class="math inline">\((1 -p)^{n -y}\)</span>: Probabilidad de que los otros <span class="math inline">\(n-y\)</span> experimentos sean fracasos.</p></li>
+<li class="fragment"><p><span class="math inline">\(p^y\)</span>: Probabilidad de <span class="math inline">\(y\)</span> éxitos.</p></li>
+<li class="fragment"><p><span class="math inline">\({n \choose y}\)</span>: Numero de posibles combinaciones de <span class="math inline">\(y\)</span> exitos en <span class="math inline">\(n\)</span> experimentos Bernoulli.</p></li>
+<li class="fragment"><p><span class="math inline">\((1 -p)^{n -y}\)</span>: Probabilidad de que los otros <span class="math inline">\(n-y\)</span> experimentos sean fracasos.</p></li>
 </ul>
 </section>
 <section id="section-6" class="slide level2">
@@ -518,11 +647,13 @@ Alan R. Vazquez
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
+<div style="font-size: 95%;">
 <ul>
 <li><p>Debemos de pensar en <span class="math inline">\(\text{Bin}(n,p)\)</span> como una <span style="color: #5E7D6A"><em>familia</em></span> de distribuciones.</p></li>
 <li><p>Cada miembro de esa familia tiene una combinación de valores para los parámetros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span>.</p></li>
 <li><p>Cada miembro tiene una función de probabilidad diferente.</p></li>
 </ul>
+</div>
 </div><div class="column" style="width:60%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
@@ -539,11 +670,11 @@ Alan R. Vazquez
 <h2></h2>
 <p>Una variable aleatoria binomial se puede expresar como <span style="color: red">una suma de variables aleatorias de Bernoulli</span>:</p>
 <ul>
-<li><p>Supongamos que se realizan <span class="math inline">\(n\)</span> experimentos independientes de Bernoulli.</p></li>
-<li><p>Cada experimento tiene probabilidad de éxito <span class="math inline">\(p\)</span>.</p></li>
-<li><p>Considera las variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> donde <span class="math inline">\(Y_i = 1\)</span> si el resultado del <em>i</em>-ésimo experimento es éxito, y <span class="math inline">\(Y_i = 0\)</span> de otro modo. Es decir <span class="math inline">\(Y_i \sim \text{Bernoulli}(p)\)</span>.</p></li>
-<li><p>Ahora, considera la suma del número de éxitos entre los <span class="math inline">\(n\)</span> experimentos <span class="math inline">\(X = Y_1 + \cdots + Y_n\)</span>.</p></li>
-<li><p>Entonces, <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>.</p></li>
+<li class="fragment"><p>Supongamos que se realizan <span class="math inline">\(n\)</span> experimentos independientes de Bernoulli.</p></li>
+<li class="fragment"><p>Cada experimento tiene probabilidad de éxito <span class="math inline">\(p\)</span>.</p></li>
+<li class="fragment"><p>Considera las variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> donde <span class="math inline">\(Y_i = 1\)</span> si el resultado del <em>i</em>-ésimo experimento es éxito, y <span class="math inline">\(Y_i = 0\)</span> de otro modo. Es decir <span class="math inline">\(Y_i \sim \text{Bernoulli}(p)\)</span>.</p></li>
+<li class="fragment"><p>Ahora, considera la suma del número de éxitos entre los <span class="math inline">\(n\)</span> experimentos <span class="math inline">\(X = Y_1 + \cdots + Y_n\)</span>.</p></li>
+<li class="fragment"><p>Entonces, <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>.</p></li>
 </ul>
 </section>
 <section id="pregunta-de-práctica-para-examen" class="slide level2">

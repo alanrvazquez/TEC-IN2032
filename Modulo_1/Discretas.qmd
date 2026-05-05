@@ -28,6 +28,19 @@ jupyter: python3
 
 - Distribución Binomial
 
+## Carguemos las librerías
+
+</br></br></br>
+
+Antes de empezar, carguemos las librerías que usaremos hoy.
+
+```{python}
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
 # Introducción
 
 ## Variables Aleatorias Discretas
@@ -36,13 +49,17 @@ jupyter: python3
 
 Una variable aleatoria es [**discreta**]{style="color: darkgreen"} si sólo puede asumir un número finito de valores distintos.
 
+. . .  
+
 Por ejemplo,
 
+::: incremental
 - El número de bacterias por unidad de área.
 
 - Número de piezas defectuosas en un envío de 100 piezas.
 
 - El número de personas que están de acuerdo en una encuesta.
+:::
 
 ## Notación
 
@@ -50,7 +67,11 @@ Por ejemplo,
 
 En lo que sigue, usaremos una letra mayúscula, como $Y$, para indicar una variable aleatoria.
 
+</br>
+
 Usaremos letras minúsculas, como $y$, para indicar un valor particular de la variable aleatoria.
+
+</br>
 
 Las expresiones $P(Y=y)$ y $p(y)$ denotan la probabilidad de que $Y$ tome el valor $y$.
 
@@ -60,9 +81,13 @@ Las expresiones $P(Y=y)$ y $p(y)$ denotan la probabilidad de que $Y$ tome el val
 
 La descripción de los posibles valores de $Y$ y las probabilidades de cada uno tiene un nombre: función de probabilidad.
 
+</br>
+
 La [**función de probabilidad**]{style="color: #4682B4"} de una variable aleatoria discreta $Y$ es la función
 
+::: {style="font-size: 110%;"}
 $$p(y) = P(Y=y).$$
+:::
 
 ## 
 
@@ -93,6 +118,8 @@ La siguiente tabla muestra la distribución de probabilidad de la variable aleat
 |---------|------|------|------|------|------|------|
 | $p(y)$  | 0.02 | 0.05 | 0.10 | 0.15 | 0.18 | 0.50 |
 
+</br>
+
 La probabilidad de que se realicen 2 cirugías es $p(2) = 0.10$ o 10%.
 
 La probabilidad de que se realicen 5 cirugías es $p(5) = 0.50$ o 50%.
@@ -101,11 +128,17 @@ Como es una distribución de probabilidad, tenemos que $p(0) + p(1) + p(2) + p(3
 
 ## 
 
+</br>
+
 | $Y = y$ | 0    | 1    | 2    | 3    | 4    | 5    |
 |---------|------|------|------|------|------|------|
 | $p(y)$  | 0.02 | 0.05 | 0.10 | 0.15 | 0.18 | 0.50 |
 
+</br>
+
 ¿Cuál es la probailidad de que se realicen 6 cirugías?
+
+. . . 
 
 $p(6) = 0$ ya que no forma parte de la distribución de probabilidad.
 
@@ -113,15 +146,41 @@ $p(6) = 0$ ya que no forma parte de la distribución de probabilidad.
 
 Muestra las probabilidades para cada uno de los valores de una variable aleatoria.
 
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+#| code-fold: true
+
+variables = {
+    "y": [0, 1, 2, 3, 4, 5],
+    "p(y)": [0.02, 0.05, 0.10, 0.15, 0.18, 0.50]
+}
+datos = pd.DataFrame(variables)
+
+# Crear la gráfica de barras
+plt.figure(figsize=(8, 4))
+sns.barplot(x="y", y="p(y)", data=datos, color="#4682B4")
+plt.title("Distribución de Probabilidad $p(y)$")
+plt.xlabel("Variable Aleatoria (Y)")
+plt.ylabel("Probabilidad")
+plt.ylim(0, 0.6) 
+plt.show()
+```
+
 ## Función de distribución acumulativa
 
-La función de probabilidad especifica la probabilidad de que una variable aleatoria sea igual a un valor dado.
+</br></br>
 
 La [**función de distribución acumulativa**]{style="color: purple"} especifica la probabilidad de que una variable aleatoria sea menor o igual a un valor dado.
 
 La función de distribución acumulativa de la variable $Y$ es la función
 
-$$F(y) = P(Y \leq y).$$ \## Ejemplo 1 (cont.)
+::: {style="font-size: 110%;"}
+$$F(y) = P(Y \leq y).$$ 
+:::
+
+## Ejemplo 1 (cont.)
 
 </br>
 
@@ -129,9 +188,13 @@ $$F(y) = P(Y \leq y).$$ \## Ejemplo 1 (cont.)
 |---------|------|------|------|------|------|------|
 | $p(y)$  | 0.02 | 0.05 | 0.10 | 0.15 | 0.18 | 0.50 |
 
+</br>
+
 La probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:
 
+::: {style="font-size: 95%;"}
 $$P(Y \leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.$$
+:::
 
 ## Valor esperado
 
@@ -140,6 +203,10 @@ El promedio teórico o valor esperado de una variable discreta $Y$ es igual a la
 $$E(Y) = \sum_{y} y p(y),$$
 
 donde la suma es sobre todos los posibles valores de $Y$.
+
+. . . 
+
+</br>
 
 ::: {style="text-align: center;"}
 [*El valor esperado* $E(Y)$ es una constante.]{style="color: #4682B4;"}
@@ -153,6 +220,8 @@ donde la suma es sobre todos los posibles valores de $Y$.
 |---------|------|------|------|------|------|------|
 | $p(y)$  | 0.02 | 0.05 | 0.10 | 0.15 | 0.18 | 0.50 |
 
+</br>
+
 El promedio teórico o numero esperado de cirugías en un día es:
 
 ::: {style="font-size: 70%;"}
@@ -161,11 +230,15 @@ $$E(Y) = 0\times p(0) + 1\times p(1) + 2\times p(2) + 3\times p(3) + 4\times p(4
 
 ## Varianza y desviación estándar teóricas
 
-La [**varianza teórica**]{style="color: darkgreen;"} de una variable aleatoria $(Y - E(Y))^2$ es el valor esperado de $(Y$, donde $E(Y)$ es el valor esperado de la variable aleatoria. Tecnicamente, la varianza de $Y$ es
+La [**varianza teórica**]{style="color: darkgreen;"} de una variable aleatoria $Y$ es el valor esperado de $(Y - E(Y))^2$, donde $E(Y)$ es el valor esperado de $Y$. Es decir, la varianza de $Y$ es
 
 $$V(Y) = E\left[ (Y - E(Y))^2 \right] = \sum_{y} (y - E(Y))^2 p(y).$$
 
 La [**desviación estándar**]{style="color: darkgreen;"} de $Y$ es la raíz cuadrada de $V(Y)$.
+
+. . . 
+
+</br>
 
 ::: {style="text-align: center;"}
 [*La varianza y desviación estándar teóricas son constantes.*]{style="color: green;"}
@@ -179,13 +252,17 @@ La [**desviación estándar**]{style="color: darkgreen;"} de $Y$ es la raíz cua
 |---------|------|------|------|------|------|------|
 | $p(y)$  | 0.02 | 0.05 | 0.10 | 0.15 | 0.18 | 0.50 |
 
+</br>
+
 La varianza del numero de cirugías en un día es:
 
-::: {style="font-size: 50%;"}
+::: {style="font-size: 55%;"}
 $$V(Y) = \sum_{y} (y - 3.92)^2 p(y) = (0 - 3.92)^2 \times p(0) + (1 - 3.92)^2 \times p(1) + \cdots + (5 - 3.92)^2 \times p(5) = 1.81$$
 :::
 
 ## 
+
+</br>
 
 ::::: columns
 ::: {.column width="40%"}
@@ -195,6 +272,8 @@ La varianza es una medida de dispersión de los valores de $Y$ alrededor de $E(Y
 :::
 
 ::: {.column width="60%"}
+</br>
+
 ![](images/varianza.png){fig-align="center"}
 :::
 :::::
@@ -202,6 +281,8 @@ La varianza es una medida de dispersión de los valores de $Y$ alrededor de $E(Y
 # Distribución de Bernoulli
 
 ## La distribución de Bernoulli
+
+</br></br>
 
 Usamos la distribución de Bernoulli cuando tenemos un experimento que tiene dos posibles resultados. Un resultado se denomina “éxito” y el otro resultado se denomina “fracaso”.
 
@@ -211,11 +292,17 @@ Un experimento de este tipo se llama [experimento de Bernoulli]{style="color: gr
 
 ## Ejemplo 2
 
+</br>
+
+::: incremental
 1.  El experimento Bernoulli más sencillo es lanzar una moneda al aire. Los dos resultados son cara y cruz. Si definimos cara como el resultado del éxito, entonces $p$ es la probabilidad de que la moneda salga cara. Para una moneda justa, $p = 0.5$.
 
 2.  Otro experimento Bernoulli es la selección de un componente de una población de componentes, algunos de los cuales son defectuosos. Si definimos “éxito” como un componente defectuoso, entonces $p$ es la proporción de componentes defectuosos en la población.
+:::
 
 ## 
+
+</br>
 
 Para un experimento Bernoulli, definimos la variable $Y$ como sigue:
 
@@ -233,7 +320,11 @@ Esto implica que $Y$ es una variable aleatoria discreta con función de probabil
 
 Si la distribución de $Y$ es la distribución de Bernoulli, decimos que “$Y$ sigue una distribución de Bernoulli”.
 
+</br>
+
 Matemáticamente, decimos $Y \sim \text{Bernoulli}(p)$ donde el símbolo ‘$\sim$’ se lee como 'sigue'.
+
+</br>
 
 En esta notación, enfatizamos que la [**distribución de Bernoulli tiene un parámetro (constante)** denotado por $p$, que representa la probabilidad de éxito.]{style="color: purple"}
 
@@ -253,16 +344,21 @@ Si $Y \sim \text{Bernoulli}(p)$, entonces
 
 Un ejemplo de un experimento Bernoulli es tomar muestras de un solo componente de un lote y determinar si está defectuoso.
 
+::: incremental
 - En la práctica, podríamos tomar muestras de varios componentes de un lote muy grande y contar el número de defectuosos entre ellos.
 
 - Esto equivale a realizar varios experimentos Bernoulli independientes y contar el número de éxitos.
 
 - El número de éxitos es entonces una variable aleatoria, que se dice que tiene una [**distribución binomial**]{style="color: darkgreen"}.
+:::
 
 ## 
 
+</br></br>
+
 $Y$ tiene la distribución binomial con [**parámetros** $n$ y $p$]{style="color: purple"}, si:
 
+::: incremental
 1.  Se realizan un total de $n$ experimentos de Bernoulli.
 
 2.  Los experimentos son independientes.
@@ -270,30 +366,28 @@ $Y$ tiene la distribución binomial con [**parámetros** $n$ y $p$]{style="color
 3.  Cada experimento tiene la misma probabilidad de éxito $p$.
 
 4.  $Y$ es el número de éxitos en los $n$ experimentos.
+:::
+
+. . . 
 
 En este caso, $Y\sim\text{Bin}(n,p)$ donde $n$ y $p$ son los parámetros (constantes) de la distribución.
 
 ## La distribución binomial
 
-</br></br>
 
 Si $Y\sim\text{Bin}(n,p)$, la función de probabilidad $Y$ es
 
-$P(Y = y) = {n \choose y}p^y (1 -p)^{n -y},$
+$$P(Y = y) = {n \choose y}p^y (1 -p)^{n -y},$$
 
-donde $y = 0, 1, \ldots, n$ y $0 \leq p \leq 1$.
+donde $y = 0, 1, \ldots, n$ y $0 \leq p \leq 1$. Además,
 
-## Elementos
-
-</br></br>
-
-$P(Y = y) = {n \choose y}p^y (1 -p)^{n -y},$
-
+::: incremental
 - $p^y$: Probabilidad de $y$ éxitos.
 
 - ${n \choose y}$: Numero de posibles combinaciones de $y$ exitos en $n$ experimentos Bernoulli.
 
 - $(1 -p)^{n -y}$: Probabilidad de que los otros $n-y$ experimentos sean fracasos.
+:::
 
 ## 
 
@@ -309,11 +403,13 @@ Si $Y\sim\text{Bin}(n,p)$, tenemos que
 
 ::::: columns
 ::: {.column width="40%"}
+::: {style="font-size: 95%;"}
 - Debemos de pensar en $\text{Bin}(n,p)$ como una [*familia*]{style="color: #5E7D6A"} de distribuciones.
 
 - Cada miembro de esa familia tiene una combinación de valores para los parámetros $n$ y $p$.
 
 - Cada miembro tiene una función de probabilidad diferente.
+:::
 :::
 
 ::: {.column width="60%"}
@@ -329,6 +425,7 @@ Si $Y\sim\text{Bin}(n,p)$, tenemos que
 
 Una variable aleatoria binomial se puede expresar como [una suma de variables aleatorias de Bernoulli]{style="color: red"}:
 
+::: incremental
 - Supongamos que se realizan $n$ experimentos independientes de Bernoulli.
 
 - Cada experimento tiene probabilidad de éxito $p$.
@@ -338,6 +435,7 @@ Una variable aleatoria binomial se puede expresar como [una suma de variables al
 - Ahora, considera la suma del número de éxitos entre los $n$ experimentos $X = Y_1 + \cdots + Y_n$.
 
 - Entonces, $X \sim \text{Bin}(n,p)$.
+:::
 
 ## Pregunta de práctica para examen
 
