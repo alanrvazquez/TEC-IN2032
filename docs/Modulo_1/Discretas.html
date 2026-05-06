@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alan R. Vazquez">
+
+<title>Distribuciones Discretas de Probabilidad – IN2032 Análisis Estadístico de Datos</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-45431c2918bd31147ddb3fa7038bb99f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      IN2032 Análisis Estadístico de Datos
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">IN2032 Análisis Estadístico de Datos</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#agenda" id="toc-agenda" class="nav-link active" data-scroll-target="#agenda">Agenda</a></li>
+  <li><a href="#una-nueva-librería-scipy.stats" id="toc-una-nueva-librería-scipy.stats" class="nav-link" data-scroll-target="#una-nueva-librería-scipy.stats">Una nueva librería: <strong>scipy.stats</strong></a></li>
+  <li><a href="#carguemos-las-librerías" id="toc-carguemos-las-librerías" class="nav-link" data-scroll-target="#carguemos-las-librerías">Carguemos las librerías</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción">Introducción</a>
+  <ul class="collapse">
+  <li><a href="#variables-aleatorias-discretas" id="toc-variables-aleatorias-discretas" class="nav-link" data-scroll-target="#variables-aleatorias-discretas">Variables Aleatorias Discretas</a></li>
+  <li><a href="#notación" id="toc-notación" class="nav-link" data-scroll-target="#notación">Notación</a></li>
+  <li><a href="#función-de-probabilidad" id="toc-función-de-probabilidad" class="nav-link" data-scroll-target="#función-de-probabilidad">Función de probabilidad</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo 1</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
+  <li><a href="#gráfica-de-probabilidad" id="toc-gráfica-de-probabilidad" class="nav-link" data-scroll-target="#gráfica-de-probabilidad">Gráfica de probabilidad</a></li>
+  <li><a href="#función-de-distribución-acumulativa" id="toc-función-de-distribución-acumulativa" class="nav-link" data-scroll-target="#función-de-distribución-acumulativa">Función de distribución acumulativa</a></li>
+  <li><a href="#ejemplo-1-cont." id="toc-ejemplo-1-cont." class="nav-link" data-scroll-target="#ejemplo-1-cont.">Ejemplo 1 (cont.)</a></li>
+  <li><a href="#valor-esperado" id="toc-valor-esperado" class="nav-link" data-scroll-target="#valor-esperado">Valor esperado</a></li>
+  <li><a href="#ejemplo-1-cont.-1" id="toc-ejemplo-1-cont.-1" class="nav-link" data-scroll-target="#ejemplo-1-cont.-1">Ejemplo 1 (cont.)</a></li>
+  <li><a href="#varianza-y-desviación-estándar-teóricas" id="toc-varianza-y-desviación-estándar-teóricas" class="nav-link" data-scroll-target="#varianza-y-desviación-estándar-teóricas">Varianza y desviación estándar teóricas</a></li>
+  <li><a href="#ejemplo-1-cont.-2" id="toc-ejemplo-1-cont.-2" class="nav-link" data-scroll-target="#ejemplo-1-cont.-2">Ejemplo 1 (cont.)</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
+  </ul></li>
+  <li><a href="#distribución-de-bernoulli" id="toc-distribución-de-bernoulli" class="nav-link" data-scroll-target="#distribución-de-bernoulli">Distribución de Bernoulli</a>
+  <ul class="collapse">
+  <li><a href="#la-distribución-de-bernoulli" id="toc-la-distribución-de-bernoulli" class="nav-link" data-scroll-target="#la-distribución-de-bernoulli">La distribución de Bernoulli</a></li>
+  <li><a href="#ejemplo-2" id="toc-ejemplo-2" class="nav-link" data-scroll-target="#ejemplo-2">Ejemplo 2</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a></li>
+  <li><a href="#notación-1" id="toc-notación-1" class="nav-link" data-scroll-target="#notación-1">Notación</a></li>
+  <li><a href="#media-y-varianza" id="toc-media-y-varianza" class="nav-link" data-scroll-target="#media-y-varianza">Media y varianza</a></li>
+  </ul></li>
+  <li><a href="#distribución-binomial" id="toc-distribución-binomial" class="nav-link" data-scroll-target="#distribución-binomial">Distribución Binomial</a>
+  <ul class="collapse">
+  <li><a href="#motivación" id="toc-motivación" class="nav-link" data-scroll-target="#motivación">Motivación</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"></a></li>
+  <li><a href="#la-distribución-binomial" id="toc-la-distribución-binomial" class="nav-link" data-scroll-target="#la-distribución-binomial">La distribución binomial</a></li>
+  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6"></a></li>
+  <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7"></a></li>
+  <li><a href="#calculo-de-probabilidades-en-python" id="toc-calculo-de-probabilidades-en-python" class="nav-link" data-scroll-target="#calculo-de-probabilidades-en-python">Calculo de probabilidades en Python</a></li>
+  <li><a href="#primero" id="toc-primero" class="nav-link" data-scroll-target="#primero">Primero…</a></li>
+  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8"></a></li>
+  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9"></a></li>
+  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10"></a></li>
+  <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11"></a></li>
+  <li><a href="#section-12" id="toc-section-12" class="nav-link" data-scroll-target="#section-12"></a></li>
+  <li><a href="#section-13" id="toc-section-13" class="nav-link" data-scroll-target="#section-13"></a></li>
+  <li><a href="#pregunta-de-práctica-para-examen" id="toc-pregunta-de-práctica-para-examen" class="nav-link" data-scroll-target="#pregunta-de-práctica-para-examen">Pregunta de práctica para examen</a></li>
+  </ul></li>
+  <li><a href="#return-to-main-page" id="toc-return-to-main-page" class="nav-link" data-scroll-target="#return-to-main-page">Return to main page</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Discretas.slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Distribuciones Discretas de Probabilidad</h1>
+<p class="subtitle lead">IN2032: Análisis Estadístico de Datos</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Alan R. Vazquez </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Departmento de Ingeniería Industrial
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="agenda" class="level3">
+<h3 class="anchored" data-anchor-id="agenda">Agenda</h3>
+<p><br></p>
+<ul>
+<li><p>Introducción</p></li>
+<li><p>Distribución de Bernoulli</p></li>
+<li><p>Distribución Binomial</p></li>
+</ul>
+</section>
+<section id="una-nueva-librería-scipy.stats" class="level3">
+<h3 class="anchored" data-anchor-id="una-nueva-librería-scipy.stats">Una nueva librería: <strong>scipy.stats</strong></h3>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/scipy-logo-300.svg" class="img-fluid quarto-figure quarto-figure-left figure-img"></p>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><strong>scipy.stats</strong> es un módulo de la librería <strong>SciPy</strong> para realizar análisis estadístico en Python.</li>
+<li>Proporciona herramientas para trabajar con distribuciones de probabilidad, pruebas de hipótesis, intervalos de confianza y estadística descriptiva.</li>
+<li>Está construida sobre <strong>numpy</strong> para cálculos numéricos eficientes.</li>
+<li><a href="https://scipy.org/es/" class="uri">https://scipy.org/es/</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="carguemos-las-librerías" class="level3">
+<h3 class="anchored" data-anchor-id="carguemos-las-librerías">Carguemos las librerías</h3>
+<p><br><br><br></p>
+<p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
+<div id="9ccbd9d2" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>En el cógido de arriba, indicamos que utilizaremos la función <code>binom()</code> de la librería <strong>scipy.stats</strong>.</p>
+</section>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<section id="variables-aleatorias-discretas" class="level3">
+<h3 class="anchored" data-anchor-id="variables-aleatorias-discretas">Variables Aleatorias Discretas</h3>
+<p><br></p>
+<p>Una variable aleatoria es <span style="color: darkgreen"><strong>discreta</strong></span> si sólo puede asumir un número finito de valores distintos.</p>
+<p>. . .</p>
+<p>Por ejemplo,</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>El número de bacterias por unidad de área.</p></li>
+<li><p>Número de piezas defectuosas en un envío de 100 piezas.</p></li>
+<li><p>El número de personas que están de acuerdo en una encuesta.</p></li>
+</ul>
+</div>
+</section>
+<section id="notación" class="level3">
+<h3 class="anchored" data-anchor-id="notación">Notación</h3>
+<p><br></p>
+<p>En lo que sigue, usaremos una letra mayúscula, como <span class="math inline">\(Y\)</span>, para indicar una variable aleatoria.</p>
+<p><br></p>
+<p>Usaremos letras minúsculas, como <span class="math inline">\(y\)</span>, para indicar un valor particular de la variable aleatoria.</p>
+<p><br></p>
+<p>Las expresiones <span class="math inline">\(P(Y=y)\)</span> y <span class="math inline">\(p(y)\)</span> denotan la probabilidad de que <span class="math inline">\(Y\)</span> tome el valor <span class="math inline">\(y\)</span>.</p>
+</section>
+<section id="función-de-probabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-probabilidad">Función de probabilidad</h3>
+<p><br></p>
+<p>La descripción de los posibles valores de <span class="math inline">\(Y\)</span> y las probabilidades de cada uno tiene un nombre: función de probabilidad.</p>
+<p><br></p>
+<p>La <span style="color: #4682B4"><strong>función de probabilidad</strong></span> de una variable aleatoria discreta <span class="math inline">\(Y\)</span> es la función</p>
+<div style="font-size: 110%;">
+<p><span class="math display">\[p(y) = P(Y=y).\]</span></p>
+</div>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+<p><br><br></p>
+<p>Para cualquier función de probabilidad, debe cumplirse lo siguiente:</p>
+<ol type="1">
+<li><span class="math inline">\(0 \leq p(y) \leq 1\)</span> para todos los valores de <span class="math inline">\(y\)</span>.</li>
+<li><span class="math inline">\(\sum_{y} p(y) = 1\)</span>, donde la suma es sobre todos los valores posibles de <span class="math inline">\(y\)</span>.</li>
+</ol>
+</section>
+<section id="ejemplo-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-1">Ejemplo 1</h3>
+<p><br></p>
+<p>Un hospital es conocido por el injerto de derivación de arteria coronaria. Sea <span class="math inline">\(Y\)</span> el número de estas cirugías realizadas en un día.</p>
+<p>La siguiente tabla muestra la distribución de probabilidad de la variable aleatoria <span class="math inline">\(Y\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Y = y\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p(y)\)</span></td>
+<td>0.02</td>
+<td>0.05</td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.18</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section-1" class="level3">
+<h3 class="anchored" data-anchor-id="section-1"></h3>
+<p><br></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Y = y\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p(y)\)</span></td>
+<td>0.02</td>
+<td>0.05</td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.18</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>La probabilidad de que se realicen 2 cirugías es <span class="math inline">\(p(2) = 0.10\)</span> o 10%.</p>
+<p>La probabilidad de que se realicen 5 cirugías es <span class="math inline">\(p(5) = 0.50\)</span> o 50%.</p>
+<p>Como es una distribución de probabilidad, tenemos que <span class="math inline">\(p(0) + p(1) + p(2) + p(3) + p(4) + p(5) = 1\)</span>.</p>
+</section>
+<section id="section-2" class="level3">
+<h3 class="anchored" data-anchor-id="section-2"></h3>
+<p><br></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Y = y\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p(y)\)</span></td>
+<td>0.02</td>
+<td>0.05</td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.18</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>¿Cuál es la probailidad de que se realicen 6 cirugías?</p>
+<p>. . .</p>
+<p><span class="math inline">\(p(6) = 0\)</span> ya que no forma parte de la distribución de probabilidad.</p>
+</section>
+<section id="gráfica-de-probabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="gráfica-de-probabilidad">Gráfica de probabilidad</h3>
+<p>Muestra las probabilidades para cada uno de los valores de una variable aleatoria.</p>
+<div id="68e4e9e5" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"p(y)"</span>: [<span class="fl">0.02</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.15</span>, <span class="fl">0.18</span>, <span class="fl">0.50</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> pd.DataFrame(variables)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear la gráfica de barras</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">"y"</span>, y<span class="op">=</span><span class="st">"p(y)"</span>, data<span class="op">=</span>datos, color<span class="op">=</span><span class="st">"#4682B4"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribución de Probabilidad $p(y)$"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Variable Aleatoria (Y)"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Probabilidad"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="fl">0.6</span>) </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Discretas_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="663" height="378"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="función-de-distribución-acumulativa" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-distribución-acumulativa">Función de distribución acumulativa</h3>
+<p><br><br></p>
+<p>La <span style="color: purple"><strong>función de distribución acumulativa</strong></span> especifica la probabilidad de que una variable aleatoria sea menor o igual a un valor dado.</p>
+<p>La función de distribución acumulativa de la variable <span class="math inline">\(Y\)</span> es la función</p>
+<div style="font-size: 110%;">
+<p><span class="math display">\[F(y) = P(Y \leq y).\]</span></p>
+</div>
+</section>
+<section id="ejemplo-1-cont." class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-1-cont.">Ejemplo 1 (cont.)</h3>
+<p><br></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Y = y\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p(y)\)</span></td>
+<td>0.02</td>
+<td>0.05</td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.18</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>La probabilidad que el numero de cirugías en un día sea menor o igual a 2 es:</p>
+<div style="font-size: 95%;">
+<p><span class="math display">\[P(Y \leq 2) = p(0) + p(1) + p(2) = 0.02 + 0.05 + 0.10 = 0.17.\]</span></p>
+</div>
+</section>
+<section id="valor-esperado" class="level3">
+<h3 class="anchored" data-anchor-id="valor-esperado">Valor esperado</h3>
+<p>El promedio teórico o valor esperado de una variable discreta <span class="math inline">\(Y\)</span> es igual a la suma de todos sus valores multiplicado por su probabilidad correspondiente. Técnicamente, el valor esperado de <span class="math inline">\(Y\)</span> es</p>
+<p><span class="math display">\[E(Y) = \sum_{y} y p(y),\]</span></p>
+<p>donde la suma es sobre todos los posibles valores de <span class="math inline">\(Y\)</span>.</p>
+<p>. . .</p>
+<p><br></p>
+<div style="text-align: center;">
+<p><span style="color: #4682B4;"><em>El valor esperado</em> <span class="math inline">\(E(Y)\)</span> es una constante.</span></p>
+</div>
+</section>
+<section id="ejemplo-1-cont.-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-1-cont.-1">Ejemplo 1 (cont.)</h3>
+<p><br></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Y = y\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p(y)\)</span></td>
+<td>0.02</td>
+<td>0.05</td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.18</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>El promedio teórico o numero esperado de cirugías en un día es:</p>
+<div style="font-size: 70%;">
+<p><span class="math display">\[E(Y) = 0\times p(0) + 1\times p(1) + 2\times p(2) + 3\times p(3) + 4\times p(4) + 5\times p(5) = 3.92\]</span></p>
+</div>
+</section>
+<section id="varianza-y-desviación-estándar-teóricas" class="level3">
+<h3 class="anchored" data-anchor-id="varianza-y-desviación-estándar-teóricas">Varianza y desviación estándar teóricas</h3>
+<p>La <span style="color: darkgreen;"><strong>varianza teórica</strong></span> de una variable aleatoria <span class="math inline">\(Y\)</span> es el valor esperado de <span class="math inline">\((Y - E(Y))^2\)</span>, donde <span class="math inline">\(E(Y)\)</span> es el valor esperado de <span class="math inline">\(Y\)</span>. Es decir, la varianza de <span class="math inline">\(Y\)</span> es</p>
+<p><span class="math display">\[V(Y) = E\left[ (Y - E(Y))^2 \right] = \sum_{y} (y - E(Y))^2 p(y).\]</span></p>
+<p>La <span style="color: darkgreen;"><strong>desviación estándar</strong></span> de <span class="math inline">\(Y\)</span> es la raíz cuadrada de <span class="math inline">\(V(Y)\)</span>.</p>
+<p>. . .</p>
+<p><br></p>
+<div style="text-align: center;">
+<p><span style="color: green;"><em>La varianza y desviación estándar teóricas son constantes.</em></span></p>
+</div>
+</section>
+<section id="ejemplo-1-cont.-2" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-1-cont.-2">Ejemplo 1 (cont.)</h3>
+<p><br></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Y = y\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p(y)\)</span></td>
+<td>0.02</td>
+<td>0.05</td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.18</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>La varianza del numero de cirugías en un día es:</p>
+<div style="font-size: 55%;">
+<p><span class="math display">\[V(Y) = \sum_{y} (y - 3.92)^2 p(y) = (0 - 3.92)^2 \times p(0) + (1 - 3.92)^2 \times p(1) + \cdots + (5 - 3.92)^2 \times p(5) = 1.81\]</span></p>
+</div>
+</section>
+<section id="section-3" class="level3">
+<h3 class="anchored" data-anchor-id="section-3"></h3>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br><br></p>
+<p>La varianza es una medida de dispersión de los valores de <span class="math inline">\(Y\)</span> alrededor de <span class="math inline">\(E(Y)\)</span> donde se pondera la probabilidad de este valor.</p>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/varianza.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="distribución-de-bernoulli" class="level2">
+<h2 class="anchored" data-anchor-id="distribución-de-bernoulli">Distribución de Bernoulli</h2>
+<section id="la-distribución-de-bernoulli" class="level3">
+<h3 class="anchored" data-anchor-id="la-distribución-de-bernoulli">La distribución de Bernoulli</h3>
+<p><br><br></p>
+<p>Usamos la distribución de Bernoulli cuando tenemos un experimento que tiene dos posibles resultados. Un resultado se denomina “éxito” y el otro resultado se denomina “fracaso”.</p>
+<p>La probabilidad de éxito se denota por <span class="math inline">\(p\)</span>. La probabilidad de fracaso es entonces <span class="math inline">\(1-p\)</span>.</p>
+<p>Un experimento de este tipo se llama <span style="color: green;">experimento de Bernoulli</span> con probabilidad de éxito <span class="math inline">\(p\)</span>.</p>
+</section>
+<section id="ejemplo-2" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-2">Ejemplo 2</h3>
+<p><br></p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><p>El experimento Bernoulli más sencillo es lanzar una moneda al aire. Los dos resultados son cara y cruz. Si definimos cara como el resultado del éxito, entonces <span class="math inline">\(p\)</span> es la probabilidad de que la moneda salga cara. Para una moneda justa, <span class="math inline">\(p = 0.5\)</span>.</p></li>
+<li><p>Otro experimento Bernoulli es la selección de un componente de una población de componentes, algunos de los cuales son defectuosos. Si definimos “éxito” como un componente defectuoso, entonces <span class="math inline">\(p\)</span> es la proporción de componentes defectuosos en la población.</p></li>
+</ol>
+</div>
+</section>
+<section id="section-4" class="level3">
+<h3 class="anchored" data-anchor-id="section-4"></h3>
+<p><br></p>
+<p>Para un experimento Bernoulli, definimos la variable <span class="math inline">\(Y\)</span> como sigue:</p>
+<p>Si el experimento resulta en “éxito”, entonces <span class="math inline">\(Y=1\)</span>. De lo contrario, <span class="math inline">\(Y=0\)</span>.</p>
+<p>Esto implica que <span class="math inline">\(Y\)</span> es una variable aleatoria discreta con función de probabilidad <span class="math inline">\(p(y)\)</span>:</p>
+<ul>
+<li><p><span class="math inline">\(p(0) = P(Y = 0) = 1 - p.\)</span></p></li>
+<li><p><span class="math inline">\(p(1) = P(Y = 1) = p.\)</span></p></li>
+<li><p><span class="math inline">\(p(y) = 0\)</span> para cualquier otro valor de <span class="math inline">\(y\)</span> diferente de 0 o 1.</p></li>
+</ul>
+</section>
+<section id="notación-1" class="level3">
+<h3 class="anchored" data-anchor-id="notación-1">Notación</h3>
+<p>Si la distribución de <span class="math inline">\(Y\)</span> es la distribución de Bernoulli, decimos que “<span class="math inline">\(Y\)</span> sigue una distribución de Bernoulli”.</p>
+<p><br></p>
+<p>Matemáticamente, decimos <span class="math inline">\(Y \sim \text{Bernoulli}(p)\)</span> donde el símbolo ‘<span class="math inline">\(\sim\)</span>’ se lee como ‘sigue’.</p>
+<p><br></p>
+<p>En esta notación, enfatizamos que la <span style="color: purple"><strong>distribución de Bernoulli tiene un parámetro (constante)</strong> denotado por <span class="math inline">\(p\)</span>, que representa la probabilidad de éxito.</span></p>
+</section>
+<section id="media-y-varianza" class="level3">
+<h3 class="anchored" data-anchor-id="media-y-varianza">Media y varianza</h3>
+<p><br><br></p>
+<p>Si <span class="math inline">\(Y \sim \text{Bernoulli}(p)\)</span>, entonces</p>
+<ul>
+<li><p>El promedio teórico de <span class="math inline">\(Y\)</span> es <span class="math inline">\(p\)</span>.</p></li>
+<li><p>La varianza teórica de <span class="math inline">\(Y\)</span> es <span class="math inline">\(p(1-p)\)</span>.</p></li>
+</ul>
+</section>
+</section>
+<section id="distribución-binomial" class="level2">
+<h2 class="anchored" data-anchor-id="distribución-binomial">Distribución Binomial</h2>
+<section id="motivación" class="level3">
+<h3 class="anchored" data-anchor-id="motivación">Motivación</h3>
+<p>Un ejemplo de un experimento Bernoulli es tomar muestras de un solo componente de un lote y determinar si está defectuoso.</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>En la práctica, podríamos tomar muestras de varios componentes de un lote muy grande y contar el número de defectuosos entre ellos.</p></li>
+<li><p>Esto equivale a realizar varios experimentos Bernoulli independientes y contar el número de éxitos.</p></li>
+<li><p>El número de éxitos es entonces una variable aleatoria, que se dice que tiene una <span style="color: darkgreen"><strong>distribución binomial</strong></span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="section-5" class="level3">
+<h3 class="anchored" data-anchor-id="section-5"></h3>
+<p><br><br></p>
+<p><span class="math inline">\(Y\)</span> tiene la distribución binomial con <span style="color: purple"><strong>parámetros</strong> <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span></span>, si:</p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><p>Se realizan un total de <span class="math inline">\(n\)</span> experimentos de Bernoulli.</p></li>
+<li><p>Los experimentos son independientes.</p></li>
+<li><p>Cada experimento tiene la misma probabilidad de éxito <span class="math inline">\(p\)</span>.</p></li>
+<li><p><span class="math inline">\(Y\)</span> es el número de éxitos en los <span class="math inline">\(n\)</span> experimentos.</p></li>
+</ol>
+</div>
+<p>. . .</p>
+<p>En este caso, <span class="math inline">\(Y\sim\text{Bin}(n,p)\)</span> donde <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> son los parámetros (constantes) de la distribución.</p>
+</section>
+<section id="la-distribución-binomial" class="level3">
+<h3 class="anchored" data-anchor-id="la-distribución-binomial">La distribución binomial</h3>
+<p>Si <span class="math inline">\(Y\sim\text{Bin}(n,p)\)</span>, la función de probabilidad <span class="math inline">\(Y\)</span> es</p>
+<p><span class="math display">\[P(Y = y) = {n \choose y}p^y (1 -p)^{n -y},\]</span></p>
+<p>donde <span class="math inline">\(y = 0, 1, \ldots, n\)</span> y <span class="math inline">\(0 \leq p \leq 1\)</span>. Además,</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p><span class="math inline">\(p^y\)</span>: Probabilidad de <span class="math inline">\(y\)</span> éxitos.</p></li>
+<li><p><span class="math inline">\({n \choose y}\)</span>: Numero de posibles combinaciones de <span class="math inline">\(y\)</span> exitos en <span class="math inline">\(n\)</span> experimentos Bernoulli.</p></li>
+<li><p><span class="math inline">\((1 -p)^{n -y}\)</span>: Probabilidad de que los otros <span class="math inline">\(n-y\)</span> experimentos sean fracasos.</p></li>
+</ul>
+</div>
+</section>
+<section id="section-6" class="level3">
+<h3 class="anchored" data-anchor-id="section-6"></h3>
+<p><br><br><br></p>
+<p>Si <span class="math inline">\(Y\sim\text{Bin}(n,p)\)</span>, tenemos que</p>
+<ul>
+<li><p>El promedio teórico de <span class="math inline">\(Y\)</span> es <span class="math inline">\(np\)</span>.</p></li>
+<li><p>La varianza teórica de <span class="math inline">\(Y\)</span> es <span class="math inline">\(np(1-p)\)</span>.</p></li>
+</ul>
+</section>
+<section id="section-7" class="level3">
+<h3 class="anchored" data-anchor-id="section-7"></h3>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="font-size: 95%;">
+<ul>
+<li><p>Debemos de pensar en <span class="math inline">\(\text{Bin}(n,p)\)</span> como una <span style="color: #5E7D6A"><em>familia</em></span> de distribuciones.</p></li>
+<li><p>Cada miembro de esa familia tiene una combinación de valores para los parámetros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span>.</p></li>
+<li><p>Cada miembro tiene una función de probabilidad diferente.</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2277526709.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="calculo-de-probabilidades-en-python" class="level3">
+<h3 class="anchored" data-anchor-id="calculo-de-probabilidades-en-python">Calculo de probabilidades en Python</h3>
+<p><br></p>
+<p>Consideremos que un jugador de baloncesto anota 4 de 10 canastas (<span class="math inline">\(p = 0.4\)</span>). Si el jugador lanza 20 canastas (20 intentos), calcula lo suiguiente:</p>
+<p>A. La probabilidad de anotar 1 canasta, <span class="math inline">\(P(X = 1)\)</span>.</p>
+<p>B. La probabilidad de anotar 6 o menos canastas, <span class="math inline">\(P(X \leq 6)\)</span>.</p>
+<p>C. La probabilidad de anotar menos de 6 canastas, <span class="math inline">\(P(X &lt; 6)\)</span>.</p>
+<p>D. La probabilidad de anotar más de 12 canastas, <span class="math inline">\(P(X &gt; 12)\)</span>.</p>
+<p>E. La probabilidad de anotar entre 7 y 11 canastas, <span class="math inline">\(P(7 \leq X \leq 11)\)</span>.</p>
+</section>
+<section id="primero" class="level3">
+<h3 class="anchored" data-anchor-id="primero">Primero…</h3>
+<p><br><br><br></p>
+<p>Definamos los valores apropiados para <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> en Python.</p>
+<div id="21b8983e" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">20</span> <span class="co"># Numero de experimentos Bernoulli.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.4</span> <span class="co"># Probabilidad de éxito.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="section-8" class="level3">
+<h3 class="anchored" data-anchor-id="section-8"></h3>
+<p><br></p>
+<p><strong>A</strong>. La probabilidad de anotar 1 canasta, <span class="math inline">\(P(X = 1)\)</span>.</p>
+<p><br></p>
+<p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome <strong>exactamente</strong> el valor <span class="math inline">\(k\)</span> usamos la función <code>binom.pmf(k, n, p)</code>.</p>
+<div id="fbf6d554" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>prob_exacta <span class="op">=</span> binom.pmf(k, n, p)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(X = </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_exacta<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X = 1) = 0.0005</code></pre>
+</div>
+</div>
+</section>
+<section id="section-9" class="level3">
+<h3 class="anchored" data-anchor-id="section-9"></h3>
+<p><br></p>
+<p><strong>B</strong>. La probabilidad de anotar 6 o menos canastas, <span class="math inline">\(P(X \leq 6)\)</span>.</p>
+<p><br></p>
+<p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor menor o igual</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.cdf(k, n, p)</code>.</p>
+<div id="c13b3f39" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>prob_acumulada <span class="op">=</span> binom.cdf(k, n, p)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(X &lt;= </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_acumulada<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &lt;= 6) = 0.2500</code></pre>
+</div>
+</div>
+</section>
+<section id="section-10" class="level3">
+<h3 class="anchored" data-anchor-id="section-10"></h3>
+<p><br></p>
+<p><strong>C</strong>. La probabilidad de anotar menos de 6 canastas, <span class="math inline">\(P(X &lt; 6)\)</span>.</p>
+<p><br></p>
+<p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor extrictamente menor</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.cdf(k-1, n, p)</code>, <span style="color:darkred">usando <span class="math inline">\(k-1\)</span>!</span></p>
+<div id="9c4904e9" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>prob_menos_que <span class="op">=</span> binom.cdf(k<span class="op">-</span><span class="dv">1</span>, n, p)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(X &lt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_menos_que<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &lt; 6) = 0.1256</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<p><br></p>
+<p>Esto ya que <span class="math inline">\(P(X &lt; 6) = P(X \leq 5)\)</span>.</p>
+</section>
+<section id="section-11" class="level3">
+<h3 class="anchored" data-anchor-id="section-11"></h3>
+<p><strong>D</strong>. La probabilidad de anotar más de 12 canastas, <span class="math inline">\(P(X &gt; 12)\)</span>.</p>
+<p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor extrictamente mayor</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.sf(k, n, p)</code>.</p>
+<div id="125c2841" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>prob_mas_de <span class="op">=</span> binom.sf(k, n, p)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(X &gt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_mas_de<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &gt; 12) = 0.0210</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<p>Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:</p>
+<div id="a52b01c2" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">-</span> binom.cdf(k, n, p))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.021028927477771187</code></pre>
+</div>
+</div>
+<p>Que se traduce en <span class="math inline">\(P(X &gt; k) = 1 - P(X \leq k)\)</span>.</p>
+</section>
+<section id="section-12" class="level3">
+<h3 class="anchored" data-anchor-id="section-12"></h3>
+<p><strong>E</strong>. La probabilidad de anotar entre 7 y 11 canastas, <span class="math inline">\(P(7 \leq X \leq 11)\)</span>.</p>
+<p>Para este caso, debemos de ver</p>
+<div style="font-size: 85%;">
+<p><span class="math display">\[P(7 \leq X \leq 11) = P(X \leq 11) - P(X &lt; 7) = P(X \leq 11) - P(X \leq 6).\]</span></p>
+</div>
+<p><br></p>
+<p>En Python, esto se logra con <code>binom.cdf()</code> como sigue:</p>
+<div id="e4fc2661" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>k_superior <span class="op">=</span> <span class="dv">11</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>k_inferior <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> binom.cdf(k_superior, n, p) <span class="op">-</span> binom.cdf(k_inferior <span class="op">-</span> <span class="dv">1</span>, n, p)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(</span><span class="sc">{</span>k_inferior<span class="sc">}</span><span class="ss"> &lt;= X &lt;= </span><span class="sc">{</span>k_superior<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(7 &lt;= X &lt;= 11): 0.6935</code></pre>
+</div>
+</div>
+</section>
+<section id="section-13" class="level3">
+<h3 class="anchored" data-anchor-id="section-13"></h3>
+<p>Una variable aleatoria binomial se puede expresar como <span style="color: red">una suma de variables aleatorias de Bernoulli</span>:</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Supongamos que se realizan <span class="math inline">\(n\)</span> experimentos independientes de Bernoulli.</p></li>
+<li><p>Cada experimento tiene probabilidad de éxito <span class="math inline">\(p\)</span>.</p></li>
+<li><p>Considera las variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> donde <span class="math inline">\(Y_i = 1\)</span> si el resultado del <em>i</em>-ésimo experimento es éxito, y <span class="math inline">\(Y_i = 0\)</span> de otro modo. Es decir <span class="math inline">\(Y_i \sim \text{Bernoulli}(p)\)</span>.</p></li>
+<li><p>Ahora, considera la suma del número de éxitos entre los <span class="math inline">\(n\)</span> experimentos <span class="math inline">\(X = Y_1 + \cdots + Y_n\)</span>.</p></li>
+<li><p>Entonces, <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="pregunta-de-práctica-para-examen" class="level3">
+<h3 class="anchored" data-anchor-id="pregunta-de-práctica-para-examen">Pregunta de práctica para examen</h3>
+<p><br><br></p>
+<p>Se disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.</p>
+<p>¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?</p>
+</section>
+</section>
+<section id="return-to-main-page" class="level2">
+<h2 class="anchored" data-anchor-id="return-to-main-page"><a href="https://alanrvazquez.github.io/TEC-IN2032/">Return to main page</a></h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
