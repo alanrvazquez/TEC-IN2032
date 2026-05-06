@@ -1103,7 +1103,7 @@
     "href": "index.html",
     "title": "IN2032: Análisis Estadístico de Datos",
     "section": "",
-    "text": "Tópicos del curso\n\nMódulo 1\n\nIntroducción a la Estadística (slides)\nIntroducción a Python (slides) (colab)\nDistribuciones Discretas de Probabilidad (slides) (colab)\nDistribuciones Continuas de Probabilidad (slides) (colab)\n\n\n\nMódulo 2\n\nIntervalos de Confianza (slides) (colab)\nPruebas de Hipótesis (slides) (colab)\n\n\n\nMódulo 3\n\nIntroducción al Monitoreo de Procesos (slides)\nGráficas de Control (slides) ## About the author\n\nAlan R. Vazquez (website) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.\n\n\nLicense\nIN2032: Análisis Estadístico de Datos © 2026 by Alan Roberto Vazquez is licensed under CC BY-NC-SA 4.0",
+    "text": "Tópicos del curso\n\nMódulo 1\n\nIntroducción a la Estadística (slides)\nIntroducción a Python (slides) (colab)\nDistribuciones Discretas de Probabilidad (slides) (colab)\nDistribuciones Continuas de Probabilidad (slides) (colab)\n\n\n\nMódulo 2\n\nIntervalos de Confianza (slides) (colab)\nPruebas de Hipótesis (slides) (colab)\n\n\n\nMódulo 3\n\nIntroducción al Monitoreo de Procesos (slides)\nGráficas de Control (slides)\n\n\n\n\nAbout the author\nAlan R. Vazquez (website) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.\n\nLicense\nIN2032: Análisis Estadístico de Datos © 2026 by Alan Roberto Vazquez is licensed under CC BY-NC-SA 4.0",
     "crumbs": [
       "Home"
     ]
@@ -1113,7 +1113,14 @@
     "href": "index.slides.html#tópicos-del-curso",
     "title": "IN2032: Análisis Estadístico de Datos",
     "section": "Tópicos del curso",
-    "text": "Tópicos del curso\nMódulo 1\n\nIntroducción a la Estadística (slides)\nIntroducción a Python (slides) (colab)\nDistribuciones Discretas de Probabilidad (slides) (colab)\nDistribuciones Continuas de Probabilidad (slides) (colab)\n\nMódulo 2\n\nIntervalos de Confianza (slides) (colab)\nPruebas de Hipótesis (slides) (colab)\n\nMódulo 3\n\nIntroducción al Monitoreo de Procesos (slides)\nGráficas de Control (slides) ## About the author\n\nAlan R. Vazquez (website) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.\nLicense\nIN2032: Análisis Estadístico de Datos © 2026 by Alan Roberto Vazquez is licensed under CC BY-NC-SA 4.0"
+    "text": "Tópicos del curso\nMódulo 1\n\nIntroducción a la Estadística (slides)\nIntroducción a Python (slides) (colab)\nDistribuciones Discretas de Probabilidad (slides) (colab)\nDistribuciones Continuas de Probabilidad (slides) (colab)\n\nMódulo 2\n\nIntervalos de Confianza (slides) (colab)\nPruebas de Hipótesis (slides) (colab)\n\nMódulo 3\n\nIntroducción al Monitoreo de Procesos (slides)\nGráficas de Control (slides)"
+  },
+  {
+    "objectID": "index.slides.html#about-the-author",
+    "href": "index.slides.html#about-the-author",
+    "title": "IN2032: Análisis Estadístico de Datos",
+    "section": "About the author",
+    "text": "About the author\nAlan R. Vazquez (website) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.\nLicense\nIN2032: Análisis Estadístico de Datos © 2026 by Alan Roberto Vazquez is licensed under CC BY-NC-SA 4.0"
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#agenda",

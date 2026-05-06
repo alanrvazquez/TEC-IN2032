@@ -26,6 +26,7 @@ author:
 
 1. Introducción al Monitoreo de Procesos ([slides](/Modulo_3/Monitoreo.slides.html))
 2. Gráficas de Control ([slides](/Modulo_3/Graficas.slides.html)) 
+
 ## About the author
 
 Alan R. Vazquez ([website](https://alanrvazquez.netlify.app/)) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.
