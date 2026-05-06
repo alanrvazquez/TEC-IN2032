@@ -1125,9 +1125,9 @@
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#agenda",
     "href": "Modulo_3/Monitoreo.slides.html#agenda",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Agenda",
-    "text": "Agenda\n\n\nConceptos Básicos y Herramientas\nIntroducción a las Gráficas de Control\nTipos de Gráficas de Control\n\nGráficas para variables numéricas\nGráficas para variables categóricas"
+    "text": "Agenda\n\n\nConceptos Básicos y Herramientas\nIntroducción a las Gráficas de Control"
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#control-de-calidad-conceptos-básicos-y-herramientas",
@@ -1139,175 +1139,175 @@
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#monitoreo-estadístico-de-procesos",
     "href": "Modulo_3/Monitoreo.slides.html#monitoreo-estadístico-de-procesos",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Monitoreo Estadístico de Procesos",
     "text": "Monitoreo Estadístico de Procesos\nUno de los métodos más importantes en el control de calidad es el monitoreo estadístico de procesos (MEP).\n\n\nLa motivación del MEP es que no es práctico inspeccionar la calidad dentro de un producto: el producto debe de hacerse correctamente la primera vez.\nEntonces el proceso de fabricación debe de ser estable y tener la capacidad de operar con poca variabilidad.\nEl monitoreo se realiza tomando muestras de la unidad de producción y midiendo alguna característica de calidad.\n\n\n\nEl MEP es una herramienta para reducir la variabilidad de un proceso sistemáticamente."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#tipos-de-variabilidad",
     "href": "Modulo_3/Monitoreo.slides.html#tipos-de-variabilidad",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Tipos de variabilidad",
     "text": "Tipos de variabilidad\n\nEn cualquier proceso de producción, sin importar lo bien diseñado que esté o la atención que se preste a su mantenimiento, siempre existirá cierta variabilidad natural o inherente.\n\nA esta variabilidad natural es debido a causas aleatorias del proceso, las cuales son una parte inherente del proceso."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section",
     "href": "Modulo_3/Monitoreo.slides.html#section",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "",
     "text": "Por ejemplo\n\nFluctuaciones pequeñas en un proceso de manufactura, variaciones pequeñas en tiempos de entrega, o variaciones pequeñas en el peso de dos productos idénticos. Todo esto debido a factores naturales o esperados.\n\nUn proceso está bajo control estadístico cuando opera únicamente en presencia de causas aleatorias de variación."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-1",
     "href": "Modulo_3/Monitoreo.slides.html#section-1",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "",
     "text": "Existen otro tipo de variabilidad que pueden estar presente en la producción de un proceso. Esta variabilidad es ocasionada por causas asignables.\n\nEjemplos de causas asignables son:\n\nMáquinas mal calibradas\nErrores del operador en el proceso\nMaterias primas defectuosas\n\n\n\nCuando la variabilidad debido a causas asignables es mayor que la variabilidad natural, se dice que el proceso no está bajo control. Es decir, el proceso tiene un nivel inaceptable de desempeño."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#herramientas-del-mep",
     "href": "Modulo_3/Monitoreo.slides.html#herramientas-del-mep",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Herramientas del MEP",
     "text": "Herramientas del MEP\n\nEl objetivo del MEP es detectar con rapidez la presencia de causas asignables del proceso, para que pueda hacerse la investigación del proceso y aplicarse las acciones correctivas antes de que se fabriquen muchas unidades no conformes.\n\nLa gráfica de control es una técnica de monitoreo en linea para este fin. Es una de las 7 herramientas básicas de calidad."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-2",
     "href": "Modulo_3/Monitoreo.slides.html#section-2",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "",
     "text": "https://asq.org/quality-resources/seven-basic-quality-tools"
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#gráficas-de-control",
     "href": "Modulo_3/Monitoreo.slides.html#gráficas-de-control",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Gráficas de control",
     "text": "Gráficas de control\nLa gráficas de control nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la variable bajo estudio.\nUna gráfica de control:\n\n\npuede estimar los parámetros de un proceso de producción y determinar la capacidad de un proceso para cumplir con las especifícaciones.\nProporciona información útil sobre si la variabilidad del proceso es debido a causas asignables en el proceso.\nEn esencia, es una prueba de hipótesis de que el proceso está en un estado de control estadístico."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#cómo-se-ve-una-gráfica-de-control",
     "href": "Modulo_3/Monitoreo.slides.html#cómo-se-ve-una-gráfica-de-control",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "¿Cómo se ve una gráfica de control?",
     "text": "¿Cómo se ve una gráfica de control?\nMonitoreando las calificaciones durante los semestres de mi carrera"
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-3",
     "href": "Modulo_3/Monitoreo.slides.html#section-3",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "",
     "text": "Los pasos para trabajar con una gráfica de control son:\n\nDefinir el tipo de gráfica dependiendo de la variable bajo estudio.\nRecolectar varias muestras (conjuntos) de observaciones durante un periodo de tiempo.\n\n\nDefinir el número de observaciones en la muestra\nSeleccionar la frecuencia en que se recopilaran las muestras\n\n\nConstruir e interpretar la gráfica."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#el-tipo-de-gráfica-de-control-depende-del-tipo-de-variable",
     "href": "Modulo_3/Monitoreo.slides.html#el-tipo-de-gráfica-de-control-depende-del-tipo-de-variable",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "1. El tipo de gráfica de control depende del tipo de variable",
     "text": "1. El tipo de gráfica de control depende del tipo de variable\n\nRecuerda que hay dos tipos de variables:\n\nVariables numéricas (continuas):\n\nPueden tomar muchos valores diferentes dentro de un rango.\nPor ejemplo, diámetro, peso, temperatura, nivel de ruido."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-4",
     "href": "Modulo_3/Monitoreo.slides.html#section-4",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "",
     "text": "Variables discretas (categóricas):\n\nPueden tomar un numero pequeño y entero de valores\nPor ejemplo, los defectos por unidad y las unidades defectuosas por lote."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#mediciones-sobre-variables-numéricas",
     "href": "Modulo_3/Monitoreo.slides.html#mediciones-sobre-variables-numéricas",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Mediciones sobre variables numéricas",
     "text": "Mediciones sobre variables numéricas"
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#mediciones-sobre-variables-discretas",
     "href": "Modulo_3/Monitoreo.slides.html#mediciones-sobre-variables-discretas",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Mediciones sobre variables discretas",
     "text": "Mediciones sobre variables discretas"
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#tipos-de-gráficas-de-control",
     "href": "Modulo_3/Monitoreo.slides.html#tipos-de-gráficas-de-control",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Tipos de gráficas de control",
     "text": "Tipos de gráficas de control\n\nLas gráficas de control comúnes para variables numéricas son:\n\nGráfico de promedios-rangos (\\(\\bar{X}\\) y \\(R\\)).\nGráfico para valores individuales.\n\nA estas gráficas también se les llama gráficas control para variables."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-5",
     "href": "Modulo_3/Monitoreo.slides.html#section-5",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "",
     "text": "Las gráficas de control más comúnes para variables categóricas son:\n\nGráfica p para la proporción de defectos.\nGráfica np para el número de unidades defectuosas.\n\nA estas gráficas también se les llama gráficas control para atributos."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#recolección-de-datos",
     "href": "Modulo_3/Monitoreo.slides.html#recolección-de-datos",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Recolección de datos",
     "text": "Recolección de datos\nLos datos para construir un gráfico de control se recopilan en varias muestras tomadas durante un período de tiempo. Estas muestras se denominan subgrupos racionales.\nEl plan de muestreo de estos subgrupos tiene los siguientes elementos:\n\n\nNúmero de subgrupos racionales (\\(k\\)): debe seleccionar un número \\(k\\) grande, normalmente 20 o más.\nTamaño del subgrupo (\\(n\\)): la naturaleza de la variable de estudio te ayudará a definir el tamaño del subgrupo.\nFrecuencia: los subgrupos se toman secuencialmente en el tiempo.\nEsquema de muestreo: usualmente muestreo aleatorio."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#creación-de-subgrupos-racionales",
     "href": "Modulo_3/Monitoreo.slides.html#creación-de-subgrupos-racionales",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Creación de subgrupos racionales",
     "text": "Creación de subgrupos racionales\nPara crear subgrupos racionales, el principio básico a seguir es que toda la variabilidad dentro de las unidades de un subgrupo racional debe deberse a causas aleatorias y ninguna a causas asignables."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-6",
     "href": "Modulo_3/Monitoreo.slides.html#section-6",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "",
     "text": "Es decir, los subgrupos deberán seleccionarse tal que, en la medida de lo posible, la variabilidad de las observaciones dentro de un subgrupo deberá incluir toda la variabilidad natural y excluir la variabilidad por causes asignables.\n\nEsto permitirá a la gráfica de control señalar puntos que se encuentran fuera de control."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#métodos-para-generar-subgrupos-racionales",
     "href": "Modulo_3/Monitoreo.slides.html#métodos-para-generar-subgrupos-racionales",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Métodos para generar subgrupos racionales",
     "text": "Métodos para generar subgrupos racionales\nExisten dos métodos para generar subgrupos racionales:\n\nLos elementos de cada muestra son fabricados cerca del momento en que se realiza el muestreo.\n\n\n\nDetecta cambios en el proceso\nMinimiza la variabilidad debida a causas asignables dentro de una muestra, y maximiza la variabilidad entre las muestras en caso de que haya causas asignables presentes.\nProporciona mejores estimaciones de la desivación estándar del proceso."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-7",
     "href": "Modulo_3/Monitoreo.slides.html#section-7",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "",
     "text": "Los elementos de cada muestra son seleccionados de todas las unidades producidas desde que se tomó la última muestra.\n\n\n\nEn este caso, cada subgrupo es una muestra aleatoria de la producción total del proceso en el intervalo de muestreo.\nPermite tomar decisiones relativas a la aceptación de todas las unidades del producto que se han producido desde la última muestra.\nEs útil en situaciones donde el proceso se sale de control pero vuelve a el inmediatamente."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#comentarios",
     "href": "Modulo_3/Monitoreo.slides.html#comentarios",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Comentarios",
     "text": "Comentarios\n\nIdealmente, el plan de muestreo tiene:\n\nMediciones de grupos que se toman frequentemente.\nLos subgrupos son grandes, lo cual facilita la detección de los cambios pequeños en el proceso.\n\nSin embargo, este tipo de muestreo tiende a ser muy costoso cuando la recopilación de datos se hace manualmente.\nEn estos casos, la práctica actual de la industria tiende a favorecer los registros frecuentes de subgrupos pequeños."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#registrar-los-datos",
     "href": "Modulo_3/Monitoreo.slides.html#registrar-los-datos",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Registrar los datos",
     "text": "Registrar los datos\nUna vez teniendo los subgrupos racionales, debemos de registrar mediciones sobre sus elementos. Estas mediciones formaran el conjunto de datos.\nPara realizar las mediciones, necesitamos un instrumento de medición y una persona que utiliza este instrumento.\n\nDurante la medición, registra lo siguiente:\n\nLos valores individuales y la identificación de eventos (si aplica) para cada subgrupo.\nCualquier observación relevante que pueda ayudarnos a explicar inconsistencias en el análisis."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#características-de-un-buen-sistema-de-medición",
     "href": "Modulo_3/Monitoreo.slides.html#características-de-un-buen-sistema-de-medición",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Características de un buen sistema de medición",
     "text": "Características de un buen sistema de medición\n\n\nProporcionar resultados que se acerquen lo más posible al valor verdadero.\nProducir resultados consistentes cuando se mide el mismo objeto en las mismas condiciones.\nSer reproducible en el sentido que se deben de obtener mediciones similares por otra persona usando el mismo u otro instrumento.\nSer sensible para detectar cambios pequeños en el objeto medido.\nTener un tiempo de respuesta rápido.\nSer robusto en el sentido de ser capaz de mantener su precisión y fiabilidad incluso en condiciones adversas."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#procesamiento-de-datos",
     "href": "Modulo_3/Monitoreo.slides.html#procesamiento-de-datos",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Procesamiento de datos",
     "text": "Procesamiento de datos\n\nPara generar la gráfica de control, se calculan resúmenes estadísticos de los datos de cada subgrupo. Estos resumenes pueden ser:\n\nPromedio o media\nDesviación estándar\nRango: la diferencia entre el máximo y el mínimo de los datos."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#recapitulación",
     "href": "Modulo_3/Monitoreo.slides.html#recapitulación",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Recapitulación",
     "text": "Recapitulación"
   },
@@ -2294,8 +2294,260 @@
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#control-de-calidad",
     "href": "Modulo_3/Monitoreo.slides.html#control-de-calidad",
-    "title": "Monitoreo de Procesos",
+    "title": "Introducción al Monitoreo de Procesos",
     "section": "Control de Calidad",
     "text": "Control de Calidad\n\n\nEl control de calidad es un conjunto de herramientas estadísticas para el mejoramiento de calidad.\n\n\nEl mejoramiento de calidad significa eliminar el desperdicio sitemáticamente.\nPara lograr esto, podemos\n\nReducir la variabilidad del proceso de producción.\nEliminar los defectos de la unidad producida."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#agenda",
+    "href": "Modulo_3/Graficas.slides.html#agenda",
+    "title": "Gráficas de Control",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nGráficas para Variables Numéricas\nGráficas para Variables Discretas"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#idea-básica-usa-la-regla-empirica",
+    "href": "Modulo_3/Graficas.slides.html#idea-básica-usa-la-regla-empirica",
+    "title": "Gráficas de Control",
+    "section": "Idea básica: Usa la Regla Empirica",
+    "text": "Idea básica: Usa la Regla Empirica\n\n\nPara una distribución normal:\nAlrededor del 68% de la población se encuentra en el intervalo \\([\\mu - \\sigma, \\; \\mu + \\sigma]\\).\nAproximadamente el 95% de la población se encuentra en el intervalo \\([\\mu - 2\\sigma, \\; \\mu + 2\\sigma]\\).\nAproximadamente el 99.7% de la población se encuentra en el intervalo \\([\\mu - 3\\sigma, \\; \\mu + 3\\sigma]\\)."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section",
+    "href": "Modulo_3/Graficas.slides.html#section",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Si un proceso esta bajo control, entonces el 99.7% de los valores de la catacterística de calidad del producto deben de estar entre \\(\\mu \\pm 3 \\sigma\\).\nObservaciones que están fuera de esos límites indica que el proceso esta fuera de control. Es decir, que su media no es \\(\\mu\\).\nUn reto en esto es que los valores de \\(\\mu\\) y \\(\\sigma\\) no se conocen. Además, que la variabilidad del proceso podría no estar bajo control.\nLas gráficas de control proveen de métodos para estimar \\(\\mu\\) y \\(\\sigma\\) usando grupos de 1 o más observaciones que son recolectadas a través del tiempo."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#clasificación-de-procesos",
+    "href": "Modulo_3/Graficas.slides.html#clasificación-de-procesos",
+    "title": "Gráficas de Control",
+    "section": "Clasificación de procesos",
+    "text": "Clasificación de procesos"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#normalidad-es-relevante",
+    "href": "Modulo_3/Graficas.slides.html#normalidad-es-relevante",
+    "title": "Gráficas de Control",
+    "section": "Normalidad es relevante",
+    "text": "Normalidad es relevante\nLa regla empírica implica que los datos utilizados en la gráfica de control deben de seguir una distribución normal. Para probar normalidad, utilizamos la prueba de Shapiro-Wilk:\n\n\\(H_0\\): Los datos siguen una distribución normal\nContra\n\\(H_1\\): Los datos no siguen una distribución normal\n\nSi el valor p de la prueba es pequeño (digamos, menor que 0.05), rechazamos \\(H_0\\) y concluimos que los datos no siguen una distribución normal. De lo contrario, concluimos que los datos siguen una distribución normal. Mas adelante veremos como hacer esto en Python."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráficas-de-control-para-variables-numéricas",
+    "href": "Modulo_3/Graficas.slides.html#gráficas-de-control-para-variables-numéricas",
+    "title": "Gráficas de Control",
+    "section": "Gráficas de control para variables numéricas",
+    "text": "Gráficas de control para variables numéricas\n\nNos enfocaremos en las siguientes gráficas de control.\n\nGráfico de promedios-rangos (\\(\\bar{X}\\) y \\(R\\)) para subgrupos de 8 o menos observaciones.\nGráfico I-MR para valores individuales (o subgrupos de tamaño 1)."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-de-promedios-y-rangos",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-de-promedios-y-rangos",
+    "title": "Gráficas de Control",
+    "section": "Gráfica de promedios y rangos",
+    "text": "Gráfica de promedios y rangos\n\nLa gráfica de promedios y rangos (y también la gráfica I-MR) consisten de dos elementos:\n\nEl valor medio (promedio) de una característica de calidad (gráfica \\(\\bar{X}\\)). Esta gráfica monitorea si la media está bajo control.\nLa variabilidad de la característica de calidad (gráfica \\(R\\)). Esta gráfica monitorea si la variabilidad está bajo control.\n\nSe asume que los promedios de los subgrupos siguen una distribución normal."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#notación-perliminar",
+    "href": "Modulo_3/Graficas.slides.html#notación-perliminar",
+    "title": "Gráficas de Control",
+    "section": "Notación perliminar",
+    "text": "Notación perliminar\nRecuerda que hay \\(k\\) subgrupos con \\(n\\) observaciones cada uno. Las observaciones del i-ésimo subgrupo se denotan como \\(x_{i1}, x_{i2}, \\ldots, x_{in}\\), donde \\(i = 1, \\ldots, k.\\).\n\n\nEl promedio del i-ésimo grupo es \\(\\bar{X}_i = \\frac{x_{i1} + x_{i2} + \\cdots + x_{in}}{n}\\).\nEl rango del i-ésimo grupo es \\(R_i = \\max{(x_{i1},x_{i2}, \\ldots, x_{in})} - \\min{(x_{i1},x_{i2}, \\ldots, x_{in})}\\).\nEl gran promedio \\(\\bar{\\bar{X}} = \\frac{\\bar{X}_1 + \\bar{X}_2 + \\cdots + \\bar{X}_k}{k}\\).\nEl rango promedio \\(\\bar{R} = \\frac{R_1 + R_2 + \\cdots + R_k}{k}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-barx",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-barx",
+    "title": "Gráficas de Control",
+    "section": "Gráfica \\(\\bar{X}\\)",
+    "text": "Gráfica \\(\\bar{X}\\)\nLos elementos de la gráfica \\(\\bar{X}\\) son:\n\nLa línea central de la gráfica está dada por \\(\\bar{\\bar{X}}\\).\nEl límite de control superior es: \\(\\bar{\\bar{X}} + A_2 \\bar{R}\\).\nEl límite de control inferior es: \\(\\bar{\\bar{X}} - A_2 \\bar{R}\\).\n\n\nDonde \\(A_2\\) es una constante que se obtiene de tablas especiales dependiendo del tamaño del subgrupo (\\(n\\)).\nTécnicamente, la constante \\(A_2\\) hace que \\(A_2 \\bar{R}\\) sea un buen estimador de \\(3\\sigma\\) en la regla empírica."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-r",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-r",
+    "title": "Gráficas de Control",
+    "section": "Gráfica \\(R\\)",
+    "text": "Gráfica \\(R\\)\n\nLos elementos de la gráfica \\(R\\) son:\n\nLa línea central de la gráfica está dada por \\(\\bar{R}\\).\nEl límite de control superior es: \\(D_4 \\bar{R}\\).\nEl límite de control inferior es: \\(D_3 \\bar{R}\\).\n\n\nDonde \\(D_3\\) y \\(D_4\\) son constantes que se obtienen de tablas especiales y dependen del tamaño del subgrupo (\\(n\\)). Estas constantes aseguran que los límites tengan propiedades deseables."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-1",
+    "href": "Modulo_3/Graficas.slides.html#section-1",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Tamaño de subgrupo (\\(n\\))\n\\(A_2\\)\n\\(D_3\\)\n\\(D_4\\)\n\n\n\n\n2\n1.880\n0\n3.267\n\n\n3\n1.023\n0\n2.574\n\n\n4\n0.729\n0\n2.282\n\n\n5\n0.577\n0\n2.114\n\n\n6\n0.483\n0\n2.004\n\n\n7\n0.419\n0.076\n1.924\n\n\n8\n0.373\n0.136\n1.864\n\n\n9\n0.337\n0.184\n1.816\n\n\n10\n0.308\n0.223\n1.777"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#ejemplo-1",
+    "href": "Modulo_3/Graficas.slides.html#ejemplo-1",
+    "title": "Gráficas de Control",
+    "section": "Ejemplo 1",
+    "text": "Ejemplo 1\n\nLa fuerza de tracción de un cable conectado a un circuito integrado está bajo monitoreo.\nUn ingeniero recopilo la fuerza de tracción de 20 subgrupos de cables tomados a través del tiempo. Cada subgrupo contiene 3 cables.\nEl archivo “Pull Strength.xlsx” contiene los datos.\n\nConstruye las gráficas \\(\\bar{X}\\) y \\(R\\).\nEncuentra los puntos que están fuera de control."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control-en-python",
+    "href": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control-en-python",
+    "title": "Gráficas de Control",
+    "section": "Construyendo gráficas de control en Python",
+    "text": "Construyendo gráficas de control en Python"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad-de-los-promedios-en-python",
+    "href": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad-de-los-promedios-en-python",
+    "title": "Gráficas de Control",
+    "section": "Evaluando la normalidad de los promedios en Python",
+    "text": "Evaluando la normalidad de los promedios en Python"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-de-valores-individuales",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-de-valores-individuales",
+    "title": "Gráficas de Control",
+    "section": "Gráfica de valores individuales",
+    "text": "Gráfica de valores individuales\nEn muchas situaciones, los subgrupos constan de una observacion (\\(n=1\\)). Por ejemplo:\n\n\nSe usa la tecnología de inspección y medición automatizada, y se analiza cada unidad fabricada.\nLa rapidez con que se saca la producción es muy lenta.\nLas mediciones repetidas del proceso tan solo difieren por el error de laboratorio o analisis.\n\n\nEn estas situaciones, usamos la gráfica de control para mediciones individuales. Aquí, se asume que las observaciones individuales siguen una distribución normal."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#notación",
+    "href": "Modulo_3/Graficas.slides.html#notación",
+    "title": "Gráficas de Control",
+    "section": "Notación",
+    "text": "Notación\n\nEn este caso, hay \\(n=1\\) observación en cada uno de los \\(k\\) subgrupos.\nPodemos usar una notación más simple para las observaciones de cada subgrupo: \\(x_{1}, x_{2}, \\ldots, x_{k}\\), donde \\(x_i\\) es la observación del i-ésimo grupo.\n\nEl gran promedio es \\(\\bar{X} = \\frac{x_1 + x_2 + \\cdots + x_k}{k}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#rango-móvil",
+    "href": "Modulo_3/Graficas.slides.html#rango-móvil",
+    "title": "Gráficas de Control",
+    "section": "Rango móvil",
+    "text": "Rango móvil\n\nLa gráfica de mediciones individuales usa el rango móvil de dos observaciones sucesivas para estimar la variabilidad del proceso.\nEl rango móvil del i-ésimo grupo se define como \\(MR_i = |x_i - x_{i-1}|\\). Es decir, la diferencia absoluta entre la observación actual y la anterior.\nEl rango móvil promedio es \\(\\bar{MR} = \\frac{MR_1 + MR_2 + \\cdots + MR_{k-1}}{k - 1}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-barx-versión-individual",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-barx-versión-individual",
+    "title": "Gráficas de Control",
+    "section": "Gráfica \\(\\bar{X}\\) (versión individual)",
+    "text": "Gráfica \\(\\bar{X}\\) (versión individual)\n\nLos elementos de la gráfica \\(\\bar{X}\\) individual son:\n\nLa línea central de la gráfica está dada por \\(\\bar{X}\\).\nEl límite de control superior es: \\(\\bar{X} + 3 \\frac{\\bar{MR}}{1.128}\\).\nEl límite de control inferior es: \\(\\bar{X} - 3 \\frac{\\bar{MR}}{1.128}\\).\n\nDonde el 1.128 se obtiene de tablas especiales."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-r-versión-individual",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-r-versión-individual",
+    "title": "Gráficas de Control",
+    "section": "Gráfica \\(R\\) (versión individual)",
+    "text": "Gráfica \\(R\\) (versión individual)\n\nLos elementos de la gráfica \\(R\\) individual son:\n\nLa línea central de la gráfica está dada por \\(\\bar{MR}\\)\nEl límite de control superior es: \\(3.267\\bar{MR}\\).\nEl límite de control inferior es: \\(0\\).\n\nDonde el 0 y 3.267 son constantes que se obtienen de tablas especiales."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#ejemplo-2",
+    "href": "Modulo_3/Graficas.slides.html#ejemplo-2",
+    "title": "Gráficas de Control",
+    "section": "Ejemplo 2",
+    "text": "Ejemplo 2\n\nLa viscosidad de un producto químico se mide cada hora. Veinte muestras cada una de tamaño 1 se encuentran en el archivo “Viscosity.xlsx.”\n\nUtilizando todos los datos, calcula los límites de control de observaciones individuales y gráficos de rangos móviles.\nEncuentre las muestras que están fuera de control. Reproduce el gráfico de control sin esas muestras."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#western-electric-rules",
+    "href": "Modulo_3/Graficas.slides.html#western-electric-rules",
+    "title": "Gráficas de Control",
+    "section": "Western Electric Rules",
+    "text": "Western Electric Rules\nCualquiera de las siguientes condiciones es evidencia de que un proceso está fuera de control:\n\n\nCualquier punto trazado fuera de los límites de control de \\(3\\sigma\\).\nDos de tres puntos consecutivos que se trazan por encima del límite superior de \\(2\\sigma\\), o dos de tres puntos consecutivos se ubican por debajo del límite inferior de \\(2\\sigma\\).\nCuatro de cinco puntos consecutivos que se trazan por encima del límite superior de \\(1\\sigma\\), o cuatro de cinco puntos consecutivos se ubican por debajo del límite inferior de \\(1\\sigma\\).\nOcho puntos consecutivos trazados en el mismo lado de la línea central."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#discusión",
+    "href": "Modulo_3/Graficas.slides.html#discusión",
+    "title": "Gráficas de Control",
+    "section": "Discusión",
+    "text": "Discusión\nPara subgrupos de una o más observaciones, se recomienda primero estudiar la carta \\(R\\) porque si la variabilidad del proceso no es constante con el tiempo, los límites de control calculados para la carta \\(\\bar{X}\\) pueden llevar a conclusiones falsas.\nTen cuidado al interpretar la gráfica \\(R\\) individual porque los rangos móviles están correlacionados. Esta correlación con frecuencia puede inducir un patrón de cambios o ciclos en la gráfica.\nLas gráficas de valores individuales son mucho mejores para detectar cambios grandes. Para detectar cambios pequeños, la gráfica de control de suma acumulada es una mejor opción."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráficas-para-variables-categóricas",
+    "href": "Modulo_3/Graficas.slides.html#gráficas-para-variables-categóricas",
+    "title": "Gráficas de Control",
+    "section": "Gráficas para variables categóricas",
+    "text": "Gráficas para variables categóricas\nLas gráficas de control para variables categóricas son importantes por varias razones:\n\n\nExisten datos categóricos en cualquier situación técnica o administrativa\nLos datos categóricos generalmente están disponibles\nLos datos categóricos generalmente se obtiene de forma rápida y barata.\nLa mayoría de los datos recabados en un informe para la Gerencia con frecuencia es en forma de datos categóricos (bueno o malo) y éste puede beneficiar el análisis de la gráfica de control"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#tipos-de-defectos",
+    "href": "Modulo_3/Graficas.slides.html#tipos-de-defectos",
+    "title": "Gráficas de Control",
+    "section": "Tipos de defectos",
+    "text": "Tipos de defectos\nDefectivo es cuando una unidad entera no logra el criterio de aceptación, independientemente del número de defectos en la unidad\nUn defecto es el incumplimiento de uno de los criterios de aceptación. Una unidad defectuosa puede tener múltiples defectos.\nEl criterio de conformidad debe estar claramente definido así como los procedimientos para decidir si los criterios se cumplen para producir resultados consistentes sobre el tiempo"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#grafica-p",
+    "href": "Modulo_3/Graficas.slides.html#grafica-p",
+    "title": "Gráficas de Control",
+    "section": "Grafica p",
+    "text": "Grafica p\n\nEvalúa la fracción o porcentaje de unidades defectuosas\n\nSe utiliza en las siguientes situaciones:\n\nDecisiones Aceptar/Rechazar con tamaño de subgrupo constante (o variable):\n\nProporción de defectuosos\nProporción de artículos arriba (o abajo) de un valor nominal\nProporción de conformidad\n\nDecisiones de juicio:\n\nProporción de artículos dentro de una categoría especificada"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#notación-1",
+    "href": "Modulo_3/Graficas.slides.html#notación-1",
+    "title": "Gráficas de Control",
+    "section": "Notación",
+    "text": "Notación\nRecuerda que tenemos \\(k\\) subgrupos y \\(n\\) unidades en cada subgrupo.\n\n\\(n_i\\) es el número de unidades defectuosas en el i-ésimo subgrupo.\n\\(p_i = n_i /n\\) es la proporción de unidades defectuosas en el i-ésimo subgrupo.\n\\(n p_i\\) es el número de unidades defectuosas en el i-ésimo subgrupo.\nEl promedio de las proporciones es \\(\\bar{p} = \\frac{n p_1 + n p_2  + \\cdots + n p_k}{nk}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-p",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-p",
+    "title": "Gráficas de Control",
+    "section": "Gráfica p",
+    "text": "Gráfica p\n\nLos elementos de la gráfica p son:\n\nLa linea central de la gráfica está dada por \\(\\bar{p}\\).\nEl límite de control superior es: \\(\\bar{p} + 3 \\sqrt{ \\frac{\\bar{p} (1- \\bar{p})}{n}}\\).\nEl límite de control inferior es: \\(\\bar{p} - 3 \\sqrt{ \\frac{\\bar{p} (1- \\bar{p})}{n}}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#ejemplo-3",
+    "href": "Modulo_3/Graficas.slides.html#ejemplo-3",
+    "title": "Gráficas de Control",
+    "section": "Ejemplo 3",
+    "text": "Ejemplo 3\n\nEl concentrado de jugo de naranja congelado se presenta en latas de cartón de 6 onzas.\nEstas latas se forman en una máquina girándolas a partir de cartón y colocándoles un panel inferior de metal.\nAl inspeccionar una lata, podemos determinar si, cuando está llena, podría tener fugas en la costura lateral o alrededor de la junta inferior.\nTal lata no conforme tiene un sello inadecuado ya sea en la costura lateral o en el panel inferior."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-2",
+    "href": "Modulo_3/Graficas.slides.html#section-2",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Hagamos una gráfica de control para mejorar la fracción de latas no conformes producidas por esta máquina.\nPara establecer el gráfico de control, se seleccionaron 30 muestras de \\(n\\) = 50 latas cada una a intervalos de media hora durante un período de tres turnos en los que la máquina estuvo en funcionamiento continuo.\nLos datos están en el archivo de excel “Juice.xlsx”."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#en-python",
+    "href": "Modulo_3/Graficas.slides.html#en-python",
+    "title": "Gráficas de Control",
+    "section": "En Python",
+    "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-np",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-np",
+    "title": "Gráficas de Control",
+    "section": "Gráfica np",
+    "text": "Gráfica np\n\nEvalúa el número de unidades defectuosas\n\nAsume que el tamaño de los subgrupos es constante.\nLos elementos de la gráfica np son:\n\nLa linea central de la gráfica está dada por \\(\\bar{np}\\).\nEl límite de control superior es: \\(n\\bar{p} + 3 \\sqrt{n \\bar{p} (1- \\bar{p})}\\).\nEl límite de control inferior es: \\(n\\bar{p} - 3 \\sqrt{n \\bar{p} (1- \\bar{p})}\\)."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#en-python-1",
+    "href": "Modulo_3/Graficas.slides.html#en-python-1",
+    "title": "Gráficas de Control",
+    "section": "En Python",
+    "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#gráfica-p-contra-gráfica-np",
+    "href": "Modulo_3/Graficas.slides.html#gráfica-p-contra-gráfica-np",
+    "title": "Gráficas de Control",
+    "section": "Gráfica p contra Gráfica np",
+    "text": "Gráfica p contra Gráfica np\n\nGráfica p:\n\nLa gráfica p se utiliza cuando el tamaño de la muestra varía de subgrupo a subgrupo.\nMonitorea la proporción de unidades no conformes en una muestra.\nEs útil cuando el tamaño de la muestra es relativamente pequeño y variable.\nSe calcula como el número de unidades no conformes dividido por el tamaño de la muestra."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-3",
+    "href": "Modulo_3/Graficas.slides.html#section-3",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#preguntas-de-práctica-para-examen",
+    "href": "Modulo_3/Graficas.slides.html#preguntas-de-práctica-para-examen",
+    "title": "Gráficas de Control",
+    "section": "Preguntas de práctica para examen",
+    "text": "Preguntas de práctica para examen\n\nCierto tipo de circuito integrado está conectado a su estructura mediante cinco cables.\nSe tomaron treinta muestras de cinco unidades cada una y se midió la fuerza de tracción (en gramos) de un cable en cada unidad.\nLos datos se presentan en el archivo “Cables_Circuito.xlsx” en Canvas.\n\nCrea la gráfica de control de promedios-rangos.\n¿Está el proceso bajo control?"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-4",
+    "href": "Modulo_3/Graficas.slides.html#section-4",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
   }
 ]
