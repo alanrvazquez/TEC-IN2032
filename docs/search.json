@@ -1491,7 +1491,7 @@
     "href": "Modulo_2/Intervalos.slides.html#carguemos-las-librerías",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "Carguemos las librerías",
-    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import sem, t, ttest_ind\n\nEn el cógido de arriba, indicamos que utilizaremos la función sem() de la librería scipy.stats."
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import ttest_1samp, ttest_ind\n\nEn el cógido de arriba, indicamos que utilizaremos la función ttest_1samp() y ttest_ind() de la librería scipy.stats."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#introducción-1",
@@ -1631,7 +1631,7 @@
     "href": "Modulo_2/Intervalos.slides.html#configuración",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "Configuración",
-    "text": "Configuración\nDesafortunadamente, para calcular un IC en Python debemos de especificar explicitamente ciertos objetos, incluyendo el tamaño de muestra (\\(n\\)) y el promedio de la variable (\\(\\bar{X}\\)). Esto se puede hacer con las funciones de pandas que ya vimos.\n\nX = cilinder_data.filter(['Coeficiente'])\nconfianza = 0.95\nn = cilinder_data.filter(['Coeficiente']).count()\nmedia = cilinder_data.filter(['Coeficiente']).agg([\"mean\"])\n\n\nAdemás, también necesitamos el error estándar, que es igual a \\(s/\\sqrt{n}\\). Para calcular esta cantidad, usamos la funcion sem() de scipy.stats.\n\ndesviacion_error = sem(X)"
+    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nTemp_Tubo1 = (tube_data\n  .query(\"Tipo == 1\")\n  .filter(['Temperatura'])\n)\n\n\nTemp_Tubo2 = (tube_data\n  .query(\"Tipo == 2\")\n  .filter(['Temperatura'])\n)"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-en-python",
@@ -1652,14 +1652,14 @@
     "href": "Modulo_2/Intervalos.slides.html#section-3",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "La ingeniera quiere investigar la diferencia entre la temperatura promedio de los dos tubos.\nEs decir, le interesa saber \\(\\mu_2 - \\mu_1\\) donde \\(\\mu_1\\) y \\(\\mu_2\\) es la temperatura promedio del tubo tipo 1 y 2, respectivamente."
+    "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza. En está función, especificamos el nivel de confianza usando el parámetro confidence_level.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([12.31815482]), high=array([13.76184518]))\n\n\n\nEl intervalo de confianza del 95% es \\([12.32, 13.76]\\) o \\(12.32 \\leq \\mu \\leq 13.76\\)"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-4",
     "href": "Modulo_2/Intervalos.slides.html#section-4",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Si \\(\\mu_2 - \\mu_1 &gt; 0\\), entonces el tubo de tipo 2 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 1.\nSi \\(\\mu_2 - \\mu_1 &lt; 0\\), entonces el tubo de tipo 1 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 2.\nSi \\(\\mu_2 - \\mu_1 = 0\\), entonces los tubos de tipo 1 y 2 tienen la misma temperatura promedio de deflexión."
+    "text": "La ingeniera quiere investigar la diferencia entre la temperatura promedio de los dos tubos.\nEs decir, le interesa saber \\(\\mu_2 - \\mu_1\\) donde \\(\\mu_1\\) y \\(\\mu_2\\) es la temperatura promedio del tubo tipo 1 y 2, respectivamente."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#cómo-podemos-estimar-el-valor-de-mu_2---mu_1",
@@ -1687,28 +1687,28 @@
     "href": "Modulo_2/Intervalos.slides.html#section-5",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
+    "text": "Si \\(\\mu_2 - \\mu_1 &gt; 0\\), entonces el tubo de tipo 2 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 1.\nSi \\(\\mu_2 - \\mu_1 &lt; 0\\), entonces el tubo de tipo 1 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 2.\nSi \\(\\mu_2 - \\mu_1 = 0\\), entonces los tubos de tipo 1 y 2 tienen la misma temperatura promedio de deflexión."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-6",
     "href": "Modulo_2/Intervalos.slides.html#section-6",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Si las dos muestras son independientes, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\\[\\left[ (\\bar{y} - \\bar{x}) - \\text{ME}, (\\bar{y} - \\bar{x}) + \\text{ME} \\right] \\]\ndonde ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-7",
     "href": "Modulo_2/Intervalos.slides.html#section-7",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Si las distribuciones tienen la misma varianza, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[ (\\bar{y} - \\bar{x}) - t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p\\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}}, \\; (\\bar{y} - \\bar{x}) + t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p \\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}} \\right].\\]\n\n\nLa cantidad \\(s_p\\) se llama desviación estándar agrupada\n\\[s_p = \\sqrt{ \\frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} }.\\]"
+    "text": "Si las dos muestras son independientes, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\\[\\left[ (\\bar{y} - \\bar{x}) - \\text{ME}, (\\bar{y} - \\bar{x}) + \\text{ME} \\right] \\]\ndonde ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-8",
     "href": "Modulo_2/Intervalos.slides.html#section-8",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Si las distribuciones tienen differentes varianzas, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[(\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}}, \\; (\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}} \\right].\\]\n\ndonde el número de grados de libertad viene dado por el valor \\(\\nu = \\frac{\\left( \\frac{s_y^2}{n_y} + \\frac{s_x^2}{n_x} \\right)^2 }{ \\frac{ \\left(s_{y}^2/n_y\\right)^2}{n_y - 1} + \\frac{ \\left (s_{x}^2/n_x \\right)^2}{n_x - 1} }\\) (redondeado al número entero más cercano)."
+    "text": "Si las distribuciones tienen la misma varianza, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[ (\\bar{y} - \\bar{x}) - t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p\\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}}, \\; (\\bar{y} - \\bar{x}) + t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p \\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}} \\right].\\]\n\n\nLa cantidad \\(s_p\\) se llama desviación estándar agrupada\n\\[s_p = \\sqrt{ \\frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} }.\\]"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#en-python",
@@ -1743,14 +1743,14 @@
     "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\n\nAhora, construímos el intervalo de confianza en dos pasos.\nPrimero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var = False)\n\nEl parámetro equal_var ene sta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
+    "text": "Intervalo de confianza\n\nPara construir un intervalo de confianza de una muestra, seguimos dos pasos.\n\nPrimero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_1samp(cilinder_data, popmean = 0)\n\nPor convención, el parámetro popmean debe estar fijado en cero."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-9",
     "href": "Modulo_2/Intervalos.slides.html#section-9",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([-3.12936848]), high=array([11.79603514]))\n\n\n\nEl intervalo es \\([-3.12, 11.79]\\) o \\(-3.12 \\leq \\mu_2 - \\mu_1  \\leq 11.79\\)."
+    "text": "Si las distribuciones tienen differentes varianzas, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[(\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}}, \\; (\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}} \\right].\\]\n\ndonde el número de grados de libertad viene dado por el valor \\(\\nu = \\frac{\\left( \\frac{s_y^2}{n_y} + \\frac{s_x^2}{n_x} \\right)^2 }{ \\frac{ \\left(s_{y}^2/n_y\\right)^2}{n_y - 1} + \\frac{ \\left (s_{x}^2/n_x \\right)^2}{n_x - 1} }\\) (redondeado al número entero más cercano)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#no-asumas-que-las-varianzas-son-iguales",
@@ -1764,7 +1764,7 @@
     "href": "Modulo_2/Intervalos.slides.html#section-10",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Cuando las varianzas de la muestra son casi iguales, es tentador suponer que las varianzas de la población también lo son.\nSin embargo, con tamaños de muestra pequeños, las varianzas de la muestra pueden no aproximarse bien a las varianzas teóricas de la distribución.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
+    "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([-3.12936848]), high=array([11.79603514]))\n\n\n\nEl intervalo es \\([-3.12, 11.79]\\) o \\(-3.12 \\leq \\mu_2 - \\mu_1  \\leq 11.79\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#preguntas-de-práctica-para-examen",
@@ -2248,5 +2248,19 @@
     "title": "Pruebas de Hipótesis",
     "section": "En Python",
     "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
+    "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Intervalo de confianza",
+    "text": "Intervalo de confianza\n\nAhora, construímos el intervalo de confianza en dos pasos.\nPrimero, realizamos una prueba de hipótesis de dos muestras (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var = False)\n\nEl parámetro equal_var en esta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-11",
+    "href": "Modulo_2/Intervalos.slides.html#section-11",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Cuando las varianzas de la muestra son casi iguales, es tentador suponer que las varianzas de la población también lo son.\nSin embargo, con tamaños de muestra pequeños, las varianzas de la muestra pueden no aproximarse bien a las varianzas teóricas de la distribución.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
   }
 ]

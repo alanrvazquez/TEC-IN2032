@@ -40,10 +40,10 @@ Antes de empezar, carguemos las librerías que usaremos hoy.
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy.stats import sem, t, ttest_ind
+from scipy.stats import ttest_1samp, ttest_ind
 ```
 
-En el cógido de arriba, indicamos que utilizaremos la función `sem()` de la librería **scipy.stats**.
+En el cógido de arriba, indicamos que utilizaremos la función `ttest_1samp()` y `ttest_ind()` de la librería **scipy.stats**.
 
 # Introducción
 
@@ -294,41 +294,37 @@ plt.xlabel("Coeficiente") # Etiqueta del eje X
 plt.show() # Muestra la Gráfica
 ```
 
-## Configuración
+## Intervalo de confianza
 
-Desafortunadamente, para calcular un IC en Python debemos de especificar explicitamente ciertos objetos, incluyendo el tamaño de muestra ($n$) y el promedio de la variable ($\bar{X}$). Esto se puede hacer con las funciones de **pandas** que ya vimos.
+</br>
 
-```{python}
-#| echo: true
+Para construir un intervalo de confianza de una muestra, seguimos dos pasos.
 
-X = cilinder_data.filter(['Coeficiente'])
-confianza = 0.95
-n = cilinder_data.filter(['Coeficiente']).count()
-media = cilinder_data.filter(['Coeficiente']).agg(["mean"])
-```
+</br>
 
-. . .
-
-Además, también necesitamos el *error estándar*, que es igual a $s/\sqrt{n}$. Para calcular esta cantidad, usamos la funcion `sem()` de **scipy.stats**.
+Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función `ttest_ind()` de **scipy.stats**.
 
 ```{python}
 #| echo: true
+#| output: true
 
-desviacion_error = sem(X) 
+prueba_hip = ttest_1samp(cilinder_data, popmean = 0)
 ```
 
-## Intervalo de confianza en Python
+Por convención, el parámetro `popmean` debe estar fijado en cero.
+
+## 
 
 </br></br>
 
-Ahora, creamos el intervalo de confianza usando la función `t.interval()` de **scipy.stats**.
+Segundo, aplicamos la función `.confidence_interval()` al objeto anterior (`prueba_hip`) para obtener el intervalo de confianza. En está función, especificamos el nivel de confianza usando el parámetro `confidence_level`.
 
 ```{python}
 #| echo: true
+#| output: true
 
-intervalo = t.interval(confianza, n-1, loc = media, 
-                      scale = desviacion_error)
-intervalo
+ci = prueba_hip.confidence_interval(confidence_level = 0.95)
+ci
 ```
 
 </br>
@@ -529,7 +525,7 @@ Temp_Tubo2 = (tube_data
 
 Ahora, construímos el intervalo de confianza en dos pasos.
 
-Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función `ttest_ind()` de **scipy.stats**.
+Primero, realizamos una prueba de hipótesis de dos muestras (más detalles en la siguiente clase) usando la función `ttest_ind()` de **scipy.stats**.
 
 ```{python}
 #| echo: true
@@ -538,7 +534,7 @@ Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clas
 prueba_hip = ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var = False)
 ```
 
-El parámetro `equal_var` ene sta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.
+El parámetro `equal_var` en esta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.
 
 ## 
 
