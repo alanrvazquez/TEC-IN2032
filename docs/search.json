@@ -774,14 +774,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#idea-general",
     "title": "Pruebas de Hipótesis",
     "section": "Idea general",
-    "text": "Idea general\n\nConsideremos una población (distribución) en estudio con un parámetro objetivo. Una prueba de hipótesis sigue los pasos generales siguientes.\n\nPlantear una hipótesis sobre el parámetro. Por ejemplo, equivale a un valor especificado por el usuario.\nRecolectar una muestra de la población y comparar los valores observados con la hipótesis.\nSi las observaciones no están de acuerdo con la hipótesis, la rechazamos. De lo contrario, concluimos que la hipótesis es verdadera o que la muestra no proporcionó suficiente información para la prueba."
+    "text": "Idea general\nConsideremos una población (distribución) en estudio con un parámetro objetivo. Una prueba de hipótesis sigue los pasos generales siguientes.\n\nPlantear una hipótesis sobre el parámetro. Por ejemplo, equivale a un valor especificado por el usuario.\nRecolectar una muestra de la población y comparar los valores observados con la hipótesis.\nSi las observaciones no están de acuerdo con la hipótesis, la rechazamos. De lo contrario, concluimos que la hipótesis es verdadera o que la muestra no proporcionó suficiente información para la prueba."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#paso-1.-hipótesis",
     "href": "Modulo_2/Hipotesis.slides.html#paso-1.-hipótesis",
     "title": "Pruebas de Hipótesis",
     "section": "Paso 1. Hipótesis",
-    "text": "Paso 1. Hipótesis\n\nUna hipótesis es una afirmación sobre un parámetro de población.\n\nHay dos tipos de hipótesis:\nLa hipótesis nula se denota con \\(H_0\\).\nLa hipótesis alternativa se denota con \\(H_1\\)."
+    "text": "Paso 1. Hipótesis\n\nUna hipótesis es una afirmación sobre un parámetro de población.\n\n\nHay dos tipos de hipótesis:\nLa hipótesis nula se denota con \\(H_0\\).\nLa hipótesis alternativa se denota con \\(H_1\\)."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section",
@@ -795,70 +795,70 @@
     "href": "Modulo_2/Hipotesis.slides.html#section-1",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "A veces, también escribimos la hipótesis nula de esta manera:\n\n\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu \\neq \\mu_0\\)\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu &gt; \\mu_0\\)\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu &lt; \\mu_0\\)\n\n\nEsto es como asumir el valor más extremo posible de \\(\\mu\\) bajo \\(H_0\\).\nEs decir, el valor mínimo (o máximo) para que \\(H_0\\) sea verdadera."
+    "text": "A veces, también escribimos la hipótesis nula de esta manera:\n\n\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu \\neq \\mu_0\\)\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu &gt; \\mu_0\\)\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu &lt; \\mu_0\\)\n\n\nEsto es como asumir el valor más extremo posible de \\(\\mu\\) bajo \\(H_0\\).\n\nEs decir, el valor mínimo (o máximo) para que \\(H_0\\) sea verdadera."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#ejemplo-1",
     "href": "Modulo_2/Hipotesis.slides.html#ejemplo-1",
     "title": "Pruebas de Hipótesis",
     "section": "Ejemplo 1",
-    "text": "Ejemplo 1\n\n\nPregunta de investigación 1: ¿El alquiler mensual promedio de un apartamento de un dormitorio en la zona Tec es mayor a 15,000 pesos? \\(H_0: \\mu \\leq 15,000\\) contra \\(H_1: \\mu &gt; 15,000\\), donde \\(\\mu\\) es el alquiler mensual promedio de todos los apartamentos de un dormitorio en la zona Tec.\nPregunta de investigación 2: ¿La mayoría de los estudiantes del campus del Tec tienen un perro? \\(H_0: p = 0.5\\) contra \\(H_1: p &gt; 0.5\\), donde \\(p\\) es la proporción poblacional de estudiantes que poseen un perro."
+    "text": "Ejemplo 1\n\n\nPregunta de investigación 1: ¿El alquiler mensual promedio de un apartamento de un dormitorio en la zona Tec es mayor a 15,000 pesos? \\(H_0: \\mu \\leq 15,000\\) contra \\(H_1: \\mu &gt; 15,000\\), donde \\(\\mu\\) es el alquiler mensual promedio de todos los apartamentos de un dormitorio en la zona Tec.\nPregunta de investigación 2: ¿La mayoría de los estudiantes del campus del Tec tienen un perro? \\(H_0: p = 0.5\\) contra \\(H_1: p &gt; 0.5\\), donde \\(p\\) es la proporción de todos de estudiantes que poseen un perro."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#paso-2.-muestra-y-estadístico-de-prueba",
     "href": "Modulo_2/Hipotesis.slides.html#paso-2.-muestra-y-estadístico-de-prueba",
     "title": "Pruebas de Hipótesis",
     "section": "Paso 2. Muestra y Estadístico de Prueba",
-    "text": "Paso 2. Muestra y Estadístico de Prueba\n\nNormalmente, una prueba de hipótesis se especifica en términos de estadístico de prueba \\(T\\).\nUn estadístico de prueba es una función de la muestra \\(Y_1, \\ldots, Y_n\\), en la que se basará la decisión estadística. Por tanto, también es una variable aleatoria.\nUna estadística de prueba tiene una distribución de probabilidad asociada, que depende de la hipótesis asumida (\\(H_0\\) o \\(H_1\\))."
+    "text": "Paso 2. Muestra y Estadístico de Prueba\n\nNormalmente, una prueba de hipótesis se especifica en términos de estadístico de prueba \\(T\\).\nUn estadístico de prueba es una función de la muestra \\(Y_1, \\ldots, Y_n\\), en la que se basará la decisión estadística. Por tanto, también es una variable aleatoria.\nUna estadístico de prueba tiene una distribución de probabilidad asociada, que depende de la hipótesis asumida (\\(H_0\\) o \\(H_1\\))."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#ejemplo-prueba-de-hipótesis-sobre-la-media",
     "href": "Modulo_2/Hipotesis.slides.html#ejemplo-prueba-de-hipótesis-sobre-la-media",
     "title": "Pruebas de Hipótesis",
     "section": "Ejemplo: Prueba de hipótesis sobre la media",
-    "text": "Ejemplo: Prueba de hipótesis sobre la media\nConsidera una muestra pequeña \\(y_1, \\ldots, y_n\\) que se distribuye como \\(N(\\mu, \\sigma^2)\\).\nHipótesis nula: \\(H_0: \\mu = \\mu_0\\) donde \\(\\mu\\) es un valor (constante) elegido por el usuario.\nPosibles Hipótesis Alternativas:\n\n\\(H_1: \\mu &gt; \\mu_0\\)\n\n\\(H_1: \\mu &lt; \\mu_0\\)\n\n\\(H_1: \\mu \\neq \\mu_0\\)\n\nEstadístico de Prueba: \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) donde \\(\\bar{y}\\) y \\(s\\) son el promedio y desviación estándar de la muestra observada."
+    "text": "Ejemplo: Prueba de hipótesis sobre la media\n\nConsidera una muestra pequeña \\(y_1, \\ldots, y_n\\) que se distribuye como \\(N(\\mu, \\sigma^2)\\).\nHipótesis nula: \\(H_0: \\mu = \\mu_0\\) donde \\(\\mu\\) es un valor (constante) elegido por el usuario.\n\n\nPosibles Hipótesis Alternativas:\n\n\\(H_1: \\mu &gt; \\mu_0\\)\n\n\\(H_1: \\mu &lt; \\mu_0\\)\n\n\\(H_1: \\mu \\neq \\mu_0\\)\n\n\nEstadístico de Prueba:\n\\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) donde \\(\\bar{y}\\) y \\(s\\) son el promedio y desviación estándar de la muestra observada."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#distribución-del-estadístico-de-prueba",
     "href": "Modulo_2/Hipotesis.slides.html#distribución-del-estadístico-de-prueba",
     "title": "Pruebas de Hipótesis",
     "section": "Distribución del estadístico de prueba",
-    "text": "Distribución del estadístico de prueba\n\n\nSi \\(H_0: \\mu = \\mu_0\\) es verdadera, \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad."
+    "text": "Distribución del estadístico de prueba\n\n\n\nSi \\(H_0: \\mu = \\mu_0\\) es verdadera, \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#paso-3.-rechazar-o-no-rechazar-h_0",
     "href": "Modulo_2/Hipotesis.slides.html#paso-3.-rechazar-o-no-rechazar-h_0",
     "title": "Pruebas de Hipótesis",
     "section": "Paso 3. Rechazar o no rechazar \\(H_0\\)",
-    "text": "Paso 3. Rechazar o no rechazar \\(H_0\\)\n\nAl realizar una prueba de hipótesis, existen dos decisiones posibles: rechazar o no rechazar \\(H_0\\).\nPara ello, comprobamos si el valor observado del estadístico de prueba es poco o muy probable asumiendo que \\(H_0\\) es verdadera."
+    "text": "Paso 3. Rechazar o no rechazar \\(H_0\\)\n\nAl realizar una prueba de hipótesis, existen dos decisiones posibles: rechazar o no rechazar \\(H_0\\).\n\nPara ello, comprobamos si el valor observado del estadístico de prueba es poco o muy probable asumiendo que \\(H_0\\) es verdadera."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-2",
     "href": "Modulo_2/Hipotesis.slides.html#section-2",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Si \\(H_0: \\mu = \\mu_0\\) es verdadera, \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad.\n\n\nSi \\(H_0\\) es verdad, \\(t_0\\) debería de estar cerca de 0, el valor con más densidad de la distribución \\(t\\)."
+    "text": "Si \\(H_0: \\mu = \\mu_0\\) es verdadera, \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad.\n\n\n\nSi \\(H_0\\) es verdad, \\(t_0\\) debería de estar cerca de 0, el valor con más densidad de la distribución \\(t\\)."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-3",
     "href": "Modulo_2/Hipotesis.slides.html#section-3",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Si \\(H_0: \\mu = \\mu_0\\) no es verdadera, entonces \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) deberá estar lejos de 0, el valor con más densidad de la distribución \\(t\\).\n\n\nPor ejemplo, si \\(H_1: \\mu &gt; \\mu_0\\) es verdad, entonces \\(t_0\\) debería de estar lejos de 0 hacia la derecha. En otras palabras, \\(t_0\\) es poco probable asumiendo que \\(H_0\\) es verdadera."
+    "text": "Si \\(H_0: \\mu = \\mu_0\\) no es verdadera, entonces \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) deberá estar lejos de 0, el valor con más densidad de la distribución \\(t\\).\n\n\n\nPor ejemplo, si \\(H_1: \\mu &gt; \\mu_0\\) es verdad, entonces \\(t_0\\) debería de estar lejos de 0 hacia la derecha. En otras palabras, \\(t_0\\) es poco probable asumiendo que \\(H_0\\) es verdadera."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#valor-p",
     "href": "Modulo_2/Hipotesis.slides.html#valor-p",
     "title": "Pruebas de Hipótesis",
     "section": "Valor p",
-    "text": "Valor p\nDefinición: El valor p es la probabilidad de observar un valor al menos tan extremo como el valor observado de un estadístico \\(T\\), cuando \\(H_0\\) es verdadera.\n\n\nUn p-valor pequeño es equivalente a decir que \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) esta “lejos” de 0.\nSugiriendo que la hipótesis nula \\(H_0\\) no es verdadera."
+    "text": "Valor p\nDefinición: El valor p es la probabilidad de observar un valor al menos tan extremo como el valor observado de un estadístico \\(T,\\) cuando \\(H_0\\) es verdadera.\n\n\n\n\nUn p-valor pequeño es equivalente a decir que \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) esta “lejos” de 0.\nSugiriendo que la hipótesis nula \\(H_0\\) no es verdadera."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-4",
     "href": "Modulo_2/Hipotesis.slides.html#section-4",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Para \\(H_0: \\mu = \\mu_0\\) vs \\(H_1: \\mu &lt; \\mu_0\\), el p-valor se calcula usando la cola izquierda de la distribución \\(t\\).\n\n\nDe la misma manera, un p-valor pequeño es equivalente a decir que \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) esta “lejos” de 0.\nSugiriendo que la hipótesis nula \\(H_0\\) no es verdadera."
+    "text": "Para \\(H_0: \\mu = \\mu_0\\) vs \\(H_1: \\mu &lt; \\mu_0\\), el p-valor se calcula usando la cola izquierda de la distribución \\(t\\).\n\n\n\nDe la misma manera, un p-valor pequeño es equivalente a decir que \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) esta “lejos” de 0.\nSugiriendo que la hipótesis nula \\(H_0\\) no es verdadera."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-5",
@@ -872,14 +872,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#el-valor-p-no-es-la-probabilidad-de-que-h_0-sea-cierta",
     "title": "Pruebas de Hipótesis",
     "section": "El valor p no es la probabilidad de que \\(H_0\\) sea cierta",
-    "text": "El valor p no es la probabilidad de que \\(H_0\\) sea cierta\n\nDado que el valor p es una probabilidad, y dado que los valores p pequeños indican que es poco probable que \\(H_0\\) sea cierta, es tentador pensar que el valor p representa la probabilidad de que \\(H_0\\)sea cierta.\n\n\n¡Este no es el caso!\n\n\nEl concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica a resultados que pueden producirse de diferentes maneras cuando se repiten los experimentos."
+    "text": "El valor p no es la probabilidad de que \\(H_0\\) sea cierta\nDado que el valor p es una probabilidad, y dado que los valores p pequeños indican que es poco probable que \\(H_0\\) sea cierta, es tentador pensar que el valor p representa la probabilidad de que \\(H_0\\)sea cierta.\n\n\n¡Este no es el caso!\n\nEl concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica a resultados que pueden producirse de diferentes maneras cuando se repiten los experimentos."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#qué-tan-pequeño-debe-de-ser-el-p-valor-para-rechazar-h_0",
     "href": "Modulo_2/Hipotesis.slides.html#qué-tan-pequeño-debe-de-ser-el-p-valor-para-rechazar-h_0",
     "title": "Pruebas de Hipótesis",
     "section": "¿Qué tan pequeño debe de ser el p valor para rechazar \\(H_0\\)?",
-    "text": "¿Qué tan pequeño debe de ser el p valor para rechazar \\(H_0\\)?\n\n\n\nRespuesta: ¡Muy pequeño!\nPero, ¿qué tan pequeño?\nRespuesta: ¡Muy pequeño!\nPero, dime ¿qué tan pequeño?\nRespuesta: Esta bien, debe de ser menor que un valor llamado \\(\\alpha\\) el cual suele ser 0.1, 0.05, o 0.01.\n¡Gracias!\n\n\n\n\n\n\n\nSir. Ronald Fisher"
+    "text": "¿Qué tan pequeño debe de ser el p valor para rechazar \\(H_0\\)?\n\n\n\nRespuesta: ¡Muy pequeño!\nPero, ¿qué tan pequeño?\nRespuesta: ¡Muy pequeño!\nPero, dime ¿qué tan pequeño?\nRespuesta: Esta bien! Debe de ser menor que un valor llamado \\(\\alpha\\) el cual suele ser 0.1, 0.05, o 0.01.\n¡Gracias!\n\n\n\n\n\n\n\n\nSir. Ronald Fisher"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#significancia-estadística",
@@ -900,7 +900,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis-sobre-la-media",
     "title": "Pruebas de Hipótesis",
     "section": "Prueba de hipótesis sobre la media",
-    "text": "Prueba de hipótesis sobre la media\nConsidera una muestra pequeña \\(y_1, \\ldots, y_n\\) que se distribuye como \\(N(\\mu, \\sigma^2)\\).\nHipótesis nula: \\(H_0: \\mu = \\mu_0\\) donde \\(\\mu\\) es un valor (constante) elegido por el usuario.\nEstadístico de Prueba: \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) donde \\(\\bar{y}\\) y \\(s\\) son el promedio y desviación estándar de la muestra observada.\nSea \\(T\\) una variable aleatoria que sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad."
+    "text": "Prueba de hipótesis sobre la media\n\nConsidera una muestra pequeña \\(y_1, \\ldots, y_n\\) que se distribuye como \\(N(\\mu, \\sigma^2)\\).\nHipótesis nula: \\(H_0: \\mu = \\mu_0\\) donde \\(\\mu\\) es un valor (constante) elegido por el usuario.\nEstadístico de Prueba: \\(t_0 = \\frac{\\bar{y} - \\mu_0}{s/\\sqrt{n}}\\) donde \\(\\bar{y}\\) y \\(s\\) son el promedio y desviación estándar de la muestra observada.\n Sea \\(T\\) una variable aleatoria que sigue una distribución \\(t\\) con \\(n-1\\) grados de libertad."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#ejemplo-3",

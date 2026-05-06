@@ -39,20 +39,22 @@ Recuerda que el objetivo de la estadística es hacer inferencias sobre parámetr
 
 Estas inferencias se expresan de dos maneras:
 
+::: incremental
 - [**Intervalos de confianza**]{style="color: #5E7D6A"} de un parámetro.
 - [**Prueba de hipótesis**]{style="color: #4682B4"} sobre su valor.
+:::
 
 ## Idea general
 
-</br>
-
 Consideremos una población (distribución) en estudio con un parámetro objetivo. Una prueba de hipótesis sigue los pasos generales siguientes.
 
+::: incremental
 1.  [**Plantear una hipótesis**]{style="color: #4682B4"} sobre el parámetro. Por ejemplo, equivale a un valor especificado por el usuario.
 
 2.  [**Recolectar una muestra**]{style="color: #4682B4"} de la población y comparar los valores observados con la hipótesis.
 
 3.  Si las observaciones no están de acuerdo con la hipótesis, [**la rechazamos. De lo contrario, concluimos que la hipótesis es verdadera**]{style="color: #4682B4"} o que la muestra [**no proporcionó suficiente información**]{style="color: #4682B4"} para la prueba.
+:::
 
 ## Paso 1. Hipótesis
 
@@ -62,6 +64,8 @@ Una **hipótesis** es una afirmación sobre un parámetro de población.
 
 </br>
 
+. . .
+
 Hay dos tipos de hipótesis:
 
 La [**hipótesis nula**]{style="color: darkblue"} se denota con $H_0$.
@@ -70,7 +74,9 @@ La [**hipótesis alternativa**]{style="color: darkgreen"} se denota con $H_1$.
 
 ## 
 
-Para un parámetro objetivo $\mu$ y un valor hipotético (especificado por el usuario) $\mu_0$, nos concentraremos en hipótesis del siguiente tipo:
+</br>
+
+Para un parámetro objetivo $\mu$ y un *valor hipotético* (especificado por el usuario) $\mu_0$, nos concentraremos en hipótesis del siguiente tipo:
 
 </br>
 
@@ -84,7 +90,7 @@ $H_0: \mu \geq \mu_0$ contra $H_1: \mu < \mu_0$
 
 </br>
 
-La hipótesis alternativa suele ser la hipótesis que buscamos sustentar con base en la información contenida en la muestra.
+[La **hipótesis alternativa** suele ser la hipótesis que buscamos sustentar con base en la información contenida en la muestra.]{style="color:#4a6c40"}
 
 ## 
 
@@ -104,15 +110,17 @@ $H_0: \mu = \mu_0$ contra $H_1: \mu < \mu_0$
 
 Esto es como asumir el valor más extremo posible de $\mu$ bajo $H_0$.
 
-Es decir, el valor mínimo (o máximo) para que $H_0$ sea verdadera.
+> Es decir, el valor mínimo (o máximo) para que $H_0$ sea verdadera.
 
 ## Ejemplo 1
 
 </br>
 
-- **Pregunta de investigación 1**: ¿El alquiler mensual promedio de un apartamento de un dormitorio en la zona Tec es mayor a 15,000 pesos? $H_0: \mu \leq 15,000$ contra $H_1: \mu > 15,000$, donde $\mu$ es el alquiler mensual promedio de todos los apartamentos de un dormitorio en la zona Tec.
+::: incremental
+- **Pregunta de investigación 1**: ¿El alquiler mensual promedio de un apartamento de un dormitorio en la zona Tec es mayor a 15,000 pesos? $H_0: \mu \leq 15,000$ contra $H_1: \mu > 15,000$, donde $\mu$ es el alquiler mensual promedio de *todos* los apartamentos de un dormitorio en la zona Tec.
 
-- **Pregunta de investigación 2**: ¿La mayoría de los estudiantes del campus del Tec tienen un perro? $H_0: p = 0.5$ contra $H_1: p > 0.5$, donde $p$ es la proporción poblacional de estudiantes que poseen un perro.
+- **Pregunta de investigación 2**: ¿La mayoría de los estudiantes del campus del Tec tienen un perro? $H_0: p = 0.5$ contra $H_1: p > 0.5$, donde $p$ es la proporción de *todos* de estudiantes que poseen un perro.
+:::
 
 ## Paso 2. Muestra y Estadístico de Prueba
 
@@ -122,27 +130,39 @@ Normalmente, una prueba de hipótesis se especifica en términos de [**estadíst
 
 Un estadístico de prueba es una función de la muestra $Y_1, \ldots, Y_n$, en la que se basará la decisión estadística. Por tanto, también es una variable aleatoria.
 
-Una estadística de prueba tiene [una distribución de probabilidad asociada, que depende de la hipótesis asumida]{style="color: darkgreen"} ($H_0$ o $H_1$).
+Una estadístico de prueba tiene [una distribución de probabilidad asociada, que depende de la hipótesis asumida]{style="color: darkgreen"} ($H_0$ o $H_1$).
 
 ## Ejemplo: Prueba de hipótesis sobre la media
 
+:::::: {style="font-size: 90%;"}
 Considera una muestra pequeña $y_1, \ldots, y_n$ [que se distribuye]{.underline} como [$N(\mu, \sigma^2)$]{style="color: darkred"}.
 
 [Hipótesis nula]{.underline}: [$H_0: \mu = \mu_0$ donde $\mu$ es un valor (constante) elegido por el usuario.]{style="color: #4682B4"}
 
+::::: columns
+::: {.column width="50%"}
 **Posibles Hipótesis Alternativas**:
 
 - [$H_1: \mu > \mu_0$]{style="color: #40E0D0"}\
 - [$H_1: \mu < \mu_0$]{style="color: green"}\
 - [$H_1: \mu \neq \mu_0$]{style="color: orange"}
+:::
 
-[Estadístico de Prueba]{.underline}: $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ donde $\bar{y}$ y $s$ son el promedio y desviación estándar de la muestra observada.
+::: {.column width="50%"}
+[Estadístico de Prueba]{.underline}:
+
+$t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ donde $\bar{y}$ y $s$ son el promedio y desviación estándar de la muestra observada.
+:::
+:::::
+::::::
 
 ## Distribución del estadístico de prueba
 
+</br></br>
+
 ::::: columns
 ::: {.column width="50%"}
-Si $H_0: \mu = \mu_0$ es verdadera, $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ sigue una distribución $t$ con $n-1$ grados de libertad.
+Si $H_0: \mu = \mu_0$ es [**verdadera**]{style="color:#4682B4"}, $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ sigue una [distribución $t$]{style="color:#4682B4"} con $n-1$ grados de libertad.
 :::
 
 ::: {.column width="50%"}
@@ -154,17 +174,23 @@ Si $H_0: \mu = \mu_0$ es verdadera, $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ s
 
 </br></br></br>
 
-Al realizar una prueba de hipótesis, existen dos decisiones posibles: **rechazar** [o]{.underline} **no rechazar** $H_0$.
+Al realizar una prueba de hipótesis, existen dos decisiones posibles: [**rechazar**]{style="color:#4a6c40"} [o]{.underline} [**no rechazar**]{style="color:#4a6c40"} $H_0$.
+
+</br>
 
 Para ello, comprobamos si el valor observado del estadístico de prueba es poco o muy probable asumiendo que $H_0$ es verdadera.
 
 ## 
 
-Si $H_0: \mu = \mu_0$ es verdadera, $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ sigue una distribución $t$ con $n-1$ grados de libertad.
+</br>
+
+Si $H_0: \mu = \mu_0$ es [**verdadera**]{style="color:#4682B4"}, $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ sigue una [distribución $t$]{style="color:#4682B4"} con $n-1$ grados de libertad.
+
+</br>
 
 ::::: columns
 ::: {.column width="50%"}
-Si $H_0$ es verdad, $t_0$ debería de estar cerca de 0, el valor con más densidad de la distribución $t$.
+Si $H_0$ es [**verdad**]{style="color:#4682B4"}, $t_0$ debería de estar [**cerca de 0**]{style="color:#4682B4"}, el valor con más densidad de la distribución $t$.
 :::
 
 ::: {.column width="50%"}
@@ -174,11 +200,15 @@ Si $H_0$ es verdad, $t_0$ debería de estar cerca de 0, el valor con más densid
 
 ## 
 
-Si $H_0: \mu = \mu_0$ [**no**]{.underline} es verdadera, entonces $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ deberá estar lejos de 0, el valor con más densidad de la distribución $t$.
+</br>
+
+Si $H_0: \mu = \mu_0$ [**no es verdadera**]{.underline}, entonces $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ deberá estar lejos de 0, el valor con más densidad de la distribución $t$.
+
+</br>
 
 ::::: columns
 ::: {.column width="50%"}
-Por ejemplo, si $H_1: \mu > \mu_0$ es verdad, entonces $t_0$ debería de estar lejos de 0 hacia la derecha. En otras palabras, $t_0$ es poco probable asumiendo que $H_0$ es verdadera.
+Por ejemplo, si $H_1: \mu > \mu_0$ es [**verdad**]{style="color:#E85C78 "}, entonces $t_0$ debería de [**estar lejos de 0**]{style="color:#E85C78 "} hacia la derecha. En otras palabras, $t_0$ es poco probable asumiendo que $H_0$ es verdadera.
 :::
 
 ::: {.column width="50%"}
@@ -188,23 +218,31 @@ Por ejemplo, si $H_1: \mu > \mu_0$ es verdad, entonces $t_0$ debería de estar l
 
 ## Valor *p*
 
-[**Definición**]{.underline}: El [**valor *p***]{style="color: darkgreen"} es la probabilidad de observar un valor [*al menos tan extremo*]{style="color: purple"} *como el valor observado de un estadístico* $T$, cuando [$H_0$ es verdadera]{style="color: purple"}.
+[**Definición**]{.underline}: El [**valor *p***]{style="color: darkgreen"} es la probabilidad de observar un valor [*al menos tan extremo*]{style="color: purple"} *como el valor observado de un estadístico* $T,$ cuando [$H_0$ es verdadera]{style="color: purple"}.
+
+. . .
 
 ::::: columns
 ::: {.column width="50%"}
+</br>
+
 Un p-valor pequeño es equivalente a decir que $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ esta “lejos” de 0.
 
 Sugiriendo que la hipótesis nula $H_0$ no es verdadera.
 :::
 
 ::: {.column width="50%"}
-![](images/pvalor.png){fig-align="center"}
+![](images/pvalor.png){fig-align="center" width="388"}
 :::
 :::::
 
 ## 
 
+</br>
+
 Para [$H_0: \mu = \mu_0$ vs $H_1: \mu < \mu_0$]{style="color: purple"}, el p-valor se calcula usando la cola izquierda de la distribución $t$.
+
+</br>
 
 ::::: columns
 ::: {.column width="50%"}
@@ -228,8 +266,6 @@ Usamos las dos colas porque la hipótesis alternativa se enfoca en una diferenci
 
 ## El valor *p* no es la probabilidad de que $H_0$ sea cierta
 
-</br>
-
 Dado que el valor p es una probabilidad, y dado que los valores p pequeños indican que es poco probable que $H_0$ sea cierta, es tentador pensar que el valor p representa la probabilidad de que $H_0$sea cierta.
 
 </br>
@@ -237,8 +273,6 @@ Dado que el valor p es una probabilidad, y dado que los valores p pequeños indi
 ::: {style="text-align: center;"}
 [¡Este no es el caso!]{style="color: darkred"}
 :::
-
-</br>
 
 El concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica a resultados que pueden producirse de diferentes maneras cuando se repiten los experimentos.
 
@@ -249,22 +283,25 @@ El concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica
 ::: incremental
 - **Respuesta**: ¡Muy pequeño!
 
-- Pero, [*¿qué tan pequeño?*]{style="color: pink"}
+- Pero, [*¿qué tan pequeño?*]{style="color: #E85C78"}
 
 - **Respuesta**: ¡Muy pequeño!
 
-- Pero, dime [*¿qué tan pequeño?*]{style="color: pink"}
+- Pero, dime [*¿qué tan pequeño?*]{style="color: #E85C78"}
 
-- **Respuesta**: Esta bien, debe de ser menor que un valor llamado $\alpha$ el cual suele ser 0.1, 0.05, o 0.01.
+- **Respuesta**: Esta bien! Debe de ser menor que un valor llamado $\alpha$ el cual suele ser 0.1, 0.05, o 0.01.
 
 - ¡Gracias!
 :::
 ::::
 
 ::: {.column width="50%"}
-![](images/clipboard-2242705857.png){fig-align="center"}
+![](images/clipboard-2242705857.png){fig-align="center" width="318"}
 
-Sir. Ronald Fisher
+::: {style="text-align: center;"}
+[Sir. Ronald Fisher](https://simple.wikipedia.org/wiki/Ronald_Fisher)
+:::
+
 :::
 ::::::
 
@@ -304,13 +341,16 @@ Los elementos de una prueba estadística son:
 
 ## Prueba de hipótesis sobre la media
 
+::: {style="font-size: 80%;"}
 Considera una muestra pequeña $y_1, \ldots, y_n$ [que se distribuye]{.underline} como [$N(\mu, \sigma^2)$]{style="color: darkred"}.
 
 [Hipótesis nula]{.underline}: [$H_0: \mu = \mu_0$ donde $\mu$ es un valor (constante) elegido por el usuario.]{style="color: #4682B4"}
 
 [Estadístico de Prueba]{.underline}: $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ donde $\bar{y}$ y $s$ son el promedio y desviación estándar de la muestra observada.
 
+</br>
 Sea $T$ una variable aleatoria que sigue una distribución $t$ con $n-1$ grados de libertad.
+:::
 
 ![](images/alternativas.png){fig-align="center"}
 
