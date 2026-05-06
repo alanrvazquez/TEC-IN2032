@@ -935,14 +935,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#section-7",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Para llevar a cabo una prueba de hipótesis de una muestra, usamos la función ttest_1samp de scipy.stats. En la función, el parámetro popmean especifica e valor asumido \\(\\mu_0\\) en \\(H_0\\). Además, el parámetro alternative indica el tipo de \\(H_1\\).\n\nhip_test = ttest_1samp(guinea_data, popmean = 300, alternative = 'less')\n\nEn este caso, \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &lt; 300\\). Entonces popmean = 300 y alternative = 'less'."
+    "text": "Para llevar a cabo una prueba de hipótesis de una muestra, usamos la función ttest_1samp de scipy.stats. En la función, el parámetro popmean especifica e valor asumido \\(\\mu_0\\) en \\(H_0\\). Además, el parámetro alternative indica el tipo de \\(H_1\\).\n\nhip_test = ttest_1samp(guinea_data, popmean = 300, \n                       alternative = 'less')\n\n\nEn este caso, \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &lt; 300\\). Entonces popmean = 300 y alternative = 'less'."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-8",
     "href": "Modulo_2/Hipotesis.slides.html#section-8",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
+    "text": "Usando hip_test, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.\n\nhip_test.pvalue\n\narray([0.74450596])\n\n\n\nComo el p-valor es mayor que \\(\\alpha=0.05\\), no rechazamos \\(H_0\\). En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#cuando-las-distribuciones-tienen-la-misma-varianza",
@@ -977,21 +977,21 @@
     "href": "Modulo_2/Hipotesis.slides.html#ejemplo-4",
     "title": "Pruebas de Hipótesis",
     "section": "Ejemplo 4",
-    "text": "Ejemplo 4\nLa resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):\nR: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2. B: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.\n¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?\nEn otras palabras, prueba \\(H_0: \\mu_R = \\mu_B\\) contra \\(H_1: \\mu_R \\neq \\mu_B\\) donde \\(\\mu_R\\) y \\(\\mu_B\\) son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa ￼."
+    "text": "Ejemplo 4\n\nLa resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):\nR: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.\nB: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.\n¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#en-python-1",
     "href": "Modulo_2/Hipotesis.slides.html#en-python-1",
     "title": "Pruebas de Hipótesis",
     "section": "En Python",
-    "text": "En Python"
+    "text": "En Python\nAntes de empezar, carguemos los datos que están en el archivo “Hockey.xlsx”\n\nhockey_data = pd.read_excel(\"Hockey.xlsx\")\nhockey_data.head()\n\n\n\n\n\n\n\n\nCompuesto\nResistencia\n\n\n\n\n0\nR\n487.3\n\n\n1\nR\n444.5\n\n\n2\nR\n467.7\n\n\n3\nR\n456.3\n\n\n4\nR\n449.7"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#no-asumas-que-las-varianzas-son-iguales",
     "href": "Modulo_2/Hipotesis.slides.html#no-asumas-que-las-varianzas-son-iguales",
     "title": "Pruebas de Hipótesis",
     "section": "No asumas que las varianzas son iguales",
-    "text": "No asumas que las varianzas son iguales\n\n\nEl supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.\nEl método puede resultar poco fiable si se utiliza cuando las varianzas teóricas no son iguales.\nComo normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
+    "text": "No asumas que las varianzas son iguales\n\nEl supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.\nEl método puede resultar poco fiable si se utiliza cuando las varianzas teóricas no son iguales.\nComo normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#significativo-no-implica-importante",
@@ -1005,7 +1005,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados-de-las-pruebas-de-hipótesis",
     "title": "Pruebas de Hipótesis",
     "section": "Conclusión de los resultados de las pruebas de hipótesis",
-    "text": "Conclusión de los resultados de las pruebas de hipótesis\n\nLas únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:\n\nRechazamos \\(H_0\\). En otras palabras, concluimos que \\(H_0\\) es falsa.\nNo rechazamos \\(H_0\\). En otras palabras, \\(H_0\\) es plausible. Nunca podemos concluir que \\(H_0\\) sea cierto. Podemos simplemente concluir que \\(H_0\\) podría ser plausible.\n\nDebemos decidir si el nivel de desacuerdo, medido con el valor p, es lo suficientemente grande como para hacer que la hipótesis nula sea inverosímil."
+    "text": "Conclusión de los resultados de las pruebas de hipótesis\nLas únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:\n\nRechazamos \\(H_0\\). En otras palabras, concluimos que \\(H_0\\) es falsa.\nNo rechazamos \\(H_0\\). En otras palabras, \\(H_0\\) es plausible. Nunca podemos concluir que \\(H_0\\) sea cierto. Podemos simplemente concluir que \\(H_0\\) podría ser plausible.\n\nDebemos decidir si el nivel de desacuerdo, medido con el valor p, es lo suficientemente grande como para hacer que la hipótesis nula sea inverosímil."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#elije-h_1-para-responder-la-pregunta",
@@ -2233,14 +2233,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-en-python",
     "title": "Pruebas de Hipótesis",
     "section": "Intervalo de confianza en Python",
-    "text": "Intervalo de confianza en Python\n\nAhora, creamos el intervalo de confianza usando la función t.interval() de scipy.stats.\n\nci = hip_test.confidence_interval(confidence_level=0.95)\n\nprint(f\"Límite inferior: {ci.low}\")\nprint(f\"Límite superior: {ci.high}\") \n\nLímite inferior: [-inf]\nLímite superior: [390.74691499]\n\n\n\nEl intervalo de confianza del 95% es \\([12.32, 13.76]\\) o \\(12.32 \\leq \\mu \\leq 13.76\\)"
+    "text": "Intervalo de confianza en Python\nUsando el mismo objeto hip_test, también podemos obtener un intervalo de confianza usando la función .confidence_interval().\n\nci = hip_test.confidence_interval(confidence_level=0.95)\nci\n\nConfidenceInterval(low=array([-inf]), high=array([390.74691499]))\n\n\n\nEn este caso, el intervalo de confianza es de un solo lado ya que usamos \\(H_1: \\mu &lt; 300\\). En este caso, el intervalo de confianza del 95% es \\([-\\infty, 390.74]\\) o \\(\\mu \\leq 390.74\\)"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-9",
     "href": "Modulo_2/Hipotesis.slides.html#section-9",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#en-python-2",
@@ -2262,5 +2262,68 @@
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
     "text": "Cuando las varianzas de la muestra son casi iguales, es tentador suponer que las varianzas de la población también lo son.\nSin embargo, con tamaños de muestra pequeños, las varianzas de la muestra pueden no aproximarse bien a las varianzas teóricas de la distribución.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-10",
+    "href": "Modulo_2/Hipotesis.slides.html#section-10",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza",
+    "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza",
+    "title": "Pruebas de Hipótesis",
+    "section": "Intervalo de confianza",
+    "text": "Intervalo de confianza\n\nUsando el mismo objeto hip_test, también podemos obtener un intervalo de confianza usando la función .confidence_interval().\n\nci = hip_test.confidence_interval(confidence_level=0.95)\nci\n\nConfidenceInterval(low=array([-inf]), high=array([390.74691499]))\n\n\n\nEn este caso, el intervalo de confianza es de un solo lado ya que usamos \\(H_1: \\mu &lt; 300\\). En este caso, el intervalo de confianza del 95% es \\([-\\infty, 390.74]\\) o \\(\\mu \\leq 390.74\\)"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-11",
+    "href": "Modulo_2/Hipotesis.slides.html#section-11",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "En otras palabras, prueba \\(H_0: \\mu_R = \\mu_B\\) contra \\(H_1: \\mu_R \\neq \\mu_B\\) donde \\(\\mu_R\\) y \\(\\mu_B\\) son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#visualización",
+    "href": "Modulo_2/Hipotesis.slides.html#visualización",
+    "title": "Pruebas de Hipótesis",
+    "section": "Visualización",
+    "text": "Visualización\nPodemos visualizar los datos de los dos grupos definidos por los compuestos R y B usando gráficas de cajas lado a lado.\n\n\nCode\nplt.figure(figsize=(7,4)) \nsns.boxplot(data = hockey_data, x = 'Compuesto', y = 'Resistencia') \nplt.ylabel(\"Resistencia\") \nplt.xlabel(\"Compuesto\") \nplt.show()"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#configuración",
+    "href": "Modulo_2/Hipotesis.slides.html#configuración",
+    "title": "Pruebas de Hipótesis",
+    "section": "Configuración",
+    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nRes_CompA = (hockey_data\n  .query(\"Compuesto == 'R'\")\n  .filter(['Resistencia'])\n)\n\n\nRes_CompB = (hockey_data\n  .query(\"Compuesto == 'B'\")\n  .filter(['Resistencia'])\n)"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
+    "href": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
+    "title": "Pruebas de Hipótesis",
+    "section": "Prueba de hipótesis",
+    "text": "Prueba de hipótesis\n\nPara llevar a cabo una prueba de hipótesis de dos muestras, usamos la función ttest_ind de scipy.stats. En la función, el parámetro alternative indica el tipo de \\(H_1\\). En este caso, alternative = 'two-sided' ya que \\(H_1: \\mu_R \\neq \\mu_B\\).\n\nprueba_hip = ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', \n                       equal_var = False)\n\nRecuerda que el parámetro equal_var indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-12",
+    "href": "Modulo_2/Hipotesis.slides.html#section-12",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Usando prueba_hip, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.\n\nprueba_hip.pvalue\n\narray([0.00812422])\n\n\n\nComo el p-valor es menor que \\(\\alpha=0.0081\\), rechazamos \\(H_0\\).\n\nEn otras palabras, concluimos que la muestra nos da información suficiente para decir que los promedios de resistencia de los palos de hockey bajo los dos compuestos es diferente."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-1",
+    "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-1",
+    "title": "Pruebas de Hipótesis",
+    "section": "Intervalo de confianza",
+    "text": "Intervalo de confianza\nRecuerda que podemos obtener un intervalo de confianza usando .confidence_interval().\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([5.3518092]), high=array([30.81961937]))\n\n\nEl intervalo es \\([5.35, 30.82]\\) o \\(5.35 \\leq \\mu_B - \\mu_A  \\leq 30.82\\).\n\nEsto lo sabemos por el orden en que especificamos las muestras en\nttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', equal_var = False)"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados",
+    "href": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados",
+    "title": "Pruebas de Hipótesis",
+    "section": "Conclusión de los resultados",
+    "text": "Conclusión de los resultados\nLas únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:\n\nRechazamos \\(H_0\\). En otras palabras, concluimos que \\(H_0\\) es falsa.\nNo rechazamos \\(H_0\\). En otras palabras, \\(H_0\\) es plausible. Nunca podemos concluir que \\(H_0\\) sea cierto. Podemos simplemente concluir que \\(H_0\\) podría ser plausible.\n\nDebemos decidir si el nivel de desacuerdo, medido con el valor p, es lo suficientemente grande como para hacer que la hipótesis nula sea inverosímil."
   }
 ]

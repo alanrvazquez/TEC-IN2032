@@ -419,32 +419,46 @@ Para llevar a cabo una prueba de hipótesis de una muestra, usamos la función `
 ```{python}
 #| echo: true
 
-hip_test = ttest_1samp(guinea_data, popmean = 300, alternative = 'less')
+hip_test = ttest_1samp(guinea_data, popmean = 300, 
+                       alternative = 'less')
 ```
+
+</br>
 
 En este caso, $H_0: \mu = 300$ contra $H_1: \mu < 300$. Entonces `popmean = 300` y `alternative = 'less'`.
 
-## Intervalo de confianza en Python
+##
 
 </br></br>
 
-Ahora, creamos el intervalo de confianza usando la función `t.interval()` de **scipy.stats**.
+Usando `hip_test`, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.
+
+```{python}
+#| echo: true
+
+hip_test.pvalue
+```
+
+</br>
+
+Como el p-valor es mayor que $\alpha=0.05$, [**no rechazamos**]{style="color: red"} $H_0$. En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300
+
+## Intervalo de confianza 
+
+</br>
+
+Usando el mismo objeto `hip_test`, también podemos obtener un intervalo de confianza usando la función `.confidence_interval()`.
 
 ```{python}
 #| echo: true
 
 ci = hip_test.confidence_interval(confidence_level=0.95)
-
-print(f"Límite inferior: {ci.low}")
-print(f"Límite superior: {ci.high}") 
+ci
 ```
 
 </br>
 
-El intervalo de confianza del 95% es $[12.32, 13.76]$ o $12.32 \leq \mu \leq 13.76$
-
-
-## En Python
+En este caso, el intervalo de confianza es de un solo lado ya que usamos $H_1: \mu < 300$. En este caso, el intervalo de confianza del 95% es $[-\infty, 390.74]$ o $\mu \leq 390.74$
 
 ## Pruebas para la diferencia de dos medias
 
@@ -486,12 +500,14 @@ donde $\mu_{y0} - \mu_{x0}$ es la diferencia asumida en la hipótesis nula ($H_0
 
 Existen dos valores posibles para ME según los casos:
 
+::: {style="font-size: 90%;"}
 - Las varianzas téoricas de las distribuciones son iguales ($\sigma_y^{2} = \sigma_x^{2}$).
 - Las varianzas téoricas de las distribuciones **no** son iguales ($\sigma_y^{2} \neq \sigma_x^{2}$).
+:::
 
 ## Cuando las distribuciones tienen la **misma varianza**
 
-</br></br>
+</br>
 
 Si las distribuciones tienen la misma varianza teórica, entonces
 
@@ -517,19 +533,136 @@ $$\text{ME} = \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}}.$$
 
 ## Ejemplo 4
 
+</br>
+
 La resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):
 
-R: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2. B: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.
+**R**: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2. 
+
+**B**: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.
 
 ¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?
 
-En otras palabras, prueba $H_0: \mu_R = \mu_B$ contra $H_1: \mu_R \neq \mu_B$ donde $\mu_R$ y $\mu_B$ son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa ￼.
+##
+
+</br></br></br>
+
+En otras palabras, prueba $H_0: \mu_R = \mu_B$ contra $H_1: \mu_R \neq \mu_B$ donde $\mu_R$ y $\mu_B$ son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto **R** y **B**, respectivamente. Usa $\alpha = 0.05$.
 
 ## En Python
 
-## No asumas que las varianzas son iguales
+Antes de empezar, carguemos los datos que están en el archivo "Hockey.xlsx"
+
+```{python}
+#| echo: true
+#| output: true
+
+hockey_data = pd.read_excel("Hockey.xlsx")
+hockey_data.head()
+```
+
+## Visualización
+
+Podemos visualizar los datos de los dos grupos definidos por los compuestos **R**  y **B** usando gráficas de cajas lado a lado.
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+#| code-fold: true
+
+plt.figure(figsize=(7,4)) 
+sns.boxplot(data = hockey_data, x = 'Compuesto', y = 'Resistencia') 
+plt.ylabel("Resistencia") 
+plt.xlabel("Compuesto") 
+plt.show() 
+```
+
+## Configuración
+
+Un problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.
+
+Sin embargo, podemos crear las dos columnas con nuestras funciones de **pandas**.
+
+```{python}
+#| echo: true
+#| output: true
+
+Res_CompA = (hockey_data
+  .query("Compuesto == 'R'")
+  .filter(['Resistencia'])
+)
+```
+
+```{python}
+#| echo: true
+#| output: true
+
+Res_CompB = (hockey_data
+  .query("Compuesto == 'B'")
+  .filter(['Resistencia'])
+)
+```
+
+## Prueba de hipótesis
 
 </br>
+
+Para llevar a cabo una prueba de hipótesis de dos muestras, usamos la función `ttest_ind` de **scipy.stats**. En la función, el parámetro `alternative` indica el tipo de $H_1$. En este caso, `alternative = 'two-sided'` ya que $H_1: \mu_R \neq \mu_B$.
+
+```{python}
+#| echo: true
+#| output: true
+
+prueba_hip = ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', 
+                       equal_var = False)
+```
+
+Recuerda que el parámetro `equal_var` indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.
+
+
+##
+
+
+
+Usando `prueba_hip`, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.
+
+```{python}
+#| echo: true
+
+prueba_hip.pvalue
+```
+
+</br>
+
+Como el p-valor es menor que $\alpha=0.0081$, [**rechazamos**]{style="color: #4682B4"} $H_0$. 
+
+</br>
+
+En otras palabras, concluimos que la muestra nos da información suficiente para decir que los promedios de resistencia de los palos de hockey bajo los dos compuestos es diferente.
+
+
+## Intervalo de confianza
+
+Recuerda que podemos obtener un intervalo de confianza usando `.confidence_interval()`.
+
+```{python}
+#| echo: true
+#| output: true
+
+ci = prueba_hip.confidence_interval(confidence_level = 0.95)
+ci
+```
+
+El intervalo es $[5.35, 30.82]$ o $5.35 \leq \mu_B - \mu_A  \leq 30.82$.
+
+</br>
+
+Esto lo sabemos por el orden en que especificamos las muestras en 
+
+`ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', equal_var = False)`
+
+## No asumas que las varianzas son iguales
 
 - El supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.
 
@@ -551,9 +684,7 @@ Por tanto, resulta tentador pensar que los resultados estadísticamente signific
 
 [**A veces, los resultados estadísticamente significativos no tienen ninguna importancia científica o práctica**]{style="color: darkred"}. En otras palabras, no son **prácticamente significativos**.
 
-## Conclusión de los resultados de las pruebas de hipótesis
-
-</br>
+## Conclusión de los resultados
 
 Las únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:
 

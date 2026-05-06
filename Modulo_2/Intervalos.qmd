@@ -478,7 +478,7 @@ tube_data.info()
 
 ## Visualización
 
-Podemos visualizar los datos de los dos grupos definitos por los tubos del tipo 1 y 2 usando gráficas de cajas lado a lado.
+Podemos visualizar los datos de los dos grupos definidos por los tubos del tipo 1 y 2 usando gráficas de cajas lado a lado.
 
 ```{python}
 #| echo: true

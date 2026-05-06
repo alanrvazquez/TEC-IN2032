@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "93044173",
+   "id": "b433d208",
    "metadata": {},
    "source": [
     "---\n",
@@ -44,7 +44,7 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "b52f9a12",
+   "id": "bef8677a",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -59,7 +59,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "300f5073",
+   "id": "5d7da9aa",
    "metadata": {},
    "source": [
     "En el cógido de arriba, indicamos que utilizaremos la función `sem()` de la librería **scipy.stats**.\n",
@@ -411,7 +411,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "a74ce7bd",
+   "id": "1bfaa09f",
    "metadata": {},
    "outputs": [
     {
@@ -486,7 +486,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "74283767",
+   "id": "3cd984cc",
    "metadata": {},
    "source": [
     "## Visualización simple a través de un histograma"
@@ -495,7 +495,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "55732894",
+   "id": "c7d48580",
    "metadata": {},
    "outputs": [
     {
@@ -529,7 +529,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b20886a4",
+   "id": "1879ce1d",
    "metadata": {},
    "source": [
     "## \n",
@@ -542,7 +542,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "38b7a0c8",
+   "id": "6328dd7e",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -554,7 +554,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "d877b827",
+   "id": "7f507f5d",
    "metadata": {},
    "source": [
     "</br>\n",
@@ -571,7 +571,7 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "458584aa",
+   "id": "686bda1b",
    "metadata": {},
    "outputs": [
     {
@@ -593,7 +593,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f41d93bb",
+   "id": "a963a000",
    "metadata": {},
    "source": [
     "</br>\n",
@@ -610,7 +610,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "bd2434cb",
+   "id": "30c66ef6",
    "metadata": {},
    "outputs": [
     {
@@ -633,7 +633,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "69dd7982",
+   "id": "d1e88485",
    "metadata": {},
    "source": [
     "</br>\n",
@@ -737,7 +737,7 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "19e33f6a",
+   "id": "06b4100a",
    "metadata": {},
    "outputs": [
     {
@@ -819,7 +819,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "fe2885bd",
+   "id": "276c1475",
    "metadata": {},
    "source": [
     "## Visualización\n",
@@ -830,7 +830,7 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "3ada257e",
+   "id": "ff6f8a6d",
    "metadata": {},
    "outputs": [
     {
@@ -864,7 +864,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e651e57f",
+   "id": "87eb070f",
    "metadata": {},
    "source": [
     "## Configuración\n",
@@ -877,7 +877,7 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "9d85db55",
+   "id": "20e85255",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -893,7 +893,7 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "171a911b",
+   "id": "2fd9f503",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -908,7 +908,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c9549f20",
+   "id": "0e1c9b3e",
    "metadata": {},
    "source": [
     "## Prueba de hipótesis\n",
@@ -921,7 +921,7 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "6736436e",
+   "id": "18b013bc",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -934,7 +934,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "6dc39a86",
+   "id": "ff6eeedc",
    "metadata": {},
    "source": [
     "Recuerda que el parámetro `equal_var` indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.\n",
@@ -942,7 +942,7 @@
     "\n",
     "##\n",
     "\n",
-    "</br>\n",
+    "\n",
     "\n",
     "Usando `prueba_hip`, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue."
    ]
@@ -950,7 +950,7 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "01d57e0d",
+   "id": "0dcbdb76",
    "metadata": {},
    "outputs": [
     {
@@ -972,12 +972,16 @@
   },
   {
    "cell_type": "markdown",
-   "id": "ec68f778",
+   "id": "50c4b83b",
    "metadata": {},
    "source": [
     "</br>\n",
     "\n",
-    "Como el p-valor es menor que $\\alpha=0.0081$, [**rechazamos**]{style=\"color: #4682B4\"} $H_0$. En otras palabras, concluimos que la muestra nos da información suficiente para decir que los promedios de resistencia de los palos de hockey bajo los dos compuestos es diferente.\n",
+    "Como el p-valor es menor que $\\alpha=0.0081$, [**rechazamos**]{style=\"color: #4682B4\"} $H_0$. \n",
+    "\n",
+    "</br>\n",
+    "\n",
+    "En otras palabras, concluimos que la muestra nos da información suficiente para decir que los promedios de resistencia de los palos de hockey bajo los dos compuestos es diferente.\n",
     "\n",
     "\n",
     "## Intervalo de confianza\n",
@@ -988,7 +992,7 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "bc6e0fcd",
+   "id": "9b482116",
    "metadata": {},
    "outputs": [
     {
@@ -1012,11 +1016,9 @@
   },
   {
    "cell_type": "markdown",
-   "id": "74332e55",
+   "id": "7ed0c3b8",
    "metadata": {},
    "source": [
-    "</br>\n",
-    "\n",
     "El intervalo es $[5.35, 30.82]$ o $5.35 \\leq \\mu_B - \\mu_A  \\leq 30.82$.\n",
     "\n",
     "</br>\n",
@@ -1047,9 +1049,7 @@
     "\n",
     "[**A veces, los resultados estadísticamente significativos no tienen ninguna importancia científica o práctica**]{style=\"color: darkred\"}. En otras palabras, no son **prácticamente significativos**.\n",
     "\n",
-    "## Conclusión de los resultados de las pruebas de hipótesis\n",
-    "\n",
-    "</br>\n",
+    "## Conclusión de los resultados\n",
     "\n",
     "Las únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:\n",
     "\n",

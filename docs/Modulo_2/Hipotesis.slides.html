@@ -229,7 +229,7 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="b5fb5bbb" class="cell" data-execution_count="1">
+<div id="bef8677a" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -514,7 +514,7 @@ Alan R. Vazquez
 <section id="en-python" class="slide level2">
 <h2>En Python</h2>
 <p>Primero, leamos los datos en el archivo “Guinea_Pigs.xlsx”.</p>
-<div id="01bb2ac7" class="cell" data-execution_count="2">
+<div id="1bfaa09f" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>guinea_data <span class="op">=</span> pd.read_excel(<span class="st">"Guinea_Pigs.xlsx"</span>)</span>
 <span id="cb2-2"><a></a>guinea_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -570,7 +570,7 @@ Alan R. Vazquez
 </section>
 <section id="visualización-simple-a-través-de-un-histograma" class="slide level2">
 <h2>Visualización simple a través de un histograma</h2>
-<div id="56c35b47" class="cell" data-execution_count="3">
+<div id="c7d48580" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) </span>
@@ -592,30 +592,39 @@ Alan R. Vazquez
 <h2></h2>
 <p><br></p>
 <p>Para llevar a cabo una prueba de hipótesis de una muestra, usamos la función <code>ttest_1samp</code> de <strong>scipy.stats</strong>. En la función, el parámetro <code>popmean</code> especifica e valor asumido <span class="math inline">\(\mu_0\)</span> en <span class="math inline">\(H_0\)</span>. Además, el parámetro <code>alternative</code> indica el tipo de <span class="math inline">\(H_1\)</span>.</p>
-<div id="db31c8ff" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>hip_test <span class="op">=</span> ttest_1samp(guinea_data, popmean <span class="op">=</span> <span class="dv">300</span>, alternative <span class="op">=</span> <span class="st">'less'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6328dd7e" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>hip_test <span class="op">=</span> ttest_1samp(guinea_data, popmean <span class="op">=</span> <span class="dv">300</span>, </span>
+<span id="cb4-2"><a></a>                       alternative <span class="op">=</span> <span class="st">'less'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p><br></p>
 <p>En este caso, <span class="math inline">\(H_0: \mu = 300\)</span> contra <span class="math inline">\(H_1: \mu &lt; 300\)</span>. Entonces <code>popmean = 300</code> y <code>alternative = 'less'</code>.</p>
 </section>
-<section id="intervalo-de-confianza-en-python" class="slide level2">
-<h2>Intervalo de confianza en Python</h2>
+<section id="section-8" class="slide level2">
+<h2></h2>
 <p><br><br></p>
-<p>Ahora, creamos el intervalo de confianza usando la función <code>t.interval()</code> de <strong>scipy.stats</strong>.</p>
-<div id="4fdb88ac" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>ci <span class="op">=</span> hip_test.confidence_interval(confidence_level<span class="op">=</span><span class="fl">0.95</span>)</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a><span class="bu">print</span>(<span class="ss">f"Límite inferior: </span><span class="sc">{</span>ci<span class="sc">.</span>low<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-4"><a></a><span class="bu">print</span>(<span class="ss">f"Límite superior: </span><span class="sc">{</span>ci<span class="sc">.</span>high<span class="sc">}</span><span class="ss">"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Límite inferior: [-inf]
-Límite superior: [390.74691499]</code></pre>
+<p>Usando <code>hip_test</code>, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.</p>
+<div id="686bda1b" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>hip_test.pvalue</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>array([0.74450596])</code></pre>
 </div>
 </div>
 <p><br></p>
-<p>El intervalo de confianza del 95% es <span class="math inline">\([12.32, 13.76]\)</span> o <span class="math inline">\(12.32 \leq \mu \leq 13.76\)</span></p>
+<p>Como el p-valor es mayor que <span class="math inline">\(\alpha=0.05\)</span>, <span style="color: red"><strong>no rechazamos</strong></span> <span class="math inline">\(H_0\)</span>. En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300</p>
 </section>
-<section id="en-python-1" class="slide level2">
-<h2>En Python</h2>
+<section id="intervalo-de-confianza" class="slide level2">
+<h2>Intervalo de confianza</h2>
+<p><br></p>
+<p>Usando el mismo objeto <code>hip_test</code>, también podemos obtener un intervalo de confianza usando la función <code>.confidence_interval()</code>.</p>
+<div id="30c66ef6" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>ci <span class="op">=</span> hip_test.confidence_interval(confidence_level<span class="op">=</span><span class="fl">0.95</span>)</span>
+<span id="cb7-2"><a></a>ci</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>ConfidenceInterval(low=array([-inf]), high=array([390.74691499]))</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>En este caso, el intervalo de confianza es de un solo lado ya que usamos <span class="math inline">\(H_1: \mu &lt; 300\)</span>. En este caso, el intervalo de confianza del 95% es <span class="math inline">\([-\infty, 390.74]\)</span> o <span class="math inline">\(\mu \leq 390.74\)</span></p>
 </section>
 <section id="pruebas-para-la-diferencia-de-dos-medias" class="slide level2">
 <h2>Pruebas para la diferencia de dos medias</h2>
@@ -634,7 +643,7 @@ Límite superior: [390.74691499]</code></pre>
 <li><span class="math inline">\(s^2_y =\frac{1}{n_y-1} \sum_{i=1}^{n_y} (y_i - \bar{y})^2\)</span> es la varianza muestral.</li>
 </ul>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <p><br><br></p>
 <p>Para la segunda muestra de observaciones <span class="math inline">\(x_1, x_2, \ldots, x_{n_x}\)</span>:</p>
@@ -644,20 +653,22 @@ Límite superior: [390.74691499]</code></pre>
 <li><span class="math inline">\(s^2_{x} =\frac{1}{n_x -1} \sum_{i=1}^{n_x} (x_i - \bar{x})^2\)</span> es la varianza muestral.</li>
 </ul>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <p>Si las dos muestras son independientes, entonces un <span style="color: green"><strong>estadístico de prueba</strong> para la hipótesis sobre <span class="math inline">\(\mu_y - \mu_x\)</span></span> es</p>
 <p><span class="math display">\[T = \frac{ (\bar{y} - \bar{x}) - (\mu_{y0} - \mu_{x0})}{\text{ME}}\]</span></p>
 <p>donde <span class="math inline">\(\mu_{y0} - \mu_{x0}\)</span> es la diferencia asumida en la hipótesis nula (<span class="math inline">\(H_0\)</span>), y ME es el <em>margen de error</em>.</p>
 <p>Existen dos valores posibles para ME según los casos:</p>
+<div style="font-size: 90%;">
 <ul>
 <li>Las varianzas téoricas de las distribuciones son iguales (<span class="math inline">\(\sigma_y^{2} = \sigma_x^{2}\)</span>).</li>
 <li>Las varianzas téoricas de las distribuciones <strong>no</strong> son iguales (<span class="math inline">\(\sigma_y^{2} \neq \sigma_x^{2}\)</span>).</li>
 </ul>
+</div>
 </section>
 <section id="cuando-las-distribuciones-tienen-la-misma-varianza" class="slide level2">
 <h2>Cuando las distribuciones tienen la <strong>misma varianza</strong></h2>
-<p><br><br></p>
+<p><br></p>
 <p>Si las distribuciones tienen la misma varianza teórica, entonces</p>
 <p><span class="math display">\[\text{ME} = s_p = \sqrt{ \frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} },\]</span></p>
 <p>donde <span class="math inline">\(s_p\)</span> es la <span style="color: purple"><em>desviación estándar agrupada</em></span>.</p>
@@ -678,17 +689,159 @@ Límite superior: [390.74691499]</code></pre>
 <img data-src="images/diferentes.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="ejemplo-4" class="slide level2">
 <h2>Ejemplo 4</h2>
+<p><br></p>
 <p>La resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):</p>
-<p>R: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2. B: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.</p>
+<p><strong>R</strong>: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.</p>
+<p><strong>B</strong>: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.</p>
 <p>¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?</p>
-<p>En otras palabras, prueba <span class="math inline">\(H_0: \mu_R = \mu_B\)</span> contra <span class="math inline">\(H_1: \mu_R \neq \mu_B\)</span> donde <span class="math inline">\(\mu_R\)</span> y <span class="math inline">\(\mu_B\)</span> son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa ￼.</p>
 </section>
-<section id="en-python-2" class="slide level2">
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p><br><br><br></p>
+<p>En otras palabras, prueba <span class="math inline">\(H_0: \mu_R = \mu_B\)</span> contra <span class="math inline">\(H_1: \mu_R \neq \mu_B\)</span> donde <span class="math inline">\(\mu_R\)</span> y <span class="math inline">\(\mu_B\)</span> son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto <strong>R</strong> y <strong>B</strong>, respectivamente. Usa <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</section>
+<section id="en-python-1" class="slide level2">
 <h2>En Python</h2>
+<p>Antes de empezar, carguemos los datos que están en el archivo “Hockey.xlsx”</p>
+<div id="06b4100a" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>hockey_data <span class="op">=</span> pd.read_excel(<span class="st">"Hockey.xlsx"</span>)</span>
+<span id="cb9-2"><a></a>hockey_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Compuesto</th>
+<th data-quarto-table-cell-role="th">Resistencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>R</td>
+<td>487.3</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>R</td>
+<td>444.5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>R</td>
+<td>467.7</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>R</td>
+<td>456.3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>R</td>
+<td>449.7</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="visualización" class="slide level2">
+<h2>Visualización</h2>
+<p>Podemos visualizar los datos de los dos grupos definidos por los compuestos <strong>R</strong> y <strong>B</strong> usando gráficas de cajas lado a lado.</p>
+<div id="ff6f8a6d" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) </span>
+<span id="cb10-2"><a></a>sns.boxplot(data <span class="op">=</span> hockey_data, x <span class="op">=</span> <span class="st">'Compuesto'</span>, y <span class="op">=</span> <span class="st">'Resistencia'</span>) </span>
+<span id="cb10-3"><a></a>plt.ylabel(<span class="st">"Resistencia"</span>) </span>
+<span id="cb10-4"><a></a>plt.xlabel(<span class="st">"Compuesto"</span>) </span>
+<span id="cb10-5"><a></a>plt.show() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Hipotesis_files/figure-revealjs/cell-9-output-1.png" class="quarto-figure quarto-figure-center" width="593" height="356"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="configuración" class="slide level2">
+<h2>Configuración</h2>
+<p>Un problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.</p>
+<p>Sin embargo, podemos crear las dos columnas con nuestras funciones de <strong>pandas</strong>.</p>
+<div id="20e85255" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>Res_CompA <span class="op">=</span> (hockey_data</span>
+<span id="cb11-2"><a></a>  .query(<span class="st">"Compuesto == 'R'"</span>)</span>
+<span id="cb11-3"><a></a>  .<span class="bu">filter</span>([<span class="st">'Resistencia'</span>])</span>
+<span id="cb11-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="2fd9f503" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>Res_CompB <span class="op">=</span> (hockey_data</span>
+<span id="cb12-2"><a></a>  .query(<span class="st">"Compuesto == 'B'"</span>)</span>
+<span id="cb12-3"><a></a>  .<span class="bu">filter</span>([<span class="st">'Resistencia'</span>])</span>
+<span id="cb12-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="prueba-de-hipótesis" class="slide level2">
+<h2>Prueba de hipótesis</h2>
+<p><br></p>
+<p>Para llevar a cabo una prueba de hipótesis de dos muestras, usamos la función <code>ttest_ind</code> de <strong>scipy.stats</strong>. En la función, el parámetro <code>alternative</code> indica el tipo de <span class="math inline">\(H_1\)</span>. En este caso, <code>alternative = 'two-sided'</code> ya que <span class="math inline">\(H_1: \mu_R \neq \mu_B\)</span>.</p>
+<div id="18b013bc" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>prueba_hip <span class="op">=</span> ttest_ind(Res_CompB, Res_CompA, alternative <span class="op">=</span> <span class="st">'two-sided'</span>, </span>
+<span id="cb13-2"><a></a>                       equal_var <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Recuerda que el parámetro <code>equal_var</code> indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.</p>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p>Usando <code>prueba_hip</code>, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.</p>
+<div id="0dcbdb76" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>prueba_hip.pvalue</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>array([0.00812422])</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>Como el p-valor es menor que <span class="math inline">\(\alpha=0.0081\)</span>, <span style="color: #4682B4"><strong>rechazamos</strong></span> <span class="math inline">\(H_0\)</span>.</p>
+<p><br></p>
+<p>En otras palabras, concluimos que la muestra nos da información suficiente para decir que los promedios de resistencia de los palos de hockey bajo los dos compuestos es diferente.</p>
+</section>
+<section id="intervalo-de-confianza-1" class="slide level2">
+<h2>Intervalo de confianza</h2>
+<p>Recuerda que podemos obtener un intervalo de confianza usando <code>.confidence_interval()</code>.</p>
+<div id="9b482116" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>ci <span class="op">=</span> prueba_hip.confidence_interval(confidence_level <span class="op">=</span> <span class="fl">0.95</span>)</span>
+<span id="cb16-2"><a></a>ci</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>ConfidenceInterval(low=array([5.3518092]), high=array([30.81961937]))</code></pre>
+</div>
+</div>
+<p>El intervalo es <span class="math inline">\([5.35, 30.82]\)</span> o <span class="math inline">\(5.35 \leq \mu_B - \mu_A  \leq 30.82\)</span>.</p>
+<p><br></p>
+<p>Esto lo sabemos por el orden en que especificamos las muestras en</p>
+<p><code>ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', equal_var = False)</code></p>
 </section>
 <section id="no-asumas-que-las-varianzas-son-iguales" class="slide level2">
 <h2>No asumas que las varianzas son iguales</h2>
-<p><br></p>
 <ul>
 <li><p>El supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.</p></li>
 <li><p>El método puede resultar poco fiable si se utiliza cuando las varianzas teóricas no son iguales.</p></li>
@@ -708,9 +861,8 @@ Límite superior: [390.74691499]</code></pre>
 <p>Por tanto, resulta tentador pensar que los resultados estadísticamente significativos siempre deben ser importantes. Este no es el caso.</p>
 <p><span style="color: darkred"><strong>A veces, los resultados estadísticamente significativos no tienen ninguna importancia científica o práctica</strong></span>. En otras palabras, no son <strong>prácticamente significativos</strong>.</p>
 </section>
-<section id="conclusión-de-los-resultados-de-las-pruebas-de-hipótesis" class="slide level2">
-<h2>Conclusión de los resultados de las pruebas de hipótesis</h2>
-<p><br></p>
+<section id="conclusión-de-los-resultados" class="slide level2">
+<h2>Conclusión de los resultados</h2>
 <p>Las únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:</p>
 <ul>
 <li><p><strong>Rechazamos</strong> <span class="math inline">\(H_0\)</span>. En otras palabras, concluimos que <span class="math inline">\(H_0\)</span> es falsa.</p></li>
