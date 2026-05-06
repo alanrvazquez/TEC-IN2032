@@ -25,6 +25,24 @@ editor: visual
 
 - Gráficas para Variables Discretas
 
+## Carguemos las librerías
+
+</br></br></br>
+
+Antes de empezar, carguemos las librerías que usaremos hoy.
+
+```{python}
+#| echo: true
+#| output: true
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import ttest_1samp, ttest_ind
+```
+
+En el cógido de arriba, indicamos que utilizaremos la función `ttest_1samp()` y `ttest_ind()` de la librería **scipy.stats**.
+
 # Gráficas para variables numéricas
 
 ## Idea básica: Usa la Regla Empirica
@@ -161,13 +179,45 @@ La fuerza de tracción de un cable conectado a un circuito integrado está bajo 
 
 Un ingeniero recopilo la fuerza de tracción de 20 subgrupos de cables tomados a través del tiempo. Cada subgrupo contiene 3 cables.
 
-El archivo “Pull Strength.xlsx” contiene los datos.
+El archivo “Pull_Strength.xlsx” contiene los datos.
 
 A)  Construye las gráficas $\bar{X}$ y $R$.
 
 B)  Encuentra los puntos que están fuera de control.
 
 ## Construyendo gráficas de control en Python
+
+Carguemos los datos que están en el archivo "Pull_Strength.xlsx"
+
+```{python}
+#| echo: true
+#| output: true
+
+pull_data = pd.read_excel("Pull_Strength.xlsx")
+pull_data.head()
+```
+
+## Cuidado!
+
+La variable `Subgrupo` es [**categorica**]{style="color: red"}! Entonces, debemos de informar a Python sobre esto usando la función `pd.Categorical()`.
+
+```{python}
+#| echo: true
+#| output: true
+
+pull_data['Subgrupo'] = pd.Categorical(pull_data['Subgrupo'])
+```
+
+Veamos el resultado:
+
+```{python}
+#| echo: true
+#| output: true
+
+pull_data.info()
+```
+
+## 
 
 ## Evaluando la normalidad de los promedios en Python
 

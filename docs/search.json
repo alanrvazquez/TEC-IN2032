@@ -2380,14 +2380,14 @@
     "href": "Modulo_3/Graficas.slides.html#ejemplo-1",
     "title": "Gráficas de Control",
     "section": "Ejemplo 1",
-    "text": "Ejemplo 1\n\nLa fuerza de tracción de un cable conectado a un circuito integrado está bajo monitoreo.\nUn ingeniero recopilo la fuerza de tracción de 20 subgrupos de cables tomados a través del tiempo. Cada subgrupo contiene 3 cables.\nEl archivo “Pull Strength.xlsx” contiene los datos.\n\nConstruye las gráficas \\(\\bar{X}\\) y \\(R\\).\nEncuentra los puntos que están fuera de control."
+    "text": "Ejemplo 1\n\nLa fuerza de tracción de un cable conectado a un circuito integrado está bajo monitoreo.\nUn ingeniero recopilo la fuerza de tracción de 20 subgrupos de cables tomados a través del tiempo. Cada subgrupo contiene 3 cables.\nEl archivo “Pull_Strength.xlsx” contiene los datos.\n\nConstruye las gráficas \\(\\bar{X}\\) y \\(R\\).\nEncuentra los puntos que están fuera de control."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control-en-python",
     "href": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control-en-python",
     "title": "Gráficas de Control",
     "section": "Construyendo gráficas de control en Python",
-    "text": "Construyendo gráficas de control en Python"
+    "text": "Construyendo gráficas de control en Python\nCarguemos los datos que están en el archivo “Pull_Strength.xlsx”\n\npull_data = pd.read_excel(\"Pull_Strength.xlsx\")\npull_data.head()\n\n\n\n\n\n\n\n\nSubgrupo\nFuerza\n\n\n\n\n0\n1\n15.4\n\n\n1\n1\n15.6\n\n\n2\n1\n15.3\n\n\n3\n2\n15.4\n\n\n4\n2\n17.1"
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad-de-los-promedios-en-python",
@@ -2534,7 +2534,7 @@
     "href": "Modulo_3/Graficas.slides.html#section-3",
     "title": "Gráficas de Control",
     "section": "",
-    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+    "text": "Hagamos una gráfica de control para mejorar la fracción de latas no conformes producidas por esta máquina.\nPara establecer el gráfico de control, se seleccionaron 30 muestras de \\(n\\) = 50 latas cada una a intervalos de media hora durante un período de tres turnos en los que la máquina estuvo en funcionamiento continuo.\nLos datos están en el archivo de excel “Juice.xlsx”."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#preguntas-de-práctica-para-examen",
@@ -2546,6 +2546,27 @@
   {
     "objectID": "Modulo_3/Graficas.slides.html#section-4",
     "href": "Modulo_3/Graficas.slides.html#section-4",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#carguemos-las-librerías",
+    "href": "Modulo_3/Graficas.slides.html#carguemos-las-librerías",
+    "title": "Gráficas de Control",
+    "section": "Carguemos las librerías",
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import ttest_1samp, ttest_ind\n\nEn el cógido de arriba, indicamos que utilizaremos la función ttest_1samp() y ttest_ind() de la librería scipy.stats."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#cuidado",
+    "href": "Modulo_3/Graficas.slides.html#cuidado",
+    "title": "Gráficas de Control",
+    "section": "Cuidado!",
+    "text": "Cuidado!\nLa variable Subgrupo es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\npull_data['Subgrupo'] = pd.Categorical(pull_data['Subgrupo'])\n\nVeamos el resultado:\n\npull_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 60 entries, 0 to 59\nData columns (total 2 columns):\n #   Column    Non-Null Count  Dtype   \n---  ------    --------------  -----   \n 0   Subgrupo  60 non-null     category\n 1   Fuerza    60 non-null     float64 \ndtypes: category(1), float64(1)\nmemory usage: 1.4 KB"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-5",
+    "href": "Modulo_3/Graficas.slides.html#section-5",
     "title": "Gráficas de Control",
     "section": "",
     "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."

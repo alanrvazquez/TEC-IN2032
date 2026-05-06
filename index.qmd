@@ -18,14 +18,14 @@ author:
 
 ### Módulo 2
 
-1. Introducción a los Intervalos de Confianza ([slides](/Modulo_2/Intervalos.slides.html))
+1. Intervalos de Confianza ([slides](/Modulo_2/Intervalos.slides.html))
 2. Pruebas de Hipótesis ([slides](/Modulo_2/Hipotesis.slides.html))
 
 
 ### Módulo 3
 
-1. Pruebas de Hipótesis ([slides](/Modulo_3/Monitoreo.slides.html))
-
+1. Introducción al Monitoreo de Procesos ([slides](/Modulo_3/Monitoreo.slides.html))
+2. Gráficas de Control ([slides](/Modulo_3/Graficas.slides.html))
 ## About the author
 
 Alan R. Vazquez ([website](https://alanrvazquez.netlify.app/)) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.
