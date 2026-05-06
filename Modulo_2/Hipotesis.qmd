@@ -27,6 +27,24 @@ editor: visual
 
 - Comentarios Finales
 
+## Carguemos las librerías
+
+</br></br></br>
+
+Antes de empezar, carguemos las librerías que usaremos hoy.
+
+```{python}
+#| echo: true
+#| output: true
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import sem, t, ttest_ind, ttest_1samp
+```
+
+En el cógido de arriba, indicamos que utilizaremos la función `sem()` de la librería **scipy.stats**.
+
 # Conceptos Básicos
 
 ## Introducción
@@ -356,7 +374,7 @@ Sea $T$ una variable aleatoria que sigue una distribución $t$ con $n-1$ grados 
 
 ## Ejemplo 3
 
-Una bióloga estudia el peso corporal (en gramos) de cobayas al nacer. Ella recolectó una muestra de pesos de 27 cobayas recien nacidas. Los datos están en el archivo “Guinea Pigs.xlsx” en CANVAS.
+Una bióloga estudia el peso corporal (en gramos) de cobayas al nacer. Ella recolectó una muestra de pesos de 27 cobayas recien nacidas. Los datos están en el archivo “Guinea_Pigs.xlsx” en CANVAS.
 
 La bióloga quiere probar la hipótesis de que el peso corporal medio es menor a 300 gramos. Técnicamente, quiere probar la hipótesis:
 
@@ -365,6 +383,66 @@ $H_0: \mu = 300$ contra $H_1: \mu < 300$
 :::
 
 Donde $\mu$ es la media o promedio teórico de los pesos de todas las cobayas recien nacidas. Utiliza $\alpha = 0.05$.
+
+## En Python
+
+Primero, leamos los datos en el archivo "Guinea_Pigs.xlsx".
+
+```{python}
+#| echo: true
+
+guinea_data = pd.read_excel("Guinea_Pigs.xlsx")
+guinea_data.head()
+```
+
+## Visualización simple a través de un histograma
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+#| code-fold: true
+
+plt.figure(figsize=(7,4)) 
+sns.histplot(data = guinea_data, x = 'Weight') 
+plt.title("Histograma de Peso") 
+plt.xlabel("Peso (en gramos)") 
+plt.show() 
+```
+
+## 
+
+</br>
+
+Para llevar a cabo una prueba de hipótesis de una muestra, usamos la función `ttest_1samp` de **scipy.stats**. En la función, el parámetro `popmean` especifica e valor asumido $\mu_0$ en $H_0$. Además, el parámetro `alternative` indica el tipo de $H_1$.
+
+```{python}
+#| echo: true
+
+hip_test = ttest_1samp(guinea_data, popmean = 300, alternative = 'less')
+```
+
+En este caso, $H_0: \mu = 300$ contra $H_1: \mu < 300$. Entonces `popmean = 300` y `alternative = 'less'`.
+
+## Intervalo de confianza en Python
+
+</br></br>
+
+Ahora, creamos el intervalo de confianza usando la función `t.interval()` de **scipy.stats**.
+
+```{python}
+#| echo: true
+
+ci = hip_test.confidence_interval(confidence_level=0.95)
+
+print(f"Límite inferior: {ci.low}")
+print(f"Límite superior: {ci.high}") 
+```
+
+</br>
+
+El intervalo de confianza del 95% es $[12.32, 13.76]$ o $12.32 \leq \mu \leq 13.76$
+
 
 ## En Python
 

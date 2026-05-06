@@ -61,11 +61,11 @@ Debido a que las distribuciones se caracterizan por sus parámetros, el objetivo
 
 [**Problema 1**]{style="color: darkgreen"}: Estimar el peso promedio de un componente electrónico para ver si cumple con especificaciones de calidad.
 
-. . . 
+. . .
 
 [Solución]{.underline}:
 
-::: incremental
+:::: incremental
 ::: {style="font-size: 90%;"}
 1.  [**Suponemos**]{style="color: pink"} que el peso de los componentes sigue una [***distribución*** $N(\mu, \sigma^2)$]{style="color: pink"}. Entonces, $\mu$ es el verdadero peso promedio de todos los componentes que pueden existir.
 
@@ -73,17 +73,17 @@ Debido a que las distribuciones se caracterizan por sus parámetros, el objetivo
 
 3.  Luego, usamos la muestra para estimar el peso promedio $\mu$ (o incluso $\sigma^2$).
 :::
-:::
+::::
 
 ## 
 
 [**Problema 2**]{style="color: darkgreen"}: Calcular la proporción de componentes electrónicos que fallan.
 
-. . . 
+. . .
 
 [Solución]{.underline}:
 
-::: incremental
+:::: incremental
 ::: {style="font-size: 90%;"}
 1.  [**Suponemos**]{style="color: pink"} que la proporción de componentes electrónicos que fallan sigue una [***distribución*** $\text{Bin}(n, p)$]{style="color: pink"}. Entonces, $p$ es la verdadera proporción de que componentes que fallan de entre todos los componentes que se pueden producir.
 
@@ -91,7 +91,7 @@ Debido a que las distribuciones se caracterizan por sus parámetros, el objetivo
 
 3.  Luego, usamos la muestra para estimar $p$.
 :::
-:::
+::::
 
 ## Tipos de estimadores
 
@@ -99,7 +99,7 @@ Debido a que las distribuciones se caracterizan por sus parámetros, el objetivo
 
 Un **estimador** es una función de la muestra que provee información sobre un parametro de una distribución.
 
-. . . 
+. . .
 
 Hay dos tipos de estimadores:
 
@@ -111,13 +111,13 @@ Hay dos tipos de estimadores:
 
 </br>
 
-Supongamos que deseamos estimar el tiempo promedio de ensamblaje por unidad $\mu$ de una nueva máquina de ensamble automatizada en una línea de producción. 
+Supongamos que deseamos estimar el tiempo promedio de ensamblaje por unidad $\mu$ de una nueva máquina de ensamble automatizada en una línea de producción.
 
 Esta métrica es fundamental para evaluar la eficiencia del proceso y planificar la capacidad de producción.
 
 Supongamos que hemos observado una muestra aleatoria de 10 unidades producidas por esta máquina, $y_1, y_2, \ldots, y_{10}$.
 
-##
+## 
 
 </br></br>
 
@@ -137,7 +137,7 @@ Podemos utilizar la muestra aleatoria para construir dos estimaciones:
 
 Un [***estimador de intervalo***]{style="color: darkgreen"} es un método para utilizar las observaciones de la muestra para calcular dos números que forman los puntos finales de un intervalo.
 
-. . . 
+. . .
 
 Idealmente, el intervalo tiene dos propiedades:
 
@@ -145,7 +145,7 @@ Idealmente, el intervalo tiene dos propiedades:
 
 - Es relativamente pequeño.
 
-. . . 
+. . .
 
 Los estimadores de intervalos se denominan comúnmente [***intervalos de confianza***]{style="color: #4682B4"}.
 
@@ -166,13 +166,13 @@ Técnicamente, $L$ y $U$ son [***variables aleatorias***]{style="color: purple"}
 
 Considera una muestra pequeña de observaciones $y_1, \ldots, y_n$, donde se [asume que se obtuvieron]{.underline} de una distribución [$N(\mu, \sigma^2)$]{style="color: red"}. Un [intervalo de confianza para $\mu$]{style="color: #4682B4"} es
 
-. . . 
+. . .
 
 ::: {style="font-size: 110%;"}
 $$\left[\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},~ \bar{y} + t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} \right],$$
 :::
 
-##
+## 
 
 </br></br>
 
@@ -184,8 +184,8 @@ $$\left[\bar{y} - t_{n-1, \alpha/2} \frac{s}{\sqrt{n}},~ \bar{y} + t_{n-1, \alph
 
 ## La distribución $t$
 
-::::: columns
-::: {.column width="55%"}
+::::::: columns
+:::: {.column width="55%"}
 ::: {style="font-size: 90%;"}
 La distribución $t$ es una distribución de probabilidad que surge en el contexto de la inferencia estadística.
 
@@ -195,15 +195,16 @@ Sus características principales:
 - Su forma depende un parametro $\nu$ llamado “grados de libertad”.
 - Cuando el valor de este parámetro es muy grande, la distribución $t$ converge a la $N(0,1)$.
 :::
-:::
-::: {.column width="45%"}
+::::
+
+:::: {.column width="45%"}
 ![](images/clipboard-309922779.png){fig-align="center"}
 
 ::: {style="font-size: 50%;"}
 <https://en.wikipedia.org/wiki/Student%27s_t-distribution>
 :::
-:::
-:::::
+::::
+:::::::
 
 ## Percentiles de una distribución $t$
 
@@ -225,7 +226,7 @@ Usualmente, el valor de $\alpha$ es 0.1, 0.05, o 0.01, lo cual resulta en interv
 
 Debido a que $L$ y $U$ son aleatorios, un intervalo de confianza debe de tener una alta [*probabilidad de covertura*]{style="color: pink"} de contener el valor verdadero de $\mu$.
 
-. . . 
+. . .
 
 Matemáticamente, expresamos esto como
 
@@ -306,7 +307,7 @@ n = cilinder_data.filter(['Coeficiente']).count()
 media = cilinder_data.filter(['Coeficiente']).agg(["mean"])
 ```
 
-. . . 
+. . .
 
 Además, también necesitamos el *error estándar*, que es igual a $s/\sqrt{n}$. Para calcular esta cantidad, usamos la funcion `sem()` de **scipy.stats**.
 
@@ -329,6 +330,7 @@ intervalo = t.interval(confianza, n-1, loc = media,
                       scale = desviacion_error)
 intervalo
 ```
+
 </br>
 
 El intervalo de confianza del 95% es $[12.32, 13.76]$ o $12.32 \leq \mu \leq 13.76$
@@ -412,7 +414,6 @@ Para la segunda muestra de observaciones $x_1, x_2, \ldots, x_{n_x}$:
 </br>
 
 Si las dos muestras son independientes, un [intervalo de confianza de nivel $100(1-\alpha)\%$ para $\mu_y - \mu_x$]{style="color: #4682B4"} es
-
 
 $$\left[ (\bar{y} - \bar{x}) - \text{ME}, (\bar{y} - \bar{x}) + \text{ME} \right] $$
 
@@ -522,14 +523,13 @@ Temp_Tubo2 = (tube_data
 )
 ```
 
-
 ## Intervalo de confianza
 
 </br></br>
 
-Ahora, construímos el intervalo de confianza en dos pasos.  
+Ahora, construímos el intervalo de confianza en dos pasos.
 
-Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función `ttest_ind()` de **scipy.stats**. 
+Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función `ttest_ind()` de **scipy.stats**.
 
 ```{python}
 #| echo: true
@@ -557,7 +557,6 @@ ci
 </br>
 
 El intervalo es $[-3.12, 11.79]$ o $-3.12 \leq \mu_2 - \mu_1  \leq 11.79$.
-
 
 ## No asumas que las varianzas son iguales...
 

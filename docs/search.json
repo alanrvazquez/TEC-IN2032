@@ -907,14 +907,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#ejemplo-3",
     "title": "Pruebas de Hipótesis",
     "section": "Ejemplo 3",
-    "text": "Ejemplo 3\nUna bióloga estudia el peso corporal (en gramos) de cobayas al nacer. Ella recolectó una muestra de pesos de 27 cobayas recien nacidas. Los datos están en el archivo “Guinea Pigs.xlsx” en CANVAS.\nLa bióloga quiere probar la hipótesis de que el peso corporal medio es menor a 300 gramos. Técnicamente, quiere probar la hipótesis:\n\n\\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &lt; 300\\)\n\nDonde \\(\\mu\\) es la media o promedio teórico de los pesos de todas las cobayas recien nacidas. Utiliza \\(\\alpha = 0.05\\)."
+    "text": "Ejemplo 3\nUna bióloga estudia el peso corporal (en gramos) de cobayas al nacer. Ella recolectó una muestra de pesos de 27 cobayas recien nacidas. Los datos están en el archivo “Guinea_Pigs.xlsx” en CANVAS.\nLa bióloga quiere probar la hipótesis de que el peso corporal medio es menor a 300 gramos. Técnicamente, quiere probar la hipótesis:\n\n\\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &lt; 300\\)\n\nDonde \\(\\mu\\) es la media o promedio teórico de los pesos de todas las cobayas recien nacidas. Utiliza \\(\\alpha = 0.05\\)."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#en-python",
     "href": "Modulo_2/Hipotesis.slides.html#en-python",
     "title": "Pruebas de Hipótesis",
     "section": "En Python",
-    "text": "En Python"
+    "text": "En Python\nPrimero, leamos los datos en el archivo “Guinea_Pigs.xlsx”.\n\nguinea_data = pd.read_excel(\"Guinea_Pigs.xlsx\")\nguinea_data.head()\n\n\n\n\n\n\n\n\nWeight\n\n\n\n\n0\n421.0\n\n\n1\n452.6\n\n\n2\n456.1\n\n\n3\n90.5\n\n\n4\n110.7"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
@@ -935,14 +935,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#section-7",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
+    "text": "Para llevar a cabo una prueba de hipótesis de una muestra, usamos la función ttest_1samp de scipy.stats. En la función, el parámetro popmean especifica e valor asumido \\(\\mu_0\\) en \\(H_0\\). Además, el parámetro alternative indica el tipo de \\(H_1\\).\n\nhip_test = ttest_1samp(guinea_data, popmean = 300, alternative = 'less')\n\nEn este caso, \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &lt; 300\\). Entonces popmean = 300 y alternative = 'less'."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-8",
     "href": "Modulo_2/Hipotesis.slides.html#section-8",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#cuando-las-distribuciones-tienen-la-misma-varianza",
@@ -2213,5 +2213,40 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#carguemos-las-librerías",
+    "href": "Modulo_2/Hipotesis.slides.html#carguemos-las-librerías",
+    "title": "Pruebas de Hipótesis",
+    "section": "Carguemos las librerías",
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import sem, t, ttest_ind, ttest_1samp\n\nEn el cógido de arriba, indicamos que utilizaremos la función sem() de la librería scipy.stats."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#visualización-simple-a-través-de-un-histograma",
+    "href": "Modulo_2/Hipotesis.slides.html#visualización-simple-a-través-de-un-histograma",
+    "title": "Pruebas de Hipótesis",
+    "section": "Visualización simple a través de un histograma",
+    "text": "Visualización simple a través de un histograma\n\n\nCode\nplt.figure(figsize=(7,4)) \nsns.histplot(data = guinea_data, x = 'Weight') \nplt.title(\"Histograma de Peso\") \nplt.xlabel(\"Peso (en gramos)\") \nplt.show()"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-en-python",
+    "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-en-python",
+    "title": "Pruebas de Hipótesis",
+    "section": "Intervalo de confianza en Python",
+    "text": "Intervalo de confianza en Python\n\nAhora, creamos el intervalo de confianza usando la función t.interval() de scipy.stats.\n\nci = hip_test.confidence_interval(confidence_level=0.95)\n\nprint(f\"Límite inferior: {ci.low}\")\nprint(f\"Límite superior: {ci.high}\") \n\nLímite inferior: [-inf]\nLímite superior: [390.74691499]\n\n\n\nEl intervalo de confianza del 95% es \\([12.32, 13.76]\\) o \\(12.32 \\leq \\mu \\leq 13.76\\)"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-9",
+    "href": "Modulo_2/Hipotesis.slides.html#section-9",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#en-python-2",
+    "href": "Modulo_2/Hipotesis.slides.html#en-python-2",
+    "title": "Pruebas de Hipótesis",
+    "section": "En Python",
+    "text": "En Python"
   }
 ]

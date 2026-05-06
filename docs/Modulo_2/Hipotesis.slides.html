@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="../style.css">
@@ -126,6 +192,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -155,6 +224,18 @@ Alan R. Vazquez
 <li><p>Pruebas de Muestras Pequeñas</p></li>
 <li><p>Comentarios Finales</p></li>
 </ul>
+</section>
+<section id="carguemos-las-librerías" class="slide level2">
+<h2>Carguemos las librerías</h2>
+<p><br><br><br></p>
+<p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
+<div id="b5fb5bbb" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> sem, t, ttest_ind, ttest_1samp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>En el cógido de arriba, indicamos que utilizaremos la función <code>sem()</code> de la librería <strong>scipy.stats</strong>.</p>
 </section>
 <section>
 <section id="conceptos-básicos" class="title-slide slide level1 center">
@@ -423,7 +504,7 @@ Alan R. Vazquez
 <img data-src="images/alternativas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="ejemplo-3" class="slide level2">
 <h2>Ejemplo 3</h2>
-<p>Una bióloga estudia el peso corporal (en gramos) de cobayas al nacer. Ella recolectó una muestra de pesos de 27 cobayas recien nacidas. Los datos están en el archivo “Guinea Pigs.xlsx” en CANVAS.</p>
+<p>Una bióloga estudia el peso corporal (en gramos) de cobayas al nacer. Ella recolectó una muestra de pesos de 27 cobayas recien nacidas. Los datos están en el archivo “Guinea_Pigs.xlsx” en CANVAS.</p>
 <p>La bióloga quiere probar la hipótesis de que el peso corporal medio es menor a 300 gramos. Técnicamente, quiere probar la hipótesis:</p>
 <div style="text-align: center;">
 <p><span class="math inline">\(H_0: \mu = 300\)</span> contra <span class="math inline">\(H_1: \mu &lt; 300\)</span></p>
@@ -431,6 +512,109 @@ Alan R. Vazquez
 <p>Donde <span class="math inline">\(\mu\)</span> es la media o promedio teórico de los pesos de todas las cobayas recien nacidas. Utiliza <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 </section>
 <section id="en-python" class="slide level2">
+<h2>En Python</h2>
+<p>Primero, leamos los datos en el archivo “Guinea_Pigs.xlsx”.</p>
+<div id="01bb2ac7" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>guinea_data <span class="op">=</span> pd.read_excel(<span class="st">"Guinea_Pigs.xlsx"</span>)</span>
+<span id="cb2-2"><a></a>guinea_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>421.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>452.6</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>456.1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>90.5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>110.7</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="visualización-simple-a-través-de-un-histograma" class="slide level2">
+<h2>Visualización simple a través de un histograma</h2>
+<div id="56c35b47" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) </span>
+<span id="cb3-2"><a></a>sns.histplot(data <span class="op">=</span> guinea_data, x <span class="op">=</span> <span class="st">'Weight'</span>) </span>
+<span id="cb3-3"><a></a>plt.title(<span class="st">"Histograma de Peso"</span>) </span>
+<span id="cb3-4"><a></a>plt.xlabel(<span class="st">"Peso (en gramos)"</span>) </span>
+<span id="cb3-5"><a></a>plt.show() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Hipotesis_files/figure-revealjs/cell-4-output-1.png" class="quarto-figure quarto-figure-center" width="586" height="376"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>Para llevar a cabo una prueba de hipótesis de una muestra, usamos la función <code>ttest_1samp</code> de <strong>scipy.stats</strong>. En la función, el parámetro <code>popmean</code> especifica e valor asumido <span class="math inline">\(\mu_0\)</span> en <span class="math inline">\(H_0\)</span>. Además, el parámetro <code>alternative</code> indica el tipo de <span class="math inline">\(H_1\)</span>.</p>
+<div id="db31c8ff" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>hip_test <span class="op">=</span> ttest_1samp(guinea_data, popmean <span class="op">=</span> <span class="dv">300</span>, alternative <span class="op">=</span> <span class="st">'less'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>En este caso, <span class="math inline">\(H_0: \mu = 300\)</span> contra <span class="math inline">\(H_1: \mu &lt; 300\)</span>. Entonces <code>popmean = 300</code> y <code>alternative = 'less'</code>.</p>
+</section>
+<section id="intervalo-de-confianza-en-python" class="slide level2">
+<h2>Intervalo de confianza en Python</h2>
+<p><br><br></p>
+<p>Ahora, creamos el intervalo de confianza usando la función <code>t.interval()</code> de <strong>scipy.stats</strong>.</p>
+<div id="4fdb88ac" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>ci <span class="op">=</span> hip_test.confidence_interval(confidence_level<span class="op">=</span><span class="fl">0.95</span>)</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a><span class="bu">print</span>(<span class="ss">f"Límite inferior: </span><span class="sc">{</span>ci<span class="sc">.</span>low<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-4"><a></a><span class="bu">print</span>(<span class="ss">f"Límite superior: </span><span class="sc">{</span>ci<span class="sc">.</span>high<span class="sc">}</span><span class="ss">"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Límite inferior: [-inf]
+Límite superior: [390.74691499]</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>El intervalo de confianza del 95% es <span class="math inline">\([12.32, 13.76]\)</span> o <span class="math inline">\(12.32 \leq \mu \leq 13.76\)</span></p>
+</section>
+<section id="en-python-1" class="slide level2">
 <h2>En Python</h2>
 </section>
 <section id="pruebas-para-la-diferencia-de-dos-medias" class="slide level2">
@@ -450,7 +634,7 @@ Alan R. Vazquez
 <li><span class="math inline">\(s^2_y =\frac{1}{n_y-1} \sum_{i=1}^{n_y} (y_i - \bar{y})^2\)</span> es la varianza muestral.</li>
 </ul>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <p><br><br></p>
 <p>Para la segunda muestra de observaciones <span class="math inline">\(x_1, x_2, \ldots, x_{n_x}\)</span>:</p>
@@ -460,7 +644,7 @@ Alan R. Vazquez
 <li><span class="math inline">\(s^2_{x} =\frac{1}{n_x -1} \sum_{i=1}^{n_x} (x_i - \bar{x})^2\)</span> es la varianza muestral.</li>
 </ul>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <p>Si las dos muestras son independientes, entonces un <span style="color: green"><strong>estadístico de prueba</strong> para la hipótesis sobre <span class="math inline">\(\mu_y - \mu_x\)</span></span> es</p>
 <p><span class="math display">\[T = \frac{ (\bar{y} - \bar{x}) - (\mu_{y0} - \mu_{x0})}{\text{ME}}\]</span></p>
@@ -499,7 +683,7 @@ Alan R. Vazquez
 <p>¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?</p>
 <p>En otras palabras, prueba <span class="math inline">\(H_0: \mu_R = \mu_B\)</span> contra <span class="math inline">\(H_1: \mu_R \neq \mu_B\)</span> donde <span class="math inline">\(\mu_R\)</span> y <span class="math inline">\(\mu_B\)</span> son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa ￼.</p>
 </section>
-<section id="en-python-1" class="slide level2">
+<section id="en-python-2" class="slide level2">
 <h2>En Python</h2>
 </section>
 <section id="no-asumas-que-las-varianzas-son-iguales" class="slide level2">
