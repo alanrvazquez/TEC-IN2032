@@ -763,6 +763,13 @@
     "text": "Agenda\n\n\nConceptos Básicos\nPruebas de Muestras Pequeñas\nComentarios Finales"
   },
   {
+    "objectID": "Modulo_2/Hipotesis.slides.html#carguemos-las-librerías",
+    "href": "Modulo_2/Hipotesis.slides.html#carguemos-las-librerías",
+    "title": "Pruebas de Hipótesis",
+    "section": "Carguemos las librerías",
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import sem, t, ttest_ind, ttest_1samp\n\nEn el cógido de arriba, indicamos que utilizaremos la función sem() de la librería scipy.stats."
+  },
+  {
     "objectID": "Modulo_2/Hipotesis.slides.html#introducción",
     "href": "Modulo_2/Hipotesis.slides.html#introducción",
     "title": "Pruebas de Hipótesis",
@@ -917,18 +924,11 @@
     "text": "En Python\nPrimero, leamos los datos en el archivo “Guinea_Pigs.xlsx”.\n\nguinea_data = pd.read_excel(\"Guinea_Pigs.xlsx\")\nguinea_data.head()\n\n\n\n\n\n\n\n\nWeight\n\n\n\n\n0\n421.0\n\n\n1\n452.6\n\n\n2\n456.1\n\n\n3\n90.5\n\n\n4\n110.7"
   },
   {
-    "objectID": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
-    "href": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
+    "objectID": "Modulo_2/Hipotesis.slides.html#visualización-simple-a-través-de-un-histograma",
+    "href": "Modulo_2/Hipotesis.slides.html#visualización-simple-a-través-de-un-histograma",
     "title": "Pruebas de Hipótesis",
-    "section": "Pruebas para la diferencia de dos medias",
-    "text": "Pruebas para la diferencia de dos medias\n\nRecuerda que si la muestra aleatoria \\(Y_1, \\ldots, Y_{n_y}\\) sigue una distribución \\(N(\\mu_y, \\sigma_{y}^2)\\), entonces \\(\\bar{Y} \\sim N\\left(\\mu_y, \\frac{\\sigma_{y}^2}{n_y}\\right)\\).\nAdemás, si la muestra aleatoria \\(X_1, \\ldots, X_{n_x}\\) sigue una distribución \\(N(\\mu_x, \\sigma_{x}^2)\\), entonces \\(\\bar{X} \\sim N\\left(\\mu_x, \\frac{\\sigma_{x}^2}{n_x}\\right)\\)."
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#el-esquema",
-    "href": "Modulo_2/Hipotesis.slides.html#el-esquema",
-    "title": "Pruebas de Hipótesis",
-    "section": "El esquema",
-    "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
+    "section": "Visualización simple a través de un histograma",
+    "text": "Visualización simple a través de un histograma\n\n\nCode\nplt.figure(figsize=(7,4)) \nsns.histplot(data = guinea_data, x = 'Weight') \nplt.title(\"Histograma de Peso\") \nplt.xlabel(\"Peso (en gramos)\") \nplt.show()"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-7",
@@ -943,6 +943,41 @@
     "title": "Pruebas de Hipótesis",
     "section": "",
     "text": "Usando hip_test, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.\n\nhip_test.pvalue\n\narray([0.74450596])\n\n\n\nComo el p-valor es mayor que \\(\\alpha=0.05\\), no rechazamos \\(H_0\\). En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza",
+    "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza",
+    "title": "Pruebas de Hipótesis",
+    "section": "Intervalo de confianza",
+    "text": "Intervalo de confianza\n\nUsando el mismo objeto hip_test, también podemos obtener un intervalo de confianza usando la función .confidence_interval().\n\nci = hip_test.confidence_interval(confidence_level=0.95)\nci\n\nConfidenceInterval(low=array([-inf]), high=array([390.74691499]))\n\n\n\nEn este caso, el intervalo de confianza es de un solo lado ya que usamos \\(H_1: \\mu &lt; 300\\). En este caso, el intervalo de confianza del 95% es \\([-\\infty, 390.74]\\) o \\(\\mu \\leq 390.74\\)"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
+    "href": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
+    "title": "Pruebas de Hipótesis",
+    "section": "Pruebas para la diferencia de dos medias",
+    "text": "Pruebas para la diferencia de dos medias\n\nRecuerda que si la muestra aleatoria \\(Y_1, \\ldots, Y_{n_y}\\) sigue una distribución \\(N(\\mu_y, \\sigma_{y}^2)\\), entonces \\(\\bar{Y} \\sim N\\left(\\mu_y, \\frac{\\sigma_{y}^2}{n_y}\\right)\\).\nAdemás, si la muestra aleatoria \\(X_1, \\ldots, X_{n_x}\\) sigue una distribución \\(N(\\mu_x, \\sigma_{x}^2)\\), entonces \\(\\bar{X} \\sim N\\left(\\mu_x, \\frac{\\sigma_{x}^2}{n_x}\\right)\\)."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#el-esquema",
+    "href": "Modulo_2/Hipotesis.slides.html#el-esquema",
+    "title": "Pruebas de Hipótesis",
+    "section": "El esquema",
+    "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-9",
+    "href": "Modulo_2/Hipotesis.slides.html#section-9",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-10",
+    "href": "Modulo_2/Hipotesis.slides.html#section-10",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#cuando-las-distribuciones-tienen-la-misma-varianza",
@@ -980,11 +1015,53 @@
     "text": "Ejemplo 4\n\nLa resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):\nR: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.\nB: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.\n¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?"
   },
   {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-11",
+    "href": "Modulo_2/Hipotesis.slides.html#section-11",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "En otras palabras, prueba \\(H_0: \\mu_R = \\mu_B\\) contra \\(H_1: \\mu_R \\neq \\mu_B\\) donde \\(\\mu_R\\) y \\(\\mu_B\\) son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa \\(\\alpha = 0.05\\)."
+  },
+  {
     "objectID": "Modulo_2/Hipotesis.slides.html#en-python-1",
     "href": "Modulo_2/Hipotesis.slides.html#en-python-1",
     "title": "Pruebas de Hipótesis",
     "section": "En Python",
     "text": "En Python\nAntes de empezar, carguemos los datos que están en el archivo “Hockey.xlsx”\n\nhockey_data = pd.read_excel(\"Hockey.xlsx\")\nhockey_data.head()\n\n\n\n\n\n\n\n\nCompuesto\nResistencia\n\n\n\n\n0\nR\n487.3\n\n\n1\nR\n444.5\n\n\n2\nR\n467.7\n\n\n3\nR\n456.3\n\n\n4\nR\n449.7"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#visualización",
+    "href": "Modulo_2/Hipotesis.slides.html#visualización",
+    "title": "Pruebas de Hipótesis",
+    "section": "Visualización",
+    "text": "Visualización\nPodemos visualizar los datos de los dos grupos definidos por los compuestos R y B usando gráficas de cajas lado a lado.\n\n\nCode\nplt.figure(figsize=(7,4)) \nsns.boxplot(data = hockey_data, x = 'Compuesto', y = 'Resistencia') \nplt.ylabel(\"Resistencia\") \nplt.xlabel(\"Compuesto\") \nplt.show()"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#configuración",
+    "href": "Modulo_2/Hipotesis.slides.html#configuración",
+    "title": "Pruebas de Hipótesis",
+    "section": "Configuración",
+    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nRes_CompA = (hockey_data\n  .query(\"Compuesto == 'R'\")\n  .filter(['Resistencia'])\n)\n\n\nRes_CompB = (hockey_data\n  .query(\"Compuesto == 'B'\")\n  .filter(['Resistencia'])\n)"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
+    "href": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
+    "title": "Pruebas de Hipótesis",
+    "section": "Prueba de hipótesis",
+    "text": "Prueba de hipótesis\n\nPara llevar a cabo una prueba de hipótesis de dos muestras, usamos la función ttest_ind de scipy.stats. En la función, el parámetro alternative indica el tipo de \\(H_1\\). En este caso, alternative = 'two-sided' ya que \\(H_1: \\mu_R \\neq \\mu_B\\).\n\nprueba_hip = ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', \n                       equal_var = False)\n\nRecuerda que el parámetro equal_var indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#section-12",
+    "href": "Modulo_2/Hipotesis.slides.html#section-12",
+    "title": "Pruebas de Hipótesis",
+    "section": "",
+    "text": "Usando prueba_hip, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.\n\nprueba_hip.pvalue\n\narray([0.00812422])\n\n\n\nComo el p-valor es menor que \\(\\alpha=0.0081\\), rechazamos \\(H_0\\).\n\nEn otras palabras, concluimos que la muestra nos da información suficiente para decir que los promedios de resistencia de los palos de hockey bajo los dos compuestos es diferente."
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-1",
+    "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-1",
+    "title": "Pruebas de Hipótesis",
+    "section": "Intervalo de confianza",
+    "text": "Intervalo de confianza\nRecuerda que podemos obtener un intervalo de confianza usando .confidence_interval().\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([5.3518092]), high=array([30.81961937]))\n\n\nEl intervalo es \\([5.35, 30.82]\\) o \\(5.35 \\leq \\mu_B - \\mu_A  \\leq 30.82\\).\n\nEsto lo sabemos por el orden en que especificamos las muestras en\nttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', equal_var = False)"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#no-asumas-que-las-varianzas-son-iguales",
@@ -1001,11 +1078,11 @@
     "text": "Significativo no implica importante\n\nEn el uso común, la palabra significativo significa “importante”.\nPor tanto, resulta tentador pensar que los resultados estadísticamente significativos siempre deben ser importantes. Este no es el caso.\nA veces, los resultados estadísticamente significativos no tienen ninguna importancia científica o práctica. En otras palabras, no son prácticamente significativos."
   },
   {
-    "objectID": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados-de-las-pruebas-de-hipótesis",
-    "href": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados-de-las-pruebas-de-hipótesis",
+    "objectID": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados",
+    "href": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados",
     "title": "Pruebas de Hipótesis",
-    "section": "Conclusión de los resultados de las pruebas de hipótesis",
-    "text": "Conclusión de los resultados de las pruebas de hipótesis\nLas únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:\n\nRechazamos \\(H_0\\). En otras palabras, concluimos que \\(H_0\\) es falsa.\nNo rechazamos \\(H_0\\). En otras palabras, \\(H_0\\) es plausible. Nunca podemos concluir que \\(H_0\\) sea cierto. Podemos simplemente concluir que \\(H_0\\) podría ser plausible.\n\nDebemos decidir si el nivel de desacuerdo, medido con el valor p, es lo suficientemente grande como para hacer que la hipótesis nula sea inverosímil."
+    "section": "Conclusión de los resultados",
+    "text": "Conclusión de los resultados\nLas únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:\n\nRechazamos \\(H_0\\). En otras palabras, concluimos que \\(H_0\\) es falsa.\nNo rechazamos \\(H_0\\). En otras palabras, \\(H_0\\) es plausible. Nunca podemos concluir que \\(H_0\\) sea cierto. Podemos simplemente concluir que \\(H_0\\) podría ser plausible.\n\nDebemos decidir si el nivel de desacuerdo, medido con el valor p, es lo suficientemente grande como para hacer que la hipótesis nula sea inverosímil."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#elije-h_1-para-responder-la-pregunta",
@@ -1627,25 +1704,11 @@
     "text": "Visualización simple a través de un histograma\n\n\nCode\nplt.figure(figsize=(7,4)) # Crea espacio para la figura.\nsns.histplot(data = cilinder_data, x = 'Coeficiente') # Crea el histograma.\nplt.title(\"Histograma de Coeficiente\") # Título de la gráfica.\nplt.xlabel(\"Coeficiente\") # Etiqueta del eje X\nplt.show() # Muestra la Gráfica"
   },
   {
-    "objectID": "Modulo_2/Intervalos.slides.html#configuración",
-    "href": "Modulo_2/Intervalos.slides.html#configuración",
+    "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
+    "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
     "title": "Introducción a los Intervalos de Confianza",
-    "section": "Configuración",
-    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nTemp_Tubo1 = (tube_data\n  .query(\"Tipo == 1\")\n  .filter(['Temperatura'])\n)\n\n\nTemp_Tubo2 = (tube_data\n  .query(\"Tipo == 2\")\n  .filter(['Temperatura'])\n)"
-  },
-  {
-    "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-en-python",
-    "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-en-python",
-    "title": "Introducción a los Intervalos de Confianza",
-    "section": "Intervalo de confianza en Python",
-    "text": "Intervalo de confianza en Python\n\nAhora, creamos el intervalo de confianza usando la función t.interval() de scipy.stats.\n\nintervalo = t.interval(confianza, n-1, loc = media, \n                      scale = desviacion_error)\nintervalo\n\n(array([[12.31815482]]), array([[13.76184518]]))\n\n\n\nEl intervalo de confianza del 95% es \\([12.32, 13.76]\\) o \\(12.32 \\leq \\mu \\leq 13.76\\)"
-  },
-  {
-    "objectID": "Modulo_2/Intervalos.slides.html#ejemplo-2",
-    "href": "Modulo_2/Intervalos.slides.html#ejemplo-2",
-    "title": "Introducción a los Intervalos de Confianza",
-    "section": "Ejemplo 2",
-    "text": "Ejemplo 2\n\n\nUna ingeniera investiga la temperatura de deflexión bajo carga de dos tipos diferentes de tubos de plástico.\nLa ingeniera tomó una muestra de 15 ejemplares de cada uno de los dos tipos de tubos.\nElla midió las temperaturas observadas para los 30 tubos en grados Farenheit."
+    "section": "Intervalo de confianza",
+    "text": "Intervalo de confianza\n\nPara construir un intervalo de confianza de una muestra, seguimos dos pasos.\n\nPrimero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_1samp(cilinder_data, popmean = 0)\n\nPor convención, el parámetro popmean debe estar fijado en cero."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-3",
@@ -1655,11 +1718,25 @@
     "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza. En está función, especificamos el nivel de confianza usando el parámetro confidence_level.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([12.31815482]), high=array([13.76184518]))\n\n\n\nEl intervalo de confianza del 95% es \\([12.32, 13.76]\\) o \\(12.32 \\leq \\mu \\leq 13.76\\)"
   },
   {
+    "objectID": "Modulo_2/Intervalos.slides.html#ejemplo-2",
+    "href": "Modulo_2/Intervalos.slides.html#ejemplo-2",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "Ejemplo 2",
+    "text": "Ejemplo 2\n\n\nUna ingeniera investiga la temperatura de deflexión bajo carga de dos tipos diferentes de tubos de plástico.\nLa ingeniera tomó una muestra de 15 ejemplares de cada uno de los dos tipos de tubos.\nElla midió las temperaturas observadas para los 30 tubos en grados Farenheit."
+  },
+  {
     "objectID": "Modulo_2/Intervalos.slides.html#section-4",
     "href": "Modulo_2/Intervalos.slides.html#section-4",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
     "text": "La ingeniera quiere investigar la diferencia entre la temperatura promedio de los dos tubos.\nEs decir, le interesa saber \\(\\mu_2 - \\mu_1\\) donde \\(\\mu_1\\) y \\(\\mu_2\\) es la temperatura promedio del tubo tipo 1 y 2, respectivamente."
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-5",
+    "href": "Modulo_2/Intervalos.slides.html#section-5",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Si \\(\\mu_2 - \\mu_1 &gt; 0\\), entonces el tubo de tipo 2 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 1.\nSi \\(\\mu_2 - \\mu_1 &lt; 0\\), entonces el tubo de tipo 1 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 2.\nSi \\(\\mu_2 - \\mu_1 = 0\\), entonces los tubos de tipo 1 y 2 tienen la misma temperatura promedio de deflexión."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#cómo-podemos-estimar-el-valor-de-mu_2---mu_1",
@@ -1683,13 +1760,6 @@
     "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
   },
   {
-    "objectID": "Modulo_2/Intervalos.slides.html#section-5",
-    "href": "Modulo_2/Intervalos.slides.html#section-5",
-    "title": "Introducción a los Intervalos de Confianza",
-    "section": "",
-    "text": "Si \\(\\mu_2 - \\mu_1 &gt; 0\\), entonces el tubo de tipo 2 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 1.\nSi \\(\\mu_2 - \\mu_1 &lt; 0\\), entonces el tubo de tipo 1 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 2.\nSi \\(\\mu_2 - \\mu_1 = 0\\), entonces los tubos de tipo 1 y 2 tienen la misma temperatura promedio de deflexión."
-  },
-  {
     "objectID": "Modulo_2/Intervalos.slides.html#section-6",
     "href": "Modulo_2/Intervalos.slides.html#section-6",
     "title": "Introducción a los Intervalos de Confianza",
@@ -1711,6 +1781,13 @@
     "text": "Si las distribuciones tienen la misma varianza, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[ (\\bar{y} - \\bar{x}) - t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p\\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}}, \\; (\\bar{y} - \\bar{x}) + t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p \\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}} \\right].\\]\n\n\nLa cantidad \\(s_p\\) se llama desviación estándar agrupada\n\\[s_p = \\sqrt{ \\frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} }.\\]"
   },
   {
+    "objectID": "Modulo_2/Intervalos.slides.html#section-9",
+    "href": "Modulo_2/Intervalos.slides.html#section-9",
+    "title": "Introducción a los Intervalos de Confianza",
+    "section": "",
+    "text": "Si las distribuciones tienen differentes varianzas, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[(\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}}, \\; (\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}} \\right].\\]\n\ndonde el número de grados de libertad viene dado por el valor \\(\\nu = \\frac{\\left( \\frac{s_y^2}{n_y} + \\frac{s_x^2}{n_x} \\right)^2 }{ \\frac{ \\left(s_{y}^2/n_y\\right)^2}{n_y - 1} + \\frac{ \\left (s_{x}^2/n_x \\right)^2}{n_x - 1} }\\) (redondeado al número entero más cercano)."
+  },
+  {
     "objectID": "Modulo_2/Intervalos.slides.html#en-python",
     "href": "Modulo_2/Intervalos.slides.html#en-python",
     "title": "Introducción a los Intervalos de Confianza",
@@ -1729,28 +1806,28 @@
     "href": "Modulo_2/Intervalos.slides.html#visualización",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "Visualización",
-    "text": "Visualización\nPodemos visualizar los datos de los dos grupos definitos por los tubos del tipo 1 y 2 usando gráficas de cajas lado a lado.\n\n\nCode\nplt.figure(figsize=(7,4)) # Create space for the figure.\nsns.boxplot(data = tube_data, y = 'Temperatura', x = 'Tipo') \nplt.ylabel(\"Temperatura\") \nplt.xlabel(\"Tipo de tubo\") \nplt.show() # Show the plot."
+    "text": "Visualización\nPodemos visualizar los datos de los dos grupos definidos por los tubos del tipo 1 y 2 usando gráficas de cajas lado a lado.\n\n\nCode\nplt.figure(figsize=(7,4)) # Create space for the figure.\nsns.boxplot(data = tube_data, y = 'Temperatura', x = 'Tipo') \nplt.ylabel(\"Temperatura\") \nplt.xlabel(\"Tipo de tubo\") \nplt.show() # Show the plot."
   },
   {
-    "objectID": "Modulo_2/Intervalos.slides.html#configuración-1",
-    "href": "Modulo_2/Intervalos.slides.html#configuración-1",
+    "objectID": "Modulo_2/Intervalos.slides.html#configuración",
+    "href": "Modulo_2/Intervalos.slides.html#configuración",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "Configuración",
     "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nTemp_Tubo1 = (tube_data\n  .query(\"Tipo == 1\")\n  .filter(['Temperatura'])\n)\n\n\nTemp_Tubo2 = (tube_data\n  .query(\"Tipo == 2\")\n  .filter(['Temperatura'])\n)"
   },
   {
-    "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
-    "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
+    "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
+    "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\n\nPara construir un intervalo de confianza de una muestra, seguimos dos pasos.\n\nPrimero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_1samp(cilinder_data, popmean = 0)\n\nPor convención, el parámetro popmean debe estar fijado en cero."
+    "text": "Intervalo de confianza\n\nAhora, construímos el intervalo de confianza en dos pasos.\nPrimero, realizamos una prueba de hipótesis de dos muestras (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var = False)\n\nEl parámetro equal_var en esta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
   },
   {
-    "objectID": "Modulo_2/Intervalos.slides.html#section-9",
-    "href": "Modulo_2/Intervalos.slides.html#section-9",
+    "objectID": "Modulo_2/Intervalos.slides.html#section-10",
+    "href": "Modulo_2/Intervalos.slides.html#section-10",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Si las distribuciones tienen differentes varianzas, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[(\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}}, \\; (\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}} \\right].\\]\n\ndonde el número de grados de libertad viene dado por el valor \\(\\nu = \\frac{\\left( \\frac{s_y^2}{n_y} + \\frac{s_x^2}{n_x} \\right)^2 }{ \\frac{ \\left(s_{y}^2/n_y\\right)^2}{n_y - 1} + \\frac{ \\left (s_{x}^2/n_x \\right)^2}{n_x - 1} }\\) (redondeado al número entero más cercano)."
+    "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([-3.12936848]), high=array([11.79603514]))\n\n\n\nEl intervalo es \\([-3.12, 11.79]\\) o \\(-3.12 \\leq \\mu_2 - \\mu_1  \\leq 11.79\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#no-asumas-que-las-varianzas-son-iguales",
@@ -1760,11 +1837,11 @@
     "text": "No asumas que las varianzas son iguales…\n\n\nEl supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.\nEl método puede resultar poco fiable si se utiliza cuando las varianzas teóricas no son iguales.\nComo normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales."
   },
   {
-    "objectID": "Modulo_2/Intervalos.slides.html#section-10",
-    "href": "Modulo_2/Intervalos.slides.html#section-10",
+    "objectID": "Modulo_2/Intervalos.slides.html#section-11",
+    "href": "Modulo_2/Intervalos.slides.html#section-11",
     "title": "Introducción a los Intervalos de Confianza",
     "section": "",
-    "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([-3.12936848]), high=array([11.79603514]))\n\n\n\nEl intervalo es \\([-3.12, 11.79]\\) o \\(-3.12 \\leq \\mu_2 - \\mu_1  \\leq 11.79\\)."
+    "text": "Cuando las varianzas de la muestra son casi iguales, es tentador suponer que las varianzas de la población también lo son.\nSin embargo, con tamaños de muestra pequeños, las varianzas de la muestra pueden no aproximarse bien a las varianzas teóricas de la distribución.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#preguntas-de-práctica-para-examen",
@@ -2213,117 +2290,5 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#carguemos-las-librerías",
-    "href": "Modulo_2/Hipotesis.slides.html#carguemos-las-librerías",
-    "title": "Pruebas de Hipótesis",
-    "section": "Carguemos las librerías",
-    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import sem, t, ttest_ind, ttest_1samp\n\nEn el cógido de arriba, indicamos que utilizaremos la función sem() de la librería scipy.stats."
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#visualización-simple-a-través-de-un-histograma",
-    "href": "Modulo_2/Hipotesis.slides.html#visualización-simple-a-través-de-un-histograma",
-    "title": "Pruebas de Hipótesis",
-    "section": "Visualización simple a través de un histograma",
-    "text": "Visualización simple a través de un histograma\n\n\nCode\nplt.figure(figsize=(7,4)) \nsns.histplot(data = guinea_data, x = 'Weight') \nplt.title(\"Histograma de Peso\") \nplt.xlabel(\"Peso (en gramos)\") \nplt.show()"
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-en-python",
-    "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-en-python",
-    "title": "Pruebas de Hipótesis",
-    "section": "Intervalo de confianza en Python",
-    "text": "Intervalo de confianza en Python\nUsando el mismo objeto hip_test, también podemos obtener un intervalo de confianza usando la función .confidence_interval().\n\nci = hip_test.confidence_interval(confidence_level=0.95)\nci\n\nConfidenceInterval(low=array([-inf]), high=array([390.74691499]))\n\n\n\nEn este caso, el intervalo de confianza es de un solo lado ya que usamos \\(H_1: \\mu &lt; 300\\). En este caso, el intervalo de confianza del 95% es \\([-\\infty, 390.74]\\) o \\(\\mu \\leq 390.74\\)"
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#section-9",
-    "href": "Modulo_2/Hipotesis.slides.html#section-9",
-    "title": "Pruebas de Hipótesis",
-    "section": "",
-    "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#en-python-2",
-    "href": "Modulo_2/Hipotesis.slides.html#en-python-2",
-    "title": "Pruebas de Hipótesis",
-    "section": "En Python",
-    "text": "En Python"
-  },
-  {
-    "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
-    "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
-    "title": "Introducción a los Intervalos de Confianza",
-    "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\n\nAhora, construímos el intervalo de confianza en dos pasos.\nPrimero, realizamos una prueba de hipótesis de dos muestras (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var = False)\n\nEl parámetro equal_var en esta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
-  },
-  {
-    "objectID": "Modulo_2/Intervalos.slides.html#section-11",
-    "href": "Modulo_2/Intervalos.slides.html#section-11",
-    "title": "Introducción a los Intervalos de Confianza",
-    "section": "",
-    "text": "Cuando las varianzas de la muestra son casi iguales, es tentador suponer que las varianzas de la población también lo son.\nSin embargo, con tamaños de muestra pequeños, las varianzas de la muestra pueden no aproximarse bien a las varianzas teóricas de la distribución.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#section-10",
-    "href": "Modulo_2/Hipotesis.slides.html#section-10",
-    "title": "Pruebas de Hipótesis",
-    "section": "",
-    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza",
-    "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza",
-    "title": "Pruebas de Hipótesis",
-    "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\n\nUsando el mismo objeto hip_test, también podemos obtener un intervalo de confianza usando la función .confidence_interval().\n\nci = hip_test.confidence_interval(confidence_level=0.95)\nci\n\nConfidenceInterval(low=array([-inf]), high=array([390.74691499]))\n\n\n\nEn este caso, el intervalo de confianza es de un solo lado ya que usamos \\(H_1: \\mu &lt; 300\\). En este caso, el intervalo de confianza del 95% es \\([-\\infty, 390.74]\\) o \\(\\mu \\leq 390.74\\)"
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#section-11",
-    "href": "Modulo_2/Hipotesis.slides.html#section-11",
-    "title": "Pruebas de Hipótesis",
-    "section": "",
-    "text": "En otras palabras, prueba \\(H_0: \\mu_R = \\mu_B\\) contra \\(H_1: \\mu_R \\neq \\mu_B\\) donde \\(\\mu_R\\) y \\(\\mu_B\\) son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa \\(\\alpha = 0.05\\)."
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#visualización",
-    "href": "Modulo_2/Hipotesis.slides.html#visualización",
-    "title": "Pruebas de Hipótesis",
-    "section": "Visualización",
-    "text": "Visualización\nPodemos visualizar los datos de los dos grupos definidos por los compuestos R y B usando gráficas de cajas lado a lado.\n\n\nCode\nplt.figure(figsize=(7,4)) \nsns.boxplot(data = hockey_data, x = 'Compuesto', y = 'Resistencia') \nplt.ylabel(\"Resistencia\") \nplt.xlabel(\"Compuesto\") \nplt.show()"
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#configuración",
-    "href": "Modulo_2/Hipotesis.slides.html#configuración",
-    "title": "Pruebas de Hipótesis",
-    "section": "Configuración",
-    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nRes_CompA = (hockey_data\n  .query(\"Compuesto == 'R'\")\n  .filter(['Resistencia'])\n)\n\n\nRes_CompB = (hockey_data\n  .query(\"Compuesto == 'B'\")\n  .filter(['Resistencia'])\n)"
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
-    "href": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
-    "title": "Pruebas de Hipótesis",
-    "section": "Prueba de hipótesis",
-    "text": "Prueba de hipótesis\n\nPara llevar a cabo una prueba de hipótesis de dos muestras, usamos la función ttest_ind de scipy.stats. En la función, el parámetro alternative indica el tipo de \\(H_1\\). En este caso, alternative = 'two-sided' ya que \\(H_1: \\mu_R \\neq \\mu_B\\).\n\nprueba_hip = ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', \n                       equal_var = False)\n\nRecuerda que el parámetro equal_var indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#section-12",
-    "href": "Modulo_2/Hipotesis.slides.html#section-12",
-    "title": "Pruebas de Hipótesis",
-    "section": "",
-    "text": "Usando prueba_hip, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.\n\nprueba_hip.pvalue\n\narray([0.00812422])\n\n\n\nComo el p-valor es menor que \\(\\alpha=0.0081\\), rechazamos \\(H_0\\).\n\nEn otras palabras, concluimos que la muestra nos da información suficiente para decir que los promedios de resistencia de los palos de hockey bajo los dos compuestos es diferente."
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-1",
-    "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-1",
-    "title": "Pruebas de Hipótesis",
-    "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\nRecuerda que podemos obtener un intervalo de confianza usando .confidence_interval().\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([5.3518092]), high=array([30.81961937]))\n\n\nEl intervalo es \\([5.35, 30.82]\\) o \\(5.35 \\leq \\mu_B - \\mu_A  \\leq 30.82\\).\n\nEsto lo sabemos por el orden en que especificamos las muestras en\nttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', equal_var = False)"
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados",
-    "href": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados",
-    "title": "Pruebas de Hipótesis",
-    "section": "Conclusión de los resultados",
-    "text": "Conclusión de los resultados\nLas únicas dos conclusiones a las que se puede llegar en una prueba de hipótesis son:\n\nRechazamos \\(H_0\\). En otras palabras, concluimos que \\(H_0\\) es falsa.\nNo rechazamos \\(H_0\\). En otras palabras, \\(H_0\\) es plausible. Nunca podemos concluir que \\(H_0\\) sea cierto. Podemos simplemente concluir que \\(H_0\\) podría ser plausible.\n\nDebemos decidir si el nivel de desacuerdo, medido con el valor p, es lo suficientemente grande como para hacer que la hipótesis nula sea inverosímil."
   }
 ]
