@@ -226,7 +226,7 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="49904e6d" class="cell" data-execution_count="1">
+<div id="3caf8a80" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -423,7 +423,7 @@ _{a}^b f(x) dx.\]</span></p>
 <h2>Primero…</h2>
 <p><br><br><br></p>
 <p>Definamos los valores apropiados para <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span> en Python.</p>
-<div id="1845bd69" class="cell" data-execution_count="2">
+<div id="fe1fd8b3" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>m <span class="op">=</span> <span class="dv">1000</span> <span class="co"># Media de la distribución normal.</span></span>
 <span id="cb2-2"><a></a>s <span class="op">=</span> <span class="dv">10</span> <span class="co"># Desviación estándard de la distribución normal.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -434,7 +434,7 @@ _{a}^b f(x) dx.\]</span></p>
 <p><strong>A</strong>. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. <span class="math inline">\(P(X &lt; 1010) = P(X \leq 1010)\)</span>.</p>
 <p><br></p>
 <p>Para calcular la probabilidad de que una variable Normal (<span class="math inline">\(X\)</span>) tome un <strong>valor menor (o igual)</strong> a <span class="math inline">\(k\)</span> usamos la función <code>norm.cdf(k, loc, scale)</code>. En este caso, <code>loc</code> y <code>scale</code> especifican los valores de <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span>, respectivamente</p>
-<div id="92fbecd8" class="cell" data-execution_count="3">
+<div id="e7ad776f" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>k <span class="op">=</span> <span class="dv">1010</span></span>
 <span id="cb3-2"><a></a>prob <span class="op">=</span> norm.cdf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s)</span>
 <span id="cb3-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt;= </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -447,7 +447,7 @@ _{a}^b f(x) dx.\]</span></p>
 <h2></h2>
 <p><strong>B</strong>. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. <span class="math inline">\(P(X &gt; 980) = P(X \geq 980)\)</span>.</p>
 <p>Para calcular la probabilidad de que una variable Normal (<span class="math inline">\(X\)</span>) tome un <strong>valor mayor (o igual)</strong> a <span class="math inline">\(k\)</span> usamos la función <code>norm.sf(k, loc, scale)</code>.</p>
-<div id="cb7daed0" class="cell" data-execution_count="4">
+<div id="c8a882b6" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>k <span class="op">=</span> <span class="dv">980</span></span>
 <span id="cb5-2"><a></a>prob_mas_de <span class="op">=</span> norm.sf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s)</span>
 <span id="cb5-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &gt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_mas_de<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -457,7 +457,7 @@ _{a}^b f(x) dx.\]</span></p>
 </div>
 <div class="fragment">
 <p>Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:</p>
-<div id="7e1c25b5" class="cell" data-execution_count="5">
+<div id="10b11081" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">-</span> norm.cdf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.9772498680518208</code></pre>
@@ -476,7 +476,7 @@ _{a}^b f(x) dx.\]</span></p>
 <div class="fragment">
 <p><br></p>
 <p>En Python, esto se logra con <code>norm.cdf()</code> como sigue:</p>
-<div id="dc758f8a" class="cell" data-execution_count="6">
+<div id="06e56e35" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>k_superior <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb9-2"><a></a>k_inferior <span class="op">=</span> <span class="dv">990</span></span>
 <span id="cb9-3"><a></a></span>
