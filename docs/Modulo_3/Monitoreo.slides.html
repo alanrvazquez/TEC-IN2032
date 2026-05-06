@@ -151,7 +151,7 @@ Alan R. Vazquez
 <h2>Agenda</h2>
 <p><br></p>
 <ul>
-<li><p>Control de Calidad: Conceptos Básicos y Herramientas</p></li>
+<li><p>Conceptos Básicos y Herramientas</p></li>
 <li><p>Introducción a las Gráficas de Control</p></li>
 <li><p>Tipos de Gráficas de Control</p>
 <ul>
@@ -160,15 +160,18 @@ Alan R. Vazquez
 </ul></li>
 </ul>
 </section>
-<section id="control-de-calidad-conceptos-básicos-y-herramientas" class="slide level2">
-<h2>Control de Calidad: Conceptos básicos y herramientas</h2>
+<section id="control-de-calidad" class="slide level2">
+<h2>Control de Calidad</h2>
+<p><br></p>
 <ul>
-<li><p>El control de calidad es un conjunto de herramientas estadísticas para el mejoramiento de calidad.</p></li>
-<li><p>El mejoramiento de calidad significa eliminar el desperdicio sitemáticamente.</p></li>
-<li><p>Para lograr esto, podemos</p>
+<li>El <span style="color:#587156"><strong>control de calidad</strong></span> es un conjunto de herramientas estadísticas para el mejoramiento de calidad.</li>
+</ul>
 <ul>
-<li><strong>Reducir la variabilidad</strong> del proceso de producción.</li>
-<li><strong>Eliminar los defectos</strong> de la unidad producida.</li>
+<li class="fragment"><p>El mejoramiento de calidad significa eliminar el desperdicio sitemáticamente.</p></li>
+<li class="fragment"><p>Para lograr esto, podemos</p>
+<ul>
+<li class="fragment"><strong>Reducir la variabilidad</strong> del proceso de producción.</li>
+<li class="fragment"><strong>Eliminar los defectos</strong> de la unidad producida.</li>
 </ul></li>
 </ul>
 </section>
@@ -190,6 +193,7 @@ Alan R. Vazquez
 <h2>Tipos de variabilidad</h2>
 <p><br><br></p>
 <p>En cualquier proceso de producción, sin importar lo bien diseñado que esté o la atención que se preste a su mantenimiento, siempre existirá cierta <span style="color: orange"><strong>variabilidad natural</strong></span> o inherente.</p>
+<p><br></p>
 <p>A esta variabilidad natural es debido a <span style="color: orange"><strong><em>causas aleatorias</em></strong></span> del proceso, las cuales son una parte inherente del proceso.</p>
 </section>
 <section id="section" class="slide level2">
@@ -199,18 +203,22 @@ Alan R. Vazquez
 <ul>
 <li>Fluctuaciones pequeñas en un proceso de manufactura, variaciones pequeñas en tiempos de entrega, o variaciones pequeñas en el peso de dos productos idénticos. Todo esto debido a factores naturales o esperados.</li>
 </ul>
-<p><span style="color: #40E0D0"><strong><em>Un proceso está bajo control estadístico cuando opera únicamente en presencia de causas aleatorias de variación.</em></strong></span></p>
+<p><span style="color: #587156"><strong><em>Un proceso está bajo control estadístico cuando opera únicamente en presencia de causas aleatorias de variación.</em></strong></span></p>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
 <p>Existen otro tipo de variabilidad que pueden estar presente en la producción de un proceso. Esta variabilidad es ocasionada por <span style="color: darkred"><strong><em>causas asignables</em></strong></span>.</p>
+<div class="fragment">
 <p>Ejemplos de causas asignables son:</p>
 <ul>
 <li><p>Máquinas mal calibradas</p></li>
 <li><p>Errores del operador en el proceso</p></li>
 <li><p>Materias primas defectuosas</p></li>
 </ul>
+</div>
+<div class="fragment">
 <p><span style="color: purple">Cuando la variabilidad debido a causas asignables es mayor que la variabilidad natural, se dice que el proceso no está bajo control.</span> Es decir, el proceso tiene un nivel inaceptable de desempeño.</p>
+</div>
 </section>
 <section id="herramientas-del-mep" class="slide level2">
 <h2>Herramientas del MEP</h2>
@@ -231,7 +239,7 @@ Alan R. Vazquez
 </section>
 <section id="gráficas-de-control" class="slide level2">
 <h2>Gráficas de control</h2>
-<p>La <span style="color: #4682B4"><strong>gráficas de control</strong></span> nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la variable bajo estudio.</p>
+<p>La <span style="color: #4682B4"><strong>gráficas de control</strong></span> nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la <em><strong>variable</strong></em> bajo estudio.</p>
 <p>Una gráfica de control:</p>
 <div style="font-size: 85%;">
 <ul>
@@ -264,8 +272,9 @@ Alan R. Vazquez
 </section>
 <section id="el-tipo-de-gráfica-de-control-depende-del-tipo-de-variable" class="slide level2">
 <h2>1. El tipo de gráfica de control depende del tipo de variable</h2>
-<p><br><br></p>
+<p><br></p>
 <p>Recuerda que hay dos tipos de variables:</p>
+<p><br></p>
 <p><span style="color: darkblue"><strong>Variables numéricas (continuas)</strong></span>:</p>
 <ul>
 <li><p>Pueden tomar muchos valores diferentes dentro de un rango.</p></li>
@@ -292,12 +301,12 @@ Alan R. Vazquez
 <section id="tipos-de-gráficas-de-control" class="slide level2">
 <h2>Tipos de gráficas de control</h2>
 <p><br><br></p>
-<p>Las gráficas de control más comúnes para <span style="color: darkblue"><strong>variables numéricas</strong></span> son:</p>
+<p>Las gráficas de control comúnes para <span style="color: darkblue"><strong>variables numéricas</strong></span> son:</p>
 <ul>
 <li>Gráfico de promedios-rangos (<span class="math inline">\(\bar{X}\)</span> y <span class="math inline">\(R\)</span>).</li>
 <li>Gráfico para valores individuales.</li>
 </ul>
-<p>A estas gráficas también se les llama <span style="color: #ADD8E6"><strong><em>gráficas control para variables</em></strong></span>.</p>
+<p>A estas gráficas también se les llama <span style="color: #4682B4"><strong><em>gráficas control para variables</em></strong></span>.</p>
 </section>
 <section id="section-5" class="slide level2">
 <h2></h2>
@@ -315,10 +324,10 @@ Alan R. Vazquez
 <p>El plan de muestreo de estos subgrupos tiene los siguientes elementos:</p>
 <div style="font-size: 85%;">
 <ul>
-<li><p><strong>Número de subgrupos racionales</strong> (<span class="math inline">\(k\)</span>): debe seleccionar un número <span class="math inline">\(k\)</span> grande, normalmente 20 o más.</p></li>
-<li><p><strong>Tamaño del subgrupo</strong> (<span class="math inline">\(n\)</span>): la naturaleza de la variable de estudio te ayudará a definir el tamaño del subgrupo.</p></li>
-<li><p><strong>Frecuencia</strong>: los subgrupos se toman secuencialmente en el tiempo.</p></li>
-<li><p><strong>Esquema de muestreo</strong>: usualmente muestreo aleatorio.</p></li>
+<li class="fragment"><p><strong>Número de subgrupos racionales</strong> (<span class="math inline">\(k\)</span>): debe seleccionar un número <span class="math inline">\(k\)</span> grande, normalmente 20 o más.</p></li>
+<li class="fragment"><p><strong>Tamaño del subgrupo</strong> (<span class="math inline">\(n\)</span>): la naturaleza de la variable de estudio te ayudará a definir el tamaño del subgrupo.</p></li>
+<li class="fragment"><p><strong>Frecuencia</strong>: los subgrupos se toman secuencialmente en el tiempo.</p></li>
+<li class="fragment"><p><strong>Esquema de muestreo</strong>: usualmente muestreo aleatorio.</p></li>
 </ul>
 </div>
 </section>
@@ -331,6 +340,7 @@ Alan R. Vazquez
 <h2></h2>
 <p><br><br></p>
 <p>Es decir, los subgrupos deberán seleccionarse tal que, en la medida de lo posible, la variabilidad de las observaciones dentro de un subgrupo deberá incluir toda la variabilidad natural y excluir la variabilidad por causes asignables.</p>
+<p><br></p>
 <p>Esto permitirá a la gráfica de control señalar puntos que se encuentran fuera de control.</p>
 </section>
 <section id="métodos-para-generar-subgrupos-racionales" class="slide level2">
@@ -363,6 +373,7 @@ Alan R. Vazquez
 </section>
 <section id="comentarios" class="slide level2">
 <h2>Comentarios</h2>
+<p><br></p>
 <p>Idealmente, el plan de muestreo tiene:</p>
 <ul>
 <li>Mediciones de grupos que se toman frequentemente.</li>
@@ -375,11 +386,13 @@ Alan R. Vazquez
 <h2>Registrar los datos</h2>
 <p>Una vez teniendo los subgrupos racionales, debemos de registrar mediciones sobre sus elementos. Estas mediciones formaran el conjunto de datos.</p>
 <p>Para realizar las mediciones, necesitamos un <span style="color: darkgray"><strong><em>instrumento de medición</em></strong></span> y una <strong><em>persona que utiliza este instrumento</em></strong>.</p>
+<div class="fragment">
 <p>Durante la medición, registra lo siguiente:</p>
 <ol type="1">
 <li><p>Los valores individuales y la identificación de eventos (si aplica) para cada subgrupo.</p></li>
 <li><p>Cualquier observación relevante que pueda ayudarnos a explicar inconsistencias en el análisis.</p></li>
 </ol>
+</div>
 </section>
 <section id="características-de-un-buen-sistema-de-medición" class="slide level2">
 <h2>Características de un buen sistema de medición</h2>
@@ -406,6 +419,7 @@ Alan R. Vazquez
 </section>
 <section id="recapitulación" class="slide level2">
 <h2>Recapitulación</h2>
+<p><br></p>
 
 <img data-src="images/carta_ejemplo.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>

@@ -21,7 +21,7 @@ editor: visual
 
 </br>
 
-- Control de Calidad: Conceptos Básicos y Herramientas
+- Conceptos Básicos y Herramientas
 
 - Introducción a las Gráficas de Control
 
@@ -30,16 +30,20 @@ editor: visual
   - Gráficas para variables numéricas
   - Gráficas para variables categóricas
 
-## Control de Calidad: Conceptos básicos y herramientas
+## Control de Calidad
 
-- El control de calidad es un conjunto de herramientas estadísticas para el mejoramiento de calidad.
+</br>
 
+- El [**control de calidad**]{style="color:#587156"} es un conjunto de herramientas estadísticas para el mejoramiento de calidad.
+
+::: incremental
 - El mejoramiento de calidad significa eliminar el desperdicio sitemáticamente.
 
 - Para lograr esto, podemos
 
   - **Reducir la variabilidad** del proceso de producción.
   - **Eliminar los defectos** de la unidad producida.
+:::
 
 ## Monitoreo Estadístico de Procesos
 
@@ -65,6 +69,8 @@ El MEP es una herramienta para reducir la variabilidad de un proceso sistemátic
 
 En cualquier proceso de producción, sin importar lo bien diseñado que esté o la atención que se preste a su mantenimiento, siempre existirá cierta [**variabilidad natural**]{style="color: orange"} o inherente.
 
+</br>
+
 A esta variabilidad natural es debido a [***causas aleatorias***]{style="color: orange"} del proceso, las cuales son una parte inherente del proceso.
 
 ## 
@@ -75,11 +81,13 @@ Por ejemplo
 
 - Fluctuaciones pequeñas en un proceso de manufactura, variaciones pequeñas en tiempos de entrega, o variaciones pequeñas en el peso de dos productos idénticos. Todo esto debido a factores naturales o esperados.
 
-[***Un proceso está bajo control estadístico cuando opera únicamente en presencia de causas aleatorias de variación.***]{style="color: #40E0D0"}
+[***Un proceso está bajo control estadístico cuando opera únicamente en presencia de causas aleatorias de variación.***]{style="color: #587156"}
 
 ## 
 
 Existen otro tipo de variabilidad que pueden estar presente en la producción de un proceso. Esta variabilidad es ocasionada por [***causas asignables***]{style="color: darkred"}.
+
+. . . 
 
 Ejemplos de causas asignables son:
 
@@ -88,6 +96,8 @@ Ejemplos de causas asignables son:
 - Errores del operador en el proceso
 
 - Materias primas defectuosas
+
+. . . 
 
 [Cuando la variabilidad debido a causas asignables es mayor que la variabilidad natural, se dice que el proceso no está bajo control.]{style="color: purple"} Es decir, el proceso tiene un nivel inaceptable de desempeño.
 
@@ -111,7 +121,7 @@ La [***gráfica de control***]{style="color: #4682B4"} es una técnica de monito
 
 ## Gráficas de control
 
-La [**gráficas de control**]{style="color: #4682B4"} nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la variable bajo estudio.
+La [**gráficas de control**]{style="color: #4682B4"} nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la _**variable**_ bajo estudio.
 
 Una gráfica de control:
 
@@ -148,9 +158,11 @@ Los **pasos para trabajar** con una gráfica de control son:
 
 ## 1. El tipo de gráfica de control depende del tipo de variable
 
-</br></br>
+</br>
 
 Recuerda que hay dos tipos de variables:
+
+</br>
 
 [**Variables numéricas (continuas)**]{style="color: darkblue"}:
 
@@ -180,12 +192,12 @@ Recuerda que hay dos tipos de variables:
 
 </br></br>
 
-Las gráficas de control más comúnes para [**variables numéricas**]{style="color: darkblue"} son:
+Las gráficas de control comúnes para [**variables numéricas**]{style="color: darkblue"} son:
 
 - Gráfico de promedios-rangos ($\bar{X}$ y $R$).
 - Gráfico para valores individuales.
 
-A estas gráficas también se les llama [***gráficas control para variables***]{style="color: #ADD8E6"}.
+A estas gráficas también se les llama [***gráficas control para variables***]{style="color: #4682B4"}.
 
 ## 
 
@@ -205,6 +217,7 @@ Los datos para construir un gráfico de control se recopilan en varias muestras 
 
 El plan de muestreo de estos subgrupos tiene los siguientes elementos:
 
+::: incremental
 ::: {style="font-size: 85%;"}
 - **Número de subgrupos racionales** ($k$): debe seleccionar un número $k$ grande, normalmente 20 o más.
 
@@ -213,6 +226,7 @@ El plan de muestreo de estos subgrupos tiene los siguientes elementos:
 - **Frecuencia**: los subgrupos se toman secuencialmente en el tiempo.
 
 - **Esquema de muestreo**: usualmente muestreo aleatorio.
+:::
 :::
 
 ## Creación de subgrupos racionales
@@ -226,6 +240,8 @@ Para crear subgrupos racionales, el **principio básico** a seguir es que toda l
 </br></br>
 
 Es decir, los subgrupos deberán seleccionarse tal que, en la medida de lo posible, la variabilidad de las observaciones dentro de un subgrupo deberá incluir toda la variabilidad natural y excluir la variabilidad por causes asignables.
+
+</br>
 
 Esto permitirá a la gráfica de control señalar puntos que se encuentran fuera de control.
 
@@ -255,6 +271,8 @@ Existen dos métodos para generar subgrupos racionales:
 
 ## Comentarios
 
+</br>
+
 Idealmente, el plan de muestreo tiene:
 
 - Mediciones de grupos que se toman frequentemente.
@@ -269,6 +287,8 @@ En estos casos, [*la práctica actual de la industria tiende a favorecer los reg
 Una vez teniendo los subgrupos racionales, debemos de registrar mediciones sobre sus elementos. Estas mediciones formaran el conjunto de datos.
 
 Para realizar las mediciones, necesitamos un [***instrumento de medición***]{style="color: darkgray"} y una ***persona que utiliza este instrumento***.
+
+. . . 
 
 Durante la medición, registra lo siguiente:
 
@@ -307,6 +327,8 @@ Para generar la gráfica de control, se calculan resúmenes estadísticos de los
 - [**Rango**]{style="color: purple"}: la diferencia entre el máximo y el mínimo de los datos.
 
 ## Recapitulación
+
+</br>
 
 ![](images/carta_ejemplo.png){fig-align="center"}
 

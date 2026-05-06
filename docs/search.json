@@ -1127,7 +1127,7 @@
     "href": "Modulo_3/Monitoreo.slides.html#agenda",
     "title": "Monitoreo de Procesos",
     "section": "Agenda",
-    "text": "Agenda\n\n\nControl de Calidad: Conceptos Básicos y Herramientas\nIntroducción a las Gráficas de Control\nTipos de Gráficas de Control\n\nGráficas para variables numéricas\nGráficas para variables categóricas"
+    "text": "Agenda\n\n\nConceptos Básicos y Herramientas\nIntroducción a las Gráficas de Control\nTipos de Gráficas de Control\n\nGráficas para variables numéricas\nGráficas para variables categóricas"
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#control-de-calidad-conceptos-básicos-y-herramientas",
@@ -1148,7 +1148,7 @@
     "href": "Modulo_3/Monitoreo.slides.html#tipos-de-variabilidad",
     "title": "Monitoreo de Procesos",
     "section": "Tipos de variabilidad",
-    "text": "Tipos de variabilidad\n\nEn cualquier proceso de producción, sin importar lo bien diseñado que esté o la atención que se preste a su mantenimiento, siempre existirá cierta variabilidad natural o inherente.\nA esta variabilidad natural es debido a causas aleatorias del proceso, las cuales son una parte inherente del proceso."
+    "text": "Tipos de variabilidad\n\nEn cualquier proceso de producción, sin importar lo bien diseñado que esté o la atención que se preste a su mantenimiento, siempre existirá cierta variabilidad natural o inherente.\n\nA esta variabilidad natural es debido a causas aleatorias del proceso, las cuales son una parte inherente del proceso."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section",
@@ -1162,7 +1162,7 @@
     "href": "Modulo_3/Monitoreo.slides.html#section-1",
     "title": "Monitoreo de Procesos",
     "section": "",
-    "text": "Existen otro tipo de variabilidad que pueden estar presente en la producción de un proceso. Esta variabilidad es ocasionada por causas asignables.\nEjemplos de causas asignables son:\n\nMáquinas mal calibradas\nErrores del operador en el proceso\nMaterias primas defectuosas\n\nCuando la variabilidad debido a causas asignables es mayor que la variabilidad natural, se dice que el proceso no está bajo control. Es decir, el proceso tiene un nivel inaceptable de desempeño."
+    "text": "Existen otro tipo de variabilidad que pueden estar presente en la producción de un proceso. Esta variabilidad es ocasionada por causas asignables.\n\nEjemplos de causas asignables son:\n\nMáquinas mal calibradas\nErrores del operador en el proceso\nMaterias primas defectuosas\n\n\n\nCuando la variabilidad debido a causas asignables es mayor que la variabilidad natural, se dice que el proceso no está bajo control. Es decir, el proceso tiene un nivel inaceptable de desempeño."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#herramientas-del-mep",
@@ -1204,7 +1204,7 @@
     "href": "Modulo_3/Monitoreo.slides.html#el-tipo-de-gráfica-de-control-depende-del-tipo-de-variable",
     "title": "Monitoreo de Procesos",
     "section": "1. El tipo de gráfica de control depende del tipo de variable",
-    "text": "1. El tipo de gráfica de control depende del tipo de variable\n\nRecuerda que hay dos tipos de variables:\nVariables numéricas (continuas):\n\nPueden tomar muchos valores diferentes dentro de un rango.\nPor ejemplo, diámetro, peso, temperatura, nivel de ruido."
+    "text": "1. El tipo de gráfica de control depende del tipo de variable\n\nRecuerda que hay dos tipos de variables:\n\nVariables numéricas (continuas):\n\nPueden tomar muchos valores diferentes dentro de un rango.\nPor ejemplo, diámetro, peso, temperatura, nivel de ruido."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-4",
@@ -1232,7 +1232,7 @@
     "href": "Modulo_3/Monitoreo.slides.html#tipos-de-gráficas-de-control",
     "title": "Monitoreo de Procesos",
     "section": "Tipos de gráficas de control",
-    "text": "Tipos de gráficas de control\n\nLas gráficas de control más comúnes para variables numéricas son:\n\nGráfico de promedios-rangos (\\(\\bar{X}\\) y \\(R\\)).\nGráfico para valores individuales.\n\nA estas gráficas también se les llama gráficas control para variables."
+    "text": "Tipos de gráficas de control\n\nLas gráficas de control comúnes para variables numéricas son:\n\nGráfico de promedios-rangos (\\(\\bar{X}\\) y \\(R\\)).\nGráfico para valores individuales.\n\nA estas gráficas también se les llama gráficas control para variables."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#section-5",
@@ -1260,7 +1260,7 @@
     "href": "Modulo_3/Monitoreo.slides.html#section-6",
     "title": "Monitoreo de Procesos",
     "section": "",
-    "text": "Es decir, los subgrupos deberán seleccionarse tal que, en la medida de lo posible, la variabilidad de las observaciones dentro de un subgrupo deberá incluir toda la variabilidad natural y excluir la variabilidad por causes asignables.\nEsto permitirá a la gráfica de control señalar puntos que se encuentran fuera de control."
+    "text": "Es decir, los subgrupos deberán seleccionarse tal que, en la medida de lo posible, la variabilidad de las observaciones dentro de un subgrupo deberá incluir toda la variabilidad natural y excluir la variabilidad por causes asignables.\n\nEsto permitirá a la gráfica de control señalar puntos que se encuentran fuera de control."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#métodos-para-generar-subgrupos-racionales",
@@ -1281,14 +1281,14 @@
     "href": "Modulo_3/Monitoreo.slides.html#comentarios",
     "title": "Monitoreo de Procesos",
     "section": "Comentarios",
-    "text": "Comentarios\nIdealmente, el plan de muestreo tiene:\n\nMediciones de grupos que se toman frequentemente.\nLos subgrupos son grandes, lo cual facilita la detección de los cambios pequeños en el proceso.\n\nSin embargo, este tipo de muestreo tiende a ser muy costoso cuando la recopilación de datos se hace manualmente.\nEn estos casos, la práctica actual de la industria tiende a favorecer los registros frecuentes de subgrupos pequeños."
+    "text": "Comentarios\n\nIdealmente, el plan de muestreo tiene:\n\nMediciones de grupos que se toman frequentemente.\nLos subgrupos son grandes, lo cual facilita la detección de los cambios pequeños en el proceso.\n\nSin embargo, este tipo de muestreo tiende a ser muy costoso cuando la recopilación de datos se hace manualmente.\nEn estos casos, la práctica actual de la industria tiende a favorecer los registros frecuentes de subgrupos pequeños."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#registrar-los-datos",
     "href": "Modulo_3/Monitoreo.slides.html#registrar-los-datos",
     "title": "Monitoreo de Procesos",
     "section": "Registrar los datos",
-    "text": "Registrar los datos\nUna vez teniendo los subgrupos racionales, debemos de registrar mediciones sobre sus elementos. Estas mediciones formaran el conjunto de datos.\nPara realizar las mediciones, necesitamos un instrumento de medición y una persona que utiliza este instrumento.\nDurante la medición, registra lo siguiente:\n\nLos valores individuales y la identificación de eventos (si aplica) para cada subgrupo.\nCualquier observación relevante que pueda ayudarnos a explicar inconsistencias en el análisis."
+    "text": "Registrar los datos\nUna vez teniendo los subgrupos racionales, debemos de registrar mediciones sobre sus elementos. Estas mediciones formaran el conjunto de datos.\nPara realizar las mediciones, necesitamos un instrumento de medición y una persona que utiliza este instrumento.\n\nDurante la medición, registra lo siguiente:\n\nLos valores individuales y la identificación de eventos (si aplica) para cada subgrupo.\nCualquier observación relevante que pueda ayudarnos a explicar inconsistencias en el análisis."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#características-de-un-buen-sistema-de-medición",
@@ -2290,5 +2290,12 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_3/Monitoreo.slides.html#control-de-calidad",
+    "href": "Modulo_3/Monitoreo.slides.html#control-de-calidad",
+    "title": "Monitoreo de Procesos",
+    "section": "Control de Calidad",
+    "text": "Control de Calidad\n\n\nEl control de calidad es un conjunto de herramientas estadísticas para el mejoramiento de calidad.\n\n\nEl mejoramiento de calidad significa eliminar el desperdicio sitemáticamente.\nPara lograr esto, podemos\n\nReducir la variabilidad del proceso de producción.\nEliminar los defectos de la unidad producida."
   }
 ]
