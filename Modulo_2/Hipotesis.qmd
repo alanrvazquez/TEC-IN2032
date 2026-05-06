@@ -441,7 +441,7 @@ hip_test.pvalue
 
 </br>
 
-Como el p-valor es mayor que $\alpha=0.05$, [**no rechazamos**]{style="color: red"} $H_0$. En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300
+Como el p-valor es mayor que $\alpha=0.05$, [**no rechazamos**]{style="color: red"} $H_0$. En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300.
 
 ## Intervalo de confianza 
 
@@ -458,7 +458,7 @@ ci
 
 </br>
 
-En este caso, el intervalo de confianza es de un solo lado ya que usamos $H_1: \mu < 300$. En este caso, el intervalo de confianza del 95% es $[-\infty, 390.74]$ o $\mu \leq 390.74$
+En este caso, el intervalo de confianza es de un solo lado ya que usamos $H_1: \mu < 300$. En este caso, el intervalo de confianza del 95% es $[-\infty, 390.74]$ o $\mu \leq 390.74$.
 
 ## Pruebas para la diferencia de dos medias
 
@@ -622,8 +622,6 @@ Recuerda que el parámetro `equal_var` indica si asumimos que las varianzas son 
 
 
 ##
-
-
 
 Usando `prueba_hip`, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.
 

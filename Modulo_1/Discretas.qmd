@@ -70,7 +70,7 @@ En el cógido de arriba, indicamos que utilizaremos la función `binom()` de la 
 
 Una variable aleatoria es [**discreta**]{style="color: darkgreen"} si sólo puede asumir un número finito de valores distintos.
 
-. . .  
+. . .
 
 Por ejemplo,
 
@@ -159,7 +159,7 @@ Como es una distribución de probabilidad, tenemos que $p(0) + p(1) + p(2) + p(3
 
 ¿Cuál es la probailidad de que se realicen 6 cirugías?
 
-. . . 
+. . .
 
 $p(6) = 0$ ya que no forma parte de la distribución de probabilidad.
 
@@ -198,7 +198,7 @@ La [**función de distribución acumulativa**]{style="color: purple"} especifica
 La función de distribución acumulativa de la variable $Y$ es la función
 
 ::: {style="font-size: 110%;"}
-$$F(y) = P(Y \leq y).$$ 
+$$F(y) = P(Y \leq y).$$
 :::
 
 ## Ejemplo 1 (cont.)
@@ -225,7 +225,7 @@ $$E(Y) = \sum_{y} y p(y),$$
 
 donde la suma es sobre todos los posibles valores de $Y$.
 
-. . . 
+. . .
 
 </br>
 
@@ -257,7 +257,7 @@ $$V(Y) = E\left[ (Y - E(Y))^2 \right] = \sum_{y} (y - E(Y))^2 p(y).$$
 
 La [**desviación estándar**]{style="color: darkgreen;"} de $Y$ es la raíz cuadrada de $V(Y)$.
 
-. . . 
+. . .
 
 </br>
 
@@ -389,12 +389,11 @@ $Y$ tiene la distribución binomial con [**parámetros** $n$ y $p$]{style="color
 4.  $Y$ es el número de éxitos en los $n$ experimentos.
 :::
 
-. . . 
+. . .
 
 En este caso, $Y\sim\text{Bin}(n,p)$ donde $n$ y $p$ son los parámetros (constantes) de la distribución.
 
 ## La distribución binomial
-
 
 Si $Y\sim\text{Bin}(n,p)$, la función de probabilidad $Y$ es
 
@@ -422,8 +421,8 @@ Si $Y\sim\text{Bin}(n,p)$, tenemos que
 
 ## 
 
-::::: columns
-::: {.column width="40%"}
+:::::: columns
+:::: {.column width="40%"}
 ::: {style="font-size: 95%;"}
 - Debemos de pensar en $\text{Bin}(n,p)$ como una [*familia*]{style="color: #5E7D6A"} de distribuciones.
 
@@ -431,14 +430,14 @@ Si $Y\sim\text{Bin}(n,p)$, tenemos que
 
 - Cada miembro tiene una función de probabilidad diferente.
 :::
-:::
+::::
 
 ::: {.column width="60%"}
 </br>
 
 ![](images/clipboard-2277526709.png){fig-align="center"}
 :::
-:::::
+::::::
 
 ## Calculo de probabilidades en Python
 
@@ -470,7 +469,7 @@ n = 20 # Numero de experimentos Bernoulli.
 p = 0.4 # Probabilidad de éxito.
 ```
 
-##
+## 
 
 </br>
 
@@ -489,7 +488,7 @@ prob_exacta = binom.pmf(k, n, p)
 print(f"P(X = {k}) = {prob_exacta:.4f}")
 ```
 
-##
+## 
 
 </br>
 
@@ -508,7 +507,7 @@ prob_acumulada = binom.cdf(k, n, p)
 print(f"P(X <= {k}) = {prob_acumulada:.4f}")
 ```
 
-##
+## 
 
 </br>
 
@@ -527,13 +526,13 @@ prob_menos_que = binom.cdf(k-1, n, p)
 print(f"P(X < {k}) = {prob_menos_que:.4f}")
 ```
 
-. . . 
+. . .
 
 </br>
 
 Esto ya que $P(X < 6) = P(X \leq 5)$.
 
-##
+## 
 
 **D**. La probabilidad de anotar más de 12 canastas, $P(X > 12)$.
 
@@ -548,7 +547,7 @@ prob_mas_de = binom.sf(k, n, p)
 print(f"P(X > {k}) = {prob_mas_de:.4f}")
 ```
 
-. . . 
+. . .
 
 Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:
 
@@ -561,11 +560,11 @@ print(1 - binom.cdf(k, n, p))
 
 Que se traduce en $P(X > k) = 1 - P(X \leq k)$.
 
-##
+## 
 
 **E**. La probabilidad de anotar entre 7 y 11 canastas, $P(7 \leq X \leq 11)$.
 
-Para este caso, debemos de ver 
+Para este caso, debemos de ver
 
 ::: {style="font-size: 85%;"}
 $$P(7 \leq X \leq 11) = P(X \leq 11) - P(X < 7) = P(X \leq 11) - P(X \leq 6).$$

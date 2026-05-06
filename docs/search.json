@@ -942,14 +942,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#section-8",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Usando hip_test, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.\n\nhip_test.pvalue\n\narray([0.74450596])\n\n\n\nComo el p-valor es mayor que \\(\\alpha=0.05\\), no rechazamos \\(H_0\\). En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300"
+    "text": "Usando hip_test, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.\n\nhip_test.pvalue\n\narray([0.74450596])\n\n\n\nComo el p-valor es mayor que \\(\\alpha=0.05\\), no rechazamos \\(H_0\\). En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza",
     "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza",
     "title": "Pruebas de Hipótesis",
     "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\n\nUsando el mismo objeto hip_test, también podemos obtener un intervalo de confianza usando la función .confidence_interval().\n\nci = hip_test.confidence_interval(confidence_level=0.95)\nci\n\nConfidenceInterval(low=array([-inf]), high=array([390.74691499]))\n\n\n\nEn este caso, el intervalo de confianza es de un solo lado ya que usamos \\(H_1: \\mu &lt; 300\\). En este caso, el intervalo de confianza del 95% es \\([-\\infty, 390.74]\\) o \\(\\mu \\leq 390.74\\)"
+    "text": "Intervalo de confianza\n\nUsando el mismo objeto hip_test, también podemos obtener un intervalo de confianza usando la función .confidence_interval().\n\nci = hip_test.confidence_interval(confidence_level=0.95)\nci\n\nConfidenceInterval(low=array([-inf]), high=array([390.74691499]))\n\n\n\nEn este caso, el intervalo de confianza es de un solo lado ya que usamos \\(H_1: \\mu &lt; 300\\). En este caso, el intervalo de confianza del 95% es \\([-\\infty, 390.74]\\) o \\(\\mu \\leq 390.74\\)."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
@@ -1559,294 +1559,294 @@
   {
     "objectID": "Modulo_2/Intervalos.slides.html#agenda",
     "href": "Modulo_2/Intervalos.slides.html#agenda",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Agenda",
     "text": "Agenda\n\n\nIntroducción\nEstimadores de intervalos\nIntervalos de confianza para la diferencia de medias"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#carguemos-las-librerías",
     "href": "Modulo_2/Intervalos.slides.html#carguemos-las-librerías",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Carguemos las librerías",
     "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import ttest_1samp, ttest_ind\n\nEn el cógido de arriba, indicamos que utilizaremos la función ttest_1samp() y ttest_ind() de la librería scipy.stats."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#introducción-1",
     "href": "Modulo_2/Intervalos.slides.html#introducción-1",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Introducción",
     "text": "Introducción\n\nEl objetivo de la estadística es utilizar la información contenida en una muestra para hacer inferencias sobre la población o distribución de la que se toma la muestra.\n\nDebido a que las distribuciones se caracterizan por sus parámetros, el objetivo de muchas investigaciones estadísticas es estimar el valor de uno o más parámetros relevantes."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#por-ejemplo",
     "href": "Modulo_2/Intervalos.slides.html#por-ejemplo",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Por ejemplo …",
     "text": "Por ejemplo …\nProblema 1: Estimar el peso promedio de un componente electrónico para ver si cumple con especificaciones de calidad.\n\nSolución:\n\n\nSuponemos que el peso de los componentes sigue una distribución \\(N(\\mu, \\sigma^2)\\). Entonces, \\(\\mu\\) es el verdadero peso promedio de todos los componentes que pueden existir.\nRecolectamos una muestra de pesos de \\(n\\) componentes seleccionados al azar. Los pesos son observaciones (de variables aleatorias): \\(y_1, y_2, \\ldots, y_n\\).\nLuego, usamos la muestra para estimar el peso promedio \\(\\mu\\) (o incluso \\(\\sigma^2\\))."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section",
     "href": "Modulo_2/Intervalos.slides.html#section",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Problema 2: Calcular la proporción de componentes electrónicos que fallan.\n\nSolución:\n\n\nSuponemos que la proporción de componentes electrónicos que fallan sigue una distribución \\(\\text{Bin}(n, p)\\). Entonces, \\(p\\) es la verdadera proporción de que componentes que fallan de entre todos los componentes que se pueden producir.\nProbamos \\(n\\) componentes seleccionados al azar y vemos si fallan o no. Las fallas de los componentes son observaciones de variables aleatorias Bernoulli: \\(y_1, y_2, \\ldots, y_n\\), donde \\(y_i = 1\\) si el i-ésimo componente falló y \\(y_i = 0\\) si no falló.\nLuego, usamos la muestra para estimar \\(p\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#tipos-de-estimadores",
     "href": "Modulo_2/Intervalos.slides.html#tipos-de-estimadores",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Tipos de estimadores",
     "text": "Tipos de estimadores\n\nUn estimador es una función de la muestra que provee información sobre un parametro de una distribución.\n\nHay dos tipos de estimadores:\n\nEstimador Puntual: Un resúmen estadístico de la muestra.\nEstimador de Intervalo: Un par de cantidades \\(L\\) and \\(U\\) calculadas sobre una muestra donde \\(L \\leq U\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#aplicación",
     "href": "Modulo_2/Intervalos.slides.html#aplicación",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Aplicación",
     "text": "Aplicación\n\nSupongamos que deseamos estimar el tiempo promedio de ensamblaje por unidad \\(\\mu\\) de una nueva máquina de ensamble automatizada en una línea de producción.\nEsta métrica es fundamental para evaluar la eficiencia del proceso y planificar la capacidad de producción.\nSupongamos que hemos observado una muestra aleatoria de 10 unidades producidas por esta máquina, \\(y_1, y_2, \\ldots, y_{10}\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-1",
     "href": "Modulo_2/Intervalos.slides.html#section-1",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Podemos utilizar la muestra aleatoria para construir dos estimaciones:\n\nEstimación puntual: un solo número que es 42.8 segundos por unidad.\nEstimación de intervalo: El intervalo (40.2, 45.4) segundos que tiene una alta “confianza” de incluir el valor verdadero de \\(\\mu\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#estimador-de-intervalo",
     "href": "Modulo_2/Intervalos.slides.html#estimador-de-intervalo",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Estimador de intervalo",
     "text": "Estimador de intervalo\n\nUn estimador de intervalo es un método para utilizar las observaciones de la muestra para calcular dos números que forman los puntos finales de un intervalo.\n\nIdealmente, el intervalo tiene dos propiedades:\n\nContiene el parámetro bajo estudio \\(\\mu\\).\nEs relativamente pequeño.\n\n\n\nLos estimadores de intervalos se denominan comúnmente intervalos de confianza."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#estructura-de-los-estimadores-de-intervalo",
     "href": "Modulo_2/Intervalos.slides.html#estructura-de-los-estimadores-de-intervalo",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Estructura de los estimadores de intervalo",
     "text": "Estructura de los estimadores de intervalo\n\nLos estimadores de intervalo tienen la forma \\([L,U]\\) o \\(L \\leq \\mu \\leq U\\); donde:\n\n\\(L\\) es el límite de confianza inferior.\n\\(U\\) es el límite de confianza superior.\n\nTécnicamente, \\(L\\) y \\(U\\) son variables aleatorias porque son funciones de la muestra aleatoria."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-para-la-media",
     "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-para-la-media",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Intervalo de confianza para la media",
     "text": "Intervalo de confianza para la media\n\nConsidera una muestra pequeña de observaciones \\(y_1, \\ldots, y_n\\), donde se asume que se obtuvieron de una distribución \\(N(\\mu, \\sigma^2)\\). Un intervalo de confianza para \\(\\mu\\) es\n\n\n\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right],\\]"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-2",
     "href": "Modulo_2/Intervalos.slides.html#section-2",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right],\\]\n\n\\(\\bar{y} = \\frac{1}{n}\\sum_{i=1}^n y_i\\) es la media muestral donde \\(n\\) es el numero de observaciones.\n\\(s =\\sqrt{\\frac{1}{n-1} \\sum_{i=1}^{n} (y_i - \\bar{y})^2}\\) es la desviación estándar muestral.\n\\(t_{n-1, \\alpha/2}\\) es un percentil de la distribución \\(t\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#la-distribución-t",
     "href": "Modulo_2/Intervalos.slides.html#la-distribución-t",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "La distribución \\(t\\)",
     "text": "La distribución \\(t\\)\n\n\n\nLa distribución \\(t\\) es una distribución de probabilidad que surge en el contexto de la inferencia estadística.\nSus características principales:\n\nTiene forma de campana.\nSu forma depende un parametro \\(\\nu\\) llamado “grados de libertad”.\nCuando el valor de este parámetro es muy grande, la distribución \\(t\\) converge a la \\(N(0,1)\\).\n\n\n\n\n\n\n\n\n\nhttps://en.wikipedia.org/wiki/Student%27s_t-distribution"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#percentiles-de-una-distribución-t",
     "href": "Modulo_2/Intervalos.slides.html#percentiles-de-una-distribución-t",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Percentiles de una distribución \\(t\\)",
     "text": "Percentiles de una distribución \\(t\\)"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#como-seleccionamos-el-valor-de-alpha",
     "href": "Modulo_2/Intervalos.slides.html#como-seleccionamos-el-valor-de-alpha",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "¿Como seleccionamos el valor de \\(\\alpha\\)?",
     "text": "¿Como seleccionamos el valor de \\(\\alpha\\)?\n\n\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right]\\]\nEl valor de \\(1-\\alpha\\) define el nivel de confianza (o cobertura) del intervalo de confianza.\nUsualmente, el valor de \\(\\alpha\\) es 0.1, 0.05, o 0.01, lo cual resulta en intervalos con un nivel de confianza de 90%, 95%, y 99%, respectivamente."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#definición-formal-de-un-ic",
     "href": "Modulo_2/Intervalos.slides.html#definición-formal-de-un-ic",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Definición formal de un IC",
     "text": "Definición formal de un IC\n\nDebido a que \\(L\\) y \\(U\\) son aleatorios, un intervalo de confianza debe de tener una alta probabilidad de covertura de contener el valor verdadero de \\(\\mu\\).\n\nMatemáticamente, expresamos esto como\n\n\\[P\\left(\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\leq \\mu \\leq  \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right) = 1 - \\alpha,\\]\n\nDonde la probailidad \\((1-\\alpha)\\) es el nivel de confianza."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#interpretación-de-un-ic",
     "href": "Modulo_2/Intervalos.slides.html#interpretación-de-un-ic",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Interpretación de un IC",
     "text": "Interpretación de un IC\n\n\n\\[P\\left(\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\leq \\mu \\leq  \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right) = 1 - \\alpha,\\]\n\nInterpretación: Si, en el muestreo aleatorio repetido, construimos muchos intervalos de confianza \\([L, U]\\), \\(100(1-\\alpha)\\)% de ellos incluirán el verdadero valor de \\(\\mu\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#más-sobre-niveles-de-confianza",
     "href": "Modulo_2/Intervalos.slides.html#más-sobre-niveles-de-confianza",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Más sobre niveles de confianza",
     "text": "Más sobre niveles de confianza\n\nEl nivel de confianza de un intervalo mide la confiabilidad del método utilizado para calcular el intervalo.\nUn nivel confianza \\(100(1-\\alpha)\\%\\) es aquel calculado mediante un método que a largo plazo logrará cubrir la media poblacional una proporción \\(1-\\alpha\\) de todas las veces que se utiliza.\nEn la práctica, debemos de fijar el valor de \\(\\alpha\\). Entre más pequeño el valor de \\(\\alpha\\), más grande la confianza y el tamaño del intervalo.\nLos intervalos con mayor confianza son menos precisos."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#ejemplo-1",
     "href": "Modulo_2/Intervalos.slides.html#ejemplo-1",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Ejemplo 1",
     "text": "Ejemplo 1\n\nUn modelo de transferencia de calor desde un cilindro sumergido en un líquido predice que el coeficiente de transferencia de calor del cilindro se volverá constante a caudales de fluido muy bajos. Se toma una muestra de 10 medidas. Los resultados, en \\(W/m^2 K\\), son\n13.7, 12.0, 13.1, 14.1, 13.1, 14.1, 14.4, 12.2, 11.9, 11.8\nEncuentra un intervalo de confianza del 95% para el coeficiente de transferencia de calor."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#intervalos-de-confianza-en-python",
     "href": "Modulo_2/Intervalos.slides.html#intervalos-de-confianza-en-python",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Intervalos de confianza en Python",
     "text": "Intervalos de confianza en Python\nPrimero, leamos los datos que están en el archivo “Cilindro.xlsx”.\n\ncilinder_data = pd.read_excel(\"Cilindro.xlsx\")\ncilinder_data.head()\n\n\n\n\n\n\n\n\nCoeficiente\n\n\n\n\n0\n13.7\n\n\n1\n12.0\n\n\n2\n13.1\n\n\n3\n14.1\n\n\n4\n13.1"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#visualización-simple-a-través-de-un-histograma",
     "href": "Modulo_2/Intervalos.slides.html#visualización-simple-a-través-de-un-histograma",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Visualización simple a través de un histograma",
     "text": "Visualización simple a través de un histograma\n\n\nCode\nplt.figure(figsize=(7,4)) # Crea espacio para la figura.\nsns.histplot(data = cilinder_data, x = 'Coeficiente') # Crea el histograma.\nplt.title(\"Histograma de Coeficiente\") # Título de la gráfica.\nplt.xlabel(\"Coeficiente\") # Etiqueta del eje X\nplt.show() # Muestra la Gráfica"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
     "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Intervalo de confianza",
     "text": "Intervalo de confianza\n\nPara construir un intervalo de confianza de una muestra, seguimos dos pasos.\n\nPrimero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_1samp(cilinder_data, popmean = 0)\n\nPor convención, el parámetro popmean debe estar fijado en cero."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-3",
     "href": "Modulo_2/Intervalos.slides.html#section-3",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza. En está función, especificamos el nivel de confianza usando el parámetro confidence_level.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([12.31815482]), high=array([13.76184518]))\n\n\n\nEl intervalo de confianza del 95% es \\([12.32, 13.76]\\) o \\(12.32 \\leq \\mu \\leq 13.76\\)"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#ejemplo-2",
     "href": "Modulo_2/Intervalos.slides.html#ejemplo-2",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Ejemplo 2",
     "text": "Ejemplo 2\n\n\nUna ingeniera investiga la temperatura de deflexión bajo carga de dos tipos diferentes de tubos de plástico.\nLa ingeniera tomó una muestra de 15 ejemplares de cada uno de los dos tipos de tubos.\nElla midió las temperaturas observadas para los 30 tubos en grados Farenheit."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-4",
     "href": "Modulo_2/Intervalos.slides.html#section-4",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "La ingeniera quiere investigar la diferencia entre la temperatura promedio de los dos tubos.\nEs decir, le interesa saber \\(\\mu_2 - \\mu_1\\) donde \\(\\mu_1\\) y \\(\\mu_2\\) es la temperatura promedio del tubo tipo 1 y 2, respectivamente."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-5",
     "href": "Modulo_2/Intervalos.slides.html#section-5",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Si \\(\\mu_2 - \\mu_1 &gt; 0\\), entonces el tubo de tipo 2 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 1.\nSi \\(\\mu_2 - \\mu_1 &lt; 0\\), entonces el tubo de tipo 1 tiene una temperatura promedio de deflexión más alta que el tubo de tipo 2.\nSi \\(\\mu_2 - \\mu_1 = 0\\), entonces los tubos de tipo 1 y 2 tienen la misma temperatura promedio de deflexión."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#cómo-podemos-estimar-el-valor-de-mu_2---mu_1",
     "href": "Modulo_2/Intervalos.slides.html#cómo-podemos-estimar-el-valor-de-mu_2---mu_1",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "¿Cómo podemos estimar el valor de \\(\\mu_2 - \\mu_1\\)?",
     "text": "¿Cómo podemos estimar el valor de \\(\\mu_2 - \\mu_1\\)?\n\n\nUtilizando un intervalo de confianza sobre \\(\\mu_2 - \\mu_1\\).\nSi el intervalo de confianza contiene puros valores positivos, entonces tenemos una gran confianza que \\(\\mu_2 - \\mu_1 &gt; 0\\).\nSi el intervalo de confianza contiene puros valores negativos, entonces tenemos una gran confianza que \\(\\mu_2 - \\mu_1 &lt; 0\\).\nSi el intervalo de confianza contiene valores positivos y negativos, entonces no podemos asegurar que \\(\\mu_2 - \\mu_1 &gt; 0\\) o \\(\\mu_2 - \\mu_1 &lt; 0\\). En este caso, podriamos considerar que \\(\\mu_2 - \\mu_1 = 0\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#ic-para-la-diferencia-de-dos-medias",
     "href": "Modulo_2/Intervalos.slides.html#ic-para-la-diferencia-de-dos-medias",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "IC para la diferencia de dos medias",
     "text": "IC para la diferencia de dos medias\n\nRecuerda que si la muestra aleatoria \\(Y_1, \\ldots, Y_{n_y}\\) sigue una distribución \\(N(\\mu_y, \\sigma_{y}^2)\\), entonces \\(\\bar{Y} \\sim N\\left(\\mu_y, \\frac{\\sigma_{y}^2}{n_y}\\right)\\).\n\nAdemás, si la muestra aleatoria \\(X_1, \\ldots, X_{n_x}\\) sigue una distribución \\(N(\\mu_x, \\sigma_{x}^2)\\), entonces \\(\\bar{X} \\sim N\\left(\\mu_x, \\frac{\\sigma_{x}^2}{n_x}\\right)\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#el-esquema",
     "href": "Modulo_2/Intervalos.slides.html#el-esquema",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "El esquema",
     "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-6",
     "href": "Modulo_2/Intervalos.slides.html#section-6",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Para la segunda muestra de observaciones \\(x_1, x_2, \\ldots, x_{n_x}\\):\n\n\\(n_x\\) es el número de observaciones.\n\\(\\bar{x} = \\frac{1}{n_x}\\sum_{i=1}^{n_x} x_i\\) es la media muestral.\n\\(s^2_{x} =\\frac{1}{n_x -1} \\sum_{i=1}^{n_x} (x_i - \\bar{x})^2\\) es la varianza muestral."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-7",
     "href": "Modulo_2/Intervalos.slides.html#section-7",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Si las dos muestras son independientes, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\\[\\left[ (\\bar{y} - \\bar{x}) - \\text{ME}, (\\bar{y} - \\bar{x}) + \\text{ME} \\right] \\]\ndonde ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-8",
     "href": "Modulo_2/Intervalos.slides.html#section-8",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Si las distribuciones tienen la misma varianza, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[ (\\bar{y} - \\bar{x}) - t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p\\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}}, \\; (\\bar{y} - \\bar{x}) + t_{n_y + n_x - 2, \\alpha/2}\\cdot s_p \\sqrt{\\frac{1}{n_y} + \\frac{1}{n_x}} \\right].\\]\n\n\nLa cantidad \\(s_p\\) se llama desviación estándar agrupada\n\\[s_p = \\sqrt{ \\frac{ (n_y - 1)s^2_{x} + (n_x - 1)s^2_{y} }{n_y + n_x - 2} }.\\]"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-9",
     "href": "Modulo_2/Intervalos.slides.html#section-9",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Si las distribuciones tienen differentes varianzas, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\n\\[\\left[(\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}}, \\; (\\bar{y} - \\bar{x}) - t_{\\nu, \\alpha/2} \\sqrt{\\frac{s_{y}^2}{n_y} + \\frac{s_{x}^2}{n_x}} \\right].\\]\n\ndonde el número de grados de libertad viene dado por el valor \\(\\nu = \\frac{\\left( \\frac{s_y^2}{n_y} + \\frac{s_x^2}{n_x} \\right)^2 }{ \\frac{ \\left(s_{y}^2/n_y\\right)^2}{n_y - 1} + \\frac{ \\left (s_{x}^2/n_x \\right)^2}{n_x - 1} }\\) (redondeado al número entero más cercano)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#en-python",
     "href": "Modulo_2/Intervalos.slides.html#en-python",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "En Python",
     "text": "En Python\nAntes de empezar, carguemos los datos que están en el archivo “Tubos.xlsx”\n\ntube_data = pd.read_excel(\"Tubos.xlsx\")\ntube_data.head()\n\n\n\n\n\n\n\n\nTipo\nTemperatura\n\n\n\n\n0\n1\n206\n\n\n1\n1\n188\n\n\n2\n1\n205\n\n\n3\n1\n187\n\n\n4\n1\n194"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#cuidado",
     "href": "Modulo_2/Intervalos.slides.html#cuidado",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Cuidado!",
-    "text": "Cuidado!\nLa variable Tubos es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\ntube_data['Tipo'] = pd.Categorical(tube_data['Tipo'])\n\nVeamos el resultado:\n\ntube_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 30 entries, 0 to 29\nData columns (total 2 columns):\n #   Column       Non-Null Count  Dtype   \n---  ------       --------------  -----   \n 0   Tipo         30 non-null     category\n 1   Temperatura  30 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 522.0 bytes"
+    "text": "Cuidado!\nLa variable Tipo es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\ntube_data['Tipo'] = pd.Categorical(tube_data['Tipo'])\n\nVeamos el resultado:\n\ntube_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 30 entries, 0 to 29\nData columns (total 2 columns):\n #   Column       Non-Null Count  Dtype   \n---  ------       --------------  -----   \n 0   Tipo         30 non-null     category\n 1   Temperatura  30 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 522.0 bytes"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#visualización",
     "href": "Modulo_2/Intervalos.slides.html#visualización",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Visualización",
     "text": "Visualización\nPodemos visualizar los datos de los dos grupos definidos por los tubos del tipo 1 y 2 usando gráficas de cajas lado a lado.\n\n\nCode\nplt.figure(figsize=(7,4)) # Create space for the figure.\nsns.boxplot(data = tube_data, y = 'Temperatura', x = 'Tipo') \nplt.ylabel(\"Temperatura\") \nplt.xlabel(\"Tipo de tubo\") \nplt.show() # Show the plot."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#configuración",
     "href": "Modulo_2/Intervalos.slides.html#configuración",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Configuración",
     "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nTemp_Tubo1 = (tube_data\n  .query(\"Tipo == 1\")\n  .filter(['Temperatura'])\n)\n\n\nTemp_Tubo2 = (tube_data\n  .query(\"Tipo == 2\")\n  .filter(['Temperatura'])\n)"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
     "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Intervalo de confianza",
     "text": "Intervalo de confianza\n\nAhora, construímos el intervalo de confianza en dos pasos.\nPrimero, realizamos una prueba de hipótesis de dos muestras (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_ind(Temp_Tubo1, Temp_Tubo2, equal_var = False)\n\nEl parámetro equal_var en esta función indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-10",
     "href": "Modulo_2/Intervalos.slides.html#section-10",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Segundo, aplicamos la función .confidence_interval() al objeto anterior (prueba_hip) para obtener el intervalo de confianza.\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([-3.12936848]), high=array([11.79603514]))\n\n\n\nEl intervalo es \\([-3.12, 11.79]\\) o \\(-3.12 \\leq \\mu_2 - \\mu_1  \\leq 11.79\\)."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#no-asumas-que-las-varianzas-son-iguales",
     "href": "Modulo_2/Intervalos.slides.html#no-asumas-que-las-varianzas-son-iguales",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "No asumas que las varianzas son iguales…",
     "text": "No asumas que las varianzas son iguales…\n\n\nEl supuesto de que las varianzas teóricas de las distribuciones son iguales es muy estricto.\nEl método puede resultar poco fiable si se utiliza cuando las varianzas teóricas no son iguales.\nComo normalmente no conocemos las varianzas, suele ser imposible estar seguro de que sean iguales."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-11",
     "href": "Modulo_2/Intervalos.slides.html#section-11",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "",
     "text": "Cuando las varianzas de la muestra son casi iguales, es tentador suponer que las varianzas de la población también lo son.\nSin embargo, con tamaños de muestra pequeños, las varianzas de la muestra pueden no aproximarse bien a las varianzas teóricas de la distribución.\nSolución: La mejor práctica es asumir que las varianzas son desiguales a menos que esté bastante seguro de que son iguales."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#preguntas-de-práctica-para-examen",
     "href": "Modulo_2/Intervalos.slides.html#preguntas-de-práctica-para-examen",
-    "title": "Introducción a los Intervalos de Confianza",
+    "title": "Intervalos de Confianza",
     "section": "Preguntas de práctica para examen",
     "text": "Preguntas de práctica para examen\nLa resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):\n\nR: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.\nB: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.\n\nEncuentra un intervalo de confianza del 98% para la diferencia entre las resistencias medias a la rotura de los ejes de palos de hockey fabricados con los dos materiales."
   },

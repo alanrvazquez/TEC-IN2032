@@ -458,7 +458,7 @@ tube_data.head()
 
 ## Cuidado!
 
-La variable `Tubos` es [**categorica**]{style="color: red"}! Entonces, debemos de informar a Python sobre esto usando la función `pd.Categorical()`.
+La variable `Tipo` es [**categorica**]{style="color: red"}! Entonces, debemos de informar a Python sobre esto usando la función `pd.Categorical()`.
 
 ```{python}
 #| echo: true

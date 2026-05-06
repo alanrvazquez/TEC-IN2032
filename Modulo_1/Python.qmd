@@ -21,10 +21,10 @@ editor: visual
 
 </br>
 
-1. Introducción a Python
-2. Lectura de Datos con Python
-3. Manipulación de Datos con **pandas**
-4. Visualización de Datos con **matplotlib** y **seaborn**
+1.  Introducción a Python
+2.  Lectura de Datos con Python
+3.  Manipulación de Datos con **pandas**
+4.  Visualización de Datos con **matplotlib** y **seaborn**
 
 # Introducción a Python
 
@@ -87,6 +87,7 @@ print("Hello world!")
 </br></br>
 
 ¿Qué crees que sucederá si ejecutamos este comando?
+
 ```{python}
 #| echo: true
 #| output: false
@@ -163,7 +164,7 @@ Si desea escribir un comentario que ocupe más de una línea, es una buena idea 
 
 Una de las mejores características de Python es la gran cantidad de comandos integrados que puedes usar. Estos se llaman *funciones*.
 
-. . . 
+. . .
 
 Las funciones tienen dos partes básicas:
 
@@ -184,7 +185,7 @@ sum([1, 100])
 
 te dará como resultado 101.
 
-. . . 
+. . .
 
 Pero si escribes:
 
@@ -208,15 +209,14 @@ Prácticamente cualquier cosa, incluyendo los resultados de cualquier función d
 
 Esto se logra usando el operador de asignación, que puede ser el símbolo de igual (`=`).
 
-. . . 
+. . .
 
 Puedes inventar cualquier nombre para un objeto de Python. Sin embargo, hay dos reglas básicas:
 
 ::: incremental
-1. Debe ser diferente del nombre de una función en Python.
+1.  Debe ser diferente del nombre de una función en Python.
 
-2. Debe ser lo más específico posible.
-
+2.  Debe ser lo más específico posible.
 :::
 
 ## Por ejemplo
@@ -246,13 +246,13 @@ También puedes usar `print(mi_numero_favorito)`.
 
 Hasta ahora hemos usado objetos de Python para almacenar un solo número. Pero en estadística trabajamos con variación, que por definición requiere más de un número.
 
-. . . 
+. . .
 
 Un objeto de Python también puede almacenar un conjunto completo de números, llamado *lista*.
 
 Puedes pensar en una lista como un vector de números (o valores).
 
-. . . 
+. . .
 
 El comando `[]` se puede usar para combinar varios valores individuales en una lista.
 
@@ -455,11 +455,11 @@ En este curso, asumiremos que los datos están almacenados en un archivo de Exce
 :::
 :::::
 
-::: {style="font-size: 85%;"}
+:::: {style="font-size: 85%;"}
 ::: {style="text-align: center;"}
 [***El archivo debe haber sido subido previamente a Google Colab.***]{style="color:red;"}
 :::
-:::
+::::
 
 ## 
 
@@ -575,7 +575,6 @@ Vamos a comprobar de nuevo el tipo de variables.
 
 penguins_data.info()
 ```
-
 
 # Manipulación de Datos con **pandas**
 
@@ -816,7 +815,6 @@ Podemos calcular resúmenes estadísticos de `body_mass_g`.
 
 > Por defecto, `agg()` ignora los valores faltantes.
 
-
 ## 
 
 </br>
@@ -832,7 +830,6 @@ Podemos calcular resúmenes estadísticos de varias columnas al mismo tiempo.
   .agg(["mean", "var", "std"])
 )
 ```
-
 
 ## Guarda los resultados en un objeto
 
@@ -958,20 +955,19 @@ plt.xlabel("Na") # Etiqueta del eje X
 plt.show() # Muestra la Gráfica
 ```
 
-
 ## Gráfica de caja
 
 Muestra la mediana, el primer y tercer cuartil, y cualquier valor "atípico" presente en la muestra.
 
-. . . 
+. . .
 
 La [**mediana muestral**]{style="color:darkgreen;"} es el valor central de los datos ordenados.
 
-. . . 
+. . .
 
 Los [**cuartiles de muestra**]{style="color:darkgreen;"} dividen los datos en cuartiles lo más aproximado posible:
 
-::: {style="font-size: 85%;"}
+:::: {style="font-size: 85%;"}
 ::: incremental
 - El primer cuartil ($Q_1$) es la mediana de la mitad inferior de los datos.
 
@@ -979,7 +975,7 @@ Los [**cuartiles de muestra**]{style="color:darkgreen;"} dividen los datos en cu
 
 - El tercer cuartil ($Q_3$) es la mediana de la mitad superior de los datos.
 :::
-:::
+::::
 
 ## 
 
@@ -1012,10 +1008,11 @@ set_quantiles = [0.25, 0.5, 0.75]
 ::: {.column width="40%"}
 El rango intercuartil (RIC) es la diferencia entre el tercer cuartil y el primer cuartil ($Q_3 - Q_1$). Esta es la distancia necesaria para abarcar la mitad central de los datos.
 :::
+
 ::: {.column width="60%"}
 ![](images/anatomy.png){fig-align="center"}
 :::
-:::
+:::::
 
 ::: {style="font-size: 85%;"}
 Ver [**https://towardsdatascience.com/why-1-5-in-iqr-method-of-outlier-detection-5d07fdc82097**](#0){.uri}
@@ -1046,7 +1043,6 @@ Los valores atípicos son puntos que son mucho mayores o menores que el resto de
 Pueden deberse a errores de introducción de datos o a que realmente son diferentes del resto.
 
 No se deben eliminar los valores atípicos sin una cuidadosa consideración; a veces, los cálculos y análisis se realizan con y sin valores atípicos, y luego se comparan.
-
 
 ## Gráfica de barras
 
@@ -1126,6 +1122,5 @@ plt.xticks(fontsize = 12)
 plt.yticks(fontsize = 12)
 plt.savefig('bar_chart.png',dpi=300)
 ```
-
 
 # [Return to main page](https://alanrvazquez.github.io/TEC-IN2032/)

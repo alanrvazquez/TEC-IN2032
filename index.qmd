@@ -12,20 +12,20 @@ author:
 ### Módulo 1
 
 1.  Introducción a la Estadística ([slides](/Modulo_1/Introduccion.slides.html))
-2.  Introducción a Python ([slides](/Modulo_1/Python.slides.html))
-3.  Distribuciones Discretas de Probabilidad ([slides](/Modulo_1/Discretas.slides.html))
-4.  Distribuciones Continuas de Probabilidad ([slides](/Modulo_1/Continuas.slides.html))
+2.  Introducción a Python ([slides](/Modulo_1/Python.slides.html)) ([colab](https://colab.research.google.com/drive/1CQQoQThBf21W4MWJ1qX1x74s_q5YbQNx?usp=sharing))
+3.  Distribuciones Discretas de Probabilidad ([slides](/Modulo_1/Discretas.slides.html)) ([colab](https://drive.google.com/file/d/10EsT4dFBlZ0UxB6AahT0Xob24q_d4jYG/view?usp=sharing))
+4.  Distribuciones Continuas de Probabilidad ([slides](/Modulo_1/Continuas.slides.html)) ([colab](https://drive.google.com/file/d/1XszfnMYTa536ilNdCOAUYqxyW39qmhEP/view?usp=sharing))
 
 ### Módulo 2
 
-1. Intervalos de Confianza ([slides](/Modulo_2/Intervalos.slides.html))
-2. Pruebas de Hipótesis ([slides](/Modulo_2/Hipotesis.slides.html))
+1. Intervalos de Confianza ([slides](/Modulo_2/Intervalos.slides.html)) ([colab](https://drive.google.com/file/d/1efHGSBv8oBE9bNcAkuu1f1JMdCVDXuTN/view?usp=sharing))
+2. Pruebas de Hipótesis ([slides](/Modulo_2/Hipotesis.slides.html)) ([colab](https://drive.google.com/file/d/1olWiq7vp7Ebm7BMDKEvtp0ppBip3EN7h/view?usp=sharing))
 
 
 ### Módulo 3
 
 1. Introducción al Monitoreo de Procesos ([slides](/Modulo_3/Monitoreo.slides.html))
-2. Gráficas de Control ([slides](/Modulo_3/Graficas.slides.html))
+2. Gráficas de Control ([slides](/Modulo_3/Graficas.slides.html)) 
 ## About the author
 
 Alan R. Vazquez ([website](https://alanrvazquez.netlify.app/)) is an assistant professor in the Department of Industrial Engineering at Tecnologico de Monterrey, Monterrey campus.
