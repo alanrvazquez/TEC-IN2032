@@ -1963,6 +1963,13 @@
     "text": "Independencia\nSe dice que los elementos de una muestra son independientes si conocer los valores de algunos de ellos no ayuda a predecir los valores de los demás.\n\nLos elementos de una muestra aleatoria simple pueden tratarse como independientes en la mayoría de los casos encontrados en la práctica.\n\nUna excepción ocurre cuando la población es finita y la muestra comprende una fracción sustancial (más del 5%) de la población."
   },
   {
+    "objectID": "Modulo_1/Introduccion.slides.html#section-3",
+    "href": "Modulo_1/Introduccion.slides.html#section-3",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "Por ejemplo, un ingeniero industrial selecciona al azar piezas producidas durante distintos momentos del día para medir su diámetro.\nSaber que una pieza tiene un diámetro ligeramente mayor al objetivo no permite predecir el diámetro exacto de las demás piezas seleccionadas, ya que cada medición proviene de una producción diferente e independiente.\n\nEn contraste, si se toman cinco piezas consecutivas producidas por la misma máquina justo después de un ajuste incorrecto, las mediciones probablemente serán similares entre sí. En este caso, conocer el valor de una pieza sí ayuda a predecir las demás, por lo que las observaciones no son independientes."
+  },
+  {
     "objectID": "Modulo_1/Introduccion.slides.html#estudios-observacionales",
     "href": "Modulo_1/Introduccion.slides.html#estudios-observacionales",
     "title": "Introducción a la Estadística",
@@ -1975,6 +1982,13 @@
     "title": "Introducción a la Estadística",
     "section": "Experimentos controlados",
     "text": "Experimentos controlados\nUn experimento controlado es aquel en el que el científico tiene un grado de control sobre el fenómeno tal que le permite recolectar datos sobre el mismo de una manera estructurada.\nSe pueden utilizar diferentes experimentos para generar datos:\n\n\nLos experimentos de una muestra involucran solo una población de interés y de ella se extrae una única muestra.\nLos experimentos de muestras múltiples involucran dos o más poblaciones de interés y se extrae una sola muestra de cada población.\n\n\n\nLos experimentos controlados permiten establecer relaciones de causa-y-efecto."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#ejemplo",
+    "href": "Modulo_1/Introduccion.slides.html#ejemplo",
+    "title": "Introducción a la Estadística",
+    "section": "Ejemplo",
+    "text": "Ejemplo\nEstudio observacional: Un ingeniero industrial analiza datos históricos de distintas plantas manufactureras y observa que las líneas de producción con mayor capacitación de operadores suelen tener menos productos defectuosos.\n\nEstudio experimental: un ingeniero industrial diseña un experimento donde asigna aleatoriamente a dos grupos de operadores: un grupo recibe un nuevo programa de capacitación y el otro continúa con el método actual. Después, compara la tasa de defectos entre ambos grupos para evaluar si la capacitación realmente causa una mejora en la calidad."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#tipos-de-datos-i",
@@ -2033,11 +2047,11 @@
     "text": "Estadísticas muestrales y parámetros de población\n\nCada estadística de muestra aquí tiene una contraparte de parámetro poblacional.\nLos resúmenes numéricos de una muestra se llaman estadísticas.\nLos resúmenes numéricos o características de una población se denominan parámetros."
   },
   {
-    "objectID": "Modulo_1/Introduccion.slides.html#section-3",
-    "href": "Modulo_1/Introduccion.slides.html#section-3",
+    "objectID": "Modulo_1/Introduccion.slides.html#section-4",
+    "href": "Modulo_1/Introduccion.slides.html#section-4",
     "title": "Introducción a la Estadística",
     "section": "",
-    "text": "Por ejemplo, un ingeniero industrial selecciona al azar piezas producidas durante distintos momentos del día para medir su diámetro.\nSaber que una pieza tiene un diámetro ligeramente mayor al objetivo no permite predecir el diámetro exacto de las demás piezas seleccionadas, ya que cada medición proviene de una producción diferente e independiente.\n\nEn contraste, si se toman cinco piezas consecutivas producidas por la misma máquina justo después de un ajuste incorrecto, las mediciones probablemente serán similares entre sí. En este caso, conocer el valor de una pieza sí ayuda a predecir las demás, por lo que las observaciones no son independientes."
+    "text": "Para la población:\n\nLa media es \\(\\mu\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nPara la muestra:\n\nLa media (promedio) es \\(\\bar{y}\\).\nLa varianza es \\(s^2\\).\nLa desviación estándar es \\(s\\).\n\n\n\n\nUno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#resumen-estadistico-de-variables-categoricas",
@@ -2311,19 +2325,5 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
-  },
-  {
-    "objectID": "Modulo_1/Introduccion.slides.html#section-4",
-    "href": "Modulo_1/Introduccion.slides.html#section-4",
-    "title": "Introducción a la Estadística",
-    "section": "",
-    "text": "Para la población:\n\nLa media es \\(\\mu\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nPara la muestra:\n\nLa media (promedio) es \\(\\bar{y}\\).\nLa varianza es \\(s^2\\).\nLa desviación estándar es \\(s\\).\n\n\n\n\nUno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra."
-  },
-  {
-    "objectID": "Modulo_1/Introduccion.slides.html#ejemplo",
-    "href": "Modulo_1/Introduccion.slides.html#ejemplo",
-    "title": "Introducción a la Estadística",
-    "section": "Ejemplo",
-    "text": "Ejemplo\nEstudio observacional: Un ingeniero industrial analiza datos históricos de distintas plantas manufactureras y observa que las líneas de producción con mayor capacitación de operadores suelen tener menos productos defectuosos.\n\nEstudio experimental: un ingeniero industrial diseña un experimento donde asigna aleatoriamente a dos grupos de operadores: un grupo recibe un nuevo programa de capacitación y el otro continúa con el método actual. Después, compara la tasa de defectos entre ambos grupos para evaluar si la capacitación realmente causa una mejora en la calidad."
   }
 ]
