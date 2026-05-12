@@ -67,7 +67,7 @@
     "href": "Modulo_1/Python.slides.html#guarda-tu-trabajo-en-objetos",
     "title": "Introducción a Python",
     "section": "Guarda tu trabajo en objetos",
-    "text": "Guarda tu trabajo en objetos\n\nPrácticamente cualquier cosa, incluyendo los resultados de cualquier función de Python, se puede guardar en un objeto.\nEsto se logra usando el operador de asignación, que puede ser el símbolo de igual (=).\n\nPuedes inventar cualquier nombre para un objeto de Python. Sin embargo, hay dos reglas básicas:\n\nDebe ser diferente del nombre de una función en Python.\nDebe ser lo más específico posible."
+    "text": "Guarda tu trabajo en objetos\nPrácticamente cualquier cosa, incluyendo los resultados de cualquier función de Python, se puede guardar en un objeto.\nEsto se logra usando el operador de asignación, que puede ser el símbolo de igual (=).\n\nPuedes inventar cualquier nombre para un objeto de Python. Sin embargo, hay tres reglas básicas:\n\nDebe ser diferente del nombre de una función en Python.\nDebe ser lo más específico posible.\nNo debe contener espacios ni puntos."
   },
   {
     "objectID": "Modulo_1/Python.slides.html#por-ejemplo",
@@ -221,7 +221,7 @@
     "href": "Modulo_1/Python.slides.html#definir-variables-categóricas",
     "title": "Introducción a Python",
     "section": "Definir variables categóricas",
-    "text": "Definir variables categóricas\nTécnicamente, la variable sex en penguins_data es categórica. Para indicárselo explícitamente a Python, usamos el siguiente código.\n\npenguins_data['sex'] = pd.Categorical(penguins_data['sex'])\n\nAl definir la variable sex como categórica, podemos utilizar una visualización eficaz para estos datos.\nHacemos lo mismo con las demás variables categóricas: species e isisland.\n\npenguins_data['species'] = pd.Categorical(penguins_data['species'])\npenguins_data['island'] = pd.Categorical(penguins_data['island'])"
+    "text": "Definir variables categóricas\nTécnicamente, la variable sex en penguins_data es categórica. Para indicárselo explícitamente a Python, usamos el siguiente código.\n\npenguins_data['sex'] = pd.Categorical(penguins_data['sex'])\n\nAl definir la variable sex como categórica, podemos utilizar una visualización eficaz para estos datos.\nHacemos lo mismo con las demás variables categóricas: species e island.\n\npenguins_data['species'] = pd.Categorical(penguins_data['species'])\npenguins_data['island'] = pd.Categorical(penguins_data['island'])"
   },
   {
     "objectID": "Modulo_1/Python.slides.html#section-1",
@@ -242,7 +242,7 @@
     "href": "Modulo_1/Python.slides.html#métodos-clave-de-pandas",
     "title": "Introducción a Python",
     "section": "Métodos clave de pandas",
-    "text": "Métodos clave de pandas\npandas proporciona métodos o funciones para resolver tareas comunes de manipulación de datos:\n\n.filter() selecciona columnas o filas específicas.\n.query() filtra observaciones según ciertas condiciones.\n.assign() agrega nuevas variables que son funciones de variables existentes.\n.sort_values() cambia el orden de las filas.\n.agg() reduce varios valores a un único resumen numérico."
+    "text": "Métodos clave de pandas\npandas proporciona métodos o funciones para resolver tareas comunes de manipulación de datos:\n\n\n.filter() selecciona columnas o filas específicas.\n.query() filtra observaciones según ciertas condiciones.\n.assign() agrega nuevas variables que son funciones de variables existentes.\n.sort_values() cambia el orden de las filas.\n.agg() reduce varios valores a un único resumen numérico."
   },
   {
     "objectID": "Modulo_1/Python.slides.html#section-2",

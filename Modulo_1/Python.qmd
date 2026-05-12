@@ -203,20 +203,20 @@ lo mismo si olvidas incluir un parentesis
 
 ## Guarda tu trabajo en objetos
 
-</br>
-
 Prácticamente cualquier cosa, incluyendo los resultados de cualquier función de Python, se puede guardar en un *objeto*.
 
 Esto se logra usando el operador de asignación, que puede ser el símbolo de igual (`=`).
 
 . . .
 
-Puedes inventar cualquier nombre para un objeto de Python. Sin embargo, hay dos reglas básicas:
+Puedes inventar cualquier nombre para un objeto de Python. Sin embargo, hay tres reglas básicas:
 
 ::: incremental
 1.  Debe ser diferente del nombre de una función en Python.
 
 2.  Debe ser lo más específico posible.
+
+3.  No debe contener espacios ni puntos.
 :::
 
 ## Por ejemplo
@@ -555,7 +555,7 @@ penguins_data['sex'] = pd.Categorical(penguins_data['sex'])
 
 Al definir la variable `sex` como categórica, podemos utilizar una visualización eficaz para estos datos.
 
-Hacemos lo mismo con las demás variables categóricas: `species` e `isisland`.
+Hacemos lo mismo con las demás variables categóricas: `species` e `island`.
 
 ```{python}
 #| echo: true
@@ -589,6 +589,8 @@ La estructura general del encadenamiento es la siguiente:
 ## Métodos clave de pandas
 
 **pandas** proporciona métodos o funciones para resolver tareas comunes de manipulación de datos:
+
+</br>
 
 ::: incremental
 - `.filter()` selecciona columnas o filas específicas.
