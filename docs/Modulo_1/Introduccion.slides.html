@@ -166,8 +166,8 @@ Alan R. Vazquez
 <h2>¿Por qué la estadística?</h2>
 <p><br></p>
 <ul>
-<li class="fragment"><p>Hacer frente a la incertidumbre en mediciones científicas repetidas.</p></li>
 <li class="fragment"><p>Sacar conclusiones confiables de los datos.</p></li>
+<li class="fragment"><p>Hacer frente a la incertidumbre en mediciones científicas repetidas.</p></li>
 <li class="fragment"><p>Diseñar experimentos válidos y sacar conclusiones fiables.</p></li>
 <li class="fragment"><p>Construir modelos o algoritmos para predecir eventos futuros.</p></li>
 <li class="fragment"><p>Ser un miembro bien informado de la sociedad.</p></li>
@@ -187,12 +187,9 @@ Alan R. Vazquez
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<p><br></p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><br></p>
 <p>El ingeniero de calidad quiere saber aproximadamente cuántas de estas varillas cumplen con la especificación.</p>
-<p><span style="color: darkred;">¡Pero no tiene tiempo para medir las 1000 varillas!</span></p>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -200,6 +197,11 @@ Alan R. Vazquez
 </figure>
 </div>
 </div></div>
+<div class="fragment">
+<div style="text-align: center;">
+<p><span style="color: darkred;">¡Pero no tiene tiempo para medir las 1000 varillas!</span></p>
+</div>
+</div>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
@@ -234,7 +236,9 @@ Alan R. Vazquez
 <li class="fragment"><p>¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?</p></li>
 </ul>
 <div class="fragment">
+<div style="text-align: center;">
 <p><span style="color: #000080;"><strong>¡La estadística nos ayuda contestar preguntas como éstas!</strong></span></p>
+</div>
 </div>
 </section></section>
 <section>
@@ -259,7 +263,7 @@ Alan R. Vazquez
 <p><br></p>
 <div class="fragment">
 <div style="text-align: center;">
-<p><span style="color: #000080;"><strong>Esta es una muestra aleatoria simple.</strong></span></p>
+<p><span style="color: #2E6021;"><strong>Esta es una muestra aleatoria simple.</strong></span></p>
 </div>
 </div>
 </section>
@@ -282,10 +286,12 @@ Alan R. Vazquez
 <section id="población-conceptual" class="slide level2">
 <h2>Población conceptual</h2>
 <p>Una <strong>población conceptual</strong> consta de todos los valores que posiblemente podrían haberse observado en una población.</p>
-<p><br></p>
-<p>Por ejemplo, un geólogo pesa una roca varias veces en una balanza sensible. Cada vez, la báscula da una lectura ligeramente diferente.</p>
-<p><br></p>
-<p>Aquí la población es conceptual. Consta de todas las lecturas que, en principio, la báscula podría producir.</p>
+<ul>
+<li>Por ejemplo, un ingeniero mide varias veces el tiempo de ciclo de una estación de ensamblaje usando un cronómetro digital. Aunque el proceso sea el mismo, cada medición resulta ligeramente diferente debido a variaciones naturales del operador, el sistema y el instrumento de medición.</li>
+</ul>
+<div class="fragment">
+<p>Aquí la población es conceptual consta de todos los tiempos de ciclo que, en principio, podrían observarse para esa estación de trabajo.</p>
+</div>
 </section>
 <section id="independencia" class="slide level2">
 <h2>Independencia</h2>
@@ -294,6 +300,14 @@ Alan R. Vazquez
 <p>Los elementos de una muestra aleatoria simple pueden tratarse como independientes en la mayoría de los casos encontrados en la práctica.</p>
 <p><br></p>
 <p>Una excepción ocurre cuando la población es finita y la muestra comprende una fracción sustancial (más del 5%) de la población.</p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>Por ejemplo, un ingeniero industrial selecciona al azar piezas producidas durante distintos momentos del día para medir su diámetro.</p>
+<p>Saber que una pieza tiene un diámetro ligeramente mayor al objetivo <span style="color: darkgreen"><strong>no permite</strong></span> predecir el diámetro exacto de las demás piezas seleccionadas, ya que cada medición proviene de una producción diferente e independiente.</p>
+<div class="fragment">
+<p>En contraste, si se toman cinco piezas consecutivas producidas por la misma máquina justo después de un ajuste incorrecto, las mediciones probablemente serán similares entre sí. En este caso, <span style="color: darkred"><strong>conocer el valor de una pieza sí ayuda a predecir las demás, por lo que las observaciones no son independientes.</strong></span></p>
+</div>
 </section></section>
 <section>
 <section id="experimentos-y-estudios-observacionales" class="title-slide slide level1 center">
@@ -322,6 +336,13 @@ Alan R. Vazquez
 </div>
 <div class="fragment">
 <p>Los experimentos controlados permiten establecer relaciones de causa-y-efecto.</p>
+</div>
+</section>
+<section id="ejemplo" class="slide level2">
+<h2>Ejemplo</h2>
+<p><span style="color: darkgreen"><strong>Estudio observacional</strong></span>: Un ingeniero industrial analiza datos históricos de distintas plantas manufactureras y observa que las líneas de producción con mayor capacitación de operadores suelen tener menos productos defectuosos.</p>
+<div class="fragment">
+<p><span style="color: darkblue"><strong>Estudio experimental</strong></span>: un ingeniero industrial diseña un experimento donde asigna aleatoriamente a dos grupos de operadores: un grupo recibe un nuevo programa de capacitación y el otro continúa con el método actual. Después, compara la tasa de defectos entre ambos grupos para evaluar si la capacitación realmente causa una mejora en la calidad.</p>
 </div>
 </section></section>
 <section>
@@ -398,7 +419,7 @@ Alan R. Vazquez
 <p>Los resúmenes numéricos de una <strong>muestra</strong> se llaman <span style="color: darkblue;"><strong>estadísticas</strong></span>.</p>
 <p>Los resúmenes numéricos o características de una <strong>población</strong> se denominan <span style="color: darkgreen;"><strong>parámetros</strong></span>.</p>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <p><br><br></p>
 <div class="columns">
@@ -419,7 +440,7 @@ Alan R. Vazquez
 </div></div>
 <p><br></p>
 <div class="fragment">
-<p><span style="color: #D8A7B1">Uno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra.</span></p>
+<p><span style="color: purple">Uno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra.</span></p>
 </div>
 </section>
 <section id="resumen-estadistico-de-variables-categoricas" class="slide level2">

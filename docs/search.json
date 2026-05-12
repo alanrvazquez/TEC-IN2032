@@ -1883,7 +1883,7 @@
     "href": "Modulo_1/Introduccion.slides.html#por-qué-la-estadística",
     "title": "Introducción a la Estadística",
     "section": "¿Por qué la estadística?",
-    "text": "¿Por qué la estadística?\n\n\nHacer frente a la incertidumbre en mediciones científicas repetidas.\nSacar conclusiones confiables de los datos.\nDiseñar experimentos válidos y sacar conclusiones fiables.\nConstruir modelos o algoritmos para predecir eventos futuros.\nSer un miembro bien informado de la sociedad."
+    "text": "¿Por qué la estadística?\n\n\nSacar conclusiones confiables de los datos.\nHacer frente a la incertidumbre en mediciones científicas repetidas.\nDiseñar experimentos válidos y sacar conclusiones fiables.\nConstruir modelos o algoritmos para predecir eventos futuros.\nSer un miembro bien informado de la sociedad."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#ejemplo-1",
@@ -1897,7 +1897,7 @@
     "href": "Modulo_1/Introduccion.slides.html#section",
     "title": "Introducción a la Estadística",
     "section": "",
-    "text": "El ingeniero de calidad quiere saber aproximadamente cuántas de estas varillas cumplen con la especificación.\n¡Pero no tiene tiempo para medir las 1000 varillas!"
+    "text": "El ingeniero de calidad quiere saber aproximadamente cuántas de estas varillas cumplen con la especificación.\n\n\n\n\n\n\n\n\n\n¡Pero no tiene tiempo para medir las 1000 varillas!"
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#section-1",
@@ -1918,7 +1918,7 @@
     "href": "Modulo_1/Introduccion.slides.html#section-2",
     "title": "Introducción a la Estadística",
     "section": "",
-    "text": "El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemplo:\n\n¿Qué intervalo da una buena estimación del porcentaje de varillas aceptables en la población con certeza razonable?\n¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?\n\n\n¡La estadística nos ayuda contestar preguntas como éstas!"
+    "text": "El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemplo:\n\n¿Qué intervalo da una buena estimación del porcentaje de varillas aceptables en la población con certeza razonable?\n¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?\n\n\n\n¡La estadística nos ayuda contestar preguntas como éstas!"
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#muestreo-1",
@@ -1953,7 +1953,7 @@
     "href": "Modulo_1/Introduccion.slides.html#población-conceptual",
     "title": "Introducción a la Estadística",
     "section": "Población conceptual",
-    "text": "Población conceptual\nUna población conceptual consta de todos los valores que posiblemente podrían haberse observado en una población.\n\nPor ejemplo, un geólogo pesa una roca varias veces en una balanza sensible. Cada vez, la báscula da una lectura ligeramente diferente.\n\nAquí la población es conceptual. Consta de todas las lecturas que, en principio, la báscula podría producir."
+    "text": "Población conceptual\nUna población conceptual consta de todos los valores que posiblemente podrían haberse observado en una población.\n\nPor ejemplo, un ingeniero mide varias veces el tiempo de ciclo de una estación de ensamblaje usando un cronómetro digital. Aunque el proceso sea el mismo, cada medición resulta ligeramente diferente debido a variaciones naturales del operador, el sistema y el instrumento de medición.\n\n\nAquí la población es conceptual consta de todos los tiempos de ciclo que, en principio, podrían observarse para esa estación de trabajo."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#independencia",
@@ -2037,7 +2037,7 @@
     "href": "Modulo_1/Introduccion.slides.html#section-3",
     "title": "Introducción a la Estadística",
     "section": "",
-    "text": "Para la población:\n\nLa media es \\(\\mu\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nPara la muestra:\n\nLa media (promedio) es \\(\\bar{y}\\).\nLa varianza es \\(s^2\\).\nLa desviación estándar es \\(s\\).\n\n\n\n\nUno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra."
+    "text": "Por ejemplo, un ingeniero industrial selecciona al azar piezas producidas durante distintos momentos del día para medir su diámetro.\nSaber que una pieza tiene un diámetro ligeramente mayor al objetivo no permite predecir el diámetro exacto de las demás piezas seleccionadas, ya que cada medición proviene de una producción diferente e independiente.\n\nEn contraste, si se toman cinco piezas consecutivas producidas por la misma máquina justo después de un ajuste incorrecto, las mediciones probablemente serán similares entre sí. En este caso, conocer el valor de una pieza sí ayuda a predecir las demás, por lo que las observaciones no son independientes."
   },
   {
     "objectID": "Modulo_1/Introduccion.slides.html#resumen-estadistico-de-variables-categoricas",
@@ -2311,5 +2311,19 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#section-4",
+    "href": "Modulo_1/Introduccion.slides.html#section-4",
+    "title": "Introducción a la Estadística",
+    "section": "",
+    "text": "Para la población:\n\nLa media es \\(\\mu\\).\nLa varianza es \\(\\sigma^2\\).\nLa desviación estándar es \\(\\sigma\\).\n\n\nPara la muestra:\n\nLa media (promedio) es \\(\\bar{y}\\).\nLa varianza es \\(s^2\\).\nLa desviación estándar es \\(s\\).\n\n\n\n\nUno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra."
+  },
+  {
+    "objectID": "Modulo_1/Introduccion.slides.html#ejemplo",
+    "href": "Modulo_1/Introduccion.slides.html#ejemplo",
+    "title": "Introducción a la Estadística",
+    "section": "Ejemplo",
+    "text": "Ejemplo\nEstudio observacional: Un ingeniero industrial analiza datos históricos de distintas plantas manufactureras y observa que las líneas de producción con mayor capacitación de operadores suelen tener menos productos defectuosos.\n\nEstudio experimental: un ingeniero industrial diseña un experimento donde asigna aleatoriamente a dos grupos de operadores: un grupo recibe un nuevo programa de capacitación y el otro continúa con el método actual. Después, compara la tasa de defectos entre ambos grupos para evaluar si la capacitación realmente causa una mejora en la calidad."
   }
 ]

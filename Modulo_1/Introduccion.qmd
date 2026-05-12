@@ -37,9 +37,9 @@ jupyter: python3
 </br>
 
 ::: incremental
-- Hacer frente a la incertidumbre en mediciones científicas repetidas.
-
 - Sacar conclusiones confiables de los datos.
+
+- Hacer frente a la incertidumbre en mediciones científicas repetidas.
 
 - Diseñar experimentos válidos y sacar conclusiones fiables.
 
@@ -62,28 +62,28 @@ Durante la última hora, la máquina ha fabricado 1000 varillas.
 :::
 
 ::: {.column width="40%"}
-</br>
-![](images/clipboard-3830659353.png){fig-align="center"}
+</br> ![](images/clipboard-3830659353.png){fig-align="center"}
 :::
 :::::
 
 ## 
 
-</br>
-
 ::::: columns
 ::: {.column width="60%"}
-</br>
 
 El ingeniero de calidad quiere saber aproximadamente cuántas de estas varillas cumplen con la especificación.
-
-[¡Pero no tiene tiempo para medir las 1000 varillas!]{style="color: darkred;"}
 :::
 
 ::: {.column width="40%"}
 ![](images/clipboard-3947900040.png){fig-align="center"}
 :::
 :::::
+
+. . . 
+
+::: {style="text-align: center;"}
+[¡Pero no tiene tiempo para medir las 1000 varillas!]{style="color: darkred;"}
+:::
 
 ## 
 
@@ -123,9 +123,11 @@ El ingeniero debe responder preguntas basadas en los datos de muestra. Por ejemp
 - ¿Qué tan seguro puede estar el ingeniero de que al menos el 90% de las varillas están en buenas condiciones?
 :::
 
-. . . 
+. . .
 
+::: {style="text-align: center;"}
 [**¡La estadística nos ayuda contestar preguntas como éstas!**]{style="color: #000080;"}
+:::
 
 # Muestreo
 
@@ -154,7 +156,7 @@ Ella utiliza un generador de números aleatorios por computadora para generar 10
 . . .
 
 ::: {style="text-align: center;"}
-[**Esta es una muestra aleatoria simple.**]{style="color: #000080;"}
+[**Esta es una muestra aleatoria simple.**]{style="color: #2E6021;"}
 :::
 
 ## Variación muestral
@@ -185,13 +187,11 @@ Debido a la variación del muestreo, es más realista pensar que la verdadera pr
 
 Una **población conceptual** consta de todos los valores que posiblemente podrían haberse observado en una población.
 
-</br>
+* Por ejemplo, un ingeniero mide varias veces el tiempo de ciclo de una estación de ensamblaje usando un cronómetro digital. Aunque el proceso sea el mismo, cada medición resulta ligeramente diferente debido a variaciones naturales del operador, el sistema y el instrumento de medición.
 
-Por ejemplo, un geólogo pesa una roca varias veces en una balanza sensible. Cada vez, la báscula da una lectura ligeramente diferente.
+. . . 
 
-</br>
-
-Aquí la población es conceptual. Consta de todas las lecturas que, en principio, la báscula podría producir.
+Aquí la población es conceptual consta de todos los tiempos de ciclo que, en principio, podrían observarse para esa estación de trabajo.
 
 ## Independencia
 
@@ -205,6 +205,16 @@ Los elementos de una muestra aleatoria simple pueden tratarse como independiente
 
 Una excepción ocurre cuando la población es finita y la muestra comprende una fracción sustancial (más del 5%) de la población.
 
+## 
+
+Por ejemplo, un ingeniero industrial selecciona al azar piezas producidas durante distintos momentos del día para medir su diámetro. 
+
+Saber que una pieza tiene un diámetro ligeramente mayor al objetivo [**no permite**]{style="color: darkgreen"} predecir el diámetro exacto de las demás piezas seleccionadas, ya que cada medición proviene de una producción diferente e independiente.
+
+. . . 
+
+En contraste, si se toman cinco piezas consecutivas producidas por la misma máquina justo después de un ajuste incorrecto, las mediciones probablemente serán similares entre sí. En este caso, [**conocer el valor de una pieza sí ayuda a predecir las demás, por lo que las observaciones no son independientes.**]{style="color: darkred"}
+
 # Experimentos y Estudios Observacionales
 
 ## Estudios observacionales
@@ -217,7 +227,7 @@ Los estudios observacionales son valiosos para descubrir tendencias y posibles a
 
 </br>
 
-. . . 
+. . .
 
 [Sin embargo, ¡no son tan buenos como los experimentos controlados para obtener conclusiones confiables sobre causa-y-efecto!]{style="color: red"}
 
@@ -227,17 +237,26 @@ Un experimento controlado es aquel en el que el científico tiene un grado de co
 
 Se pueden utilizar diferentes experimentos para generar datos:
 
-::: incremental
+:::: incremental
 ::: {style="font-size: 88%;"}
 - Los **experimentos de una muestra** involucran solo una población de interés y de ella se extrae una única muestra.
 
 - Los **experimentos de muestras múltiples** involucran dos o más poblaciones de interés y se extrae una sola muestra de cada población.
 :::
-:::
+::::
+
+. . .
+
+Los experimentos controlados permiten establecer relaciones de causa-y-efecto.
+
+## Ejemplo 
+
+[**Estudio observacional**]{style="color: darkgreen"}: Un ingeniero industrial analiza datos históricos de distintas plantas manufactureras y observa que las líneas de producción con mayor capacitación de operadores suelen tener menos productos defectuosos.
 
 . . . 
 
-Los experimentos controlados permiten establecer relaciones de causa-y-efecto.
+[**Estudio experimental**]{style="color: darkblue"}: un ingeniero industrial diseña un experimento donde asigna aleatoriamente a dos grupos de operadores: un grupo recibe un nuevo programa de capacitación y el otro continúa con el método actual. Después, compara la tasa de defectos entre ambos grupos para evaluar si la capacitación realmente causa una mejora en la calidad.
+
 
 # Resumenes estadísticos
 
@@ -275,7 +294,7 @@ Una muestra suele ser una larga lista de números. Para ayudar a resaltar las ca
 
 </br>
 
-. . . 
+. . .
 
 Para datos numéricos, las estadísticas resumidas más populares son:
 
@@ -305,7 +324,7 @@ Denotemos $y_1, y_2, \ldots, y_n$ observaciones como $n$. La [**varianza muestra
 
 ::: {style="font-size: 78%;"}
 $$s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2 = \frac{1}{n-1} \left( (y_1 - \bar{y})^2 + (y_2 - \bar{y})^2 +\cdots + (y_n - \bar{y})^2\right).$$
-::: 
+:::
 
 La varianza muestral es como un promedio de las diferencias al cuadrado entre cada observación y la media muestral. Da una indicación de cuán dispersos están los datos.
 
@@ -359,9 +378,9 @@ Para la muestra:
 
 </br>
 
-. . . 
+. . .
 
-[Uno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra.]{style="color: #D8A7B1"}
+[Uno de los objetivos de esta clase es aprender o estimar los parámetros de la población utilizando estadísticas de muestra.]{style="color: purple"}
 
 ## Resumen estadistico de variables categoricas
 
