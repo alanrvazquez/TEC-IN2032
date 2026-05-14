@@ -2212,7 +2212,7 @@
     "href": "Modulo_1/Discretas.slides.html#section-4",
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "",
-    "text": "Para un experimento Bernoulli, definimos la variable \\(Y\\) como sigue:\nSi el experimento resulta en “éxito”, entonces \\(Y=1\\). De lo contrario, \\(Y=0\\).\nEsto implica que \\(Y\\) es una variable aleatoria discreta con función de probabilidad \\(p(y)\\):\n\n\\(p(0) = P(Y = 0) = 1 - p.\\)\n\\(p(1) = P(Y = 1) = p.\\)\n\\(p(y) = 0\\) para cualquier otro valor de \\(y\\) diferente de 0 o 1."
+    "text": "Para un experimento Bernoulli, definimos la variable \\(Y\\) como sigue:\n\nSi el experimento resulta en “éxito”, entonces \\(Y=1\\). De lo contrario, \\(Y=0\\).\n\n\nEsto implica que \\(Y\\) es una variable aleatoria discreta con función de probabilidad \\(p(y)\\):\n\n\\(p(0) = P(Y = 0) = 1 - p.\\)\n\\(p(1) = P(Y = 1) = p.\\)\n\\(p(y) = 0\\) para cualquier otro valor de \\(y\\) diferente de 0 o 1."
   },
   {
     "objectID": "Modulo_1/Discretas.slides.html#notación-1",
