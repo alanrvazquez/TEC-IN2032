@@ -123,7 +123,7 @@
     "href": "Modulo_1/Python.slides.html#valores-booleanos",
     "title": "Introducción a Python",
     "section": "Valores booleanos",
-    "text": "Valores booleanos\n\nLos valores booleanos son Verdadero o Falso.\nPodríamos tener una pregunta como esta:\n\n¿El primer elemento del vector many_greetings es \"hola\"?\n\n\nPodemos pedirle a Python que lo averigüe y devuelva la respuesta Verdadero o Falso.\n\nmuchos_saludos[1] == \"hola\"\n\nFalse"
+    "text": "Valores booleanos\n\nLos valores booleanos son True o False.\nPodríamos tener una pregunta como esta:\n\n¿El primer elemento del vector many_greetings es \"hola\"?\n\n\nPodemos pedirle a Python que lo averigüe y devuelva la respuesta True o False.\n\nmuchos_saludos[1] == \"hola\"\n\nFalse"
   },
   {
     "objectID": "Modulo_1/Python.slides.html#operadores-lógicos",
