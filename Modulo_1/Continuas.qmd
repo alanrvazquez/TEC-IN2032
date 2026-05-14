@@ -52,7 +52,7 @@ En el cógido de arriba, indicamos que utilizaremos la función `norm()` de la l
 
 Una variable aleatoria es [**continua**]{style="color: darkblue"} si puede tomar un número infinito de valores reales posibles.
 
-. . . 
+. . .
 
 Por ejemplo,
 
@@ -68,7 +68,7 @@ Por ejemplo,
 
 Una función importante para variables aleatorias continuas es la función de densidad de probabilidad.
 
-. . . 
+. . .
 
 </br>
 
@@ -78,7 +78,7 @@ La [**función de densidad de probabilidad**]{style="color: #4682B4"} de una var
 
 - $\int_{-\infty}^\infty f(x)dx =1.$
 
-. . . 
+. . .
 
 La función de densidad de probabilidad se usa para **calcular probabilidades**.
 
@@ -96,7 +96,7 @@ La función de densidad de probabilidad se usa para **calcular probabilidades**.
 
 </br></br>
 
-Considera una variable aleatoria continua $X$ con función de densidad $f(x)$. 
+Considera una variable aleatoria continua $X$ con función de densidad $f(x)$.
 
 </br>
 
@@ -107,7 +107,7 @@ $$P(a\le X \le b)= P(a \le X < b) = P(a<X\le b)= \int
 _{a}^b f(x) dx.$$
 :::
 
-##
+## 
 
 </br></br>
 
@@ -131,7 +131,7 @@ Si $Y$ es una [**variable aleatoria continua**]{style="color: #4682B4"}, entonce
 
 $$P(Y = y_0) = 0.$$
 
-. . . 
+. . .
 
 Dos explicaciones:
 
@@ -171,7 +171,7 @@ donde $\mu = E(X)$.
 
 La [**desviación estándar**]{style="color: #5E7D6A"} de $X$ es la raíz cuadrada de $V(X)$.
 
-##
+## 
 
 </br></br>
 
@@ -179,13 +179,11 @@ La desviación estándard define la ***dispersión*** de la función de densidad
 
 ![](images/clipboard-1952375535.png){fig-align="center"}
 
-
 ## Más sobre variables aleatorias continuas
 
 Sea $X$ una variable aleatoria continua con una función de densidad $f(x)$. La [**función de distribución acumulada**]{style="color: darkblue"} de $X$ es
 
 $$F(x)=P(X\le x)= \int_{-\infty}^xf(t)dt.$$
-
 
 ![](images/clipboard-1945788539.png){fig-align="center" width="248"}
 
@@ -197,7 +195,7 @@ La [**distribución normal**]{style="color: #4682B4"} (también llamada **distri
 
 La distribución tiene la familiar forma de campana y proporciona un buen modelo para muchas, aunque no todas, las poblaciones continuas.
 
-. . . 
+. . .
 
 Aplicaciones:
 
@@ -209,22 +207,23 @@ Aplicaciones:
 
 ## Distribución Normal
 
-
 La distribución normal tiene **dos parámetros**: $\mu$ y $\sigma$. Aquí, $\mu$ puede ser cualquier número y $\sigma$ puede ser cualquier número positivo.
+
+. . .
 
 La función de [**densidad de probabilidad**]{style="color: #4682B4"} de una distribución normal con media $\mu$ y varianza $\sigma^2$ está dada por
 
 $$f(x)= \frac{1}{\sigma\sqrt{2 \pi}} e^{\frac{-(x-\mu)^2}{2\sigma^2}},\; -\infty<x<\infty.$$
 
+. . .
+
 Si $X$ sigue una distribución normal con media $\mu$ y varianza $\sigma^2$, escribimos $X\sim{N(\mu,\sigma^2)}$.
 
-
-##
+## 
 
 </br></br>
 
 ![](images/clipboard-4081450505.png){fig-align="center"}
-
 
 ## Media y varianza
 
@@ -240,8 +239,8 @@ Si $X\sim{N(\mu,\sigma^2)}$, entonces
 
 ## Efecto de los parametros
 
-::::: columns
-::: {.column width="45%"}
+:::::: columns
+:::: {.column width="45%"}
 ::: {style="font-size: 90%;"}
 - Debemos de pensar en $N(\mu,\sigma^2)$ como una [*familia*]{style="color: #5E7D6A"} de distribuciones.
 
@@ -249,14 +248,14 @@ Si $X\sim{N(\mu,\sigma^2)}$, entonces
 
 - Cada miembro tiene una función de probabilidad diferente.
 :::
-:::
+::::
 
 ::: {.column width="55%"}
 </br>
 
 ![](images/clipboard-2796111347.png){fig-align="center"}
 :::
-:::::
+::::::
 
 ## Encontrar áreas bajo la curva
 
@@ -272,7 +271,6 @@ Si $X\sim{N(\mu,\sigma^2)}$, entonces
 
 ## Calculo de probabilidades en Python
 
-
 Consideremos una máquina que envasa arroz dentro de cajas. El proceso sigue una distribución Normal y se sabe que la media del peso de cada caja es 1000 gramos y la desviación estándar es 10 gramos.
 
 ::: {style="font-size: 83%;"}
@@ -280,9 +278,8 @@ A. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. $P
 
 B. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. $P(X > 980) = P(X \geq 980)$.
 
-C. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos. $P(X < 1000) - P(X <990) = P(X \leq 1000)−P(X \leq 990)$. 
+C. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos. $P(X < 1000) - P(X <990) = P(X \leq 1000)−P(X \leq 990)$.
 :::
-
 
 ## Primero...
 
@@ -298,7 +295,7 @@ m = 1000 # Media de la distribución normal.
 s = 10 # Desviación estándard de la distribución normal.
 ```
 
-##
+## 
 
 </br>
 
@@ -306,7 +303,7 @@ s = 10 # Desviación estándard de la distribución normal.
 
 </br>
 
-Para calcular la probabilidad de que una variable Normal ($X$) tome un **valor menor (o igual)** a $k$ usamos la función `norm.cdf(k, loc, scale)`. En este caso,  `loc` y `scale` especifican los valores de $\mu$ y $\sigma$, respectivamente
+Para calcular la probabilidad de que una variable Normal ($X$) tome un **valor menor (o igual)** a $k$ usamos la función `norm.cdf(k, loc, scale)`. En este caso, `loc` y `scale` especifican los valores de $\mu$ y $\sigma$, respectivamente
 
 ```{python}
 #| echo: true
@@ -317,7 +314,7 @@ prob = norm.cdf(k, loc = m, scale = s)
 print(f"P(X <= {k}) = {prob:.4f}")
 ```
 
-##
+## 
 
 **B**. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. $P(X > 980) = P(X \geq 980)$.
 
@@ -332,7 +329,7 @@ prob_mas_de = norm.sf(k, loc = m, scale = s)
 print(f"P(X > {k}) = {prob_mas_de:.4f}")
 ```
 
-. . . 
+. . .
 
 Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:
 
@@ -345,9 +342,9 @@ print(1 - norm.cdf(k, loc = m, scale = s))
 
 Que se traduce en $P(X > k) = 1 - P(X \leq k)$.
 
-##
+## 
 
-**C**. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos. 
+**C**. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos.
 
 Para este caso, tenemos que
 
@@ -355,7 +352,7 @@ Para este caso, tenemos que
 $$P(X < 1000) - P(X <990) = P(X \leq 1000)−P(X \leq 990).$$
 :::
 
-. . . 
+. . .
 
 </br>
 
@@ -373,7 +370,6 @@ prob = norm.cdf(k_superior, loc = m,
                 loc = m, scale = s)
 print(f"P({k_inferior} <= X <= {k_superior}): {prob:.4f}")
 ```
-
 
 ## Regla Empirica
 
@@ -409,11 +405,11 @@ Entonces, si $X\sim{N(\mu,\sigma^2)}$, la unidad estándar de $X$ es el siguient
 
 $$Z=\frac{X-\mu}{\sigma}.$$
 
-. . . 
+. . .
 
 La distribución de $Z$ es normal con media 0 y desviación estándar 1. Esta distribución se llama [**distribución normal estándar**]{style="color: #B2AC88"}.
 
-## Calculo de probablidades 
+## Calculo de probablidades
 
 </br></br>
 
@@ -440,7 +436,7 @@ Lo mismo para:
 $aX + b \sim N(a \mu + b, a^2 \sigma^2)$
 :::
 
-. . . 
+. . .
 
 - Si $X$ y $Y$ son variables aleatorias [independentes]{style="color: #4682B4"} con $X\sim{N(\mu_X,\sigma^2_X)}$ y $Y\sim{N(\mu_Y,\sigma^2_Y)}$. Entonces
 
@@ -492,7 +488,7 @@ El teorema del limite central nos permite aproximar la distribución de $\bar{Y}
 
 Si $Y_1, \ldots, Y_n$ es una muestra aleatoria que sigue [*una distribución*]{style="color: purple"} con un promedio teórico $\mu$ y una varianza teórica $\sigma^2$, entonces …
 
-. . . 
+. . .
 
 [La distribución de $\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n}$ converge a una distribución $N\left(\mu, \frac{\sigma^2}{n}\right)$ cuando el valor de $n$ es muy grande.]{style="color: #5E7D6A"}
 
@@ -508,8 +504,6 @@ Si $Y_1, \ldots, Y_n$ es una muestra aleatoria que sigue [*una distribución*]{s
 - Gracias al teorema del límite central, podemos decir que
 
   - [$X \sim N(n p, np(1-p))$ cuando $n$ es muy grande.]{style="color: green"}
-
-
 :::
 
 ## 

@@ -606,7 +606,7 @@
     "href": "Modulo_1/Continuas.slides.html#distribución-normal-1",
     "title": "Distribuciones Continuas de Probabilidad",
     "section": "Distribución Normal",
-    "text": "Distribución Normal\nLa distribución normal tiene dos parámetros: \\(\\mu\\) y \\(\\sigma\\). Aquí, \\(\\mu\\) puede ser cualquier número y \\(\\sigma\\) puede ser cualquier número positivo.\nLa función de densidad de probabilidad de una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\) está dada por\n\\[f(x)= \\frac{1}{\\sigma\\sqrt{2 \\pi}} e^{\\frac{-(x-\\mu)^2}{2\\sigma^2}},\\; -\\infty&lt;x&lt;\\infty.\\]\nSi \\(X\\) sigue una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\), escribimos \\(X\\sim{N(\\mu,\\sigma^2)}\\)."
+    "text": "Distribución Normal\nLa distribución normal tiene dos parámetros: \\(\\mu\\) y \\(\\sigma\\). Aquí, \\(\\mu\\) puede ser cualquier número y \\(\\sigma\\) puede ser cualquier número positivo.\n\nLa función de densidad de probabilidad de una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\) está dada por\n\\[f(x)= \\frac{1}{\\sigma\\sqrt{2 \\pi}} e^{\\frac{-(x-\\mu)^2}{2\\sigma^2}},\\; -\\infty&lt;x&lt;\\infty.\\]\n\n\nSi \\(X\\) sigue una distribución normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\), escribimos \\(X\\sim{N(\\mu,\\sigma^2)}\\)."
   },
   {
     "objectID": "Modulo_1/Continuas.slides.html#media-y-varianza",
