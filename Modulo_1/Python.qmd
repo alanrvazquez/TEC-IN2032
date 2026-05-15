@@ -34,13 +34,13 @@ editor: visual
 
 ::::: columnas
 ::: {.column width="70%"}
--   Un lenguaje de programación versátil.
+- Un lenguaje de programación versátil.
 
--   ¡Es gratuito!
+- ¡Es gratuito!
 
--   Se utiliza ampliamente para la limpieza, visualización y modelado de datos.
+- Se utiliza ampliamente para la limpieza, visualización y modelado de datos.
 
--   Se puede ampliar con paquetes (librerías) desarrollados por otros usuarios.
+- Se puede ampliar con paquetes (librerías) desarrollados por otros usuarios.
 :::
 
 ::: {.column width="30%"}
@@ -52,11 +52,11 @@ editor: visual
 
 *Plataforma gratuita de colaboración en la nube de Google para crear documentos Python.*
 
--   Ejecuta Python y colabora en cuadernos Jupyter gratis.
+- Ejecuta Python y colabora en cuadernos Jupyter gratis.
 
--   Aprovecha la potencia de las GPU gratis para acelerar tus proyectos de ciencia de datos.
+- Aprovecha la potencia de las GPU gratis para acelerar tus proyectos de ciencia de datos.
 
--   Guarda y sube fácilmente tus cuadernos a Google Drive.
+- Guarda y sube fácilmente tus cuadernos a Google Drive.
 
 ![](images/Google_Colaboratory_SVG_Logo.svg.png){fig-align="right" width="2560"}
 
@@ -169,9 +169,9 @@ Una de las mejores características de Python es la gran cantidad de comandos in
 Las funciones tienen dos partes básicas:
 
 ::: incremental
--   La primera parte es el nombre de la función (por ejemplo, `sum`).
+- La primera parte es el nombre de la función (por ejemplo, `sum`).
 
--   La segunda parte es el valor de entrada para la función, que va dentro de los paréntesis (`sum([1, 5, 15])`).
+- La segunda parte es el valor de entrada para la función, que va dentro de los paréntesis (`sum([1, 5, 15])`).
 :::
 
 ## Python es estricto
@@ -363,7 +363,7 @@ Los valores booleanos son `True` o `False`.
 
 Podríamos tener una pregunta como esta:
 
--   ¿El primer elemento del vector `many_greetings` es `"hola"`?
+- ¿El primer elemento del vector `many_greetings` es `"hola"`?
 
 . . .
 
@@ -389,17 +389,17 @@ Por ejemplo, `5 != 3` es una proposición `True`.
 
 </br>
 
--   `>` (mayor que)
+- `>` (mayor que)
 
--   `>=` (mayor o igual que)
+- `>=` (mayor o igual que)
 
--   `<` (menor que)
+- `<` (menor que)
 
--   `<=` (menor o igual que)
+- `<=` (menor o igual que)
 
--   `==` (igual a)
+- `==` (igual a)
 
--   `!=` (distinto de)
+- `!=` (distinto de)
 
 ## Pregunta
 
@@ -435,9 +435,9 @@ Las librerías son las unidades fundamentales del código Python reproducible. I
 
 En este curso, trabajaremos principalmente con las siguientes librerías:
 
--   `pandas` para manipulación de datos
--   `matplotlib` y `seaborn` para visualización de datos
--   `scipy` y `statsmodels` para el análisis de datos
+- `pandas` para manipulación de datos
+- `matplotlib` y `seaborn` para visualización de datos
+- `scipy` y `statsmodels` para el análisis de datos
 
 # Lectura de Datos con Python
 
@@ -475,10 +475,10 @@ El conjunto de datos `penguins.xlsx` contiene información sobre pingüinos que 
 :::
 
 ::: {.column width="70%"}
--   **pandas** es una librería de Python de código abierto para la manipulación y el análisis de datos.
--   Está construida sobre **numpy** para operaciones de datos de alto rendimiento.
--   Permite al usuario importar, limpiar, transformar y analizar datos de forma eficiente.
--   <https://pandas.pydata.org/>
+- **pandas** es una librería de Python de código abierto para la manipulación y el análisis de datos.
+- Está construida sobre **numpy** para operaciones de datos de alto rendimiento.
+- Permite al usuario importar, limpiar, transformar y analizar datos de forma eficiente.
+- <https://pandas.pydata.org/>
 :::
 :::::
 
@@ -537,11 +537,11 @@ penguins_data.info()
 
 </br></br>
 
--   Formato `float64` para variables numéricas con decimales.
+- Formato `float64` para variables numéricas con decimales.
 
--   Formato `int64` para variables numéricas con enteros.
+- Formato `int64` para variables numéricas con enteros.
 
--   Formato `object` para variables generales con caracteres.
+- Formato `object` para variables generales con caracteres.
 
 ## Definir variables categóricas
 
@@ -593,15 +593,15 @@ La estructura general del encadenamiento es la siguiente:
 </br>
 
 ::: incremental
--   `.filter()` selecciona columnas o filas específicas.
+- `.filter()` selecciona columnas o filas específicas.
 
--   `.query()` filtra observaciones según ciertas condiciones.
+- `.query()` filtra observaciones según ciertas condiciones.
 
--   `.assign()` agrega nuevas variables que son funciones de variables existentes.
+- `.assign()` agrega nuevas variables que son funciones de variables existentes.
 
--   `.sort_values()` cambia el orden de las filas.
+- `.sort_values()` cambia el orden de las filas.
 
--   `.agg()` reduce varios valores a un único resumen numérico.
+- `.agg()` reduce varios valores a un único resumen numérico.
 :::
 
 ## 
@@ -896,22 +896,22 @@ glass_data['Type'] = pd.Categorical(glass_data['Type'])
 
 ## Librería **matplotlib**
 
--   **matplotlib** es una librería completa para crear visualizaciones estáticas, animadas e interactivas.
+- **matplotlib** es una librería completa para crear visualizaciones estáticas, animadas e interactivas.
 
--   Es ampliamente utilizada en la comunidad de ciencia de datos para graficar datos en diversos formatos.
+- Es ampliamente utilizada en la comunidad de ciencia de datos para graficar datos en diversos formatos.
 
--   Ideal para crear visualizaciones sencillas como gráficos de líneas, gráficos de barras, diagramas de dispersión y más.
+- Ideal para crear visualizaciones sencillas como gráficos de líneas, gráficos de barras, diagramas de dispersión y más.
 
--   <https://matplotlib.org/>
+- <https://matplotlib.org/>
 
 ![](images/matplotlib.png){fig-align="center"}
 
 ## Librería **seaborn**
 
--   **seaborn** es una librería de Python basada en Matplotlib.
--   Diseñada para facilitar y embellecer la visualización de datos estadísticos.
--   Ideal para crear visualizaciones informativas y atractivas con un mínimo de código.
--   <https://seaborn.pydata.org/index.html>
+- **seaborn** es una librería de Python basada en Matplotlib.
+- Diseñada para facilitar y embellecer la visualización de datos estadísticos.
+- Ideal para crear visualizaciones informativas y atractivas con un mínimo de código.
+- <https://seaborn.pydata.org/index.html>
 
 ![](images/seaborn.png){fig-align="center"}
 
@@ -971,11 +971,11 @@ Los [**cuartiles de muestra**]{style="color:darkgreen;"} dividen los datos en cu
 
 :::: {style="font-size: 85%;"}
 ::: incremental
--   El primer cuartil ($Q_1$) es la mediana de la mitad inferior de los datos.
+- El primer cuartil ($Q_1$) es la mediana de la mitad inferior de los datos.
 
--   El segundo cuartil ($Q_2$) es la mediana o valor central de los datos.
+- El segundo cuartil ($Q_2$) es la mediana o valor central de los datos.
 
--   El tercer cuartil ($Q_3$) es la mediana de la mitad superior de los datos.
+- El tercer cuartil ($Q_3$) es la mediana de la mitad superior de los datos.
 :::
 ::::
 
@@ -1097,15 +1097,15 @@ plt.savefig('bar_chart.png',dpi=300)
 También podemos usar otras funciones para mejorar el aspecto de la figura:
 
 ::: {style="font-size: 96%;"}
--   `plt.title(fontsize)`: Tamaño de fuente del título.
+- `plt.title(fontsize)`: Tamaño de fuente del título.
 
--   `plt.ylabel(fontsize)`: Tamaño de fuente del título del eje Y.
+- `plt.ylabel(fontsize)`: Tamaño de fuente del título del eje Y.
 
--   `plt.xlabel(fontsize)`: Tamaño de fuente del título del eje X.
+- `plt.xlabel(fontsize)`: Tamaño de fuente del título del eje X.
 
--   `plt.yticks(fontsize)`: Tamaño de fuente de las etiquetas del eje Y.
+- `plt.yticks(fontsize)`: Tamaño de fuente de las etiquetas del eje Y.
 
--   `plt.xticks(fontsize)`: Tamaño de fuente de las etiquetas del eje X.
+- `plt.xticks(fontsize)`: Tamaño de fuente de las etiquetas del eje X.
 :::
 
 ## 

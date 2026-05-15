@@ -327,11 +327,11 @@ Un experimento de este tipo se llama [experimento de Bernoulli]{style="color: gr
 
 Para un experimento Bernoulli, definimos la variable $Y$ como sigue:
 
-. . . 
+. . .
 
 Si el experimento resulta en “éxito”, entonces $Y=1$. De lo contrario, $Y=0$.
 
-. . . 
+. . .
 
 Esto implica que $Y$ es una variable aleatoria discreta con función de probabilidad $p(y)$:
 
