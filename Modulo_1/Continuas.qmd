@@ -22,11 +22,11 @@ jupyter: python3
 
 </br>
 
-- Introducción
+-   Introducción
 
-- Distribución Normal
+-   Distribución Normal
 
-- Teorema del Límite Central
+-   Teorema del Límite Central
 
 ## Carguemos las librerías
 
@@ -57,11 +57,11 @@ Una variable aleatoria es [**continua**]{style="color: darkblue"} si puede tomar
 Por ejemplo,
 
 ::: incremental
-- La cantidad de lluvia en un área específica.
+-   La cantidad de lluvia en un área específica.
 
-- El rendimiento de un antibiótico en un proceso de fermentación.
+-   El rendimiento de un antibiótico en un proceso de fermentación.
 
-- La duración de vida de una lavadora.
+-   La duración de vida de una lavadora.
 :::
 
 ## Función de densidad
@@ -74,9 +74,9 @@ Una función importante para variables aleatorias continuas es la función de de
 
 La [**función de densidad de probabilidad**]{style="color: #4682B4"} de una variable aleatoria continua $X$ es la función $f(x)$ tal que
 
-- $f(x) \geq 0$ para todos los valores de $x$, $-\infty < x < \infty.$
+-   $f(x) \geq 0$ para todos los valores de $x$, $-\infty < x < \infty.$
 
-- $\int_{-\infty}^\infty f(x)dx =1.$
+-   $\int_{-\infty}^\infty f(x)dx =1.$
 
 . . .
 
@@ -136,9 +136,9 @@ $$P(Y = y_0) = 0.$$
 Dos explicaciones:
 
 ::: incremental
-- El área debajo de la curva y entre $y_0$ y $y_0$ no tiene ancho y, por lo tanto, no tiene área. Como la probabilidad es igual al área, la probabilidad es cero.
+-   El área debajo de la curva y entre $y_0$ y $y_0$ no tiene ancho y, por lo tanto, no tiene área. Como la probabilidad es igual al área, la probabilidad es cero.
 
-- Si $Y$ es, digamos, una medida de lluvia diaria, la probabilidad de que sea exactamente 2.193478 pulgadas es cero.
+-   Si $Y$ es, digamos, una medida de lluvia diaria, la probabilidad de que sea exactamente 2.193478 pulgadas es cero.
 :::
 
 ## Valor esperado
@@ -199,11 +199,11 @@ La distribución tiene la familiar forma de campana y proporciona un buen modelo
 
 Aplicaciones:
 
-- Diseño experimental.
+-   Diseño experimental.
 
-- Control de calidad.
+-   Control de calidad.
 
-- Modelado estadístico.
+-   Modelado estadístico.
 
 ## Distribución Normal
 
@@ -231,22 +231,22 @@ Si $X$ sigue una distribución normal con media $\mu$ y varianza $\sigma^2$, esc
 
 Si $X\sim{N(\mu,\sigma^2)}$, entonces
 
-- El promedio teórico de $X$ es $\mu$.
+-   El promedio teórico de $X$ es $\mu$.
 
-- La varianza teórica de $X$ es $\sigma^2$.
+-   La varianza teórica de $X$ es $\sigma^2$.
 
-- La desviación estándar teórica de $X$ es $\sigma$.
+-   La desviación estándar teórica de $X$ es $\sigma$.
 
 ## Efecto de los parametros
 
 :::::: columns
 :::: {.column width="45%"}
 ::: {style="font-size: 90%;"}
-- Debemos de pensar en $N(\mu,\sigma^2)$ como una [*familia*]{style="color: #5E7D6A"} de distribuciones.
+-   Debemos de pensar en $N(\mu,\sigma^2)$ como una [*familia*]{style="color: #5E7D6A"} de distribuciones.
 
-- Cada miembro de esa familia tiene una combinación de valores para los parámetros $\mu$ y $\sigma^2$.
+-   Cada miembro de esa familia tiene una combinación de valores para los parámetros $\mu$ y $\sigma^2$.
 
-- Cada miembro tiene una función de probabilidad diferente.
+-   Cada miembro tiene una función de probabilidad diferente.
 :::
 ::::
 
@@ -261,13 +261,13 @@ Si $X\sim{N(\mu,\sigma^2)}$, entonces
 
 </br>
 
-- El calculo de probabilidades usando la distribución normal necesita la integral de la función de densidad normal.
+-   El calculo de probabilidades usando la distribución normal necesita la integral de la función de densidad normal.
 
-- Sin embargo, esta integral no tiene una solución en forma cerrada.
+-   Sin embargo, esta integral no tiene una solución en forma cerrada.
 
-- En lugar de eso, se usan algoritmos de aproximación para realizar los cálculos.
+-   En lugar de eso, se usan algoritmos de aproximación para realizar los cálculos.
 
-- En la práctica, los calculos de probabilidades se hacen usando software estadístico como Minitab, JMP, R, o Python.
+-   En la práctica, los calculos de probabilidades se hacen usando software estadístico como Minitab, JMP, R, o Python.
 
 ## Calculo de probabilidades en Python
 
@@ -366,7 +366,7 @@ k_superior = 1000
 k_inferior = 990
 
 prob = norm.cdf(k_superior, loc = m, 
-                scale = s) - norm.cdf(k_inferior - 1, 
+                scale = s) - norm.cdf(k_inferior, 
                 loc = m, scale = s)
 print(f"P({k_inferior} <= X <= {k_superior}): {prob:.4f}")
 ```
@@ -425,12 +425,12 @@ donde $Z \sim N(0, 1)$ y la constante $z_0 = \frac{x_0-\mu}{\sigma}$ es el [*val
 
 Lo mismo para:
 
-- $P(X < x_0) = P(Z < z_0)$
-- $P(x_0 < X < x_1) = P(z_0 < Z < z_1)$ donde $z_1 = \frac{x_1-\mu}{\sigma}$.
+-   $P(X < x_0) = P(Z < z_0)$
+-   $P(x_0 < X < x_1) = P(z_0 < Z < z_1)$ donde $z_1 = \frac{x_1-\mu}{\sigma}$.
 
 ## Propiedades de la distribución normal
 
-- Si $X\sim{N(\mu,\sigma^2)}$ y tenemos las constantes $a \neq 0$ y $b$. Entonces
+-   Si $X\sim{N(\mu,\sigma^2)}$ y tenemos las constantes $a \neq 0$ y $b$. Entonces
 
 ::: {style="text-align: center;"}
 $aX + b \sim N(a \mu + b, a^2 \sigma^2)$
@@ -438,7 +438,7 @@ $aX + b \sim N(a \mu + b, a^2 \sigma^2)$
 
 . . .
 
-- Si $X$ y $Y$ son variables aleatorias [independentes]{style="color: #4682B4"} con $X\sim{N(\mu_X,\sigma^2_X)}$ y $Y\sim{N(\mu_Y,\sigma^2_Y)}$. Entonces
+-   Si $X$ y $Y$ son variables aleatorias [independentes]{style="color: #4682B4"} con $X\sim{N(\mu_X,\sigma^2_X)}$ y $Y\sim{N(\mu_Y,\sigma^2_Y)}$. Entonces
 
 ::: {style="text-align: center;"}
 $X+ Y \sim N(\mu_X + \mu_Y, \sigma^2_X + \sigma^2_Y)$
@@ -450,7 +450,7 @@ $X -  Y \sim N(\mu_X - \mu_Y, \sigma^2_X + \sigma^2_Y)$
 
 </br></br></br>
 
-- Si $X_1, X_2, \ldots, X_n$ son variables aleatorias independentes y que siguen una distribución normal con media $\mu$ y varianza $\sigma^2$. Entonces,
+-   Si $X_1, X_2, \ldots, X_n$ son variables aleatorias independentes y que siguen una distribución normal con media $\mu$ y varianza $\sigma^2$. Entonces,
 
 $$\bar{X} =\sum_{i=1}^{n} \frac{X_i}{n} \sim N\left(\mu,\; \frac{\sigma^2}{n}\right)$$
 
@@ -458,13 +458,13 @@ $$\bar{X} =\sum_{i=1}^{n} \frac{X_i}{n} \sim N\left(\mu,\; \frac{\sigma^2}{n}\ri
 
 ## Muestra aleatoria
 
-- Consideremos una muestra de $n$ observaciones seleccionadas aleatoriamente de una población.
+-   Consideremos una muestra de $n$ observaciones seleccionadas aleatoriamente de una población.
 
-- En estadística, los valores de esas observaciones se consideran variables aleatorias.
+-   En estadística, los valores de esas observaciones se consideran variables aleatorias.
 
-- Usamos $Y_i$ para la *i*-ésima observación y tenemos $n$ de ellas, $Y_1, \ldots, Y_n$.
+-   Usamos $Y_i$ para la *i*-ésima observación y tenemos $n$ de ellas, $Y_1, \ldots, Y_n$.
 
-- Se dice que todas las $Y_i$’s sigue una misma distribución específica. Además, asumimos que todas ellas son independientes.
+-   Se dice que todas las $Y_i$’s sigue una misma distribución específica. Además, asumimos que todas ellas son independientes.
 
 ## 
 
@@ -495,20 +495,20 @@ Si $Y_1, \ldots, Y_n$ es una muestra aleatoria que sigue [*una distribución*]{s
 ## Aproximación a una distribución Binomial
 
 ::: incremental
-- Considera una muestra $Y_1, Y_2, \ldots, Y_n$ de variables aleatorias Bernoulli con probabilidad $p$.
+-   Considera una muestra $Y_1, Y_2, \ldots, Y_n$ de variables aleatorias Bernoulli con probabilidad $p$.
 
-- Sabemos que el promedio teórico es $p$ y la varianza teórica es $p(1-p)$ para una distribución Bernoulli.
+-   Sabemos que el promedio teórico es $p$ y la varianza teórica es $p(1-p)$ para una distribución Bernoulli.
 
-- Recuerda que si $X = Y_1 + \cdots + Y_n$, entonces $X \sim \text{Bin}(n,p)$.
+-   Recuerda que si $X = Y_1 + \cdots + Y_n$, entonces $X \sim \text{Bin}(n,p)$.
 
-- Gracias al teorema del límite central, podemos decir que
+-   Gracias al teorema del límite central, podemos decir que
 
-  - [$X \sim N(n p, np(1-p))$ cuando $n$ es muy grande.]{style="color: green"}
+    -   [$X \sim N(n p, np(1-p))$ cuando $n$ es muy grande.]{style="color: green"}
 :::
 
 ## 
 
-- [$X \sim N(n p, np(1-p))$]{style="color: green"}
+-   [$X \sim N(n p, np(1-p))$]{style="color: green"}
 
 Esta aproximación a la distribución binomial funciona bien cuando $n$ es grande y $p$ no está muy cerca de 0 ni de 1.
 

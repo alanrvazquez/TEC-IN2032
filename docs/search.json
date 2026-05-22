@@ -662,7 +662,7 @@
     "href": "Modulo_1/Continuas.slides.html#section-8",
     "title": "Distribuciones Continuas de Probabilidad",
     "section": "",
-    "text": "C. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos.\nPara este caso, tenemos que\n\n\\[P(X &lt; 1000) - P(X &lt;990) = P(X \\leq 1000)−P(X \\leq 990).\\]\n\n\n\nEn Python, esto se logra con norm.cdf() como sigue:\n\nk_superior = 1000\nk_inferior = 990\n\nprob = norm.cdf(k_superior, loc = m, \n                scale = s) - norm.cdf(k_inferior - 1, \n                loc = m, scale = s)\nprint(f\"P({k_inferior} &lt;= X &lt;= {k_superior}): {prob:.4f}\")\n\nP(990 &lt;= X &lt;= 1000): 0.3643"
+    "text": "C. Calcula la probabilidad de obtener una caja que pese más de 990 gramos y menos de 1000 gramos.\nPara este caso, tenemos que\n\n\\[P(X &lt; 1000) - P(X &lt;990) = P(X \\leq 1000)−P(X \\leq 990).\\]\n\n\n\nEn Python, esto se logra con norm.cdf() como sigue:\n\nk_superior = 1000\nk_inferior = 990\n\nprob = norm.cdf(k_superior, loc = m, \n                scale = s) - norm.cdf(k_inferior, \n                loc = m, scale = s)\nprint(f\"P({k_inferior} &lt;= X &lt;= {k_superior}): {prob:.4f}\")\n\nP(990 &lt;= X &lt;= 1000): 0.3413"
   },
   {
     "objectID": "Modulo_1/Continuas.slides.html#regla-empirica",
