@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Alan R. Vazquez">
   <title>IN2032 Análisis Estadístico de Datos – Distribuciones Discretas de Probabilidad</title>
@@ -17,9 +17,6 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -98,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="style.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -245,11 +242,11 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="a98f0a2a" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div id="0cde3121" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>En el cógido de arriba, indicamos que utilizaremos la función <code>binom()</code> de la librería <strong>scipy.stats</strong>.</p>
 </section>
@@ -397,10 +394,10 @@ Alan R. Vazquez
 <section id="gráfica-de-probabilidad" class="slide level2">
 <h2>Gráfica de probabilidad</h2>
 <p>Muestra las probabilidades para cada uno de los valores de una variable aleatoria.</p>
-<div id="f165ccc0" class="cell" data-execution_count="2">
+<div id="702cacb9" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>variables <span class="op">=</span> {</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>variables <span class="op">=</span> {</span>
 <span id="cb2-2"><a></a>    <span class="st">"y"</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
 <span id="cb2-3"><a></a>    <span class="st">"p(y)"</span>: [<span class="fl">0.02</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.15</span>, <span class="fl">0.18</span>, <span class="fl">0.50</span>]</span>
 <span id="cb2-4"><a></a>}</span>
@@ -413,7 +410,7 @@ Alan R. Vazquez
 <span id="cb2-11"><a></a>plt.xlabel(<span class="st">"Variable Aleatoria (Y)"</span>)</span>
 <span id="cb2-12"><a></a>plt.ylabel(<span class="st">"Probabilidad"</span>)</span>
 <span id="cb2-13"><a></a>plt.ylim(<span class="dv">0</span>, <span class="fl">0.6</span>) </span>
-<span id="cb2-14"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-14"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -707,9 +704,9 @@ Alan R. Vazquez
 <h2>Primero…</h2>
 <p><br><br><br></p>
 <p>Definamos los valores apropiados para <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> en Python.</p>
-<div id="15b6722c" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>n <span class="op">=</span> <span class="dv">20</span> <span class="co"># Numero de experimentos Bernoulli.</span></span>
-<span id="cb3-2"><a></a>p <span class="op">=</span> <span class="fl">0.4</span> <span class="co"># Probabilidad de éxito.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="929afb0f" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>n <span class="op">=</span> <span class="dv">20</span> <span class="co"># Numero de experimentos Bernoulli.</span></span>
+<span id="cb3-2"><a></a>p <span class="op">=</span> <span class="fl">0.4</span> <span class="co"># Probabilidad de éxito.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-8" class="slide level2">
@@ -718,10 +715,10 @@ Alan R. Vazquez
 <p><strong>A</strong>. La probabilidad de anotar 1 canasta, <span class="math inline">\(P(X = 1)\)</span>.</p>
 <p><br></p>
 <p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome <strong>exactamente</strong> el valor <span class="math inline">\(k\)</span> usamos la función <code>binom.pmf(k, n, p)</code>.</p>
-<div id="fb1b0944" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>k <span class="op">=</span> <span class="dv">1</span></span>
+<div id="2631c542" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>k <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb4-2"><a></a>prob_exacta <span class="op">=</span> binom.pmf(k, n, p)</span>
-<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X = </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_exacta<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X = </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_exacta<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(X = 1) = 0.0005</code></pre>
 </div>
@@ -733,10 +730,10 @@ Alan R. Vazquez
 <p><strong>B</strong>. La probabilidad de anotar 6 o menos canastas, <span class="math inline">\(P(X \leq 6)\)</span>.</p>
 <p><br></p>
 <p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor menor o igual</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.cdf(k, n, p)</code>.</p>
-<div id="b9233835" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>k <span class="op">=</span> <span class="dv">6</span></span>
+<div id="f780517c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>k <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb6-2"><a></a>prob_acumulada <span class="op">=</span> binom.cdf(k, n, p)</span>
-<span id="cb6-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt;= </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_acumulada<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt;= </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_acumulada<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(X &lt;= 6) = 0.2500</code></pre>
 </div>
@@ -748,10 +745,10 @@ Alan R. Vazquez
 <p><strong>C</strong>. La probabilidad de anotar menos de 6 canastas, <span class="math inline">\(P(X &lt; 6)\)</span>.</p>
 <p><br></p>
 <p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor extrictamente menor</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.cdf(k-1, n, p)</code>, <span style="color:darkred">usando <span class="math inline">\(k-1\)</span>!</span></p>
-<div id="3a64f5c6" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>k <span class="op">=</span> <span class="dv">6</span></span>
+<div id="8a1cb647" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>k <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb8-2"><a></a>prob_menos_que <span class="op">=</span> binom.cdf(k<span class="op">-</span><span class="dv">1</span>, n, p)</span>
-<span id="cb8-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_menos_que<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_menos_que<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(X &lt; 6) = 0.1256</code></pre>
 </div>
@@ -765,18 +762,18 @@ Alan R. Vazquez
 <h2></h2>
 <p><strong>D</strong>. La probabilidad de anotar más de 12 canastas, <span class="math inline">\(P(X &gt; 12)\)</span>.</p>
 <p>Para calcular la probabilidad de que una variable Binomial (<span class="math inline">\(X\)</span>) tome un <strong>valor extrictamente mayor</strong> a <span class="math inline">\(k\)</span> usamos la función <code>binom.sf(k, n, p)</code>.</p>
-<div id="fc2f281b" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>k <span class="op">=</span> <span class="dv">12</span></span>
+<div id="edb3de20" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>k <span class="op">=</span> <span class="dv">12</span></span>
 <span id="cb10-2"><a></a>prob_mas_de <span class="op">=</span> binom.sf(k, n, p)</span>
-<span id="cb10-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &gt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_mas_de<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &gt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_mas_de<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(X &gt; 12) = 0.0210</code></pre>
 </div>
 </div>
 <div class="fragment">
 <p>Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:</p>
-<div id="a944b2c7" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">-</span> binom.cdf(k, n, p))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="89d93e1e" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">-</span> binom.cdf(k, n, p))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.021028927477771187</code></pre>
 </div>
@@ -793,12 +790,12 @@ Alan R. Vazquez
 </div>
 <p><br></p>
 <p>En Python, esto se logra con <code>binom.cdf()</code> como sigue:</p>
-<div id="447cb892" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>k_superior <span class="op">=</span> <span class="dv">11</span></span>
+<div id="157812f5" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>k_superior <span class="op">=</span> <span class="dv">11</span></span>
 <span id="cb14-2"><a></a>k_inferior <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb14-3"><a></a></span>
 <span id="cb14-4"><a></a>prob <span class="op">=</span> binom.cdf(k_superior, n, p) <span class="op">-</span> binom.cdf(k_inferior <span class="op">-</span> <span class="dv">1</span>, n, p)</span>
-<span id="cb14-5"><a></a><span class="bu">print</span>(<span class="ss">f"P(</span><span class="sc">{</span>k_inferior<span class="sc">}</span><span class="ss"> &lt;= X &lt;= </span><span class="sc">{</span>k_superior<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-5"><a></a><span class="bu">print</span>(<span class="ss">f"P(</span><span class="sc">{</span>k_inferior<span class="sc">}</span><span class="ss"> &lt;= X &lt;= </span><span class="sc">{</span>k_superior<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(7 &lt;= X &lt;= 11): 0.6935</code></pre>
 </div>
@@ -1090,14 +1087,13 @@ Alan R. Vazquez
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
