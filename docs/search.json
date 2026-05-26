@@ -1792,7 +1792,7 @@
     "href": "Modulo_2/Intervalos.slides.html#section-7",
     "title": "Intervalos de Confianza",
     "section": "",
-    "text": "Si las dos muestras son independientes, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\\[\\left[ (\\bar{y} - \\bar{x}) - \\text{ME}, (\\bar{y} - \\bar{x}) + \\text{ME} \\right] \\]\ndonde ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+    "text": "Si las dos muestras son independientes, un intervalo de confianza de nivel \\(100(1-\\alpha)\\%\\) para \\(\\mu_y - \\mu_x\\) es\n\\[\\left[ (\\bar{y} - \\bar{x}) - \\text{ME}, (\\bar{y} - \\bar{x}) + \\text{ME} \\right] \\]\ndonde ME es el margen de error.\n\nExisten dos valores posibles para ME según los casos:\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-8",
@@ -1819,8 +1819,8 @@
     "objectID": "Modulo_2/Intervalos.slides.html#cuidado",
     "href": "Modulo_2/Intervalos.slides.html#cuidado",
     "title": "Intervalos de Confianza",
-    "section": "Cuidado!",
-    "text": "Cuidado!\nLa variable Tipo es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\ntube_data['Tipo'] = pd.Categorical(tube_data['Tipo'])\n\nVeamos el resultado:\n\ntube_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 30 entries, 0 to 29\nData columns (total 2 columns):\n #   Column       Non-Null Count  Dtype   \n---  ------       --------------  -----   \n 0   Tipo         30 non-null     category\n 1   Temperatura  30 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 522.0 bytes"
+    "section": "¡Cuidado!",
+    "text": "¡Cuidado!\nLa variable Tipo es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\ntube_data['Tipo'] = pd.Categorical(tube_data['Tipo'])\n\nVeamos el resultado:\n\ntube_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 30 entries, 0 to 29\nData columns (total 2 columns):\n #   Column       Non-Null Count  Dtype   \n---  ------       --------------  -----   \n 0   Tipo         30 non-null     category\n 1   Temperatura  30 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 522.0 bytes"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#visualización",
@@ -1834,7 +1834,7 @@
     "href": "Modulo_2/Intervalos.slides.html#configuración",
     "title": "Intervalos de Confianza",
     "section": "Configuración",
-    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nTemp_Tubo1 = (tube_data\n  .query(\"Tipo == 1\")\n  .filter(['Temperatura'])\n)\n\n\nTemp_Tubo2 = (tube_data\n  .query(\"Tipo == 2\")\n  .filter(['Temperatura'])\n)"
+    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nTemp_Tubo1 = (tube_data\n  .query(\"Tipo == 1\")\n  .filter(['Temperatura'])\n)\n\nTemp_Tubo2 = (tube_data\n  .query(\"Tipo == 2\")\n  .filter(['Temperatura'])\n)"
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza-1",
@@ -2325,5 +2325,12 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_2/Intervalos.slides.html#cómo-seleccionamos-el-valor-de-alpha",
+    "href": "Modulo_2/Intervalos.slides.html#cómo-seleccionamos-el-valor-de-alpha",
+    "title": "Intervalos de Confianza",
+    "section": "¿Cómo seleccionamos el valor de \\(\\alpha\\)?",
+    "text": "¿Cómo seleccionamos el valor de \\(\\alpha\\)?\n\n\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right]\\]\nEl valor de \\(1-\\alpha\\) define el nivel de confianza (o cobertura) del intervalo de confianza.\nUsualmente, el valor de \\(\\alpha\\) es 0.1, 0.05, o 0.01, lo cual resulta en intervalos con un nivel de confianza de 90%, 95%, y 99%, respectivamente."
   }
 ]

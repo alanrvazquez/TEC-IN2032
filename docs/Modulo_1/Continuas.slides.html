@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Alan R. Vazquez">
   <title>IN2032 Análisis Estadístico de Datos – Distribuciones Continuas de Probabilidad</title>
@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="style.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -223,11 +226,11 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="e6b12e64" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div id="26e56de0" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>En el cógido de arriba, indicamos que utilizaremos la función <code>norm()</code> de la librería <strong>scipy.stats</strong> para calcular probabilidades.</p>
 </section>
@@ -424,9 +427,9 @@ _{a}^b f(x) dx.\]</span></p>
 <h2>Primero…</h2>
 <p><br><br><br></p>
 <p>Definamos los valores apropiados para <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span> en Python.</p>
-<div id="8794f07d" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>m <span class="op">=</span> <span class="dv">1000</span> <span class="co"># Media de la distribución normal.</span></span>
-<span id="cb2-2"><a></a>s <span class="op">=</span> <span class="dv">10</span> <span class="co"># Desviación estándard de la distribución normal.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="42b688c0" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>m <span class="op">=</span> <span class="dv">1000</span> <span class="co"># Media de la distribución normal.</span></span>
+<span id="cb2-2"><a></a>s <span class="op">=</span> <span class="dv">10</span> <span class="co"># Desviación estándard de la distribución normal.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="section-6" class="slide level2">
@@ -435,10 +438,10 @@ _{a}^b f(x) dx.\]</span></p>
 <p><strong>A</strong>. Calcula la probabilidad de obtener una caja que pese menos de 1010 gramos. <span class="math inline">\(P(X &lt; 1010) = P(X \leq 1010)\)</span>.</p>
 <p><br></p>
 <p>Para calcular la probabilidad de que una variable Normal (<span class="math inline">\(X\)</span>) tome un <strong>valor menor (o igual)</strong> a <span class="math inline">\(k\)</span> usamos la función <code>norm.cdf(k, loc, scale)</code>. En este caso, <code>loc</code> y <code>scale</code> especifican los valores de <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span>, respectivamente</p>
-<div id="e970b833" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>k <span class="op">=</span> <span class="dv">1010</span></span>
+<div id="bf165754" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>k <span class="op">=</span> <span class="dv">1010</span></span>
 <span id="cb3-2"><a></a>prob <span class="op">=</span> norm.cdf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s)</span>
-<span id="cb3-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt;= </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &lt;= </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(X &lt;= 1010) = 0.8413</code></pre>
 </div>
@@ -448,18 +451,18 @@ _{a}^b f(x) dx.\]</span></p>
 <h2></h2>
 <p><strong>B</strong>. Calcula la probabilidad de obtener una caja que pese más de 980 gramos. <span class="math inline">\(P(X &gt; 980) = P(X \geq 980)\)</span>.</p>
 <p>Para calcular la probabilidad de que una variable Normal (<span class="math inline">\(X\)</span>) tome un <strong>valor mayor (o igual)</strong> a <span class="math inline">\(k\)</span> usamos la función <code>norm.sf(k, loc, scale)</code>.</p>
-<div id="9334fe6b" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>k <span class="op">=</span> <span class="dv">980</span></span>
+<div id="3e7b1e2d" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>k <span class="op">=</span> <span class="dv">980</span></span>
 <span id="cb5-2"><a></a>prob_mas_de <span class="op">=</span> norm.sf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s)</span>
-<span id="cb5-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &gt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_mas_de<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a></a><span class="bu">print</span>(<span class="ss">f"P(X &gt; </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>prob_mas_de<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(X &gt; 980) = 0.9772</code></pre>
 </div>
 </div>
 <div class="fragment">
 <p>Alternativamente, por reglas de probabilidad, podemos usar el siguiente código:</p>
-<div id="19935a57" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">-</span> norm.cdf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="dacc9909" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">-</span> norm.cdf(k, loc <span class="op">=</span> m, scale <span class="op">=</span> s))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.9772498680518208</code></pre>
 </div>
@@ -477,14 +480,14 @@ _{a}^b f(x) dx.\]</span></p>
 <div class="fragment">
 <p><br></p>
 <p>En Python, esto se logra con <code>norm.cdf()</code> como sigue:</p>
-<div id="447d8e00" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>k_superior <span class="op">=</span> <span class="dv">1000</span></span>
+<div id="4c86a434" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>k_superior <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb9-2"><a></a>k_inferior <span class="op">=</span> <span class="dv">990</span></span>
 <span id="cb9-3"><a></a></span>
 <span id="cb9-4"><a></a>prob <span class="op">=</span> norm.cdf(k_superior, loc <span class="op">=</span> m, </span>
 <span id="cb9-5"><a></a>                scale <span class="op">=</span> s) <span class="op">-</span> norm.cdf(k_inferior, </span>
 <span id="cb9-6"><a></a>                loc <span class="op">=</span> m, scale <span class="op">=</span> s)</span>
-<span id="cb9-7"><a></a><span class="bu">print</span>(<span class="ss">f"P(</span><span class="sc">{</span>k_inferior<span class="sc">}</span><span class="ss"> &lt;= X &lt;= </span><span class="sc">{</span>k_superior<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a></a><span class="bu">print</span>(<span class="ss">f"P(</span><span class="sc">{</span>k_inferior<span class="sc">}</span><span class="ss"> &lt;= X &lt;= </span><span class="sc">{</span>k_superior<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P(990 &lt;= X &lt;= 1000): 0.3413</code></pre>
 </div>
@@ -891,13 +894,14 @@ _{a}^b f(x) dx.\]</span></p>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

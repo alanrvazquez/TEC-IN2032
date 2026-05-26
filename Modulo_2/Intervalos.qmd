@@ -210,7 +210,7 @@ Sus características principales:
 
 ![](images/percentiles.png){fig-align="center"}
 
-## ¿Como seleccionamos el valor de $\alpha$?
+## ¿Cómo seleccionamos el valor de $\alpha$?
 
 </br>
 
@@ -364,6 +364,8 @@ El intervalo de confianza del 95% es $[12.32, 13.76]$ o $12.32 \leq \mu \leq 13.
 ## ¿Cómo podemos estimar el valor de $\mu_2 - \mu_1$?
 
 ::: {style="font-size: 95%;"}
+
+::: incremental
 - Utilizando un intervalo de confianza sobre $\mu_2 - \mu_1$.
 
 - Si el intervalo de confianza contiene puros valores positivos, entonces tenemos una gran *confianza* que $\mu_2 - \mu_1 > 0$.
@@ -371,6 +373,8 @@ El intervalo de confianza del 95% es $[12.32, 13.76]$ o $12.32 \leq \mu \leq 13.
 - Si el intervalo de confianza contiene puros valores negativos, entonces tenemos una gran *confianza* que $\mu_2 - \mu_1 < 0$.
 
 - Si el intervalo de confianza contiene valores positivos y negativos, entonces no podemos asegurar que $\mu_2 - \mu_1 > 0$ o $\mu_2 - \mu_1 < 0$. En este caso, podriamos considerar que $\mu_2 - \mu_1 = 0$.
+:::
+
 :::
 
 ## IC para la diferencia de dos medias
@@ -415,6 +419,8 @@ $$\left[ (\bar{y} - \bar{x}) - \text{ME}, (\bar{y} - \bar{x}) + \text{ME} \right
 
 donde ME es el *margen de error*.
 
+. . . 
+
 Existen dos valores posibles para ME según los casos:
 
 - Las varianzas téoricas de las distribuciones son iguales ($\sigma_y^{2} = \sigma_x^{2}$).
@@ -456,7 +462,7 @@ tube_data = pd.read_excel("Tubos.xlsx")
 tube_data.head()
 ```
 
-## Cuidado!
+## ¡Cuidado!
 
 La variable `Tipo` es [**categorica**]{style="color: red"}! Entonces, debemos de informar a Python sobre esto usando la función `pd.Categorical()`.
 
@@ -507,11 +513,6 @@ Temp_Tubo1 = (tube_data
   .query("Tipo == 1")
   .filter(['Temperatura'])
 )
-```
-
-```{python}
-#| echo: true
-#| output: true
 
 Temp_Tubo2 = (tube_data
   .query("Tipo == 2")
