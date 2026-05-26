@@ -1729,7 +1729,7 @@
     "href": "Modulo_2/Intervalos.slides.html#intervalo-de-confianza",
     "title": "Intervalos de Confianza",
     "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\n\nPara construir un intervalo de confianza de una muestra, seguimos dos pasos.\n\nPrimero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función ttest_ind() de scipy.stats.\n\nprueba_hip = ttest_1samp(cilinder_data, popmean = 0)\n\nPor convención, el parámetro popmean debe estar fijado en cero."
+    "text": "Intervalo de confianza\n\nPara construir un intervalo de confianza de una muestra, seguimos dos pasos.\n\nPrimero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función ttest_1samp() de scipy.stats.\n\nprueba_hip = ttest_1samp(cilinder_data, popmean = 0)\n\nPor convención, el parámetro popmean debe estar fijado en cero."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-3",

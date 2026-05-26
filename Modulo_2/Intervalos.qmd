@@ -302,7 +302,7 @@ Para construir un intervalo de confianza de una muestra, seguimos dos pasos.
 
 </br>
 
-Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función `ttest_ind()` de **scipy.stats**.
+Primero, realizamos una prueba de hipótesis (más detalles en la siguiente clase) usando la función `ttest_1samp()` de **scipy.stats**.
 
 ```{python}
 #| echo: true
@@ -363,8 +363,7 @@ El intervalo de confianza del 95% es $[12.32, 13.76]$ o $12.32 \leq \mu \leq 13.
 
 ## ¿Cómo podemos estimar el valor de $\mu_2 - \mu_1$?
 
-::: {style="font-size: 95%;"}
-
+:::: {style="font-size: 95%;"}
 ::: incremental
 - Utilizando un intervalo de confianza sobre $\mu_2 - \mu_1$.
 
@@ -374,8 +373,7 @@ El intervalo de confianza del 95% es $[12.32, 13.76]$ o $12.32 \leq \mu \leq 13.
 
 - Si el intervalo de confianza contiene valores positivos y negativos, entonces no podemos asegurar que $\mu_2 - \mu_1 > 0$ o $\mu_2 - \mu_1 < 0$. En este caso, podriamos considerar que $\mu_2 - \mu_1 = 0$.
 :::
-
-:::
+::::
 
 ## IC para la diferencia de dos medias
 
@@ -419,7 +417,7 @@ $$\left[ (\bar{y} - \bar{x}) - \text{ME}, (\bar{y} - \bar{x}) + \text{ME} \right
 
 donde ME es el *margen de error*.
 
-. . . 
+. . .
 
 Existen dos valores posibles para ME según los casos:
 
