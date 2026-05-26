@@ -1676,11 +1676,11 @@
     "text": "Percentiles de una distribución \\(t\\)"
   },
   {
-    "objectID": "Modulo_2/Intervalos.slides.html#como-seleccionamos-el-valor-de-alpha",
-    "href": "Modulo_2/Intervalos.slides.html#como-seleccionamos-el-valor-de-alpha",
+    "objectID": "Modulo_2/Intervalos.slides.html#cómo-seleccionamos-el-valor-de-alpha",
+    "href": "Modulo_2/Intervalos.slides.html#cómo-seleccionamos-el-valor-de-alpha",
     "title": "Intervalos de Confianza",
-    "section": "¿Como seleccionamos el valor de \\(\\alpha\\)?",
-    "text": "¿Como seleccionamos el valor de \\(\\alpha\\)?\n\n\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right]\\]\nEl valor de \\(1-\\alpha\\) define el nivel de confianza (o cobertura) del intervalo de confianza.\nUsualmente, el valor de \\(\\alpha\\) es 0.1, 0.05, o 0.01, lo cual resulta en intervalos con un nivel de confianza de 90%, 95%, y 99%, respectivamente."
+    "section": "¿Cómo seleccionamos el valor de \\(\\alpha\\)?",
+    "text": "¿Cómo seleccionamos el valor de \\(\\alpha\\)?\n\n\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right]\\]\nEl valor de \\(1-\\alpha\\) define el nivel de confianza (o cobertura) del intervalo de confianza.\nUsualmente, el valor de \\(\\alpha\\) es 0.1, 0.05, o 0.01, lo cual resulta en intervalos con un nivel de confianza de 90%, 95%, y 99%, respectivamente."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#definición-formal-de-un-ic",
@@ -2325,12 +2325,5 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
-  },
-  {
-    "objectID": "Modulo_2/Intervalos.slides.html#cómo-seleccionamos-el-valor-de-alpha",
-    "href": "Modulo_2/Intervalos.slides.html#cómo-seleccionamos-el-valor-de-alpha",
-    "title": "Intervalos de Confianza",
-    "section": "¿Cómo seleccionamos el valor de \\(\\alpha\\)?",
-    "text": "¿Cómo seleccionamos el valor de \\(\\alpha\\)?\n\n\\[\\left[\\bar{y} - t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}},~ \\bar{y} + t_{n-1, \\alpha/2} \\frac{s}{\\sqrt{n}} \\right]\\]\nEl valor de \\(1-\\alpha\\) define el nivel de confianza (o cobertura) del intervalo de confianza.\nUsualmente, el valor de \\(\\alpha\\) es 0.1, 0.05, o 0.01, lo cual resulta en intervalos con un nivel de confianza de 90%, 95%, y 99%, respectivamente."
   }
 ]

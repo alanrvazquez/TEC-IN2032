@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Alan R. Vazquez">
   <title>IN2032 Análisis Estadístico de Datos – Pruebas de Hipótesis</title>
@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="style.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -189,7 +192,7 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
@@ -226,11 +229,11 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="2d67dff9" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div id="92052827" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> sem, t, ttest_ind, ttest_1samp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> sem, t, ttest_ind, ttest_1samp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>En el cógido de arriba, indicamos que utilizaremos la función <code>sem()</code> de la librería <strong>scipy.stats</strong>.</p>
 </section>
@@ -511,9 +514,9 @@ Alan R. Vazquez
 <section id="en-python" class="slide level2">
 <h2>En Python</h2>
 <p>Primero, leamos los datos en el archivo “Guinea_Pigs.xlsx”.</p>
-<div id="d7ac1e02" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>guinea_data <span class="op">=</span> pd.read_excel(<span class="st">"Guinea_Pigs.xlsx"</span>)</span>
-<span id="cb2-2"><a></a>guinea_data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="de2d9995" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>guinea_data <span class="op">=</span> pd.read_excel(<span class="st">"Guinea_Pigs.xlsx"</span>)</span>
+<span id="cb2-2"><a></a>guinea_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <style scoped="">
@@ -530,7 +533,7 @@ Alan R. Vazquez
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -539,23 +542,23 @@ Alan R. Vazquez
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>421.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>452.6</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>456.1</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>90.5</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>110.7</td>
 </tr>
 </tbody>
@@ -567,14 +570,14 @@ Alan R. Vazquez
 </section>
 <section id="visualización-simple-a-través-de-un-histograma" class="slide level2">
 <h2>Visualización simple a través de un histograma</h2>
-<div id="66359789" class="cell" data-execution_count="3">
+<div id="39e0707a" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) </span>
 <span id="cb3-2"><a></a>sns.histplot(data <span class="op">=</span> guinea_data, x <span class="op">=</span> <span class="st">'Weight'</span>) </span>
 <span id="cb3-3"><a></a>plt.title(<span class="st">"Histograma de Peso"</span>) </span>
 <span id="cb3-4"><a></a>plt.xlabel(<span class="st">"Peso (en gramos)"</span>) </span>
-<span id="cb3-5"><a></a>plt.show() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a></a>plt.show() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -589,9 +592,9 @@ Alan R. Vazquez
 <h2></h2>
 <p><br></p>
 <p>Para llevar a cabo una prueba de hipótesis de una muestra, usamos la función <code>ttest_1samp</code> de <strong>scipy.stats</strong>. En la función, el parámetro <code>popmean</code> especifica e valor asumido <span class="math inline">\(\mu_0\)</span> en <span class="math inline">\(H_0\)</span>. Además, el parámetro <code>alternative</code> indica el tipo de <span class="math inline">\(H_1\)</span>.</p>
-<div id="27062b8b" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>hip_test <span class="op">=</span> ttest_1samp(guinea_data, popmean <span class="op">=</span> <span class="dv">300</span>, </span>
-<span id="cb4-2"><a></a>                       alternative <span class="op">=</span> <span class="st">'less'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c48a3922" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>hip_test <span class="op">=</span> ttest_1samp(guinea_data, popmean <span class="op">=</span> <span class="dv">300</span>, </span>
+<span id="cb4-2"><a></a>                       alternative <span class="op">=</span> <span class="st">'less'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <p>En este caso, <span class="math inline">\(H_0: \mu = 300\)</span> contra <span class="math inline">\(H_1: \mu &lt; 300\)</span>. Entonces <code>popmean = 300</code> y <code>alternative = 'less'</code>.</p>
@@ -600,8 +603,8 @@ Alan R. Vazquez
 <h2></h2>
 <p><br><br></p>
 <p>Usando <code>hip_test</code>, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.</p>
-<div id="254c797d" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>hip_test.pvalue</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="53b0c0ca" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>hip_test.pvalue</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([0.74450596])</code></pre>
 </div>
@@ -613,9 +616,9 @@ Alan R. Vazquez
 <h2>Intervalo de confianza</h2>
 <p><br></p>
 <p>Usando el mismo objeto <code>hip_test</code>, también podemos obtener un intervalo de confianza usando la función <code>.confidence_interval()</code>.</p>
-<div id="d25818a2" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>ci <span class="op">=</span> hip_test.confidence_interval(confidence_level<span class="op">=</span><span class="fl">0.95</span>)</span>
-<span id="cb7-2"><a></a>ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="dba9b117" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>ci <span class="op">=</span> hip_test.confidence_interval(confidence_level<span class="op">=</span><span class="fl">0.95</span>)</span>
+<span id="cb7-2"><a></a>ci</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>ConfidenceInterval(low=array([-inf]), high=array([390.74691499]))</code></pre>
 </div>
@@ -700,9 +703,9 @@ Alan R. Vazquez
 <section id="en-python-1" class="slide level2">
 <h2>En Python</h2>
 <p>Antes de empezar, carguemos los datos que están en el archivo “Hockey.xlsx”</p>
-<div id="c9e6c16b" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>hockey_data <span class="op">=</span> pd.read_excel(<span class="st">"Hockey.xlsx"</span>)</span>
-<span id="cb9-2"><a></a>hockey_data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6b9dac01" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>hockey_data <span class="op">=</span> pd.read_excel(<span class="st">"Hockey.xlsx"</span>)</span>
+<span id="cb9-2"><a></a>hockey_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
@@ -719,7 +722,7 @@ Alan R. Vazquez
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -729,27 +732,27 @@ Alan R. Vazquez
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>R</td>
 <td>487.3</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>R</td>
 <td>444.5</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>R</td>
 <td>467.7</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>R</td>
 <td>456.3</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>R</td>
 <td>449.7</td>
 </tr>
@@ -763,14 +766,14 @@ Alan R. Vazquez
 <section id="visualización" class="slide level2">
 <h2>Visualización</h2>
 <p>Podemos visualizar los datos de los dos grupos definidos por los compuestos <strong>R</strong> y <strong>B</strong> usando gráficas de cajas lado a lado.</p>
-<div id="19aebfa1" class="cell" data-execution_count="8">
+<div id="a5532ee8" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>)) </span>
 <span id="cb10-2"><a></a>sns.boxplot(data <span class="op">=</span> hockey_data, x <span class="op">=</span> <span class="st">'Compuesto'</span>, y <span class="op">=</span> <span class="st">'Resistencia'</span>) </span>
 <span id="cb10-3"><a></a>plt.ylabel(<span class="st">"Resistencia"</span>) </span>
 <span id="cb10-4"><a></a>plt.xlabel(<span class="st">"Compuesto"</span>) </span>
-<span id="cb10-5"><a></a>plt.show() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a></a>plt.show() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -785,34 +788,34 @@ Alan R. Vazquez
 <h2>Configuración</h2>
 <p>Un problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.</p>
 <p>Sin embargo, podemos crear las dos columnas con nuestras funciones de <strong>pandas</strong>.</p>
-<div id="dbfda319" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>Res_CompA <span class="op">=</span> (hockey_data</span>
+<div id="775e30f4" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>Res_CompA <span class="op">=</span> (hockey_data</span>
 <span id="cb11-2"><a></a>  .query(<span class="st">"Compuesto == 'R'"</span>)</span>
 <span id="cb11-3"><a></a>  .<span class="bu">filter</span>([<span class="st">'Resistencia'</span>])</span>
-<span id="cb11-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a7f064ae" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>Res_CompB <span class="op">=</span> (hockey_data</span>
+<div id="0e97ab7d" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>Res_CompB <span class="op">=</span> (hockey_data</span>
 <span id="cb12-2"><a></a>  .query(<span class="st">"Compuesto == 'B'"</span>)</span>
 <span id="cb12-3"><a></a>  .<span class="bu">filter</span>([<span class="st">'Resistencia'</span>])</span>
-<span id="cb12-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="prueba-de-hipótesis" class="slide level2">
 <h2>Prueba de hipótesis</h2>
 <p><br></p>
 <p>Para llevar a cabo una prueba de hipótesis de dos muestras, usamos la función <code>ttest_ind</code> de <strong>scipy.stats</strong>. En la función, el parámetro <code>alternative</code> indica el tipo de <span class="math inline">\(H_1\)</span>. En este caso, <code>alternative = 'two-sided'</code> ya que <span class="math inline">\(H_1: \mu_R \neq \mu_B\)</span>.</p>
-<div id="b9b6a471" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>prueba_hip <span class="op">=</span> ttest_ind(Res_CompB, Res_CompA, alternative <span class="op">=</span> <span class="st">'two-sided'</span>, </span>
-<span id="cb13-2"><a></a>                       equal_var <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="80d55804" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>prueba_hip <span class="op">=</span> ttest_ind(Res_CompB, Res_CompA, alternative <span class="op">=</span> <span class="st">'two-sided'</span>, </span>
+<span id="cb13-2"><a></a>                       equal_var <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Recuerda que el parámetro <code>equal_var</code> indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.</p>
 </section>
 <section id="section-12" class="slide level2">
 <h2></h2>
 <p>Usando <code>prueba_hip</code>, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.</p>
-<div id="7a7b5b7e" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>prueba_hip.pvalue</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fbd3c442" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>prueba_hip.pvalue</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>array([0.00812422])</code></pre>
 </div>
@@ -825,9 +828,9 @@ Alan R. Vazquez
 <section id="intervalo-de-confianza-1" class="slide level2">
 <h2>Intervalo de confianza</h2>
 <p>Recuerda que podemos obtener un intervalo de confianza usando <code>.confidence_interval()</code>.</p>
-<div id="a292e77c" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>ci <span class="op">=</span> prueba_hip.confidence_interval(confidence_level <span class="op">=</span> <span class="fl">0.95</span>)</span>
-<span id="cb16-2"><a></a>ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b4dc1e97" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>ci <span class="op">=</span> prueba_hip.confidence_interval(confidence_level <span class="op">=</span> <span class="fl">0.95</span>)</span>
+<span id="cb16-2"><a></a>ci</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>ConfidenceInterval(low=array([5.3518092]), high=array([30.81961937]))</code></pre>
 </div>
@@ -1190,13 +1193,14 @@ Alan R. Vazquez
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
