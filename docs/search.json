@@ -952,6 +952,13 @@
     "text": "Intervalo de confianza\n\nUsando el mismo objeto hip_test, también podemos obtener un intervalo de confianza usando la función .confidence_interval().\n\nci = hip_test.confidence_interval(confidence_level=0.95)\nci\n\nConfidenceInterval(low=array([-inf]), high=array([390.74691499]))\n\n\n\nEn este caso, el intervalo de confianza es de un solo lado ya que usamos \\(H_1: \\mu &lt; 300\\). En este caso, el intervalo de confianza del 95% es \\([-\\infty, 390.74]\\) o \\(\\mu \\leq 390.74\\)."
   },
   {
+    "objectID": "Modulo_2/Hipotesis.slides.html#mas-sobre-la-función-ttest_1samp",
+    "href": "Modulo_2/Hipotesis.slides.html#mas-sobre-la-función-ttest_1samp",
+    "title": "Pruebas de Hipótesis",
+    "section": "Mas sobre la función ttest_1samp()",
+    "text": "Mas sobre la función ttest_1samp()\n\nPara probar diferentes hipótesis como \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &gt; 300\\), fijamos el parametro alternative = 'greater'.\n\nttest_1samp(guinea_data, popmean = 300, alternative = 'greater')\n\n\nPara probar \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu \\neq 300\\), fijamos el parametro alternative = 'two-sided'.\n\nttest_1samp(guinea_data, popmean = 300, alternative = 'two-sided')"
+  },
+  {
     "objectID": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
     "href": "Modulo_2/Hipotesis.slides.html#pruebas-para-la-diferencia-de-dos-medias",
     "title": "Pruebas de Hipótesis",
@@ -2325,12 +2332,5 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
-  },
-  {
-    "objectID": "Modulo_2/Hipotesis.slides.html#mas-sobre-la-función-ttest_1samp",
-    "href": "Modulo_2/Hipotesis.slides.html#mas-sobre-la-función-ttest_1samp",
-    "title": "Pruebas de Hipótesis",
-    "section": "Mas sobre la función ttest_1samp()",
-    "text": "Mas sobre la función ttest_1samp()\n\nPara probar diferentes hipótesis como \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &gt; 300\\), fijamos el parametro alternative = 'greater'.\n\nttest_1samp(guinea_data, popmean = 300, alternative = 'greater')\n\n\nPara probar \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu \\neq 300\\), fijamos el parametro alternative = 'two-sided'.\n\nttest_1samp(guinea_data, popmean = 300, alternative = 'two-sided')"
   }
 ]
