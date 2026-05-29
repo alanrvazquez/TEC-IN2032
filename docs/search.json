@@ -1778,7 +1778,7 @@
     "href": "Modulo_2/Intervalos.slides.html#el-esquema",
     "title": "Intervalos de Confianza",
     "section": "El esquema",
-    "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
+    "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\n\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
   },
   {
     "objectID": "Modulo_2/Intervalos.slides.html#section-6",

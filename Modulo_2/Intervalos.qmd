@@ -391,6 +391,8 @@ Además, si la muestra aleatoria $X_1, \ldots, X_{n_x}$ sigue una distribución 
 
 Para definir los intervalos de confianza, necesitamos definir lo siguiente:
 
+</br>
+
 Para la primera muestra de observaciones $y_1, y_2, \ldots, y_{n_y}$:
 
 - $n_y$ es el número de observaciones.
