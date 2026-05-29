@@ -767,7 +767,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#carguemos-las-librerías",
     "title": "Pruebas de Hipótesis",
     "section": "Carguemos las librerías",
-    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import sem, t, ttest_ind, ttest_1samp\n\nEn el cógido de arriba, indicamos que utilizaremos la función sem() de la librería scipy.stats."
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import ttest_ind, ttest_1samp\n\nEn el cógido de arriba, indicamos que utilizaremos las funciones ttest_ind() y ttest_1samp() de la librería scipy.stats."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#introducción",
@@ -788,14 +788,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#paso-1.-hipótesis",
     "title": "Pruebas de Hipótesis",
     "section": "Paso 1. Hipótesis",
-    "text": "Paso 1. Hipótesis\n\nUna hipótesis es una afirmación sobre un parámetro de población.\n\n\nHay dos tipos de hipótesis:\nLa hipótesis nula se denota con \\(H_0\\).\nLa hipótesis alternativa se denota con \\(H_1\\)."
+    "text": "Paso 1. Hipótesis\n\nUna hipótesis es una afirmación sobre un parámetro de población.\n\n\nHay dos tipos de hipótesis:\n\nLa hipótesis nula se denota con \\(H_0\\).\nLa hipótesis alternativa se denota con \\(H_1\\)."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section",
     "href": "Modulo_2/Hipotesis.slides.html#section",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Para un parámetro objetivo \\(\\mu\\) y un valor hipotético (especificado por el usuario) \\(\\mu_0\\), nos concentraremos en hipótesis del siguiente tipo:\n\n\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu \\neq \\mu_0\\)\n\\(H_0: \\mu \\leq \\mu_0\\) contra \\(H_1: \\mu &gt; \\mu_0\\)\n\\(H_0: \\mu \\geq \\mu_0\\) contra \\(H_1: \\mu &lt; \\mu_0\\)\n\n\nLa hipótesis alternativa suele ser la hipótesis que buscamos sustentar con base en la información contenida en la muestra."
+    "text": "Para un parámetro objetivo \\(\\mu\\) y un valor hipotético (especificado por el usuario) \\(\\mu_0\\), nos concentraremos en hipótesis del siguiente tipo:\n\n\n\\(H_0: \\mu = \\mu_0\\) contra \\(H_1: \\mu \\neq \\mu_0\\)\n\\(H_0: \\mu \\leq \\mu_0\\) contra \\(H_1: \\mu &gt; \\mu_0\\)\n\\(H_0: \\mu \\geq \\mu_0\\) contra \\(H_1: \\mu &lt; \\mu_0\\)\n\n\nLa hipótesis alternativa es la hipótesis que buscamos sustentar con base en la información contenida en la muestra."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-1",
@@ -879,14 +879,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#el-valor-p-no-es-la-probabilidad-de-que-h_0-sea-cierta",
     "title": "Pruebas de Hipótesis",
     "section": "El valor p no es la probabilidad de que \\(H_0\\) sea cierta",
-    "text": "El valor p no es la probabilidad de que \\(H_0\\) sea cierta\nDado que el valor p es una probabilidad, y dado que los valores p pequeños indican que es poco probable que \\(H_0\\) sea cierta, es tentador pensar que el valor p representa la probabilidad de que \\(H_0\\)sea cierta.\n\n\n¡Este no es el caso!\n\nEl concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica a resultados que pueden producirse de diferentes maneras cuando se repiten los experimentos."
+    "text": "El valor p no es la probabilidad de que \\(H_0\\) sea cierta\nDado que el valor p es una probabilidad, y dado que los valores p pequeños indican que es poco probable que \\(H_0\\) sea cierta, es tentador pensar que el valor p representa la probabilidad de que \\(H_0\\) sea cierta.\n\n\n¡Este no es el caso!\n\nEl concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica a resultados que pueden producirse de diferentes maneras cuando se repiten los experimentos."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#qué-tan-pequeño-debe-de-ser-el-p-valor-para-rechazar-h_0",
     "href": "Modulo_2/Hipotesis.slides.html#qué-tan-pequeño-debe-de-ser-el-p-valor-para-rechazar-h_0",
     "title": "Pruebas de Hipótesis",
     "section": "¿Qué tan pequeño debe de ser el p valor para rechazar \\(H_0\\)?",
-    "text": "¿Qué tan pequeño debe de ser el p valor para rechazar \\(H_0\\)?\n\n\n\nRespuesta: ¡Muy pequeño!\nPero, ¿qué tan pequeño?\nRespuesta: ¡Muy pequeño!\nPero, dime ¿qué tan pequeño?\nRespuesta: Esta bien! Debe de ser menor que un valor llamado \\(\\alpha\\) el cual suele ser 0.1, 0.05, o 0.01.\n¡Gracias!\n\n\n\n\n\n\n\n\nSir. Ronald Fisher"
+    "text": "¿Qué tan pequeño debe de ser el p valor para rechazar \\(H_0\\)?\n\n\n\n\nRespuesta: ¡Muy pequeño!\nPero, ¿qué tan pequeño?\nRespuesta: ¡Muy pequeño!\nPero, dime ¿qué tan pequeño?\nRespuesta: Esta bien! Debe de ser menor que un valor llamado \\(\\alpha\\) el cual suele ser 0.1, 0.05, o 0.01.\n¡Gracias!\n\n\n\n\n\n\n\n\n\nSir. Ronald Fisher"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#significancia-estadística",
@@ -963,7 +963,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#el-esquema",
     "title": "Pruebas de Hipótesis",
     "section": "El esquema",
-    "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
+    "text": "El esquema\n\nPara definir los intervalos de confianza, necesitamos definir lo siguiente:\n\nPara la primera muestra de observaciones \\(y_1, y_2, \\ldots, y_{n_y}\\):\n\n\\(n_y\\) es el número de observaciones.\n\\(\\bar{y} = \\frac{1}{n_y}\\sum_{i=1}^{n_y} y_i\\) es la media muestral.\n\\(s^2_y =\\frac{1}{n_y-1} \\sum_{i=1}^{n_y} (y_i - \\bar{y})^2\\) es la varianza muestral."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-9",
@@ -1040,7 +1040,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#configuración",
     "title": "Pruebas de Hipótesis",
     "section": "Configuración",
-    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nRes_CompA = (hockey_data\n  .query(\"Compuesto == 'R'\")\n  .filter(['Resistencia'])\n)\n\n\nRes_CompB = (hockey_data\n  .query(\"Compuesto == 'B'\")\n  .filter(['Resistencia'])\n)"
+    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nRes_CompA = (hockey_data\n  .query(\"Compuesto == 'R'\")\n  .filter(['Resistencia'])\n)\n\nRes_CompB = (hockey_data\n  .query(\"Compuesto == 'B'\")\n  .filter(['Resistencia'])\n)"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
@@ -2325,5 +2325,12 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#mas-sobre-la-función-ttest_1samp",
+    "href": "Modulo_2/Hipotesis.slides.html#mas-sobre-la-función-ttest_1samp",
+    "title": "Pruebas de Hipótesis",
+    "section": "Mas sobre la función ttest_1samp()",
+    "text": "Mas sobre la función ttest_1samp()\n\nPara probar diferentes hipótesis como \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu &gt; 300\\), fijamos el parametro alternative = 'greater'.\n\nttest_1samp(guinea_data, popmean = 300, alternative = 'greater')\n\n\nPara probar \\(H_0: \\mu = 300\\) contra \\(H_1: \\mu \\neq 300\\), fijamos el parametro alternative = 'two-sided'.\n\nttest_1samp(guinea_data, popmean = 300, alternative = 'two-sided')"
   }
 ]

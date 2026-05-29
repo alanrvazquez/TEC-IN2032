@@ -40,10 +40,10 @@ Antes de empezar, carguemos las librerías que usaremos hoy.
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy.stats import sem, t, ttest_ind, ttest_1samp
+from scipy.stats import ttest_ind, ttest_1samp
 ```
 
-En el cógido de arriba, indicamos que utilizaremos la función `sem()` de la librería **scipy.stats**.
+En el cógido de arriba, indicamos que utilizaremos las funciones `ttest_ind()` y `ttest_1samp()` de la librería **scipy.stats**.
 
 # Conceptos Básicos
 
@@ -86,9 +86,9 @@ Una **hipótesis** es una afirmación sobre un parámetro de población.
 
 Hay dos tipos de hipótesis:
 
-La [**hipótesis nula**]{style="color: darkblue"} se denota con $H_0$.
+- La [**hipótesis nula**]{style="color: darkblue"} se denota con $H_0$.
 
-La [**hipótesis alternativa**]{style="color: darkgreen"} se denota con $H_1$.
+- La [**hipótesis alternativa**]{style="color: darkgreen"} se denota con $H_1$.
 
 ## 
 
@@ -108,7 +108,7 @@ $H_0: \mu \geq \mu_0$ contra $H_1: \mu < \mu_0$
 
 </br>
 
-[La **hipótesis alternativa** suele ser la hipótesis que buscamos sustentar con base en la información contenida en la muestra.]{style="color:#4a6c40"}
+[La **hipótesis alternativa es la hipótesis que buscamos sustentar** con base en la información contenida en la muestra.]{style="color:#4a6c40"}
 
 ## 
 
@@ -284,7 +284,7 @@ Usamos las dos colas porque la hipótesis alternativa se enfoca en una diferenci
 
 ## El valor *p* no es la probabilidad de que $H_0$ sea cierta
 
-Dado que el valor p es una probabilidad, y dado que los valores p pequeños indican que es poco probable que $H_0$ sea cierta, es tentador pensar que el valor p representa la probabilidad de que $H_0$sea cierta.
+Dado que el valor p es una probabilidad, y dado que los valores p pequeños indican que es poco probable que $H_0$ sea cierta, es tentador pensar que el valor p representa la probabilidad de que $H_0$ sea cierta.
 
 </br>
 
@@ -296,9 +296,10 @@ El concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica
 
 ## ¿Qué tan pequeño debe de ser el p valor para rechazar $H_0$?
 
-:::::: columns
+::::::: columns
 :::: {.column width="50%"}
 ::: incremental
+::: {style="font-size: 95%;"}
 - **Respuesta**: ¡Muy pequeño!
 
 - Pero, [*¿qué tan pequeño?*]{style="color: #E85C78"}
@@ -311,17 +312,17 @@ El concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica
 
 - ¡Gracias!
 :::
+:::
 ::::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ![](images/clipboard-2242705857.png){fig-align="center" width="318"}
 
 ::: {style="text-align: center;"}
 [Sir. Ronald Fisher](https://simple.wikipedia.org/wiki/Ronald_Fisher)
 :::
-
-:::
-::::::
+::::
+:::::::
 
 ## Significancia estadística
 
@@ -366,8 +367,7 @@ Considera una muestra pequeña $y_1, \ldots, y_n$ [que se distribuye]{.underline
 
 [Estadístico de Prueba]{.underline}: $t_0 = \frac{\bar{y} - \mu_0}{s/\sqrt{n}}$ donde $\bar{y}$ y $s$ son el promedio y desviación estándar de la muestra observada.
 
-</br>
-Sea $T$ una variable aleatoria que sigue una distribución $t$ con $n-1$ grados de libertad.
+</br> Sea $T$ una variable aleatoria que sigue una distribución $t$ con $n-1$ grados de libertad.
 :::
 
 ![](images/alternativas.png){fig-align="center"}
@@ -427,7 +427,7 @@ hip_test = ttest_1samp(guinea_data, popmean = 300,
 
 En este caso, $H_0: \mu = 300$ contra $H_1: \mu < 300$. Entonces `popmean = 300` y `alternative = 'less'`.
 
-##
+## 
 
 </br></br>
 
@@ -443,7 +443,7 @@ hip_test.pvalue
 
 Como el p-valor es mayor que $\alpha=0.05$, [**no rechazamos**]{style="color: red"} $H_0$. En otras palabras, concluimos que la muestra no nos da información suficiente para decir que el promedio teórico de las cobayas recién nacidas es menor a 300.
 
-## Intervalo de confianza 
+## Intervalo de confianza
 
 </br>
 
@@ -460,6 +460,30 @@ ci
 
 En este caso, el intervalo de confianza es de un solo lado ya que usamos $H_1: \mu < 300$. En este caso, el intervalo de confianza del 95% es $[-\infty, 390.74]$ o $\mu \leq 390.74$.
 
+## Mas sobre la función `ttest_1samp()`
+
+</br>
+
+Para probar diferentes hipótesis como $H_0: \mu = 300$ contra $H_1: \mu > 300$, fijamos el parametro `alternative = 'greater'`.
+
+```{python}
+#| echo: true
+#| output: false
+
+ttest_1samp(guinea_data, popmean = 300, alternative = 'greater')
+```
+
+</br>
+
+Para probar $H_0: \mu = 300$ contra $H_1: \mu \neq 300$, fijamos el parametro `alternative = 'two-sided'`.
+
+```{python}
+#| echo: true
+#| output: false
+
+ttest_1samp(guinea_data, popmean = 300, alternative = 'two-sided')
+```
+
 ## Pruebas para la diferencia de dos medias
 
 </br></br>
@@ -473,6 +497,8 @@ Además, si la muestra aleatoria $X_1, \ldots, X_{n_x}$ sigue una distribución 
 </br>
 
 Para definir los intervalos de confianza, necesitamos definir lo siguiente:
+
+</br>
 
 Para la primera muestra de observaciones $y_1, y_2, \ldots, y_{n_y}$:
 
@@ -537,13 +563,13 @@ $$\text{ME} = \sqrt{\frac{s_{y}^2}{n_y} + \frac{s_{x}^2}{n_x}}.$$
 
 La resistencia a la rotura de los ejes de los palos de hockey fabricados con dos compuestos diferentes de grafito arroja los siguientes resultados (en newtons):
 
-**R**: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2. 
+**R**: 487.3, 444.5, 467.7, 456.3, 449.7, 459.2, 478.9, 461.5, 477.2.
 
 **B**: 488.5, 501.2, 475.3, 467.2, 462.5, 499.7, 470.0, 469.5, 481.5, 485.2, 509.3, 479.3, 478.3, 491.5.
 
 ¿Éxiste alguna diferencia entre la resistencia a la rotura de los palos de hockey producidos por los dos sompuestos?
 
-##
+## 
 
 </br></br></br>
 
@@ -563,7 +589,7 @@ hockey_data.head()
 
 ## Visualización
 
-Podemos visualizar los datos de los dos grupos definidos por los compuestos **R**  y **B** usando gráficas de cajas lado a lado.
+Podemos visualizar los datos de los dos grupos definidos por los compuestos **R** y **B** usando gráficas de cajas lado a lado.
 
 ```{python}
 #| echo: true
@@ -592,11 +618,6 @@ Res_CompA = (hockey_data
   .query("Compuesto == 'R'")
   .filter(['Resistencia'])
 )
-```
-
-```{python}
-#| echo: true
-#| output: true
 
 Res_CompB = (hockey_data
   .query("Compuesto == 'B'")
@@ -620,8 +641,9 @@ prueba_hip = ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided',
 
 Recuerda que el parámetro `equal_var` indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes.
 
+## 
 
-##
+</br>
 
 Usando `prueba_hip`, podemos preguntar sobre el p-valor de la prueba de hipótesis como sigue.
 
@@ -633,12 +655,11 @@ prueba_hip.pvalue
 
 </br>
 
-Como el p-valor es menor que $\alpha=0.0081$, [**rechazamos**]{style="color: #4682B4"} $H_0$. 
+Como el p-valor es menor que $\alpha=0.0081$, [**rechazamos**]{style="color: #4682B4"} $H_0$.
 
 </br>
 
 En otras palabras, concluimos que la muestra nos da información suficiente para decir que los promedios de resistencia de los palos de hockey bajo los dos compuestos es diferente.
-
 
 ## Intervalo de confianza
 
@@ -656,7 +677,7 @@ El intervalo es $[5.35, 30.82]$ o $5.35 \leq \mu_B - \mu_A  \leq 30.82$.
 
 </br>
 
-Esto lo sabemos por el orden en que especificamos las muestras en 
+Esto lo sabemos por el orden en que especificamos las muestras en
 
 `ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', equal_var = False)`
 
