@@ -82,7 +82,7 @@ Por ejemplo
 
 Existen otro tipo de variabilidad que pueden estar presente en la producción de un proceso. Esta variabilidad es ocasionada por [***causas asignables***]{style="color: darkred"}.
 
-. . . 
+. . .
 
 Ejemplos de causas asignables son:
 
@@ -92,7 +92,7 @@ Ejemplos de causas asignables son:
 
 - Materias primas defectuosas
 
-. . . 
+. . .
 
 [Cuando la variabilidad debido a causas asignables es mayor que la variabilidad natural, se dice que el proceso no está bajo control.]{style="color: purple"} Es decir, el proceso tiene un nivel inaceptable de desempeño.
 
@@ -116,13 +116,13 @@ La [***gráfica de control***]{style="color: #4682B4"} es una técnica de monito
 
 ## Gráficas de control
 
-La [**gráficas de control**]{style="color: #4682B4"} nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la _**variable**_ bajo estudio.
+La [**gráficas de control**]{style="color: #4682B4"} nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la ***variable*** bajo estudio.
 
 Una gráfica de control:
 
 :::: {style="font-size: 85%;"}
 ::: incremental
-- puede estimar los parámetros de un proceso de producción y determinar la capacidad de un proceso para cumplir con las especifícaciones.
+- puede estimar los parámetros de un proceso de producción y determinar la capacidad de un proceso para cumplir con las especificaciones.
 
 - Proporciona información útil sobre si la *variabilidad del proceso* es debido a **causas asignables** en el proceso.
 
@@ -142,6 +142,7 @@ Monitoreando las calificaciones durante los semestres de mi carrera
 
 Los **pasos para trabajar** con una gráfica de control son:
 
+::: incremental
 1.  Definir el tipo de gráfica dependiendo de la variable bajo estudio.
 
 2.  Recolectar varias muestras (conjuntos) de observaciones durante un periodo de tiempo.
@@ -150,6 +151,7 @@ Los **pasos para trabajar** con una gráfica de control son:
 - Seleccionar la frecuencia en que se recopilaran las muestras
 
 3.  Construir e interpretar la gráfica.
+:::
 
 ## 1. El tipo de gráfica de control depende del tipo de variable
 
@@ -212,7 +214,7 @@ Los datos para construir un gráfico de control se recopilan en varias muestras 
 
 El plan de muestreo de estos subgrupos tiene los siguientes elementos:
 
-::: incremental
+:::: incremental
 ::: {style="font-size: 85%;"}
 - **Número de subgrupos racionales** ($k$): debe seleccionar un número $k$ grande, normalmente 20 o más.
 
@@ -222,6 +224,10 @@ El plan de muestreo de estos subgrupos tiene los siguientes elementos:
 
 - **Esquema de muestreo**: usualmente muestreo aleatorio.
 :::
+::::
+
+::: notes
+Si es costoso hace mediciones o si el proceso tiene materiales caros, entonces el tamaño del subgrupo es pequeño, 1, por ejemplo. De lo contratrio, puede ser grande. 
 :::
 
 ## Creación de subgrupos racionales
@@ -283,7 +289,7 @@ Una vez teniendo los subgrupos racionales, debemos de registrar mediciones sobre
 
 Para realizar las mediciones, necesitamos un [***instrumento de medición***]{style="color: darkgray"} y una ***persona que utiliza este instrumento***.
 
-. . . 
+. . .
 
 Durante la medición, registra lo siguiente:
 
@@ -326,6 +332,5 @@ Para generar la gráfica de control, se calculan resúmenes estadísticos de los
 </br>
 
 ![](images/carta_ejemplo.png){fig-align="center"}
-
 
 # [Return to main page](https://alanrvazquez.github.io/TEC-IN2032/)

@@ -1463,7 +1463,7 @@
     "href": "Modulo_3/Monitoreo.slides.html#gráficas-de-control",
     "title": "Introducción al Monitoreo de Procesos",
     "section": "Gráficas de control",
-    "text": "Gráficas de control\nLa gráficas de control nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la variable bajo estudio.\nUna gráfica de control:\n\n\npuede estimar los parámetros de un proceso de producción y determinar la capacidad de un proceso para cumplir con las especifícaciones.\nProporciona información útil sobre si la variabilidad del proceso es debido a causas asignables en el proceso.\nEn esencia, es una prueba de hipótesis de que el proceso está en un estado de control estadístico."
+    "text": "Gráficas de control\nLa gráficas de control nos ayudan a monitorear una característica de calidad de un producto. Dicha característica es la variable bajo estudio.\nUna gráfica de control:\n\n\npuede estimar los parámetros de un proceso de producción y determinar la capacidad de un proceso para cumplir con las especificaciones.\nProporciona información útil sobre si la variabilidad del proceso es debido a causas asignables en el proceso.\nEn esencia, es una prueba de hipótesis de que el proceso está en un estado de control estadístico."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#cómo-se-ve-una-gráfica-de-control",
@@ -1526,7 +1526,7 @@
     "href": "Modulo_3/Monitoreo.slides.html#recolección-de-datos",
     "title": "Introducción al Monitoreo de Procesos",
     "section": "Recolección de datos",
-    "text": "Recolección de datos\nLos datos para construir un gráfico de control se recopilan en varias muestras tomadas durante un período de tiempo. Estas muestras se denominan subgrupos racionales.\nEl plan de muestreo de estos subgrupos tiene los siguientes elementos:\n\n\nNúmero de subgrupos racionales (\\(k\\)): debe seleccionar un número \\(k\\) grande, normalmente 20 o más.\nTamaño del subgrupo (\\(n\\)): la naturaleza de la variable de estudio te ayudará a definir el tamaño del subgrupo.\nFrecuencia: los subgrupos se toman secuencialmente en el tiempo.\nEsquema de muestreo: usualmente muestreo aleatorio."
+    "text": "Recolección de datos\nLos datos para construir un gráfico de control se recopilan en varias muestras tomadas durante un período de tiempo. Estas muestras se denominan subgrupos racionales.\nEl plan de muestreo de estos subgrupos tiene los siguientes elementos:\n\n\nNúmero de subgrupos racionales (\\(k\\)): debe seleccionar un número \\(k\\) grande, normalmente 20 o más.\nTamaño del subgrupo (\\(n\\)): la naturaleza de la variable de estudio te ayudará a definir el tamaño del subgrupo.\nFrecuencia: los subgrupos se toman secuencialmente en el tiempo.\nEsquema de muestreo: usualmente muestreo aleatorio.\n\n\n\nSi es costoso hace mediciones o si el proceso tiene materiales caros, entonces el tamaño del subgrupo es pequeño, 1, por ejemplo. De lo contratrio, puede ser grande."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#creación-de-subgrupos-racionales",
