@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Alan R. Vazquez">
   <title>IN2032 Análisis Estadístico de Datos – Gráficas de Control</title>
@@ -228,7 +228,7 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="2d5d0e7b" class="cell" data-execution_count="1">
+<div id="05634e79" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -412,7 +412,7 @@ Alan R. Vazquez
 <section id="construyendo-gráficas-de-control-en-python" class="slide level2">
 <h2>Construyendo gráficas de control en Python</h2>
 <p>Carguemos los datos que están en el archivo “Pull_Strength.xlsx”</p>
-<div id="659d9b14" class="cell" data-execution_count="2">
+<div id="36d4b88b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>pull_data <span class="op">=</span> pd.read_excel(<span class="st">"Pull_Strength.xlsx"</span>)</span>
 <span id="cb2-2"><a></a>pull_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -475,11 +475,11 @@ Alan R. Vazquez
 <section id="cuidado" class="slide level2">
 <h2>Cuidado!</h2>
 <p>La variable <code>Subgrupo</code> es <span style="color: red"><strong>categorica</strong></span>! Entonces, debemos de informar a Python sobre esto usando la función <code>pd.Categorical()</code>.</p>
-<div id="539f06c9" class="cell" data-execution_count="3">
+<div id="ae984bda" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>pull_data[<span class="st">'Subgrupo'</span>] <span class="op">=</span> pd.Categorical(pull_data[<span class="st">'Subgrupo'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Veamos el resultado:</p>
-<div id="56ec4e2d" class="cell" data-execution_count="4">
+<div id="92efd067" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>pull_data.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
