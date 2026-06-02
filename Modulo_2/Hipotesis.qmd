@@ -524,7 +524,7 @@ $$T = \frac{ (\bar{y} - \bar{x}) - (\mu_{y0} - \mu_{x0})}{\text{ME}}$$
 
 donde $\mu_{y0} - \mu_{x0}$ es la diferencia asumida en la hipótesis nula ($H_0$), y ME es el *margen de error*.
 
-. . . 
+. . .
 
 Existen dos valores posibles para ME según los casos:
 
@@ -575,9 +575,9 @@ La resistencia a la rotura de los ejes de los palos de hockey fabricados con dos
 
 </br></br></br>
 
-En otras palabras, prueba 
+En otras palabras, prueba
 
-$$H_0: \mu_R = \mu_B \text{ contra } H_1: \mu_R \neq \mu_B$$ 
+$$H_0: \mu_R = \mu_B \text{ contra } H_1: \mu_R \neq \mu_B$$
 
 donde $\mu_R$ y $\mu_B$ son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto **R** y **B**, respectivamente. Usa $\alpha = 0.05$.
 
@@ -661,7 +661,7 @@ prueba_hip.pvalue
 
 </br>
 
-Como el p-valor es menor que $\alpha=0.0081$, [**rechazamos**]{style="color: #4682B4"} $H_0$.
+Como el p-valor es menor que $\alpha=0.05$, [**rechazamos**]{style="color: #4682B4"} $H_0$.
 
 </br>
 
@@ -679,7 +679,7 @@ ci = prueba_hip.confidence_interval(confidence_level = 0.95)
 ci
 ```
 
-El intervalo es $[5.35, 30.82]$ o $5.35 \leq \mu_B - \mu_A  \leq 30.82$.
+El intervalo es $[-30.82, -5.35]$ o $-30.82 \leq \mu_R - \mu_B  \leq -5.35$.
 
 </br>
 
@@ -689,7 +689,7 @@ Esto lo sabemos por el orden en que especificamos las muestras en
 
 ## p-valores para otros pares de hipótesis
 
-Para probar las hipótesis $H_0: \mu_R = \mu_B \text{ contra } H_1: \mu_R < \mu_B$, usamos: 
+Para probar las hipótesis $H_0: \mu_R = \mu_B \text{ contra } H_1: \mu_R < \mu_B$, usamos:
 
 ```{python}
 #| echo: true
