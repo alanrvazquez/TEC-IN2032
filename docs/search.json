@@ -984,7 +984,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#section-10",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\nExisten dos valores posibles para ME según los casos:\n\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
+    "text": "Si las dos muestras son independientes, entonces un estadístico de prueba para la hipótesis sobre \\(\\mu_y - \\mu_x\\) es\n\\[T = \\frac{ (\\bar{y} - \\bar{x}) - (\\mu_{y0} - \\mu_{x0})}{\\text{ME}}\\]\ndonde \\(\\mu_{y0} - \\mu_{x0}\\) es la diferencia asumida en la hipótesis nula (\\(H_0\\)), y ME es el margen de error.\n\nExisten dos valores posibles para ME según los casos:\n\n\nLas varianzas téoricas de las distribuciones son iguales (\\(\\sigma_y^{2} = \\sigma_x^{2}\\)).\nLas varianzas téoricas de las distribuciones no son iguales (\\(\\sigma_y^{2} \\neq \\sigma_x^{2}\\))."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#cuando-las-distribuciones-tienen-la-misma-varianza",
@@ -1026,7 +1026,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#section-11",
     "title": "Pruebas de Hipótesis",
     "section": "",
-    "text": "En otras palabras, prueba \\(H_0: \\mu_R = \\mu_B\\) contra \\(H_1: \\mu_R \\neq \\mu_B\\) donde \\(\\mu_R\\) y \\(\\mu_B\\) son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa \\(\\alpha = 0.05\\)."
+    "text": "En otras palabras, prueba\n\\[H_0: \\mu_R = \\mu_B \\text{ contra } H_1: \\mu_R \\neq \\mu_B\\]\ndonde \\(\\mu_R\\) y \\(\\mu_B\\) son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto R y B, respectivamente. Usa \\(\\alpha = 0.05\\)."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#en-python-1",
@@ -1047,14 +1047,14 @@
     "href": "Modulo_2/Hipotesis.slides.html#configuración",
     "title": "Pruebas de Hipótesis",
     "section": "Configuración",
-    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nRes_CompA = (hockey_data\n  .query(\"Compuesto == 'R'\")\n  .filter(['Resistencia'])\n)\n\nRes_CompB = (hockey_data\n  .query(\"Compuesto == 'B'\")\n  .filter(['Resistencia'])\n)"
+    "text": "Configuración\nUn problema con los datos actuales es que no están en el formato requerido para la función de Python que construye intervalos de confianza. Está función necesita que los datos de los dos grupos estén en dos columnas separadas.\nSin embargo, podemos crear las dos columnas con nuestras funciones de pandas.\n\nRes_CompR = (hockey_data\n  .query(\"Compuesto == 'R'\")\n  .filter(['Resistencia'])\n)\n\nRes_CompB = (hockey_data\n  .query(\"Compuesto == 'B'\")\n  .filter(['Resistencia'])\n)"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
     "href": "Modulo_2/Hipotesis.slides.html#prueba-de-hipótesis",
     "title": "Pruebas de Hipótesis",
     "section": "Prueba de hipótesis",
-    "text": "Prueba de hipótesis\n\nPara llevar a cabo una prueba de hipótesis de dos muestras, usamos la función ttest_ind de scipy.stats. En la función, el parámetro alternative indica el tipo de \\(H_1\\). En este caso, alternative = 'two-sided' ya que \\(H_1: \\mu_R \\neq \\mu_B\\).\n\nprueba_hip = ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', \n                       equal_var = False)\n\nRecuerda que el parámetro equal_var indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
+    "text": "Prueba de hipótesis\n\nPara llevar a cabo una prueba de hipótesis de dos muestras, usamos la función ttest_ind de scipy.stats. En la función, el parámetro alternative indica el tipo de \\(H_1\\). En este caso, alternative = 'two-sided' ya que \\(H_1: \\mu_R \\neq \\mu_B\\).\n\nprueba_hip = ttest_ind(Res_CompR, Res_CompB, alternative = 'two-sided', \n                       equal_var = False)\n\nRecuerda que el parámetro equal_var indica si asumimos que las varianzas son iguales o diferentes. Asumamos que son diferentes."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#section-12",
@@ -1068,7 +1068,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#intervalo-de-confianza-1",
     "title": "Pruebas de Hipótesis",
     "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\nRecuerda que podemos obtener un intervalo de confianza usando .confidence_interval().\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([5.3518092]), high=array([30.81961937]))\n\n\nEl intervalo es \\([5.35, 30.82]\\) o \\(5.35 \\leq \\mu_B - \\mu_A  \\leq 30.82\\).\n\nEsto lo sabemos por el orden en que especificamos las muestras en\nttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', equal_var = False)"
+    "text": "Intervalo de confianza\nRecuerda que podemos obtener un intervalo de confianza usando .confidence_interval().\n\nci = prueba_hip.confidence_interval(confidence_level = 0.95)\nci\n\nConfidenceInterval(low=array([-30.81961937]), high=array([-5.3518092]))\n\n\nEl intervalo es \\([5.35, 30.82]\\) o \\(5.35 \\leq \\mu_B - \\mu_A  \\leq 30.82\\).\n\nEsto lo sabemos por el orden en que especificamos las muestras en\nttest_ind(Res_CompR, Res_CompB, alternative = 'two-sided', equal_var = False)"
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#no-asumas-que-las-varianzas-son-iguales",
@@ -1082,7 +1082,7 @@
     "href": "Modulo_2/Hipotesis.slides.html#significativo-no-implica-importante",
     "title": "Pruebas de Hipótesis",
     "section": "Significativo no implica importante",
-    "text": "Significativo no implica importante\n\nEn el uso común, la palabra significativo significa “importante”.\nPor tanto, resulta tentador pensar que los resultados estadísticamente significativos siempre deben ser importantes. Este no es el caso.\nA veces, los resultados estadísticamente significativos no tienen ninguna importancia científica o práctica. En otras palabras, no son prácticamente significativos."
+    "text": "Significativo no implica importante\n\nEn el uso común, la palabra significativo significa “importante”.\n\nPor tanto, resulta tentador pensar que los resultados estadísticamente significativos siempre deben ser importantes. Este no es el caso.\n\nA veces, los resultados estadísticamente significativos no tienen ninguna importancia científica o práctica. En otras palabras, no son prácticamente significativos."
   },
   {
     "objectID": "Modulo_2/Hipotesis.slides.html#conclusión-de-los-resultados",
@@ -2332,5 +2332,12 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_2/Hipotesis.slides.html#p-valores-para-otros-pares-de-hipótesis",
+    "href": "Modulo_2/Hipotesis.slides.html#p-valores-para-otros-pares-de-hipótesis",
+    "title": "Pruebas de Hipótesis",
+    "section": "p-valores para otros pares de hipótesis",
+    "text": "p-valores para otros pares de hipótesis\nPara probar las hipótesis \\(H_0: \\mu_R = \\mu_B \\text{ contra } H_1: \\mu_R &lt; \\mu_B\\), usamos:\n\nprueba_hip = ttest_ind(Res_CompR, Res_CompB, alternative = 'less', \n                       equal_var = False)\n\n\nPara probar las hipótesis \\(H_0: \\mu_R = \\mu_B \\text{ contra } H_1: \\mu_R &gt; \\mu_B\\), usamos:\n\nprueba_hip = ttest_ind(Res_CompR, Res_CompB, alternative = 'greater', \n                       equal_var = False)"
   }
 ]

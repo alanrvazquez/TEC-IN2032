@@ -296,9 +296,9 @@ El concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica
 
 ## ¿Qué tan pequeño debe de ser el p valor para rechazar $H_0$?
 
-::::::: columns
-:::: {.column width="50%"}
-::: incremental
+:::::::: columns
+::::: {.column width="50%"}
+:::: incremental
 ::: {style="font-size: 95%;"}
 - **Respuesta**: ¡Muy pequeño!
 
@@ -312,8 +312,8 @@ El concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica
 
 - ¡Gracias!
 :::
-:::
 ::::
+:::::
 
 :::: {.column width="50%"}
 ![](images/clipboard-2242705857.png){fig-align="center" width="318"}
@@ -322,7 +322,7 @@ El concepto de probabilidad que se analiza aquí sólo es útil cuando se aplica
 [Sir. Ronald Fisher](https://simple.wikipedia.org/wiki/Ronald_Fisher)
 :::
 ::::
-:::::::
+::::::::
 
 ## Significancia estadística
 
@@ -524,6 +524,8 @@ $$T = \frac{ (\bar{y} - \bar{x}) - (\mu_{y0} - \mu_{x0})}{\text{ME}}$$
 
 donde $\mu_{y0} - \mu_{x0}$ es la diferencia asumida en la hipótesis nula ($H_0$), y ME es el *margen de error*.
 
+. . . 
+
 Existen dos valores posibles para ME según los casos:
 
 ::: {style="font-size: 90%;"}
@@ -573,7 +575,11 @@ La resistencia a la rotura de los ejes de los palos de hockey fabricados con dos
 
 </br></br></br>
 
-En otras palabras, prueba $H_0: \mu_R = \mu_B$ contra $H_1: \mu_R \neq \mu_B$ donde $\mu_R$ y $\mu_B$ son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto **R** y **B**, respectivamente. Usa $\alpha = 0.05$.
+En otras palabras, prueba 
+
+$$H_0: \mu_R = \mu_B \text{ contra } H_1: \mu_R \neq \mu_B$$ 
+
+donde $\mu_R$ y $\mu_B$ son los promedios teóricos de rotura de los palos de hockey producidos por el compuesto **R** y **B**, respectivamente. Usa $\alpha = 0.05$.
 
 ## En Python
 
@@ -614,7 +620,7 @@ Sin embargo, podemos crear las dos columnas con nuestras funciones de **pandas**
 #| echo: true
 #| output: true
 
-Res_CompA = (hockey_data
+Res_CompR = (hockey_data
   .query("Compuesto == 'R'")
   .filter(['Resistencia'])
 )
@@ -635,7 +641,7 @@ Para llevar a cabo una prueba de hipótesis de dos muestras, usamos la función 
 #| echo: true
 #| output: true
 
-prueba_hip = ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', 
+prueba_hip = ttest_ind(Res_CompR, Res_CompB, alternative = 'two-sided', 
                        equal_var = False)
 ```
 
@@ -679,7 +685,31 @@ El intervalo es $[5.35, 30.82]$ o $5.35 \leq \mu_B - \mu_A  \leq 30.82$.
 
 Esto lo sabemos por el orden en que especificamos las muestras en
 
-`ttest_ind(Res_CompB, Res_CompA, alternative = 'two-sided', equal_var = False)`
+`ttest_ind(Res_CompR, Res_CompB, alternative = 'two-sided', equal_var = False)`
+
+## p-valores para otros pares de hipótesis
+
+Para probar las hipótesis $H_0: \mu_R = \mu_B \text{ contra } H_1: \mu_R < \mu_B$, usamos: 
+
+```{python}
+#| echo: true
+#| output: false
+
+prueba_hip = ttest_ind(Res_CompR, Res_CompB, alternative = 'less', 
+                       equal_var = False)
+```
+
+</br>
+
+Para probar las hipótesis $H_0: \mu_R = \mu_B \text{ contra } H_1: \mu_R > \mu_B$, usamos:
+
+```{python}
+#| echo: true
+#| output: false
+
+prueba_hip = ttest_ind(Res_CompR, Res_CompB, alternative = 'greater', 
+                       equal_var = False)
+```
 
 ## No asumas que las varianzas son iguales
 
@@ -699,7 +729,11 @@ Esto lo sabemos por el orden en que especificamos las muestras en
 
 En el uso común, la palabra significativo significa "importante".
 
+</br>
+
 Por tanto, resulta tentador pensar que los resultados estadísticamente significativos siempre deben ser importantes. Este no es el caso.
+
+</br>
 
 [**A veces, los resultados estadísticamente significativos no tienen ninguna importancia científica o práctica**]{style="color: darkred"}. En otras palabras, no son **prácticamente significativos**.
 
