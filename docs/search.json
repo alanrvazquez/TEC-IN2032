@@ -1319,11 +1319,11 @@
     "text": "En Python\nPrimero, carguemos los datos que están en el archivo “Viscosity.xlsx”.\n\nviscosity_data = pd.read_excel(\"Viscosity.xlsx\")\nviscosity_data.head()\n\n\n\n\n\n\n\n\nMuestra\nViscosidad\n\n\n\n\n0\n1\n495\n\n\n1\n2\n491\n\n\n2\n3\n501\n\n\n3\n4\n501\n\n\n4\n5\n512"
   },
   {
-    "objectID": "Modulo_3/Graficas.slides.html#cuidado-1",
-    "href": "Modulo_3/Graficas.slides.html#cuidado-1",
+    "objectID": "Modulo_3/Graficas.slides.html#recuerda",
+    "href": "Modulo_3/Graficas.slides.html#recuerda",
     "title": "Gráficas de Control",
-    "section": "Cuidado!",
-    "text": "Cuidado!\nLa variable Muestra es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\nviscosity_data['Muestra'] = pd.Categorical(viscosity_data['Muestra'])\n\nVeamos el resultado:\n\nviscosity_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 20 entries, 0 to 19\nData columns (total 2 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   Muestra     20 non-null     category\n 1   Viscosidad  20 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 1.0 KB"
+    "section": "Recuerda",
+    "text": "Recuerda\nLa variable Muestra es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\nviscosity_data['Muestra'] = pd.Categorical(viscosity_data['Muestra'])\n\nVeamos el resultado:\n\nviscosity_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 20 entries, 0 to 19\nData columns (total 2 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   Muestra     20 non-null     category\n 1   Viscosidad  20 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 1.0 KB"
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#section-5",
@@ -1417,6 +1417,20 @@
     "text": "En Python\nCarguemos los datos que están en el archivo “Jugos.xlsx”\n\njuice_data = pd.read_excel(\"Jugos.xlsx\")\njuice_data['Subgrupo'] = pd.Categorical(juice_data['Subgrupo'])\njuice_data.head()\n\n\n\n\n\n\n\n\nSubgrupo\nLatasNoConformes\nnLatas\n\n\n\n\n0\n1\n12\n50\n\n\n1\n2\n15\n50\n\n\n2\n3\n8\n50\n\n\n3\n4\n10\n50\n\n\n4\n5\n4\n50"
   },
   {
+    "objectID": "Modulo_3/Graficas.slides.html#section-9",
+    "href": "Modulo_3/Graficas.slides.html#section-9",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Para construir la gráfica \\(p\\), usamos las función p_chart() del conjunto de funciones en shewhart_charts.\n\nresult = p_chart(data = juice_data, defectives_col = 'LatasNoConformes', \n                 n_col = 'nLatas', figsize=(9, 7))\nplt.show()\n\nEn la función, tenemos que\n\ndata: es el objeto de Python que contiene los datos.\ndefectives_col: Indica la columna que contiene el conteo de defectuosos.\nn_col: Indica la columna que contiene el tamaño de muestra."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-2",
+    "href": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-2",
+    "title": "Gráficas de Control",
+    "section": "Mostrando los límites de control",
+    "text": "Mostrando los límites de control\n\nPara mostrar los límites de control de la gráfica \\(p\\), usamos los siguientes comandos:\n\nsummary = result[\"summary\"]\n\nprint(\"p-chart\")\nprint(\"Center line:\", summary[\"center\"].iloc[0])\nprint(\"LCL:\", summary[\"lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"ucl\"].iloc[0])\n\np-chart\nCenter line: 0.23133333333333334\nLCL: 0.05242754807192823\nUCL: 0.41023911859473844"
+  },
+  {
     "objectID": "Modulo_3/Graficas.slides.html#gráfica-np",
     "href": "Modulo_3/Graficas.slides.html#gráfica-np",
     "title": "Gráficas de Control",
@@ -1431,6 +1445,13 @@
     "text": "En Python\n\nPara construir la gráfica \\(np\\), usamos las función np_chart() del conjunto de funciones en shewhart_charts.\n\nresult = np_chart(data = juice_data, defectives_col = 'LatasNoConformes', \n                 n_col = 'nLatas', figsize=(9, 7))\nplt.show()\n\nLos argumentos son los mismos que la gráfica \\(p\\)."
   },
   {
+    "objectID": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-3",
+    "href": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-3",
+    "title": "Gráficas de Control",
+    "section": "Mostrando los límites de control",
+    "text": "Mostrando los límites de control\n\nPara mostrar los límites de control de la gráfica \\(np\\), usamos los siguientes comandos:\n\nsummary = result[\"summary\"]\n\nprint(\"np-chart\")\nprint(\"Center line:\", summary[\"center\"].iloc[0])\nprint(\"LCL:\", summary[\"lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"ucl\"].iloc[0])\n\nnp-chart\nCenter line: 11.566666666666666\nLCL: 2.6213774035964104\nUCL: 20.51195592973692"
+  },
+  {
     "objectID": "Modulo_3/Graficas.slides.html#gráfica-p-contra-gráfica-np",
     "href": "Modulo_3/Graficas.slides.html#gráfica-p-contra-gráfica-np",
     "title": "Gráficas de Control",
@@ -1438,11 +1459,18 @@
     "text": "Gráfica p contra Gráfica np\n\nGráfica p:\n\nLa gráfica p se utiliza cuando el tamaño de la muestra varía de subgrupo a subgrupo.\nMonitorea la proporción de unidades no conformes en una muestra.\nEs útil cuando el tamaño de la muestra es relativamente pequeño y variable.\nSe calcula como el número de unidades no conformes dividido por el tamaño de la muestra."
   },
   {
-    "objectID": "Modulo_3/Graficas.slides.html#section-9",
-    "href": "Modulo_3/Graficas.slides.html#section-9",
+    "objectID": "Modulo_3/Graficas.slides.html#section-12",
+    "href": "Modulo_3/Graficas.slides.html#section-12",
     "title": "Gráficas de Control",
     "section": "",
-    "text": "Para construir la gráfica \\(p\\), usamos las función p_chart() del conjunto de funciones en shewhart_charts.\n\nresult = p_chart(data = juice_data, defectives_col = 'LatasNoConformes', \n                 n_col = 'nLatas', figsize=(9, 7))\nplt.show()\n\nEn la función, tenemos que\n\ndata: es el objeto de Python que contiene los datos.\ndefectives_col: Indica la columna que contiene el conteo de defectuosos.\nn_col: Indica la columna que contiene el tamaño de muestra."
+    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-13",
+    "href": "Modulo_3/Graficas.slides.html#section-13",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#preguntas-de-práctica-para-examen",
@@ -1450,13 +1478,6 @@
     "title": "Gráficas de Control",
     "section": "Preguntas de práctica para examen",
     "text": "Preguntas de práctica para examen\n\nCierto tipo de circuito integrado está conectado a su estructura mediante cinco cables.\nSe tomaron treinta muestras de cinco unidades cada una y se midió la fuerza de tracción (en gramos) de un cable en cada unidad.\nLos datos se presentan en el archivo “Cables_Circuito.xlsx” en Canvas.\n\nCrea la gráfica de control de promedios-rangos.\n¿Está el proceso bajo control?"
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#section-10",
-    "href": "Modulo_3/Graficas.slides.html#section-10",
-    "title": "Gráficas de Control",
-    "section": "",
-    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#agenda",
@@ -2395,47 +2416,5 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#recuerda",
-    "href": "Modulo_3/Graficas.slides.html#recuerda",
-    "title": "Gráficas de Control",
-    "section": "Recuerda",
-    "text": "Recuerda\nLa variable Muestra es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\nviscosity_data['Muestra'] = pd.Categorical(viscosity_data['Muestra'])\n\nVeamos el resultado:\n\nviscosity_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 20 entries, 0 to 19\nData columns (total 2 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   Muestra     20 non-null     category\n 1   Viscosidad  20 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 1.0 KB"
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-2",
-    "href": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-2",
-    "title": "Gráficas de Control",
-    "section": "Mostrando los límites de control",
-    "text": "Mostrando los límites de control\n\nPara mostrar los límites de control de la gráfica \\(p\\), usamos los siguientes comandos:\n\nsummary = result[\"summary\"]\n\nprint(\"p-chart\")\nprint(\"Center line:\", summary[\"center\"].iloc[0])\nprint(\"LCL:\", summary[\"lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"ucl\"].iloc[0])\n\np-chart\nCenter line: 0.23133333333333334\nLCL: 0.05242754807192823\nUCL: 0.41023911859473844"
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#section-11",
-    "href": "Modulo_3/Graficas.slides.html#section-11",
-    "title": "Gráficas de Control",
-    "section": "",
-    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#section-12",
-    "href": "Modulo_3/Graficas.slides.html#section-12",
-    "title": "Gráficas de Control",
-    "section": "",
-    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-3",
-    "href": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-3",
-    "title": "Gráficas de Control",
-    "section": "Mostrando los límites de control",
-    "text": "Mostrando los límites de control\n\nPara mostrar los límites de control de la gráfica \\(np\\), usamos los siguientes comandos:\n\nsummary = result[\"summary\"]\n\nprint(\"np-chart\")\nprint(\"Center line:\", summary[\"center\"].iloc[0])\nprint(\"LCL:\", summary[\"lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"ucl\"].iloc[0])\n\nnp-chart\nCenter line: 11.566666666666666\nLCL: 2.6213774035964104\nUCL: 20.51195592973692"
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#section-13",
-    "href": "Modulo_3/Graficas.slides.html#section-13",
-    "title": "Gráficas de Control",
-    "section": "",
-    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
   }
 ]
