@@ -18,14 +18,13 @@ author:
 
 ### Módulo 2
 
-1. Intervalos de Confianza ([slides](/Modulo_2/Intervalos.slides.html)) ([colab](https://drive.google.com/file/d/1efHGSBv8oBE9bNcAkuu1f1JMdCVDXuTN/view?usp=sharing))
-2. Pruebas de Hipótesis ([slides](/Modulo_2/Hipotesis.slides.html)) ([colab](https://drive.google.com/file/d/1olWiq7vp7Ebm7BMDKEvtp0ppBip3EN7h/view?usp=sharing))
-
+1.  Intervalos de Confianza ([slides](/Modulo_2/Intervalos.slides.html)) ([colab](https://drive.google.com/file/d/1efHGSBv8oBE9bNcAkuu1f1JMdCVDXuTN/view?usp=sharing))
+2.  Pruebas de Hipótesis ([slides](/Modulo_2/Hipotesis.slides.html)) ([colab](https://drive.google.com/file/d/1olWiq7vp7Ebm7BMDKEvtp0ppBip3EN7h/view?usp=sharing))
 
 ### Módulo 3
 
-1. Introducción al Monitoreo de Procesos ([slides](/Modulo_3/Monitoreo.slides.html))
-2. Gráficas de Control ([slides](/Modulo_3/Graficas.slides.html)) 
+1.  Introducción al Monitoreo de Procesos ([slides](/Modulo_3/Monitoreo.slides.html))
+2.  Gráficas de Control ([slides](/Modulo_3/Graficas.slides.html)) ([colab](https://colab.research.google.com/drive/1EXvzTWwlkOJ15o5R6LhKVli2ToIVnqQW?usp=sharing))
 
 ## About the author
 
@@ -33,4 +32,4 @@ Alan R. Vazquez ([website](https://alanrvazquez.netlify.app/)) is an assistant p
 
 ### License
 
-<a href="https://alanrvazquez.github.io/TEC-IN2032/">IN2032: Análisis Estadístico de Datos</a> © 2026 by <a href="https://alanrvazquez.netlify.app/">Alan Roberto Vazquez</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+<a href="https://alanrvazquez.github.io/TEC-IN2032/">IN2032: Análisis Estadístico de Datos</a> © 2026 by <a href="https://alanrvazquez.netlify.app/">Alan Roberto Vazquez</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"/><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"/>
