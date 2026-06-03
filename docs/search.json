@@ -1148,7 +1148,7 @@
     "href": "Modulo_3/Graficas.slides.html#carguemos-las-librerías",
     "title": "Gráficas de Control",
     "section": "Carguemos las librerías",
-    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import ttest_1samp, ttest_ind\n\nEn el cógido de arriba, indicamos que utilizaremos la función ttest_1samp() y ttest_ind() de la librería scipy.stats."
+    "text": "Carguemos las librerías\n\nAntes de empezar, carguemos las librerías que usaremos hoy.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom shewhart_charts import *\n\nEn el cógido de arriba, indicamos que usaremos funciones que estan contenidas en el archivo “shewhart_charts.py”."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#idea-básica-usa-la-regla-empirica",
@@ -1232,7 +1232,7 @@
     "href": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control-en-python",
     "title": "Gráficas de Control",
     "section": "Construyendo gráficas de control en Python",
-    "text": "Construyendo gráficas de control en Python\nCarguemos los datos que están en el archivo “Pull_Strength.xlsx”\n\npull_data = pd.read_excel(\"Pull_Strength.xlsx\")\npull_data.head()\n\n\n\n\n\n\n\n\nSubgrupo\nFuerza\n\n\n\n\n0\n1\n15.4\n\n\n1\n1\n15.6\n\n\n2\n1\n15.3\n\n\n3\n2\n15.4\n\n\n4\n2\n17.1"
+    "text": "Construyendo gráficas de control en Python\nPara construir la gráfica \\(\\bar{X}\\) y \\(R\\) usamos las función xbar_r_chart() del conjunto de funciones en shewhart_charts.\n\nxbar_r_chart(pull_data, value_col = 'Fuerza', group_col = 'Subgrupo', \n             figsize=(12, 8))\nplt.show()"
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#cuidado",
@@ -1288,7 +1288,7 @@
     "href": "Modulo_3/Graficas.slides.html#ejemplo-2",
     "title": "Gráficas de Control",
     "section": "Ejemplo 2",
-    "text": "Ejemplo 2\n\nLa viscosidad de un producto químico se mide cada hora. Veinte muestras cada una de tamaño 1 se encuentran en el archivo “Viscosity.xlsx.”\n\nUtilizando todos los datos, calcula los límites de control de observaciones individuales y gráficos de rangos móviles.\nEncuentre las muestras que están fuera de control. Reproduce el gráfico de control sin esas muestras."
+    "text": "Ejemplo 2\n\nLa viscosidad de un producto químico se mide cada hora. Veinte muestras cada una de tamaño 1 se encuentran en el archivo “Viscosity.xlsx”.\n\nUtilizando todos los datos, calcula los límites de control de observaciones individuales y gráficos de rangos móviles.\nEncuentre las muestras que están fuera de control. Reproduce el gráfico de control sin esas muestras."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#western-electric-rules",
@@ -1351,14 +1351,14 @@
     "href": "Modulo_3/Graficas.slides.html#section-3",
     "title": "Gráficas de Control",
     "section": "",
-    "text": "Hagamos una gráfica de control para mejorar la fracción de latas no conformes producidas por esta máquina.\nPara establecer el gráfico de control, se seleccionaron 30 muestras de \\(n\\) = 50 latas cada una a intervalos de media hora durante un período de tres turnos en los que la máquina estuvo en funcionamiento continuo.\nLos datos están en el archivo de excel “Juice.xlsx”."
+    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#en-python",
     "href": "Modulo_3/Graficas.slides.html#en-python",
     "title": "Gráficas de Control",
     "section": "En Python",
-    "text": "En Python"
+    "text": "En Python\nPrimero, carguemos los datos que están en el archivo “Viscosity.xlsx”.\n\nviscosity_data = pd.read_excel(\"Viscosity.xlsx\")\nviscosity_data.head()\n\n\n\n\n\n\n\n\nMuestra\nViscosidad\n\n\n\n\n0\n1\n495\n\n\n1\n2\n491\n\n\n2\n3\n501\n\n\n3\n4\n501\n\n\n4\n5\n512"
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#gráfica-np",
@@ -1386,7 +1386,7 @@
     "href": "Modulo_3/Graficas.slides.html#section-4",
     "title": "Gráficas de Control",
     "section": "",
-    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+    "text": "Y para mostrar los límites de control de la gráfica \\(R\\), usamos los siguientes comandos:\n\nprint(\"\\nR chart\")\nprint(\"Center line:\", summary[\"r_center\"].iloc[0])\nprint(\"LCL:\", summary[\"r_lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"r_ucl\"].iloc[0])\n\n\nR chart\nCenter line: 2.25\nLCL: 0.0\nUCL: 5.791499999999999"
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#preguntas-de-práctica-para-examen",
@@ -1400,7 +1400,7 @@
     "href": "Modulo_3/Graficas.slides.html#section-5",
     "title": "Gráficas de Control",
     "section": "",
-    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
+    "text": "Para construir la gráfica de control para valores indidivuales, usamos las función imr_chart() del conjunto de funciones en shewhart_charts.\n\nresult = imr_chart(data = viscosity_data, value_col = 'Viscosidad', \n                   figsize=(9, 7))\nplt.show()\n\nEn la función, tenemos que\n\ndata: es el objeto de Python que contiene los datos.\nvalue_col: Indica la columna que contiene las observaciones.\n\nEl comando plt.show() imprime solo la gráfica."
   },
   {
     "objectID": "Modulo_3/Monitoreo.slides.html#agenda",
@@ -2339,5 +2339,89 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control-en-python-1",
+    "href": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control-en-python-1",
+    "title": "Gráficas de Control",
+    "section": "Construyendo gráficas de control en Python",
+    "text": "Construyendo gráficas de control en Python\nPara construir la gráfica \\(\\bar{X}\\) y \\(R\\) usamos las función xbar_r_chart() del conjunto de funciones en shewhart_charts.\n\nxbar_r_chart(pull_data, value_col = 'Fuerza', group_col = 'Subgrupo', \n             figsize=(12, 8))\nplt.show()"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-2",
+    "href": "Modulo_3/Graficas.slides.html#section-2",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Para construir la gráfica \\(\\bar{X}\\) y \\(R\\) usamos las función xbar_r_chart() del conjunto de funciones en shewhart_charts.\n\nresult = xbar_r_chart(data = pull_data, value_col = 'Fuerza', \n                      group_col = 'Subgrupo', figsize=(9, 7))\nplt.show()\n\nEn la función, tenemos que\n\ndata: es el objeto de Python que contiene los datos.\nvalue_col: Indica la columna que contiene las observaciones.\ngroup_col: Indica la columna que contiene los subgrupos.\n\nEl comando plt.show() imprime solo la gráfica."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control",
+    "href": "Modulo_3/Graficas.slides.html#construyendo-gráficas-de-control",
+    "title": "Gráficas de Control",
+    "section": "Construyendo gráficas de control",
+    "text": "Construyendo gráficas de control\nCarguemos los datos que están en el archivo “Pull_Strength.xlsx”\n\npull_data = pd.read_excel(\"Pull_Strength.xlsx\")\npull_data.head()\n\n\n\n\n\n\n\n\nSubgrupo\nFuerza\n\n\n\n\n0\n1\n15.4\n\n\n1\n1\n15.6\n\n\n2\n1\n15.3\n\n\n3\n2\n15.4\n\n\n4\n2\n17.1"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-6",
+    "href": "Modulo_3/Graficas.slides.html#section-6",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control",
+    "href": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control",
+    "title": "Gráficas de Control",
+    "section": "Mostrando los límites de control",
+    "text": "Mostrando los límites de control\n\nPara mostrar los límites de control de la gráfica \\(\\bar{X}\\), usamos los siguientes comandos:\n\nsummary = result[\"summary\"]\n\nprint(\"X-bar chart\")\nprint(\"Center line:\", summary[\"xbar_center\"].iloc[0])\nprint(\"LCL:\", summary[\"xbar_lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"xbar_ucl\"].iloc[0])\n\nX-bar chart\nCenter line: 15.093333333333334\nLCL: 12.791583333333334\nUCL: 17.395083333333332"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-7",
+    "href": "Modulo_3/Graficas.slides.html#section-7",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Y para mostrar los límites de control de la gráfica individual para rangos, usamos los siguientes comandos:\n\nprint(\"\\nMoving range chart\")\nprint(\"Center line:\", summary[\"mr_center\"].iloc[0])\nprint(\"LCL:\", summary[\"mr_lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"mr_ucl\"].iloc[0])\n\n\nMoving range chart\nCenter line: 19.36842105263158\nLCL: 0\nUCL: 63.27663157894737"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#cuidado-1",
+    "href": "Modulo_3/Graficas.slides.html#cuidado-1",
+    "title": "Gráficas de Control",
+    "section": "Cuidado!",
+    "text": "Cuidado!\nLa variable Muestra es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\nviscosity_data['Muestra'] = pd.Categorical(viscosity_data['Muestra'])\n\nVeamos el resultado:\n\nviscosity_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 20 entries, 0 to 19\nData columns (total 2 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   Muestra     20 non-null     category\n 1   Viscosidad  20 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 1.0 KB"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-1",
+    "href": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-1",
+    "title": "Gráficas de Control",
+    "section": "Mostrando los límites de control",
+    "text": "Mostrando los límites de control\n\nPara mostrar los límites de control de la gráfica individual para promedios, usamos los siguientes comandos:\n\nsummary = result[\"summary\"]\n\nprint(\"Individuals chart\")\nprint(\"Center line:\", summary[\"i_center\"].iloc[0])\nprint(\"LCL:\", summary[\"i_lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"i_ucl\"].iloc[0])\n\nIndividuals chart\nCenter line: 500.6\nLCL: 449.08000000000004\nUCL: 552.12"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-8",
+    "href": "Modulo_3/Graficas.slides.html#section-8",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Hagamos una gráfica de control para mejorar la fracción de latas no conformes producidas por esta máquina.\nPara establecer el gráfico de control, se seleccionaron 30 muestras de \\(n\\) = 50 latas cada una a intervalos de media hora durante un período de tres turnos en los que la máquina estuvo en funcionamiento continuo.\nLos datos están en el archivo de excel “Juice.xlsx”."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#en-python-2",
+    "href": "Modulo_3/Graficas.slides.html#en-python-2",
+    "title": "Gráficas de Control",
+    "section": "En Python",
+    "text": "En Python"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-9",
+    "href": "Modulo_3/Graficas.slides.html#section-9",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-10",
+    "href": "Modulo_3/Graficas.slides.html#section-10",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
   }
 ]

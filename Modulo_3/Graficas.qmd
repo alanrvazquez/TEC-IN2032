@@ -38,10 +38,10 @@ Antes de empezar, carguemos las librerías que usaremos hoy.
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy.stats import ttest_1samp, ttest_ind
+from shewhart_charts import *
 ```
 
-En el cógido de arriba, indicamos que utilizaremos la función `ttest_1samp()` y `ttest_ind()` de la librería **scipy.stats**.
+En el cógido de arriba, indicamos que usaremos funciones que estan contenidas en el archivo "shewhart_charts.py".
 
 # Gráficas para variables numéricas
 
@@ -135,7 +135,7 @@ Los elementos de la gráfica $\bar{X}$ son:
 
 - El límite de control inferior es: $\bar{\bar{X}} - A_2 \bar{R}$.
 
-. . . 
+. . .
 
 Donde $A_2$ es una constante que se obtiene de tablas especiales dependiendo del tamaño del subgrupo ($n$).
 
@@ -153,7 +153,7 @@ Los elementos de la gráfica $R$ son:
 
 - El límite de control inferior es: $D_3 \bar{R}$.
 
-. . . 
+. . .
 
 Donde $D_3$ y $D_4$ son constantes que se obtienen de tablas especiales y dependen del tamaño del subgrupo ($n$). Estas constantes aseguran que los límites tengan propiedades deseables.
 
@@ -185,7 +185,7 @@ A)  Construye las gráficas $\bar{X}$ y $R$.
 
 B)  Encuentra los puntos que están fuera de control.
 
-## Construyendo gráficas de control en Python
+## Construyendo gráficas de control
 
 Carguemos los datos que están en el archivo "Pull_Strength.xlsx"
 
@@ -218,6 +218,74 @@ pull_data.info()
 ```
 
 ## 
+
+Para construir la gráfica $\bar{X}$ y $R$ usamos las función `xbar_r_chart()` del conjunto de funciones en `shewhart_charts`.
+
+```{python}
+#| echo: true
+#| output: false
+
+result = xbar_r_chart(data = pull_data, value_col = 'Fuerza', 
+                      group_col = 'Subgrupo', figsize=(9, 7))
+plt.show()
+```
+
+En la función, tenemos que
+
+- `data`: es el objeto de Python que contiene los datos.
+- `value_col`: Indica la columna que contiene las observaciones.
+- `group_col`: Indica la columna que contiene los subgrupos.
+
+El comando `plt.show()` imprime solo la gráfica.
+
+## 
+
+
+```{python}
+#| echo: false
+#| output: true
+#| fig-align: center
+
+result = xbar_r_chart(pull_data, value_col = 'Fuerza', 
+                     group_col = 'Subgrupo', figsize=(9, 7))
+plt.show()
+```
+
+## Mostrando los límites de control
+
+</br>
+
+Para mostrar los límites de control de la gráfica $\bar{X}$, usamos los siguientes comandos:
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+summary = result["summary"]
+
+print("X-bar chart")
+print("Center line:", summary["xbar_center"].iloc[0])
+print("LCL:", summary["xbar_lcl"].iloc[0])
+print("UCL:", summary["xbar_ucl"].iloc[0])
+```
+
+## 
+
+</br></br>
+
+Y para mostrar los límites de control de la gráfica $R$, usamos los siguientes comandos:
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+print("\nR chart")
+print("Center line:", summary["r_center"].iloc[0])
+print("LCL:", summary["r_lcl"].iloc[0])
+print("UCL:", summary["r_ucl"].iloc[0])
+```
 
 ## Evaluando la normalidad de los promedios en Python
 
@@ -287,11 +355,112 @@ Donde el 0 y 3.267 son constantes que se obtienen de tablas especiales.
 
 </br></br>
 
-La viscosidad de un producto químico se mide cada hora. Veinte muestras cada una de tamaño 1 se encuentran en el archivo “Viscosity.xlsx.”
+La viscosidad de un producto químico se mide cada hora. Veinte muestras cada una de tamaño 1 se encuentran en el archivo “Viscosity.xlsx”.
 
 A)  Utilizando todos los datos, calcula los límites de control de observaciones individuales y gráficos de rangos móviles.
 
 B)  Encuentre las muestras que están fuera de control. Reproduce el gráfico de control sin esas muestras.
+
+## En Python
+
+Primero, carguemos los datos que están en el archivo "Viscosity.xlsx".
+
+```{python}
+#| echo: true
+#| output: true
+
+viscosity_data = pd.read_excel("Viscosity.xlsx")
+viscosity_data.head()
+```
+
+## Cuidado!
+
+La variable `Muestra` es [**categorica**]{style="color: red"}! Entonces, debemos de informar a Python sobre esto usando la función `pd.Categorical()`.
+
+```{python}
+#| echo: true
+#| output: true
+
+viscosity_data['Muestra'] = pd.Categorical(viscosity_data['Muestra'])
+```
+
+Veamos el resultado:
+
+```{python}
+#| echo: true
+#| output: true
+
+viscosity_data.info()
+```
+
+## 
+
+Para construir la gráfica de control para valores indidivuales, usamos las función `imr_chart()` del conjunto de funciones en `shewhart_charts`.
+
+```{python}
+#| echo: true
+#| output: false
+
+result = imr_chart(data = viscosity_data, value_col = 'Viscosidad', 
+                   figsize=(9, 7))
+plt.show()
+```
+
+En la función, tenemos que
+
+- `data`: es el objeto de Python que contiene los datos.
+- `value_col`: Indica la columna que contiene las observaciones.
+
+El comando `plt.show()` imprime solo la gráfica.
+
+## 
+
+
+```{python}
+#| echo: false
+#| output: true
+#| fig-align: center
+
+result = imr_chart(data = viscosity_data, value_col = 'Viscosidad', 
+                   figsize=(9, 7))
+plt.show()
+```
+
+## Mostrando los límites de control
+
+</br>
+
+Para mostrar los límites de control de la gráfica individual para promedios, usamos los siguientes comandos:
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+summary = result["summary"]
+
+print("Individuals chart")
+print("Center line:", summary["i_center"].iloc[0])
+print("LCL:", summary["i_lcl"].iloc[0])
+print("UCL:", summary["i_ucl"].iloc[0])
+```
+
+## 
+
+</br></br>
+
+Y para mostrar los límites de control de la gráfica individual para rangos, usamos los siguientes comandos:
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+print("\nMoving range chart")
+print("Center line:", summary["mr_center"].iloc[0])
+print("LCL:", summary["mr_lcl"].iloc[0])
+print("UCL:", summary["mr_ucl"].iloc[0])
+```
 
 ## Western Electric Rules
 
