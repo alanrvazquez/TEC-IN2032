@@ -240,7 +240,6 @@ El comando `plt.show()` imprime solo la gráfica.
 
 ## 
 
-
 ```{python}
 #| echo: false
 #| output: true
@@ -373,7 +372,7 @@ viscosity_data = pd.read_excel("Viscosity.xlsx")
 viscosity_data.head()
 ```
 
-## Cuidado!
+## Recuerda
 
 La variable `Muestra` es [**categorica**]{style="color: red"}! Entonces, debemos de informar a Python sobre esto usando la función `pd.Categorical()`.
 
@@ -414,7 +413,6 @@ En la función, tenemos que
 El comando `plt.show()` imprime solo la gráfica.
 
 ## 
-
 
 ```{python}
 #| echo: false
@@ -484,6 +482,8 @@ Ten cuidado al interpretar la gráfica $R$ individual porque los rangos móviles
 
 Las gráficas de valores individuales son mucho mejores para detectar cambios grandes. Para detectar cambios pequeños, la gráfica de *control de suma acumulada* es una mejor opción.
 
+# Gráficas para Variables Discretas
+
 ## Gráficas para variables categóricas
 
 Las gráficas de control para variables categóricas son importantes por varias razones:
@@ -514,12 +514,14 @@ El [**criterio de conformidad**]{style="color: #4682B4"} debe estar claramente d
 
 Se utiliza en las siguientes situaciones:
 
+::: {style="font-size: 95%;"}
 - Decisiones Aceptar/Rechazar con tamaño de subgrupo constante (o variable):
   - Proporción de defectuosos
   - Proporción de artículos arriba (o abajo) de un valor nominal
   - Proporción de conformidad
 - Decisiones de juicio:
   - Proporción de artículos dentro de una categoría especificada
+:::
 
 ## Notación
 
@@ -560,11 +562,76 @@ Hagamos una gráfica de control para mejorar la fracción de latas no conformes 
 
 Para establecer el gráfico de control, se seleccionaron 30 muestras de $n$ = 50 latas cada una a intervalos de media hora durante un período de tres turnos en los que la máquina estuvo en funcionamiento continuo.
 
-Los datos están en el archivo de excel “Juice.xlsx”.
+Los datos están en el archivo de excel “Jugos.xlsx”.
 
 ## En Python
 
+Carguemos los datos que están en el archivo "Jugos.xlsx"
+
+```{python}
+#| echo: true
+#| output: true
+
+juice_data = pd.read_excel("Jugos.xlsx")
+juice_data['Subgrupo'] = pd.Categorical(juice_data['Subgrupo'])
+juice_data.head()
+```
+
+
+## 
+
+Para construir la gráfica $p$, usamos las función `p_chart()` del conjunto de funciones en `shewhart_charts`.
+
+```{python}
+#| echo: true
+#| output: false
+
+result = p_chart(data = juice_data, defectives_col = 'LatasNoConformes', 
+                 n_col = 'nLatas', figsize=(9, 7))
+plt.show()
+```
+
+En la función, tenemos que
+
+- `data`: es el objeto de Python que contiene los datos.
+- `defectives_col`: Indica la columna que contiene el conteo de defectuosos.
+- `n_col`: Indica la columna que contiene el tamaño de muestra.
+
+## 
+
+```{python}
+#| echo: false
+#| output: true
+#| fig-align: center
+
+result = p_chart(data = juice_data, defectives_col = 'LatasNoConformes', 
+                      n_col = 'nLatas', figsize=(9, 7))
+plt.show()
+```
+
+## Mostrando los límites de control
+
+</br>
+
+Para mostrar los límites de control de la gráfica $p$, usamos los siguientes comandos:
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+summary = result["summary"]
+
+print("p-chart")
+print("Center line:", summary["center"].iloc[0])
+print("LCL:", summary["lcl"].iloc[0])
+print("UCL:", summary["ucl"].iloc[0])
+```
+
+
 ## Gráfica *np*
+
+</br>
 
 ::: {style="text-align: center;"}
 **Evalúa el número de unidades defectuosas**
@@ -579,6 +646,52 @@ Los elementos de la gráfica *np* son:
 - El límite de control inferior es: $n\bar{p} - 3 \sqrt{n \bar{p} (1- \bar{p})}$.
 
 ## En Python
+
+</br></br>
+
+Para construir la gráfica $np$, usamos las función `np_chart()` del conjunto de funciones en `shewhart_charts`.
+
+```{python}
+#| echo: true
+#| output: false
+
+result = np_chart(data = juice_data, defectives_col = 'LatasNoConformes', 
+                 n_col = 'nLatas', figsize=(9, 7))
+plt.show()
+```
+
+Los argumentos son los mismos que la gráfica $p$.
+
+## 
+
+```{python}
+#| echo: false
+#| output: true
+#| fig-align: center
+
+result = np_chart(data = juice_data, defectives_col = 'LatasNoConformes', 
+                      n_col = 'nLatas', figsize=(9, 7))
+plt.show()
+```
+
+## Mostrando los límites de control
+
+</br>
+
+Para mostrar los límites de control de la gráfica $np$, usamos los siguientes comandos:
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+summary = result["summary"]
+
+print("np-chart")
+print("Center line:", summary["center"].iloc[0])
+print("LCL:", summary["lcl"].iloc[0])
+print("UCL:", summary["ucl"].iloc[0])
+```
 
 ## Gráfica *p* contra Gráfica *np*
 
@@ -608,20 +721,6 @@ Los elementos de la gráfica *np* son:
 
 - Representa directamente el número de unidades no conformes en cada muestra.
 
-## Preguntas de práctica para examen
-
-</br>
-
-Cierto tipo de circuito integrado está conectado a su estructura mediante cinco cables.
-
-Se tomaron treinta muestras de cinco unidades cada una y se midió la fuerza de tracción (en gramos) de un cable en cada unidad.
-
-Los datos se presentan en el archivo “Cables_Circuito.xlsx” en Canvas.
-
-1.  Crea la gráfica de control de promedios-rangos.
-
-2.  ¿Está el proceso bajo control?
-
 ## 
 
 Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.
@@ -641,5 +740,20 @@ Las gráficas que hemos visto en esta sección se conocen como gráficas de fase
 ![](images/clipboard-2431984438.png){fig-align="center"}
 :::
 ::::::
+
+## Preguntas de práctica para examen
+
+</br>
+
+Cierto tipo de circuito integrado está conectado a su estructura mediante cinco cables.
+
+Se tomaron treinta muestras de cinco unidades cada una y se midió la fuerza de tracción (en gramos) de un cable en cada unidad.
+
+Los datos se presentan en el archivo “Cables_Circuito.xlsx” en Canvas.
+
+1.  Crea la gráfica de control de promedios-rangos.
+
+2.  ¿Está el proceso bajo control?
+
 
 # [Return to main page](https://alanrvazquez.github.io/TEC-IN2032/)
