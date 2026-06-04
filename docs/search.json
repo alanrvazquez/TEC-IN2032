@@ -1263,11 +1263,25 @@
     "text": "Y para mostrar los límites de control de la gráfica \\(R\\), usamos los siguientes comandos:\n\nprint(\"\\nR chart\")\nprint(\"Center line:\", summary[\"r_center\"].iloc[0])\nprint(\"LCL:\", summary[\"r_lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"r_ucl\"].iloc[0])\n\n\nR chart\nCenter line: 2.25\nLCL: 0.0\nUCL: 5.791499999999999"
   },
   {
-    "objectID": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad-de-los-promedios-en-python",
-    "href": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad-de-los-promedios-en-python",
+    "objectID": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad",
+    "href": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad",
     "title": "Gráficas de Control",
-    "section": "Evaluando la normalidad de los promedios en Python",
-    "text": "Evaluando la normalidad de los promedios en Python\nRecuerda que, para usar las gráficas y los promedios de los subgrupos deben de seguir una distribución normal. Para evaluar esto, primero calculamos los promedios por subgrupo usando la función .groupby() de pandas.\n\naverage_pull = (pull_data\n                .groupby(['Subgrupo'])\n                .agg('mean')\n                )\naverage_pull.head()\n\n\n\n\n\n\n\n\nFuerza\n\n\nSubgrupo\n\n\n\n\n\n1\n15.433333\n\n\n2\n15.900000\n\n\n3\n15.233333\n\n\n4\n12.066667\n\n\n5\n17.133333\n\n\n\n\n\n\n\nLa función .groupby() agrupa las observaciones de acuerdo a una variable."
+    "section": "Evaluando la normalidad",
+    "text": "Evaluando la normalidad\n\nRecuerda que, para usar las gráficas y los promedios de los subgrupos deben de seguir una distribución normal. Para evaluar esto, primero calculamos los promedios por subgrupo usando la función .groupby() de pandas.\n\naverage_pull = (pull_data\n                .groupby(['Subgrupo'])\n                .agg('mean')\n                )\n\nLa función .groupby() agrupa las observaciones de acuerdo a una variable."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-5",
+    "href": "Modulo_3/Graficas.slides.html#section-5",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "average_pull.head()\n\n\n\n\n\n\n\n\nFuerza\n\n\nSubgrupo\n\n\n\n\n\n1\n15.433333\n\n\n2\n15.900000\n\n\n3\n15.233333\n\n\n4\n12.066667\n\n\n5\n17.133333"
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#prueba-de-shapiro-wilk-in-python",
+    "href": "Modulo_3/Graficas.slides.html#prueba-de-shapiro-wilk-in-python",
+    "title": "Gráficas de Control",
+    "section": "Prueba de Shapiro-Wilk in Python",
+    "text": "Prueba de Shapiro-Wilk in Python\n\nPara probar normalidad en Python, usamos la función shapiro() de la librería scipy.stats.\n\nResultShapiro = shapiro(average_pull)\n\nprint(f\"P-value: {ResultShapiro.pvalue:.4f}\")\n\nP-value: 0.7021\n\n\n\nComo el valor p no es menor que 0.05, no rechazamos \\(H_0\\). Por tanto, los promedios siguen una distribución normal."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#gráfica-de-valores-individuales",
@@ -1326,11 +1340,11 @@
     "text": "Recuerda\nLa variable Muestra es categorica! Entonces, debemos de informar a Python sobre esto usando la función pd.Categorical().\n\nviscosity_data['Muestra'] = pd.Categorical(viscosity_data['Muestra'])\n\nVeamos el resultado:\n\nviscosity_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 20 entries, 0 to 19\nData columns (total 2 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   Muestra     20 non-null     category\n 1   Viscosidad  20 non-null     int64   \ndtypes: category(1), int64(1)\nmemory usage: 1.0 KB"
   },
   {
-    "objectID": "Modulo_3/Graficas.slides.html#section-5",
-    "href": "Modulo_3/Graficas.slides.html#section-5",
+    "objectID": "Modulo_3/Graficas.slides.html#section-6",
+    "href": "Modulo_3/Graficas.slides.html#section-6",
     "title": "Gráficas de Control",
     "section": "",
-    "text": "average_pull.head()\n\n\n\n\n\n\n\n\nFuerza\n\n\nSubgrupo\n\n\n\n\n\n1\n15.433333\n\n\n2\n15.900000\n\n\n3\n15.233333\n\n\n4\n12.066667\n\n\n5\n17.133333"
+    "text": "Para construir la gráfica de control para valores indidivuales, usamos las función imr_chart() del conjunto de funciones en shewhart_charts.\n\nresult = imr_chart(data = viscosity_data, value_col = 'Viscosidad', \n                   figsize=(9, 7))\nplt.show()\n\nEn la función, tenemos que\n\ndata: es el objeto de Python que contiene los datos.\nvalue_col: Indica la columna que contiene las observaciones.\n\nEl comando plt.show() imprime solo la gráfica."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-1",
@@ -1340,8 +1354,8 @@
     "text": "Mostrando los límites de control\n\nPara mostrar los límites de control de la gráfica individual para promedios, usamos los siguientes comandos:\n\nsummary = result[\"summary\"]\n\nprint(\"Individuals chart\")\nprint(\"Center line:\", summary[\"i_center\"].iloc[0])\nprint(\"LCL:\", summary[\"i_lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"i_ucl\"].iloc[0])\n\nIndividuals chart\nCenter line: 500.6\nLCL: 449.08000000000004\nUCL: 552.12"
   },
   {
-    "objectID": "Modulo_3/Graficas.slides.html#section-7",
-    "href": "Modulo_3/Graficas.slides.html#section-7",
+    "objectID": "Modulo_3/Graficas.slides.html#section-8",
+    "href": "Modulo_3/Graficas.slides.html#section-8",
     "title": "Gráficas de Control",
     "section": "",
     "text": "Y para mostrar los límites de control de la gráfica individual para rangos, usamos los siguientes comandos:\n\nprint(\"\\nMoving range chart\")\nprint(\"Center line:\", summary[\"mr_center\"].iloc[0])\nprint(\"LCL:\", summary[\"mr_lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"mr_ucl\"].iloc[0])\n\n\nMoving range chart\nCenter line: 19.36842105263158\nLCL: 0\nUCL: 63.27663157894737"
@@ -1403,11 +1417,11 @@
     "text": "Ejemplo 3\n\nEl concentrado de jugo de naranja congelado se presenta en latas de cartón de 6 onzas.\nEstas latas se forman en una máquina girándolas a partir de cartón y colocándoles un panel inferior de metal.\nAl inspeccionar una lata, podemos determinar si, cuando está llena, podría tener fugas en la costura lateral o alrededor de la junta inferior.\nTal lata no conforme tiene un sello inadecuado ya sea en la costura lateral o en el panel inferior."
   },
   {
-    "objectID": "Modulo_3/Graficas.slides.html#section-8",
-    "href": "Modulo_3/Graficas.slides.html#section-8",
+    "objectID": "Modulo_3/Graficas.slides.html#section-9",
+    "href": "Modulo_3/Graficas.slides.html#section-9",
     "title": "Gráficas de Control",
     "section": "",
-    "text": "Y para mostrar los límites de control de la gráfica individual para rangos, usamos los siguientes comandos:\n\nprint(\"\\nMoving range chart\")\nprint(\"Center line:\", summary[\"mr_center\"].iloc[0])\nprint(\"LCL:\", summary[\"mr_lcl\"].iloc[0])\nprint(\"UCL:\", summary[\"mr_ucl\"].iloc[0])\n\n\nMoving range chart\nCenter line: 19.36842105263158\nLCL: 0\nUCL: 63.27663157894737"
+    "text": "Hagamos una gráfica de control para mejorar la fracción de latas no conformes producidas por esta máquina.\nPara establecer el gráfico de control, se seleccionaron 30 muestras de \\(n\\) = 50 latas cada una a intervalos de media hora durante un período de tres turnos en los que la máquina estuvo en funcionamiento continuo.\nLos datos están en el archivo de excel “Jugos.xlsx”."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#en-python-1",
@@ -1417,11 +1431,11 @@
     "text": "En Python\nCarguemos los datos que están en el archivo “Jugos.xlsx”\n\njuice_data = pd.read_excel(\"Jugos.xlsx\")\njuice_data['Subgrupo'] = pd.Categorical(juice_data['Subgrupo'])\njuice_data.head()\n\n\n\n\n\n\n\n\nSubgrupo\nLatasNoConformes\nnLatas\n\n\n\n\n0\n1\n12\n50\n\n\n1\n2\n15\n50\n\n\n2\n3\n8\n50\n\n\n3\n4\n10\n50\n\n\n4\n5\n4\n50"
   },
   {
-    "objectID": "Modulo_3/Graficas.slides.html#section-9",
-    "href": "Modulo_3/Graficas.slides.html#section-9",
+    "objectID": "Modulo_3/Graficas.slides.html#section-10",
+    "href": "Modulo_3/Graficas.slides.html#section-10",
     "title": "Gráficas de Control",
     "section": "",
-    "text": "Hagamos una gráfica de control para mejorar la fracción de latas no conformes producidas por esta máquina.\nPara establecer el gráfico de control, se seleccionaron 30 muestras de \\(n\\) = 50 latas cada una a intervalos de media hora durante un período de tres turnos en los que la máquina estuvo en funcionamiento continuo.\nLos datos están en el archivo de excel “Jugos.xlsx”."
+    "text": "Para construir la gráfica \\(p\\), usamos las función p_chart() del conjunto de funciones en shewhart_charts.\n\nresult = p_chart(data = juice_data, defectives_col = 'LatasNoConformes', \n                 n_col = 'nLatas', figsize=(9, 7))\nplt.show()\n\nEn la función, tenemos que\n\ndata: es el objeto de Python que contiene los datos.\ndefectives_col: Indica la columna que contiene el conteo de defectuosos.\nn_col: Indica la columna que contiene el tamaño de muestra."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#mostrando-los-límites-de-control-2",
@@ -1459,18 +1473,18 @@
     "text": "Gráfica p contra Gráfica np\n\nGráfica p:\n\nLa gráfica p se utiliza cuando el tamaño de la muestra varía de subgrupo a subgrupo.\nMonitorea la proporción de unidades no conformes en una muestra.\nEs útil cuando el tamaño de la muestra es relativamente pequeño y variable.\nSe calcula como el número de unidades no conformes dividido por el tamaño de la muestra."
   },
   {
-    "objectID": "Modulo_3/Graficas.slides.html#section-12",
-    "href": "Modulo_3/Graficas.slides.html#section-12",
-    "title": "Gráficas de Control",
-    "section": "",
-    "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
-  },
-  {
     "objectID": "Modulo_3/Graficas.slides.html#section-13",
     "href": "Modulo_3/Graficas.slides.html#section-13",
     "title": "Gráficas de Control",
     "section": "",
     "text": "Gráfica np:\n\nLa gráfica np se utiliza cuando el tamaño de la muestra permanece constante de subgrupo a subgrupo.\nMonitorea el número de unidades no conformes en una muestra, en lugar de la proporción.\nSe usa cuando el tamaño de la muestra es constante y relativamente grande.\nRepresenta directamente el número de unidades no conformes en cada muestra."
+  },
+  {
+    "objectID": "Modulo_3/Graficas.slides.html#section-14",
+    "href": "Modulo_3/Graficas.slides.html#section-14",
+    "title": "Gráficas de Control",
+    "section": "",
+    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#preguntas-de-práctica-para-examen",
@@ -2416,40 +2430,5 @@
     "title": "Distribuciones Discretas de Probabilidad",
     "section": "Pregunta de práctica para examen",
     "text": "Pregunta de práctica para examen\n\nSe disparan seis misiles contra un objetivo determinado. La probabilidad de que un misil alcance el objetivo es del 75%.\n¿Cuál es la probabilidad de que de los seis misiles disparados (a) exactamente cinco den en el blanco, (b) al menos tres darán en el blanco, (c) ¿los seis darán en el blanco?"
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#prueba-de-shapiro-wilk-in-python",
-    "href": "Modulo_3/Graficas.slides.html#prueba-de-shapiro-wilk-in-python",
-    "title": "Gráficas de Control",
-    "section": "Prueba de Shapiro-Wilk in Python",
-    "text": "Prueba de Shapiro-Wilk in Python\n\nPara probar normalidad en Python, usamos la función shapiro() de la librería scipy.stats.\n\nResultShapiro = shapiro(average_pull)\n\nprint(f\"P-value: {ResultShapiro.pvalue:.4f}\")\n\nP-value: 0.7021\n\n\n\nComo el valor p no es menor que 0.05, no rechazamos \\(H_0\\). Por tanto, los promedios siguen una distribución normal."
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad",
-    "href": "Modulo_3/Graficas.slides.html#evaluando-la-normalidad",
-    "title": "Gráficas de Control",
-    "section": "Evaluando la normalidad",
-    "text": "Evaluando la normalidad\n\nRecuerda que, para usar las gráficas y los promedios de los subgrupos deben de seguir una distribución normal. Para evaluar esto, primero calculamos los promedios por subgrupo usando la función .groupby() de pandas.\n\naverage_pull = (pull_data\n                .groupby(['Subgrupo'])\n                .agg('mean')\n                )\n\nLa función .groupby() agrupa las observaciones de acuerdo a una variable."
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#section-6",
-    "href": "Modulo_3/Graficas.slides.html#section-6",
-    "title": "Gráficas de Control",
-    "section": "",
-    "text": "Para construir la gráfica de control para valores indidivuales, usamos las función imr_chart() del conjunto de funciones en shewhart_charts.\n\nresult = imr_chart(data = viscosity_data, value_col = 'Viscosidad', \n                   figsize=(9, 7))\nplt.show()\n\nEn la función, tenemos que\n\ndata: es el objeto de Python que contiene los datos.\nvalue_col: Indica la columna que contiene las observaciones.\n\nEl comando plt.show() imprime solo la gráfica."
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#section-10",
-    "href": "Modulo_3/Graficas.slides.html#section-10",
-    "title": "Gráficas de Control",
-    "section": "",
-    "text": "Para construir la gráfica \\(p\\), usamos las función p_chart() del conjunto de funciones en shewhart_charts.\n\nresult = p_chart(data = juice_data, defectives_col = 'LatasNoConformes', \n                 n_col = 'nLatas', figsize=(9, 7))\nplt.show()\n\nEn la función, tenemos que\n\ndata: es el objeto de Python que contiene los datos.\ndefectives_col: Indica la columna que contiene el conteo de defectuosos.\nn_col: Indica la columna que contiene el tamaño de muestra."
-  },
-  {
-    "objectID": "Modulo_3/Graficas.slides.html#section-14",
-    "href": "Modulo_3/Graficas.slides.html#section-14",
-    "title": "Gráficas de Control",
-    "section": "",
-    "text": "Las gráficas que hemos visto en esta sección se conocen como gráficas de fase 1.\n\n\n\nGráficas de Fase 1 se usan para el análisis inicial del proceso. Su objetivo es evaluar la estabilidad del proceso determinando si está en un estado de control estadístico, es decir, si está operando consistentemente a lo largo del tiempo.\nGráficas de Fase 2 emplea después de que un proceso ha sido establecido como estable en la Fase I. Sirve para monitorear el rendimiento continuo del proceso y asegurarse de que permanezca en un estado de control estadístico, además de detectar cambios o desviaciones que puedan ocurrir con el tiempo."
   }
 ]
