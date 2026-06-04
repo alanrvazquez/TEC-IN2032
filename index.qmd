@@ -24,7 +24,7 @@ author:
 ### Módulo 3
 
 1.  Introducción al Monitoreo de Procesos ([slides](/Modulo_3/Monitoreo.slides.html))
-2.  Gráficas de Control ([slides](/Modulo_3/Graficas.slides.html)) ([colab](https://colab.research.google.com/drive/1EXvzTWwlkOJ15o5R6LhKVli2ToIVnqQW?usp=sharing))
+2.  Gráficas de Control ([slides](/Modulo_3/Graficas.slides.html)) ([colab](https://colab.research.google.com/drive/1EXvzTWwlkOJ15o5R6LhKVli2ToIVnqQW?usp=sharing)) ([shewhart_charts.py](https://github.com/alanrvazquez/TEC-IN2032/blob/main/Modulo_3/shewhart_charts.py))
 
 ## About the author
 
