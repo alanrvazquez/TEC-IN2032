@@ -38,6 +38,7 @@ Antes de empezar, carguemos las librerías que usaremos hoy.
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy.stats import shapiro
 from shewhart_charts import *
 ```
 
@@ -286,7 +287,60 @@ print("LCL:", summary["r_lcl"].iloc[0])
 print("UCL:", summary["r_ucl"].iloc[0])
 ```
 
-## Evaluando la normalidad de los promedios en Python
+## Evaluando la normalidad 
+
+</br>
+
+Recuerda que, para usar las gráficas y los promedios de los subgrupos
+deben de seguir una distribución normal. Para evaluar esto, primero calculamos
+los promedios por subgrupo usando la función `.groupby()` de **pandas**. 
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+average_pull = (pull_data
+                .groupby(['Subgrupo'])
+                .agg('mean')
+                )
+```
+
+La función `.groupby()` agrupa las observaciones de acuerdo a una variable.
+
+## 
+
+</br>
+
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+average_pull.head()
+```
+
+
+## Prueba de Shapiro-Wilk in Python
+
+</br>
+
+Para probar normalidad en Python, usamos la función `shapiro()` de la librería **scipy.stats**.
+
+```{python}
+#| echo: true
+#| output: true
+#| fig-align: center
+
+ResultShapiro = shapiro(average_pull)
+
+print(f"P-value: {ResultShapiro.pvalue:.4f}")
+```
+
+</br>
+
+[*Como el valor p no es menor que 0.05, no rechazamos $H_0$. Por tanto, los promedios siguen una distribución normal.*]{style="color: darkred"}
 
 ## Gráfica de valores individuales
 
@@ -577,7 +631,6 @@ juice_data['Subgrupo'] = pd.Categorical(juice_data['Subgrupo'])
 juice_data.head()
 ```
 
-
 ## 
 
 Para construir la gráfica $p$, usamos las función `p_chart()` del conjunto de funciones en `shewhart_charts`.
@@ -627,7 +680,6 @@ print("Center line:", summary["center"].iloc[0])
 print("LCL:", summary["lcl"].iloc[0])
 print("UCL:", summary["ucl"].iloc[0])
 ```
-
 
 ## Gráfica *np*
 
@@ -754,6 +806,5 @@ Los datos se presentan en el archivo “Cables_Circuito.xlsx” en Canvas.
 1.  Crea la gráfica de control de promedios-rangos.
 
 2.  ¿Está el proceso bajo control?
-
 
 # [Return to main page](https://alanrvazquez.github.io/TEC-IN2032/)
