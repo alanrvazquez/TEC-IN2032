@@ -227,7 +227,7 @@ El plan de muestreo de estos subgrupos tiene los siguientes elementos:
 ::::
 
 ::: notes
-Si es costoso hace mediciones o si el proceso tiene materiales caros, entonces el tamaño del subgrupo es pequeño, 1, por ejemplo. De lo contratrio, puede ser grande. 
+Si es costoso hace mediciones o si el proceso tiene materiales caros, entonces el tamaño del subgrupo es pequeño, 1, por ejemplo. De lo contratrio, puede ser grande.
 :::
 
 ## Creación de subgrupos racionales

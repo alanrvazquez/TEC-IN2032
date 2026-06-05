@@ -1302,7 +1302,7 @@
     "href": "Modulo_3/Graficas.slides.html#rango-móvil",
     "title": "Gráficas de Control",
     "section": "Rango móvil",
-    "text": "Rango móvil\n\nLa gráfica de mediciones individuales usa el rango móvil de dos observaciones sucesivas para estimar la variabilidad del proceso.\nEl rango móvil del i-ésimo grupo se define como \\(MR_i = |x_i - x_{i-1}|\\). Es decir, la diferencia absoluta entre la observación actual y la anterior.\nEl rango móvil promedio es \\(\\bar{MR} = \\frac{MR_1 + MR_2 + \\cdots + MR_{k-1}}{k - 1}\\)."
+    "text": "Rango móvil\n\nLa gráfica de mediciones individuales usa el rango móvil de dos observaciones sucesivas para estimar la variabilidad del proceso.\nEl rango móvil del i-ésimo grupo se define como \\(MR_i = |x_i - x_{i-1}|\\). Es decir, la diferencia absoluta entre la observación actual y la anterior.\nEl rango móvil promedio es \\(\\bar{MR} = \\frac{MR_2 + MR_3 + \\cdots + MR_{k}}{k - 1}\\)."
   },
   {
     "objectID": "Modulo_3/Graficas.slides.html#gráfica-barx-versión-individual",

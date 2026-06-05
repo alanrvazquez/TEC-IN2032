@@ -228,7 +228,7 @@ Alan R. Vazquez
 <h2>Carguemos las librerías</h2>
 <p><br><br><br></p>
 <p>Antes de empezar, carguemos las librerías que usaremos hoy.</p>
-<div id="53994916" class="cell" data-execution_count="1">
+<div id="ad5e042b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -413,7 +413,7 @@ Alan R. Vazquez
 <section id="construyendo-gráficas-de-control" class="slide level2">
 <h2>Construyendo gráficas de control</h2>
 <p>Carguemos los datos que están en el archivo “Pull_Strength.xlsx”</p>
-<div id="2d085e41" class="cell" data-execution_count="2">
+<div id="a166ad8e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>pull_data <span class="op">=</span> pd.read_excel(<span class="st">"Pull_Strength.xlsx"</span>)</span>
 <span id="cb2-2"><a></a>pull_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -476,11 +476,11 @@ Alan R. Vazquez
 <section id="cuidado" class="slide level2">
 <h2>Cuidado!</h2>
 <p>La variable <code>Subgrupo</code> es <span style="color: red"><strong>categorica</strong></span>! Entonces, debemos de informar a Python sobre esto usando la función <code>pd.Categorical()</code>.</p>
-<div id="96099c2d" class="cell" data-execution_count="3">
+<div id="e759aa13" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>pull_data[<span class="st">'Subgrupo'</span>] <span class="op">=</span> pd.Categorical(pull_data[<span class="st">'Subgrupo'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Veamos el resultado:</p>
-<div id="a3043f96" class="cell" data-execution_count="4">
+<div id="cabc2523" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>pull_data.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -498,7 +498,7 @@ memory usage: 1.4 KB</code></pre>
 <section id="section-2" class="slide level2">
 <h2></h2>
 <p>Para construir la gráfica <span class="math inline">\(\bar{X}\)</span> y <span class="math inline">\(R\)</span> usamos las función <code>xbar_r_chart()</code> del conjunto de funciones en <code>shewhart_charts</code>.</p>
-<div id="db9ac77d" class="cell" data-execution_count="5">
+<div id="9efcb882" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>result <span class="op">=</span> xbar_r_chart(data <span class="op">=</span> pull_data, value_col <span class="op">=</span> <span class="st">'Fuerza'</span>, </span>
 <span id="cb6-2"><a></a>                      group_col <span class="op">=</span> <span class="st">'Subgrupo'</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">7</span>))</span>
 <span id="cb6-3"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -513,7 +513,7 @@ memory usage: 1.4 KB</code></pre>
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
-<div id="c421a512" class="cell" data-execution_count="6">
+<div id="20b411a1" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -527,7 +527,7 @@ memory usage: 1.4 KB</code></pre>
 <h2>Mostrando los límites de control</h2>
 <p><br></p>
 <p>Para mostrar los límites de control de la gráfica <span class="math inline">\(\bar{X}\)</span>, usamos los siguientes comandos:</p>
-<div id="da997c88" class="cell" data-execution_count="7">
+<div id="5abd2b0e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>summary <span class="op">=</span> result[<span class="st">"summary"</span>]</span>
 <span id="cb7-2"><a></a></span>
 <span id="cb7-3"><a></a><span class="bu">print</span>(<span class="st">"X-bar chart"</span>)</span>
@@ -546,7 +546,7 @@ UCL: 17.395083333333332</code></pre>
 <h2></h2>
 <p><br><br></p>
 <p>Y para mostrar los límites de control de la gráfica <span class="math inline">\(R\)</span>, usamos los siguientes comandos:</p>
-<div id="dc6646dd" class="cell" data-execution_count="8">
+<div id="d638c9a0" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">R chart"</span>)</span>
 <span id="cb9-2"><a></a><span class="bu">print</span>(<span class="st">"Center line:"</span>, summary[<span class="st">"r_center"</span>].iloc[<span class="dv">0</span>])</span>
 <span id="cb9-3"><a></a><span class="bu">print</span>(<span class="st">"LCL:"</span>, summary[<span class="st">"r_lcl"</span>].iloc[<span class="dv">0</span>])</span>
@@ -564,7 +564,7 @@ UCL: 5.791499999999999</code></pre>
 <h2>Evaluando la normalidad</h2>
 <p><br></p>
 <p>Recuerda que, para usar las gráficas y los promedios de los subgrupos deben de seguir una distribución normal. Para evaluar esto, primero calculamos los promedios por subgrupo usando la función <code>.groupby()</code> de <strong>pandas</strong>.</p>
-<div id="4dfd381d" class="cell" data-execution_count="9">
+<div id="722bfc3f" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>average_pull <span class="op">=</span> (pull_data</span>
 <span id="cb11-2"><a></a>                .groupby([<span class="st">'Subgrupo'</span>])</span>
 <span id="cb11-3"><a></a>                .agg(<span class="st">'mean'</span>)</span>
@@ -575,7 +575,7 @@ UCL: 5.791499999999999</code></pre>
 <section id="section-5" class="slide level2">
 <h2></h2>
 <p><br></p>
-<div id="7f8c41fd" class="cell" data-execution_count="10">
+<div id="d01e1bae" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>average_pull.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -636,7 +636,7 @@ UCL: 5.791499999999999</code></pre>
 <h2>Prueba de Shapiro-Wilk in Python</h2>
 <p><br></p>
 <p>Para probar normalidad en Python, usamos la función <code>shapiro()</code> de la librería <strong>scipy.stats</strong>.</p>
-<div id="c8054855" class="cell" data-execution_count="11">
+<div id="1ec823f6" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>ResultShapiro <span class="op">=</span> shapiro(average_pull)</span>
 <span id="cb13-2"><a></a></span>
 <span id="cb13-3"><a></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>ResultShapiro<span class="sc">.</span>pvalue<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -645,7 +645,7 @@ UCL: 5.791499999999999</code></pre>
 </div>
 </div>
 <p><br></p>
-<p><span style="color: darkred"><em>Como el valor p no es menor que 0.05, no rechazamos <span class="math inline">\(H_0\)</span>. Por tanto, los promedios siguen una distribución normal.</em></span></p>
+<p><span style="color: darkred"><em>Como el valor p no es menor que 0.05, no rechazamos</em> <span class="math inline">\(H_0\)</span>. Por tanto, los promedios siguen una distribución normal.</span></p>
 </section>
 <section id="gráfica-de-valores-individuales" class="slide level2">
 <h2>Gráfica de valores individuales</h2>
@@ -673,7 +673,7 @@ UCL: 5.791499999999999</code></pre>
 <p><br></p>
 <p>La gráfica de mediciones individuales usa el <strong>rango móvil</strong> de dos observaciones sucesivas para estimar la variabilidad del proceso.</p>
 <p>El rango móvil del i-ésimo grupo se define como <span class="math inline">\(MR_i = |x_i - x_{i-1}|\)</span>. Es decir, la diferencia absoluta entre la observación actual y la anterior.</p>
-<p>El rango móvil promedio es <span class="math inline">\(\bar{MR} = \frac{MR_1 + MR_2 + \cdots + MR_{k-1}}{k - 1}\)</span>.</p>
+<p>El rango móvil promedio es <span class="math inline">\(\bar{MR} = \frac{MR_2 + MR_3 + \cdots + MR_{k}}{k - 1}\)</span>.</p>
 </section>
 <section id="gráfica-barx-versión-individual" class="slide level2">
 <h2>Gráfica <span class="math inline">\(\bar{X}\)</span> (versión individual)</h2>
@@ -709,7 +709,7 @@ UCL: 5.791499999999999</code></pre>
 <section id="en-python" class="slide level2">
 <h2>En Python</h2>
 <p>Primero, carguemos los datos que están en el archivo “Viscosity.xlsx”.</p>
-<div id="c99b0c61" class="cell" data-execution_count="12">
+<div id="e22fe066" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>viscosity_data <span class="op">=</span> pd.read_excel(<span class="st">"Viscosity.xlsx"</span>)</span>
 <span id="cb15-2"><a></a>viscosity_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -772,11 +772,11 @@ UCL: 5.791499999999999</code></pre>
 <section id="recuerda" class="slide level2">
 <h2>Recuerda</h2>
 <p>La variable <code>Muestra</code> es <span style="color: red"><strong>categorica</strong></span>! Entonces, debemos de informar a Python sobre esto usando la función <code>pd.Categorical()</code>.</p>
-<div id="d099473b" class="cell" data-execution_count="13">
+<div id="0cf58a19" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>viscosity_data[<span class="st">'Muestra'</span>] <span class="op">=</span> pd.Categorical(viscosity_data[<span class="st">'Muestra'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Veamos el resultado:</p>
-<div id="a2a5cf0e" class="cell" data-execution_count="14">
+<div id="9c84ef10" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>viscosity_data.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -794,7 +794,7 @@ memory usage: 1.0 KB</code></pre>
 <section id="section-6" class="slide level2">
 <h2></h2>
 <p>Para construir la gráfica de control para valores indidivuales, usamos las función <code>imr_chart()</code> del conjunto de funciones en <code>shewhart_charts</code>.</p>
-<div id="393473c2" class="cell" data-execution_count="15">
+<div id="ae1ed1fe" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>result <span class="op">=</span> imr_chart(data <span class="op">=</span> viscosity_data, value_col <span class="op">=</span> <span class="st">'Viscosidad'</span>, </span>
 <span id="cb19-2"><a></a>                   figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">7</span>))</span>
 <span id="cb19-3"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -808,7 +808,7 @@ memory usage: 1.0 KB</code></pre>
 </section>
 <section id="section-7" class="slide level2">
 <h2></h2>
-<div id="7775a160" class="cell" data-execution_count="16">
+<div id="92c0fd13" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -822,7 +822,7 @@ memory usage: 1.0 KB</code></pre>
 <h2>Mostrando los límites de control</h2>
 <p><br></p>
 <p>Para mostrar los límites de control de la gráfica individual para promedios, usamos los siguientes comandos:</p>
-<div id="140486b1" class="cell" data-execution_count="17">
+<div id="307ff97c" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>summary <span class="op">=</span> result[<span class="st">"summary"</span>]</span>
 <span id="cb20-2"><a></a></span>
 <span id="cb20-3"><a></a><span class="bu">print</span>(<span class="st">"Individuals chart"</span>)</span>
@@ -841,7 +841,7 @@ UCL: 552.12</code></pre>
 <h2></h2>
 <p><br><br></p>
 <p>Y para mostrar los límites de control de la gráfica individual para rangos, usamos los siguientes comandos:</p>
-<div id="e5b641b6" class="cell" data-execution_count="18">
+<div id="4e91bd61" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Moving range chart"</span>)</span>
 <span id="cb22-2"><a></a><span class="bu">print</span>(<span class="st">"Center line:"</span>, summary[<span class="st">"mr_center"</span>].iloc[<span class="dv">0</span>])</span>
 <span id="cb22-3"><a></a><span class="bu">print</span>(<span class="st">"LCL:"</span>, summary[<span class="st">"mr_lcl"</span>].iloc[<span class="dv">0</span>])</span>
@@ -956,7 +956,7 @@ UCL: 63.27663157894737</code></pre>
 <section id="en-python-1" class="slide level2">
 <h2>En Python</h2>
 <p>Carguemos los datos que están en el archivo “Jugos.xlsx”</p>
-<div id="8c741bc6" class="cell" data-execution_count="19">
+<div id="abe2578e" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>juice_data <span class="op">=</span> pd.read_excel(<span class="st">"Jugos.xlsx"</span>)</span>
 <span id="cb24-2"><a></a>juice_data[<span class="st">'Subgrupo'</span>] <span class="op">=</span> pd.Categorical(juice_data[<span class="st">'Subgrupo'</span>])</span>
 <span id="cb24-3"><a></a>juice_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1026,7 +1026,7 @@ UCL: 63.27663157894737</code></pre>
 <section id="section-10" class="slide level2">
 <h2></h2>
 <p>Para construir la gráfica <span class="math inline">\(p\)</span>, usamos las función <code>p_chart()</code> del conjunto de funciones en <code>shewhart_charts</code>.</p>
-<div id="78e6aa9c" class="cell" data-execution_count="20">
+<div id="aa300abc" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>result <span class="op">=</span> p_chart(data <span class="op">=</span> juice_data, defectives_col <span class="op">=</span> <span class="st">'LatasNoConformes'</span>, </span>
 <span id="cb25-2"><a></a>                 n_col <span class="op">=</span> <span class="st">'nLatas'</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">7</span>))</span>
 <span id="cb25-3"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1040,7 +1040,7 @@ UCL: 63.27663157894737</code></pre>
 </section>
 <section id="section-11" class="slide level2">
 <h2></h2>
-<div id="4d20be76" class="cell" data-execution_count="21">
+<div id="54457176" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1054,7 +1054,7 @@ UCL: 63.27663157894737</code></pre>
 <h2>Mostrando los límites de control</h2>
 <p><br></p>
 <p>Para mostrar los límites de control de la gráfica <span class="math inline">\(p\)</span>, usamos los siguientes comandos:</p>
-<div id="a386e665" class="cell" data-execution_count="22">
+<div id="a9aa864c" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a>summary <span class="op">=</span> result[<span class="st">"summary"</span>]</span>
 <span id="cb26-2"><a></a></span>
 <span id="cb26-3"><a></a><span class="bu">print</span>(<span class="st">"p-chart"</span>)</span>
@@ -1087,7 +1087,7 @@ UCL: 0.41023911859473844</code></pre>
 <h2>En Python</h2>
 <p><br><br></p>
 <p>Para construir la gráfica <span class="math inline">\(np\)</span>, usamos las función <code>np_chart()</code> del conjunto de funciones en <code>shewhart_charts</code>.</p>
-<div id="b95e7a14" class="cell" data-execution_count="23">
+<div id="eab1a9a2" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a>result <span class="op">=</span> np_chart(data <span class="op">=</span> juice_data, defectives_col <span class="op">=</span> <span class="st">'LatasNoConformes'</span>, </span>
 <span id="cb28-2"><a></a>                 n_col <span class="op">=</span> <span class="st">'nLatas'</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">7</span>))</span>
 <span id="cb28-3"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1096,7 +1096,7 @@ UCL: 0.41023911859473844</code></pre>
 </section>
 <section id="section-12" class="slide level2">
 <h2></h2>
-<div id="7138e026" class="cell" data-execution_count="24">
+<div id="d143bfc3" class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1110,7 +1110,7 @@ UCL: 0.41023911859473844</code></pre>
 <h2>Mostrando los límites de control</h2>
 <p><br></p>
 <p>Para mostrar los límites de control de la gráfica <span class="math inline">\(np\)</span>, usamos los siguientes comandos:</p>
-<div id="62c207b4" class="cell" data-execution_count="25">
+<div id="1445b635" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>summary <span class="op">=</span> result[<span class="st">"summary"</span>]</span>
 <span id="cb29-2"><a></a></span>
 <span id="cb29-3"><a></a><span class="bu">print</span>(<span class="st">"np-chart"</span>)</span>

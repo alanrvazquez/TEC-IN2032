@@ -287,13 +287,11 @@ print("LCL:", summary["r_lcl"].iloc[0])
 print("UCL:", summary["r_ucl"].iloc[0])
 ```
 
-## Evaluando la normalidad 
+## Evaluando la normalidad
 
 </br>
 
-Recuerda que, para usar las gráficas y los promedios de los subgrupos
-deben de seguir una distribución normal. Para evaluar esto, primero calculamos
-los promedios por subgrupo usando la función `.groupby()` de **pandas**. 
+Recuerda que, para usar las gráficas y los promedios de los subgrupos deben de seguir una distribución normal. Para evaluar esto, primero calculamos los promedios por subgrupo usando la función `.groupby()` de **pandas**.
 
 ```{python}
 #| echo: true
@@ -312,7 +310,6 @@ La función `.groupby()` agrupa las observaciones de acuerdo a una variable.
 
 </br>
 
-
 ```{python}
 #| echo: true
 #| output: true
@@ -320,7 +317,6 @@ La función `.groupby()` agrupa las observaciones de acuerdo a una variable.
 
 average_pull.head()
 ```
-
 
 ## Prueba de Shapiro-Wilk in Python
 
@@ -340,7 +336,7 @@ print(f"P-value: {ResultShapiro.pvalue:.4f}")
 
 </br>
 
-[*Como el valor p no es menor que 0.05, no rechazamos $H_0$. Por tanto, los promedios siguen una distribución normal.*]{style="color: darkred"}
+[*Como el valor p no es menor que 0.05, no rechazamos* $H_0$. Por tanto, los promedios siguen una distribución normal.]{style="color: darkred"}
 
 ## Gráfica de valores individuales
 
@@ -374,7 +370,7 @@ La gráfica de mediciones individuales usa el **rango móvil** de dos observacio
 
 El rango móvil del i-ésimo grupo se define como $MR_i = |x_i - x_{i-1}|$. Es decir, la diferencia absoluta entre la observación actual y la anterior.
 
-El rango móvil promedio es $\bar{MR} = \frac{MR_1 + MR_2 + \cdots + MR_{k-1}}{k - 1}$.
+El rango móvil promedio es $\bar{MR} = \frac{MR_2 + MR_3 + \cdots + MR_{k}}{k - 1}$.
 
 ## Gráfica $\bar{X}$ (versión individual)
 
