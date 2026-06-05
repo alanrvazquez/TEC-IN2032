@@ -114,7 +114,7 @@ La gráfica de promedios y rangos (y también la gráfica I-MR) consisten de dos
 
 ## Notación perliminar
 
-Recuerda que hay $k$ subgrupos con $n$ observaciones cada uno. Las observaciones del *i*-ésimo subgrupo se denotan como $x_{i1}, x_{i2}, \ldots, x_{in}$, donde $i = 1, \ldots, k.$.
+Recuerda que hay $k$ subgrupos con $n$ observaciones cada uno. Las observaciones del *i*-ésimo subgrupo se denotan como $x_{i1}, x_{i2}, \ldots, x_{in}$, donde $i = 1, \ldots, k$.
 
 </br>
 
